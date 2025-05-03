@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package navzy;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/fatehan-navzy/strc/devices";
+
+message ProtocolList {
+  message Item {
+    sint32 protocol = 1;
+    string name = 2;
+  }
+  repeated Item list = 1;
+}
+
+message Device {
+  enum ProtocolEnum {
+    Unknown = 0;
+    Teltonika_FMB920 = 1;
+  }
+
+  string id = 1;
+  string client = 2;
+  uint64 imei = 3;
+  string space = 4;
+  string name = 5;
+  ProtocolEnum protocol = 6;
+  sint32 timezone = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}

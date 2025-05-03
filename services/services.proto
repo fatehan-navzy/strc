@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package navzy;
+
+option go_package = "github.com/fatehan-navzy/strc/services";
+
+import "devices/devices.proto";
+import "packets/packets.proto";
+import "google/protobuf/timestamp.proto";
+
+service NavzyService {
+  rpc DeviceCreate(Device) returns (Device);
+  rpc PacketIndex(PacketRequest) returns (PacketResponse);
+}
+
+message TimeRange {
+       google.protobuf.Timestamp start = 1 [json_name = "start"];
+       google.protobuf.Timestamp end = 2 [json_name = "end"];
+}
+
+message PacketRequest {
+     TimeRange timestamp = 1 [json_name = "time"];
+     string device_id = 2 [json_name = "device_id"];
+     google.protobuf.Timestamp from = 3 [json_name = "from"];
+     optional uint32 limit = 4 [json_name = "limit"];
+}
+
+message PacketResponse {
+     repeated Packet packets = 1 [json_name = "packets"];
+}
