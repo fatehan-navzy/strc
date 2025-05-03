@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-go get github.com/FatehanProtocols/protocols
+go get github.com/fatehan-navzy/strc
 ```
 
 ### Compile
