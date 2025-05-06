@@ -6,6 +6,19 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/packets";
 
+message Task {
+  uint64 imei = 1;
+  Packet packet = 2;
+  Client client = 3;
+}
+
+message Client {
+  string ip = 1;
+  uint32 port = 2;
+  string server_ip = 3;
+  uint32 server_port = 4;
+}
+
 message Data {
   string device_id = 1 [json_name = "device_id"];
   google.protobuf.Timestamp received = 2 [json_name = "received"];

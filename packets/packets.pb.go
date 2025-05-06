@@ -2566,7 +2566,7 @@ func (x Io_IoUnit) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Io_IoUnit.Descriptor instead.
 func (Io_IoUnit) EnumDescriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{2, 0}
+	return file_packets_packets_proto_rawDescGZIP(), []int{4, 0}
 }
 
 type Io_IoKind int32
@@ -2618,7 +2618,135 @@ func (x Io_IoKind) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Io_IoKind.Descriptor instead.
 func (Io_IoKind) EnumDescriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{2, 1}
+	return file_packets_packets_proto_rawDescGZIP(), []int{4, 1}
+}
+
+type Task struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Imei          uint64                 `protobuf:"varint,1,opt,name=imei,proto3" json:"imei,omitempty"`
+	Packet        *Packet                `protobuf:"bytes,2,opt,name=packet,proto3" json:"packet,omitempty"`
+	Client        *Client                `protobuf:"bytes,3,opt,name=client,proto3" json:"client,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Task) Reset() {
+	*x = Task{}
+	mi := &file_packets_packets_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Task) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Task) ProtoMessage() {}
+
+func (x *Task) ProtoReflect() protoreflect.Message {
+	mi := &file_packets_packets_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Task.ProtoReflect.Descriptor instead.
+func (*Task) Descriptor() ([]byte, []int) {
+	return file_packets_packets_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Task) GetImei() uint64 {
+	if x != nil {
+		return x.Imei
+	}
+	return 0
+}
+
+func (x *Task) GetPacket() *Packet {
+	if x != nil {
+		return x.Packet
+	}
+	return nil
+}
+
+func (x *Task) GetClient() *Client {
+	if x != nil {
+		return x.Client
+	}
+	return nil
+}
+
+type Client struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Ip            string                 `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip,omitempty"`
+	Port          uint32                 `protobuf:"varint,2,opt,name=port,proto3" json:"port,omitempty"`
+	ServerIp      string                 `protobuf:"bytes,3,opt,name=server_ip,json=serverIp,proto3" json:"server_ip,omitempty"`
+	ServerPort    uint32                 `protobuf:"varint,4,opt,name=server_port,json=serverPort,proto3" json:"server_port,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Client) Reset() {
+	*x = Client{}
+	mi := &file_packets_packets_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Client) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Client) ProtoMessage() {}
+
+func (x *Client) ProtoReflect() protoreflect.Message {
+	mi := &file_packets_packets_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Client.ProtoReflect.Descriptor instead.
+func (*Client) Descriptor() ([]byte, []int) {
+	return file_packets_packets_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Client) GetIp() string {
+	if x != nil {
+		return x.Ip
+	}
+	return ""
+}
+
+func (x *Client) GetPort() uint32 {
+	if x != nil {
+		return x.Port
+	}
+	return 0
+}
+
+func (x *Client) GetServerIp() string {
+	if x != nil {
+		return x.ServerIp
+	}
+	return ""
+}
+
+func (x *Client) GetServerPort() uint32 {
+	if x != nil {
+		return x.ServerPort
+	}
+	return 0
 }
 
 type Data struct {
@@ -2632,7 +2760,7 @@ type Data struct {
 
 func (x *Data) Reset() {
 	*x = Data{}
-	mi := &file_packets_packets_proto_msgTypes[0]
+	mi := &file_packets_packets_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2644,7 +2772,7 @@ func (x *Data) String() string {
 func (*Data) ProtoMessage() {}
 
 func (x *Data) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[0]
+	mi := &file_packets_packets_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2657,7 +2785,7 @@ func (x *Data) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Data.ProtoReflect.Descriptor instead.
 func (*Data) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{0}
+	return file_packets_packets_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Data) GetDeviceId() string {
@@ -2701,7 +2829,7 @@ type Packet struct {
 
 func (x *Packet) Reset() {
 	*x = Packet{}
-	mi := &file_packets_packets_proto_msgTypes[1]
+	mi := &file_packets_packets_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2713,7 +2841,7 @@ func (x *Packet) String() string {
 func (*Packet) ProtoMessage() {}
 
 func (x *Packet) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[1]
+	mi := &file_packets_packets_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2726,7 +2854,7 @@ func (x *Packet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Packet.ProtoReflect.Descriptor instead.
 func (*Packet) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{1}
+	return file_packets_packets_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Packet) GetDeviceId() uint64 {
@@ -2834,7 +2962,7 @@ type Io struct {
 
 func (x *Io) Reset() {
 	*x = Io{}
-	mi := &file_packets_packets_proto_msgTypes[2]
+	mi := &file_packets_packets_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2846,7 +2974,7 @@ func (x *Io) String() string {
 func (*Io) ProtoMessage() {}
 
 func (x *Io) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[2]
+	mi := &file_packets_packets_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2859,7 +2987,7 @@ func (x *Io) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Io.ProtoReflect.Descriptor instead.
 func (*Io) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{2}
+	return file_packets_packets_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Io) GetIo() IoProperty {
@@ -3019,7 +3147,17 @@ var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
-	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"\x83\x01\n" +
+	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"h\n" +
+	"\x04Task\x12\x12\n" +
+	"\x04imei\x18\x01 \x01(\x04R\x04imei\x12%\n" +
+	"\x06packet\x18\x02 \x01(\v2\r.navzy.PacketR\x06packet\x12%\n" +
+	"\x06client\x18\x03 \x01(\v2\r.navzy.ClientR\x06client\"j\n" +
+	"\x06Client\x12\x0e\n" +
+	"\x02ip\x18\x01 \x01(\tR\x02ip\x12\x12\n" +
+	"\x04port\x18\x02 \x01(\rR\x04port\x12\x1b\n" +
+	"\tserver_ip\x18\x03 \x01(\tR\bserverIp\x12\x1f\n" +
+	"\vserver_port\x18\x04 \x01(\rR\n" +
+	"serverPort\"\x83\x01\n" +
 	"\x04Data\x12\x1c\n" +
 	"\tdevice_id\x18\x01 \x01(\tR\tdevice_id\x126\n" +
 	"\breceived\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\breceived\x12%\n" +
@@ -3937,29 +4075,33 @@ func file_packets_packets_proto_rawDescGZIP() []byte {
 }
 
 var file_packets_packets_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_packets_packets_proto_goTypes = []any{
 	(Alert)(0),                    // 0: navzy.Alert
 	(IoProperty)(0),               // 1: navzy.IoProperty
 	(Io_IoUnit)(0),                // 2: navzy.Io.IoUnit
 	(Io_IoKind)(0),                // 3: navzy.Io.IoKind
-	(*Data)(nil),                  // 4: navzy.Data
-	(*Packet)(nil),                // 5: navzy.Packet
-	(*Io)(nil),                    // 6: navzy.Io
-	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
+	(*Task)(nil),                  // 4: navzy.Task
+	(*Client)(nil),                // 5: navzy.Client
+	(*Data)(nil),                  // 6: navzy.Data
+	(*Packet)(nil),                // 7: navzy.Packet
+	(*Io)(nil),                    // 8: navzy.Io
+	(*timestamppb.Timestamp)(nil), // 9: google.protobuf.Timestamp
 }
 var file_packets_packets_proto_depIdxs = []int32{
-	7, // 0: navzy.Data.received:type_name -> google.protobuf.Timestamp
-	5, // 1: navzy.Data.packet:type_name -> navzy.Packet
-	7, // 2: navzy.Packet.datetime:type_name -> google.protobuf.Timestamp
-	0, // 3: navzy.Packet.alerts:type_name -> navzy.Alert
-	6, // 4: navzy.Packet.ios:type_name -> navzy.Io
-	1, // 5: navzy.Io.io:type_name -> navzy.IoProperty
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	7, // 0: navzy.Task.packet:type_name -> navzy.Packet
+	5, // 1: navzy.Task.client:type_name -> navzy.Client
+	9, // 2: navzy.Data.received:type_name -> google.protobuf.Timestamp
+	7, // 3: navzy.Data.packet:type_name -> navzy.Packet
+	9, // 4: navzy.Packet.datetime:type_name -> google.protobuf.Timestamp
+	0, // 5: navzy.Packet.alerts:type_name -> navzy.Alert
+	8, // 6: navzy.Packet.ios:type_name -> navzy.Io
+	1, // 7: navzy.Io.io:type_name -> navzy.IoProperty
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_packets_packets_proto_init() }
@@ -3967,8 +4109,8 @@ func file_packets_packets_proto_init() {
 	if File_packets_packets_proto != nil {
 		return
 	}
-	file_packets_packets_proto_msgTypes[1].OneofWrappers = []any{}
-	file_packets_packets_proto_msgTypes[2].OneofWrappers = []any{
+	file_packets_packets_proto_msgTypes[3].OneofWrappers = []any{}
+	file_packets_packets_proto_msgTypes[4].OneofWrappers = []any{
 		(*Io_Int32Value)(nil),
 		(*Io_Uint32Value)(nil),
 		(*Io_Int64Value)(nil),
@@ -3985,7 +4127,7 @@ func file_packets_packets_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_packets_packets_proto_rawDesc), len(file_packets_packets_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

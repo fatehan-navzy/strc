@@ -13,9 +13,7 @@ go get github.com/fatehan-navzy/strc
 ```
 protoc --go_out=. --go_opt=paths=source_relative \
  --go-grpc_out=. --go-grpc_opt=paths=source_relative -I ../strc \
- ../strc/devices/*.proto \
- ../strc/packets/*.proto \
- ../strc/services/*.proto
+ ../strc/{devices,packets,services}/*.proto
 ```
 
 | Company   | Model | Series | Port Number |
