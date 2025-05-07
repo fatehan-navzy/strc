@@ -2682,10 +2682,11 @@ func (Io_IoKind) EnumDescriptor() ([]byte, []int) {
 type Result struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Imei          uint64                 `protobuf:"varint,1,opt,name=imei,proto3" json:"imei,omitempty"`
-	Data          []*Data                `protobuf:"bytes,2,rep,name=data,proto3" json:"data,omitempty"`
-	Response      []byte                 `protobuf:"bytes,3,opt,name=response,proto3" json:"response,omitempty"`
-	Answer        []byte                 `protobuf:"bytes,4,opt,name=answer,proto3" json:"answer,omitempty"`
-	Payload       []byte                 `protobuf:"bytes,5,opt,name=payload,proto3" json:"payload,omitempty"`
+	Type          Result_PacketType      `protobuf:"varint,2,opt,name=Type,json=packet_type,proto3,enum=navzy.Result_PacketType" json:"Type,omitempty"`
+	Data          []*Data                `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
+	Response      []byte                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
+	Answer        []byte                 `protobuf:"bytes,5,opt,name=answer,proto3" json:"answer,omitempty"`
+	Payload       []byte                 `protobuf:"bytes,6,opt,name=payload,proto3" json:"payload,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2725,6 +2726,13 @@ func (x *Result) GetImei() uint64 {
 		return x.Imei
 	}
 	return 0
+}
+
+func (x *Result) GetType() Result_PacketType {
+	if x != nil {
+		return x.Type
+	}
+	return Result_FAILED
 }
 
 func (x *Result) GetData() []*Data {
@@ -3281,13 +3289,14 @@ var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
-	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe5\x01\n" +
+	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9a\x02\n" +
 	"\x06Result\x12\x12\n" +
-	"\x04imei\x18\x01 \x01(\x04R\x04imei\x12\x1f\n" +
-	"\x04data\x18\x02 \x03(\v2\v.navzy.DataR\x04data\x12\x1a\n" +
-	"\bresponse\x18\x03 \x01(\fR\bresponse\x12\x16\n" +
-	"\x06answer\x18\x04 \x01(\fR\x06answer\x12\x18\n" +
-	"\apayload\x18\x05 \x01(\fR\apayload\"X\n" +
+	"\x04imei\x18\x01 \x01(\x04R\x04imei\x123\n" +
+	"\x04Type\x18\x02 \x01(\x0e2\x18.navzy.Result.PacketTypeR\vpacket_type\x12\x1f\n" +
+	"\x04data\x18\x03 \x03(\v2\v.navzy.DataR\x04data\x12\x1a\n" +
+	"\bresponse\x18\x04 \x01(\fR\bresponse\x12\x16\n" +
+	"\x06answer\x18\x05 \x01(\fR\x06answer\x12\x18\n" +
+	"\apayload\x18\x06 \x01(\fR\apayload\"X\n" +
 	"\n" +
 	"PacketType\x12\n" +
 	"\n" +
@@ -4242,20 +4251,21 @@ var file_packets_packets_proto_goTypes = []any{
 	(*timestamppb.Timestamp)(nil), // 11: google.protobuf.Timestamp
 }
 var file_packets_packets_proto_depIdxs = []int32{
-	8,  // 0: navzy.Result.data:type_name -> navzy.Data
-	9,  // 1: navzy.Task.packet:type_name -> navzy.Packet
-	7,  // 2: navzy.Task.client:type_name -> navzy.Client
-	11, // 3: navzy.Data.received:type_name -> google.protobuf.Timestamp
-	9,  // 4: navzy.Data.packet:type_name -> navzy.Packet
-	11, // 5: navzy.Packet.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 6: navzy.Packet.alerts:type_name -> navzy.Alert
-	10, // 7: navzy.Packet.ios:type_name -> navzy.Io
-	1,  // 8: navzy.Io.io:type_name -> navzy.IoProperty
-	9,  // [9:9] is the sub-list for method output_type
-	9,  // [9:9] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	2,  // 0: navzy.Result.Type:type_name -> navzy.Result.PacketType
+	8,  // 1: navzy.Result.data:type_name -> navzy.Data
+	9,  // 2: navzy.Task.packet:type_name -> navzy.Packet
+	7,  // 3: navzy.Task.client:type_name -> navzy.Client
+	11, // 4: navzy.Data.received:type_name -> google.protobuf.Timestamp
+	9,  // 5: navzy.Data.packet:type_name -> navzy.Packet
+	11, // 6: navzy.Packet.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 7: navzy.Packet.alerts:type_name -> navzy.Alert
+	10, // 8: navzy.Packet.ios:type_name -> navzy.Io
+	1,  // 9: navzy.Io.io:type_name -> navzy.IoProperty
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_packets_packets_proto_init() }

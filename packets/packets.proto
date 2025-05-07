@@ -16,10 +16,11 @@ message Result {
     CUSTOM = 5;
   }
   uint64 imei = 1 [json_name = "imei"];
-  repeated Data data = 2 [json_name = "data"]; 
-  bytes response = 3 [json_name = "response"];
-  bytes answer = 4 [json_name = "answer"];
-  bytes payload = 5 [json_name = "payload"]; 
+  PacketType Type = 2 [json_name = "packet_type"];
+  repeated Data data = 3 [json_name = "data"]; 
+  bytes response = 4 [json_name = "response"];
+  bytes answer = 5 [json_name = "answer"];
+  bytes payload = 6 [json_name = "payload"]; 
 }
 
 message Task {
