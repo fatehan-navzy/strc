@@ -2683,7 +2683,7 @@ type Result struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Imei          uint64                 `protobuf:"varint,1,opt,name=imei,proto3" json:"imei,omitempty"`
 	Type          Result_PacketType      `protobuf:"varint,2,opt,name=Type,json=packet_type,proto3,enum=navzy.Result_PacketType" json:"Type,omitempty"`
-	Data          []*Data                `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
+	Data          []*Packet              `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
 	Response      []byte                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
 	Answer        []byte                 `protobuf:"bytes,5,opt,name=answer,proto3" json:"answer,omitempty"`
 	Payload       []byte                 `protobuf:"bytes,6,opt,name=payload,proto3" json:"payload,omitempty"`
@@ -2735,7 +2735,7 @@ func (x *Result) GetType() Result_PacketType {
 	return Result_FAILED
 }
 
-func (x *Result) GetData() []*Data {
+func (x *Result) GetData() []*Packet {
 	if x != nil {
 		return x.Data
 	}
@@ -3289,11 +3289,11 @@ var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
-	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9a\x02\n" +
+	"\x15packets/packets.proto\x12\x05navzy\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9c\x02\n" +
 	"\x06Result\x12\x12\n" +
 	"\x04imei\x18\x01 \x01(\x04R\x04imei\x123\n" +
-	"\x04Type\x18\x02 \x01(\x0e2\x18.navzy.Result.PacketTypeR\vpacket_type\x12\x1f\n" +
-	"\x04data\x18\x03 \x03(\v2\v.navzy.DataR\x04data\x12\x1a\n" +
+	"\x04Type\x18\x02 \x01(\x0e2\x18.navzy.Result.PacketTypeR\vpacket_type\x12!\n" +
+	"\x04data\x18\x03 \x03(\v2\r.navzy.PacketR\x04data\x12\x1a\n" +
 	"\bresponse\x18\x04 \x01(\fR\bresponse\x12\x16\n" +
 	"\x06answer\x18\x05 \x01(\fR\x06answer\x12\x18\n" +
 	"\apayload\x18\x06 \x01(\fR\apayload\"X\n" +
@@ -4252,7 +4252,7 @@ var file_packets_packets_proto_goTypes = []any{
 }
 var file_packets_packets_proto_depIdxs = []int32{
 	2,  // 0: navzy.Result.Type:type_name -> navzy.Result.PacketType
-	8,  // 1: navzy.Result.data:type_name -> navzy.Data
+	9,  // 1: navzy.Result.data:type_name -> navzy.Packet
 	9,  // 2: navzy.Task.packet:type_name -> navzy.Packet
 	7,  // 3: navzy.Task.client:type_name -> navzy.Client
 	11, // 4: navzy.Data.received:type_name -> google.protobuf.Timestamp
