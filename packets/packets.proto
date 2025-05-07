@@ -6,6 +6,22 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/packets";
 
+message Result {
+  enum PacketType {
+    FAILED = 0;
+    AUTHORIZE = 1;
+    DATA = 2;
+    HEARTBEAT = 3;
+    ANSWER = 4;
+    CUSTOM = 5;
+  }
+  uint64 imei = 1 [json_name = "imei"];
+  repeated Data data = 2 [json_name = "data"]; 
+  bytes response = 3 [json_name = "response"];
+  bytes answer = 4 [json_name = "answer"];
+  bytes payload = 5 [json_name = "payload"]; 
+}
+
 message Task {
   uint64 imei = 1;
   Packet packet = 2;
