@@ -2836,8 +2836,8 @@ type Client struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Ip            string                 `protobuf:"bytes,1,opt,name=ip,proto3" json:"ip,omitempty"`
 	Port          uint32                 `protobuf:"varint,2,opt,name=port,proto3" json:"port,omitempty"`
-	ServerIp      string                 `protobuf:"bytes,3,opt,name=server_ip,json=serverIp,proto3" json:"server_ip,omitempty"`
-	ServerPort    uint32                 `protobuf:"varint,4,opt,name=server_port,json=serverPort,proto3" json:"server_port,omitempty"`
+	ServerIp      string                 `protobuf:"bytes,3,opt,name=server_ip,proto3" json:"server_ip,omitempty"`
+	ServerPort    uint32                 `protobuf:"varint,4,opt,name=server_port,proto3" json:"server_port,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3320,13 +3320,12 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x04Task\x12\x12\n" +
 	"\x04imei\x18\x01 \x01(\x04R\x04imei\x12%\n" +
 	"\x06packet\x18\x02 \x01(\v2\r.navzy.PacketR\x06packet\x12%\n" +
-	"\x06client\x18\x03 \x01(\v2\r.navzy.ClientR\x06client\"j\n" +
+	"\x06client\x18\x03 \x01(\v2\r.navzy.ClientR\x06client\"l\n" +
 	"\x06Client\x12\x0e\n" +
 	"\x02ip\x18\x01 \x01(\tR\x02ip\x12\x12\n" +
-	"\x04port\x18\x02 \x01(\rR\x04port\x12\x1b\n" +
-	"\tserver_ip\x18\x03 \x01(\tR\bserverIp\x12\x1f\n" +
-	"\vserver_port\x18\x04 \x01(\rR\n" +
-	"serverPort\"\x83\x01\n" +
+	"\x04port\x18\x02 \x01(\rR\x04port\x12\x1c\n" +
+	"\tserver_ip\x18\x03 \x01(\tR\tserver_ip\x12 \n" +
+	"\vserver_port\x18\x04 \x01(\rR\vserver_port\"\x83\x01\n" +
 	"\x04Data\x12\x1c\n" +
 	"\tdevice_id\x18\x01 \x01(\tR\tdevice_id\x126\n" +
 	"\breceived\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\breceived\x12%\n" +
