@@ -16,6 +16,11 @@ protoc --go_out=. --go_opt=paths=source_relative \
  ../strc/{devices,packets,services}/*.proto
 ```
 
+### Move to Kotlin
+```
+cp ../strc/{devices,packets,services}/*.proto /home/mehdi/apps/navzy-kotlin/app/src/main/proto/navzy
+```
+
 | Company   | Model | Series | Port Number |
 | --------- | ----- | ------ | ----------- |
 | Teltonika | FMB   | 920    | 10920       |
