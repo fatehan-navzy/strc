@@ -1204,6 +1204,9 @@ const (
 	IoProperty_WIDTH_POURING_LEFT                                                     IoProperty = 621
 	IoProperty_WIDTH_POURING_RIGHT                                                    IoProperty = 622
 	IoProperty_IBUTTON                                                                IoProperty = 623
+	IoProperty_LNG_LEVEL_PERCENT                                                      IoProperty = 624
+	IoProperty_DRIVER_1_CUMULATIVE_TIME                                               IoProperty = 625
+	IoProperty_DRIVER_2_CUMULATIVE_TIME                                               IoProperty = 626
 )
 
 // Enum value maps for IoProperty.
@@ -1832,6 +1835,9 @@ var (
 		621: "WIDTH_POURING_LEFT",
 		622: "WIDTH_POURING_RIGHT",
 		623: "IBUTTON",
+		624: "LNG_LEVEL_PERCENT",
+		625: "DRIVER_1_CUMULATIVE_TIME",
+		626: "DRIVER_2_CUMULATIVE_TIME",
 	}
 	IoProperty_value = map[string]int32{
 		"UNKNOWN":                                          0,
@@ -2457,6 +2463,9 @@ var (
 		"WIDTH_POURING_LEFT":                                621,
 		"WIDTH_POURING_RIGHT":                               622,
 		"IBUTTON":                                           623,
+		"LNG_LEVEL_PERCENT":                                 624,
+		"DRIVER_1_CUMULATIVE_TIME":                          625,
+		"DRIVER_2_CUMULATIVE_TIME":                          626,
 	}
 )
 
@@ -3571,7 +3580,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\bAcTurnOn\x10\xb5\x01\x12\r\n" +
 	"\bChargeOn\x10\xb6\x01\x12\x0e\n" +
 	"\tChargeOff\x10\xb7\x01\x12\x11\n" +
-	"\fInvalidAlert\x10\x94\x03*\xb9\x85\x01\n" +
+	"\fInvalidAlert\x10\x94\x03*\x8f\x86\x01\n" +
 	"\n" +
 	"IoProperty\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\r\n" +
@@ -4220,7 +4229,10 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\vWAKE_REASON\x10\xec\x04\x12\x17\n" +
 	"\x12WIDTH_POURING_LEFT\x10\xed\x04\x12\x18\n" +
 	"\x13WIDTH_POURING_RIGHT\x10\xee\x04\x12\f\n" +
-	"\aIBUTTON\x10\xef\x04B'Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
+	"\aIBUTTON\x10\xef\x04\x12\x16\n" +
+	"\x11LNG_LEVEL_PERCENT\x10\xf0\x04\x12\x1d\n" +
+	"\x18DRIVER_1_CUMULATIVE_TIME\x10\xf1\x04\x12\x1d\n" +
+	"\x18DRIVER_2_CUMULATIVE_TIME\x10\xf2\x04B'Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
 	file_packets_packets_proto_rawDescOnce sync.Once
