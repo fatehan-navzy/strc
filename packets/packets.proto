@@ -82,18 +82,18 @@ message Io {
     Pressure = 3;
   }
 
-  IoProperty io = 1;
+  IoProperty io = 1 [json_name = "io"];
 
   oneof value {
-    sint32  int32_value = 2;
-    uint32  uint32_value = 3;
-    sint64  int64_value = 4;
-    uint64  uint64_value = 5;
-    float   float_value = 6;
-    double  double_value = 7;
-    string  string_value = 8;
-    bool    bool_value = 9;
-    bytes   raw_value = 10;
+    sint32  int32_value = 2 [json_name = "sint32"];
+    uint32  uint32_value = 3 [json_name = "uint32"];
+    sint64  int64_value = 4 [json_name = "sint64"];
+    uint64  uint64_value = 5 [json_name = "uint64"];
+    float   float_value = 6 [json_name = "float32"];
+    double  double_value = 7 [json_name = "float64"];
+    string  string_value = 8 [json_name = "string"];
+    bool    bool_value = 9 [json_name = "bool"];
+    bytes   raw_value = 10 [json_name = "raw"];
   }
 }
 

@@ -3241,39 +3241,39 @@ type isIo_Value interface {
 }
 
 type Io_Int32Value struct {
-	Int32Value int32 `protobuf:"zigzag32,2,opt,name=int32_value,json=int32Value,proto3,oneof"`
+	Int32Value int32 `protobuf:"zigzag32,2,opt,name=int32_value,json=sint32,proto3,oneof"`
 }
 
 type Io_Uint32Value struct {
-	Uint32Value uint32 `protobuf:"varint,3,opt,name=uint32_value,json=uint32Value,proto3,oneof"`
+	Uint32Value uint32 `protobuf:"varint,3,opt,name=uint32_value,json=uint32,proto3,oneof"`
 }
 
 type Io_Int64Value struct {
-	Int64Value int64 `protobuf:"zigzag64,4,opt,name=int64_value,json=int64Value,proto3,oneof"`
+	Int64Value int64 `protobuf:"zigzag64,4,opt,name=int64_value,json=sint64,proto3,oneof"`
 }
 
 type Io_Uint64Value struct {
-	Uint64Value uint64 `protobuf:"varint,5,opt,name=uint64_value,json=uint64Value,proto3,oneof"`
+	Uint64Value uint64 `protobuf:"varint,5,opt,name=uint64_value,json=uint64,proto3,oneof"`
 }
 
 type Io_FloatValue struct {
-	FloatValue float32 `protobuf:"fixed32,6,opt,name=float_value,json=floatValue,proto3,oneof"`
+	FloatValue float32 `protobuf:"fixed32,6,opt,name=float_value,json=float32,proto3,oneof"`
 }
 
 type Io_DoubleValue struct {
-	DoubleValue float64 `protobuf:"fixed64,7,opt,name=double_value,json=doubleValue,proto3,oneof"`
+	DoubleValue float64 `protobuf:"fixed64,7,opt,name=double_value,json=float64,proto3,oneof"`
 }
 
 type Io_StringValue struct {
-	StringValue string `protobuf:"bytes,8,opt,name=string_value,json=stringValue,proto3,oneof"`
+	StringValue string `protobuf:"bytes,8,opt,name=string_value,json=string,proto3,oneof"`
 }
 
 type Io_BoolValue struct {
-	BoolValue bool `protobuf:"varint,9,opt,name=bool_value,json=boolValue,proto3,oneof"`
+	BoolValue bool `protobuf:"varint,9,opt,name=bool_value,json=bool,proto3,oneof"`
 }
 
 type Io_RawValue struct {
-	RawValue []byte `protobuf:"bytes,10,opt,name=raw_value,json=rawValue,proto3,oneof"`
+	RawValue []byte `protobuf:"bytes,10,opt,name=raw_value,json=raw,proto3,oneof"`
 }
 
 func (*Io_Int32Value) isIo_Value() {}
@@ -3349,23 +3349,20 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xff\x04\n" +
+	"\b_mileage\"\xd7\x04\n" +
 	"\x02Io\x12!\n" +
-	"\x02io\x18\x01 \x01(\x0e2\x11.navzy.IoPropertyR\x02io\x12!\n" +
-	"\vint32_value\x18\x02 \x01(\x11H\x00R\n" +
-	"int32Value\x12#\n" +
-	"\fuint32_value\x18\x03 \x01(\rH\x00R\vuint32Value\x12!\n" +
-	"\vint64_value\x18\x04 \x01(\x12H\x00R\n" +
-	"int64Value\x12#\n" +
-	"\fuint64_value\x18\x05 \x01(\x04H\x00R\vuint64Value\x12!\n" +
-	"\vfloat_value\x18\x06 \x01(\x02H\x00R\n" +
-	"floatValue\x12#\n" +
-	"\fdouble_value\x18\a \x01(\x01H\x00R\vdoubleValue\x12#\n" +
-	"\fstring_value\x18\b \x01(\tH\x00R\vstringValue\x12\x1f\n" +
+	"\x02io\x18\x01 \x01(\x0e2\x11.navzy.IoPropertyR\x02io\x12\x1d\n" +
+	"\vint32_value\x18\x02 \x01(\x11H\x00R\x06sint32\x12\x1e\n" +
+	"\fuint32_value\x18\x03 \x01(\rH\x00R\x06uint32\x12\x1d\n" +
+	"\vint64_value\x18\x04 \x01(\x12H\x00R\x06sint64\x12\x1e\n" +
+	"\fuint64_value\x18\x05 \x01(\x04H\x00R\x06uint64\x12\x1e\n" +
+	"\vfloat_value\x18\x06 \x01(\x02H\x00R\afloat32\x12\x1f\n" +
+	"\fdouble_value\x18\a \x01(\x01H\x00R\afloat64\x12\x1e\n" +
+	"\fstring_value\x18\b \x01(\tH\x00R\x06string\x12\x1a\n" +
 	"\n" +
-	"bool_value\x18\t \x01(\bH\x00R\tboolValue\x12\x1d\n" +
+	"bool_value\x18\t \x01(\bH\x00R\x04bool\x12\x18\n" +
 	"\traw_value\x18\n" +
-	" \x01(\fH\x00R\brawValue\"\xcc\x01\n" +
+	" \x01(\fH\x00R\x03raw\"\xcc\x01\n" +
 	"\x06IoUnit\x12\n" +
 	"\n" +
 	"\x06Number\x10\x00\x12\v\n" +
