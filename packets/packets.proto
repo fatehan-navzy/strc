@@ -24,16 +24,16 @@ message Result {
 }
 
 message Task {
-  uint64 imei = 1;
-  Packet packet = 2;
-  Client client = 3;
+  uint64 imei = 1 [json_name = "imei"];
+  Packet packet = 2 [json_name = "packet"];
+  Client client = 3 [json_name = "client"];
 }
 
 message Client {
-  string ip = 1;
-  uint32 port = 2;
-  string server_ip = 3;
-  uint32 server_port = 4;
+  string ip = 1 [json_name = "ip"];
+  uint32 port = 2 [json_name = "port"];
+  string server_ip = 3 [json_name = "server_ip"];
+  uint32 server_port = 4 [json_name = "server_port"];
 }
 
 message Data {
