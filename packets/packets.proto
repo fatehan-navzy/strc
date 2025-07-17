@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package navzy;
+package com.navzy.packets;
 
 import "google/protobuf/timestamp.proto";
 
@@ -64,7 +64,6 @@ message Io {
     Fahrenheit = 2;
     Kelvin = 3;
     RH = 4;
-    Hectopascals = 5;
     Millibars = 6;
     InchesOfMercury = 7;
     Pascals = 8;

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package navzy;
+package com.navzy.services;
 
 option go_package = "github.com/fatehan-navzy/strc/services";
 
@@ -9,7 +9,7 @@ import "packets/packets.proto";
 import "google/protobuf/timestamp.proto";
 
 service NavzyService {
-  rpc DeviceCreate(Device) returns (Device);
+  rpc DeviceCreate(com.navzy.devices.Device) returns (com.navzy.devices.Device);
   rpc PacketIndex(PacketRequest) returns (PacketResponse);
 }
 
@@ -26,5 +26,5 @@ message PacketRequest {
 }
 
 message PacketResponse {
-     repeated Packet packets = 1 [json_name = "packets"];
+     repeated com.navzy.packets.Packet packets = 1 [json_name = "packets"];
 }

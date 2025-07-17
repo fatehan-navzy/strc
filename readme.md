@@ -5,7 +5,7 @@
 ### Installation
 
 ```
-go get github.com/fatehan-navzy/strc
+GOPRIVATE=github.com/fatehan-navzy go get -u github.com/fatehan-navzy/strc@latest
 ```
 
 ### Compile

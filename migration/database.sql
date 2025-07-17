@@ -1,5 +1,7 @@
 CREATE DATABASE `navzy`;
 
+USE `navzy`;
+
 CREATE TABLE IF NOT EXISTS devices (
     id CHAR(36) PRIMARY KEY DEFAULT(UUID()),
     client CHAR(36) DEFAULT(UUID()),
