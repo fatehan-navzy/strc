@@ -18,7 +18,7 @@ protoc --go_out=. --go_opt=paths=source_relative \
 
 ### Move to Kotlin
 ```
-cp ../strc/{devices,packets,services}/*.proto /home/mehdi/apps/navzy-kotlin/app/src/main/proto/navzy
+cp ../strc/{devices,packets,services}/*.proto /home/mehdi/navzy/Navzy/app/src/main/proto
 ```
 
 | Company   | Model | Series | Port Number |

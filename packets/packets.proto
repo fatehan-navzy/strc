@@ -17,14 +17,14 @@ message Result {
   }
   uint64 imei = 1 [json_name = "imei"];
   PacketType Type = 2 [json_name = "packet_type"];
-  repeated Packet data = 3 [json_name = "data"]; 
+  repeated Packet data = 3 [json_name = "data"];
   bytes response = 4 [json_name = "response"];
   bytes answer = 5 [json_name = "answer"];
-  bytes payload = 6 [json_name = "payload"]; 
+  bytes payload = 6 [json_name = "payload"];
 }
 
 message Task {
-  uint64 imei = 1 [json_name = "imei"];
+  string id = 1 [json_name = 'id'];
   Packet packet = 2 [json_name = "packet"];
   Client client = 3 [json_name = "client"];
 }
@@ -43,7 +43,7 @@ message Data {
 }
 
 message Packet {
-  uint64 device_id = 1 [json_name = "device_id"];
+  uint64 imei = 1 [json_name = "device_id"];
   google.protobuf.Timestamp datetime = 2 [json_name = "datetime"];
   float latitude = 3 [json_name = "latitude"];
   float longitude = 4 [json_name = "longitude"];
