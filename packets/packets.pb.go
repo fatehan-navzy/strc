@@ -7,6 +7,7 @@
 package packets
 
 import (
+	devices "github.com/fatehan-navzy/strc/devices"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -2771,7 +2772,7 @@ func (x *Result) GetPayload() []byte {
 
 type Task struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Device        *devices.Device        `protobuf:"bytes,1,opt,name=device,json=devices,proto3" json:"device,omitempty"`
 	Packet        *Packet                `protobuf:"bytes,2,opt,name=packet,proto3" json:"packet,omitempty"`
 	Client        *Client                `protobuf:"bytes,3,opt,name=client,proto3" json:"client,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2808,11 +2809,11 @@ func (*Task) Descriptor() ([]byte, []int) {
 	return file_packets_packets_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *Task) GetId() string {
+func (x *Task) GetDevice() *devices.Device {
 	if x != nil {
-		return x.Id
+		return x.Device
 	}
-	return ""
+	return nil
 }
 
 func (x *Task) GetPacket() *Packet {
@@ -3295,7 +3296,7 @@ var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
-	"\x15packets/packets.proto\x12\x11com.navzy.packets\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb4\x02\n" +
+	"\x15packets/packets.proto\x12\x11com.navzy.packets\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15devices/devices.proto\"\xb4\x02\n" +
 	"\x06Result\x12\x12\n" +
 	"\x04imei\x18\x01 \x01(\x04R\x04imei\x12?\n" +
 	"\x04Type\x18\x02 \x01(\x0e2$.com.navzy.packets.Result.PacketTypeR\vpacket_type\x12-\n" +
@@ -3313,9 +3314,9 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
 	"\x06ANSWER\x10\x04\x12\n" +
 	"\n" +
-	"\x06CUSTOM\x10\x05\"|\n" +
-	"\x04Task\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x121\n" +
+	"\x06CUSTOM\x10\x05\"\xa0\x01\n" +
+	"\x04Task\x122\n" +
+	"\x06device\x18\x01 \x01(\v2\x19.com.navzy.devices.DeviceR\adevices\x121\n" +
 	"\x06packet\x18\x02 \x01(\v2\x19.com.navzy.packets.PacketR\x06packet\x121\n" +
 	"\x06client\x18\x03 \x01(\v2\x19.com.navzy.packets.ClientR\x06client\"l\n" +
 	"\x06Client\x12\x0e\n" +
@@ -4252,24 +4253,26 @@ var file_packets_packets_proto_goTypes = []any{
 	(*Data)(nil),                  // 8: com.navzy.packets.Data
 	(*Packet)(nil),                // 9: com.navzy.packets.Packet
 	(*Io)(nil),                    // 10: com.navzy.packets.Io
-	(*timestamppb.Timestamp)(nil), // 11: google.protobuf.Timestamp
+	(*devices.Device)(nil),        // 11: com.navzy.devices.Device
+	(*timestamppb.Timestamp)(nil), // 12: google.protobuf.Timestamp
 }
 var file_packets_packets_proto_depIdxs = []int32{
 	2,  // 0: com.navzy.packets.Result.Type:type_name -> com.navzy.packets.Result.PacketType
 	9,  // 1: com.navzy.packets.Result.data:type_name -> com.navzy.packets.Packet
-	9,  // 2: com.navzy.packets.Task.packet:type_name -> com.navzy.packets.Packet
-	7,  // 3: com.navzy.packets.Task.client:type_name -> com.navzy.packets.Client
-	11, // 4: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
-	9,  // 5: com.navzy.packets.Data.packet:type_name -> com.navzy.packets.Packet
-	11, // 6: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 7: com.navzy.packets.Packet.alerts:type_name -> com.navzy.packets.Alert
-	10, // 8: com.navzy.packets.Packet.ios:type_name -> com.navzy.packets.Io
-	1,  // 9: com.navzy.packets.Io.io:type_name -> com.navzy.packets.IoProperty
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	11, // 2: com.navzy.packets.Task.device:type_name -> com.navzy.devices.Device
+	9,  // 3: com.navzy.packets.Task.packet:type_name -> com.navzy.packets.Packet
+	7,  // 4: com.navzy.packets.Task.client:type_name -> com.navzy.packets.Client
+	12, // 5: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
+	9,  // 6: com.navzy.packets.Data.packet:type_name -> com.navzy.packets.Packet
+	12, // 7: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 8: com.navzy.packets.Packet.alerts:type_name -> com.navzy.packets.Alert
+	10, // 9: com.navzy.packets.Packet.ios:type_name -> com.navzy.packets.Io
+	1,  // 10: com.navzy.packets.Io.io:type_name -> com.navzy.packets.IoProperty
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_packets_packets_proto_init() }

@@ -3,6 +3,7 @@ syntax = "proto3";
 package com.navzy.packets;
 
 import "google/protobuf/timestamp.proto";
+import "devices/devices.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/packets";
 
@@ -24,7 +25,7 @@ message Result {
 }
 
 message Task {
-  string id = 1 [json_name = 'id'];
+  com.navzy.devices.Device device = 1 [json_name = 'devices'];
   Packet packet = 2 [json_name = "packet"];
   Client client = 3 [json_name = "client"];
 }
