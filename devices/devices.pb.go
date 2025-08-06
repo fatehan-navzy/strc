@@ -68,6 +68,58 @@ func (Device_ProtocolEnum) EnumDescriptor() ([]byte, []int) {
 	return file_devices_devices_proto_rawDescGZIP(), []int{1, 0}
 }
 
+type Device_StatEnum int32
+
+const (
+	Device_Pending   Device_StatEnum = 0
+	Device_Active    Device_StatEnum = 1
+	Device_Moved     Device_StatEnum = 2
+	Device_Suspended Device_StatEnum = 3
+)
+
+// Enum value maps for Device_StatEnum.
+var (
+	Device_StatEnum_name = map[int32]string{
+		0: "Pending",
+		1: "Active",
+		2: "Moved",
+		3: "Suspended",
+	}
+	Device_StatEnum_value = map[string]int32{
+		"Pending":   0,
+		"Active":    1,
+		"Moved":     2,
+		"Suspended": 3,
+	}
+)
+
+func (x Device_StatEnum) Enum() *Device_StatEnum {
+	p := new(Device_StatEnum)
+	*p = x
+	return p
+}
+
+func (x Device_StatEnum) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Device_StatEnum) Descriptor() protoreflect.EnumDescriptor {
+	return file_devices_devices_proto_enumTypes[1].Descriptor()
+}
+
+func (Device_StatEnum) Type() protoreflect.EnumType {
+	return &file_devices_devices_proto_enumTypes[1]
+}
+
+func (x Device_StatEnum) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Device_StatEnum.Descriptor instead.
+func (Device_StatEnum) EnumDescriptor() ([]byte, []int) {
+	return file_devices_devices_proto_rawDescGZIP(), []int{1, 1}
+}
+
 type ProtocolList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	List          []*ProtocolList_Item   `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
@@ -115,14 +167,15 @@ func (x *ProtocolList) GetList() []*ProtocolList_Item {
 type Device struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Client        string                 `protobuf:"bytes,2,opt,name=client,proto3" json:"client,omitempty"`
+	DynamicKey    string                 `protobuf:"bytes,2,opt,name=dynamic_key,json=dynamicKey,proto3" json:"dynamic_key,omitempty"`
 	Imei          uint64                 `protobuf:"varint,3,opt,name=imei,proto3" json:"imei,omitempty"`
-	Space         string                 `protobuf:"bytes,4,opt,name=space,proto3" json:"space,omitempty"`
-	Name          string                 `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
-	Protocol      Device_ProtocolEnum    `protobuf:"varint,6,opt,name=protocol,proto3,enum=com.navzy.devices.Device_ProtocolEnum" json:"protocol,omitempty"`
-	Timezone      int32                  `protobuf:"zigzag32,7,opt,name=timezone,proto3" json:"timezone,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	Port          uint32                 `protobuf:"varint,4,opt,name=port,proto3" json:"port,omitempty"`
+	Stat          Device_StatEnum        `protobuf:"varint,5,opt,name=stat,proto3,enum=com.navzy.devices.Device_StatEnum" json:"stat,omitempty"`
+	Title         string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	Protocol      Device_ProtocolEnum    `protobuf:"varint,7,opt,name=protocol,proto3,enum=com.navzy.devices.Device_ProtocolEnum" json:"protocol,omitempty"`
+	Timezone      int32                  `protobuf:"zigzag32,8,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -164,9 +217,9 @@ func (x *Device) GetId() string {
 	return ""
 }
 
-func (x *Device) GetClient() string {
+func (x *Device) GetDynamicKey() string {
 	if x != nil {
-		return x.Client
+		return x.DynamicKey
 	}
 	return ""
 }
@@ -178,16 +231,23 @@ func (x *Device) GetImei() uint64 {
 	return 0
 }
 
-func (x *Device) GetSpace() string {
+func (x *Device) GetPort() uint32 {
 	if x != nil {
-		return x.Space
+		return x.Port
 	}
-	return ""
+	return 0
 }
 
-func (x *Device) GetName() string {
+func (x *Device) GetStat() Device_StatEnum {
 	if x != nil {
-		return x.Name
+		return x.Stat
+	}
+	return Device_Pending
+}
+
+func (x *Device) GetTitle() string {
+	if x != nil {
+		return x.Title
 	}
 	return ""
 }
@@ -281,22 +341,31 @@ const file_devices_devices_proto_rawDesc = "" +
 	"\x04list\x18\x01 \x03(\v2$.com.navzy.devices.ProtocolList.ItemR\x04list\x1a6\n" +
 	"\x04Item\x12\x1a\n" +
 	"\bprotocol\x18\x01 \x01(\x11R\bprotocol\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\xf7\x02\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"\xf7\x03\n" +
 	"\x06Device\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
-	"\x06client\x18\x02 \x01(\tR\x06client\x12\x12\n" +
-	"\x04imei\x18\x03 \x01(\x04R\x04imei\x12\x14\n" +
-	"\x05space\x18\x04 \x01(\tR\x05space\x12\x12\n" +
-	"\x04name\x18\x05 \x01(\tR\x04name\x12B\n" +
-	"\bprotocol\x18\x06 \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumR\bprotocol\x12\x1a\n" +
-	"\btimezone\x18\a \x01(\x11R\btimezone\x129\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vdynamic_key\x18\x02 \x01(\tR\n" +
+	"dynamicKey\x12\x12\n" +
+	"\x04imei\x18\x03 \x01(\x04R\x04imei\x12\x12\n" +
+	"\x04port\x18\x04 \x01(\rR\x04port\x126\n" +
+	"\x04stat\x18\x05 \x01(\x0e2\".com.navzy.devices.Device.StatEnumR\x04stat\x12\x14\n" +
+	"\x05title\x18\x06 \x01(\tR\x05title\x12B\n" +
+	"\bprotocol\x18\a \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumR\bprotocol\x12\x1a\n" +
+	"\btimezone\x18\b \x01(\x11R\btimezone\x129\n" +
 	"\n" +
-	"created_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"1\n" +
+	"updated_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"1\n" +
 	"\fProtocolEnum\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x14\n" +
-	"\x10Teltonika_FMB920\x10\x01B'Z%github.com/fatehan-navzy/strc/devicesb\x06proto3"
+	"\x10Teltonika_FMB920\x10\x01\"=\n" +
+	"\bStatEnum\x12\v\n" +
+	"\aPending\x10\x00\x12\n" +
+	"\n" +
+	"\x06Active\x10\x01\x12\t\n" +
+	"\x05Moved\x10\x02\x12\r\n" +
+	"\tSuspended\x10\x03B'Z%github.com/fatehan-navzy/strc/devicesb\x06proto3"
 
 var (
 	file_devices_devices_proto_rawDescOnce sync.Once
@@ -310,25 +379,27 @@ func file_devices_devices_proto_rawDescGZIP() []byte {
 	return file_devices_devices_proto_rawDescData
 }
 
-var file_devices_devices_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_devices_devices_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_devices_devices_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_devices_devices_proto_goTypes = []any{
 	(Device_ProtocolEnum)(0),      // 0: com.navzy.devices.Device.ProtocolEnum
-	(*ProtocolList)(nil),          // 1: com.navzy.devices.ProtocolList
-	(*Device)(nil),                // 2: com.navzy.devices.Device
-	(*ProtocolList_Item)(nil),     // 3: com.navzy.devices.ProtocolList.Item
-	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
+	(Device_StatEnum)(0),          // 1: com.navzy.devices.Device.StatEnum
+	(*ProtocolList)(nil),          // 2: com.navzy.devices.ProtocolList
+	(*Device)(nil),                // 3: com.navzy.devices.Device
+	(*ProtocolList_Item)(nil),     // 4: com.navzy.devices.ProtocolList.Item
+	(*timestamppb.Timestamp)(nil), // 5: google.protobuf.Timestamp
 }
 var file_devices_devices_proto_depIdxs = []int32{
-	3, // 0: com.navzy.devices.ProtocolList.list:type_name -> com.navzy.devices.ProtocolList.Item
-	0, // 1: com.navzy.devices.Device.protocol:type_name -> com.navzy.devices.Device.ProtocolEnum
-	4, // 2: com.navzy.devices.Device.created_at:type_name -> google.protobuf.Timestamp
-	4, // 3: com.navzy.devices.Device.updated_at:type_name -> google.protobuf.Timestamp
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	4, // 0: com.navzy.devices.ProtocolList.list:type_name -> com.navzy.devices.ProtocolList.Item
+	1, // 1: com.navzy.devices.Device.stat:type_name -> com.navzy.devices.Device.StatEnum
+	0, // 2: com.navzy.devices.Device.protocol:type_name -> com.navzy.devices.Device.ProtocolEnum
+	5, // 3: com.navzy.devices.Device.created_at:type_name -> google.protobuf.Timestamp
+	5, // 4: com.navzy.devices.Device.updated_at:type_name -> google.protobuf.Timestamp
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_devices_devices_proto_init() }
@@ -341,7 +412,7 @@ func file_devices_devices_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_devices_devices_proto_rawDesc), len(file_devices_devices_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,

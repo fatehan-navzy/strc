@@ -20,13 +20,21 @@ message Device {
     Teltonika_FMB920 = 1;
   }
 
+  enum StatEnum {
+    Pending = 0;
+    Active = 1;
+    Moved = 2;
+    Suspended = 3;
+  }
+
   string id = 1;
-  string client = 2;
+  string dynamic_key = 2;
   uint64 imei = 3;
-  string space = 4;
-  string name = 5;
-  ProtocolEnum protocol = 6;
-  sint32 timezone = 7;
-  google.protobuf.Timestamp created_at = 8;
-  google.protobuf.Timestamp updated_at = 9;
+  uint32 port = 4;
+  StatEnum stat = 5;
+  string title = 6;
+  ProtocolEnum protocol = 7;
+  sint32 timezone = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
 }
