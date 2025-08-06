@@ -29,12 +29,13 @@ message Device {
 
   string id = 1;
   string dynamic_key = 2;
-  uint64 imei = 3;
-  uint32 port = 4;
-  StatEnum stat = 5;
-  string title = 6;
-  ProtocolEnum protocol = 7;
-  sint32 timezone = 8;
-  google.protobuf.Timestamp created_at = 9;
-  google.protobuf.Timestamp updated_at = 10;
+  string static_key  = 3;
+  uint64 imei = 4;
+  uint32 port = 5;
+  StatEnum stat = 6;
+  string title = 7;
+  ProtocolEnum protocol = 8;
+  sint32 timezone = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
 }

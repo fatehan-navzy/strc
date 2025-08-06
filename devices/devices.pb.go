@@ -168,14 +168,15 @@ type Device struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	DynamicKey    string                 `protobuf:"bytes,2,opt,name=dynamic_key,json=dynamicKey,proto3" json:"dynamic_key,omitempty"`
-	Imei          uint64                 `protobuf:"varint,3,opt,name=imei,proto3" json:"imei,omitempty"`
-	Port          uint32                 `protobuf:"varint,4,opt,name=port,proto3" json:"port,omitempty"`
-	Stat          Device_StatEnum        `protobuf:"varint,5,opt,name=stat,proto3,enum=com.navzy.devices.Device_StatEnum" json:"stat,omitempty"`
-	Title         string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
-	Protocol      Device_ProtocolEnum    `protobuf:"varint,7,opt,name=protocol,proto3,enum=com.navzy.devices.Device_ProtocolEnum" json:"protocol,omitempty"`
-	Timezone      int32                  `protobuf:"zigzag32,8,opt,name=timezone,proto3" json:"timezone,omitempty"`
-	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	StaticKey     string                 `protobuf:"bytes,3,opt,name=static_key,json=staticKey,proto3" json:"static_key,omitempty"`
+	Imei          uint64                 `protobuf:"varint,4,opt,name=imei,proto3" json:"imei,omitempty"`
+	Port          uint32                 `protobuf:"varint,5,opt,name=port,proto3" json:"port,omitempty"`
+	Stat          Device_StatEnum        `protobuf:"varint,6,opt,name=stat,proto3,enum=com.navzy.devices.Device_StatEnum" json:"stat,omitempty"`
+	Title         string                 `protobuf:"bytes,7,opt,name=title,proto3" json:"title,omitempty"`
+	Protocol      Device_ProtocolEnum    `protobuf:"varint,8,opt,name=protocol,proto3,enum=com.navzy.devices.Device_ProtocolEnum" json:"protocol,omitempty"`
+	Timezone      int32                  `protobuf:"zigzag32,9,opt,name=timezone,proto3" json:"timezone,omitempty"`
+	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -220,6 +221,13 @@ func (x *Device) GetId() string {
 func (x *Device) GetDynamicKey() string {
 	if x != nil {
 		return x.DynamicKey
+	}
+	return ""
+}
+
+func (x *Device) GetStaticKey() string {
+	if x != nil {
+		return x.StaticKey
 	}
 	return ""
 }
@@ -341,22 +349,24 @@ const file_devices_devices_proto_rawDesc = "" +
 	"\x04list\x18\x01 \x03(\v2$.com.navzy.devices.ProtocolList.ItemR\x04list\x1a6\n" +
 	"\x04Item\x12\x1a\n" +
 	"\bprotocol\x18\x01 \x01(\x11R\bprotocol\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\xf7\x03\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"\x96\x04\n" +
 	"\x06Device\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vdynamic_key\x18\x02 \x01(\tR\n" +
-	"dynamicKey\x12\x12\n" +
-	"\x04imei\x18\x03 \x01(\x04R\x04imei\x12\x12\n" +
-	"\x04port\x18\x04 \x01(\rR\x04port\x126\n" +
-	"\x04stat\x18\x05 \x01(\x0e2\".com.navzy.devices.Device.StatEnumR\x04stat\x12\x14\n" +
-	"\x05title\x18\x06 \x01(\tR\x05title\x12B\n" +
-	"\bprotocol\x18\a \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumR\bprotocol\x12\x1a\n" +
-	"\btimezone\x18\b \x01(\x11R\btimezone\x129\n" +
+	"dynamicKey\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"static_key\x18\x03 \x01(\tR\tstaticKey\x12\x12\n" +
+	"\x04imei\x18\x04 \x01(\x04R\x04imei\x12\x12\n" +
+	"\x04port\x18\x05 \x01(\rR\x04port\x126\n" +
+	"\x04stat\x18\x06 \x01(\x0e2\".com.navzy.devices.Device.StatEnumR\x04stat\x12\x14\n" +
+	"\x05title\x18\a \x01(\tR\x05title\x12B\n" +
+	"\bprotocol\x18\b \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumR\bprotocol\x12\x1a\n" +
+	"\btimezone\x18\t \x01(\x11R\btimezone\x129\n" +
 	"\n" +
-	"updated_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"1\n" +
+	"created_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
+	"\n" +
+	"updated_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"1\n" +
 	"\fProtocolEnum\x12\v\n" +
 	"\aUnknown\x10\x00\x12\x14\n" +
 	"\x10Teltonika_FMB920\x10\x01\"=\n" +
