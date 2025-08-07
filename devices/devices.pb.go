@@ -375,7 +375,8 @@ const file_devices_devices_proto_rawDesc = "" +
 	"\n" +
 	"\x06Active\x10\x01\x12\t\n" +
 	"\x05Moved\x10\x02\x12\r\n" +
-	"\tSuspended\x10\x03B'Z%github.com/fatehan-navzy/strc/devicesb\x06proto3"
+	"\tSuspended\x10\x03BD\n" +
+	"\x19com.fatehan.navzy.devicesP\x01Z%github.com/fatehan-navzy/strc/devicesb\x06proto3"
 
 var (
 	file_devices_devices_proto_rawDescOnce sync.Once

@@ -6,6 +6,9 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/devices";
 
+option java_package = "com.fatehan.navzy.devices";
+option java_multiple_files = true;
+
 message ProtocolList {
   message Item {
     sint32 protocol = 1;

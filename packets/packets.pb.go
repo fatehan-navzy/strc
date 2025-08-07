@@ -4225,7 +4225,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\aIBUTTON\x10\xef\x04\x12\x16\n" +
 	"\x11LNG_LEVEL_PERCENT\x10\xf0\x04\x12\x1d\n" +
 	"\x18DRIVER_1_CUMULATIVE_TIME\x10\xf1\x04\x12\x1d\n" +
-	"\x18DRIVER_2_CUMULATIVE_TIME\x10\xf2\x04B'Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
+	"\x18DRIVER_2_CUMULATIVE_TIME\x10\xf2\x04BD\n" +
+	"\x19com.fatehan.navzy.packetsP\x01Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
 	file_packets_packets_proto_rawDescOnce sync.Once

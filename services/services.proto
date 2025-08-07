@@ -8,6 +8,9 @@ import "devices/devices.proto";
 import "packets/packets.proto";
 import "google/protobuf/timestamp.proto";
 
+option java_package = "com.fatehan.navzy.services";
+option java_multiple_files = true;
+
 service NavzyService {
   rpc DeviceCreate(com.navzy.devices.Device) returns (com.navzy.devices.Device);
   rpc PacketIndex(PacketRequest) returns (PacketResponse);

@@ -18,7 +18,8 @@ protoc --go_out=. --go_opt=paths=source_relative \
 
 ### Move to Kotlin
 ```
-cp ../strc/{devices,packets,services}/*.proto /home/mehdi/navzy/Navzy/app/src/main/proto
+find . -type d -exec sh -c 'if ls "$1"/*.proto 1> /dev/null 2>&1; then mkdir -p "/home/mehdi/navzy/Navzy/app/src/main/proto/$(basename "$1")"; cp "$1"/*.proto "/home/mehdi/navzy/Navzy/app/src/main/proto/$(basename "$1")/"; fi' _ {} \;
+
 ```
 
 | Company   | Model | Series | Port Number |

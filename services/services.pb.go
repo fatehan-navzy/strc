@@ -206,7 +206,8 @@ const file_services_services_proto_rawDesc = "" +
 	"\apackets\x18\x01 \x03(\v2\x19.com.navzy.packets.PacketR\apackets2\xaa\x01\n" +
 	"\fNavzyService\x12D\n" +
 	"\fDeviceCreate\x12\x19.com.navzy.devices.Device\x1a\x19.com.navzy.devices.Device\x12T\n" +
-	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponseB(Z&github.com/fatehan-navzy/strc/servicesb\x06proto3"
+	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponseBF\n" +
+	"\x1acom.fatehan.navzy.servicesP\x01Z&github.com/fatehan-navzy/strc/servicesb\x06proto3"
 
 var (
 	file_services_services_proto_rawDescOnce sync.Once

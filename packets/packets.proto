@@ -7,6 +7,9 @@ import "devices/devices.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/packets";
 
+option java_package = "com.fatehan.navzy.packets";
+option java_multiple_files = true;
+
 message Result {
   enum PacketType {
     FAILED = 0;
