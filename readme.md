@@ -11,7 +11,7 @@ GOPRIVATE=github.com/fatehan-navzy go get -u github.com/fatehan-navzy/strc@lates
 ### Compile
 
 ```
-protoc --go_out=. --go_opt=paths=source_relative \
+protoc --go_out=. --validate_out="lang=go:." --go_opt=paths=source_relative \
  --go-grpc_out=. --go-grpc_opt=paths=source_relative -I ../strc \
  ../strc/{devices,packets,services}/*.proto
 ```

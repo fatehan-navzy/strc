@@ -3,6 +3,7 @@ syntax = "proto3";
 package com.navzy.devices;
 
 import "google/protobuf/timestamp.proto";
+import "third_party/validate/validate.proto";
 
 option go_package = "github.com/fatehan-navzy/strc/devices";
 
@@ -33,12 +34,16 @@ message Device {
   string id = 1;
   string dynamic_key = 2;
   string static_key  = 3;
-  uint64 imei = 4;
-  uint32 port = 5;
-  StatEnum stat = 6;
-  string title = 7;
-  ProtocolEnum protocol = 8;
-  sint32 timezone = 9;
+
+  uint64 imei = 4 [(validate.rules).uint64 = {gte: 100000000000000, lte: 999999999999999}];
+  uint32 port = 5 [(validate.rules).uint32 = {gte: 1, lte: 65535, ignore_empty: true}];
+  
+
+  StatEnum stat = 6 [(validate.rules).enum.defined_only = true];
+  string title = 7 [(validate.rules).string = {min_len: 3, max_len: 255}];
+  ProtocolEnum protocol = 8 [(validate.rules).enum = {not_in: [0]}];
+  sint32 timezone = 9 [(validate.rules).sint32 = {gte: -14, lte: 14}];
+  
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp updated_at = 11;
 }

@@ -7,6 +7,7 @@
 package devices
 
 import (
+	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -344,24 +345,26 @@ var File_devices_devices_proto protoreflect.FileDescriptor
 
 const file_devices_devices_proto_rawDesc = "" +
 	"\n" +
-	"\x15devices/devices.proto\x12\x11com.navzy.devices\x1a\x1fgoogle/protobuf/timestamp.proto\"\x80\x01\n" +
+	"\x15devices/devices.proto\x12\x11com.navzy.devices\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#third_party/validate/validate.proto\"\x80\x01\n" +
 	"\fProtocolList\x128\n" +
 	"\x04list\x18\x01 \x03(\v2$.com.navzy.devices.ProtocolList.ItemR\x04list\x1a6\n" +
 	"\x04Item\x12\x1a\n" +
 	"\bprotocol\x18\x01 \x01(\x11R\bprotocol\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\x96\x04\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"\xe8\x04\n" +
 	"\x06Device\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vdynamic_key\x18\x02 \x01(\tR\n" +
 	"dynamicKey\x12\x1d\n" +
 	"\n" +
-	"static_key\x18\x03 \x01(\tR\tstaticKey\x12\x12\n" +
-	"\x04imei\x18\x04 \x01(\x04R\x04imei\x12\x12\n" +
-	"\x04port\x18\x05 \x01(\rR\x04port\x126\n" +
-	"\x04stat\x18\x06 \x01(\x0e2\".com.navzy.devices.Device.StatEnumR\x04stat\x12\x14\n" +
-	"\x05title\x18\a \x01(\tR\x05title\x12B\n" +
-	"\bprotocol\x18\b \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumR\bprotocol\x12\x1a\n" +
-	"\btimezone\x18\t \x01(\x11R\btimezone\x129\n" +
+	"static_key\x18\x03 \x01(\tR\tstaticKey\x12*\n" +
+	"\x04imei\x18\x04 \x01(\x04B\x16\xfaB\x132\x11\x18\xff\xff\x99\xa6\xea\xaf\xe3\x01(\x80\x80郱\xde\x16R\x04imei\x12!\n" +
+	"\x04port\x18\x05 \x01(\rB\r\xfaB\n" +
+	"*\b\x18\xff\xff\x03(\x01@\x01R\x04port\x12@\n" +
+	"\x04stat\x18\x06 \x01(\x0e2\".com.navzy.devices.Device.StatEnumB\b\xfaB\x05\x82\x01\x02\x10\x01R\x04stat\x12 \n" +
+	"\x05title\x18\a \x01(\tB\n" +
+	"\xfaB\ar\x05\x10\x03\x18\xff\x01R\x05title\x12L\n" +
+	"\bprotocol\x18\b \x01(\x0e2&.com.navzy.devices.Device.ProtocolEnumB\b\xfaB\x05\x82\x01\x02 \x00R\bprotocol\x12%\n" +
+	"\btimezone\x18\t \x01(\x11B\t\xfaB\x06:\x04\x18\x1c(\x1bR\btimezone\x129\n" +
 	"\n" +
 	"created_at\x18\n" +
 	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
