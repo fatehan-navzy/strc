@@ -42,7 +42,7 @@ message Device {
   StatEnum stat = 6 [(validate.rules).enum.defined_only = true];
   string title = 7 [(validate.rules).string = {min_len: 3, max_len: 255}];
   ProtocolEnum protocol = 8 [(validate.rules).enum = {not_in: [0]}];
-  sint32 timezone = 9 [(validate.rules).sint32 = {gte: -14, lte: 14}];
+  string timezone = 9 [(validate.rules).string = {ignore_empty: true}];
   
   google.protobuf.Timestamp created_at = 10;
   google.protobuf.Timestamp updated_at = 11;

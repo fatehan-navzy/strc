@@ -254,15 +254,8 @@ func (m *Device) validate(all bool) error {
 		errors = append(errors, err)
 	}
 
-	if val := m.GetTimezone(); val < -14 || val > 14 {
-		err := DeviceValidationError{
-			field:  "Timezone",
-			reason: "value must be inside range [-14, 14]",
-		}
-		if !all {
-			return err
-		}
-		errors = append(errors, err)
+	if m.GetTimezone() != "" {
+
 	}
 
 	if all {
