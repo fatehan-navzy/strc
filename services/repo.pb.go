@@ -27,7 +27,7 @@ type DeviceStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Packet        *packets.Packet        `protobuf:"bytes,1,opt,name=packet,proto3" json:"packet,omitempty"`
 	Client        *packets.Client        `protobuf:"bytes,2,opt,name=client,proto3" json:"client,omitempty"`
-	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=updated_at,proto3" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -139,12 +139,13 @@ var File_services_repo_proto protoreflect.FileDescriptor
 
 const file_services_repo_proto_rawDesc = "" +
 	"\n" +
-	"\x13services/repo.proto\x12\x12com.navzy.services\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\x01\n" +
+	"\x13services/repo.proto\x12\x12com.navzy.services\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb0\x01\n" +
 	"\fDeviceStatus\x121\n" +
 	"\x06packet\x18\x01 \x01(\v2\x19.com.navzy.packets.PacketR\x06packet\x121\n" +
-	"\x06client\x18\x02 \x01(\v2\x19.com.navzy.packets.ClientR\x06client\x129\n" +
+	"\x06client\x18\x02 \x01(\v2\x19.com.navzy.packets.ClientR\x06client\x12:\n" +
 	"\n" +
-	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"k\n" +
+	"updated_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"updated_at\"k\n" +
 	"\tTimeRange\x120\n" +
 	"\x05start\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05start\x12,\n" +
 	"\x03end\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x03endBF\n" +

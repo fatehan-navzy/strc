@@ -11,9 +11,9 @@ option java_package = "com.fatehan.navzy.services";
 option java_multiple_files = true;
 
 message DeviceStatus {
-  com.navzy.packets.Packet packet = 1;
-  com.navzy.packets.Client client = 2;
-  google.protobuf.Timestamp updated_at = 3;
+  com.navzy.packets.Packet packet = 1 [json_name = 'packet'];
+  com.navzy.packets.Client client = 2 [json_name = 'client'];
+  google.protobuf.Timestamp updated_at = 3 [json_name = 'updated_at'];
 }
 
 message TimeRange {
