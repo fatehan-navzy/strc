@@ -20,16 +20,18 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	NavzyService_DeviceCreate_FullMethodName = "/com.navzy.services.NavzyService/DeviceCreate"
-	NavzyService_PacketIndex_FullMethodName  = "/com.navzy.services.NavzyService/PacketIndex"
+	NavzyService_PacketIndex_FullMethodName       = "/com.navzy.services.NavzyService/PacketIndex"
+	NavzyService_DeviceCreate_FullMethodName      = "/com.navzy.services.NavzyService/DeviceCreate"
+	NavzyService_DeviceStatusIndex_FullMethodName = "/com.navzy.services.NavzyService/DeviceStatusIndex"
 )
 
 // NavzyServiceClient is the client API for NavzyService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type NavzyServiceClient interface {
-	DeviceCreate(ctx context.Context, in *devices.Device, opts ...grpc.CallOption) (*devices.Device, error)
 	PacketIndex(ctx context.Context, in *PacketRequest, opts ...grpc.CallOption) (*PacketResponse, error)
+	DeviceCreate(ctx context.Context, in *devices.Device, opts ...grpc.CallOption) (*devices.Device, error)
+	DeviceStatusIndex(ctx context.Context, in *DeviceStatusRequest, opts ...grpc.CallOption) (*DeviceStatusResponse, error)
 }
 
 type navzyServiceClient struct {
@@ -38,16 +40,6 @@ type navzyServiceClient struct {
 
 func NewNavzyServiceClient(cc grpc.ClientConnInterface) NavzyServiceClient {
 	return &navzyServiceClient{cc}
-}
-
-func (c *navzyServiceClient) DeviceCreate(ctx context.Context, in *devices.Device, opts ...grpc.CallOption) (*devices.Device, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(devices.Device)
-	err := c.cc.Invoke(ctx, NavzyService_DeviceCreate_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *navzyServiceClient) PacketIndex(ctx context.Context, in *PacketRequest, opts ...grpc.CallOption) (*PacketResponse, error) {
@@ -60,12 +52,33 @@ func (c *navzyServiceClient) PacketIndex(ctx context.Context, in *PacketRequest,
 	return out, nil
 }
 
+func (c *navzyServiceClient) DeviceCreate(ctx context.Context, in *devices.Device, opts ...grpc.CallOption) (*devices.Device, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(devices.Device)
+	err := c.cc.Invoke(ctx, NavzyService_DeviceCreate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *navzyServiceClient) DeviceStatusIndex(ctx context.Context, in *DeviceStatusRequest, opts ...grpc.CallOption) (*DeviceStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeviceStatusResponse)
+	err := c.cc.Invoke(ctx, NavzyService_DeviceStatusIndex_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NavzyServiceServer is the server API for NavzyService service.
 // All implementations must embed UnimplementedNavzyServiceServer
 // for forward compatibility.
 type NavzyServiceServer interface {
-	DeviceCreate(context.Context, *devices.Device) (*devices.Device, error)
 	PacketIndex(context.Context, *PacketRequest) (*PacketResponse, error)
+	DeviceCreate(context.Context, *devices.Device) (*devices.Device, error)
+	DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error)
 	mustEmbedUnimplementedNavzyServiceServer()
 }
 
@@ -76,11 +89,14 @@ type NavzyServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedNavzyServiceServer struct{}
 
+func (UnimplementedNavzyServiceServer) PacketIndex(context.Context, *PacketRequest) (*PacketResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PacketIndex not implemented")
+}
 func (UnimplementedNavzyServiceServer) DeviceCreate(context.Context, *devices.Device) (*devices.Device, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeviceCreate not implemented")
 }
-func (UnimplementedNavzyServiceServer) PacketIndex(context.Context, *PacketRequest) (*PacketResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PacketIndex not implemented")
+func (UnimplementedNavzyServiceServer) DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeviceStatusIndex not implemented")
 }
 func (UnimplementedNavzyServiceServer) mustEmbedUnimplementedNavzyServiceServer() {}
 func (UnimplementedNavzyServiceServer) testEmbeddedByValue()                      {}
@@ -103,24 +119,6 @@ func RegisterNavzyServiceServer(s grpc.ServiceRegistrar, srv NavzyServiceServer)
 	s.RegisterService(&NavzyService_ServiceDesc, srv)
 }
 
-func _NavzyService_DeviceCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(devices.Device)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NavzyServiceServer).DeviceCreate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: NavzyService_DeviceCreate_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NavzyServiceServer).DeviceCreate(ctx, req.(*devices.Device))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _NavzyService_PacketIndex_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PacketRequest)
 	if err := dec(in); err != nil {
@@ -139,6 +137,42 @@ func _NavzyService_PacketIndex_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NavzyService_DeviceCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(devices.Device)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NavzyServiceServer).DeviceCreate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NavzyService_DeviceCreate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NavzyServiceServer).DeviceCreate(ctx, req.(*devices.Device))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _NavzyService_DeviceStatusIndex_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeviceStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NavzyServiceServer).DeviceStatusIndex(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NavzyService_DeviceStatusIndex_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NavzyServiceServer).DeviceStatusIndex(ctx, req.(*DeviceStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // NavzyService_ServiceDesc is the grpc.ServiceDesc for NavzyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -147,12 +181,16 @@ var NavzyService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*NavzyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
+			MethodName: "PacketIndex",
+			Handler:    _NavzyService_PacketIndex_Handler,
+		},
+		{
 			MethodName: "DeviceCreate",
 			Handler:    _NavzyService_DeviceCreate_Handler,
 		},
 		{
-			MethodName: "PacketIndex",
-			Handler:    _NavzyService_PacketIndex_Handler,
+			MethodName: "DeviceStatusIndex",
+			Handler:    _NavzyService_DeviceStatusIndex_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

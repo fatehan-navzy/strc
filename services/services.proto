@@ -4,30 +4,34 @@ package com.navzy.services;
 
 option go_package = "github.com/fatehan-navzy/strc/services";
 
+import "services/repo.proto";
 import "devices/devices.proto";
 import "packets/packets.proto";
-import "google/protobuf/timestamp.proto";
 
 option java_package = "com.fatehan.navzy.services";
 option java_multiple_files = true;
 
 service NavzyService {
-  rpc DeviceCreate(com.navzy.devices.Device) returns (com.navzy.devices.Device);
   rpc PacketIndex(PacketRequest) returns (PacketResponse);
+  rpc DeviceCreate(com.navzy.devices.Device) returns (com.navzy.devices.Device);
+  rpc DeviceStatusIndex(DeviceStatusRequest) returns (DeviceStatusResponse);
 }
 
-message TimeRange {
-       google.protobuf.Timestamp start = 1 [json_name = "start"];
-       google.protobuf.Timestamp end = 2 [json_name = "end"];
+message DeviceStatusRequest {
+  repeated string static_keys = 1;
+}
+
+message DeviceStatusResponse {
+  uint32 cost = 1;
+  uint32 records = 2;
+  repeated DeviceStatus list = 3;
 }
 
 message PacketRequest {
-     TimeRange timestamp = 1 [json_name = "time"];
-     string device_id = 2 [json_name = "device_id"];
-     google.protobuf.Timestamp from = 3 [json_name = "from"];
-     optional uint32 limit = 4 [json_name = "limit"];
+  TimeRange timestamp = 1;
+  repeated string static_key = 2;
 }
 
 message PacketResponse {
-     repeated com.navzy.packets.Packet packets = 1 [json_name = "packets"];
+  repeated com.navzy.packets.Packet packets = 1;
 }

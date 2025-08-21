@@ -35,99 +35,42 @@ var (
 	_ = sort.Sort
 )
 
-// Validate checks the field values on TimeRange with the rules defined in the
-// proto definition for this message. If any rules are violated, the first
-// error encountered is returned, or nil if there are no violations.
-func (m *TimeRange) Validate() error {
+// Validate checks the field values on DeviceStatusRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *DeviceStatusRequest) Validate() error {
 	return m.validate(false)
 }
 
-// ValidateAll checks the field values on TimeRange with the rules defined in
-// the proto definition for this message. If any rules are violated, the
-// result is a list of violation errors wrapped in TimeRangeMultiError, or nil
-// if none found.
-func (m *TimeRange) ValidateAll() error {
+// ValidateAll checks the field values on DeviceStatusRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// DeviceStatusRequestMultiError, or nil if none found.
+func (m *DeviceStatusRequest) ValidateAll() error {
 	return m.validate(true)
 }
 
-func (m *TimeRange) validate(all bool) error {
+func (m *DeviceStatusRequest) validate(all bool) error {
 	if m == nil {
 		return nil
 	}
 
 	var errors []error
 
-	if all {
-		switch v := interface{}(m.GetStart()).(type) {
-		case interface{ ValidateAll() error }:
-			if err := v.ValidateAll(); err != nil {
-				errors = append(errors, TimeRangeValidationError{
-					field:  "Start",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		case interface{ Validate() error }:
-			if err := v.Validate(); err != nil {
-				errors = append(errors, TimeRangeValidationError{
-					field:  "Start",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		}
-	} else if v, ok := interface{}(m.GetStart()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TimeRangeValidationError{
-				field:  "Start",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if all {
-		switch v := interface{}(m.GetEnd()).(type) {
-		case interface{ ValidateAll() error }:
-			if err := v.ValidateAll(); err != nil {
-				errors = append(errors, TimeRangeValidationError{
-					field:  "End",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		case interface{ Validate() error }:
-			if err := v.Validate(); err != nil {
-				errors = append(errors, TimeRangeValidationError{
-					field:  "End",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		}
-	} else if v, ok := interface{}(m.GetEnd()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TimeRangeValidationError{
-				field:  "End",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	if len(errors) > 0 {
-		return TimeRangeMultiError(errors)
+		return DeviceStatusRequestMultiError(errors)
 	}
 
 	return nil
 }
 
-// TimeRangeMultiError is an error wrapping multiple validation errors returned
-// by TimeRange.ValidateAll() if the designated constraints aren't met.
-type TimeRangeMultiError []error
+// DeviceStatusRequestMultiError is an error wrapping multiple validation
+// errors returned by DeviceStatusRequest.ValidateAll() if the designated
+// constraints aren't met.
+type DeviceStatusRequestMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
-func (m TimeRangeMultiError) Error() string {
+func (m DeviceStatusRequestMultiError) Error() string {
 	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
@@ -136,11 +79,11 @@ func (m TimeRangeMultiError) Error() string {
 }
 
 // AllErrors returns a list of validation violation errors.
-func (m TimeRangeMultiError) AllErrors() []error { return m }
+func (m DeviceStatusRequestMultiError) AllErrors() []error { return m }
 
-// TimeRangeValidationError is the validation error returned by
-// TimeRange.Validate if the designated constraints aren't met.
-type TimeRangeValidationError struct {
+// DeviceStatusRequestValidationError is the validation error returned by
+// DeviceStatusRequest.Validate if the designated constraints aren't met.
+type DeviceStatusRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -148,22 +91,24 @@ type TimeRangeValidationError struct {
 }
 
 // Field function returns field value.
-func (e TimeRangeValidationError) Field() string { return e.field }
+func (e DeviceStatusRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e TimeRangeValidationError) Reason() string { return e.reason }
+func (e DeviceStatusRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e TimeRangeValidationError) Cause() error { return e.cause }
+func (e DeviceStatusRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e TimeRangeValidationError) Key() bool { return e.key }
+func (e DeviceStatusRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e TimeRangeValidationError) ErrorName() string { return "TimeRangeValidationError" }
+func (e DeviceStatusRequestValidationError) ErrorName() string {
+	return "DeviceStatusRequestValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e TimeRangeValidationError) Error() string {
+func (e DeviceStatusRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -175,14 +120,14 @@ func (e TimeRangeValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sTimeRange.%s: %s%s",
+		"invalid %sDeviceStatusRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = TimeRangeValidationError{}
+var _ error = DeviceStatusRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -190,7 +135,147 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = TimeRangeValidationError{}
+} = DeviceStatusRequestValidationError{}
+
+// Validate checks the field values on DeviceStatusResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the first error encountered is returned, or nil if there are no violations.
+func (m *DeviceStatusResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on DeviceStatusResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// DeviceStatusResponseMultiError, or nil if none found.
+func (m *DeviceStatusResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *DeviceStatusResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Cost
+
+	// no validation rules for Records
+
+	for idx, item := range m.GetList() {
+		_, _ = idx, item
+
+		if all {
+			switch v := interface{}(item).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, DeviceStatusResponseValidationError{
+						field:  fmt.Sprintf("List[%v]", idx),
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, DeviceStatusResponseValidationError{
+						field:  fmt.Sprintf("List[%v]", idx),
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			}
+		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return DeviceStatusResponseValidationError{
+					field:  fmt.Sprintf("List[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	if len(errors) > 0 {
+		return DeviceStatusResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// DeviceStatusResponseMultiError is an error wrapping multiple validation
+// errors returned by DeviceStatusResponse.ValidateAll() if the designated
+// constraints aren't met.
+type DeviceStatusResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m DeviceStatusResponseMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m DeviceStatusResponseMultiError) AllErrors() []error { return m }
+
+// DeviceStatusResponseValidationError is the validation error returned by
+// DeviceStatusResponse.Validate if the designated constraints aren't met.
+type DeviceStatusResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DeviceStatusResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DeviceStatusResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DeviceStatusResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DeviceStatusResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DeviceStatusResponseValidationError) ErrorName() string {
+	return "DeviceStatusResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DeviceStatusResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDeviceStatusResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DeviceStatusResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DeviceStatusResponseValidationError{}
 
 // Validate checks the field values on PacketRequest with the rules defined in
 // the proto definition for this message. If any rules are violated, the first
@@ -241,41 +326,6 @@ func (m *PacketRequest) validate(all bool) error {
 				cause:  err,
 			}
 		}
-	}
-
-	// no validation rules for DeviceId
-
-	if all {
-		switch v := interface{}(m.GetFrom()).(type) {
-		case interface{ ValidateAll() error }:
-			if err := v.ValidateAll(); err != nil {
-				errors = append(errors, PacketRequestValidationError{
-					field:  "From",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		case interface{ Validate() error }:
-			if err := v.Validate(); err != nil {
-				errors = append(errors, PacketRequestValidationError{
-					field:  "From",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		}
-	} else if v, ok := interface{}(m.GetFrom()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return PacketRequestValidationError{
-				field:  "From",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if m.Limit != nil {
-		// no validation rules for Limit
 	}
 
 	if len(errors) > 0 {

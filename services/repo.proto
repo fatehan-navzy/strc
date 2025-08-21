@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.navzy.services;
+
+option go_package = "github.com/fatehan-navzy/strc/services";
+
+import "packets/packets.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.fatehan.navzy.services";
+option java_multiple_files = true;
+
+message DeviceStatus {
+  com.navzy.packets.Packet packet = 1;
+  com.navzy.packets.Client client = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message TimeRange {
+  google.protobuf.Timestamp start = 1;
+  google.protobuf.Timestamp end = 2;
+}

@@ -11,7 +11,6 @@ import (
 	packets "github.com/fatehan-navzy/strc/packets"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -24,28 +23,27 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type TimeRange struct {
+type DeviceStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Start         *timestamppb.Timestamp `protobuf:"bytes,1,opt,name=start,proto3" json:"start,omitempty"`
-	End           *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty"`
+	StaticKeys    []string               `protobuf:"bytes,1,rep,name=static_keys,json=staticKeys,proto3" json:"static_keys,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *TimeRange) Reset() {
-	*x = TimeRange{}
+func (x *DeviceStatusRequest) Reset() {
+	*x = DeviceStatusRequest{}
 	mi := &file_services_services_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *TimeRange) String() string {
+func (x *DeviceStatusRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*TimeRange) ProtoMessage() {}
+func (*DeviceStatusRequest) ProtoMessage() {}
 
-func (x *TimeRange) ProtoReflect() protoreflect.Message {
+func (x *DeviceStatusRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_services_services_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -57,38 +55,89 @@ func (x *TimeRange) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use TimeRange.ProtoReflect.Descriptor instead.
-func (*TimeRange) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeviceStatusRequest.ProtoReflect.Descriptor instead.
+func (*DeviceStatusRequest) Descriptor() ([]byte, []int) {
 	return file_services_services_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *TimeRange) GetStart() *timestamppb.Timestamp {
+func (x *DeviceStatusRequest) GetStaticKeys() []string {
 	if x != nil {
-		return x.Start
+		return x.StaticKeys
 	}
 	return nil
 }
 
-func (x *TimeRange) GetEnd() *timestamppb.Timestamp {
+type DeviceStatusResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Cost          uint32                 `protobuf:"varint,1,opt,name=cost,proto3" json:"cost,omitempty"`
+	Records       uint32                 `protobuf:"varint,2,opt,name=records,proto3" json:"records,omitempty"`
+	List          []*DeviceStatus        `protobuf:"bytes,3,rep,name=list,proto3" json:"list,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceStatusResponse) Reset() {
+	*x = DeviceStatusResponse{}
+	mi := &file_services_services_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceStatusResponse) ProtoMessage() {}
+
+func (x *DeviceStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_services_services_proto_msgTypes[1]
 	if x != nil {
-		return x.End
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceStatusResponse.ProtoReflect.Descriptor instead.
+func (*DeviceStatusResponse) Descriptor() ([]byte, []int) {
+	return file_services_services_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *DeviceStatusResponse) GetCost() uint32 {
+	if x != nil {
+		return x.Cost
+	}
+	return 0
+}
+
+func (x *DeviceStatusResponse) GetRecords() uint32 {
+	if x != nil {
+		return x.Records
+	}
+	return 0
+}
+
+func (x *DeviceStatusResponse) GetList() []*DeviceStatus {
+	if x != nil {
+		return x.List
 	}
 	return nil
 }
 
 type PacketRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Timestamp     *TimeRange             `protobuf:"bytes,1,opt,name=timestamp,json=time,proto3" json:"timestamp,omitempty"`
-	DeviceId      string                 `protobuf:"bytes,2,opt,name=device_id,proto3" json:"device_id,omitempty"`
-	From          *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=from,proto3" json:"from,omitempty"`
-	Limit         *uint32                `protobuf:"varint,4,opt,name=limit,proto3,oneof" json:"limit,omitempty"`
+	Timestamp     *TimeRange             `protobuf:"bytes,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	StaticKey     []string               `protobuf:"bytes,2,rep,name=static_key,json=staticKey,proto3" json:"static_key,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PacketRequest) Reset() {
 	*x = PacketRequest{}
-	mi := &file_services_services_proto_msgTypes[1]
+	mi := &file_services_services_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -100,7 +149,7 @@ func (x *PacketRequest) String() string {
 func (*PacketRequest) ProtoMessage() {}
 
 func (x *PacketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[1]
+	mi := &file_services_services_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -113,7 +162,7 @@ func (x *PacketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PacketRequest.ProtoReflect.Descriptor instead.
 func (*PacketRequest) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{1}
+	return file_services_services_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PacketRequest) GetTimestamp() *TimeRange {
@@ -123,25 +172,11 @@ func (x *PacketRequest) GetTimestamp() *TimeRange {
 	return nil
 }
 
-func (x *PacketRequest) GetDeviceId() string {
+func (x *PacketRequest) GetStaticKey() []string {
 	if x != nil {
-		return x.DeviceId
-	}
-	return ""
-}
-
-func (x *PacketRequest) GetFrom() *timestamppb.Timestamp {
-	if x != nil {
-		return x.From
+		return x.StaticKey
 	}
 	return nil
-}
-
-func (x *PacketRequest) GetLimit() uint32 {
-	if x != nil && x.Limit != nil {
-		return *x.Limit
-	}
-	return 0
 }
 
 type PacketResponse struct {
@@ -153,7 +188,7 @@ type PacketResponse struct {
 
 func (x *PacketResponse) Reset() {
 	*x = PacketResponse{}
-	mi := &file_services_services_proto_msgTypes[2]
+	mi := &file_services_services_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -165,7 +200,7 @@ func (x *PacketResponse) String() string {
 func (*PacketResponse) ProtoMessage() {}
 
 func (x *PacketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[2]
+	mi := &file_services_services_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -178,7 +213,7 @@ func (x *PacketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PacketResponse.ProtoReflect.Descriptor instead.
 func (*PacketResponse) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{2}
+	return file_services_services_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *PacketResponse) GetPackets() []*packets.Packet {
@@ -192,21 +227,24 @@ var File_services_services_proto protoreflect.FileDescriptor
 
 const file_services_services_proto_rawDesc = "" +
 	"\n" +
-	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"k\n" +
-	"\tTimeRange\x120\n" +
-	"\x05start\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\x05start\x12,\n" +
-	"\x03end\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\x03end\"\xba\x01\n" +
-	"\rPacketRequest\x126\n" +
-	"\ttimestamp\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\x04time\x12\x1c\n" +
-	"\tdevice_id\x18\x02 \x01(\tR\tdevice_id\x12.\n" +
-	"\x04from\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x04from\x12\x19\n" +
-	"\x05limit\x18\x04 \x01(\rH\x00R\x05limit\x88\x01\x01B\b\n" +
-	"\x06_limit\"E\n" +
+	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\"6\n" +
+	"\x13DeviceStatusRequest\x12\x1f\n" +
+	"\vstatic_keys\x18\x01 \x03(\tR\n" +
+	"staticKeys\"z\n" +
+	"\x14DeviceStatusResponse\x12\x12\n" +
+	"\x04cost\x18\x01 \x01(\rR\x04cost\x12\x18\n" +
+	"\arecords\x18\x02 \x01(\rR\arecords\x124\n" +
+	"\x04list\x18\x03 \x03(\v2 .com.navzy.services.DeviceStatusR\x04list\"k\n" +
+	"\rPacketRequest\x12;\n" +
+	"\ttimestamp\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\ttimestamp\x12\x1d\n" +
+	"\n" +
+	"static_key\x18\x02 \x03(\tR\tstaticKey\"E\n" +
 	"\x0ePacketResponse\x123\n" +
-	"\apackets\x18\x01 \x03(\v2\x19.com.navzy.packets.PacketR\apackets2\xaa\x01\n" +
-	"\fNavzyService\x12D\n" +
-	"\fDeviceCreate\x12\x19.com.navzy.devices.Device\x1a\x19.com.navzy.devices.Device\x12T\n" +
-	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponseBF\n" +
+	"\apackets\x18\x01 \x03(\v2\x19.com.navzy.packets.PacketR\apackets2\x92\x02\n" +
+	"\fNavzyService\x12T\n" +
+	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponse\x12D\n" +
+	"\fDeviceCreate\x12\x19.com.navzy.devices.Device\x1a\x19.com.navzy.devices.Device\x12f\n" +
+	"\x11DeviceStatusIndex\x12'.com.navzy.services.DeviceStatusRequest\x1a(.com.navzy.services.DeviceStatusResponseBF\n" +
 	"\x1acom.fatehan.navzy.servicesP\x01Z&github.com/fatehan-navzy/strc/servicesb\x06proto3"
 
 var (
@@ -221,30 +259,32 @@ func file_services_services_proto_rawDescGZIP() []byte {
 	return file_services_services_proto_rawDescData
 }
 
-var file_services_services_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_services_services_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_services_services_proto_goTypes = []any{
-	(*TimeRange)(nil),             // 0: com.navzy.services.TimeRange
-	(*PacketRequest)(nil),         // 1: com.navzy.services.PacketRequest
-	(*PacketResponse)(nil),        // 2: com.navzy.services.PacketResponse
-	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
-	(*packets.Packet)(nil),        // 4: com.navzy.packets.Packet
-	(*devices.Device)(nil),        // 5: com.navzy.devices.Device
+	(*DeviceStatusRequest)(nil),  // 0: com.navzy.services.DeviceStatusRequest
+	(*DeviceStatusResponse)(nil), // 1: com.navzy.services.DeviceStatusResponse
+	(*PacketRequest)(nil),        // 2: com.navzy.services.PacketRequest
+	(*PacketResponse)(nil),       // 3: com.navzy.services.PacketResponse
+	(*DeviceStatus)(nil),         // 4: com.navzy.services.DeviceStatus
+	(*TimeRange)(nil),            // 5: com.navzy.services.TimeRange
+	(*packets.Packet)(nil),       // 6: com.navzy.packets.Packet
+	(*devices.Device)(nil),       // 7: com.navzy.devices.Device
 }
 var file_services_services_proto_depIdxs = []int32{
-	3, // 0: com.navzy.services.TimeRange.start:type_name -> google.protobuf.Timestamp
-	3, // 1: com.navzy.services.TimeRange.end:type_name -> google.protobuf.Timestamp
-	0, // 2: com.navzy.services.PacketRequest.timestamp:type_name -> com.navzy.services.TimeRange
-	3, // 3: com.navzy.services.PacketRequest.from:type_name -> google.protobuf.Timestamp
-	4, // 4: com.navzy.services.PacketResponse.packets:type_name -> com.navzy.packets.Packet
-	5, // 5: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
-	1, // 6: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
-	5, // 7: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
-	2, // 8: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
-	7, // [7:9] is the sub-list for method output_type
-	5, // [5:7] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	4, // 0: com.navzy.services.DeviceStatusResponse.list:type_name -> com.navzy.services.DeviceStatus
+	5, // 1: com.navzy.services.PacketRequest.timestamp:type_name -> com.navzy.services.TimeRange
+	6, // 2: com.navzy.services.PacketResponse.packets:type_name -> com.navzy.packets.Packet
+	2, // 3: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
+	7, // 4: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
+	0, // 5: com.navzy.services.NavzyService.DeviceStatusIndex:input_type -> com.navzy.services.DeviceStatusRequest
+	3, // 6: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
+	7, // 7: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
+	1, // 8: com.navzy.services.NavzyService.DeviceStatusIndex:output_type -> com.navzy.services.DeviceStatusResponse
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_services_services_proto_init() }
@@ -252,14 +292,14 @@ func file_services_services_proto_init() {
 	if File_services_services_proto != nil {
 		return
 	}
-	file_services_services_proto_msgTypes[1].OneofWrappers = []any{}
+	file_services_repo_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_services_services_proto_rawDesc), len(file_services_services_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
