@@ -23,6 +23,8 @@ const (
 	NavzyService_PacketIndex_FullMethodName       = "/com.navzy.services.NavzyService/PacketIndex"
 	NavzyService_DeviceCreate_FullMethodName      = "/com.navzy.services.NavzyService/DeviceCreate"
 	NavzyService_DeviceStatusIndex_FullMethodName = "/com.navzy.services.NavzyService/DeviceStatusIndex"
+	NavzyService_DeviceImport_FullMethodName      = "/com.navzy.services.NavzyService/DeviceImport"
+	NavzyService_DeviceExport_FullMethodName      = "/com.navzy.services.NavzyService/DeviceExport"
 )
 
 // NavzyServiceClient is the client API for NavzyService service.
@@ -32,6 +34,8 @@ type NavzyServiceClient interface {
 	PacketIndex(ctx context.Context, in *PacketRequest, opts ...grpc.CallOption) (*PacketResponse, error)
 	DeviceCreate(ctx context.Context, in *devices.Device, opts ...grpc.CallOption) (*devices.Device, error)
 	DeviceStatusIndex(ctx context.Context, in *DeviceStatusRequest, opts ...grpc.CallOption) (*DeviceStatusResponse, error)
+	DeviceImport(ctx context.Context, in *DeviceImportRequest, opts ...grpc.CallOption) (*DeviceImportResponse, error)
+	DeviceExport(ctx context.Context, in *DeviceExportRequest, opts ...grpc.CallOption) (*DeviceExportResponse, error)
 }
 
 type navzyServiceClient struct {
@@ -72,6 +76,26 @@ func (c *navzyServiceClient) DeviceStatusIndex(ctx context.Context, in *DeviceSt
 	return out, nil
 }
 
+func (c *navzyServiceClient) DeviceImport(ctx context.Context, in *DeviceImportRequest, opts ...grpc.CallOption) (*DeviceImportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeviceImportResponse)
+	err := c.cc.Invoke(ctx, NavzyService_DeviceImport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *navzyServiceClient) DeviceExport(ctx context.Context, in *DeviceExportRequest, opts ...grpc.CallOption) (*DeviceExportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeviceExportResponse)
+	err := c.cc.Invoke(ctx, NavzyService_DeviceExport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // NavzyServiceServer is the server API for NavzyService service.
 // All implementations must embed UnimplementedNavzyServiceServer
 // for forward compatibility.
@@ -79,6 +103,8 @@ type NavzyServiceServer interface {
 	PacketIndex(context.Context, *PacketRequest) (*PacketResponse, error)
 	DeviceCreate(context.Context, *devices.Device) (*devices.Device, error)
 	DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error)
+	DeviceImport(context.Context, *DeviceImportRequest) (*DeviceImportResponse, error)
+	DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error)
 	mustEmbedUnimplementedNavzyServiceServer()
 }
 
@@ -97,6 +123,12 @@ func (UnimplementedNavzyServiceServer) DeviceCreate(context.Context, *devices.De
 }
 func (UnimplementedNavzyServiceServer) DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeviceStatusIndex not implemented")
+}
+func (UnimplementedNavzyServiceServer) DeviceImport(context.Context, *DeviceImportRequest) (*DeviceImportResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeviceImport not implemented")
+}
+func (UnimplementedNavzyServiceServer) DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeviceExport not implemented")
 }
 func (UnimplementedNavzyServiceServer) mustEmbedUnimplementedNavzyServiceServer() {}
 func (UnimplementedNavzyServiceServer) testEmbeddedByValue()                      {}
@@ -173,6 +205,42 @@ func _NavzyService_DeviceStatusIndex_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NavzyService_DeviceImport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeviceImportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NavzyServiceServer).DeviceImport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NavzyService_DeviceImport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NavzyServiceServer).DeviceImport(ctx, req.(*DeviceImportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _NavzyService_DeviceExport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeviceExportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(NavzyServiceServer).DeviceExport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: NavzyService_DeviceExport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(NavzyServiceServer).DeviceExport(ctx, req.(*DeviceExportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // NavzyService_ServiceDesc is the grpc.ServiceDesc for NavzyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -191,6 +259,14 @@ var NavzyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeviceStatusIndex",
 			Handler:    _NavzyService_DeviceStatusIndex_Handler,
+		},
+		{
+			MethodName: "DeviceImport",
+			Handler:    _NavzyService_DeviceImport_Handler,
+		},
+		{
+			MethodName: "DeviceExport",
+			Handler:    _NavzyService_DeviceExport_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

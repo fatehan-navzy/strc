@@ -15,10 +15,28 @@ service NavzyService {
   rpc PacketIndex(PacketRequest) returns (PacketResponse);
   rpc DeviceCreate(com.navzy.devices.Device) returns (com.navzy.devices.Device);
   rpc DeviceStatusIndex(DeviceStatusRequest) returns (DeviceStatusResponse);
+  rpc DeviceImport(DeviceImportRequest) returns (DeviceImportResponse);
+  rpc DeviceExport(DeviceExportRequest) returns (DeviceExportResponse);
+}
+
+message DeviceExportResponse {
+  string encoded = 1;
+}
+
+message DeviceExportRequest {
+  repeated string dynamic_keys = 1;
+}
+
+message DeviceImportRequest {
+  string encoded = 1;
+}
+
+message DeviceImportResponse {
+  repeated com.navzy.devices.Device devices = 1;
 }
 
 message DeviceStatusRequest {
-  repeated string static_keys = 1;
+  repeated string dynamic_keys = 1;
 }
 
 message DeviceStatusResponse {
@@ -29,7 +47,7 @@ message DeviceStatusResponse {
 
 message PacketRequest {
   TimeRange timestamp = 1;
-  repeated string static_key = 2;
+  repeated string dynamic_keys = 2;
 }
 
 message PacketResponse {

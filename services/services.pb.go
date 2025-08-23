@@ -23,16 +23,192 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type DeviceExportResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Encoded       string                 `protobuf:"bytes,1,opt,name=encoded,proto3" json:"encoded,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceExportResponse) Reset() {
+	*x = DeviceExportResponse{}
+	mi := &file_services_services_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceExportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceExportResponse) ProtoMessage() {}
+
+func (x *DeviceExportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_services_services_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceExportResponse.ProtoReflect.Descriptor instead.
+func (*DeviceExportResponse) Descriptor() ([]byte, []int) {
+	return file_services_services_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *DeviceExportResponse) GetEncoded() string {
+	if x != nil {
+		return x.Encoded
+	}
+	return ""
+}
+
+type DeviceExportRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,json=dynamicKeys,proto3" json:"dynamic_keys,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceExportRequest) Reset() {
+	*x = DeviceExportRequest{}
+	mi := &file_services_services_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceExportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceExportRequest) ProtoMessage() {}
+
+func (x *DeviceExportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_services_services_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceExportRequest.ProtoReflect.Descriptor instead.
+func (*DeviceExportRequest) Descriptor() ([]byte, []int) {
+	return file_services_services_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *DeviceExportRequest) GetDynamicKeys() []string {
+	if x != nil {
+		return x.DynamicKeys
+	}
+	return nil
+}
+
+type DeviceImportRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Encoded       string                 `protobuf:"bytes,1,opt,name=encoded,proto3" json:"encoded,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceImportRequest) Reset() {
+	*x = DeviceImportRequest{}
+	mi := &file_services_services_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceImportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceImportRequest) ProtoMessage() {}
+
+func (x *DeviceImportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_services_services_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceImportRequest.ProtoReflect.Descriptor instead.
+func (*DeviceImportRequest) Descriptor() ([]byte, []int) {
+	return file_services_services_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DeviceImportRequest) GetEncoded() string {
+	if x != nil {
+		return x.Encoded
+	}
+	return ""
+}
+
+type DeviceImportResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Devices       []*devices.Device      `protobuf:"bytes,1,rep,name=devices,proto3" json:"devices,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeviceImportResponse) Reset() {
+	*x = DeviceImportResponse{}
+	mi := &file_services_services_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeviceImportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeviceImportResponse) ProtoMessage() {}
+
+func (x *DeviceImportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_services_services_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeviceImportResponse.ProtoReflect.Descriptor instead.
+func (*DeviceImportResponse) Descriptor() ([]byte, []int) {
+	return file_services_services_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *DeviceImportResponse) GetDevices() []*devices.Device {
+	if x != nil {
+		return x.Devices
+	}
+	return nil
+}
+
 type DeviceStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	StaticKeys    []string               `protobuf:"bytes,1,rep,name=static_keys,json=staticKeys,proto3" json:"static_keys,omitempty"`
+	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,json=dynamicKeys,proto3" json:"dynamic_keys,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DeviceStatusRequest) Reset() {
 	*x = DeviceStatusRequest{}
-	mi := &file_services_services_proto_msgTypes[0]
+	mi := &file_services_services_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +220,7 @@ func (x *DeviceStatusRequest) String() string {
 func (*DeviceStatusRequest) ProtoMessage() {}
 
 func (x *DeviceStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[0]
+	mi := &file_services_services_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,12 +233,12 @@ func (x *DeviceStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceStatusRequest.ProtoReflect.Descriptor instead.
 func (*DeviceStatusRequest) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{0}
+	return file_services_services_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *DeviceStatusRequest) GetStaticKeys() []string {
+func (x *DeviceStatusRequest) GetDynamicKeys() []string {
 	if x != nil {
-		return x.StaticKeys
+		return x.DynamicKeys
 	}
 	return nil
 }
@@ -78,7 +254,7 @@ type DeviceStatusResponse struct {
 
 func (x *DeviceStatusResponse) Reset() {
 	*x = DeviceStatusResponse{}
-	mi := &file_services_services_proto_msgTypes[1]
+	mi := &file_services_services_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -90,7 +266,7 @@ func (x *DeviceStatusResponse) String() string {
 func (*DeviceStatusResponse) ProtoMessage() {}
 
 func (x *DeviceStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[1]
+	mi := &file_services_services_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -103,7 +279,7 @@ func (x *DeviceStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceStatusResponse.ProtoReflect.Descriptor instead.
 func (*DeviceStatusResponse) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{1}
+	return file_services_services_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeviceStatusResponse) GetCost() uint32 {
@@ -130,14 +306,14 @@ func (x *DeviceStatusResponse) GetList() []*DeviceStatus {
 type PacketRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Timestamp     *TimeRange             `protobuf:"bytes,1,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	StaticKey     []string               `protobuf:"bytes,2,rep,name=static_key,json=staticKey,proto3" json:"static_key,omitempty"`
+	DynamicKeys   []string               `protobuf:"bytes,2,rep,name=dynamic_keys,json=dynamicKeys,proto3" json:"dynamic_keys,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PacketRequest) Reset() {
 	*x = PacketRequest{}
-	mi := &file_services_services_proto_msgTypes[2]
+	mi := &file_services_services_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -149,7 +325,7 @@ func (x *PacketRequest) String() string {
 func (*PacketRequest) ProtoMessage() {}
 
 func (x *PacketRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[2]
+	mi := &file_services_services_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -162,7 +338,7 @@ func (x *PacketRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PacketRequest.ProtoReflect.Descriptor instead.
 func (*PacketRequest) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{2}
+	return file_services_services_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PacketRequest) GetTimestamp() *TimeRange {
@@ -172,9 +348,9 @@ func (x *PacketRequest) GetTimestamp() *TimeRange {
 	return nil
 }
 
-func (x *PacketRequest) GetStaticKey() []string {
+func (x *PacketRequest) GetDynamicKeys() []string {
 	if x != nil {
-		return x.StaticKey
+		return x.DynamicKeys
 	}
 	return nil
 }
@@ -188,7 +364,7 @@ type PacketResponse struct {
 
 func (x *PacketResponse) Reset() {
 	*x = PacketResponse{}
-	mi := &file_services_services_proto_msgTypes[3]
+	mi := &file_services_services_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -200,7 +376,7 @@ func (x *PacketResponse) String() string {
 func (*PacketResponse) ProtoMessage() {}
 
 func (x *PacketResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_services_services_proto_msgTypes[3]
+	mi := &file_services_services_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -213,7 +389,7 @@ func (x *PacketResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PacketResponse.ProtoReflect.Descriptor instead.
 func (*PacketResponse) Descriptor() ([]byte, []int) {
-	return file_services_services_proto_rawDescGZIP(), []int{3}
+	return file_services_services_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PacketResponse) GetPackets() []*packets.Packet {
@@ -227,24 +403,32 @@ var File_services_services_proto protoreflect.FileDescriptor
 
 const file_services_services_proto_rawDesc = "" +
 	"\n" +
-	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\"6\n" +
-	"\x13DeviceStatusRequest\x12\x1f\n" +
-	"\vstatic_keys\x18\x01 \x03(\tR\n" +
-	"staticKeys\"z\n" +
+	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\"0\n" +
+	"\x14DeviceExportResponse\x12\x18\n" +
+	"\aencoded\x18\x01 \x01(\tR\aencoded\"8\n" +
+	"\x13DeviceExportRequest\x12!\n" +
+	"\fdynamic_keys\x18\x01 \x03(\tR\vdynamicKeys\"/\n" +
+	"\x13DeviceImportRequest\x12\x18\n" +
+	"\aencoded\x18\x01 \x01(\tR\aencoded\"K\n" +
+	"\x14DeviceImportResponse\x123\n" +
+	"\adevices\x18\x01 \x03(\v2\x19.com.navzy.devices.DeviceR\adevices\"8\n" +
+	"\x13DeviceStatusRequest\x12!\n" +
+	"\fdynamic_keys\x18\x01 \x03(\tR\vdynamicKeys\"z\n" +
 	"\x14DeviceStatusResponse\x12\x12\n" +
 	"\x04cost\x18\x01 \x01(\rR\x04cost\x12\x18\n" +
 	"\arecords\x18\x02 \x01(\rR\arecords\x124\n" +
-	"\x04list\x18\x03 \x03(\v2 .com.navzy.services.DeviceStatusR\x04list\"k\n" +
+	"\x04list\x18\x03 \x03(\v2 .com.navzy.services.DeviceStatusR\x04list\"o\n" +
 	"\rPacketRequest\x12;\n" +
-	"\ttimestamp\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\ttimestamp\x12\x1d\n" +
-	"\n" +
-	"static_key\x18\x02 \x03(\tR\tstaticKey\"E\n" +
+	"\ttimestamp\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\ttimestamp\x12!\n" +
+	"\fdynamic_keys\x18\x02 \x03(\tR\vdynamicKeys\"E\n" +
 	"\x0ePacketResponse\x123\n" +
-	"\apackets\x18\x01 \x03(\v2\x19.com.navzy.packets.PacketR\apackets2\x92\x02\n" +
+	"\apackets\x18\x01 \x03(\v2\x19.com.navzy.packets.PacketR\apackets2\xd8\x03\n" +
 	"\fNavzyService\x12T\n" +
 	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponse\x12D\n" +
 	"\fDeviceCreate\x12\x19.com.navzy.devices.Device\x1a\x19.com.navzy.devices.Device\x12f\n" +
-	"\x11DeviceStatusIndex\x12'.com.navzy.services.DeviceStatusRequest\x1a(.com.navzy.services.DeviceStatusResponseBF\n" +
+	"\x11DeviceStatusIndex\x12'.com.navzy.services.DeviceStatusRequest\x1a(.com.navzy.services.DeviceStatusResponse\x12a\n" +
+	"\fDeviceImport\x12'.com.navzy.services.DeviceImportRequest\x1a(.com.navzy.services.DeviceImportResponse\x12a\n" +
+	"\fDeviceExport\x12'.com.navzy.services.DeviceExportRequest\x1a(.com.navzy.services.DeviceExportResponseBF\n" +
 	"\x1acom.fatehan.navzy.servicesP\x01Z&github.com/fatehan-navzy/strc/servicesb\x06proto3"
 
 var (
@@ -259,32 +443,41 @@ func file_services_services_proto_rawDescGZIP() []byte {
 	return file_services_services_proto_rawDescData
 }
 
-var file_services_services_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_services_services_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_services_services_proto_goTypes = []any{
-	(*DeviceStatusRequest)(nil),  // 0: com.navzy.services.DeviceStatusRequest
-	(*DeviceStatusResponse)(nil), // 1: com.navzy.services.DeviceStatusResponse
-	(*PacketRequest)(nil),        // 2: com.navzy.services.PacketRequest
-	(*PacketResponse)(nil),       // 3: com.navzy.services.PacketResponse
-	(*DeviceStatus)(nil),         // 4: com.navzy.services.DeviceStatus
-	(*TimeRange)(nil),            // 5: com.navzy.services.TimeRange
-	(*packets.Packet)(nil),       // 6: com.navzy.packets.Packet
-	(*devices.Device)(nil),       // 7: com.navzy.devices.Device
+	(*DeviceExportResponse)(nil), // 0: com.navzy.services.DeviceExportResponse
+	(*DeviceExportRequest)(nil),  // 1: com.navzy.services.DeviceExportRequest
+	(*DeviceImportRequest)(nil),  // 2: com.navzy.services.DeviceImportRequest
+	(*DeviceImportResponse)(nil), // 3: com.navzy.services.DeviceImportResponse
+	(*DeviceStatusRequest)(nil),  // 4: com.navzy.services.DeviceStatusRequest
+	(*DeviceStatusResponse)(nil), // 5: com.navzy.services.DeviceStatusResponse
+	(*PacketRequest)(nil),        // 6: com.navzy.services.PacketRequest
+	(*PacketResponse)(nil),       // 7: com.navzy.services.PacketResponse
+	(*devices.Device)(nil),       // 8: com.navzy.devices.Device
+	(*DeviceStatus)(nil),         // 9: com.navzy.services.DeviceStatus
+	(*TimeRange)(nil),            // 10: com.navzy.services.TimeRange
+	(*packets.Packet)(nil),       // 11: com.navzy.packets.Packet
 }
 var file_services_services_proto_depIdxs = []int32{
-	4, // 0: com.navzy.services.DeviceStatusResponse.list:type_name -> com.navzy.services.DeviceStatus
-	5, // 1: com.navzy.services.PacketRequest.timestamp:type_name -> com.navzy.services.TimeRange
-	6, // 2: com.navzy.services.PacketResponse.packets:type_name -> com.navzy.packets.Packet
-	2, // 3: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
-	7, // 4: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
-	0, // 5: com.navzy.services.NavzyService.DeviceStatusIndex:input_type -> com.navzy.services.DeviceStatusRequest
-	3, // 6: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
-	7, // 7: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
-	1, // 8: com.navzy.services.NavzyService.DeviceStatusIndex:output_type -> com.navzy.services.DeviceStatusResponse
-	6, // [6:9] is the sub-list for method output_type
-	3, // [3:6] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	8,  // 0: com.navzy.services.DeviceImportResponse.devices:type_name -> com.navzy.devices.Device
+	9,  // 1: com.navzy.services.DeviceStatusResponse.list:type_name -> com.navzy.services.DeviceStatus
+	10, // 2: com.navzy.services.PacketRequest.timestamp:type_name -> com.navzy.services.TimeRange
+	11, // 3: com.navzy.services.PacketResponse.packets:type_name -> com.navzy.packets.Packet
+	6,  // 4: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
+	8,  // 5: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
+	4,  // 6: com.navzy.services.NavzyService.DeviceStatusIndex:input_type -> com.navzy.services.DeviceStatusRequest
+	2,  // 7: com.navzy.services.NavzyService.DeviceImport:input_type -> com.navzy.services.DeviceImportRequest
+	1,  // 8: com.navzy.services.NavzyService.DeviceExport:input_type -> com.navzy.services.DeviceExportRequest
+	7,  // 9: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
+	8,  // 10: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
+	5,  // 11: com.navzy.services.NavzyService.DeviceStatusIndex:output_type -> com.navzy.services.DeviceStatusResponse
+	3,  // 12: com.navzy.services.NavzyService.DeviceImport:output_type -> com.navzy.services.DeviceImportResponse
+	0,  // 13: com.navzy.services.NavzyService.DeviceExport:output_type -> com.navzy.services.DeviceExportResponse
+	9,  // [9:14] is the sub-list for method output_type
+	4,  // [4:9] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_services_services_proto_init() }
@@ -299,7 +492,7 @@ func file_services_services_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_services_services_proto_rawDesc), len(file_services_services_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
