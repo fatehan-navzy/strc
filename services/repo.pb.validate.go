@@ -57,6 +57,8 @@ func (m *DeviceStatus) validate(all bool) error {
 
 	var errors []error
 
+	// no validation rules for StaticKey
+
 	if all {
 		switch v := interface{}(m.GetPacket()).(type) {
 		case interface{ ValidateAll() error }:
