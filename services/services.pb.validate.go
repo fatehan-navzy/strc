@@ -745,33 +745,38 @@ func (m *PacketRequest) validate(all bool) error {
 
 	var errors []error
 
-	if all {
-		switch v := interface{}(m.GetTimestamp()).(type) {
-		case interface{ ValidateAll() error }:
-			if err := v.ValidateAll(); err != nil {
-				errors = append(errors, PacketRequestValidationError{
-					field:  "Timestamp",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
+	for idx, item := range m.GetList() {
+		_, _ = idx, item
+
+		if all {
+			switch v := interface{}(item).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, PacketRequestValidationError{
+						field:  fmt.Sprintf("List[%v]", idx),
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, PacketRequestValidationError{
+						field:  fmt.Sprintf("List[%v]", idx),
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
 			}
-		case interface{ Validate() error }:
+		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
-				errors = append(errors, PacketRequestValidationError{
-					field:  "Timestamp",
+				return PacketRequestValidationError{
+					field:  fmt.Sprintf("List[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
-				})
+				}
 			}
 		}
-	} else if v, ok := interface{}(m.GetTimestamp()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return PacketRequestValidationError{
-				field:  "Timestamp",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
+
 	}
 
 	if len(errors) > 0 {
@@ -874,7 +879,7 @@ func (m *PacketResponse) validate(all bool) error {
 
 	var errors []error
 
-	for idx, item := range m.GetPackets() {
+	for idx, item := range m.GetList() {
 		_, _ = idx, item
 
 		if all {
@@ -882,7 +887,7 @@ func (m *PacketResponse) validate(all bool) error {
 			case interface{ ValidateAll() error }:
 				if err := v.ValidateAll(); err != nil {
 					errors = append(errors, PacketResponseValidationError{
-						field:  fmt.Sprintf("Packets[%v]", idx),
+						field:  fmt.Sprintf("List[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -890,7 +895,7 @@ func (m *PacketResponse) validate(all bool) error {
 			case interface{ Validate() error }:
 				if err := v.Validate(); err != nil {
 					errors = append(errors, PacketResponseValidationError{
-						field:  fmt.Sprintf("Packets[%v]", idx),
+						field:  fmt.Sprintf("List[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -899,7 +904,7 @@ func (m *PacketResponse) validate(all bool) error {
 		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return PacketResponseValidationError{
-					field:  fmt.Sprintf("Packets[%v]", idx),
+					field:  fmt.Sprintf("List[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -985,3 +990,304 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = PacketResponseValidationError{}
+
+// Validate checks the field values on PacketRequest_DevicePacketRequest with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, the first error encountered is returned, or nil if there are
+// no violations.
+func (m *PacketRequest_DevicePacketRequest) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on PacketRequest_DevicePacketRequest
+// with the rules defined in the proto definition for this message. If any
+// rules are violated, the result is a list of violation errors wrapped in
+// PacketRequest_DevicePacketRequestMultiError, or nil if none found.
+func (m *PacketRequest_DevicePacketRequest) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *PacketRequest_DevicePacketRequest) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	if all {
+		switch v := interface{}(m.GetFrom()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, PacketRequest_DevicePacketRequestValidationError{
+					field:  "From",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, PacketRequest_DevicePacketRequestValidationError{
+					field:  "From",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetFrom()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return PacketRequest_DevicePacketRequestValidationError{
+				field:  "From",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for DynamicKey
+
+	if len(errors) > 0 {
+		return PacketRequest_DevicePacketRequestMultiError(errors)
+	}
+
+	return nil
+}
+
+// PacketRequest_DevicePacketRequestMultiError is an error wrapping multiple
+// validation errors returned by
+// PacketRequest_DevicePacketRequest.ValidateAll() if the designated
+// constraints aren't met.
+type PacketRequest_DevicePacketRequestMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m PacketRequest_DevicePacketRequestMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m PacketRequest_DevicePacketRequestMultiError) AllErrors() []error { return m }
+
+// PacketRequest_DevicePacketRequestValidationError is the validation error
+// returned by PacketRequest_DevicePacketRequest.Validate if the designated
+// constraints aren't met.
+type PacketRequest_DevicePacketRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e PacketRequest_DevicePacketRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e PacketRequest_DevicePacketRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e PacketRequest_DevicePacketRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e PacketRequest_DevicePacketRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e PacketRequest_DevicePacketRequestValidationError) ErrorName() string {
+	return "PacketRequest_DevicePacketRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e PacketRequest_DevicePacketRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sPacketRequest_DevicePacketRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = PacketRequest_DevicePacketRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = PacketRequest_DevicePacketRequestValidationError{}
+
+// Validate checks the field values on PacketResponse_DevicePacketResponse with
+// the rules defined in the proto definition for this message. If any rules
+// are violated, the first error encountered is returned, or nil if there are
+// no violations.
+func (m *PacketResponse_DevicePacketResponse) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on PacketResponse_DevicePacketResponse
+// with the rules defined in the proto definition for this message. If any
+// rules are violated, the result is a list of violation errors wrapped in
+// PacketResponse_DevicePacketResponseMultiError, or nil if none found.
+func (m *PacketResponse_DevicePacketResponse) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *PacketResponse_DevicePacketResponse) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for DynamicKey
+
+	if all {
+		switch v := interface{}(m.GetReceivedAt()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
+					field:  "ReceivedAt",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
+					field:  "ReceivedAt",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetReceivedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return PacketResponse_DevicePacketResponseValidationError{
+				field:  "ReceivedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if all {
+		switch v := interface{}(m.GetPackets()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
+					field:  "Packets",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
+					field:  "Packets",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
+			}
+		}
+	} else if v, ok := interface{}(m.GetPackets()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return PacketResponse_DevicePacketResponseValidationError{
+				field:  "Packets",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if len(errors) > 0 {
+		return PacketResponse_DevicePacketResponseMultiError(errors)
+	}
+
+	return nil
+}
+
+// PacketResponse_DevicePacketResponseMultiError is an error wrapping multiple
+// validation errors returned by
+// PacketResponse_DevicePacketResponse.ValidateAll() if the designated
+// constraints aren't met.
+type PacketResponse_DevicePacketResponseMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m PacketResponse_DevicePacketResponseMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m PacketResponse_DevicePacketResponseMultiError) AllErrors() []error { return m }
+
+// PacketResponse_DevicePacketResponseValidationError is the validation error
+// returned by PacketResponse_DevicePacketResponse.Validate if the designated
+// constraints aren't met.
+type PacketResponse_DevicePacketResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e PacketResponse_DevicePacketResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e PacketResponse_DevicePacketResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e PacketResponse_DevicePacketResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e PacketResponse_DevicePacketResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e PacketResponse_DevicePacketResponseValidationError) ErrorName() string {
+	return "PacketResponse_DevicePacketResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e PacketResponse_DevicePacketResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sPacketResponse_DevicePacketResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = PacketResponse_DevicePacketResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = PacketResponse_DevicePacketResponseValidationError{}
