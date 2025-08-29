@@ -8,7 +8,6 @@ package services
 
 import (
 	devices "github.com/fatehan-navzy/strc/devices"
-	packets "github.com/fatehan-navzy/strc/packets"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
@@ -448,7 +447,7 @@ type PacketResponse_DevicePacketResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DynamicKey    string                 `protobuf:"bytes,1,opt,name=dynamic_key,json=dynamicKey,proto3" json:"dynamic_key,omitempty"`
 	ReceivedAt    *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=received_at,json=receivedAt,proto3" json:"received_at,omitempty"`
-	Packets       *packets.Packet        `protobuf:"bytes,3,opt,name=packets,proto3" json:"packets,omitempty"`
+	Packets       []byte                 `protobuf:"bytes,3,opt,name=packets,proto3" json:"packets,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -497,7 +496,7 @@ func (x *PacketResponse_DevicePacketResponse) GetReceivedAt() *timestamppb.Times
 	return nil
 }
 
-func (x *PacketResponse_DevicePacketResponse) GetPackets() *packets.Packet {
+func (x *PacketResponse_DevicePacketResponse) GetPackets() []byte {
 	if x != nil {
 		return x.Packets
 	}
@@ -508,7 +507,7 @@ var File_services_services_proto protoreflect.FileDescriptor
 
 const file_services_services_proto_rawDesc = "" +
 	"\n" +
-	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"0\n" +
+	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"0\n" +
 	"\x14DeviceExportResponse\x12\x18\n" +
 	"\aencoded\x18\x01 \x01(\tR\aencoded\"8\n" +
 	"\x13DeviceExportRequest\x12!\n" +
@@ -527,15 +526,15 @@ const file_services_services_proto_rawDesc = "" +
 	"\x04list\x18\x01 \x03(\v25.com.navzy.services.PacketRequest.DevicePacketRequestR\x04list\x1aj\n" +
 	"\x13DevicePacketRequest\x121\n" +
 	"\x04from\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\x04from\x12 \n" +
-	"\vdynamic_key\x18\x02 \x01(\tR\vdynamic_key\"\x89\x02\n" +
+	"\vdynamic_key\x18\x02 \x01(\tR\vdynamic_key\"\xee\x01\n" +
 	"\x0ePacketResponse\x12K\n" +
-	"\x04list\x18\x01 \x03(\v27.com.navzy.services.PacketResponse.DevicePacketResponseR\x04list\x1a\xa9\x01\n" +
+	"\x04list\x18\x01 \x03(\v27.com.navzy.services.PacketResponse.DevicePacketResponseR\x04list\x1a\x8e\x01\n" +
 	"\x14DevicePacketResponse\x12\x1f\n" +
 	"\vdynamic_key\x18\x01 \x01(\tR\n" +
 	"dynamicKey\x12;\n" +
 	"\vreceived_at\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"receivedAt\x123\n" +
-	"\apackets\x18\x03 \x01(\v2\x19.com.navzy.packets.PacketR\apackets2\xd8\x03\n" +
+	"receivedAt\x12\x18\n" +
+	"\apackets\x18\x03 \x01(\fR\apackets2\xd8\x03\n" +
 	"\fNavzyService\x12T\n" +
 	"\vPacketIndex\x12!.com.navzy.services.PacketRequest\x1a\".com.navzy.services.PacketResponse\x12D\n" +
 	"\fDeviceCreate\x12\x19.com.navzy.devices.Device\x1a\x19.com.navzy.devices.Device\x12f\n" +
@@ -572,7 +571,6 @@ var file_services_services_proto_goTypes = []any{
 	(*DeviceStatus)(nil),                        // 11: com.navzy.services.DeviceStatus
 	(*TimeRange)(nil),                           // 12: com.navzy.services.TimeRange
 	(*timestamppb.Timestamp)(nil),               // 13: google.protobuf.Timestamp
-	(*packets.Packet)(nil),                      // 14: com.navzy.packets.Packet
 }
 var file_services_services_proto_depIdxs = []int32{
 	10, // 0: com.navzy.services.DeviceImportResponse.devices:type_name -> com.navzy.devices.Device
@@ -581,22 +579,21 @@ var file_services_services_proto_depIdxs = []int32{
 	9,  // 3: com.navzy.services.PacketResponse.list:type_name -> com.navzy.services.PacketResponse.DevicePacketResponse
 	12, // 4: com.navzy.services.PacketRequest.DevicePacketRequest.from:type_name -> com.navzy.services.TimeRange
 	13, // 5: com.navzy.services.PacketResponse.DevicePacketResponse.received_at:type_name -> google.protobuf.Timestamp
-	14, // 6: com.navzy.services.PacketResponse.DevicePacketResponse.packets:type_name -> com.navzy.packets.Packet
-	6,  // 7: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
-	10, // 8: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
-	4,  // 9: com.navzy.services.NavzyService.DeviceStatusIndex:input_type -> com.navzy.services.DeviceStatusRequest
-	2,  // 10: com.navzy.services.NavzyService.DeviceImport:input_type -> com.navzy.services.DeviceImportRequest
-	1,  // 11: com.navzy.services.NavzyService.DeviceExport:input_type -> com.navzy.services.DeviceExportRequest
-	7,  // 12: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
-	10, // 13: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
-	5,  // 14: com.navzy.services.NavzyService.DeviceStatusIndex:output_type -> com.navzy.services.DeviceStatusResponse
-	3,  // 15: com.navzy.services.NavzyService.DeviceImport:output_type -> com.navzy.services.DeviceImportResponse
-	0,  // 16: com.navzy.services.NavzyService.DeviceExport:output_type -> com.navzy.services.DeviceExportResponse
-	12, // [12:17] is the sub-list for method output_type
-	7,  // [7:12] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	6,  // 6: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
+	10, // 7: com.navzy.services.NavzyService.DeviceCreate:input_type -> com.navzy.devices.Device
+	4,  // 8: com.navzy.services.NavzyService.DeviceStatusIndex:input_type -> com.navzy.services.DeviceStatusRequest
+	2,  // 9: com.navzy.services.NavzyService.DeviceImport:input_type -> com.navzy.services.DeviceImportRequest
+	1,  // 10: com.navzy.services.NavzyService.DeviceExport:input_type -> com.navzy.services.DeviceExportRequest
+	7,  // 11: com.navzy.services.NavzyService.PacketIndex:output_type -> com.navzy.services.PacketResponse
+	10, // 12: com.navzy.services.NavzyService.DeviceCreate:output_type -> com.navzy.devices.Device
+	5,  // 13: com.navzy.services.NavzyService.DeviceStatusIndex:output_type -> com.navzy.services.DeviceStatusResponse
+	3,  // 14: com.navzy.services.NavzyService.DeviceImport:output_type -> com.navzy.services.DeviceImportResponse
+	0,  // 15: com.navzy.services.NavzyService.DeviceExport:output_type -> com.navzy.services.DeviceExportResponse
+	11, // [11:16] is the sub-list for method output_type
+	6,  // [6:11] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_services_services_proto_init() }

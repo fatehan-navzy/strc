@@ -1181,34 +1181,7 @@ func (m *PacketResponse_DevicePacketResponse) validate(all bool) error {
 		}
 	}
 
-	if all {
-		switch v := interface{}(m.GetPackets()).(type) {
-		case interface{ ValidateAll() error }:
-			if err := v.ValidateAll(); err != nil {
-				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
-					field:  "Packets",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		case interface{ Validate() error }:
-			if err := v.Validate(); err != nil {
-				errors = append(errors, PacketResponse_DevicePacketResponseValidationError{
-					field:  "Packets",
-					reason: "embedded message failed validation",
-					cause:  err,
-				})
-			}
-		}
-	} else if v, ok := interface{}(m.GetPackets()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return PacketResponse_DevicePacketResponseValidationError{
-				field:  "Packets",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Packets
 
 	if len(errors) > 0 {
 		return PacketResponse_DevicePacketResponseMultiError(errors)

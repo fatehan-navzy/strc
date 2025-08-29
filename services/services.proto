@@ -6,7 +6,6 @@ option go_package = "github.com/fatehan-navzy/strc/services";
 
 import "services/repo.proto";
 import "devices/devices.proto";
-import "packets/packets.proto";
 import "google/protobuf/timestamp.proto";
 
 option java_package = "com.fatehan.navzy.services";
@@ -58,7 +57,7 @@ message PacketResponse {
   message DevicePacketResponse {
     string dynamic_key = 1;
     google.protobuf.Timestamp received_at = 2;
-    com.navzy.packets.Packet packets = 3;
+    bytes packets = 3;
   }
 
   repeated DevicePacketResponse list = 1 [json_name = 'list'];
