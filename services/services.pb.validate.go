@@ -609,7 +609,7 @@ func (m *DeviceStatusResponse) validate(all bool) error {
 
 	// no validation rules for Records
 
-	for idx, item := range m.GetList() {
+	for idx, item := range m.GetItems() {
 		_, _ = idx, item
 
 		if all {
@@ -617,7 +617,7 @@ func (m *DeviceStatusResponse) validate(all bool) error {
 			case interface{ ValidateAll() error }:
 				if err := v.ValidateAll(); err != nil {
 					errors = append(errors, DeviceStatusResponseValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -625,7 +625,7 @@ func (m *DeviceStatusResponse) validate(all bool) error {
 			case interface{ Validate() error }:
 				if err := v.Validate(); err != nil {
 					errors = append(errors, DeviceStatusResponseValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -634,7 +634,7 @@ func (m *DeviceStatusResponse) validate(all bool) error {
 		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return DeviceStatusResponseValidationError{
-					field:  fmt.Sprintf("List[%v]", idx),
+					field:  fmt.Sprintf("Items[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -745,7 +745,7 @@ func (m *PacketRequest) validate(all bool) error {
 
 	var errors []error
 
-	for idx, item := range m.GetList() {
+	for idx, item := range m.GetItems() {
 		_, _ = idx, item
 
 		if all {
@@ -753,7 +753,7 @@ func (m *PacketRequest) validate(all bool) error {
 			case interface{ ValidateAll() error }:
 				if err := v.ValidateAll(); err != nil {
 					errors = append(errors, PacketRequestValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -761,7 +761,7 @@ func (m *PacketRequest) validate(all bool) error {
 			case interface{ Validate() error }:
 				if err := v.Validate(); err != nil {
 					errors = append(errors, PacketRequestValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -770,7 +770,7 @@ func (m *PacketRequest) validate(all bool) error {
 		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return PacketRequestValidationError{
-					field:  fmt.Sprintf("List[%v]", idx),
+					field:  fmt.Sprintf("Items[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -879,7 +879,7 @@ func (m *PacketResponse) validate(all bool) error {
 
 	var errors []error
 
-	for idx, item := range m.GetList() {
+	for idx, item := range m.GetItems() {
 		_, _ = idx, item
 
 		if all {
@@ -887,7 +887,7 @@ func (m *PacketResponse) validate(all bool) error {
 			case interface{ ValidateAll() error }:
 				if err := v.ValidateAll(); err != nil {
 					errors = append(errors, PacketResponseValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -895,7 +895,7 @@ func (m *PacketResponse) validate(all bool) error {
 			case interface{ Validate() error }:
 				if err := v.Validate(); err != nil {
 					errors = append(errors, PacketResponseValidationError{
-						field:  fmt.Sprintf("List[%v]", idx),
+						field:  fmt.Sprintf("Items[%v]", idx),
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -904,7 +904,7 @@ func (m *PacketResponse) validate(all bool) error {
 		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return PacketResponseValidationError{
-					field:  fmt.Sprintf("List[%v]", idx),
+					field:  fmt.Sprintf("Items[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

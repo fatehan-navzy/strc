@@ -20,29 +20,29 @@ service NavzyService {
 }
 
 message DeviceExportResponse {
-  string encoded = 1;
+  string encoded = 1 [json_name = 'encoded'];
 }
 
 message DeviceExportRequest {
-  repeated string dynamic_keys = 1;
+  repeated string dynamic_keys = 1 [json_name = 'dynamic_keys'];
 }
 
 message DeviceImportRequest {
-  string encoded = 1;
+  string encoded = 1 [json_name = 'encoded'];
 }
 
 message DeviceImportResponse {
-  repeated com.navzy.devices.Device devices = 1;
+  repeated com.navzy.devices.Device devices = 1 [json_name = 'devices'];
 }
 
 message DeviceStatusRequest {
-  repeated string dynamic_keys = 1;
+  repeated string dynamic_keys = 1 [json_name = 'dynamic_key'];
 }
 
 message DeviceStatusResponse {
-  uint32 cost = 1;
-  uint32 records = 2;
-  repeated DeviceStatus list = 3;
+  uint32 cost = 1 [json_name = 'cost'];
+  uint32 records = 2 [json_name = 'records'];
+  repeated DeviceStatus items = 3 [json_name = 'items'];
 }
 
 message PacketRequest {
@@ -50,7 +50,7 @@ message PacketRequest {
     TimeRange from = 1 [json_name = 'from'];
     string dynamic_key = 2 [json_name = 'dynamic_key'];
   }
-  repeated DevicePacketRequest list = 1 [json_name = 'list'];
+  repeated DevicePacketRequest items = 1 [json_name = 'items'];
 }
 
 message PacketResponse {
@@ -60,5 +60,5 @@ message PacketResponse {
     bytes packets = 3;
   }
 
-  repeated DevicePacketResponse list = 1 [json_name = 'list'];
+  repeated DevicePacketResponse items = 1 [json_name = 'items'];
 }

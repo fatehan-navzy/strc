@@ -69,7 +69,7 @@ func (x *DeviceExportResponse) GetEncoded() string {
 
 type DeviceExportRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,json=dynamicKeys,proto3" json:"dynamic_keys,omitempty"`
+	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,proto3" json:"dynamic_keys,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -201,7 +201,7 @@ func (x *DeviceImportResponse) GetDevices() []*devices.Device {
 
 type DeviceStatusRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,json=dynamicKeys,proto3" json:"dynamic_keys,omitempty"`
+	DynamicKeys   []string               `protobuf:"bytes,1,rep,name=dynamic_keys,json=dynamic_key,proto3" json:"dynamic_keys,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -247,7 +247,7 @@ type DeviceStatusResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Cost          uint32                 `protobuf:"varint,1,opt,name=cost,proto3" json:"cost,omitempty"`
 	Records       uint32                 `protobuf:"varint,2,opt,name=records,proto3" json:"records,omitempty"`
-	List          []*DeviceStatus        `protobuf:"bytes,3,rep,name=list,proto3" json:"list,omitempty"`
+	Items         []*DeviceStatus        `protobuf:"bytes,3,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -296,16 +296,16 @@ func (x *DeviceStatusResponse) GetRecords() uint32 {
 	return 0
 }
 
-func (x *DeviceStatusResponse) GetList() []*DeviceStatus {
+func (x *DeviceStatusResponse) GetItems() []*DeviceStatus {
 	if x != nil {
-		return x.List
+		return x.Items
 	}
 	return nil
 }
 
 type PacketRequest struct {
 	state         protoimpl.MessageState               `protogen:"open.v1"`
-	List          []*PacketRequest_DevicePacketRequest `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	Items         []*PacketRequest_DevicePacketRequest `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -340,16 +340,16 @@ func (*PacketRequest) Descriptor() ([]byte, []int) {
 	return file_services_services_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *PacketRequest) GetList() []*PacketRequest_DevicePacketRequest {
+func (x *PacketRequest) GetItems() []*PacketRequest_DevicePacketRequest {
 	if x != nil {
-		return x.List
+		return x.Items
 	}
 	return nil
 }
 
 type PacketResponse struct {
 	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	List          []*PacketResponse_DevicePacketResponse `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+	Items         []*PacketResponse_DevicePacketResponse `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -384,9 +384,9 @@ func (*PacketResponse) Descriptor() ([]byte, []int) {
 	return file_services_services_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *PacketResponse) GetList() []*PacketResponse_DevicePacketResponse {
+func (x *PacketResponse) GetItems() []*PacketResponse_DevicePacketResponse {
 	if x != nil {
-		return x.List
+		return x.Items
 	}
 	return nil
 }
@@ -509,26 +509,26 @@ const file_services_services_proto_rawDesc = "" +
 	"\n" +
 	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"0\n" +
 	"\x14DeviceExportResponse\x12\x18\n" +
-	"\aencoded\x18\x01 \x01(\tR\aencoded\"8\n" +
-	"\x13DeviceExportRequest\x12!\n" +
-	"\fdynamic_keys\x18\x01 \x03(\tR\vdynamicKeys\"/\n" +
+	"\aencoded\x18\x01 \x01(\tR\aencoded\"9\n" +
+	"\x13DeviceExportRequest\x12\"\n" +
+	"\fdynamic_keys\x18\x01 \x03(\tR\fdynamic_keys\"/\n" +
 	"\x13DeviceImportRequest\x12\x18\n" +
 	"\aencoded\x18\x01 \x01(\tR\aencoded\"K\n" +
 	"\x14DeviceImportResponse\x123\n" +
 	"\adevices\x18\x01 \x03(\v2\x19.com.navzy.devices.DeviceR\adevices\"8\n" +
 	"\x13DeviceStatusRequest\x12!\n" +
-	"\fdynamic_keys\x18\x01 \x03(\tR\vdynamicKeys\"z\n" +
+	"\fdynamic_keys\x18\x01 \x03(\tR\vdynamic_key\"|\n" +
 	"\x14DeviceStatusResponse\x12\x12\n" +
 	"\x04cost\x18\x01 \x01(\rR\x04cost\x12\x18\n" +
-	"\arecords\x18\x02 \x01(\rR\arecords\x124\n" +
-	"\x04list\x18\x03 \x03(\v2 .com.navzy.services.DeviceStatusR\x04list\"\xc6\x01\n" +
-	"\rPacketRequest\x12I\n" +
-	"\x04list\x18\x01 \x03(\v25.com.navzy.services.PacketRequest.DevicePacketRequestR\x04list\x1aj\n" +
+	"\arecords\x18\x02 \x01(\rR\arecords\x126\n" +
+	"\x05items\x18\x03 \x03(\v2 .com.navzy.services.DeviceStatusR\x05items\"\xc8\x01\n" +
+	"\rPacketRequest\x12K\n" +
+	"\x05items\x18\x01 \x03(\v25.com.navzy.services.PacketRequest.DevicePacketRequestR\x05items\x1aj\n" +
 	"\x13DevicePacketRequest\x121\n" +
 	"\x04from\x18\x01 \x01(\v2\x1d.com.navzy.services.TimeRangeR\x04from\x12 \n" +
-	"\vdynamic_key\x18\x02 \x01(\tR\vdynamic_key\"\xee\x01\n" +
-	"\x0ePacketResponse\x12K\n" +
-	"\x04list\x18\x01 \x03(\v27.com.navzy.services.PacketResponse.DevicePacketResponseR\x04list\x1a\x8e\x01\n" +
+	"\vdynamic_key\x18\x02 \x01(\tR\vdynamic_key\"\xf0\x01\n" +
+	"\x0ePacketResponse\x12M\n" +
+	"\x05items\x18\x01 \x03(\v27.com.navzy.services.PacketResponse.DevicePacketResponseR\x05items\x1a\x8e\x01\n" +
 	"\x14DevicePacketResponse\x12\x1f\n" +
 	"\vdynamic_key\x18\x01 \x01(\tR\n" +
 	"dynamicKey\x12;\n" +
@@ -574,9 +574,9 @@ var file_services_services_proto_goTypes = []any{
 }
 var file_services_services_proto_depIdxs = []int32{
 	10, // 0: com.navzy.services.DeviceImportResponse.devices:type_name -> com.navzy.devices.Device
-	11, // 1: com.navzy.services.DeviceStatusResponse.list:type_name -> com.navzy.services.DeviceStatus
-	8,  // 2: com.navzy.services.PacketRequest.list:type_name -> com.navzy.services.PacketRequest.DevicePacketRequest
-	9,  // 3: com.navzy.services.PacketResponse.list:type_name -> com.navzy.services.PacketResponse.DevicePacketResponse
+	11, // 1: com.navzy.services.DeviceStatusResponse.items:type_name -> com.navzy.services.DeviceStatus
+	8,  // 2: com.navzy.services.PacketRequest.items:type_name -> com.navzy.services.PacketRequest.DevicePacketRequest
+	9,  // 3: com.navzy.services.PacketResponse.items:type_name -> com.navzy.services.PacketResponse.DevicePacketResponse
 	12, // 4: com.navzy.services.PacketRequest.DevicePacketRequest.from:type_name -> com.navzy.services.TimeRange
 	13, // 5: com.navzy.services.PacketResponse.DevicePacketResponse.received_at:type_name -> google.protobuf.Timestamp
 	6,  // 6: com.navzy.services.NavzyService.PacketIndex:input_type -> com.navzy.services.PacketRequest
