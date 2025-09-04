@@ -86,7 +86,6 @@ message Io {
   }
 
   IoProperty io = 1 [json_name = "io"];
-
   oneof value {
     sint32  int32_value = 2 [json_name = "sint32"];
     uint32  uint32_value = 3 [json_name = "uint32"];
