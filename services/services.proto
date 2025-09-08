@@ -17,6 +17,15 @@ service NavzyService {
   rpc DeviceStatusIndex(DeviceStatusRequest) returns (DeviceStatusResponse);
   rpc DeviceImport(DeviceImportRequest) returns (DeviceImportResponse);
   rpc DeviceExport(DeviceExportRequest) returns (DeviceExportResponse);
+  rpc Live(LiveRequest) returns (stream LiveResponse);
+}
+
+message LiveRequest {
+  repeated string dynamic_keys = 1 [json_name = 'dynamic_keys'];
+}
+
+message LiveResponse {
+  com.navzy.devices.Device device = 1 [json_name = 'device'];
 }
 
 message DeviceExportResponse {

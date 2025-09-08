@@ -25,6 +25,7 @@ const (
 	NavzyService_DeviceStatusIndex_FullMethodName = "/com.navzy.services.NavzyService/DeviceStatusIndex"
 	NavzyService_DeviceImport_FullMethodName      = "/com.navzy.services.NavzyService/DeviceImport"
 	NavzyService_DeviceExport_FullMethodName      = "/com.navzy.services.NavzyService/DeviceExport"
+	NavzyService_Live_FullMethodName              = "/com.navzy.services.NavzyService/Live"
 )
 
 // NavzyServiceClient is the client API for NavzyService service.
@@ -36,6 +37,7 @@ type NavzyServiceClient interface {
 	DeviceStatusIndex(ctx context.Context, in *DeviceStatusRequest, opts ...grpc.CallOption) (*DeviceStatusResponse, error)
 	DeviceImport(ctx context.Context, in *DeviceImportRequest, opts ...grpc.CallOption) (*DeviceImportResponse, error)
 	DeviceExport(ctx context.Context, in *DeviceExportRequest, opts ...grpc.CallOption) (*DeviceExportResponse, error)
+	Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[LiveResponse], error)
 }
 
 type navzyServiceClient struct {
@@ -96,6 +98,25 @@ func (c *navzyServiceClient) DeviceExport(ctx context.Context, in *DeviceExportR
 	return out, nil
 }
 
+func (c *navzyServiceClient) Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[LiveResponse], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &NavzyService_ServiceDesc.Streams[0], NavzyService_Live_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[LiveRequest, LiveResponse]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type NavzyService_LiveClient = grpc.ServerStreamingClient[LiveResponse]
+
 // NavzyServiceServer is the server API for NavzyService service.
 // All implementations must embed UnimplementedNavzyServiceServer
 // for forward compatibility.
@@ -105,6 +126,7 @@ type NavzyServiceServer interface {
 	DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error)
 	DeviceImport(context.Context, *DeviceImportRequest) (*DeviceImportResponse, error)
 	DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error)
+	Live(*LiveRequest, grpc.ServerStreamingServer[LiveResponse]) error
 	mustEmbedUnimplementedNavzyServiceServer()
 }
 
@@ -129,6 +151,9 @@ func (UnimplementedNavzyServiceServer) DeviceImport(context.Context, *DeviceImpo
 }
 func (UnimplementedNavzyServiceServer) DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeviceExport not implemented")
+}
+func (UnimplementedNavzyServiceServer) Live(*LiveRequest, grpc.ServerStreamingServer[LiveResponse]) error {
+	return status.Errorf(codes.Unimplemented, "method Live not implemented")
 }
 func (UnimplementedNavzyServiceServer) mustEmbedUnimplementedNavzyServiceServer() {}
 func (UnimplementedNavzyServiceServer) testEmbeddedByValue()                      {}
@@ -241,6 +266,17 @@ func _NavzyService_DeviceExport_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _NavzyService_Live_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(LiveRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(NavzyServiceServer).Live(m, &grpc.GenericServerStream[LiveRequest, LiveResponse]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type NavzyService_LiveServer = grpc.ServerStreamingServer[LiveResponse]
+
 // NavzyService_ServiceDesc is the grpc.ServiceDesc for NavzyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -269,6 +305,12 @@ var NavzyService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _NavzyService_DeviceExport_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Live",
+			Handler:       _NavzyService_Live_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "services/services.proto",
 }
