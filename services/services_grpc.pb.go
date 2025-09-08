@@ -9,6 +9,7 @@ package services
 import (
 	context "context"
 	devices "github.com/fatehan-navzy/strc/devices"
+	packets "github.com/fatehan-navzy/strc/packets"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -37,7 +38,7 @@ type NavzyServiceClient interface {
 	DeviceStatusIndex(ctx context.Context, in *DeviceStatusRequest, opts ...grpc.CallOption) (*DeviceStatusResponse, error)
 	DeviceImport(ctx context.Context, in *DeviceImportRequest, opts ...grpc.CallOption) (*DeviceImportResponse, error)
 	DeviceExport(ctx context.Context, in *DeviceExportRequest, opts ...grpc.CallOption) (*DeviceExportResponse, error)
-	Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[LiveResponse], error)
+	Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[packets.Task], error)
 }
 
 type navzyServiceClient struct {
@@ -98,13 +99,13 @@ func (c *navzyServiceClient) DeviceExport(ctx context.Context, in *DeviceExportR
 	return out, nil
 }
 
-func (c *navzyServiceClient) Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[LiveResponse], error) {
+func (c *navzyServiceClient) Live(ctx context.Context, in *LiveRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[packets.Task], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &NavzyService_ServiceDesc.Streams[0], NavzyService_Live_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[LiveRequest, LiveResponse]{ClientStream: stream}
+	x := &grpc.GenericClientStream[LiveRequest, packets.Task]{ClientStream: stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -115,7 +116,7 @@ func (c *navzyServiceClient) Live(ctx context.Context, in *LiveRequest, opts ...
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type NavzyService_LiveClient = grpc.ServerStreamingClient[LiveResponse]
+type NavzyService_LiveClient = grpc.ServerStreamingClient[packets.Task]
 
 // NavzyServiceServer is the server API for NavzyService service.
 // All implementations must embed UnimplementedNavzyServiceServer
@@ -126,7 +127,7 @@ type NavzyServiceServer interface {
 	DeviceStatusIndex(context.Context, *DeviceStatusRequest) (*DeviceStatusResponse, error)
 	DeviceImport(context.Context, *DeviceImportRequest) (*DeviceImportResponse, error)
 	DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error)
-	Live(*LiveRequest, grpc.ServerStreamingServer[LiveResponse]) error
+	Live(*LiveRequest, grpc.ServerStreamingServer[packets.Task]) error
 	mustEmbedUnimplementedNavzyServiceServer()
 }
 
@@ -152,7 +153,7 @@ func (UnimplementedNavzyServiceServer) DeviceImport(context.Context, *DeviceImpo
 func (UnimplementedNavzyServiceServer) DeviceExport(context.Context, *DeviceExportRequest) (*DeviceExportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeviceExport not implemented")
 }
-func (UnimplementedNavzyServiceServer) Live(*LiveRequest, grpc.ServerStreamingServer[LiveResponse]) error {
+func (UnimplementedNavzyServiceServer) Live(*LiveRequest, grpc.ServerStreamingServer[packets.Task]) error {
 	return status.Errorf(codes.Unimplemented, "method Live not implemented")
 }
 func (UnimplementedNavzyServiceServer) mustEmbedUnimplementedNavzyServiceServer() {}
@@ -271,11 +272,11 @@ func _NavzyService_Live_Handler(srv interface{}, stream grpc.ServerStream) error
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(NavzyServiceServer).Live(m, &grpc.GenericServerStream[LiveRequest, LiveResponse]{ServerStream: stream})
+	return srv.(NavzyServiceServer).Live(m, &grpc.GenericServerStream[LiveRequest, packets.Task]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type NavzyService_LiveServer = grpc.ServerStreamingServer[LiveResponse]
+type NavzyService_LiveServer = grpc.ServerStreamingServer[packets.Task]
 
 // NavzyService_ServiceDesc is the grpc.ServiceDesc for NavzyService service.
 // It's only intended for direct use with grpc.RegisterService,

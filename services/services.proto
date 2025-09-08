@@ -6,6 +6,7 @@ option go_package = "github.com/fatehan-navzy/strc/services";
 
 import "services/repo.proto";
 import "devices/devices.proto";
+import "packets/packets.proto";
 import "google/protobuf/timestamp.proto";
 
 option java_package = "com.fatehan.navzy.services";
@@ -17,15 +18,11 @@ service NavzyService {
   rpc DeviceStatusIndex(DeviceStatusRequest) returns (DeviceStatusResponse);
   rpc DeviceImport(DeviceImportRequest) returns (DeviceImportResponse);
   rpc DeviceExport(DeviceExportRequest) returns (DeviceExportResponse);
-  rpc Live(LiveRequest) returns (stream LiveResponse);
+  rpc Live(LiveRequest) returns (stream com.navzy.packets.Task);
 }
 
 message LiveRequest {
   repeated string dynamic_keys = 1 [json_name = 'dynamic_keys'];
-}
-
-message LiveResponse {
-  com.navzy.devices.Device device = 1 [json_name = 'device'];
 }
 
 message DeviceExportResponse {
