@@ -52,6 +52,7 @@ printf "Updating Services\n"
 for dir in ../gnet ../gowo ../grpc; do
   if [ -d "$dir" ]; then
     cd "$dir"
+    go get -u ./...
     GOPRIVATE=github.com/fatehan-navzy go get -u github.com/fatehan-navzy/strc@latest
     printf "$(basename "$dir") updated\n"
     cd - > /dev/null
