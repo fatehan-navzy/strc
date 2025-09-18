@@ -24,14 +24,15 @@ service NavzyService {
 message LiveStream {
   oneof payload {
     com.navzy.packets.Task task = 20 [json_name = 'task'];
-    LiveHeartbeat heartbeat = 21 [json_name = 'heartbeat'];
+    LiveConfirmation confirmation = 21 [json_name = 'confirmation'];
   }
 }
 
-message LiveHeartbeat {
+message LiveConfirmation {
   uint32 cost = 1 [json_name = 'cost'];
   sint64 received = 2 [json_name = 'received'];
   sint64 response = 3 [json_name = 'response'];
+  repeated string confirmed = 4 [json_name = 'confirmed'];
 }
 
 message LiveRequest {

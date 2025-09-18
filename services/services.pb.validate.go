@@ -99,7 +99,7 @@ func (m *LiveStream) validate(all bool) error {
 			}
 		}
 
-	case *LiveStream_Heartbeat:
+	case *LiveStream_Confirmation:
 		if v == nil {
 			err := LiveStreamValidationError{
 				field:  "Payload",
@@ -112,11 +112,11 @@ func (m *LiveStream) validate(all bool) error {
 		}
 
 		if all {
-			switch v := interface{}(m.GetHeartbeat()).(type) {
+			switch v := interface{}(m.GetConfirmation()).(type) {
 			case interface{ ValidateAll() error }:
 				if err := v.ValidateAll(); err != nil {
 					errors = append(errors, LiveStreamValidationError{
-						field:  "Heartbeat",
+						field:  "Confirmation",
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
@@ -124,16 +124,16 @@ func (m *LiveStream) validate(all bool) error {
 			case interface{ Validate() error }:
 				if err := v.Validate(); err != nil {
 					errors = append(errors, LiveStreamValidationError{
-						field:  "Heartbeat",
+						field:  "Confirmation",
 						reason: "embedded message failed validation",
 						cause:  err,
 					})
 				}
 			}
-		} else if v, ok := interface{}(m.GetHeartbeat()).(interface{ Validate() error }); ok {
+		} else if v, ok := interface{}(m.GetConfirmation()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return LiveStreamValidationError{
-					field:  "Heartbeat",
+					field:  "Confirmation",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}
@@ -221,22 +221,22 @@ var _ interface {
 	ErrorName() string
 } = LiveStreamValidationError{}
 
-// Validate checks the field values on LiveHeartbeat with the rules defined in
-// the proto definition for this message. If any rules are violated, the first
-// error encountered is returned, or nil if there are no violations.
-func (m *LiveHeartbeat) Validate() error {
+// Validate checks the field values on LiveConfirmation with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// first error encountered is returned, or nil if there are no violations.
+func (m *LiveConfirmation) Validate() error {
 	return m.validate(false)
 }
 
-// ValidateAll checks the field values on LiveHeartbeat with the rules defined
-// in the proto definition for this message. If any rules are violated, the
-// result is a list of violation errors wrapped in LiveHeartbeatMultiError, or
-// nil if none found.
-func (m *LiveHeartbeat) ValidateAll() error {
+// ValidateAll checks the field values on LiveConfirmation with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// LiveConfirmationMultiError, or nil if none found.
+func (m *LiveConfirmation) ValidateAll() error {
 	return m.validate(true)
 }
 
-func (m *LiveHeartbeat) validate(all bool) error {
+func (m *LiveConfirmation) validate(all bool) error {
 	if m == nil {
 		return nil
 	}
@@ -250,19 +250,19 @@ func (m *LiveHeartbeat) validate(all bool) error {
 	// no validation rules for Response
 
 	if len(errors) > 0 {
-		return LiveHeartbeatMultiError(errors)
+		return LiveConfirmationMultiError(errors)
 	}
 
 	return nil
 }
 
-// LiveHeartbeatMultiError is an error wrapping multiple validation errors
-// returned by LiveHeartbeat.ValidateAll() if the designated constraints
+// LiveConfirmationMultiError is an error wrapping multiple validation errors
+// returned by LiveConfirmation.ValidateAll() if the designated constraints
 // aren't met.
-type LiveHeartbeatMultiError []error
+type LiveConfirmationMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
-func (m LiveHeartbeatMultiError) Error() string {
+func (m LiveConfirmationMultiError) Error() string {
 	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
@@ -271,11 +271,11 @@ func (m LiveHeartbeatMultiError) Error() string {
 }
 
 // AllErrors returns a list of validation violation errors.
-func (m LiveHeartbeatMultiError) AllErrors() []error { return m }
+func (m LiveConfirmationMultiError) AllErrors() []error { return m }
 
-// LiveHeartbeatValidationError is the validation error returned by
-// LiveHeartbeat.Validate if the designated constraints aren't met.
-type LiveHeartbeatValidationError struct {
+// LiveConfirmationValidationError is the validation error returned by
+// LiveConfirmation.Validate if the designated constraints aren't met.
+type LiveConfirmationValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -283,22 +283,22 @@ type LiveHeartbeatValidationError struct {
 }
 
 // Field function returns field value.
-func (e LiveHeartbeatValidationError) Field() string { return e.field }
+func (e LiveConfirmationValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e LiveHeartbeatValidationError) Reason() string { return e.reason }
+func (e LiveConfirmationValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e LiveHeartbeatValidationError) Cause() error { return e.cause }
+func (e LiveConfirmationValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e LiveHeartbeatValidationError) Key() bool { return e.key }
+func (e LiveConfirmationValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e LiveHeartbeatValidationError) ErrorName() string { return "LiveHeartbeatValidationError" }
+func (e LiveConfirmationValidationError) ErrorName() string { return "LiveConfirmationValidationError" }
 
 // Error satisfies the builtin error interface
-func (e LiveHeartbeatValidationError) Error() string {
+func (e LiveConfirmationValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -310,14 +310,14 @@ func (e LiveHeartbeatValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sLiveHeartbeat.%s: %s%s",
+		"invalid %sLiveConfirmation.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = LiveHeartbeatValidationError{}
+var _ error = LiveConfirmationValidationError{}
 
 var _ interface {
 	Field() string
@@ -325,7 +325,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = LiveHeartbeatValidationError{}
+} = LiveConfirmationValidationError{}
 
 // Validate checks the field values on LiveRequest with the rules defined in
 // the proto definition for this message. If any rules are violated, the first

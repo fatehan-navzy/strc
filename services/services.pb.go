@@ -29,7 +29,7 @@ type LiveStream struct {
 	// Types that are valid to be assigned to Payload:
 	//
 	//	*LiveStream_Task
-	//	*LiveStream_Heartbeat
+	//	*LiveStream_Confirmation
 	Payload       isLiveStream_Payload `protobuf_oneof:"payload"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -81,10 +81,10 @@ func (x *LiveStream) GetTask() *packets.Task {
 	return nil
 }
 
-func (x *LiveStream) GetHeartbeat() *LiveHeartbeat {
+func (x *LiveStream) GetConfirmation() *LiveConfirmation {
 	if x != nil {
-		if x, ok := x.Payload.(*LiveStream_Heartbeat); ok {
-			return x.Heartbeat
+		if x, ok := x.Payload.(*LiveStream_Confirmation); ok {
+			return x.Confirmation
 		}
 	}
 	return nil
@@ -98,37 +98,38 @@ type LiveStream_Task struct {
 	Task *packets.Task `protobuf:"bytes,20,opt,name=task,proto3,oneof"`
 }
 
-type LiveStream_Heartbeat struct {
-	Heartbeat *LiveHeartbeat `protobuf:"bytes,21,opt,name=heartbeat,proto3,oneof"`
+type LiveStream_Confirmation struct {
+	Confirmation *LiveConfirmation `protobuf:"bytes,21,opt,name=confirmation,proto3,oneof"`
 }
 
 func (*LiveStream_Task) isLiveStream_Payload() {}
 
-func (*LiveStream_Heartbeat) isLiveStream_Payload() {}
+func (*LiveStream_Confirmation) isLiveStream_Payload() {}
 
-type LiveHeartbeat struct {
+type LiveConfirmation struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Cost          uint32                 `protobuf:"varint,1,opt,name=cost,proto3" json:"cost,omitempty"`
 	Received      int64                  `protobuf:"zigzag64,2,opt,name=received,proto3" json:"received,omitempty"`
 	Response      int64                  `protobuf:"zigzag64,3,opt,name=response,proto3" json:"response,omitempty"`
+	Confirmed     []string               `protobuf:"bytes,4,rep,name=confirmed,proto3" json:"confirmed,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *LiveHeartbeat) Reset() {
-	*x = LiveHeartbeat{}
+func (x *LiveConfirmation) Reset() {
+	*x = LiveConfirmation{}
 	mi := &file_services_services_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *LiveHeartbeat) String() string {
+func (x *LiveConfirmation) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*LiveHeartbeat) ProtoMessage() {}
+func (*LiveConfirmation) ProtoMessage() {}
 
-func (x *LiveHeartbeat) ProtoReflect() protoreflect.Message {
+func (x *LiveConfirmation) ProtoReflect() protoreflect.Message {
 	mi := &file_services_services_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -140,30 +141,37 @@ func (x *LiveHeartbeat) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LiveHeartbeat.ProtoReflect.Descriptor instead.
-func (*LiveHeartbeat) Descriptor() ([]byte, []int) {
+// Deprecated: Use LiveConfirmation.ProtoReflect.Descriptor instead.
+func (*LiveConfirmation) Descriptor() ([]byte, []int) {
 	return file_services_services_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *LiveHeartbeat) GetCost() uint32 {
+func (x *LiveConfirmation) GetCost() uint32 {
 	if x != nil {
 		return x.Cost
 	}
 	return 0
 }
 
-func (x *LiveHeartbeat) GetReceived() int64 {
+func (x *LiveConfirmation) GetReceived() int64 {
 	if x != nil {
 		return x.Received
 	}
 	return 0
 }
 
-func (x *LiveHeartbeat) GetResponse() int64 {
+func (x *LiveConfirmation) GetResponse() int64 {
 	if x != nil {
 		return x.Response
 	}
 	return 0
+}
+
+func (x *LiveConfirmation) GetConfirmed() []string {
+	if x != nil {
+		return x.Confirmed
+	}
+	return nil
 }
 
 type LiveRequest struct {
@@ -694,16 +702,17 @@ var File_services_services_proto protoreflect.FileDescriptor
 
 const file_services_services_proto_rawDesc = "" +
 	"\n" +
-	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x89\x01\n" +
+	"\x17services/services.proto\x12\x12com.navzy.services\x1a\x13services/repo.proto\x1a\x15devices/devices.proto\x1a\x15packets/packets.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x92\x01\n" +
 	"\n" +
 	"LiveStream\x12-\n" +
-	"\x04task\x18\x14 \x01(\v2\x17.com.navzy.packets.TaskH\x00R\x04task\x12A\n" +
-	"\theartbeat\x18\x15 \x01(\v2!.com.navzy.services.LiveHeartbeatH\x00R\theartbeatB\t\n" +
-	"\apayload\"[\n" +
-	"\rLiveHeartbeat\x12\x12\n" +
+	"\x04task\x18\x14 \x01(\v2\x17.com.navzy.packets.TaskH\x00R\x04task\x12J\n" +
+	"\fconfirmation\x18\x15 \x01(\v2$.com.navzy.services.LiveConfirmationH\x00R\fconfirmationB\t\n" +
+	"\apayload\"|\n" +
+	"\x10LiveConfirmation\x12\x12\n" +
 	"\x04cost\x18\x01 \x01(\rR\x04cost\x12\x1a\n" +
 	"\breceived\x18\x02 \x01(\x12R\breceived\x12\x1a\n" +
-	"\bresponse\x18\x03 \x01(\x12R\bresponse\"1\n" +
+	"\bresponse\x18\x03 \x01(\x12R\bresponse\x12\x1c\n" +
+	"\tconfirmed\x18\x04 \x03(\tR\tconfirmed\"1\n" +
 	"\vLiveRequest\x12\"\n" +
 	"\fdynamic_keys\x18\x01 \x03(\tR\fdynamic_keys\"0\n" +
 	"\x14DeviceExportResponse\x12\x18\n" +
@@ -757,7 +766,7 @@ func file_services_services_proto_rawDescGZIP() []byte {
 var file_services_services_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_services_services_proto_goTypes = []any{
 	(*LiveStream)(nil),                          // 0: com.navzy.services.LiveStream
-	(*LiveHeartbeat)(nil),                       // 1: com.navzy.services.LiveHeartbeat
+	(*LiveConfirmation)(nil),                    // 1: com.navzy.services.LiveConfirmation
 	(*LiveRequest)(nil),                         // 2: com.navzy.services.LiveRequest
 	(*DeviceExportResponse)(nil),                // 3: com.navzy.services.DeviceExportResponse
 	(*DeviceExportRequest)(nil),                 // 4: com.navzy.services.DeviceExportRequest
@@ -777,7 +786,7 @@ var file_services_services_proto_goTypes = []any{
 }
 var file_services_services_proto_depIdxs = []int32{
 	13, // 0: com.navzy.services.LiveStream.task:type_name -> com.navzy.packets.Task
-	1,  // 1: com.navzy.services.LiveStream.heartbeat:type_name -> com.navzy.services.LiveHeartbeat
+	1,  // 1: com.navzy.services.LiveStream.confirmation:type_name -> com.navzy.services.LiveConfirmation
 	14, // 2: com.navzy.services.DeviceImportResponse.devices:type_name -> com.navzy.devices.Device
 	15, // 3: com.navzy.services.DeviceStatusResponse.items:type_name -> com.navzy.services.DeviceStatus
 	11, // 4: com.navzy.services.PacketRequest.items:type_name -> com.navzy.services.PacketRequest.DevicePacketRequest
@@ -811,7 +820,7 @@ func file_services_services_proto_init() {
 	file_services_repo_proto_init()
 	file_services_services_proto_msgTypes[0].OneofWrappers = []any{
 		(*LiveStream_Task)(nil),
-		(*LiveStream_Heartbeat)(nil),
+		(*LiveStream_Confirmation)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
