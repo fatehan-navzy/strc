@@ -35,6 +35,298 @@ var (
 	_ = sort.Sort
 )
 
+// Validate checks the field values on LiveStream with the rules defined in the
+// proto definition for this message. If any rules are violated, the first
+// error encountered is returned, or nil if there are no violations.
+func (m *LiveStream) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on LiveStream with the rules defined in
+// the proto definition for this message. If any rules are violated, the
+// result is a list of violation errors wrapped in LiveStreamMultiError, or
+// nil if none found.
+func (m *LiveStream) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *LiveStream) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	switch v := m.Payload.(type) {
+	case *LiveStream_Task:
+		if v == nil {
+			err := LiveStreamValidationError{
+				field:  "Payload",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+
+		if all {
+			switch v := interface{}(m.GetTask()).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, LiveStreamValidationError{
+						field:  "Task",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, LiveStreamValidationError{
+						field:  "Task",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			}
+		} else if v, ok := interface{}(m.GetTask()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiveStreamValidationError{
+					field:  "Task",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *LiveStream_Heartbeat:
+		if v == nil {
+			err := LiveStreamValidationError{
+				field:  "Payload",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+
+		if all {
+			switch v := interface{}(m.GetHeartbeat()).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, LiveStreamValidationError{
+						field:  "Heartbeat",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, LiveStreamValidationError{
+						field:  "Heartbeat",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			}
+		} else if v, ok := interface{}(m.GetHeartbeat()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LiveStreamValidationError{
+					field:  "Heartbeat",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	default:
+		_ = v // ensures v is used
+	}
+
+	if len(errors) > 0 {
+		return LiveStreamMultiError(errors)
+	}
+
+	return nil
+}
+
+// LiveStreamMultiError is an error wrapping multiple validation errors
+// returned by LiveStream.ValidateAll() if the designated constraints aren't met.
+type LiveStreamMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m LiveStreamMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m LiveStreamMultiError) AllErrors() []error { return m }
+
+// LiveStreamValidationError is the validation error returned by
+// LiveStream.Validate if the designated constraints aren't met.
+type LiveStreamValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e LiveStreamValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e LiveStreamValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e LiveStreamValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e LiveStreamValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e LiveStreamValidationError) ErrorName() string { return "LiveStreamValidationError" }
+
+// Error satisfies the builtin error interface
+func (e LiveStreamValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sLiveStream.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = LiveStreamValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = LiveStreamValidationError{}
+
+// Validate checks the field values on LiveHeartbeat with the rules defined in
+// the proto definition for this message. If any rules are violated, the first
+// error encountered is returned, or nil if there are no violations.
+func (m *LiveHeartbeat) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on LiveHeartbeat with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// result is a list of violation errors wrapped in LiveHeartbeatMultiError, or
+// nil if none found.
+func (m *LiveHeartbeat) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *LiveHeartbeat) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Cost
+
+	// no validation rules for Received
+
+	// no validation rules for Response
+
+	if len(errors) > 0 {
+		return LiveHeartbeatMultiError(errors)
+	}
+
+	return nil
+}
+
+// LiveHeartbeatMultiError is an error wrapping multiple validation errors
+// returned by LiveHeartbeat.ValidateAll() if the designated constraints
+// aren't met.
+type LiveHeartbeatMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m LiveHeartbeatMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m LiveHeartbeatMultiError) AllErrors() []error { return m }
+
+// LiveHeartbeatValidationError is the validation error returned by
+// LiveHeartbeat.Validate if the designated constraints aren't met.
+type LiveHeartbeatValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e LiveHeartbeatValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e LiveHeartbeatValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e LiveHeartbeatValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e LiveHeartbeatValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e LiveHeartbeatValidationError) ErrorName() string { return "LiveHeartbeatValidationError" }
+
+// Error satisfies the builtin error interface
+func (e LiveHeartbeatValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sLiveHeartbeat.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = LiveHeartbeatValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = LiveHeartbeatValidationError{}
+
 // Validate checks the field values on LiveRequest with the rules defined in
 // the proto definition for this message. If any rules are violated, the first
 // error encountered is returned, or nil if there are no violations.

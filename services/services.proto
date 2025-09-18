@@ -18,7 +18,20 @@ service NavzyService {
   rpc DeviceStatusIndex(DeviceStatusRequest) returns (DeviceStatusResponse);
   rpc DeviceImport(DeviceImportRequest) returns (DeviceImportResponse);
   rpc DeviceExport(DeviceExportRequest) returns (DeviceExportResponse);
-  rpc Live(LiveRequest) returns (stream com.navzy.packets.Task);
+  rpc Live(LiveRequest) returns (stream LiveStream);
+}
+
+message LiveStream {
+  oneof payload {
+    com.navzy.packets.Task task = 20 [json_name = 'task'];
+    LiveHeartbeat heartbeat = 21 [json_name = 'heartbeat'];
+  }
+}
+
+message LiveHeartbeat {
+  uint32 cost = 1 [json_name = 'cost'];
+  sint64 received = 2 [json_name = 'received'];
+  sint64 response = 3 [json_name = 'response'];
 }
 
 message LiveRequest {
