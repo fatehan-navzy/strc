@@ -688,38 +688,33 @@ func (m *Packet) validate(all bool) error {
 
 	// no validation rules for Speed
 
-	for idx, item := range m.GetIos() {
-		_, _ = idx, item
-
-		if all {
-			switch v := interface{}(item).(type) {
-			case interface{ ValidateAll() error }:
-				if err := v.ValidateAll(); err != nil {
-					errors = append(errors, PacketValidationError{
-						field:  fmt.Sprintf("Ios[%v]", idx),
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			case interface{ Validate() error }:
-				if err := v.Validate(); err != nil {
-					errors = append(errors, PacketValidationError{
-						field:  fmt.Sprintf("Ios[%v]", idx),
-						reason: "embedded message failed validation",
-						cause:  err,
-					})
-				}
-			}
-		} else if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return PacketValidationError{
-					field:  fmt.Sprintf("Ios[%v]", idx),
+	if all {
+		switch v := interface{}(m.GetCompact()).(type) {
+		case interface{ ValidateAll() error }:
+			if err := v.ValidateAll(); err != nil {
+				errors = append(errors, PacketValidationError{
+					field:  "Compact",
 					reason: "embedded message failed validation",
 					cause:  err,
-				}
+				})
+			}
+		case interface{ Validate() error }:
+			if err := v.Validate(); err != nil {
+				errors = append(errors, PacketValidationError{
+					field:  "Compact",
+					reason: "embedded message failed validation",
+					cause:  err,
+				})
 			}
 		}
-
+	} else if v, ok := interface{}(m.GetCompact()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return PacketValidationError{
+				field:  "Compact",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
 	}
 
 	if m.Satellite != nil {
@@ -811,155 +806,904 @@ var _ interface {
 	ErrorName() string
 } = PacketValidationError{}
 
-// Validate checks the field values on Io with the rules defined in the proto
-// definition for this message. If any rules are violated, the first error
-// encountered is returned, or nil if there are no violations.
-func (m *Io) Validate() error {
+// Validate checks the field values on Compact with the rules defined in the
+// proto definition for this message. If any rules are violated, the first
+// error encountered is returned, or nil if there are no violations.
+func (m *Compact) Validate() error {
 	return m.validate(false)
 }
 
-// ValidateAll checks the field values on Io with the rules defined in the
+// ValidateAll checks the field values on Compact with the rules defined in the
 // proto definition for this message. If any rules are violated, the result is
-// a list of violation errors wrapped in IoMultiError, or nil if none found.
-func (m *Io) ValidateAll() error {
+// a list of violation errors wrapped in CompactMultiError, or nil if none found.
+func (m *Compact) ValidateAll() error {
 	return m.validate(true)
 }
 
-func (m *Io) validate(all bool) error {
+func (m *Compact) validate(all bool) error {
 	if m == nil {
 		return nil
 	}
 
 	var errors []error
 
-	// no validation rules for Io
+	if m.Movement != nil {
+		// no validation rules for Movement
+	}
 
-	switch v := m.Value.(type) {
-	case *Io_Int32Value:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for Int32Value
-	case *Io_Uint32Value:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for Uint32Value
-	case *Io_Int64Value:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for Int64Value
-	case *Io_Uint64Value:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for Uint64Value
-	case *Io_FloatValue:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for FloatValue
-	case *Io_DoubleValue:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for DoubleValue
-	case *Io_StringValue:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for StringValue
-	case *Io_BoolValue:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for BoolValue
-	case *Io_RawValue:
-		if v == nil {
-			err := IoValidationError{
-				field:  "Value",
-				reason: "oneof value cannot be a typed-nil",
-			}
-			if !all {
-				return err
-			}
-			errors = append(errors, err)
-		}
-		// no validation rules for RawValue
-	default:
-		_ = v // ensures v is used
+	if m.DataMode != nil {
+		// no validation rules for DataMode
+	}
+
+	if m.GsmSignal != nil {
+		// no validation rules for GsmSignal
+	}
+
+	if m.SleepMode != nil {
+		// no validation rules for SleepMode
+	}
+
+	if m.GnssStatus != nil {
+		// no validation rules for GnssStatus
+	}
+
+	if m.GnssPdop != nil {
+		// no validation rules for GnssPdop
+	}
+
+	if m.GnssHdop != nil {
+		// no validation rules for GnssHdop
+	}
+
+	if m.ExternalVoltage != nil {
+		// no validation rules for ExternalVoltage
+	}
+
+	if m.Speed != nil {
+		// no validation rules for Speed
+	}
+
+	if m.GsmCellId != nil {
+		// no validation rules for GsmCellId
+	}
+
+	if m.GsmAreaCode != nil {
+		// no validation rules for GsmAreaCode
+	}
+
+	if m.BatteryVoltage != nil {
+		// no validation rules for BatteryVoltage
+	}
+
+	if m.BatteryCurrent != nil {
+		// no validation rules for BatteryCurrent
+	}
+
+	if m.ActiveGsmOperator != nil {
+		// no validation rules for ActiveGsmOperator
+	}
+
+	if m.TripOdometer != nil {
+		// no validation rules for TripOdometer
+	}
+
+	if m.TotalOdometer != nil {
+		// no validation rules for TotalOdometer
+	}
+
+	if m.DigitalInput_1 != nil {
+		// no validation rules for DigitalInput_1
+	}
+
+	if m.AnalogInput_1 != nil {
+		// no validation rules for AnalogInput_1
+	}
+
+	if m.DigitalOutput_1 != nil {
+		// no validation rules for DigitalOutput_1
+	}
+
+	if m.FuelUsedGps != nil {
+		// no validation rules for FuelUsedGps
+	}
+
+	if m.FuelRateGps != nil {
+		// no validation rules for FuelRateGps
+	}
+
+	if m.AxisX != nil {
+		// no validation rules for AxisX
+	}
+
+	if m.AxisY != nil {
+		// no validation rules for AxisY
+	}
+
+	if m.AxisZ != nil {
+		// no validation rules for AxisZ
+	}
+
+	if m.Iccid1 != nil {
+		// no validation rules for Iccid1
+	}
+
+	if m.SdStatus != nil {
+		// no validation rules for SdStatus
+	}
+
+	if m.DigitalInput_2 != nil {
+		// no validation rules for DigitalInput_2
+	}
+
+	if m.DigitalInput_3 != nil {
+		// no validation rules for DigitalInput_3
+	}
+
+	if m.AnalogInput_2 != nil {
+		// no validation rules for AnalogInput_2
+	}
+
+	if m.DigitalOutput_2 != nil {
+		// no validation rules for DigitalOutput_2
+	}
+
+	if m.DallasTemperature_1 != nil {
+		// no validation rules for DallasTemperature_1
+	}
+
+	if m.DallasTemperature_2 != nil {
+		// no validation rules for DallasTemperature_2
+	}
+
+	if m.DallasTemperature_3 != nil {
+		// no validation rules for DallasTemperature_3
+	}
+
+	if m.DallasTemperature_4 != nil {
+		// no validation rules for DallasTemperature_4
+	}
+
+	if m.DallasTemperatureId_1 != nil {
+		// no validation rules for DallasTemperatureId_1
+	}
+
+	if m.DallasTemperatureId_2 != nil {
+		// no validation rules for DallasTemperatureId_2
+	}
+
+	if m.DallasTemperatureId_3 != nil {
+		// no validation rules for DallasTemperatureId_3
+	}
+
+	if m.DallasTemperatureId_4 != nil {
+		// no validation rules for DallasTemperatureId_4
+	}
+
+	if m.Ibutton != nil {
+		// no validation rules for Ibutton
+	}
+
+	if m.Rfid != nil {
+		// no validation rules for Rfid
+	}
+
+	if m.Lls_1FuelLevel != nil {
+		// no validation rules for Lls_1FuelLevel
+	}
+
+	if m.Lls_1Temperature != nil {
+		// no validation rules for Lls_1Temperature
+	}
+
+	if m.Lls_2FuelLevel != nil {
+		// no validation rules for Lls_2FuelLevel
+	}
+
+	if m.Lls_2Temperature != nil {
+		// no validation rules for Lls_2Temperature
+	}
+
+	if m.Lls_3FuelLevel != nil {
+		// no validation rules for Lls_3FuelLevel
+	}
+
+	if m.Lls_3Temperature != nil {
+		// no validation rules for Lls_3Temperature
+	}
+
+	if m.Lls_4FuelLevel != nil {
+		// no validation rules for Lls_4FuelLevel
+	}
+
+	if m.Lls_4Temperature != nil {
+		// no validation rules for Lls_4Temperature
+	}
+
+	if m.Lls_5FuelLevel != nil {
+		// no validation rules for Lls_5FuelLevel
+	}
+
+	if m.Lls_5Temperature != nil {
+		// no validation rules for Lls_5Temperature
+	}
+
+	if m.EcoScore != nil {
+		// no validation rules for EcoScore
+	}
+
+	if m.BatteryLevel != nil {
+		// no validation rules for BatteryLevel
+	}
+
+	if m.UserId != nil {
+		// no validation rules for UserId
+	}
+
+	if m.NetworkType != nil {
+		// no validation rules for NetworkType
+	}
+
+	if m.PulseCounterDin1 != nil {
+		// no validation rules for PulseCounterDin1
+	}
+
+	if m.PulseCounterDin2 != nil {
+		// no validation rules for PulseCounterDin2
+	}
+
+	if m.BtStatus != nil {
+		// no validation rules for BtStatus
+	}
+
+	if m.BarcodeId != nil {
+		// no validation rules for BarcodeId
+	}
+
+	if m.InstantMovement != nil {
+		// no validation rules for InstantMovement
+	}
+
+	if m.Ul202_02SensorFuelLevel != nil {
+		// no validation rules for Ul202_02SensorFuelLevel
+	}
+
+	if m.Ul202_02SensorStatus != nil {
+		// no validation rules for Ul202_02SensorStatus
+	}
+
+	if m.DigitalOutput_3 != nil {
+		// no validation rules for DigitalOutput_3
+	}
+
+	if m.GroundSense != nil {
+		// no validation rules for GroundSense
+	}
+
+	if m.Iso6709Coordinates != nil {
+		// no validation rules for Iso6709Coordinates
+	}
+
+	if m.UmtsLteCellId != nil {
+		// no validation rules for UmtsLteCellId
+	}
+
+	if m.DriverName != nil {
+		// no validation rules for DriverName
+	}
+
+	if m.DriverCardLicenseType != nil {
+		// no validation rules for DriverCardLicenseType
+	}
+
+	if m.DriverGender != nil {
+		// no validation rules for DriverGender
+	}
+
+	if m.DriverCardId != nil {
+		// no validation rules for DriverCardId
+	}
+
+	if m.DriverCardExpirationDate != nil {
+		// no validation rules for DriverCardExpirationDate
+	}
+
+	if m.DriverCardPlaceOfIssue != nil {
+		// no validation rules for DriverCardPlaceOfIssue
+	}
+
+	if m.DriverStatusEvent != nil {
+		// no validation rules for DriverStatusEvent
+	}
+
+	if m.AinSpeed != nil {
+		// no validation rules for AinSpeed
+	}
+
+	if m.Msp500VendorName != nil {
+		// no validation rules for Msp500VendorName
+	}
+
+	if m.Msp500VehicleNumber != nil {
+		// no validation rules for Msp500VehicleNumber
+	}
+
+	if m.Msp500SpeedSensor != nil {
+		// no validation rules for Msp500SpeedSensor
+	}
+
+	if m.WakeReason != nil {
+		// no validation rules for WakeReason
+	}
+
+	if m.EyeTemperature_1 != nil {
+		// no validation rules for EyeTemperature_1
+	}
+
+	if m.EyeTemperature_2 != nil {
+		// no validation rules for EyeTemperature_2
+	}
+
+	if m.EyeTemperature_3 != nil {
+		// no validation rules for EyeTemperature_3
+	}
+
+	if m.EyeTemperature_4 != nil {
+		// no validation rules for EyeTemperature_4
+	}
+
+	if m.EyeHumidity_1 != nil {
+		// no validation rules for EyeHumidity_1
+	}
+
+	if m.EyeHumidity_2 != nil {
+		// no validation rules for EyeHumidity_2
+	}
+
+	if m.EyeHumidity_3 != nil {
+		// no validation rules for EyeHumidity_3
+	}
+
+	if m.EyeHumidity_4 != nil {
+		// no validation rules for EyeHumidity_4
+	}
+
+	if m.EyeMagnet_1 != nil {
+		// no validation rules for EyeMagnet_1
+	}
+
+	if m.EyeMagnet_2 != nil {
+		// no validation rules for EyeMagnet_2
+	}
+
+	if m.EyeMagnet_3 != nil {
+		// no validation rules for EyeMagnet_3
+	}
+
+	if m.EyeMagnet_4 != nil {
+		// no validation rules for EyeMagnet_4
+	}
+
+	if m.EyeMovement_1 != nil {
+		// no validation rules for EyeMovement_1
+	}
+
+	if m.IsfCloggedBrakeSystemFilterIndicator != nil {
+		// no validation rules for IsfCloggedBrakeSystemFilterIndicator
+	}
+
+	if m.IsfLowWasherFluidLevelIndicator != nil {
+		// no validation rules for IsfLowWasherFluidLevelIndicator
+	}
+
+	if m.IsfLowAdblueLevelIndicator != nil {
+		// no validation rules for IsfLowAdblueLevelIndicator
+	}
+
+	if m.IsfLowTrailerTyrePressureIndicator != nil {
+		// no validation rules for IsfLowTrailerTyrePressureIndicator
+	}
+
+	if m.IsfWearOfTrailerBrakeLiningIndicator != nil {
+		// no validation rules for IsfWearOfTrailerBrakeLiningIndicator
+	}
+
+	if m.IsfHighTrailerBrakeTemperatureIndicator != nil {
+		// no validation rules for IsfHighTrailerBrakeTemperatureIndicator
+	}
+
+	if m.IsfIncorrectTrailerPneumaticSupplyIndicator != nil {
+		// no validation rules for IsfIncorrectTrailerPneumaticSupplyIndicator
+	}
+
+	if m.IsfLowCngLevelIndicator != nil {
+		// no validation rules for IsfLowCngLevelIndicator
+	}
+
+	if m.AsfRightJoystickMovedRightActive != nil {
+		// no validation rules for AsfRightJoystickMovedRightActive
+	}
+
+	if m.AsfRightJoystickMovedLeftActive != nil {
+		// no validation rules for AsfRightJoystickMovedLeftActive
+	}
+
+	if m.AsfRightJoystickMovedForwardActive != nil {
+		// no validation rules for AsfRightJoystickMovedForwardActive
+	}
+
+	if m.AsfRightJoystickMovedBackActive != nil {
+		// no validation rules for AsfRightJoystickMovedBackActive
+	}
+
+	if m.AsfLeftJoystickMovedRightActive != nil {
+		// no validation rules for AsfLeftJoystickMovedRightActive
+	}
+
+	if m.AsfLeftJoystickMovedLeftActive != nil {
+		// no validation rules for AsfLeftJoystickMovedLeftActive
+	}
+
+	if m.AsfLeftJoystickMovedForwardActive != nil {
+		// no validation rules for AsfLeftJoystickMovedForwardActive
+	}
+
+	if m.AsfLeftJoystickMovedBackActive != nil {
+		// no validation rules for AsfLeftJoystickMovedBackActive
+	}
+
+	if m.AsfFirstRearHydraulic != nil {
+		// no validation rules for AsfFirstRearHydraulic
+	}
+
+	if m.AsfSecondRearHydraulic != nil {
+		// no validation rules for AsfSecondRearHydraulic
+	}
+
+	if m.AsfThirdRearHydraulic != nil {
+		// no validation rules for AsfThirdRearHydraulic
+	}
+
+	if m.AsfFourthRearHydraulic != nil {
+		// no validation rules for AsfFourthRearHydraulic
+	}
+
+	if m.AsfFirstFrontHydraulic != nil {
+		// no validation rules for AsfFirstFrontHydraulic
+	}
+
+	if m.AsfSecondFrontHydraulic != nil {
+		// no validation rules for AsfSecondFrontHydraulic
+	}
+
+	if m.AsfThirdFrontHydraulic != nil {
+		// no validation rules for AsfThirdFrontHydraulic
+	}
+
+	if m.AsfFourthFrontHydraulic != nil {
+		// no validation rules for AsfFourthFrontHydraulic
+	}
+
+	if m.AsfFrontThreePointHitch != nil {
+		// no validation rules for AsfFrontThreePointHitch
+	}
+
+	if m.AsfRearThreePointHitch != nil {
+		// no validation rules for AsfRearThreePointHitch
+	}
+
+	if m.AsfFrontPowerTakeOff != nil {
+		// no validation rules for AsfFrontPowerTakeOff
+	}
+
+	if m.AsfRearPowerTakeOff != nil {
+		// no validation rules for AsfRearPowerTakeOff
+	}
+
+	if m.AsfMowingActive != nil {
+		// no validation rules for AsfMowingActive
+	}
+
+	if m.AsfThreshingActive != nil {
+		// no validation rules for AsfThreshingActive
+	}
+
+	if m.AsfGrainReleaseFromHopper != nil {
+		// no validation rules for AsfGrainReleaseFromHopper
+	}
+
+	if m.AsfGrainTankIs_100Full != nil {
+		// no validation rules for AsfGrainTankIs_100Full
+	}
+
+	if m.AsfGrainTankIs_70Full != nil {
+		// no validation rules for AsfGrainTankIs_70Full
+	}
+
+	if m.AsfGrainTankIsOpened != nil {
+		// no validation rules for AsfGrainTankIsOpened
+	}
+
+	if m.AsfUnloaderDrive != nil {
+		// no validation rules for AsfUnloaderDrive
+	}
+
+	if m.AsfCleaningFanControlTurnedOff != nil {
+		// no validation rules for AsfCleaningFanControlTurnedOff
+	}
+
+	if m.AsfThreshingDrumControlTurnedOff != nil {
+		// no validation rules for AsfThreshingDrumControlTurnedOff
+	}
+
+	if m.AsfStrawWalkerIsClogged != nil {
+		// no validation rules for AsfStrawWalkerIsClogged
+	}
+
+	if m.AsfExcessiveClearanceUnderTheThreshingDrum != nil {
+		// no validation rules for AsfExcessiveClearanceUnderTheThreshingDrum
+	}
+
+	if m.AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades != nil {
+		// no validation rules for AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades
+	}
+
+	if m.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades != nil {
+		// no validation rules for AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades
+	}
+
+	if m.AsfEarAugerSpeedBelowTheNorm != nil {
+		// no validation rules for AsfEarAugerSpeedBelowTheNorm
+	}
+
+	if m.AsfGrainAugerSpeedBelowTheNorm != nil {
+		// no validation rules for AsfGrainAugerSpeedBelowTheNorm
+	}
+
+	if m.AsfStrawChooperSpeedBelowTheNorm != nil {
+		// no validation rules for AsfStrawChooperSpeedBelowTheNorm
+	}
+
+	if m.AsfStrawShakerSpeedBelowTheNorm != nil {
+		// no validation rules for AsfStrawShakerSpeedBelowTheNorm
+	}
+
+	if m.AsfFeederSpeedBelowTheNorm != nil {
+		// no validation rules for AsfFeederSpeedBelowTheNorm
+	}
+
+	if m.AsfStrawChopperSwitchedOn != nil {
+		// no validation rules for AsfStrawChopperSwitchedOn
+	}
+
+	if m.AsfCornHeaderConnected != nil {
+		// no validation rules for AsfCornHeaderConnected
+	}
+
+	if m.AsfGrainHeaderConnected != nil {
+		// no validation rules for AsfGrainHeaderConnected
+	}
+
+	if m.AsfFeederReverseSwitchedOn != nil {
+		// no validation rules for AsfFeederReverseSwitchedOn
+	}
+
+	if m.AsfThePressureFilterOfTheHydraulicPumpIsClogged != nil {
+		// no validation rules for AsfThePressureFilterOfTheHydraulicPumpIsClogged
+	}
+
+	if m.AsfAdapterPressureFilterSensor != nil {
+		// no validation rules for AsfAdapterPressureFilterSensor
+	}
+
+	if m.AsfService_2RequiredIndicator != nil {
+		// no validation rules for AsfService_2RequiredIndicator
+	}
+
+	if m.AsfDrainFilterCloggedIndicator != nil {
+		// no validation rules for AsfDrainFilterCloggedIndicator
+	}
+
+	if m.AsfSection_1Spraying != nil {
+		// no validation rules for AsfSection_1Spraying
+	}
+
+	if m.AsfSection_2Spraying != nil {
+		// no validation rules for AsfSection_2Spraying
+	}
+
+	if m.AsfSection_3Spraying != nil {
+		// no validation rules for AsfSection_3Spraying
+	}
+
+	if m.AsfSection_4Spraying != nil {
+		// no validation rules for AsfSection_4Spraying
+	}
+
+	if m.AsfSection_5Spraying != nil {
+		// no validation rules for AsfSection_5Spraying
+	}
+
+	if m.AsfSection_6Spraying != nil {
+		// no validation rules for AsfSection_6Spraying
+	}
+
+	if m.AsfSection_7Spraying != nil {
+		// no validation rules for AsfSection_7Spraying
+	}
+
+	if m.AsfSection_8Spraying != nil {
+		// no validation rules for AsfSection_8Spraying
+	}
+
+	if m.AsfSection_9Spraying != nil {
+		// no validation rules for AsfSection_9Spraying
+	}
+
+	if m.UsfSpreading != nil {
+		// no validation rules for UsfSpreading
+	}
+
+	if m.UsfPouringChemicals != nil {
+		// no validation rules for UsfPouringChemicals
+	}
+
+	if m.UsfConveyorBelt != nil {
+		// no validation rules for UsfConveyorBelt
+	}
+
+	if m.UsfSaltSpreaderSDriveWheel != nil {
+		// no validation rules for UsfSaltSpreaderSDriveWheel
+	}
+
+	if m.UsfBrushes != nil {
+		// no validation rules for UsfBrushes
+	}
+
+	if m.UsfVacuumCleaner != nil {
+		// no validation rules for UsfVacuumCleaner
+	}
+
+	if m.UsfWaterSupply != nil {
+		// no validation rules for UsfWaterSupply
+	}
+
+	if m.UsfLiquidPump != nil {
+		// no validation rules for UsfLiquidPump
+	}
+
+	if m.UsfUnloadingFromTheHopper != nil {
+		// no validation rules for UsfUnloadingFromTheHopper
+	}
+
+	if m.UsfLowSaltSandLevelInContainerIndicator != nil {
+		// no validation rules for UsfLowSaltSandLevelInContainerIndicator
+	}
+
+	if m.UsfLowWaterLevelInContainerIndicator != nil {
+		// no validation rules for UsfLowWaterLevelInContainerIndicator
+	}
+
+	if m.UsfChemicals != nil {
+		// no validation rules for UsfChemicals
+	}
+
+	if m.UsfCompressor != nil {
+		// no validation rules for UsfCompressor
+	}
+
+	if m.UsfWaterValveIsOpened != nil {
+		// no validation rules for UsfWaterValveIsOpened
+	}
+
+	if m.UsfCabinMovedUpStatusActive != nil {
+		// no validation rules for UsfCabinMovedUpStatusActive
+	}
+
+	if m.UsfCabinMovedDownStatusActive != nil {
+		// no validation rules for UsfCabinMovedDownStatusActive
+	}
+
+	if m.UsfHydraulicsWorkNotPermitted != nil {
+		// no validation rules for UsfHydraulicsWorkNotPermitted
+	}
+
+	if m.CisfSection_1PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_1PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_1Filled != nil {
+		// no validation rules for CisfSection_1Filled
+	}
+
+	if m.CisfSection_1Overfilled != nil {
+		// no validation rules for CisfSection_1Overfilled
+	}
+
+	if m.CisfSection_2PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_2PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_2Filled != nil {
+		// no validation rules for CisfSection_2Filled
+	}
+
+	if m.CisfSection_2Overfilled != nil {
+		// no validation rules for CisfSection_2Overfilled
+	}
+
+	if m.CisfSection_3PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_3PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_3Filled != nil {
+		// no validation rules for CisfSection_3Filled
+	}
+
+	if m.CisfSection_3Overfilled != nil {
+		// no validation rules for CisfSection_3Overfilled
+	}
+
+	if m.CisfSection_4PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_4PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_4Filled != nil {
+		// no validation rules for CisfSection_4Filled
+	}
+
+	if m.CisfSection_4Overfilled != nil {
+		// no validation rules for CisfSection_4Overfilled
+	}
+
+	if m.CisfSection_5PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_5PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_5Filled != nil {
+		// no validation rules for CisfSection_5Filled
+	}
+
+	if m.CisfSection_5Overfilled != nil {
+		// no validation rules for CisfSection_5Overfilled
+	}
+
+	if m.CisfSection_6PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_6PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_6Filled != nil {
+		// no validation rules for CisfSection_6Filled
+	}
+
+	if m.CisfSection_6Overfilled != nil {
+		// no validation rules for CisfSection_6Overfilled
+	}
+
+	if m.CisfSection_7PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_7PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_7Filled != nil {
+		// no validation rules for CisfSection_7Filled
+	}
+
+	if m.CisfSection_7Overfilled != nil {
+		// no validation rules for CisfSection_7Overfilled
+	}
+
+	if m.CisfSection_8PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection_8PresenceOfFluidInTheDownpipe
+	}
+
+	if m.CisfSection_8Filled != nil {
+		// no validation rules for CisfSection_8Filled
+	}
+
+	if m.CisfSection_8Overfilled != nil {
+		// no validation rules for CisfSection_8Overfilled
+	}
+
+	if m.DistanceToNextService != nil {
+		// no validation rules for DistanceToNextService
+	}
+
+	if m.CngLevelKg != nil {
+		// no validation rules for CngLevelKg
+	}
+
+	if m.DistanceFromNeedOfService != nil {
+		// no validation rules for DistanceFromNeedOfService
+	}
+
+	if m.DistanceFromLastService != nil {
+		// no validation rules for DistanceFromLastService
+	}
+
+	if m.TimeToNextService != nil {
+		// no validation rules for TimeToNextService
+	}
+
+	if m.TimeFromNeedOfService != nil {
+		// no validation rules for TimeFromNeedOfService
+	}
+
+	if m.TimeFromLastSerivce != nil {
+		// no validation rules for TimeFromLastSerivce
+	}
+
+	if m.DistanceToNextOilService != nil {
+		// no validation rules for DistanceToNextOilService
+	}
+
+	if m.TimeToNextOilService != nil {
+		// no validation rules for TimeToNextOilService
+	}
+
+	if m.LvcanVehicleRange != nil {
+		// no validation rules for LvcanVehicleRange
+	}
+
+	if m.LvcanTotalCngCounted != nil {
+		// no validation rules for LvcanTotalCngCounted
+	}
+
+	if m.TotalBaleCount != nil {
+		// no validation rules for TotalBaleCount
+	}
+
+	if m.BaleCount != nil {
+		// no validation rules for BaleCount
+	}
+
+	if m.CutBaleCount != nil {
+		// no validation rules for CutBaleCount
+	}
+
+	if m.BaleSlices != nil {
+		// no validation rules for BaleSlices
+	}
+
+	if m.LvcanMaxroadspeed != nil {
+		// no validation rules for LvcanMaxroadspeed
+	}
+
+	if m.LvcanExceededroadspeed != nil {
+		// no validation rules for LvcanExceededroadspeed
+	}
+
+	if m.LvcanRsfSpeedlimitsign != nil {
+		// no validation rules for LvcanRsfSpeedlimitsign
+	}
+
+	if m.LvcanRsfEndofspeedlimitsign != nil {
+		// no validation rules for LvcanRsfEndofspeedlimitsign
+	}
+
+	if m.LvcanRsfSpeedexceeded != nil {
+		// no validation rules for LvcanRsfSpeedexceeded
+	}
+
+	if m.LvcanRsfTimespeedlimitsign != nil {
+		// no validation rules for LvcanRsfTimespeedlimitsign
+	}
+
+	if m.LvcanRsfWthrspeedlimitsign != nil {
+		// no validation rules for LvcanRsfWthrspeedlimitsign
 	}
 
 	if len(errors) > 0 {
-		return IoMultiError(errors)
+		return CompactMultiError(errors)
 	}
 
 	return nil
 }
 
-// IoMultiError is an error wrapping multiple validation errors returned by
-// Io.ValidateAll() if the designated constraints aren't met.
-type IoMultiError []error
+// CompactMultiError is an error wrapping multiple validation errors returned
+// by Compact.ValidateAll() if the designated constraints aren't met.
+type CompactMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
-func (m IoMultiError) Error() string {
+func (m CompactMultiError) Error() string {
 	msgs := make([]string, 0, len(m))
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
@@ -968,11 +1712,11 @@ func (m IoMultiError) Error() string {
 }
 
 // AllErrors returns a list of validation violation errors.
-func (m IoMultiError) AllErrors() []error { return m }
+func (m CompactMultiError) AllErrors() []error { return m }
 
-// IoValidationError is the validation error returned by Io.Validate if the
-// designated constraints aren't met.
-type IoValidationError struct {
+// CompactValidationError is the validation error returned by Compact.Validate
+// if the designated constraints aren't met.
+type CompactValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -980,22 +1724,22 @@ type IoValidationError struct {
 }
 
 // Field function returns field value.
-func (e IoValidationError) Field() string { return e.field }
+func (e CompactValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e IoValidationError) Reason() string { return e.reason }
+func (e CompactValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e IoValidationError) Cause() error { return e.cause }
+func (e CompactValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e IoValidationError) Key() bool { return e.key }
+func (e CompactValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e IoValidationError) ErrorName() string { return "IoValidationError" }
+func (e CompactValidationError) ErrorName() string { return "CompactValidationError" }
 
 // Error satisfies the builtin error interface
-func (e IoValidationError) Error() string {
+func (e CompactValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -1007,14 +1751,14 @@ func (e IoValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sIo.%s: %s%s",
+		"invalid %sCompact.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = IoValidationError{}
+var _ error = CompactValidationError{}
 
 var _ interface {
 	Field() string
@@ -1022,4 +1766,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = IoValidationError{}
+} = CompactValidationError{}
