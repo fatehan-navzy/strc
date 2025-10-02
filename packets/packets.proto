@@ -214,8 +214,8 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Currently used GSM Operator code
-    optional uint64 active_gsm_operator = 15;
-  
+    optional uint32 active_gsm_operator = 15;
+
     // Parameter ID: 199
     // Property Name: Trip Odometer
     // Type: Unsigned
@@ -225,7 +225,7 @@ message Compact {
     // Multiplier: -
     // Units: m
     // Values: Trip Odometer value
-    optional uint64 trip_odometer = 16;
+    optional uint32 trip_odometer = 16;
   
     // Parameter ID: 16
     // Property Name: Total Odometer
@@ -247,7 +247,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input_1 = 18;
+    optional uint32 digital_input1 = 18;
   
     // Parameter ID: 9
     // Property Name: Analog Input 1
@@ -258,7 +258,7 @@ message Compact {
     // Multiplier: 0.001
     // Units: V
     // Values: Voltage
-    optional uint32 analog_input_1 = 19;
+    optional uint32 analog_input1 = 19;
   
     // Parameter ID: 179
     // Property Name: Digital Output 1
@@ -269,7 +269,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_output_1 = 20;
+    optional uint32 digital_output1 = 20;
   
     // Parameter ID: 12
     // Property Name: Fuel Used GPS
@@ -280,7 +280,7 @@ message Compact {
     // Multiplier: 0.001
     // Units: l
     // Values: Fuel Used
-    optional uint64 fuel_used_gps = 21;
+    optional uint32 fuel_used_gps = 21;
   
     // Parameter ID: 13
     // Property Name: Fuel Rate GPS
@@ -357,7 +357,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input_2 = 28;
+    optional uint32 digital_input2 = 28;
   
     // Parameter ID: 3
     // Property Name: Digital Input 3
@@ -368,7 +368,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input_3 = 29;
+    optional uint32 digital_input3 = 29;
   
     // Parameter ID: 6
     // Property Name: Analog Input 2
@@ -379,7 +379,7 @@ message Compact {
     // Multiplier: 0.001
     // Units: V
     // Values: Voltage
-    optional uint32 analog_input_2 = 30;
+    optional uint32 analog_input2 = 30;
   
     // Parameter ID: 180
     // Property Name: Digital Output 2
@@ -390,7 +390,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic 0/1
-    optional uint32 digital_output_2 = 31;
+    optional uint32 digital_output2 = 31;
   
     // Parameter ID: 72
     // Property Name: Dallas Temperature 1
@@ -401,7 +401,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature_1 = 32;
+    optional int64 dallas_temperature1 = 32;
   
     // Parameter ID: 73
     // Property Name: Dallas Temperature 2
@@ -412,7 +412,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature_2 = 33;
+    optional int64 dallas_temperature2 = 33;
   
     // Parameter ID: 74
     // Property Name: Dallas Temperature 3
@@ -423,7 +423,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature_3 = 34;
+    optional int64 dallas_temperature3 = 34;
   
     // Parameter ID: 75
     // Property Name: Dallas Temperature 4
@@ -434,7 +434,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature_4 = 35;
+    optional int64 dallas_temperature4 = 35;
   
     // Parameter ID: 76
     // Property Name: Dallas Temperature ID 1
@@ -445,7 +445,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id_1 = 36;
+    optional uint64 dallas_temperature_id1 = 36;
   
     // Parameter ID: 77
     // Property Name: Dallas Temperature ID 2
@@ -456,7 +456,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id_2 = 37;
+    optional uint64 dallas_temperature_id2 = 37;
   
     // Parameter ID: 79
     // Property Name: Dallas Temperature ID 3
@@ -467,7 +467,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id_3 = 38;
+    optional uint64 dallas_temperature_id3 = 38;
   
     // Parameter ID: 71
     // Property Name: Dallas Temperature ID 4
@@ -478,7 +478,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id_4 = 39;
+    optional uint64 dallas_temperature_id4 = 39;
   
     // Parameter ID: 78
     // Property Name: iButton

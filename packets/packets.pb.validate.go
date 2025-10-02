@@ -891,16 +891,16 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for TotalOdometer
 	}
 
-	if m.DigitalInput_1 != nil {
-		// no validation rules for DigitalInput_1
+	if m.DigitalInput1 != nil {
+		// no validation rules for DigitalInput1
 	}
 
-	if m.AnalogInput_1 != nil {
-		// no validation rules for AnalogInput_1
+	if m.AnalogInput1 != nil {
+		// no validation rules for AnalogInput1
 	}
 
-	if m.DigitalOutput_1 != nil {
-		// no validation rules for DigitalOutput_1
+	if m.DigitalOutput1 != nil {
+		// no validation rules for DigitalOutput1
 	}
 
 	if m.FuelUsedGps != nil {
@@ -931,52 +931,52 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for SdStatus
 	}
 
-	if m.DigitalInput_2 != nil {
-		// no validation rules for DigitalInput_2
+	if m.DigitalInput2 != nil {
+		// no validation rules for DigitalInput2
 	}
 
-	if m.DigitalInput_3 != nil {
-		// no validation rules for DigitalInput_3
+	if m.DigitalInput3 != nil {
+		// no validation rules for DigitalInput3
 	}
 
-	if m.AnalogInput_2 != nil {
-		// no validation rules for AnalogInput_2
+	if m.AnalogInput2 != nil {
+		// no validation rules for AnalogInput2
 	}
 
-	if m.DigitalOutput_2 != nil {
-		// no validation rules for DigitalOutput_2
+	if m.DigitalOutput2 != nil {
+		// no validation rules for DigitalOutput2
 	}
 
-	if m.DallasTemperature_1 != nil {
-		// no validation rules for DallasTemperature_1
+	if m.DallasTemperature1 != nil {
+		// no validation rules for DallasTemperature1
 	}
 
-	if m.DallasTemperature_2 != nil {
-		// no validation rules for DallasTemperature_2
+	if m.DallasTemperature2 != nil {
+		// no validation rules for DallasTemperature2
 	}
 
-	if m.DallasTemperature_3 != nil {
-		// no validation rules for DallasTemperature_3
+	if m.DallasTemperature3 != nil {
+		// no validation rules for DallasTemperature3
 	}
 
-	if m.DallasTemperature_4 != nil {
-		// no validation rules for DallasTemperature_4
+	if m.DallasTemperature4 != nil {
+		// no validation rules for DallasTemperature4
 	}
 
-	if m.DallasTemperatureId_1 != nil {
-		// no validation rules for DallasTemperatureId_1
+	if m.DallasTemperatureId1 != nil {
+		// no validation rules for DallasTemperatureId1
 	}
 
-	if m.DallasTemperatureId_2 != nil {
-		// no validation rules for DallasTemperatureId_2
+	if m.DallasTemperatureId2 != nil {
+		// no validation rules for DallasTemperatureId2
 	}
 
-	if m.DallasTemperatureId_3 != nil {
-		// no validation rules for DallasTemperatureId_3
+	if m.DallasTemperatureId3 != nil {
+		// no validation rules for DallasTemperatureId3
 	}
 
-	if m.DallasTemperatureId_4 != nil {
-		// no validation rules for DallasTemperatureId_4
+	if m.DallasTemperatureId4 != nil {
+		// no validation rules for DallasTemperatureId4
 	}
 
 	if m.Ibutton != nil {
