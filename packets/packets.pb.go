@@ -849,7 +849,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalInput1 *uint32 `protobuf:"varint,18,opt,name=digital_input1,json=digitalInput1,proto3,oneof" json:"digital_input1,omitempty"`
+	DigitalInput1 *bool `protobuf:"varint,18,opt,name=digital_input1,json=digitalInput1,proto3,oneof" json:"digital_input1,omitempty"`
 	// Parameter ID: 9
 	// Property Name: Analog Input 1
 	// Type: Unsigned
@@ -869,7 +869,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalOutput1 *uint32 `protobuf:"varint,20,opt,name=digital_output1,json=digitalOutput1,proto3,oneof" json:"digital_output1,omitempty"`
+	DigitalOutput1 *bool `protobuf:"varint,20,opt,name=digital_output1,json=digitalOutput1,proto3,oneof" json:"digital_output1,omitempty"`
 	// Parameter ID: 12
 	// Property Name: Fuel Used GPS
 	// Type: Unsigned
@@ -939,7 +939,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - not present, 1 - present
-	SdStatus *uint32 `protobuf:"varint,27,opt,name=sd_status,json=sdStatus,proto3,oneof" json:"sd_status,omitempty"`
+	SdStatus *bool `protobuf:"varint,27,opt,name=sd_status,json=sdStatus,proto3,oneof" json:"sd_status,omitempty"`
 	// Parameter ID: 2
 	// Property Name: Digital Input 2
 	// Type: Unsigned
@@ -949,7 +949,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalInput2 *uint32 `protobuf:"varint,28,opt,name=digital_input2,json=digitalInput2,proto3,oneof" json:"digital_input2,omitempty"`
+	DigitalInput2 *bool `protobuf:"varint,28,opt,name=digital_input2,json=digitalInput2,proto3,oneof" json:"digital_input2,omitempty"`
 	// Parameter ID: 3
 	// Property Name: Digital Input 3
 	// Type: Unsigned
@@ -959,7 +959,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalInput3 *uint32 `protobuf:"varint,29,opt,name=digital_input3,json=digitalInput3,proto3,oneof" json:"digital_input3,omitempty"`
+	DigitalInput3 *bool `protobuf:"varint,29,opt,name=digital_input3,json=digitalInput3,proto3,oneof" json:"digital_input3,omitempty"`
 	// Parameter ID: 6
 	// Property Name: Analog Input 2
 	// Type: Unsigned
@@ -979,7 +979,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic 0/1
-	DigitalOutput2 *uint32 `protobuf:"varint,31,opt,name=digital_output2,json=digitalOutput2,proto3,oneof" json:"digital_output2,omitempty"`
+	DigitalOutput2 *bool `protobuf:"varint,31,opt,name=digital_output2,json=digitalOutput2,proto3,oneof" json:"digital_output2,omitempty"`
 	// Parameter ID: 72
 	// Property Name: Dallas Temperature 1
 	// Type: Signed
@@ -989,7 +989,7 @@ type Compact struct {
 	// Multiplier: 0.1
 	// Units: °C
 	// Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-	DallasTemperature1 *int64 `protobuf:"varint,32,opt,name=dallas_temperature1,json=dallasTemperature1,proto3,oneof" json:"dallas_temperature1,omitempty"`
+	DallasTemperature1 *int32 `protobuf:"varint,32,opt,name=dallas_temperature1,json=dallasTemperature1,proto3,oneof" json:"dallas_temperature1,omitempty"`
 	// Parameter ID: 73
 	// Property Name: Dallas Temperature 2
 	// Type: Signed
@@ -999,7 +999,7 @@ type Compact struct {
 	// Multiplier: 0.1
 	// Units: °C
 	// Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-	DallasTemperature2 *int64 `protobuf:"varint,33,opt,name=dallas_temperature2,json=dallasTemperature2,proto3,oneof" json:"dallas_temperature2,omitempty"`
+	DallasTemperature2 *int32 `protobuf:"varint,33,opt,name=dallas_temperature2,json=dallasTemperature2,proto3,oneof" json:"dallas_temperature2,omitempty"`
 	// Parameter ID: 74
 	// Property Name: Dallas Temperature 3
 	// Type: Signed
@@ -1009,7 +1009,7 @@ type Compact struct {
 	// Multiplier: 0.1
 	// Units: °C
 	// Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-	DallasTemperature3 *int64 `protobuf:"varint,34,opt,name=dallas_temperature3,json=dallasTemperature3,proto3,oneof" json:"dallas_temperature3,omitempty"`
+	DallasTemperature3 *int32 `protobuf:"varint,34,opt,name=dallas_temperature3,json=dallasTemperature3,proto3,oneof" json:"dallas_temperature3,omitempty"`
 	// Parameter ID: 75
 	// Property Name: Dallas Temperature 4
 	// Type: Signed
@@ -1019,7 +1019,7 @@ type Compact struct {
 	// Multiplier: 0.1
 	// Units: °C
 	// Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-	DallasTemperature4 *int64 `protobuf:"varint,35,opt,name=dallas_temperature4,json=dallasTemperature4,proto3,oneof" json:"dallas_temperature4,omitempty"`
+	DallasTemperature4 *int32 `protobuf:"varint,35,opt,name=dallas_temperature4,json=dallasTemperature4,proto3,oneof" json:"dallas_temperature4,omitempty"`
 	// Parameter ID: 76
 	// Property Name: Dallas Temperature ID 1
 	// Type: Unsigned
@@ -1299,7 +1299,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalOutput_3 *uint32 `protobuf:"varint,63,opt,name=digital_output_3,json=digitalOutput3,proto3,oneof" json:"digital_output_3,omitempty"`
+	DigitalOutput_3 *bool `protobuf:"varint,63,opt,name=digital_output_3,json=digitalOutput3,proto3,oneof" json:"digital_output_3,omitempty"`
 	// Parameter ID: 381
 	// Property Name: Ground Sense
 	// Type: Unsigned
@@ -2986,11 +2986,11 @@ func (x *Compact) GetTotalOdometer() uint64 {
 	return 0
 }
 
-func (x *Compact) GetDigitalInput1() uint32 {
+func (x *Compact) GetDigitalInput1() bool {
 	if x != nil && x.DigitalInput1 != nil {
 		return *x.DigitalInput1
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetAnalogInput1() uint32 {
@@ -3000,11 +3000,11 @@ func (x *Compact) GetAnalogInput1() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDigitalOutput1() uint32 {
+func (x *Compact) GetDigitalOutput1() bool {
 	if x != nil && x.DigitalOutput1 != nil {
 		return *x.DigitalOutput1
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetFuelUsedGps() uint32 {
@@ -3049,25 +3049,25 @@ func (x *Compact) GetIccid1() uint64 {
 	return 0
 }
 
-func (x *Compact) GetSdStatus() uint32 {
+func (x *Compact) GetSdStatus() bool {
 	if x != nil && x.SdStatus != nil {
 		return *x.SdStatus
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetDigitalInput2() uint32 {
+func (x *Compact) GetDigitalInput2() bool {
 	if x != nil && x.DigitalInput2 != nil {
 		return *x.DigitalInput2
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetDigitalInput3() uint32 {
+func (x *Compact) GetDigitalInput3() bool {
 	if x != nil && x.DigitalInput3 != nil {
 		return *x.DigitalInput3
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetAnalogInput2() uint32 {
@@ -3077,35 +3077,35 @@ func (x *Compact) GetAnalogInput2() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDigitalOutput2() uint32 {
+func (x *Compact) GetDigitalOutput2() bool {
 	if x != nil && x.DigitalOutput2 != nil {
 		return *x.DigitalOutput2
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetDallasTemperature1() int64 {
+func (x *Compact) GetDallasTemperature1() int32 {
 	if x != nil && x.DallasTemperature1 != nil {
 		return *x.DallasTemperature1
 	}
 	return 0
 }
 
-func (x *Compact) GetDallasTemperature2() int64 {
+func (x *Compact) GetDallasTemperature2() int32 {
 	if x != nil && x.DallasTemperature2 != nil {
 		return *x.DallasTemperature2
 	}
 	return 0
 }
 
-func (x *Compact) GetDallasTemperature3() int64 {
+func (x *Compact) GetDallasTemperature3() int32 {
 	if x != nil && x.DallasTemperature3 != nil {
 		return *x.DallasTemperature3
 	}
 	return 0
 }
 
-func (x *Compact) GetDallasTemperature4() int64 {
+func (x *Compact) GetDallasTemperature4() int32 {
 	if x != nil && x.DallasTemperature4 != nil {
 		return *x.DallasTemperature4
 	}
@@ -3301,11 +3301,11 @@ func (x *Compact) GetUl202_02SensorStatus() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDigitalOutput_3() uint32 {
+func (x *Compact) GetDigitalOutput_3() bool {
 	if x != nil && x.DigitalOutput_3 != nil {
 		return *x.DigitalOutput_3
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetGroundSense() uint32 {
@@ -4463,24 +4463,24 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x13active_gsm_operator\x18\x0f \x01(\rH\rR\x11activeGsmOperator\x88\x01\x01\x12(\n" +
 	"\rtrip_odometer\x18\x10 \x01(\rH\x0eR\ftripOdometer\x88\x01\x01\x12*\n" +
 	"\x0etotal_odometer\x18\x11 \x01(\x04H\x0fR\rtotalOdometer\x88\x01\x01\x12*\n" +
-	"\x0edigital_input1\x18\x12 \x01(\rH\x10R\rdigitalInput1\x88\x01\x01\x12(\n" +
+	"\x0edigital_input1\x18\x12 \x01(\bH\x10R\rdigitalInput1\x88\x01\x01\x12(\n" +
 	"\ranalog_input1\x18\x13 \x01(\rH\x11R\fanalogInput1\x88\x01\x01\x12,\n" +
-	"\x0fdigital_output1\x18\x14 \x01(\rH\x12R\x0edigitalOutput1\x88\x01\x01\x12'\n" +
+	"\x0fdigital_output1\x18\x14 \x01(\bH\x12R\x0edigitalOutput1\x88\x01\x01\x12'\n" +
 	"\rfuel_used_gps\x18\x15 \x01(\rH\x13R\vfuelUsedGps\x88\x01\x01\x12'\n" +
 	"\rfuel_rate_gps\x18\x16 \x01(\rH\x14R\vfuelRateGps\x88\x01\x01\x12\x1a\n" +
 	"\x06axis_x\x18\x17 \x01(\x05H\x15R\x05axisX\x88\x01\x01\x12\x1a\n" +
 	"\x06axis_y\x18\x18 \x01(\x05H\x16R\x05axisY\x88\x01\x01\x12\x1a\n" +
 	"\x06axis_z\x18\x19 \x01(\x05H\x17R\x05axisZ\x88\x01\x01\x12\x1b\n" +
 	"\x06iccid1\x18\x1a \x01(\x04H\x18R\x06iccid1\x88\x01\x01\x12 \n" +
-	"\tsd_status\x18\x1b \x01(\rH\x19R\bsdStatus\x88\x01\x01\x12*\n" +
-	"\x0edigital_input2\x18\x1c \x01(\rH\x1aR\rdigitalInput2\x88\x01\x01\x12*\n" +
-	"\x0edigital_input3\x18\x1d \x01(\rH\x1bR\rdigitalInput3\x88\x01\x01\x12(\n" +
+	"\tsd_status\x18\x1b \x01(\bH\x19R\bsdStatus\x88\x01\x01\x12*\n" +
+	"\x0edigital_input2\x18\x1c \x01(\bH\x1aR\rdigitalInput2\x88\x01\x01\x12*\n" +
+	"\x0edigital_input3\x18\x1d \x01(\bH\x1bR\rdigitalInput3\x88\x01\x01\x12(\n" +
 	"\ranalog_input2\x18\x1e \x01(\rH\x1cR\fanalogInput2\x88\x01\x01\x12,\n" +
-	"\x0fdigital_output2\x18\x1f \x01(\rH\x1dR\x0edigitalOutput2\x88\x01\x01\x124\n" +
-	"\x13dallas_temperature1\x18  \x01(\x03H\x1eR\x12dallasTemperature1\x88\x01\x01\x124\n" +
-	"\x13dallas_temperature2\x18! \x01(\x03H\x1fR\x12dallasTemperature2\x88\x01\x01\x124\n" +
-	"\x13dallas_temperature3\x18\" \x01(\x03H R\x12dallasTemperature3\x88\x01\x01\x124\n" +
-	"\x13dallas_temperature4\x18# \x01(\x03H!R\x12dallasTemperature4\x88\x01\x01\x129\n" +
+	"\x0fdigital_output2\x18\x1f \x01(\bH\x1dR\x0edigitalOutput2\x88\x01\x01\x124\n" +
+	"\x13dallas_temperature1\x18  \x01(\x05H\x1eR\x12dallasTemperature1\x88\x01\x01\x124\n" +
+	"\x13dallas_temperature2\x18! \x01(\x05H\x1fR\x12dallasTemperature2\x88\x01\x01\x124\n" +
+	"\x13dallas_temperature3\x18\" \x01(\x05H R\x12dallasTemperature3\x88\x01\x01\x124\n" +
+	"\x13dallas_temperature4\x18# \x01(\x05H!R\x12dallasTemperature4\x88\x01\x01\x129\n" +
 	"\x16dallas_temperature_id1\x18$ \x01(\x04H\"R\x14dallasTemperatureId1\x88\x01\x01\x129\n" +
 	"\x16dallas_temperature_id2\x18% \x01(\x04H#R\x14dallasTemperatureId2\x88\x01\x01\x129\n" +
 	"\x16dallas_temperature_id3\x18& \x01(\x04H$R\x14dallasTemperatureId3\x88\x01\x01\x129\n" +
@@ -4509,7 +4509,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x10instant_movement\x18< \x01(\rH:R\x0finstantMovement\x88\x01\x01\x12?\n" +
 	"\x1aul202_02_sensor_fuel_level\x18= \x01(\x05H;R\x16ul20202SensorFuelLevel\x88\x01\x01\x128\n" +
 	"\x16ul202_02_sensor_status\x18> \x01(\rH<R\x13ul20202SensorStatus\x88\x01\x01\x12-\n" +
-	"\x10digital_output_3\x18? \x01(\rH=R\x0edigitalOutput3\x88\x01\x01\x12&\n" +
+	"\x10digital_output_3\x18? \x01(\bH=R\x0edigitalOutput3\x88\x01\x01\x12&\n" +
 	"\fground_sense\x18@ \x01(\rH>R\vgroundSense\x88\x01\x01\x124\n" +
 	"\x13iso6709_coordinates\x18A \x01(\fH?R\x12iso6709Coordinates\x88\x01\x01\x12,\n" +
 	"\x10umts_lte_cell_id\x18B \x01(\x04H@R\rumtsLteCellId\x88\x01\x01\x12$\n" +

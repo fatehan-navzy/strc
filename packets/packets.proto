@@ -247,7 +247,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input1 = 18;
+    optional bool digital_input1 = 18;
   
     // Parameter ID: 9
     // Property Name: Analog Input 1
@@ -269,7 +269,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_output1 = 20;
+    optional bool digital_output1 = 20;
   
     // Parameter ID: 12
     // Property Name: Fuel Used GPS
@@ -346,7 +346,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - not present, 1 - present
-    optional uint32 sd_status = 27;
+    optional bool sd_status = 27;
   
     // Parameter ID: 2
     // Property Name: Digital Input 2
@@ -357,7 +357,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input2 = 28;
+    optional bool digital_input2 = 28;
   
     // Parameter ID: 3
     // Property Name: Digital Input 3
@@ -368,7 +368,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_input3 = 29;
+    optional bool digital_input3 = 29;
   
     // Parameter ID: 6
     // Property Name: Analog Input 2
@@ -390,7 +390,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic 0/1
-    optional uint32 digital_output2 = 31;
+    optional bool digital_output2 = 31;
   
     // Parameter ID: 72
     // Property Name: Dallas Temperature 1
@@ -401,7 +401,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature1 = 32;
+    optional int32 dallas_temperature1 = 32;
   
     // Parameter ID: 73
     // Property Name: Dallas Temperature 2
@@ -412,7 +412,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature2 = 33;
+    optional int32 dallas_temperature2 = 33;
   
     // Parameter ID: 74
     // Property Name: Dallas Temperature 3
@@ -423,7 +423,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature3 = 34;
+    optional int32 dallas_temperature3 = 34;
   
     // Parameter ID: 75
     // Property Name: Dallas Temperature 4
@@ -434,7 +434,7 @@ message Compact {
     // Multiplier: 0.1
     // Units: °C
     // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int64 dallas_temperature4 = 35;
+    optional int32 dallas_temperature4 = 35;
   
     // Parameter ID: 76
     // Property Name: Dallas Temperature ID 1
@@ -742,7 +742,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 digital_output_3 = 63;
+    optional bool digital_output_3 = 63;
   
     // Parameter ID: 381
     // Property Name: Ground Sense
