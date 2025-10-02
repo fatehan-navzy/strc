@@ -987,44 +987,44 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for Rfid
 	}
 
-	if m.Lls_1FuelLevel != nil {
-		// no validation rules for Lls_1FuelLevel
+	if m.Lls1FuelLevel != nil {
+		// no validation rules for Lls1FuelLevel
 	}
 
-	if m.Lls_1Temperature != nil {
-		// no validation rules for Lls_1Temperature
+	if m.Lls1Temperature != nil {
+		// no validation rules for Lls1Temperature
 	}
 
-	if m.Lls_2FuelLevel != nil {
-		// no validation rules for Lls_2FuelLevel
+	if m.Lls2FuelLevel != nil {
+		// no validation rules for Lls2FuelLevel
 	}
 
-	if m.Lls_2Temperature != nil {
-		// no validation rules for Lls_2Temperature
+	if m.Lls2Temperature != nil {
+		// no validation rules for Lls2Temperature
 	}
 
-	if m.Lls_3FuelLevel != nil {
-		// no validation rules for Lls_3FuelLevel
+	if m.Lls3FuelLevel != nil {
+		// no validation rules for Lls3FuelLevel
 	}
 
-	if m.Lls_3Temperature != nil {
-		// no validation rules for Lls_3Temperature
+	if m.Lls3Temperature != nil {
+		// no validation rules for Lls3Temperature
 	}
 
-	if m.Lls_4FuelLevel != nil {
-		// no validation rules for Lls_4FuelLevel
+	if m.Lls4FuelLevel != nil {
+		// no validation rules for Lls4FuelLevel
 	}
 
-	if m.Lls_4Temperature != nil {
-		// no validation rules for Lls_4Temperature
+	if m.Lls4Temperature != nil {
+		// no validation rules for Lls4Temperature
 	}
 
-	if m.Lls_5FuelLevel != nil {
-		// no validation rules for Lls_5FuelLevel
+	if m.Lls5FuelLevel != nil {
+		// no validation rules for Lls5FuelLevel
 	}
 
-	if m.Lls_5Temperature != nil {
-		// no validation rules for Lls_5Temperature
+	if m.Lls5Temperature != nil {
+		// no validation rules for Lls5Temperature
 	}
 
 	if m.EcoScore != nil {

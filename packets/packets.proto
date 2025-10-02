@@ -511,7 +511,7 @@ message Compact {
     // Multiplier: -
     // Units: kvants or ltr
     // Values: Fuel level measured by LLS sensor via RS232/RS485
-    optional int32 lls_1_fuel_level = 42;
+    optional int32 lls1_fuel_level = 42;
   
     // Parameter ID: 202
     // Property Name: LLS 1 Temperature
@@ -522,7 +522,7 @@ message Compact {
     // Multiplier: -
     // Units: °C
     // Values: Fuel temperature measured by LLS via RS232/RS485
-    optional int32 lls_1_temperature = 43;
+    optional int32 lls1_temperature = 43;
   
     // Parameter ID: 203
     // Property Name: LLS 2 Fuel Level
@@ -533,7 +533,7 @@ message Compact {
     // Multiplier: -
     // Units: kvants or ltr
     // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls_2_fuel_level = 44;
+    optional int32 lls2_fuel_level = 44;
   
     // Parameter ID: 204
     // Property Name: LLS 2 Temperature
@@ -544,7 +544,7 @@ message Compact {
     // Multiplier: -
     // Units: °C
     // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls_2_temperature = 45;
+    optional int32 lls2_temperature = 45;
   
     // Parameter ID: 210
     // Property Name: LLS 3 Fuel Level
@@ -555,7 +555,7 @@ message Compact {
     // Multiplier: -
     // Units: kvants or ltr
     // Values: Fuel level measured by LLS sensor via RS485
-    optional uint32 lls_3_fuel_level = 46;
+    optional uint32 lls3_fuel_level = 46;
   
     // Parameter ID: 211
     // Property Name: LLS 3 Temperature
@@ -566,7 +566,7 @@ message Compact {
     // Multiplier: -
     // Units: °C
     // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls_3_temperature = 47;
+    optional int32 lls3_temperature = 47;
   
     // Parameter ID: 212
     // Property Name: LLS 4 Fuel Level
@@ -577,7 +577,7 @@ message Compact {
     // Multiplier: -
     // Units: kvants or ltr
     // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls_4_fuel_level = 48;
+    optional int32 lls4_fuel_level = 48;
   
     // Parameter ID: 213
     // Property Name: LLS 4 Temperature
@@ -588,7 +588,7 @@ message Compact {
     // Multiplier: -
     // Units: °C
     // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls_4_temperature = 49;
+    optional int32 lls4_temperature = 49;
   
     // Parameter ID: 214
     // Property Name: LLS 5 Fuel Level
@@ -599,7 +599,7 @@ message Compact {
     // Multiplier: -
     // Units: kvants or ltr
     // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls_5_fuel_level = 50;
+    optional int32 lls5_fuel_level = 50;
   
     // Parameter ID: 215
     // Property Name: LLS 5 Temperature
@@ -610,7 +610,7 @@ message Compact {
     // Multiplier: -
     // Units: °C
     // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls_5_temperature = 51;
+    optional int32 lls5_temperature = 51;
   
     // Parameter ID: 15
     // Property Name: Eco Score

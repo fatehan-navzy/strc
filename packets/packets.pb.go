@@ -1089,7 +1089,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kvants or ltr
 	// Values: Fuel level measured by LLS sensor via RS232/RS485
-	Lls_1FuelLevel *int32 `protobuf:"varint,42,opt,name=lls_1_fuel_level,json=lls1FuelLevel,proto3,oneof" json:"lls_1_fuel_level,omitempty"`
+	Lls1FuelLevel *int32 `protobuf:"varint,42,opt,name=lls1_fuel_level,json=lls1FuelLevel,proto3,oneof" json:"lls1_fuel_level,omitempty"`
 	// Parameter ID: 202
 	// Property Name: LLS 1 Temperature
 	// Type: Signed
@@ -1099,7 +1099,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: °C
 	// Values: Fuel temperature measured by LLS via RS232/RS485
-	Lls_1Temperature *int32 `protobuf:"varint,43,opt,name=lls_1_temperature,json=lls1Temperature,proto3,oneof" json:"lls_1_temperature,omitempty"`
+	Lls1Temperature *int32 `protobuf:"varint,43,opt,name=lls1_temperature,json=lls1Temperature,proto3,oneof" json:"lls1_temperature,omitempty"`
 	// Parameter ID: 203
 	// Property Name: LLS 2 Fuel Level
 	// Type: Signed
@@ -1109,7 +1109,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kvants or ltr
 	// Values: Fuel level measured by LLS sensor via RS485
-	Lls_2FuelLevel *int32 `protobuf:"varint,44,opt,name=lls_2_fuel_level,json=lls2FuelLevel,proto3,oneof" json:"lls_2_fuel_level,omitempty"`
+	Lls2FuelLevel *int32 `protobuf:"varint,44,opt,name=lls2_fuel_level,json=lls2FuelLevel,proto3,oneof" json:"lls2_fuel_level,omitempty"`
 	// Parameter ID: 204
 	// Property Name: LLS 2 Temperature
 	// Type: Signed
@@ -1119,7 +1119,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: °C
 	// Values: Fuel temperature measured by LLS via RS485
-	Lls_2Temperature *int32 `protobuf:"varint,45,opt,name=lls_2_temperature,json=lls2Temperature,proto3,oneof" json:"lls_2_temperature,omitempty"`
+	Lls2Temperature *int32 `protobuf:"varint,45,opt,name=lls2_temperature,json=lls2Temperature,proto3,oneof" json:"lls2_temperature,omitempty"`
 	// Parameter ID: 210
 	// Property Name: LLS 3 Fuel Level
 	// Type: Unsigned
@@ -1129,7 +1129,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kvants or ltr
 	// Values: Fuel level measured by LLS sensor via RS485
-	Lls_3FuelLevel *uint32 `protobuf:"varint,46,opt,name=lls_3_fuel_level,json=lls3FuelLevel,proto3,oneof" json:"lls_3_fuel_level,omitempty"`
+	Lls3FuelLevel *uint32 `protobuf:"varint,46,opt,name=lls3_fuel_level,json=lls3FuelLevel,proto3,oneof" json:"lls3_fuel_level,omitempty"`
 	// Parameter ID: 211
 	// Property Name: LLS 3 Temperature
 	// Type: Signed
@@ -1139,7 +1139,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: °C
 	// Values: Fuel temperature measured by LLS via RS485
-	Lls_3Temperature *int32 `protobuf:"varint,47,opt,name=lls_3_temperature,json=lls3Temperature,proto3,oneof" json:"lls_3_temperature,omitempty"`
+	Lls3Temperature *int32 `protobuf:"varint,47,opt,name=lls3_temperature,json=lls3Temperature,proto3,oneof" json:"lls3_temperature,omitempty"`
 	// Parameter ID: 212
 	// Property Name: LLS 4 Fuel Level
 	// Type: Signed
@@ -1149,7 +1149,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kvants or ltr
 	// Values: Fuel level measured by LLS sensor via RS485
-	Lls_4FuelLevel *int32 `protobuf:"varint,48,opt,name=lls_4_fuel_level,json=lls4FuelLevel,proto3,oneof" json:"lls_4_fuel_level,omitempty"`
+	Lls4FuelLevel *int32 `protobuf:"varint,48,opt,name=lls4_fuel_level,json=lls4FuelLevel,proto3,oneof" json:"lls4_fuel_level,omitempty"`
 	// Parameter ID: 213
 	// Property Name: LLS 4 Temperature
 	// Type: Signed
@@ -1159,7 +1159,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: °C
 	// Values: Fuel temperature measured by LLS via RS485
-	Lls_4Temperature *int32 `protobuf:"varint,49,opt,name=lls_4_temperature,json=lls4Temperature,proto3,oneof" json:"lls_4_temperature,omitempty"`
+	Lls4Temperature *int32 `protobuf:"varint,49,opt,name=lls4_temperature,json=lls4Temperature,proto3,oneof" json:"lls4_temperature,omitempty"`
 	// Parameter ID: 214
 	// Property Name: LLS 5 Fuel Level
 	// Type: Signed
@@ -1169,7 +1169,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kvants or ltr
 	// Values: Fuel level measured by LLS sensor via RS485
-	Lls_5FuelLevel *int32 `protobuf:"varint,50,opt,name=lls_5_fuel_level,json=lls5FuelLevel,proto3,oneof" json:"lls_5_fuel_level,omitempty"`
+	Lls5FuelLevel *int32 `protobuf:"varint,50,opt,name=lls5_fuel_level,json=lls5FuelLevel,proto3,oneof" json:"lls5_fuel_level,omitempty"`
 	// Parameter ID: 215
 	// Property Name: LLS 5 Temperature
 	// Type: Signed
@@ -1179,7 +1179,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: °C
 	// Values: Fuel temperature measured by LLS via RS485
-	Lls_5Temperature *int32 `protobuf:"varint,51,opt,name=lls_5_temperature,json=lls5Temperature,proto3,oneof" json:"lls_5_temperature,omitempty"`
+	Lls5Temperature *int32 `protobuf:"varint,51,opt,name=lls5_temperature,json=lls5Temperature,proto3,oneof" json:"lls5_temperature,omitempty"`
 	// Parameter ID: 15
 	// Property Name: Eco Score
 	// Type: Unsigned
@@ -3154,72 +3154,72 @@ func (x *Compact) GetRfid() uint64 {
 	return 0
 }
 
-func (x *Compact) GetLls_1FuelLevel() int32 {
-	if x != nil && x.Lls_1FuelLevel != nil {
-		return *x.Lls_1FuelLevel
+func (x *Compact) GetLls1FuelLevel() int32 {
+	if x != nil && x.Lls1FuelLevel != nil {
+		return *x.Lls1FuelLevel
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_1Temperature() int32 {
-	if x != nil && x.Lls_1Temperature != nil {
-		return *x.Lls_1Temperature
+func (x *Compact) GetLls1Temperature() int32 {
+	if x != nil && x.Lls1Temperature != nil {
+		return *x.Lls1Temperature
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_2FuelLevel() int32 {
-	if x != nil && x.Lls_2FuelLevel != nil {
-		return *x.Lls_2FuelLevel
+func (x *Compact) GetLls2FuelLevel() int32 {
+	if x != nil && x.Lls2FuelLevel != nil {
+		return *x.Lls2FuelLevel
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_2Temperature() int32 {
-	if x != nil && x.Lls_2Temperature != nil {
-		return *x.Lls_2Temperature
+func (x *Compact) GetLls2Temperature() int32 {
+	if x != nil && x.Lls2Temperature != nil {
+		return *x.Lls2Temperature
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_3FuelLevel() uint32 {
-	if x != nil && x.Lls_3FuelLevel != nil {
-		return *x.Lls_3FuelLevel
+func (x *Compact) GetLls3FuelLevel() uint32 {
+	if x != nil && x.Lls3FuelLevel != nil {
+		return *x.Lls3FuelLevel
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_3Temperature() int32 {
-	if x != nil && x.Lls_3Temperature != nil {
-		return *x.Lls_3Temperature
+func (x *Compact) GetLls3Temperature() int32 {
+	if x != nil && x.Lls3Temperature != nil {
+		return *x.Lls3Temperature
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_4FuelLevel() int32 {
-	if x != nil && x.Lls_4FuelLevel != nil {
-		return *x.Lls_4FuelLevel
+func (x *Compact) GetLls4FuelLevel() int32 {
+	if x != nil && x.Lls4FuelLevel != nil {
+		return *x.Lls4FuelLevel
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_4Temperature() int32 {
-	if x != nil && x.Lls_4Temperature != nil {
-		return *x.Lls_4Temperature
+func (x *Compact) GetLls4Temperature() int32 {
+	if x != nil && x.Lls4Temperature != nil {
+		return *x.Lls4Temperature
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_5FuelLevel() int32 {
-	if x != nil && x.Lls_5FuelLevel != nil {
-		return *x.Lls_5FuelLevel
+func (x *Compact) GetLls5FuelLevel() int32 {
+	if x != nil && x.Lls5FuelLevel != nil {
+		return *x.Lls5FuelLevel
 	}
 	return 0
 }
 
-func (x *Compact) GetLls_5Temperature() int32 {
-	if x != nil && x.Lls_5Temperature != nil {
-		return *x.Lls_5Temperature
+func (x *Compact) GetLls5Temperature() int32 {
+	if x != nil && x.Lls5Temperature != nil {
+		return *x.Lls5Temperature
 	}
 	return 0
 }
@@ -4440,7 +4440,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\x81\x95\x01\n" +
+	"\b_mileage\"\xed\x94\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -4486,17 +4486,17 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x16dallas_temperature_id3\x18& \x01(\x04H$R\x14dallasTemperatureId3\x88\x01\x01\x129\n" +
 	"\x16dallas_temperature_id4\x18' \x01(\x04H%R\x14dallasTemperatureId4\x88\x01\x01\x12\x1d\n" +
 	"\aibutton\x18( \x01(\x04H&R\aibutton\x88\x01\x01\x12\x17\n" +
-	"\x04rfid\x18) \x01(\x04H'R\x04rfid\x88\x01\x01\x12,\n" +
-	"\x10lls_1_fuel_level\x18* \x01(\x05H(R\rlls1FuelLevel\x88\x01\x01\x12/\n" +
-	"\x11lls_1_temperature\x18+ \x01(\x05H)R\x0flls1Temperature\x88\x01\x01\x12,\n" +
-	"\x10lls_2_fuel_level\x18, \x01(\x05H*R\rlls2FuelLevel\x88\x01\x01\x12/\n" +
-	"\x11lls_2_temperature\x18- \x01(\x05H+R\x0flls2Temperature\x88\x01\x01\x12,\n" +
-	"\x10lls_3_fuel_level\x18. \x01(\rH,R\rlls3FuelLevel\x88\x01\x01\x12/\n" +
-	"\x11lls_3_temperature\x18/ \x01(\x05H-R\x0flls3Temperature\x88\x01\x01\x12,\n" +
-	"\x10lls_4_fuel_level\x180 \x01(\x05H.R\rlls4FuelLevel\x88\x01\x01\x12/\n" +
-	"\x11lls_4_temperature\x181 \x01(\x05H/R\x0flls4Temperature\x88\x01\x01\x12,\n" +
-	"\x10lls_5_fuel_level\x182 \x01(\x05H0R\rlls5FuelLevel\x88\x01\x01\x12/\n" +
-	"\x11lls_5_temperature\x183 \x01(\x05H1R\x0flls5Temperature\x88\x01\x01\x12 \n" +
+	"\x04rfid\x18) \x01(\x04H'R\x04rfid\x88\x01\x01\x12+\n" +
+	"\x0flls1_fuel_level\x18* \x01(\x05H(R\rlls1FuelLevel\x88\x01\x01\x12.\n" +
+	"\x10lls1_temperature\x18+ \x01(\x05H)R\x0flls1Temperature\x88\x01\x01\x12+\n" +
+	"\x0flls2_fuel_level\x18, \x01(\x05H*R\rlls2FuelLevel\x88\x01\x01\x12.\n" +
+	"\x10lls2_temperature\x18- \x01(\x05H+R\x0flls2Temperature\x88\x01\x01\x12+\n" +
+	"\x0flls3_fuel_level\x18. \x01(\rH,R\rlls3FuelLevel\x88\x01\x01\x12.\n" +
+	"\x10lls3_temperature\x18/ \x01(\x05H-R\x0flls3Temperature\x88\x01\x01\x12+\n" +
+	"\x0flls4_fuel_level\x180 \x01(\x05H.R\rlls4FuelLevel\x88\x01\x01\x12.\n" +
+	"\x10lls4_temperature\x181 \x01(\x05H/R\x0flls4Temperature\x88\x01\x01\x12+\n" +
+	"\x0flls5_fuel_level\x182 \x01(\x05H0R\rlls5FuelLevel\x88\x01\x01\x12.\n" +
+	"\x10lls5_temperature\x183 \x01(\x05H1R\x0flls5Temperature\x88\x01\x01\x12 \n" +
 	"\teco_score\x184 \x01(\rH2R\becoScore\x88\x01\x01\x12(\n" +
 	"\rbattery_level\x185 \x01(\rH3R\fbatteryLevel\x88\x01\x01\x12\x1c\n" +
 	"\auser_id\x186 \x01(\x04H4R\x06userId\x88\x01\x01\x12&\n" +
@@ -4718,17 +4718,17 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x17_dallas_temperature_id4B\n" +
 	"\n" +
 	"\b_ibuttonB\a\n" +
-	"\x05_rfidB\x13\n" +
-	"\x11_lls_1_fuel_levelB\x14\n" +
-	"\x12_lls_1_temperatureB\x13\n" +
-	"\x11_lls_2_fuel_levelB\x14\n" +
-	"\x12_lls_2_temperatureB\x13\n" +
-	"\x11_lls_3_fuel_levelB\x14\n" +
-	"\x12_lls_3_temperatureB\x13\n" +
-	"\x11_lls_4_fuel_levelB\x14\n" +
-	"\x12_lls_4_temperatureB\x13\n" +
-	"\x11_lls_5_fuel_levelB\x14\n" +
-	"\x12_lls_5_temperatureB\f\n" +
+	"\x05_rfidB\x12\n" +
+	"\x10_lls1_fuel_levelB\x13\n" +
+	"\x11_lls1_temperatureB\x12\n" +
+	"\x10_lls2_fuel_levelB\x13\n" +
+	"\x11_lls2_temperatureB\x12\n" +
+	"\x10_lls3_fuel_levelB\x13\n" +
+	"\x11_lls3_temperatureB\x12\n" +
+	"\x10_lls4_fuel_levelB\x13\n" +
+	"\x11_lls4_temperatureB\x12\n" +
+	"\x10_lls5_fuel_levelB\x13\n" +
+	"\x11_lls5_temperatureB\f\n" +
 	"\n" +
 	"_eco_scoreB\x10\n" +
 	"\x0e_battery_levelB\n" +
