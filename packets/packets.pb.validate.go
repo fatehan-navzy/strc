@@ -1187,6 +1187,34 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for EyeMovement1
 	}
 
+	if m.EyeMovement2 != nil {
+		// no validation rules for EyeMovement2
+	}
+
+	if m.EyeMovement3 != nil {
+		// no validation rules for EyeMovement3
+	}
+
+	if m.EyeMovement4 != nil {
+		// no validation rules for EyeMovement4
+	}
+
+	if m.EyePitch1 != nil {
+		// no validation rules for EyePitch1
+	}
+
+	if m.EyePitch2 != nil {
+		// no validation rules for EyePitch2
+	}
+
+	if m.EyePitch3 != nil {
+		// no validation rules for EyePitch3
+	}
+
+	if m.EyePitch4 != nil {
+		// no validation rules for EyePitch4
+	}
+
 	if m.IsfCloggedBrakeSystemFilterIndicator != nil {
 		// no validation rules for IsfCloggedBrakeSystemFilterIndicator
 	}

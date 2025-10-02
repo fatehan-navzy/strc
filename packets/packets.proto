@@ -1009,7 +1009,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 1
-    optional uint32 eye_magnet1 = 87;
+    optional bool eye_magnet1 = 87;
   
     // Parameter ID: 10809
     // Property Name: EYE Magnet 2
@@ -1020,7 +1020,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 2
-    optional uint32 eye_magnet2 = 88;
+    optional bool eye_magnet2 = 88;
   
     // Parameter ID: 10810
     // Property Name: EYE Magnet 3
@@ -1031,7 +1031,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 3
-    optional uint32 eye_magnet3 = 89;
+    optional bool eye_magnet3 = 89;
   
     // Parameter ID: 10811
     // Property Name: EYE Magnet 4
@@ -1042,7 +1042,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 4
-    optional uint32 eye_magnet4 = 90;
+    optional bool eye_magnet4 = 90;
   
     // Parameter ID: 10812
     // Property Name: EYE Movement 1
@@ -1053,7 +1053,14 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Movement state measure by EYE Sensor 1
-    optional uint32 eye_movement1 = 91;
+    optional bool eye_movement1 = 91;
+    optional bool eye_movement2 = 219;
+    optional bool eye_movement3 = 220;
+    optional bool eye_movement4 = 221;
+    optional int32 eye_pitch1 = 222;
+    optional int32 eye_pitch2 = 223;
+    optional int32 eye_pitch3 = 224;
+    optional int32 eye_pitch4 = 225;
   
     // Note: The document is truncated, so continuing with available data up to truncation point.
   
