@@ -1263,6 +1263,38 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for EyeRoll4
 	}
 
+	if m.EyeMovementCount1 != nil {
+		// no validation rules for EyeMovementCount1
+	}
+
+	if m.EyeMovementCount2 != nil {
+		// no validation rules for EyeMovementCount2
+	}
+
+	if m.EyeMovementCount3 != nil {
+		// no validation rules for EyeMovementCount3
+	}
+
+	if m.EyeMovementCount4 != nil {
+		// no validation rules for EyeMovementCount4
+	}
+
+	if m.EyeMagnetCount1 != nil {
+		// no validation rules for EyeMagnetCount1
+	}
+
+	if m.EyeMagnetCount2 != nil {
+		// no validation rules for EyeMagnetCount2
+	}
+
+	if m.EyeMagnetCount3 != nil {
+		// no validation rules for EyeMagnetCount3
+	}
+
+	if m.EyeMagnetCount4 != nil {
+		// no validation rules for EyeMagnetCount4
+	}
+
 	if m.IsfCloggedBrakeSystemFilterIndicator != nil {
 		// no validation rules for IsfCloggedBrakeSystemFilterIndicator
 	}

@@ -1073,6 +1073,14 @@ message Compact {
     optional int32 eye_roll2 = 235;
     optional int32 eye_roll3 = 236;
     optional int32 eye_roll4 = 237;
+    optional uint32 eye_movement_count1 = 238;
+    optional uint32 eye_movement_count2 = 239;
+    optional uint32 eye_movement_count3 = 240;
+    optional uint32 eye_movement_count4 = 241;
+    optional uint32 eye_magnet_count1 = 245;
+    optional uint32 eye_magnet_count2 = 242;
+    optional uint32 eye_magnet_count3 = 243;
+    optional uint32 eye_magnet_count4 = 244;
   
     // Note: The document is truncated, so continuing with available data up to truncation point.
   
