@@ -1135,56 +1135,56 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for WakeReason
 	}
 
-	if m.EyeTemperature_1 != nil {
-		// no validation rules for EyeTemperature_1
+	if m.EyeTemperature1 != nil {
+		// no validation rules for EyeTemperature1
 	}
 
-	if m.EyeTemperature_2 != nil {
-		// no validation rules for EyeTemperature_2
+	if m.EyeTemperature2 != nil {
+		// no validation rules for EyeTemperature2
 	}
 
-	if m.EyeTemperature_3 != nil {
-		// no validation rules for EyeTemperature_3
+	if m.EyeTemperature3 != nil {
+		// no validation rules for EyeTemperature3
 	}
 
-	if m.EyeTemperature_4 != nil {
-		// no validation rules for EyeTemperature_4
+	if m.EyeTemperature4 != nil {
+		// no validation rules for EyeTemperature4
 	}
 
-	if m.EyeHumidity_1 != nil {
-		// no validation rules for EyeHumidity_1
+	if m.EyeHumidity1 != nil {
+		// no validation rules for EyeHumidity1
 	}
 
-	if m.EyeHumidity_2 != nil {
-		// no validation rules for EyeHumidity_2
+	if m.EyeHumidity2 != nil {
+		// no validation rules for EyeHumidity2
 	}
 
-	if m.EyeHumidity_3 != nil {
-		// no validation rules for EyeHumidity_3
+	if m.EyeHumidity3 != nil {
+		// no validation rules for EyeHumidity3
 	}
 
-	if m.EyeHumidity_4 != nil {
-		// no validation rules for EyeHumidity_4
+	if m.EyeHumidity4 != nil {
+		// no validation rules for EyeHumidity4
 	}
 
-	if m.EyeMagnet_1 != nil {
-		// no validation rules for EyeMagnet_1
+	if m.EyeMagnet1 != nil {
+		// no validation rules for EyeMagnet1
 	}
 
-	if m.EyeMagnet_2 != nil {
-		// no validation rules for EyeMagnet_2
+	if m.EyeMagnet2 != nil {
+		// no validation rules for EyeMagnet2
 	}
 
-	if m.EyeMagnet_3 != nil {
-		// no validation rules for EyeMagnet_3
+	if m.EyeMagnet3 != nil {
+		// no validation rules for EyeMagnet3
 	}
 
-	if m.EyeMagnet_4 != nil {
-		// no validation rules for EyeMagnet_4
+	if m.EyeMagnet4 != nil {
+		// no validation rules for EyeMagnet4
 	}
 
-	if m.EyeMovement_1 != nil {
-		// no validation rules for EyeMovement_1
+	if m.EyeMovement1 != nil {
+		// no validation rules for EyeMovement1
 	}
 
 	if m.IsfCloggedBrakeSystemFilterIndicator != nil {

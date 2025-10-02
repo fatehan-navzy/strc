@@ -753,7 +753,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional uint32 ground_sense = 64;
+    optional bool ground_sense = 64;
   
     // Parameter ID: 387
     // Property Name: ISO6709 Coordinates
@@ -786,7 +786,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Driver name extracted from card, displayed without delimiters ($ signs)
-    optional uint64 driver_name = 67;  // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
+    optional string driver_name = 67;  // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
   
     // Note: Adjusting for bytes 35, perhaps bytes type
     // But following "Type: Unsigned", using uint64, but may need adjustment
@@ -822,7 +822,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: None - 0, Male - 1, Female - 2  // Note: Seems typo in document, values from previous?
-    optional uint64 driver_card_id = 70;
+    optional uint32 driver_card_id = 70;
   
     // Parameter ID: 407
     // Property Name: Driver Card expiration date
@@ -844,7 +844,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Extracted from card
-    optional uint64 driver_card_place_of_issue = 72;
+    optional uint32 driver_card_place_of_issue = 72;
   
     // Parameter ID: 409
     // Property Name: Driver Status Event
@@ -899,7 +899,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Status of the speed sensor
-    optional uint32 msp500_speed_sensor = 77;
+    optional bool msp500_speed_sensor = 77;
   
     // Parameter ID: 637
     // Property Name: Wake Reason
@@ -910,7 +910,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: True if device was woken by RTC alarm
-    optional uint32 wake_reason = 78;
+    optional bool wake_reason = 78;
   
     // Parameter ID: 10800
     // Property Name: EYE Temperature 1
@@ -921,7 +921,7 @@ message Compact {
     // Multiplier: 0.01
     // Units: °C
     // Values: Temperature measured by EYE Sensor 1
-    optional int32 eye_temperature_1 = 79;
+    optional int32 eye_temperature1 = 79;
   
     // Parameter ID: 10801
     // Property Name: EYE Temperature 2
@@ -932,7 +932,7 @@ message Compact {
     // Multiplier: 0.01
     // Units: °C
     // Values: Temperature measured by EYE Sensor 2
-    optional int32 eye_temperature_2 = 80;
+    optional int32 eye_temperature2 = 80;
   
     // Parameter ID: 10802
     // Property Name: EYE Temperature 3
@@ -943,7 +943,7 @@ message Compact {
     // Multiplier: 0.01
     // Units: °C
     // Values: Temperature measured by EYE Sensor 3
-    optional int32 eye_temperature_3 = 81;
+    optional int32 eye_temperature3 = 81;
   
     // Parameter ID: 10803
     // Property Name: EYE Temperature 4
@@ -954,7 +954,7 @@ message Compact {
     // Multiplier: 0.01
     // Units: °C
     // Values: Temperature measured by EYE Sensor 4
-    optional int32 eye_temperature_4 = 82;
+    optional int32 eye_temperature4 = 82;
   
     // Parameter ID: 10804
     // Property Name: EYE Humidity 1
@@ -965,7 +965,7 @@ message Compact {
     // Multiplier: -
     // Units: %
     // Values: Humidity measured by EYE Sensor 1
-    optional uint32 eye_humidity_1 = 83;
+    optional uint32 eye_humidity1 = 83;
   
     // Parameter ID: 10805
     // Property Name: EYE Humidity 2
@@ -976,7 +976,7 @@ message Compact {
     // Multiplier: -
     // Units: %
     // Values: Humidity measured by EYE Sensor 2
-    optional uint32 eye_humidity_2 = 84;
+    optional uint32 eye_humidity2 = 84;
   
     // Parameter ID: 10806
     // Property Name: EYE Humidity 3
@@ -987,7 +987,7 @@ message Compact {
     // Multiplier: -
     // Units: %
     // Values: Humidity measured by EYE Sensor 3
-    optional uint32 eye_humidity_3 = 85;
+    optional uint32 eye_humidity3 = 85;
   
     // Parameter ID: 10807
     // Property Name: EYE Humidity 4
@@ -998,7 +998,7 @@ message Compact {
     // Multiplier: -
     // Units: %
     // Values: Humidity measured by EYE Sensor 4
-    optional uint32 eye_humidity_4 = 86;
+    optional uint32 eye_humidity4 = 86;
   
     // Parameter ID: 10808
     // Property Name: EYE Magnet 1
@@ -1009,7 +1009,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 1
-    optional uint32 eye_magnet_1 = 87;
+    optional uint32 eye_magnet1 = 87;
   
     // Parameter ID: 10809
     // Property Name: EYE Magnet 2
@@ -1020,7 +1020,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 2
-    optional uint32 eye_magnet_2 = 88;
+    optional uint32 eye_magnet2 = 88;
   
     // Parameter ID: 10810
     // Property Name: EYE Magnet 3
@@ -1031,7 +1031,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 3
-    optional uint32 eye_magnet_3 = 89;
+    optional uint32 eye_magnet3 = 89;
   
     // Parameter ID: 10811
     // Property Name: EYE Magnet 4
@@ -1042,7 +1042,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Magnet measured by EYE Sensor by EYE Sensor 4
-    optional uint32 eye_magnet_4 = 90;
+    optional uint32 eye_magnet4 = 90;
   
     // Parameter ID: 10812
     // Property Name: EYE Movement 1
@@ -1053,7 +1053,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Movement state measure by EYE Sensor 1
-    optional uint32 eye_movement_1 = 91;
+    optional uint32 eye_movement1 = 91;
   
     // Note: The document is truncated, so continuing with available data up to truncation point.
   

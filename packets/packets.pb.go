@@ -1309,7 +1309,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	GroundSense *uint32 `protobuf:"varint,64,opt,name=ground_sense,json=groundSense,proto3,oneof" json:"ground_sense,omitempty"`
+	GroundSense *bool `protobuf:"varint,64,opt,name=ground_sense,json=groundSense,proto3,oneof" json:"ground_sense,omitempty"`
 	// Parameter ID: 387
 	// Property Name: ISO6709 Coordinates
 	// Type: HEX
@@ -1339,7 +1339,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Driver name extracted from card, displayed without delimiters ($ signs)
-	DriverName *uint64 `protobuf:"varint,67,opt,name=driver_name,json=driverName,proto3,oneof" json:"driver_name,omitempty"` // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
+	DriverName *string `protobuf:"bytes,67,opt,name=driver_name,json=driverName,proto3,oneof" json:"driver_name,omitempty"` // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
 	// Parameter ID: 404
 	// Property Name: Driver card license type
 	// Type: Unsigned
@@ -1369,7 +1369,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: None - 0, Male - 1, Female - 2  // Note: Seems typo in document, values from previous?
-	DriverCardId *uint64 `protobuf:"varint,70,opt,name=driver_card_id,json=driverCardId,proto3,oneof" json:"driver_card_id,omitempty"`
+	DriverCardId *uint32 `protobuf:"varint,70,opt,name=driver_card_id,json=driverCardId,proto3,oneof" json:"driver_card_id,omitempty"`
 	// Parameter ID: 407
 	// Property Name: Driver Card expiration date
 	// Type: Unsigned
@@ -1389,7 +1389,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Extracted from card
-	DriverCardPlaceOfIssue *uint64 `protobuf:"varint,72,opt,name=driver_card_place_of_issue,json=driverCardPlaceOfIssue,proto3,oneof" json:"driver_card_place_of_issue,omitempty"`
+	DriverCardPlaceOfIssue *uint32 `protobuf:"varint,72,opt,name=driver_card_place_of_issue,json=driverCardPlaceOfIssue,proto3,oneof" json:"driver_card_place_of_issue,omitempty"`
 	// Parameter ID: 409
 	// Property Name: Driver Status Event
 	// Type: Unsigned
@@ -1439,7 +1439,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Status of the speed sensor
-	Msp500SpeedSensor *uint32 `protobuf:"varint,77,opt,name=msp500_speed_sensor,json=msp500SpeedSensor,proto3,oneof" json:"msp500_speed_sensor,omitempty"`
+	Msp500SpeedSensor *bool `protobuf:"varint,77,opt,name=msp500_speed_sensor,json=msp500SpeedSensor,proto3,oneof" json:"msp500_speed_sensor,omitempty"`
 	// Parameter ID: 637
 	// Property Name: Wake Reason
 	// Type: Unsigned
@@ -1449,7 +1449,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: True if device was woken by RTC alarm
-	WakeReason *uint32 `protobuf:"varint,78,opt,name=wake_reason,json=wakeReason,proto3,oneof" json:"wake_reason,omitempty"`
+	WakeReason *bool `protobuf:"varint,78,opt,name=wake_reason,json=wakeReason,proto3,oneof" json:"wake_reason,omitempty"`
 	// Parameter ID: 10800
 	// Property Name: EYE Temperature 1
 	// Type: Signed
@@ -1459,7 +1459,7 @@ type Compact struct {
 	// Multiplier: 0.01
 	// Units: °C
 	// Values: Temperature measured by EYE Sensor 1
-	EyeTemperature_1 *int32 `protobuf:"varint,79,opt,name=eye_temperature_1,json=eyeTemperature1,proto3,oneof" json:"eye_temperature_1,omitempty"`
+	EyeTemperature1 *int32 `protobuf:"varint,79,opt,name=eye_temperature1,json=eyeTemperature1,proto3,oneof" json:"eye_temperature1,omitempty"`
 	// Parameter ID: 10801
 	// Property Name: EYE Temperature 2
 	// Type: Signed
@@ -1469,7 +1469,7 @@ type Compact struct {
 	// Multiplier: 0.01
 	// Units: °C
 	// Values: Temperature measured by EYE Sensor 2
-	EyeTemperature_2 *int32 `protobuf:"varint,80,opt,name=eye_temperature_2,json=eyeTemperature2,proto3,oneof" json:"eye_temperature_2,omitempty"`
+	EyeTemperature2 *int32 `protobuf:"varint,80,opt,name=eye_temperature2,json=eyeTemperature2,proto3,oneof" json:"eye_temperature2,omitempty"`
 	// Parameter ID: 10802
 	// Property Name: EYE Temperature 3
 	// Type: Signed
@@ -1479,7 +1479,7 @@ type Compact struct {
 	// Multiplier: 0.01
 	// Units: °C
 	// Values: Temperature measured by EYE Sensor 3
-	EyeTemperature_3 *int32 `protobuf:"varint,81,opt,name=eye_temperature_3,json=eyeTemperature3,proto3,oneof" json:"eye_temperature_3,omitempty"`
+	EyeTemperature3 *int32 `protobuf:"varint,81,opt,name=eye_temperature3,json=eyeTemperature3,proto3,oneof" json:"eye_temperature3,omitempty"`
 	// Parameter ID: 10803
 	// Property Name: EYE Temperature 4
 	// Type: Signed
@@ -1489,7 +1489,7 @@ type Compact struct {
 	// Multiplier: 0.01
 	// Units: °C
 	// Values: Temperature measured by EYE Sensor 4
-	EyeTemperature_4 *int32 `protobuf:"varint,82,opt,name=eye_temperature_4,json=eyeTemperature4,proto3,oneof" json:"eye_temperature_4,omitempty"`
+	EyeTemperature4 *int32 `protobuf:"varint,82,opt,name=eye_temperature4,json=eyeTemperature4,proto3,oneof" json:"eye_temperature4,omitempty"`
 	// Parameter ID: 10804
 	// Property Name: EYE Humidity 1
 	// Type: Unsigned
@@ -1499,7 +1499,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: %
 	// Values: Humidity measured by EYE Sensor 1
-	EyeHumidity_1 *uint32 `protobuf:"varint,83,opt,name=eye_humidity_1,json=eyeHumidity1,proto3,oneof" json:"eye_humidity_1,omitempty"`
+	EyeHumidity1 *uint32 `protobuf:"varint,83,opt,name=eye_humidity1,json=eyeHumidity1,proto3,oneof" json:"eye_humidity1,omitempty"`
 	// Parameter ID: 10805
 	// Property Name: EYE Humidity 2
 	// Type: Unsigned
@@ -1509,7 +1509,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: %
 	// Values: Humidity measured by EYE Sensor 2
-	EyeHumidity_2 *uint32 `protobuf:"varint,84,opt,name=eye_humidity_2,json=eyeHumidity2,proto3,oneof" json:"eye_humidity_2,omitempty"`
+	EyeHumidity2 *uint32 `protobuf:"varint,84,opt,name=eye_humidity2,json=eyeHumidity2,proto3,oneof" json:"eye_humidity2,omitempty"`
 	// Parameter ID: 10806
 	// Property Name: EYE Humidity 3
 	// Type: Unsigned
@@ -1519,7 +1519,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: %
 	// Values: Humidity measured by EYE Sensor 3
-	EyeHumidity_3 *uint32 `protobuf:"varint,85,opt,name=eye_humidity_3,json=eyeHumidity3,proto3,oneof" json:"eye_humidity_3,omitempty"`
+	EyeHumidity3 *uint32 `protobuf:"varint,85,opt,name=eye_humidity3,json=eyeHumidity3,proto3,oneof" json:"eye_humidity3,omitempty"`
 	// Parameter ID: 10807
 	// Property Name: EYE Humidity 4
 	// Type: Unsigned
@@ -1529,7 +1529,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: %
 	// Values: Humidity measured by EYE Sensor 4
-	EyeHumidity_4 *uint32 `protobuf:"varint,86,opt,name=eye_humidity_4,json=eyeHumidity4,proto3,oneof" json:"eye_humidity_4,omitempty"`
+	EyeHumidity4 *uint32 `protobuf:"varint,86,opt,name=eye_humidity4,json=eyeHumidity4,proto3,oneof" json:"eye_humidity4,omitempty"`
 	// Parameter ID: 10808
 	// Property Name: EYE Magnet 1
 	// Type: Unsigned
@@ -1539,7 +1539,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Magnet measured by EYE Sensor by EYE Sensor 1
-	EyeMagnet_1 *uint32 `protobuf:"varint,87,opt,name=eye_magnet_1,json=eyeMagnet1,proto3,oneof" json:"eye_magnet_1,omitempty"`
+	EyeMagnet1 *uint32 `protobuf:"varint,87,opt,name=eye_magnet1,json=eyeMagnet1,proto3,oneof" json:"eye_magnet1,omitempty"`
 	// Parameter ID: 10809
 	// Property Name: EYE Magnet 2
 	// Type: Unsigned
@@ -1549,7 +1549,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Magnet measured by EYE Sensor by EYE Sensor 2
-	EyeMagnet_2 *uint32 `protobuf:"varint,88,opt,name=eye_magnet_2,json=eyeMagnet2,proto3,oneof" json:"eye_magnet_2,omitempty"`
+	EyeMagnet2 *uint32 `protobuf:"varint,88,opt,name=eye_magnet2,json=eyeMagnet2,proto3,oneof" json:"eye_magnet2,omitempty"`
 	// Parameter ID: 10810
 	// Property Name: EYE Magnet 3
 	// Type: Unsigned
@@ -1559,7 +1559,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Magnet measured by EYE Sensor by EYE Sensor 3
-	EyeMagnet_3 *uint32 `protobuf:"varint,89,opt,name=eye_magnet_3,json=eyeMagnet3,proto3,oneof" json:"eye_magnet_3,omitempty"`
+	EyeMagnet3 *uint32 `protobuf:"varint,89,opt,name=eye_magnet3,json=eyeMagnet3,proto3,oneof" json:"eye_magnet3,omitempty"`
 	// Parameter ID: 10811
 	// Property Name: EYE Magnet 4
 	// Type: Unsigned
@@ -1569,7 +1569,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Magnet measured by EYE Sensor by EYE Sensor 4
-	EyeMagnet_4 *uint32 `protobuf:"varint,90,opt,name=eye_magnet_4,json=eyeMagnet4,proto3,oneof" json:"eye_magnet_4,omitempty"`
+	EyeMagnet4 *uint32 `protobuf:"varint,90,opt,name=eye_magnet4,json=eyeMagnet4,proto3,oneof" json:"eye_magnet4,omitempty"`
 	// Parameter ID: 10812
 	// Property Name: EYE Movement 1
 	// Type: Unsigned
@@ -1579,7 +1579,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Movement state measure by EYE Sensor 1
-	EyeMovement_1 *uint32 `protobuf:"varint,91,opt,name=eye_movement_1,json=eyeMovement1,proto3,oneof" json:"eye_movement_1,omitempty"`
+	EyeMovement1 *uint32 `protobuf:"varint,91,opt,name=eye_movement1,json=eyeMovement1,proto3,oneof" json:"eye_movement1,omitempty"`
 	// Parameter ID: 985
 	// Property Name: ISF Clogged Brake System Filter Indicator
 	// Type: Unsigned
@@ -3308,11 +3308,11 @@ func (x *Compact) GetDigitalOutput3() bool {
 	return false
 }
 
-func (x *Compact) GetGroundSense() uint32 {
+func (x *Compact) GetGroundSense() bool {
 	if x != nil && x.GroundSense != nil {
 		return *x.GroundSense
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetIso6709Coordinates() string {
@@ -3329,11 +3329,11 @@ func (x *Compact) GetUmtsLteCellId() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDriverName() uint64 {
+func (x *Compact) GetDriverName() string {
 	if x != nil && x.DriverName != nil {
 		return *x.DriverName
 	}
-	return 0
+	return ""
 }
 
 func (x *Compact) GetDriverCardLicenseType() uint32 {
@@ -3350,7 +3350,7 @@ func (x *Compact) GetDriverGender() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDriverCardId() uint64 {
+func (x *Compact) GetDriverCardId() uint32 {
 	if x != nil && x.DriverCardId != nil {
 		return *x.DriverCardId
 	}
@@ -3364,7 +3364,7 @@ func (x *Compact) GetDriverCardExpirationDate() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDriverCardPlaceOfIssue() uint64 {
+func (x *Compact) GetDriverCardPlaceOfIssue() uint32 {
 	if x != nil && x.DriverCardPlaceOfIssue != nil {
 		return *x.DriverCardPlaceOfIssue
 	}
@@ -3399,107 +3399,107 @@ func (x *Compact) GetMsp500VehicleNumber() string {
 	return ""
 }
 
-func (x *Compact) GetMsp500SpeedSensor() uint32 {
+func (x *Compact) GetMsp500SpeedSensor() bool {
 	if x != nil && x.Msp500SpeedSensor != nil {
 		return *x.Msp500SpeedSensor
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetWakeReason() uint32 {
+func (x *Compact) GetWakeReason() bool {
 	if x != nil && x.WakeReason != nil {
 		return *x.WakeReason
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetEyeTemperature_1() int32 {
-	if x != nil && x.EyeTemperature_1 != nil {
-		return *x.EyeTemperature_1
+func (x *Compact) GetEyeTemperature1() int32 {
+	if x != nil && x.EyeTemperature1 != nil {
+		return *x.EyeTemperature1
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeTemperature_2() int32 {
-	if x != nil && x.EyeTemperature_2 != nil {
-		return *x.EyeTemperature_2
+func (x *Compact) GetEyeTemperature2() int32 {
+	if x != nil && x.EyeTemperature2 != nil {
+		return *x.EyeTemperature2
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeTemperature_3() int32 {
-	if x != nil && x.EyeTemperature_3 != nil {
-		return *x.EyeTemperature_3
+func (x *Compact) GetEyeTemperature3() int32 {
+	if x != nil && x.EyeTemperature3 != nil {
+		return *x.EyeTemperature3
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeTemperature_4() int32 {
-	if x != nil && x.EyeTemperature_4 != nil {
-		return *x.EyeTemperature_4
+func (x *Compact) GetEyeTemperature4() int32 {
+	if x != nil && x.EyeTemperature4 != nil {
+		return *x.EyeTemperature4
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeHumidity_1() uint32 {
-	if x != nil && x.EyeHumidity_1 != nil {
-		return *x.EyeHumidity_1
+func (x *Compact) GetEyeHumidity1() uint32 {
+	if x != nil && x.EyeHumidity1 != nil {
+		return *x.EyeHumidity1
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeHumidity_2() uint32 {
-	if x != nil && x.EyeHumidity_2 != nil {
-		return *x.EyeHumidity_2
+func (x *Compact) GetEyeHumidity2() uint32 {
+	if x != nil && x.EyeHumidity2 != nil {
+		return *x.EyeHumidity2
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeHumidity_3() uint32 {
-	if x != nil && x.EyeHumidity_3 != nil {
-		return *x.EyeHumidity_3
+func (x *Compact) GetEyeHumidity3() uint32 {
+	if x != nil && x.EyeHumidity3 != nil {
+		return *x.EyeHumidity3
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeHumidity_4() uint32 {
-	if x != nil && x.EyeHumidity_4 != nil {
-		return *x.EyeHumidity_4
+func (x *Compact) GetEyeHumidity4() uint32 {
+	if x != nil && x.EyeHumidity4 != nil {
+		return *x.EyeHumidity4
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeMagnet_1() uint32 {
-	if x != nil && x.EyeMagnet_1 != nil {
-		return *x.EyeMagnet_1
+func (x *Compact) GetEyeMagnet1() uint32 {
+	if x != nil && x.EyeMagnet1 != nil {
+		return *x.EyeMagnet1
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeMagnet_2() uint32 {
-	if x != nil && x.EyeMagnet_2 != nil {
-		return *x.EyeMagnet_2
+func (x *Compact) GetEyeMagnet2() uint32 {
+	if x != nil && x.EyeMagnet2 != nil {
+		return *x.EyeMagnet2
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeMagnet_3() uint32 {
-	if x != nil && x.EyeMagnet_3 != nil {
-		return *x.EyeMagnet_3
+func (x *Compact) GetEyeMagnet3() uint32 {
+	if x != nil && x.EyeMagnet3 != nil {
+		return *x.EyeMagnet3
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeMagnet_4() uint32 {
-	if x != nil && x.EyeMagnet_4 != nil {
-		return *x.EyeMagnet_4
+func (x *Compact) GetEyeMagnet4() uint32 {
+	if x != nil && x.EyeMagnet4 != nil {
+		return *x.EyeMagnet4
 	}
 	return 0
 }
 
-func (x *Compact) GetEyeMovement_1() uint32 {
-	if x != nil && x.EyeMovement_1 != nil {
-		return *x.EyeMovement_1
+func (x *Compact) GetEyeMovement1() uint32 {
+	if x != nil && x.EyeMovement1 != nil {
+		return *x.EyeMovement1
 	}
 	return 0
 }
@@ -4440,7 +4440,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xeb\x94\x01\n" +
+	"\b_mileage\"є\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -4510,40 +4510,40 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1aul202_02_sensor_fuel_level\x18= \x01(\x05H;R\x16ul20202SensorFuelLevel\x88\x01\x01\x128\n" +
 	"\x16ul202_02_sensor_status\x18> \x01(\rH<R\x13ul20202SensorStatus\x88\x01\x01\x12,\n" +
 	"\x0fdigital_output3\x18? \x01(\bH=R\x0edigitalOutput3\x88\x01\x01\x12&\n" +
-	"\fground_sense\x18@ \x01(\rH>R\vgroundSense\x88\x01\x01\x124\n" +
+	"\fground_sense\x18@ \x01(\bH>R\vgroundSense\x88\x01\x01\x124\n" +
 	"\x13iso6709_coordinates\x18A \x01(\tH?R\x12iso6709Coordinates\x88\x01\x01\x12,\n" +
 	"\x10umts_lte_cell_id\x18B \x01(\rH@R\rumtsLteCellId\x88\x01\x01\x12$\n" +
-	"\vdriver_name\x18C \x01(\x04HAR\n" +
+	"\vdriver_name\x18C \x01(\tHAR\n" +
 	"driverName\x88\x01\x01\x12<\n" +
 	"\x18driver_card_license_type\x18D \x01(\rHBR\x15driverCardLicenseType\x88\x01\x01\x12(\n" +
 	"\rdriver_gender\x18E \x01(\rHCR\fdriverGender\x88\x01\x01\x12)\n" +
-	"\x0edriver_card_id\x18F \x01(\x04HDR\fdriverCardId\x88\x01\x01\x12B\n" +
+	"\x0edriver_card_id\x18F \x01(\rHDR\fdriverCardId\x88\x01\x01\x12B\n" +
 	"\x1bdriver_card_expiration_date\x18G \x01(\rHER\x18driverCardExpirationDate\x88\x01\x01\x12?\n" +
-	"\x1adriver_card_place_of_issue\x18H \x01(\x04HFR\x16driverCardPlaceOfIssue\x88\x01\x01\x123\n" +
+	"\x1adriver_card_place_of_issue\x18H \x01(\rHFR\x16driverCardPlaceOfIssue\x88\x01\x01\x123\n" +
 	"\x13driver_status_event\x18I \x01(\rHGR\x11driverStatusEvent\x88\x01\x01\x12 \n" +
 	"\tain_speed\x18J \x01(\rHHR\bainSpeed\x88\x01\x01\x121\n" +
 	"\x12msp500_vendor_name\x18K \x01(\tHIR\x10msp500VendorName\x88\x01\x01\x127\n" +
 	"\x15msp500_vehicle_number\x18L \x01(\tHJR\x13msp500VehicleNumber\x88\x01\x01\x123\n" +
-	"\x13msp500_speed_sensor\x18M \x01(\rHKR\x11msp500SpeedSensor\x88\x01\x01\x12$\n" +
-	"\vwake_reason\x18N \x01(\rHLR\n" +
-	"wakeReason\x88\x01\x01\x12/\n" +
-	"\x11eye_temperature_1\x18O \x01(\x05HMR\x0feyeTemperature1\x88\x01\x01\x12/\n" +
-	"\x11eye_temperature_2\x18P \x01(\x05HNR\x0feyeTemperature2\x88\x01\x01\x12/\n" +
-	"\x11eye_temperature_3\x18Q \x01(\x05HOR\x0feyeTemperature3\x88\x01\x01\x12/\n" +
-	"\x11eye_temperature_4\x18R \x01(\x05HPR\x0feyeTemperature4\x88\x01\x01\x12)\n" +
-	"\x0eeye_humidity_1\x18S \x01(\rHQR\feyeHumidity1\x88\x01\x01\x12)\n" +
-	"\x0eeye_humidity_2\x18T \x01(\rHRR\feyeHumidity2\x88\x01\x01\x12)\n" +
-	"\x0eeye_humidity_3\x18U \x01(\rHSR\feyeHumidity3\x88\x01\x01\x12)\n" +
-	"\x0eeye_humidity_4\x18V \x01(\rHTR\feyeHumidity4\x88\x01\x01\x12%\n" +
-	"\feye_magnet_1\x18W \x01(\rHUR\n" +
-	"eyeMagnet1\x88\x01\x01\x12%\n" +
-	"\feye_magnet_2\x18X \x01(\rHVR\n" +
-	"eyeMagnet2\x88\x01\x01\x12%\n" +
-	"\feye_magnet_3\x18Y \x01(\rHWR\n" +
-	"eyeMagnet3\x88\x01\x01\x12%\n" +
-	"\feye_magnet_4\x18Z \x01(\rHXR\n" +
-	"eyeMagnet4\x88\x01\x01\x12)\n" +
-	"\x0eeye_movement_1\x18[ \x01(\rHYR\feyeMovement1\x88\x01\x01\x12\\\n" +
+	"\x13msp500_speed_sensor\x18M \x01(\bHKR\x11msp500SpeedSensor\x88\x01\x01\x12$\n" +
+	"\vwake_reason\x18N \x01(\bHLR\n" +
+	"wakeReason\x88\x01\x01\x12.\n" +
+	"\x10eye_temperature1\x18O \x01(\x05HMR\x0feyeTemperature1\x88\x01\x01\x12.\n" +
+	"\x10eye_temperature2\x18P \x01(\x05HNR\x0feyeTemperature2\x88\x01\x01\x12.\n" +
+	"\x10eye_temperature3\x18Q \x01(\x05HOR\x0feyeTemperature3\x88\x01\x01\x12.\n" +
+	"\x10eye_temperature4\x18R \x01(\x05HPR\x0feyeTemperature4\x88\x01\x01\x12(\n" +
+	"\reye_humidity1\x18S \x01(\rHQR\feyeHumidity1\x88\x01\x01\x12(\n" +
+	"\reye_humidity2\x18T \x01(\rHRR\feyeHumidity2\x88\x01\x01\x12(\n" +
+	"\reye_humidity3\x18U \x01(\rHSR\feyeHumidity3\x88\x01\x01\x12(\n" +
+	"\reye_humidity4\x18V \x01(\rHTR\feyeHumidity4\x88\x01\x01\x12$\n" +
+	"\veye_magnet1\x18W \x01(\rHUR\n" +
+	"eyeMagnet1\x88\x01\x01\x12$\n" +
+	"\veye_magnet2\x18X \x01(\rHVR\n" +
+	"eyeMagnet2\x88\x01\x01\x12$\n" +
+	"\veye_magnet3\x18Y \x01(\rHWR\n" +
+	"eyeMagnet3\x88\x01\x01\x12$\n" +
+	"\veye_magnet4\x18Z \x01(\rHXR\n" +
+	"eyeMagnet4\x88\x01\x01\x12(\n" +
+	"\reye_movement1\x18[ \x01(\rHYR\feyeMovement1\x88\x01\x01\x12\\\n" +
 	")isf_clogged_brake_system_filter_indicator\x18\\ \x01(\rHZR$isfCloggedBrakeSystemFilterIndicator\x88\x01\x01\x12R\n" +
 	"$isf_low_washer_fluid_level_indicator\x18] \x01(\rH[R\x1fisfLowWasherFluidLevelIndicator\x88\x01\x01\x12G\n" +
 	"\x1eisf_low_adblue_level_indicator\x18^ \x01(\rH\\R\x1aisfLowAdblueLevelIndicator\x88\x01\x01\x12X\n" +
@@ -4759,20 +4759,20 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x13_msp500_vendor_nameB\x18\n" +
 	"\x16_msp500_vehicle_numberB\x16\n" +
 	"\x14_msp500_speed_sensorB\x0e\n" +
-	"\f_wake_reasonB\x14\n" +
-	"\x12_eye_temperature_1B\x14\n" +
-	"\x12_eye_temperature_2B\x14\n" +
-	"\x12_eye_temperature_3B\x14\n" +
-	"\x12_eye_temperature_4B\x11\n" +
-	"\x0f_eye_humidity_1B\x11\n" +
-	"\x0f_eye_humidity_2B\x11\n" +
-	"\x0f_eye_humidity_3B\x11\n" +
-	"\x0f_eye_humidity_4B\x0f\n" +
-	"\r_eye_magnet_1B\x0f\n" +
-	"\r_eye_magnet_2B\x0f\n" +
-	"\r_eye_magnet_3B\x0f\n" +
-	"\r_eye_magnet_4B\x11\n" +
-	"\x0f_eye_movement_1B,\n" +
+	"\f_wake_reasonB\x13\n" +
+	"\x11_eye_temperature1B\x13\n" +
+	"\x11_eye_temperature2B\x13\n" +
+	"\x11_eye_temperature3B\x13\n" +
+	"\x11_eye_temperature4B\x10\n" +
+	"\x0e_eye_humidity1B\x10\n" +
+	"\x0e_eye_humidity2B\x10\n" +
+	"\x0e_eye_humidity3B\x10\n" +
+	"\x0e_eye_humidity4B\x0e\n" +
+	"\f_eye_magnet1B\x0e\n" +
+	"\f_eye_magnet2B\x0e\n" +
+	"\f_eye_magnet3B\x0e\n" +
+	"\f_eye_magnet4B\x10\n" +
+	"\x0e_eye_movement1B,\n" +
 	"*_isf_clogged_brake_system_filter_indicatorB'\n" +
 	"%_isf_low_washer_fluid_level_indicatorB!\n" +
 	"\x1f_isf_low_adblue_level_indicatorB*\n" +
