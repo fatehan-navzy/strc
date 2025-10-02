@@ -1799,6 +1799,42 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for LvcanRsfWthrspeedlimitsign
 	}
 
+	if m.AxlCalibrationStatus != nil {
+		// no validation rules for AxlCalibrationStatus
+	}
+
+	if m.BleRfid1 != nil {
+		// no validation rules for BleRfid1
+	}
+
+	if m.BleRfid2 != nil {
+		// no validation rules for BleRfid2
+	}
+
+	if m.BleRfid3 != nil {
+		// no validation rules for BleRfid3
+	}
+
+	if m.BleRfid4 != nil {
+		// no validation rules for BleRfid4
+	}
+
+	if m.BleButton1State1 != nil {
+		// no validation rules for BleButton1State1
+	}
+
+	if m.BleButton1State2 != nil {
+		// no validation rules for BleButton1State2
+	}
+
+	if m.BleButton1State3 != nil {
+		// no validation rules for BleButton1State3
+	}
+
+	if m.BleButton1State4 != nil {
+		// no validation rules for BleButton1State4
+	}
+
 	if len(errors) > 0 {
 		return CompactMultiError(errors)
 	}

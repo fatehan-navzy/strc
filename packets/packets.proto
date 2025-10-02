@@ -2480,6 +2480,16 @@ message Compact {
     // Units: -
     // Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
     optional uint32 lvcan_rsf_wthrspeedlimitsign = 218;
+    optional uint32 axl_calibration_status = 246;
+    optional uint64 ble_rfid1 = 247;
+    optional uint64 ble_rfid2 = 248;
+    optional uint64 ble_rfid3 = 249;
+    optional uint64 ble_rfid4 = 250;
+    optional bool ble_button1_state1 = 251;
+    optional bool ble_button1_state2 = 252;
+    optional bool ble_button1_state3 = 253;
+    optional bool ble_button1_state4 = 254;
+    //
 }
 
 enum Event {

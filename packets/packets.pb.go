@@ -2867,6 +2867,15 @@ type Compact struct {
 	// Units: -
 	// Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
 	LvcanRsfWthrspeedlimitsign *uint32 `protobuf:"varint,218,opt,name=lvcan_rsf_wthrspeedlimitsign,json=lvcanRsfWthrspeedlimitsign,proto3,oneof" json:"lvcan_rsf_wthrspeedlimitsign,omitempty"`
+	AxlCalibrationStatus       *uint32 `protobuf:"varint,246,opt,name=axl_calibration_status,json=axlCalibrationStatus,proto3,oneof" json:"axl_calibration_status,omitempty"`
+	BleRfid1                   *uint64 `protobuf:"varint,247,opt,name=ble_rfid1,json=bleRfid1,proto3,oneof" json:"ble_rfid1,omitempty"`
+	BleRfid2                   *uint64 `protobuf:"varint,248,opt,name=ble_rfid2,json=bleRfid2,proto3,oneof" json:"ble_rfid2,omitempty"`
+	BleRfid3                   *uint64 `protobuf:"varint,249,opt,name=ble_rfid3,json=bleRfid3,proto3,oneof" json:"ble_rfid3,omitempty"`
+	BleRfid4                   *uint64 `protobuf:"varint,250,opt,name=ble_rfid4,json=bleRfid4,proto3,oneof" json:"ble_rfid4,omitempty"`
+	BleButton1State1           *bool   `protobuf:"varint,251,opt,name=ble_button1_state1,json=bleButton1State1,proto3,oneof" json:"ble_button1_state1,omitempty"`
+	BleButton1State2           *bool   `protobuf:"varint,252,opt,name=ble_button1_state2,json=bleButton1State2,proto3,oneof" json:"ble_button1_state2,omitempty"`
+	BleButton1State3           *bool   `protobuf:"varint,253,opt,name=ble_button1_state3,json=bleButton1State3,proto3,oneof" json:"ble_button1_state3,omitempty"`
+	BleButton1State4           *bool   `protobuf:"varint,254,opt,name=ble_button1_state4,json=bleButton1State4,proto3,oneof" json:"ble_button1_state4,omitempty"` //
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -4602,6 +4611,69 @@ func (x *Compact) GetLvcanRsfWthrspeedlimitsign() uint32 {
 	return 0
 }
 
+func (x *Compact) GetAxlCalibrationStatus() uint32 {
+	if x != nil && x.AxlCalibrationStatus != nil {
+		return *x.AxlCalibrationStatus
+	}
+	return 0
+}
+
+func (x *Compact) GetBleRfid1() uint64 {
+	if x != nil && x.BleRfid1 != nil {
+		return *x.BleRfid1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleRfid2() uint64 {
+	if x != nil && x.BleRfid2 != nil {
+		return *x.BleRfid2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleRfid3() uint64 {
+	if x != nil && x.BleRfid3 != nil {
+		return *x.BleRfid3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleRfid4() uint64 {
+	if x != nil && x.BleRfid4 != nil {
+		return *x.BleRfid4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleButton1State1() bool {
+	if x != nil && x.BleButton1State1 != nil {
+		return *x.BleButton1State1
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton1State2() bool {
+	if x != nil && x.BleButton1State2 != nil {
+		return *x.BleButton1State2
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton1State3() bool {
+	if x != nil && x.BleButton1State3 != nil {
+		return *x.BleButton1State3
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton1State4() bool {
+	if x != nil && x.BleButton1State4 != nil {
+		return *x.BleButton1State4
+	}
+	return false
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -4656,7 +4728,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xe7\xa2\x01\n" +
+	"\b_mileage\"\xb7\xa7\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -4920,7 +4992,16 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1dlvcan_rsf_endofspeedlimitsign\x18\xd7\x01 \x01(\rH\xef\x01R\x1blvcanRsfEndofspeedlimitsign\x88\x01\x01\x12=\n" +
 	"\x17lvcan_rsf_speedexceeded\x18\xd8\x01 \x01(\rH\xf0\x01R\x15lvcanRsfSpeedexceeded\x88\x01\x01\x12G\n" +
 	"\x1clvcan_rsf_timespeedlimitsign\x18\xd9\x01 \x01(\rH\xf1\x01R\x1alvcanRsfTimespeedlimitsign\x88\x01\x01\x12G\n" +
-	"\x1clvcan_rsf_wthrspeedlimitsign\x18\xda\x01 \x01(\rH\xf2\x01R\x1alvcanRsfWthrspeedlimitsign\x88\x01\x01B\v\n" +
+	"\x1clvcan_rsf_wthrspeedlimitsign\x18\xda\x01 \x01(\rH\xf2\x01R\x1alvcanRsfWthrspeedlimitsign\x88\x01\x01\x12;\n" +
+	"\x16axl_calibration_status\x18\xf6\x01 \x01(\rH\xf3\x01R\x14axlCalibrationStatus\x88\x01\x01\x12\"\n" +
+	"\tble_rfid1\x18\xf7\x01 \x01(\x04H\xf4\x01R\bbleRfid1\x88\x01\x01\x12\"\n" +
+	"\tble_rfid2\x18\xf8\x01 \x01(\x04H\xf5\x01R\bbleRfid2\x88\x01\x01\x12\"\n" +
+	"\tble_rfid3\x18\xf9\x01 \x01(\x04H\xf6\x01R\bbleRfid3\x88\x01\x01\x12\"\n" +
+	"\tble_rfid4\x18\xfa\x01 \x01(\x04H\xf7\x01R\bbleRfid4\x88\x01\x01\x123\n" +
+	"\x12ble_button1_state1\x18\xfb\x01 \x01(\bH\xf8\x01R\x10bleButton1State1\x88\x01\x01\x123\n" +
+	"\x12ble_button1_state2\x18\xfc\x01 \x01(\bH\xf9\x01R\x10bleButton1State2\x88\x01\x01\x123\n" +
+	"\x12ble_button1_state3\x18\xfd\x01 \x01(\bH\xfa\x01R\x10bleButton1State3\x88\x01\x01\x123\n" +
+	"\x12ble_button1_state4\x18\xfe\x01 \x01(\bH\xfb\x01R\x10bleButton1State4\x88\x01\x01B\v\n" +
 	"\t_movementB\f\n" +
 	"\n" +
 	"_data_modeB\r\n" +
@@ -5176,7 +5257,20 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1e_lvcan_rsf_endofspeedlimitsignB\x1a\n" +
 	"\x18_lvcan_rsf_speedexceededB\x1f\n" +
 	"\x1d_lvcan_rsf_timespeedlimitsignB\x1f\n" +
-	"\x1d_lvcan_rsf_wthrspeedlimitsign*\xb8\x06\n" +
+	"\x1d_lvcan_rsf_wthrspeedlimitsignB\x19\n" +
+	"\x17_axl_calibration_statusB\f\n" +
+	"\n" +
+	"_ble_rfid1B\f\n" +
+	"\n" +
+	"_ble_rfid2B\f\n" +
+	"\n" +
+	"_ble_rfid3B\f\n" +
+	"\n" +
+	"_ble_rfid4B\x15\n" +
+	"\x13_ble_button1_state1B\x15\n" +
+	"\x13_ble_button1_state2B\x15\n" +
+	"\x13_ble_button1_state3B\x15\n" +
+	"\x13_ble_button1_state4*\xb8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
