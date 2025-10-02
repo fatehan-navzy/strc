@@ -2866,16 +2866,24 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
-	LvcanRsfWthrspeedlimitsign *uint32 `protobuf:"varint,218,opt,name=lvcan_rsf_wthrspeedlimitsign,json=lvcanRsfWthrspeedlimitsign,proto3,oneof" json:"lvcan_rsf_wthrspeedlimitsign,omitempty"`
-	AxlCalibrationStatus       *uint32 `protobuf:"varint,246,opt,name=axl_calibration_status,json=axlCalibrationStatus,proto3,oneof" json:"axl_calibration_status,omitempty"`
-	BleRfid1                   *uint64 `protobuf:"varint,247,opt,name=ble_rfid1,json=bleRfid1,proto3,oneof" json:"ble_rfid1,omitempty"`
-	BleRfid2                   *uint64 `protobuf:"varint,248,opt,name=ble_rfid2,json=bleRfid2,proto3,oneof" json:"ble_rfid2,omitempty"`
-	BleRfid3                   *uint64 `protobuf:"varint,249,opt,name=ble_rfid3,json=bleRfid3,proto3,oneof" json:"ble_rfid3,omitempty"`
-	BleRfid4                   *uint64 `protobuf:"varint,250,opt,name=ble_rfid4,json=bleRfid4,proto3,oneof" json:"ble_rfid4,omitempty"`
-	BleButton1State1           *bool   `protobuf:"varint,251,opt,name=ble_button1_state1,json=bleButton1State1,proto3,oneof" json:"ble_button1_state1,omitempty"`
-	BleButton1State2           *bool   `protobuf:"varint,252,opt,name=ble_button1_state2,json=bleButton1State2,proto3,oneof" json:"ble_button1_state2,omitempty"`
-	BleButton1State3           *bool   `protobuf:"varint,253,opt,name=ble_button1_state3,json=bleButton1State3,proto3,oneof" json:"ble_button1_state3,omitempty"`
-	BleButton1State4           *bool   `protobuf:"varint,254,opt,name=ble_button1_state4,json=bleButton1State4,proto3,oneof" json:"ble_button1_state4,omitempty"` //
+	LvcanRsfWthrspeedlimitsign *uint32           `protobuf:"varint,218,opt,name=lvcan_rsf_wthrspeedlimitsign,json=lvcanRsfWthrspeedlimitsign,proto3,oneof" json:"lvcan_rsf_wthrspeedlimitsign,omitempty"`
+	AxlCalibrationStatus       *uint32           `protobuf:"varint,246,opt,name=axl_calibration_status,json=axlCalibrationStatus,proto3,oneof" json:"axl_calibration_status,omitempty"`
+	BleRfid1                   *uint64           `protobuf:"varint,247,opt,name=ble_rfid1,json=bleRfid1,proto3,oneof" json:"ble_rfid1,omitempty"`
+	BleRfid2                   *uint64           `protobuf:"varint,248,opt,name=ble_rfid2,json=bleRfid2,proto3,oneof" json:"ble_rfid2,omitempty"`
+	BleRfid3                   *uint64           `protobuf:"varint,249,opt,name=ble_rfid3,json=bleRfid3,proto3,oneof" json:"ble_rfid3,omitempty"`
+	BleRfid4                   *uint64           `protobuf:"varint,250,opt,name=ble_rfid4,json=bleRfid4,proto3,oneof" json:"ble_rfid4,omitempty"`
+	BleButton1State1           *bool             `protobuf:"varint,251,opt,name=ble_button1_state1,json=bleButton1State1,proto3,oneof" json:"ble_button1_state1,omitempty"`
+	BleButton1State2           *bool             `protobuf:"varint,252,opt,name=ble_button1_state2,json=bleButton1State2,proto3,oneof" json:"ble_button1_state2,omitempty"`
+	BleButton1State3           *bool             `protobuf:"varint,253,opt,name=ble_button1_state3,json=bleButton1State3,proto3,oneof" json:"ble_button1_state3,omitempty"`
+	BleButton1State4           *bool             `protobuf:"varint,254,opt,name=ble_button1_state4,json=bleButton1State4,proto3,oneof" json:"ble_button1_state4,omitempty"`
+	BleButton2State1           *bool             `protobuf:"varint,255,opt,name=ble_button2_state1,json=bleButton2State1,proto3,oneof" json:"ble_button2_state1,omitempty"`
+	BleButton2State2           *bool             `protobuf:"varint,256,opt,name=ble_button2_state2,json=bleButton2State2,proto3,oneof" json:"ble_button2_state2,omitempty"`
+	BleButton2State3           *bool             `protobuf:"varint,257,opt,name=ble_button2_state3,json=bleButton2State3,proto3,oneof" json:"ble_button2_state3,omitempty"`
+	BleButton2State4           *bool             `protobuf:"varint,258,opt,name=ble_button2_state4,json=bleButton2State4,proto3,oneof" json:"ble_button2_state4,omitempty"`
+	FrequencyDin1              *uint32           `protobuf:"varint,259,opt,name=frequency_din1,json=frequencyDin1,proto3,oneof" json:"frequency_din1,omitempty"`
+	FrequencyDin2              *uint32           `protobuf:"varint,260,opt,name=frequency_din2,json=frequencyDin2,proto3,oneof" json:"frequency_din2,omitempty"`
+	ConnectivityQuality        *uint32           `protobuf:"varint,261,opt,name=connectivity_quality,json=connectivityQuality,proto3,oneof" json:"connectivity_quality,omitempty"`
+	GeoFence                   map[uint32]uint32 `protobuf:"bytes,262,rep,name=geo_fence,json=geoFence,proto3" json:"geo_fence,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -4674,6 +4682,62 @@ func (x *Compact) GetBleButton1State4() bool {
 	return false
 }
 
+func (x *Compact) GetBleButton2State1() bool {
+	if x != nil && x.BleButton2State1 != nil {
+		return *x.BleButton2State1
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton2State2() bool {
+	if x != nil && x.BleButton2State2 != nil {
+		return *x.BleButton2State2
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton2State3() bool {
+	if x != nil && x.BleButton2State3 != nil {
+		return *x.BleButton2State3
+	}
+	return false
+}
+
+func (x *Compact) GetBleButton2State4() bool {
+	if x != nil && x.BleButton2State4 != nil {
+		return *x.BleButton2State4
+	}
+	return false
+}
+
+func (x *Compact) GetFrequencyDin1() uint32 {
+	if x != nil && x.FrequencyDin1 != nil {
+		return *x.FrequencyDin1
+	}
+	return 0
+}
+
+func (x *Compact) GetFrequencyDin2() uint32 {
+	if x != nil && x.FrequencyDin2 != nil {
+		return *x.FrequencyDin2
+	}
+	return 0
+}
+
+func (x *Compact) GetConnectivityQuality() uint32 {
+	if x != nil && x.ConnectivityQuality != nil {
+		return *x.ConnectivityQuality
+	}
+	return 0
+}
+
+func (x *Compact) GetGeoFence() map[uint32]uint32 {
+	if x != nil {
+		return x.GeoFence
+	}
+	return nil
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -4728,7 +4792,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xb7\xa7\x01\n" +
+	"\b_mileage\"\xc1\xac\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -5001,7 +5065,18 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x12ble_button1_state1\x18\xfb\x01 \x01(\bH\xf8\x01R\x10bleButton1State1\x88\x01\x01\x123\n" +
 	"\x12ble_button1_state2\x18\xfc\x01 \x01(\bH\xf9\x01R\x10bleButton1State2\x88\x01\x01\x123\n" +
 	"\x12ble_button1_state3\x18\xfd\x01 \x01(\bH\xfa\x01R\x10bleButton1State3\x88\x01\x01\x123\n" +
-	"\x12ble_button1_state4\x18\xfe\x01 \x01(\bH\xfb\x01R\x10bleButton1State4\x88\x01\x01B\v\n" +
+	"\x12ble_button1_state4\x18\xfe\x01 \x01(\bH\xfb\x01R\x10bleButton1State4\x88\x01\x01\x123\n" +
+	"\x12ble_button2_state1\x18\xff\x01 \x01(\bH\xfc\x01R\x10bleButton2State1\x88\x01\x01\x123\n" +
+	"\x12ble_button2_state2\x18\x80\x02 \x01(\bH\xfd\x01R\x10bleButton2State2\x88\x01\x01\x123\n" +
+	"\x12ble_button2_state3\x18\x81\x02 \x01(\bH\xfe\x01R\x10bleButton2State3\x88\x01\x01\x123\n" +
+	"\x12ble_button2_state4\x18\x82\x02 \x01(\bH\xff\x01R\x10bleButton2State4\x88\x01\x01\x12,\n" +
+	"\x0efrequency_din1\x18\x83\x02 \x01(\rH\x80\x02R\rfrequencyDin1\x88\x01\x01\x12,\n" +
+	"\x0efrequency_din2\x18\x84\x02 \x01(\rH\x81\x02R\rfrequencyDin2\x88\x01\x01\x128\n" +
+	"\x14connectivity_quality\x18\x85\x02 \x01(\rH\x82\x02R\x13connectivityQuality\x88\x01\x01\x12F\n" +
+	"\tgeo_fence\x18\x86\x02 \x03(\v2(.com.navzy.packets.Compact.GeoFenceEntryR\bgeoFence\x1a;\n" +
+	"\rGeoFenceEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
 	"\t_movementB\f\n" +
 	"\n" +
 	"_data_modeB\r\n" +
@@ -5270,7 +5345,14 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x13_ble_button1_state1B\x15\n" +
 	"\x13_ble_button1_state2B\x15\n" +
 	"\x13_ble_button1_state3B\x15\n" +
-	"\x13_ble_button1_state4*\xb8\x06\n" +
+	"\x13_ble_button1_state4B\x15\n" +
+	"\x13_ble_button2_state1B\x15\n" +
+	"\x13_ble_button2_state2B\x15\n" +
+	"\x13_ble_button2_state3B\x15\n" +
+	"\x13_ble_button2_state4B\x11\n" +
+	"\x0f_frequency_din1B\x11\n" +
+	"\x0f_frequency_din2B\x17\n" +
+	"\x15_connectivity_quality*\xb8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -5350,7 +5432,7 @@ func file_packets_packets_proto_rawDescGZIP() []byte {
 }
 
 var file_packets_packets_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_packets_packets_proto_goTypes = []any{
 	(Event)(0),                    // 0: com.navzy.packets.Event
 	(Result_PacketType)(0),        // 1: com.navzy.packets.Result.PacketType
@@ -5360,25 +5442,27 @@ var file_packets_packets_proto_goTypes = []any{
 	(*Data)(nil),                  // 5: com.navzy.packets.Data
 	(*Packet)(nil),                // 6: com.navzy.packets.Packet
 	(*Compact)(nil),               // 7: com.navzy.packets.Compact
-	(*devices.Device)(nil),        // 8: com.navzy.devices.Device
-	(*timestamppb.Timestamp)(nil), // 9: google.protobuf.Timestamp
+	nil,                           // 8: com.navzy.packets.Compact.GeoFenceEntry
+	(*devices.Device)(nil),        // 9: com.navzy.devices.Device
+	(*timestamppb.Timestamp)(nil), // 10: google.protobuf.Timestamp
 }
 var file_packets_packets_proto_depIdxs = []int32{
 	1,  // 0: com.navzy.packets.Result.Type:type_name -> com.navzy.packets.Result.PacketType
 	6,  // 1: com.navzy.packets.Result.data:type_name -> com.navzy.packets.Packet
-	8,  // 2: com.navzy.packets.Task.device:type_name -> com.navzy.devices.Device
+	9,  // 2: com.navzy.packets.Task.device:type_name -> com.navzy.devices.Device
 	6,  // 3: com.navzy.packets.Task.packet:type_name -> com.navzy.packets.Packet
 	4,  // 4: com.navzy.packets.Task.client:type_name -> com.navzy.packets.Client
-	9,  // 5: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
+	10, // 5: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
 	6,  // 6: com.navzy.packets.Data.packet:type_name -> com.navzy.packets.Packet
-	9,  // 7: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
+	10, // 7: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
 	7,  // 8: com.navzy.packets.Packet.compact:type_name -> com.navzy.packets.Compact
 	0,  // 9: com.navzy.packets.Packet.events:type_name -> com.navzy.packets.Event
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	8,  // 10: com.navzy.packets.Compact.geo_fence:type_name -> com.navzy.packets.Compact.GeoFenceEntry
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_packets_packets_proto_init() }
@@ -5394,7 +5478,7 @@ func file_packets_packets_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_packets_packets_proto_rawDesc), len(file_packets_packets_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   6,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

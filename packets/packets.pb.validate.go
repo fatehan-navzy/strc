@@ -827,6 +827,8 @@ func (m *Compact) validate(all bool) error {
 
 	var errors []error
 
+	// no validation rules for GeoFence
+
 	if m.Movement != nil {
 		// no validation rules for Movement
 	}
@@ -1833,6 +1835,34 @@ func (m *Compact) validate(all bool) error {
 
 	if m.BleButton1State4 != nil {
 		// no validation rules for BleButton1State4
+	}
+
+	if m.BleButton2State1 != nil {
+		// no validation rules for BleButton2State1
+	}
+
+	if m.BleButton2State2 != nil {
+		// no validation rules for BleButton2State2
+	}
+
+	if m.BleButton2State3 != nil {
+		// no validation rules for BleButton2State3
+	}
+
+	if m.BleButton2State4 != nil {
+		// no validation rules for BleButton2State4
+	}
+
+	if m.FrequencyDin1 != nil {
+		// no validation rules for FrequencyDin1
+	}
+
+	if m.FrequencyDin2 != nil {
+		// no validation rules for FrequencyDin2
+	}
+
+	if m.ConnectivityQuality != nil {
+		// no validation rules for ConnectivityQuality
 	}
 
 	if len(errors) > 0 {

@@ -2489,6 +2489,15 @@ message Compact {
     optional bool ble_button1_state2 = 252;
     optional bool ble_button1_state3 = 253;
     optional bool ble_button1_state4 = 254;
+    optional bool ble_button2_state1 = 255;
+    optional bool ble_button2_state2 = 256;
+    optional bool ble_button2_state3 = 257;
+    optional bool ble_button2_state4 = 258;
+    optional uint32 frequency_din1 = 259;
+    optional uint32 frequency_din2 = 260;
+    optional uint32 connectivity_quality = 261;
+    map<uint32, uint32> geo_fence = 262;
+    
     //
 }
 
