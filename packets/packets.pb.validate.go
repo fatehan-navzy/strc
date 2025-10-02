@@ -1071,8 +1071,8 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for Ul202_02SensorStatus
 	}
 
-	if m.DigitalOutput_3 != nil {
-		// no validation rules for DigitalOutput_3
+	if m.DigitalOutput3 != nil {
+		// no validation rules for DigitalOutput3
 	}
 
 	if m.GroundSense != nil {

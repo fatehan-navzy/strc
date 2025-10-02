@@ -665,7 +665,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Counts pulses, count is reset when records are saved
-    optional uint64 pulse_counter_din1 = 56;
+    optional uint32 pulse_counter_din1 = 56;
   
     // Parameter ID: 5
     // Property Name: Pulse Counter Din2
@@ -676,7 +676,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Counts pulses, count is reset when records are saved
-    optional uint64 pulse_counter_din2 = 57;
+    optional uint32 pulse_counter_din2 = 57;
   
     // Parameter ID: 263
     // Property Name: BT Status
@@ -709,7 +709,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1 returns movement value
-    optional uint32 instant_movement = 60;
+    optional bool instant_movement = 60;
   
     // Parameter ID: 327
     // Property Name: UL202-02 Sensor Fuel level
@@ -742,7 +742,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Logic: 0/1
-    optional bool digital_output_3 = 63;
+    optional bool digital_output3 = 63;
   
     // Parameter ID: 381
     // Property Name: Ground Sense
@@ -764,7 +764,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: ISO6709 Coordinates Latitude, Longitude (in Degrees, Minutes and Seconds) and Altitude: IO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/
-    optional bytes iso6709_coordinates = 65;
+    optional string iso6709_coordinates = 65;
   
     // Parameter ID: 636
     // Property Name: UMTS/LTE Cell ID
@@ -775,7 +775,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 
-    optional uint64 umts_lte_cell_id = 66;
+    optional uint32 umts_lte_cell_id = 66;
   
     // Parameter ID: 403
     // Property Name: Driver Name

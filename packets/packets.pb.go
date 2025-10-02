@@ -1229,7 +1229,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Counts pulses, count is reset when records are saved
-	PulseCounterDin1 *uint64 `protobuf:"varint,56,opt,name=pulse_counter_din1,json=pulseCounterDin1,proto3,oneof" json:"pulse_counter_din1,omitempty"`
+	PulseCounterDin1 *uint32 `protobuf:"varint,56,opt,name=pulse_counter_din1,json=pulseCounterDin1,proto3,oneof" json:"pulse_counter_din1,omitempty"`
 	// Parameter ID: 5
 	// Property Name: Pulse Counter Din2
 	// Type: Unsigned
@@ -1239,7 +1239,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Counts pulses, count is reset when records are saved
-	PulseCounterDin2 *uint64 `protobuf:"varint,57,opt,name=pulse_counter_din2,json=pulseCounterDin2,proto3,oneof" json:"pulse_counter_din2,omitempty"`
+	PulseCounterDin2 *uint32 `protobuf:"varint,57,opt,name=pulse_counter_din2,json=pulseCounterDin2,proto3,oneof" json:"pulse_counter_din2,omitempty"`
 	// Parameter ID: 263
 	// Property Name: BT Status
 	// Type: Unsigned
@@ -1269,7 +1269,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1 returns movement value
-	InstantMovement *uint32 `protobuf:"varint,60,opt,name=instant_movement,json=instantMovement,proto3,oneof" json:"instant_movement,omitempty"`
+	InstantMovement *bool `protobuf:"varint,60,opt,name=instant_movement,json=instantMovement,proto3,oneof" json:"instant_movement,omitempty"`
 	// Parameter ID: 327
 	// Property Name: UL202-02 Sensor Fuel level
 	// Type: Signed
@@ -1299,7 +1299,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Logic: 0/1
-	DigitalOutput_3 *bool `protobuf:"varint,63,opt,name=digital_output_3,json=digitalOutput3,proto3,oneof" json:"digital_output_3,omitempty"`
+	DigitalOutput3 *bool `protobuf:"varint,63,opt,name=digital_output3,json=digitalOutput3,proto3,oneof" json:"digital_output3,omitempty"`
 	// Parameter ID: 381
 	// Property Name: Ground Sense
 	// Type: Unsigned
@@ -1319,7 +1319,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: ISO6709 Coordinates Latitude, Longitude (in Degrees, Minutes and Seconds) and Altitude: IO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/
-	Iso6709Coordinates []byte `protobuf:"bytes,65,opt,name=iso6709_coordinates,json=iso6709Coordinates,proto3,oneof" json:"iso6709_coordinates,omitempty"`
+	Iso6709Coordinates *string `protobuf:"bytes,65,opt,name=iso6709_coordinates,json=iso6709Coordinates,proto3,oneof" json:"iso6709_coordinates,omitempty"`
 	// Parameter ID: 636
 	// Property Name: UMTS/LTE Cell ID
 	// Type: Unsigned
@@ -1329,7 +1329,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values:
-	UmtsLteCellId *uint64 `protobuf:"varint,66,opt,name=umts_lte_cell_id,json=umtsLteCellId,proto3,oneof" json:"umts_lte_cell_id,omitempty"`
+	UmtsLteCellId *uint32 `protobuf:"varint,66,opt,name=umts_lte_cell_id,json=umtsLteCellId,proto3,oneof" json:"umts_lte_cell_id,omitempty"`
 	// Parameter ID: 403
 	// Property Name: Driver Name
 	// Type: Unsigned
@@ -3252,14 +3252,14 @@ func (x *Compact) GetNetworkType() uint32 {
 	return 0
 }
 
-func (x *Compact) GetPulseCounterDin1() uint64 {
+func (x *Compact) GetPulseCounterDin1() uint32 {
 	if x != nil && x.PulseCounterDin1 != nil {
 		return *x.PulseCounterDin1
 	}
 	return 0
 }
 
-func (x *Compact) GetPulseCounterDin2() uint64 {
+func (x *Compact) GetPulseCounterDin2() uint32 {
 	if x != nil && x.PulseCounterDin2 != nil {
 		return *x.PulseCounterDin2
 	}
@@ -3280,11 +3280,11 @@ func (x *Compact) GetBarcodeId() string {
 	return ""
 }
 
-func (x *Compact) GetInstantMovement() uint32 {
+func (x *Compact) GetInstantMovement() bool {
 	if x != nil && x.InstantMovement != nil {
 		return *x.InstantMovement
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetUl202_02SensorFuelLevel() int32 {
@@ -3301,9 +3301,9 @@ func (x *Compact) GetUl202_02SensorStatus() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDigitalOutput_3() bool {
-	if x != nil && x.DigitalOutput_3 != nil {
-		return *x.DigitalOutput_3
+func (x *Compact) GetDigitalOutput3() bool {
+	if x != nil && x.DigitalOutput3 != nil {
+		return *x.DigitalOutput3
 	}
 	return false
 }
@@ -3315,14 +3315,14 @@ func (x *Compact) GetGroundSense() uint32 {
 	return 0
 }
 
-func (x *Compact) GetIso6709Coordinates() []byte {
-	if x != nil {
-		return x.Iso6709Coordinates
+func (x *Compact) GetIso6709Coordinates() string {
+	if x != nil && x.Iso6709Coordinates != nil {
+		return *x.Iso6709Coordinates
 	}
-	return nil
+	return ""
 }
 
-func (x *Compact) GetUmtsLteCellId() uint64 {
+func (x *Compact) GetUmtsLteCellId() uint32 {
 	if x != nil && x.UmtsLteCellId != nil {
 		return *x.UmtsLteCellId
 	}
@@ -4440,7 +4440,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xed\x94\x01\n" +
+	"\b_mileage\"\xeb\x94\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -4501,18 +4501,18 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\rbattery_level\x185 \x01(\rH3R\fbatteryLevel\x88\x01\x01\x12\x1c\n" +
 	"\auser_id\x186 \x01(\x04H4R\x06userId\x88\x01\x01\x12&\n" +
 	"\fnetwork_type\x187 \x01(\rH5R\vnetworkType\x88\x01\x01\x121\n" +
-	"\x12pulse_counter_din1\x188 \x01(\x04H6R\x10pulseCounterDin1\x88\x01\x01\x121\n" +
-	"\x12pulse_counter_din2\x189 \x01(\x04H7R\x10pulseCounterDin2\x88\x01\x01\x12 \n" +
+	"\x12pulse_counter_din1\x188 \x01(\rH6R\x10pulseCounterDin1\x88\x01\x01\x121\n" +
+	"\x12pulse_counter_din2\x189 \x01(\rH7R\x10pulseCounterDin2\x88\x01\x01\x12 \n" +
 	"\tbt_status\x18: \x01(\rH8R\bbtStatus\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"barcode_id\x18; \x01(\tH9R\tbarcodeId\x88\x01\x01\x12.\n" +
-	"\x10instant_movement\x18< \x01(\rH:R\x0finstantMovement\x88\x01\x01\x12?\n" +
+	"\x10instant_movement\x18< \x01(\bH:R\x0finstantMovement\x88\x01\x01\x12?\n" +
 	"\x1aul202_02_sensor_fuel_level\x18= \x01(\x05H;R\x16ul20202SensorFuelLevel\x88\x01\x01\x128\n" +
-	"\x16ul202_02_sensor_status\x18> \x01(\rH<R\x13ul20202SensorStatus\x88\x01\x01\x12-\n" +
-	"\x10digital_output_3\x18? \x01(\bH=R\x0edigitalOutput3\x88\x01\x01\x12&\n" +
+	"\x16ul202_02_sensor_status\x18> \x01(\rH<R\x13ul20202SensorStatus\x88\x01\x01\x12,\n" +
+	"\x0fdigital_output3\x18? \x01(\bH=R\x0edigitalOutput3\x88\x01\x01\x12&\n" +
 	"\fground_sense\x18@ \x01(\rH>R\vgroundSense\x88\x01\x01\x124\n" +
-	"\x13iso6709_coordinates\x18A \x01(\fH?R\x12iso6709Coordinates\x88\x01\x01\x12,\n" +
-	"\x10umts_lte_cell_id\x18B \x01(\x04H@R\rumtsLteCellId\x88\x01\x01\x12$\n" +
+	"\x13iso6709_coordinates\x18A \x01(\tH?R\x12iso6709Coordinates\x88\x01\x01\x12,\n" +
+	"\x10umts_lte_cell_id\x18B \x01(\rH@R\rumtsLteCellId\x88\x01\x01\x12$\n" +
 	"\vdriver_name\x18C \x01(\x04HAR\n" +
 	"driverName\x88\x01\x01\x12<\n" +
 	"\x18driver_card_license_type\x18D \x01(\rHBR\x15driverCardLicenseType\x88\x01\x01\x12(\n" +
@@ -4742,8 +4742,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\v_barcode_idB\x13\n" +
 	"\x11_instant_movementB\x1d\n" +
 	"\x1b_ul202_02_sensor_fuel_levelB\x19\n" +
-	"\x17_ul202_02_sensor_statusB\x13\n" +
-	"\x11_digital_output_3B\x0f\n" +
+	"\x17_ul202_02_sensor_statusB\x12\n" +
+	"\x10_digital_output3B\x0f\n" +
 	"\r_ground_senseB\x16\n" +
 	"\x14_iso6709_coordinatesB\x13\n" +
 	"\x11_umts_lte_cell_idB\x0e\n" +
