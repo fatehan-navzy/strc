@@ -1061,6 +1061,10 @@ message Compact {
     optional int32 eye_pitch2 = 223;
     optional int32 eye_pitch3 = 224;
     optional int32 eye_pitch4 = 225;
+    optional bool eye_low_battery1 = 229;
+    optional bool eye_low_battery2 = 226;
+    optional bool eye_low_battery3 = 227;
+    optional bool eye_low_battery4 = 228;
   
     // Note: The document is truncated, so continuing with available data up to truncation point.
   

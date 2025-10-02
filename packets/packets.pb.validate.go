@@ -1215,6 +1215,22 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for EyePitch4
 	}
 
+	if m.EyeLowBattery1 != nil {
+		// no validation rules for EyeLowBattery1
+	}
+
+	if m.EyeLowBattery2 != nil {
+		// no validation rules for EyeLowBattery2
+	}
+
+	if m.EyeLowBattery3 != nil {
+		// no validation rules for EyeLowBattery3
+	}
+
+	if m.EyeLowBattery4 != nil {
+		// no validation rules for EyeLowBattery4
+	}
+
 	if m.IsfCloggedBrakeSystemFilterIndicator != nil {
 		// no validation rules for IsfCloggedBrakeSystemFilterIndicator
 	}

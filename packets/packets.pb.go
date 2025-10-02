@@ -1579,14 +1579,18 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Movement state measure by EYE Sensor 1
-	EyeMovement1 *bool  `protobuf:"varint,91,opt,name=eye_movement1,json=eyeMovement1,proto3,oneof" json:"eye_movement1,omitempty"`
-	EyeMovement2 *bool  `protobuf:"varint,219,opt,name=eye_movement2,json=eyeMovement2,proto3,oneof" json:"eye_movement2,omitempty"`
-	EyeMovement3 *bool  `protobuf:"varint,220,opt,name=eye_movement3,json=eyeMovement3,proto3,oneof" json:"eye_movement3,omitempty"`
-	EyeMovement4 *bool  `protobuf:"varint,221,opt,name=eye_movement4,json=eyeMovement4,proto3,oneof" json:"eye_movement4,omitempty"`
-	EyePitch1    *int32 `protobuf:"varint,222,opt,name=eye_pitch1,json=eyePitch1,proto3,oneof" json:"eye_pitch1,omitempty"`
-	EyePitch2    *int32 `protobuf:"varint,223,opt,name=eye_pitch2,json=eyePitch2,proto3,oneof" json:"eye_pitch2,omitempty"`
-	EyePitch3    *int32 `protobuf:"varint,224,opt,name=eye_pitch3,json=eyePitch3,proto3,oneof" json:"eye_pitch3,omitempty"`
-	EyePitch4    *int32 `protobuf:"varint,225,opt,name=eye_pitch4,json=eyePitch4,proto3,oneof" json:"eye_pitch4,omitempty"`
+	EyeMovement1   *bool  `protobuf:"varint,91,opt,name=eye_movement1,json=eyeMovement1,proto3,oneof" json:"eye_movement1,omitempty"`
+	EyeMovement2   *bool  `protobuf:"varint,219,opt,name=eye_movement2,json=eyeMovement2,proto3,oneof" json:"eye_movement2,omitempty"`
+	EyeMovement3   *bool  `protobuf:"varint,220,opt,name=eye_movement3,json=eyeMovement3,proto3,oneof" json:"eye_movement3,omitempty"`
+	EyeMovement4   *bool  `protobuf:"varint,221,opt,name=eye_movement4,json=eyeMovement4,proto3,oneof" json:"eye_movement4,omitempty"`
+	EyePitch1      *int32 `protobuf:"varint,222,opt,name=eye_pitch1,json=eyePitch1,proto3,oneof" json:"eye_pitch1,omitempty"`
+	EyePitch2      *int32 `protobuf:"varint,223,opt,name=eye_pitch2,json=eyePitch2,proto3,oneof" json:"eye_pitch2,omitempty"`
+	EyePitch3      *int32 `protobuf:"varint,224,opt,name=eye_pitch3,json=eyePitch3,proto3,oneof" json:"eye_pitch3,omitempty"`
+	EyePitch4      *int32 `protobuf:"varint,225,opt,name=eye_pitch4,json=eyePitch4,proto3,oneof" json:"eye_pitch4,omitempty"`
+	EyeLowBattery1 *bool  `protobuf:"varint,229,opt,name=eye_low_battery1,json=eyeLowBattery1,proto3,oneof" json:"eye_low_battery1,omitempty"`
+	EyeLowBattery2 *bool  `protobuf:"varint,226,opt,name=eye_low_battery2,json=eyeLowBattery2,proto3,oneof" json:"eye_low_battery2,omitempty"`
+	EyeLowBattery3 *bool  `protobuf:"varint,227,opt,name=eye_low_battery3,json=eyeLowBattery3,proto3,oneof" json:"eye_low_battery3,omitempty"`
+	EyeLowBattery4 *bool  `protobuf:"varint,228,opt,name=eye_low_battery4,json=eyeLowBattery4,proto3,oneof" json:"eye_low_battery4,omitempty"`
 	// Parameter ID: 985
 	// Property Name: ISF Clogged Brake System Filter Indicator
 	// Type: Unsigned
@@ -3560,6 +3564,34 @@ func (x *Compact) GetEyePitch4() int32 {
 	return 0
 }
 
+func (x *Compact) GetEyeLowBattery1() bool {
+	if x != nil && x.EyeLowBattery1 != nil {
+		return *x.EyeLowBattery1
+	}
+	return false
+}
+
+func (x *Compact) GetEyeLowBattery2() bool {
+	if x != nil && x.EyeLowBattery2 != nil {
+		return *x.EyeLowBattery2
+	}
+	return false
+}
+
+func (x *Compact) GetEyeLowBattery3() bool {
+	if x != nil && x.EyeLowBattery3 != nil {
+		return *x.EyeLowBattery3
+	}
+	return false
+}
+
+func (x *Compact) GetEyeLowBattery4() bool {
+	if x != nil && x.EyeLowBattery4 != nil {
+		return *x.EyeLowBattery4
+	}
+	return false
+}
+
 func (x *Compact) GetIsfCloggedBrakeSystemFilterIndicator() uint32 {
 	if x != nil && x.IsfCloggedBrakeSystemFilterIndicator != nil {
 		return *x.IsfCloggedBrakeSystemFilterIndicator
@@ -4496,7 +4528,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"ߗ\x01\n" +
+	"\b_mileage\"\xf7\x99\x01\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -4610,137 +4642,141 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
 	"eye_pitch3\x18\xe0\x01 \x01(\x05H_R\teyePitch3\x88\x01\x01\x12#\n" +
 	"\n" +
-	"eye_pitch4\x18\xe1\x01 \x01(\x05H`R\teyePitch4\x88\x01\x01\x12\\\n" +
-	")isf_clogged_brake_system_filter_indicator\x18\\ \x01(\rHaR$isfCloggedBrakeSystemFilterIndicator\x88\x01\x01\x12R\n" +
-	"$isf_low_washer_fluid_level_indicator\x18] \x01(\rHbR\x1fisfLowWasherFluidLevelIndicator\x88\x01\x01\x12G\n" +
-	"\x1eisf_low_adblue_level_indicator\x18^ \x01(\rHcR\x1aisfLowAdblueLevelIndicator\x88\x01\x01\x12X\n" +
-	"'isf_low_trailer_tyre_pressure_indicator\x18_ \x01(\rHdR\"isfLowTrailerTyrePressureIndicator\x88\x01\x01\x12]\n" +
-	"*isf_wear_of_trailer_brake_lining_indicator\x18` \x01(\rHeR$isfWearOfTrailerBrakeLiningIndicator\x88\x01\x01\x12b\n" +
-	",isf_high_trailer_brake_temperature_indicator\x18a \x01(\rHfR'isfHighTrailerBrakeTemperatureIndicator\x88\x01\x01\x12j\n" +
-	"0isf_incorrect_trailer_pneumatic_supply_indicator\x18b \x01(\rHgR+isfIncorrectTrailerPneumaticSupplyIndicator\x88\x01\x01\x12A\n" +
-	"\x1bisf_low_cng_level_indicator\x18c \x01(\rHhR\x17isfLowCngLevelIndicator\x88\x01\x01\x12T\n" +
-	"%asf_right_joystick_moved_right_active\x18d \x01(\rHiR asfRightJoystickMovedRightActive\x88\x01\x01\x12R\n" +
-	"$asf_right_joystick_moved_left_active\x18e \x01(\rHjR\x1fasfRightJoystickMovedLeftActive\x88\x01\x01\x12X\n" +
-	"'asf_right_joystick_moved_forward_active\x18f \x01(\rHkR\"asfRightJoystickMovedForwardActive\x88\x01\x01\x12R\n" +
-	"$asf_right_joystick_moved_back_active\x18g \x01(\rHlR\x1fasfRightJoystickMovedBackActive\x88\x01\x01\x12R\n" +
-	"$asf_left_joystick_moved_right_active\x18h \x01(\rHmR\x1fasfLeftJoystickMovedRightActive\x88\x01\x01\x12P\n" +
-	"#asf_left_joystick_moved_left_active\x18i \x01(\rHnR\x1easfLeftJoystickMovedLeftActive\x88\x01\x01\x12V\n" +
-	"&asf_left_joystick_moved_forward_active\x18j \x01(\rHoR!asfLeftJoystickMovedForwardActive\x88\x01\x01\x12P\n" +
-	"#asf_left_joystick_moved_back_active\x18k \x01(\rHpR\x1easfLeftJoystickMovedBackActive\x88\x01\x01\x12<\n" +
-	"\x18asf_first_rear_hydraulic\x18l \x01(\rHqR\x15asfFirstRearHydraulic\x88\x01\x01\x12>\n" +
-	"\x19asf_second_rear_hydraulic\x18m \x01(\rHrR\x16asfSecondRearHydraulic\x88\x01\x01\x12<\n" +
-	"\x18asf_third_rear_hydraulic\x18n \x01(\rHsR\x15asfThirdRearHydraulic\x88\x01\x01\x12>\n" +
-	"\x19asf_fourth_rear_hydraulic\x18o \x01(\rHtR\x16asfFourthRearHydraulic\x88\x01\x01\x12>\n" +
-	"\x19asf_first_front_hydraulic\x18p \x01(\rHuR\x16asfFirstFrontHydraulic\x88\x01\x01\x12@\n" +
-	"\x1aasf_second_front_hydraulic\x18q \x01(\rHvR\x17asfSecondFrontHydraulic\x88\x01\x01\x12>\n" +
-	"\x19asf_third_front_hydraulic\x18r \x01(\rHwR\x16asfThirdFrontHydraulic\x88\x01\x01\x12@\n" +
-	"\x1aasf_fourth_front_hydraulic\x18s \x01(\rHxR\x17asfFourthFrontHydraulic\x88\x01\x01\x12A\n" +
-	"\x1basf_front_three_point_hitch\x18t \x01(\rHyR\x17asfFrontThreePointHitch\x88\x01\x01\x12?\n" +
-	"\x1aasf_rear_three_point_hitch\x18u \x01(\rHzR\x16asfRearThreePointHitch\x88\x01\x01\x12;\n" +
-	"\x18asf_front_power_take_off\x18v \x01(\rH{R\x14asfFrontPowerTakeOff\x88\x01\x01\x129\n" +
-	"\x17asf_rear_power_take_off\x18w \x01(\rH|R\x13asfRearPowerTakeOff\x88\x01\x01\x12/\n" +
-	"\x11asf_mowing_active\x18x \x01(\rH}R\x0fasfMowingActive\x88\x01\x01\x125\n" +
-	"\x14asf_threshing_active\x18y \x01(\rH~R\x12asfThreshingActive\x88\x01\x01\x12E\n" +
-	"\x1dasf_grain_release_from_hopper\x18z \x01(\rH\x7fR\x19asfGrainReleaseFromHopper\x88\x01\x01\x12?\n" +
-	"\x1aasf_grain_tank_is_100_full\x18{ \x01(\rH\x80\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12=\n" +
-	"\x19asf_grain_tank_is_70_full\x18| \x01(\rH\x81\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
-	"\x18asf_grain_tank_is_opened\x18} \x01(\rH\x82\x01R\x14asfGrainTankIsOpened\x88\x01\x01\x122\n" +
-	"\x12asf_unloader_drive\x18~ \x01(\rH\x83\x01R\x10asfUnloaderDrive\x88\x01\x01\x12Q\n" +
-	"#asf_cleaning_fan_control_turned_off\x18\x7f \x01(\rH\x84\x01R\x1easfCleaningFanControlTurnedOff\x88\x01\x01\x12V\n" +
-	"%asf_threshing_drum_control_turned_off\x18\x80\x01 \x01(\rH\x85\x01R asfThreshingDrumControlTurnedOff\x88\x01\x01\x12C\n" +
-	"\x1basf_straw_walker_is_clogged\x18\x81\x01 \x01(\rH\x86\x01R\x17asfStrawWalkerIsClogged\x88\x01\x01\x12k\n" +
-	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\rH\x87\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x89\x01\n" +
-	"Aasf_low_temperature_of_drive_system_hydraulics_less_than_5_grades\x18\x83\x01 \x01(\rH\x88\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x93\x01\n" +
-	"Fasf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades\x18\x84\x01 \x01(\rH\x89\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
-	"\"asf_ear_auger_speed_below_the_norm\x18\x85\x01 \x01(\rH\x8a\x01R\x1casfEarAugerSpeedBelowTheNorm\x88\x01\x01\x12S\n" +
-	"$asf_grain_auger_speed_below_the_norm\x18\x86\x01 \x01(\rH\x8b\x01R\x1easfGrainAugerSpeedBelowTheNorm\x88\x01\x01\x12W\n" +
-	"&asf_straw_chooper_speed_below_the_norm\x18\x87\x01 \x01(\rH\x8c\x01R asfStrawChooperSpeedBelowTheNorm\x88\x01\x01\x12U\n" +
-	"%asf_straw_shaker_speed_below_the_norm\x18\x88\x01 \x01(\rH\x8d\x01R\x1fasfStrawShakerSpeedBelowTheNorm\x88\x01\x01\x12J\n" +
-	"\x1fasf_feeder_speed_below_the_norm\x18\x89\x01 \x01(\rH\x8e\x01R\x1aasfFeederSpeedBelowTheNorm\x88\x01\x01\x12G\n" +
-	"\x1dasf_straw_chopper_switched_on\x18\x8a\x01 \x01(\rH\x8f\x01R\x19asfStrawChopperSwitchedOn\x88\x01\x01\x12@\n" +
-	"\x19asf_corn_header_connected\x18\x8b\x01 \x01(\rH\x90\x01R\x16asfCornHeaderConnected\x88\x01\x01\x12B\n" +
-	"\x1aasf_grain_header_connected\x18\x8c\x01 \x01(\rH\x91\x01R\x17asfGrainHeaderConnected\x88\x01\x01\x12I\n" +
-	"\x1easf_feeder_reverse_switched_on\x18\x8d\x01 \x01(\rH\x92\x01R\x1aasfFeederReverseSwitchedOn\x88\x01\x01\x12x\n" +
-	"8asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged\x18\x8e\x01 \x01(\rH\x93\x01R/asfThePressureFilterOfTheHydraulicPumpIsClogged\x88\x01\x01\x12Q\n" +
-	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\rH\x94\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12M\n" +
-	" asf_service_2_required_indicator\x18\x90\x01 \x01(\rH\x95\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
-	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\rH\x96\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x12:\n" +
-	"\x16asf_section_1_spraying\x18\x92\x01 \x01(\rH\x97\x01R\x13asfSection1Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_2_spraying\x18\x93\x01 \x01(\rH\x98\x01R\x13asfSection2Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_3_spraying\x18\x94\x01 \x01(\rH\x99\x01R\x13asfSection3Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_4_spraying\x18\x95\x01 \x01(\rH\x9a\x01R\x13asfSection4Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_5_spraying\x18\x96\x01 \x01(\rH\x9b\x01R\x13asfSection5Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_6_spraying\x18\x97\x01 \x01(\rH\x9c\x01R\x13asfSection6Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_7_spraying\x18\x98\x01 \x01(\rH\x9d\x01R\x13asfSection7Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_8_spraying\x18\x99\x01 \x01(\rH\x9e\x01R\x13asfSection8Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_9_spraying\x18\x9a\x01 \x01(\rH\x9f\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
-	"\rusf_spreading\x18\x9b\x01 \x01(\rH\xa0\x01R\fusfSpreading\x88\x01\x01\x129\n" +
-	"\x15usf_pouring_chemicals\x18\x9c\x01 \x01(\rH\xa1\x01R\x13usfPouringChemicals\x88\x01\x01\x121\n" +
-	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\rH\xa2\x01R\x0fusfConveyorBelt\x88\x01\x01\x12J\n" +
-	"\x1fusf_salt_spreader_s_drive_wheel\x18\x9e\x01 \x01(\rH\xa3\x01R\x1ausfSaltSpreaderSDriveWheel\x88\x01\x01\x12&\n" +
-	"\vusf_brushes\x18\x9f\x01 \x01(\rH\xa4\x01R\n" +
+	"eye_pitch4\x18\xe1\x01 \x01(\x05H`R\teyePitch4\x88\x01\x01\x12.\n" +
+	"\x10eye_low_battery1\x18\xe5\x01 \x01(\bHaR\x0eeyeLowBattery1\x88\x01\x01\x12.\n" +
+	"\x10eye_low_battery2\x18\xe2\x01 \x01(\bHbR\x0eeyeLowBattery2\x88\x01\x01\x12.\n" +
+	"\x10eye_low_battery3\x18\xe3\x01 \x01(\bHcR\x0eeyeLowBattery3\x88\x01\x01\x12.\n" +
+	"\x10eye_low_battery4\x18\xe4\x01 \x01(\bHdR\x0eeyeLowBattery4\x88\x01\x01\x12\\\n" +
+	")isf_clogged_brake_system_filter_indicator\x18\\ \x01(\rHeR$isfCloggedBrakeSystemFilterIndicator\x88\x01\x01\x12R\n" +
+	"$isf_low_washer_fluid_level_indicator\x18] \x01(\rHfR\x1fisfLowWasherFluidLevelIndicator\x88\x01\x01\x12G\n" +
+	"\x1eisf_low_adblue_level_indicator\x18^ \x01(\rHgR\x1aisfLowAdblueLevelIndicator\x88\x01\x01\x12X\n" +
+	"'isf_low_trailer_tyre_pressure_indicator\x18_ \x01(\rHhR\"isfLowTrailerTyrePressureIndicator\x88\x01\x01\x12]\n" +
+	"*isf_wear_of_trailer_brake_lining_indicator\x18` \x01(\rHiR$isfWearOfTrailerBrakeLiningIndicator\x88\x01\x01\x12b\n" +
+	",isf_high_trailer_brake_temperature_indicator\x18a \x01(\rHjR'isfHighTrailerBrakeTemperatureIndicator\x88\x01\x01\x12j\n" +
+	"0isf_incorrect_trailer_pneumatic_supply_indicator\x18b \x01(\rHkR+isfIncorrectTrailerPneumaticSupplyIndicator\x88\x01\x01\x12A\n" +
+	"\x1bisf_low_cng_level_indicator\x18c \x01(\rHlR\x17isfLowCngLevelIndicator\x88\x01\x01\x12T\n" +
+	"%asf_right_joystick_moved_right_active\x18d \x01(\rHmR asfRightJoystickMovedRightActive\x88\x01\x01\x12R\n" +
+	"$asf_right_joystick_moved_left_active\x18e \x01(\rHnR\x1fasfRightJoystickMovedLeftActive\x88\x01\x01\x12X\n" +
+	"'asf_right_joystick_moved_forward_active\x18f \x01(\rHoR\"asfRightJoystickMovedForwardActive\x88\x01\x01\x12R\n" +
+	"$asf_right_joystick_moved_back_active\x18g \x01(\rHpR\x1fasfRightJoystickMovedBackActive\x88\x01\x01\x12R\n" +
+	"$asf_left_joystick_moved_right_active\x18h \x01(\rHqR\x1fasfLeftJoystickMovedRightActive\x88\x01\x01\x12P\n" +
+	"#asf_left_joystick_moved_left_active\x18i \x01(\rHrR\x1easfLeftJoystickMovedLeftActive\x88\x01\x01\x12V\n" +
+	"&asf_left_joystick_moved_forward_active\x18j \x01(\rHsR!asfLeftJoystickMovedForwardActive\x88\x01\x01\x12P\n" +
+	"#asf_left_joystick_moved_back_active\x18k \x01(\rHtR\x1easfLeftJoystickMovedBackActive\x88\x01\x01\x12<\n" +
+	"\x18asf_first_rear_hydraulic\x18l \x01(\rHuR\x15asfFirstRearHydraulic\x88\x01\x01\x12>\n" +
+	"\x19asf_second_rear_hydraulic\x18m \x01(\rHvR\x16asfSecondRearHydraulic\x88\x01\x01\x12<\n" +
+	"\x18asf_third_rear_hydraulic\x18n \x01(\rHwR\x15asfThirdRearHydraulic\x88\x01\x01\x12>\n" +
+	"\x19asf_fourth_rear_hydraulic\x18o \x01(\rHxR\x16asfFourthRearHydraulic\x88\x01\x01\x12>\n" +
+	"\x19asf_first_front_hydraulic\x18p \x01(\rHyR\x16asfFirstFrontHydraulic\x88\x01\x01\x12@\n" +
+	"\x1aasf_second_front_hydraulic\x18q \x01(\rHzR\x17asfSecondFrontHydraulic\x88\x01\x01\x12>\n" +
+	"\x19asf_third_front_hydraulic\x18r \x01(\rH{R\x16asfThirdFrontHydraulic\x88\x01\x01\x12@\n" +
+	"\x1aasf_fourth_front_hydraulic\x18s \x01(\rH|R\x17asfFourthFrontHydraulic\x88\x01\x01\x12A\n" +
+	"\x1basf_front_three_point_hitch\x18t \x01(\rH}R\x17asfFrontThreePointHitch\x88\x01\x01\x12?\n" +
+	"\x1aasf_rear_three_point_hitch\x18u \x01(\rH~R\x16asfRearThreePointHitch\x88\x01\x01\x12;\n" +
+	"\x18asf_front_power_take_off\x18v \x01(\rH\x7fR\x14asfFrontPowerTakeOff\x88\x01\x01\x12:\n" +
+	"\x17asf_rear_power_take_off\x18w \x01(\rH\x80\x01R\x13asfRearPowerTakeOff\x88\x01\x01\x120\n" +
+	"\x11asf_mowing_active\x18x \x01(\rH\x81\x01R\x0fasfMowingActive\x88\x01\x01\x126\n" +
+	"\x14asf_threshing_active\x18y \x01(\rH\x82\x01R\x12asfThreshingActive\x88\x01\x01\x12F\n" +
+	"\x1dasf_grain_release_from_hopper\x18z \x01(\rH\x83\x01R\x19asfGrainReleaseFromHopper\x88\x01\x01\x12?\n" +
+	"\x1aasf_grain_tank_is_100_full\x18{ \x01(\rH\x84\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12=\n" +
+	"\x19asf_grain_tank_is_70_full\x18| \x01(\rH\x85\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
+	"\x18asf_grain_tank_is_opened\x18} \x01(\rH\x86\x01R\x14asfGrainTankIsOpened\x88\x01\x01\x122\n" +
+	"\x12asf_unloader_drive\x18~ \x01(\rH\x87\x01R\x10asfUnloaderDrive\x88\x01\x01\x12Q\n" +
+	"#asf_cleaning_fan_control_turned_off\x18\x7f \x01(\rH\x88\x01R\x1easfCleaningFanControlTurnedOff\x88\x01\x01\x12V\n" +
+	"%asf_threshing_drum_control_turned_off\x18\x80\x01 \x01(\rH\x89\x01R asfThreshingDrumControlTurnedOff\x88\x01\x01\x12C\n" +
+	"\x1basf_straw_walker_is_clogged\x18\x81\x01 \x01(\rH\x8a\x01R\x17asfStrawWalkerIsClogged\x88\x01\x01\x12k\n" +
+	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\rH\x8b\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x89\x01\n" +
+	"Aasf_low_temperature_of_drive_system_hydraulics_less_than_5_grades\x18\x83\x01 \x01(\rH\x8c\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x93\x01\n" +
+	"Fasf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades\x18\x84\x01 \x01(\rH\x8d\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
+	"\"asf_ear_auger_speed_below_the_norm\x18\x85\x01 \x01(\rH\x8e\x01R\x1casfEarAugerSpeedBelowTheNorm\x88\x01\x01\x12S\n" +
+	"$asf_grain_auger_speed_below_the_norm\x18\x86\x01 \x01(\rH\x8f\x01R\x1easfGrainAugerSpeedBelowTheNorm\x88\x01\x01\x12W\n" +
+	"&asf_straw_chooper_speed_below_the_norm\x18\x87\x01 \x01(\rH\x90\x01R asfStrawChooperSpeedBelowTheNorm\x88\x01\x01\x12U\n" +
+	"%asf_straw_shaker_speed_below_the_norm\x18\x88\x01 \x01(\rH\x91\x01R\x1fasfStrawShakerSpeedBelowTheNorm\x88\x01\x01\x12J\n" +
+	"\x1fasf_feeder_speed_below_the_norm\x18\x89\x01 \x01(\rH\x92\x01R\x1aasfFeederSpeedBelowTheNorm\x88\x01\x01\x12G\n" +
+	"\x1dasf_straw_chopper_switched_on\x18\x8a\x01 \x01(\rH\x93\x01R\x19asfStrawChopperSwitchedOn\x88\x01\x01\x12@\n" +
+	"\x19asf_corn_header_connected\x18\x8b\x01 \x01(\rH\x94\x01R\x16asfCornHeaderConnected\x88\x01\x01\x12B\n" +
+	"\x1aasf_grain_header_connected\x18\x8c\x01 \x01(\rH\x95\x01R\x17asfGrainHeaderConnected\x88\x01\x01\x12I\n" +
+	"\x1easf_feeder_reverse_switched_on\x18\x8d\x01 \x01(\rH\x96\x01R\x1aasfFeederReverseSwitchedOn\x88\x01\x01\x12x\n" +
+	"8asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged\x18\x8e\x01 \x01(\rH\x97\x01R/asfThePressureFilterOfTheHydraulicPumpIsClogged\x88\x01\x01\x12Q\n" +
+	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\rH\x98\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12M\n" +
+	" asf_service_2_required_indicator\x18\x90\x01 \x01(\rH\x99\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
+	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\rH\x9a\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x12:\n" +
+	"\x16asf_section_1_spraying\x18\x92\x01 \x01(\rH\x9b\x01R\x13asfSection1Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_2_spraying\x18\x93\x01 \x01(\rH\x9c\x01R\x13asfSection2Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_3_spraying\x18\x94\x01 \x01(\rH\x9d\x01R\x13asfSection3Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_4_spraying\x18\x95\x01 \x01(\rH\x9e\x01R\x13asfSection4Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_5_spraying\x18\x96\x01 \x01(\rH\x9f\x01R\x13asfSection5Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_6_spraying\x18\x97\x01 \x01(\rH\xa0\x01R\x13asfSection6Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_7_spraying\x18\x98\x01 \x01(\rH\xa1\x01R\x13asfSection7Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_8_spraying\x18\x99\x01 \x01(\rH\xa2\x01R\x13asfSection8Spraying\x88\x01\x01\x12:\n" +
+	"\x16asf_section_9_spraying\x18\x9a\x01 \x01(\rH\xa3\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
+	"\rusf_spreading\x18\x9b\x01 \x01(\rH\xa4\x01R\fusfSpreading\x88\x01\x01\x129\n" +
+	"\x15usf_pouring_chemicals\x18\x9c\x01 \x01(\rH\xa5\x01R\x13usfPouringChemicals\x88\x01\x01\x121\n" +
+	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\rH\xa6\x01R\x0fusfConveyorBelt\x88\x01\x01\x12J\n" +
+	"\x1fusf_salt_spreader_s_drive_wheel\x18\x9e\x01 \x01(\rH\xa7\x01R\x1ausfSaltSpreaderSDriveWheel\x88\x01\x01\x12&\n" +
+	"\vusf_brushes\x18\x9f\x01 \x01(\rH\xa8\x01R\n" +
 	"usfBrushes\x88\x01\x01\x123\n" +
-	"\x12usf_vacuum_cleaner\x18\xa0\x01 \x01(\rH\xa5\x01R\x10usfVacuumCleaner\x88\x01\x01\x12/\n" +
-	"\x10usf_water_supply\x18\xa1\x01 \x01(\rH\xa6\x01R\x0eusfWaterSupply\x88\x01\x01\x12-\n" +
-	"\x0fusf_liquid_pump\x18\xa3\x01 \x01(\rH\xa7\x01R\rusfLiquidPump\x88\x01\x01\x12G\n" +
-	"\x1dusf_unloading_from_the_hopper\x18\xa4\x01 \x01(\rH\xa8\x01R\x19usfUnloadingFromTheHopper\x88\x01\x01\x12f\n" +
-	".usf_low_salt_sand_level_in_container_indicator\x18\xa5\x01 \x01(\rH\xa9\x01R'usfLowSaltSandLevelInContainerIndicator\x88\x01\x01\x12_\n" +
-	"*usf_low_water_level_in_container_indicator\x18\xa6\x01 \x01(\rH\xaa\x01R$usfLowWaterLevelInContainerIndicator\x88\x01\x01\x12*\n" +
-	"\rusf_chemicals\x18\xa7\x01 \x01(\rH\xab\x01R\fusfChemicals\x88\x01\x01\x12,\n" +
-	"\x0eusf_compressor\x18\xa8\x01 \x01(\rH\xac\x01R\rusfCompressor\x88\x01\x01\x12?\n" +
-	"\x19usf_water_valve_is_opened\x18\xa9\x01 \x01(\rH\xad\x01R\x15usfWaterValveIsOpened\x88\x01\x01\x12L\n" +
-	" usf_cabin_moved_up_status_active\x18\xaa\x01 \x01(\rH\xae\x01R\x1busfCabinMovedUpStatusActive\x88\x01\x01\x12P\n" +
-	"\"usf_cabin_moved_down_status_active\x18\xab\x01 \x01(\rH\xaf\x01R\x1dusfCabinMovedDownStatusActive\x88\x01\x01\x12O\n" +
-	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\rH\xb0\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12i\n" +
-	"0cisf_section_1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\rH\xb1\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_1_filled\x18\xae\x01 \x01(\rH\xb2\x01R\x12cisfSection1Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_1_overfilled\x18\xaf\x01 \x01(\rH\xb3\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\rH\xb4\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_2_filled\x18\xb1\x01 \x01(\rH\xb5\x01R\x12cisfSection2Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_2_overfilled\x18\xb2\x01 \x01(\rH\xb6\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\rH\xb7\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_3_filled\x18\xb4\x01 \x01(\rH\xb8\x01R\x12cisfSection3Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_3_overfilled\x18\xb5\x01 \x01(\rH\xb9\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\rH\xba\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_4_filled\x18\xb7\x01 \x01(\rH\xbb\x01R\x12cisfSection4Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_4_overfilled\x18\xb8\x01 \x01(\rH\xbc\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\rH\xbd\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_5_filled\x18\xba\x01 \x01(\rH\xbe\x01R\x12cisfSection5Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_5_overfilled\x18\xbb\x01 \x01(\rH\xbf\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\rH\xc0\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_6_filled\x18\xbd\x01 \x01(\rH\xc1\x01R\x12cisfSection6Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_6_overfilled\x18\xbe\x01 \x01(\rH\xc2\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\rH\xc3\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_7_filled\x18\xc0\x01 \x01(\rH\xc4\x01R\x12cisfSection7Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_7_overfilled\x18\xc1\x01 \x01(\rH\xc5\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\rH\xc6\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_8_filled\x18\xc3\x01 \x01(\rH\xc7\x01R\x12cisfSection8Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_8_overfilled\x18\xc4\x01 \x01(\rH\xc8\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
-	"\x18distance_to_next_service\x18\xc5\x01 \x01(\x04H\xc9\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
-	"\fcng_level_kg\x18\xc6\x01 \x01(\rH\xca\x01R\n" +
+	"\x12usf_vacuum_cleaner\x18\xa0\x01 \x01(\rH\xa9\x01R\x10usfVacuumCleaner\x88\x01\x01\x12/\n" +
+	"\x10usf_water_supply\x18\xa1\x01 \x01(\rH\xaa\x01R\x0eusfWaterSupply\x88\x01\x01\x12-\n" +
+	"\x0fusf_liquid_pump\x18\xa3\x01 \x01(\rH\xab\x01R\rusfLiquidPump\x88\x01\x01\x12G\n" +
+	"\x1dusf_unloading_from_the_hopper\x18\xa4\x01 \x01(\rH\xac\x01R\x19usfUnloadingFromTheHopper\x88\x01\x01\x12f\n" +
+	".usf_low_salt_sand_level_in_container_indicator\x18\xa5\x01 \x01(\rH\xad\x01R'usfLowSaltSandLevelInContainerIndicator\x88\x01\x01\x12_\n" +
+	"*usf_low_water_level_in_container_indicator\x18\xa6\x01 \x01(\rH\xae\x01R$usfLowWaterLevelInContainerIndicator\x88\x01\x01\x12*\n" +
+	"\rusf_chemicals\x18\xa7\x01 \x01(\rH\xaf\x01R\fusfChemicals\x88\x01\x01\x12,\n" +
+	"\x0eusf_compressor\x18\xa8\x01 \x01(\rH\xb0\x01R\rusfCompressor\x88\x01\x01\x12?\n" +
+	"\x19usf_water_valve_is_opened\x18\xa9\x01 \x01(\rH\xb1\x01R\x15usfWaterValveIsOpened\x88\x01\x01\x12L\n" +
+	" usf_cabin_moved_up_status_active\x18\xaa\x01 \x01(\rH\xb2\x01R\x1busfCabinMovedUpStatusActive\x88\x01\x01\x12P\n" +
+	"\"usf_cabin_moved_down_status_active\x18\xab\x01 \x01(\rH\xb3\x01R\x1dusfCabinMovedDownStatusActive\x88\x01\x01\x12O\n" +
+	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\rH\xb4\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12i\n" +
+	"0cisf_section_1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\rH\xb5\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_1_filled\x18\xae\x01 \x01(\rH\xb6\x01R\x12cisfSection1Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_1_overfilled\x18\xaf\x01 \x01(\rH\xb7\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\rH\xb8\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_2_filled\x18\xb1\x01 \x01(\rH\xb9\x01R\x12cisfSection2Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_2_overfilled\x18\xb2\x01 \x01(\rH\xba\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\rH\xbb\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_3_filled\x18\xb4\x01 \x01(\rH\xbc\x01R\x12cisfSection3Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_3_overfilled\x18\xb5\x01 \x01(\rH\xbd\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\rH\xbe\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_4_filled\x18\xb7\x01 \x01(\rH\xbf\x01R\x12cisfSection4Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_4_overfilled\x18\xb8\x01 \x01(\rH\xc0\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\rH\xc1\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_5_filled\x18\xba\x01 \x01(\rH\xc2\x01R\x12cisfSection5Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_5_overfilled\x18\xbb\x01 \x01(\rH\xc3\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\rH\xc4\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_6_filled\x18\xbd\x01 \x01(\rH\xc5\x01R\x12cisfSection6Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_6_overfilled\x18\xbe\x01 \x01(\rH\xc6\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\rH\xc7\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_7_filled\x18\xc0\x01 \x01(\rH\xc8\x01R\x12cisfSection7Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_7_overfilled\x18\xc1\x01 \x01(\rH\xc9\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12i\n" +
+	"0cisf_section_8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\rH\xca\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
+	"\x15cisf_section_8_filled\x18\xc3\x01 \x01(\rH\xcb\x01R\x12cisfSection8Filled\x88\x01\x01\x12@\n" +
+	"\x19cisf_section_8_overfilled\x18\xc4\x01 \x01(\rH\xcc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
+	"\x18distance_to_next_service\x18\xc5\x01 \x01(\x04H\xcd\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
+	"\fcng_level_kg\x18\xc6\x01 \x01(\rH\xce\x01R\n" +
 	"cngLevelKg\x88\x01\x01\x12G\n" +
-	"\x1ddistance_from_need_of_service\x18\xc7\x01 \x01(\x04H\xcb\x01R\x19distanceFromNeedOfService\x88\x01\x01\x12B\n" +
-	"\x1adistance_from_last_service\x18\xc8\x01 \x01(\x04H\xcc\x01R\x17distanceFromLastService\x88\x01\x01\x126\n" +
-	"\x14time_to_next_service\x18\xc9\x01 \x01(\rH\xcd\x01R\x11timeToNextService\x88\x01\x01\x12?\n" +
-	"\x19time_from_need_of_service\x18\xca\x01 \x01(\rH\xce\x01R\x15timeFromNeedOfService\x88\x01\x01\x12:\n" +
-	"\x16time_from_last_serivce\x18\xcb\x01 \x01(\rH\xcf\x01R\x13timeFromLastSerivce\x88\x01\x01\x12E\n" +
-	"\x1cdistance_to_next_oil_service\x18\xcc\x01 \x01(\x04H\xd0\x01R\x18distanceToNextOilService\x88\x01\x01\x12=\n" +
-	"\x18time_to_next_oil_service\x18\xcd\x01 \x01(\rH\xd1\x01R\x14timeToNextOilService\x88\x01\x01\x125\n" +
-	"\x13lvcan_vehicle_range\x18\xce\x01 \x01(\x04H\xd2\x01R\x11lvcanVehicleRange\x88\x01\x01\x12<\n" +
-	"\x17lvcan_total_cng_counted\x18\xcf\x01 \x01(\x04H\xd3\x01R\x14lvcanTotalCngCounted\x88\x01\x01\x12/\n" +
-	"\x10total_bale_count\x18\xd0\x01 \x01(\x04H\xd4\x01R\x0etotalBaleCount\x88\x01\x01\x12$\n" +
+	"\x1ddistance_from_need_of_service\x18\xc7\x01 \x01(\x04H\xcf\x01R\x19distanceFromNeedOfService\x88\x01\x01\x12B\n" +
+	"\x1adistance_from_last_service\x18\xc8\x01 \x01(\x04H\xd0\x01R\x17distanceFromLastService\x88\x01\x01\x126\n" +
+	"\x14time_to_next_service\x18\xc9\x01 \x01(\rH\xd1\x01R\x11timeToNextService\x88\x01\x01\x12?\n" +
+	"\x19time_from_need_of_service\x18\xca\x01 \x01(\rH\xd2\x01R\x15timeFromNeedOfService\x88\x01\x01\x12:\n" +
+	"\x16time_from_last_serivce\x18\xcb\x01 \x01(\rH\xd3\x01R\x13timeFromLastSerivce\x88\x01\x01\x12E\n" +
+	"\x1cdistance_to_next_oil_service\x18\xcc\x01 \x01(\x04H\xd4\x01R\x18distanceToNextOilService\x88\x01\x01\x12=\n" +
+	"\x18time_to_next_oil_service\x18\xcd\x01 \x01(\rH\xd5\x01R\x14timeToNextOilService\x88\x01\x01\x125\n" +
+	"\x13lvcan_vehicle_range\x18\xce\x01 \x01(\x04H\xd6\x01R\x11lvcanVehicleRange\x88\x01\x01\x12<\n" +
+	"\x17lvcan_total_cng_counted\x18\xcf\x01 \x01(\x04H\xd7\x01R\x14lvcanTotalCngCounted\x88\x01\x01\x12/\n" +
+	"\x10total_bale_count\x18\xd0\x01 \x01(\x04H\xd8\x01R\x0etotalBaleCount\x88\x01\x01\x12$\n" +
 	"\n" +
-	"bale_count\x18\xd1\x01 \x01(\x04H\xd5\x01R\tbaleCount\x88\x01\x01\x12+\n" +
-	"\x0ecut_bale_count\x18\xd2\x01 \x01(\x04H\xd6\x01R\fcutBaleCount\x88\x01\x01\x12&\n" +
-	"\vbale_slices\x18\xd3\x01 \x01(\x04H\xd7\x01R\n" +
+	"bale_count\x18\xd1\x01 \x01(\x04H\xd9\x01R\tbaleCount\x88\x01\x01\x12+\n" +
+	"\x0ecut_bale_count\x18\xd2\x01 \x01(\x04H\xda\x01R\fcutBaleCount\x88\x01\x01\x12&\n" +
+	"\vbale_slices\x18\xd3\x01 \x01(\x04H\xdb\x01R\n" +
 	"baleSlices\x88\x01\x01\x124\n" +
-	"\x12lvcan_maxroadspeed\x18\xd4\x01 \x01(\rH\xd8\x01R\x11lvcanMaxroadspeed\x88\x01\x01\x12>\n" +
-	"\x17lvcan_exceededroadspeed\x18\xd5\x01 \x01(\rH\xd9\x01R\x16lvcanExceededroadspeed\x88\x01\x01\x12?\n" +
-	"\x18lvcan_rsf_speedlimitsign\x18\xd6\x01 \x01(\rH\xda\x01R\x16lvcanRsfSpeedlimitsign\x88\x01\x01\x12I\n" +
-	"\x1dlvcan_rsf_endofspeedlimitsign\x18\xd7\x01 \x01(\rH\xdb\x01R\x1blvcanRsfEndofspeedlimitsign\x88\x01\x01\x12=\n" +
-	"\x17lvcan_rsf_speedexceeded\x18\xd8\x01 \x01(\rH\xdc\x01R\x15lvcanRsfSpeedexceeded\x88\x01\x01\x12G\n" +
-	"\x1clvcan_rsf_timespeedlimitsign\x18\xd9\x01 \x01(\rH\xdd\x01R\x1alvcanRsfTimespeedlimitsign\x88\x01\x01\x12G\n" +
-	"\x1clvcan_rsf_wthrspeedlimitsign\x18\xda\x01 \x01(\rH\xde\x01R\x1alvcanRsfWthrspeedlimitsign\x88\x01\x01B\v\n" +
+	"\x12lvcan_maxroadspeed\x18\xd4\x01 \x01(\rH\xdc\x01R\x11lvcanMaxroadspeed\x88\x01\x01\x12>\n" +
+	"\x17lvcan_exceededroadspeed\x18\xd5\x01 \x01(\rH\xdd\x01R\x16lvcanExceededroadspeed\x88\x01\x01\x12?\n" +
+	"\x18lvcan_rsf_speedlimitsign\x18\xd6\x01 \x01(\rH\xde\x01R\x16lvcanRsfSpeedlimitsign\x88\x01\x01\x12I\n" +
+	"\x1dlvcan_rsf_endofspeedlimitsign\x18\xd7\x01 \x01(\rH\xdf\x01R\x1blvcanRsfEndofspeedlimitsign\x88\x01\x01\x12=\n" +
+	"\x17lvcan_rsf_speedexceeded\x18\xd8\x01 \x01(\rH\xe0\x01R\x15lvcanRsfSpeedexceeded\x88\x01\x01\x12G\n" +
+	"\x1clvcan_rsf_timespeedlimitsign\x18\xd9\x01 \x01(\rH\xe1\x01R\x1alvcanRsfTimespeedlimitsign\x88\x01\x01\x12G\n" +
+	"\x1clvcan_rsf_wthrspeedlimitsign\x18\xda\x01 \x01(\rH\xe2\x01R\x1alvcanRsfWthrspeedlimitsign\x88\x01\x01B\v\n" +
 	"\t_movementB\f\n" +
 	"\n" +
 	"_data_modeB\r\n" +
@@ -4846,7 +4882,11 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\v_eye_pitch1B\r\n" +
 	"\v_eye_pitch2B\r\n" +
 	"\v_eye_pitch3B\r\n" +
-	"\v_eye_pitch4B,\n" +
+	"\v_eye_pitch4B\x13\n" +
+	"\x11_eye_low_battery1B\x13\n" +
+	"\x11_eye_low_battery2B\x13\n" +
+	"\x11_eye_low_battery3B\x13\n" +
+	"\x11_eye_low_battery4B,\n" +
 	"*_isf_clogged_brake_system_filter_indicatorB'\n" +
 	"%_isf_low_washer_fluid_level_indicatorB!\n" +
 	"\x1f_isf_low_adblue_level_indicatorB*\n" +
