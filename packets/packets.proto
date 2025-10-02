@@ -1065,6 +1065,14 @@ message Compact {
     optional bool eye_low_battery2 = 226;
     optional bool eye_low_battery3 = 227;
     optional bool eye_low_battery4 = 228;
+    optional uint32 eye_battery_voltage1 = 233;
+    optional uint32 eye_battery_voltage2 = 230;
+    optional uint32 eye_battery_voltage3 = 231;
+    optional uint32 eye_battery_voltage4 = 232;
+    optional int32 eye_roll1 = 234;
+    optional int32 eye_roll2 = 235;
+    optional int32 eye_roll3 = 236;
+    optional int32 eye_roll4 = 237;
   
     // Note: The document is truncated, so continuing with available data up to truncation point.
   

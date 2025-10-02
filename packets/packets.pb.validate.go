@@ -1231,6 +1231,38 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for EyeLowBattery4
 	}
 
+	if m.EyeBatteryVoltage1 != nil {
+		// no validation rules for EyeBatteryVoltage1
+	}
+
+	if m.EyeBatteryVoltage2 != nil {
+		// no validation rules for EyeBatteryVoltage2
+	}
+
+	if m.EyeBatteryVoltage3 != nil {
+		// no validation rules for EyeBatteryVoltage3
+	}
+
+	if m.EyeBatteryVoltage4 != nil {
+		// no validation rules for EyeBatteryVoltage4
+	}
+
+	if m.EyeRoll1 != nil {
+		// no validation rules for EyeRoll1
+	}
+
+	if m.EyeRoll2 != nil {
+		// no validation rules for EyeRoll2
+	}
+
+	if m.EyeRoll3 != nil {
+		// no validation rules for EyeRoll3
+	}
+
+	if m.EyeRoll4 != nil {
+		// no validation rules for EyeRoll4
+	}
+
 	if m.IsfCloggedBrakeSystemFilterIndicator != nil {
 		// no validation rules for IsfCloggedBrakeSystemFilterIndicator
 	}
