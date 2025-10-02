@@ -49,7 +49,7 @@ printf "Committed and Pushed\n"
 
 printf "Updating Services\n"
 
-for dir in ../gnet ../gowo ../grpc; do
+for dir in ../gnet ../gowo ../grpc ../gnot; do
   if [ -d "$dir" ]; then
     cd "$dir"
     go get -u ./...

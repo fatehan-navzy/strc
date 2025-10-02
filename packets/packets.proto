@@ -46,7 +46,7 @@ message Data {
   Packet packet = 3 [json_name = "packet"];
 }
 
-message Packet {
+message Packet { 
   uint64 imei = 1 [json_name = "device_id"];
   google.protobuf.Timestamp datetime = 2 [json_name = "datetime"];
   float latitude = 3 [json_name = "latitude"];
@@ -57,848 +57,2454 @@ message Packet {
   optional uint32 satellite = 8 [json_name = "satellite"];
   optional bool ignition = 9 [json_name = "ignition"];
   optional uint64 mileage = 10 [json_name = "mileage"];
-  repeated Alert alerts = 11 [json_name = "alerts"];
-  repeated Io ios = 12 [json_name = "ios"];
+  Compact compact = 11 [json_name = 'compact'];
+  repeated Event events = 12 [json_name = "alerts"];
 }
 
-message Io {
-  enum IoUnit {
-    Number = 0;
-    Celsius = 1;
-    Fahrenheit = 2;
-    Kelvin = 3;
-    RH = 4;
-    Millibars = 6;
-    InchesOfMercury = 7;
-    Pascals = 8;
-    Meters = 9;
-    Kilometers = 10;
-    Miles = 11;
-    Feet = 12;
-    NauticalMiles = 13;
-  }
-
-  enum IoKind {
-    Normal = 0;
-    Temperature = 1;
-    Humidity = 2;
-    Pressure = 3;
-  }
-
-  IoProperty io = 1 [json_name = "io"];
-  oneof value {
-    sint32  int32_value = 2 [json_name = "sint32"];
-    uint32  uint32_value = 3 [json_name = "uint32"];
-    sint64  int64_value = 4 [json_name = "sint64"];
-    uint64  uint64_value = 5 [json_name = "uint64"];
-    float   float_value = 6 [json_name = "float32"];
-    double  double_value = 7 [json_name = "float64"];
-    string  string_value = 8 [json_name = "string"];
-    bool    bool_value = 9 [json_name = "bool"];
-    bytes   raw_value = 10 [json_name = "raw"];
-  }
+message Compact {
+    // Parameter ID: 240
+    // Property Name: Movement
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 – Movement Off, 1 – Movement On
+    optional bool movement = 2;
+  
+    // Parameter ID: 80
+    // Property Name: Data Mode
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 5
+    // Multiplier: -
+    // Units: -
+    // Values: 0 – Home On Stop, 1 – Home On Moving, 2 – Roaming On Stop, 3 – Roaming On Moving, 4 – Unknown On Stop, 5 – Unknown On Moving
+    optional uint32 data_mode = 3;
+  
+    // Parameter ID: 21
+    // Property Name: GSM Signal
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 5
+    // Multiplier: -
+    // Units: -
+    // Values: Value in range 1-5 Explanation
+    optional uint32 gsm_signal = 4;
+  
+    // Parameter ID: 200
+    // Property Name: Sleep Mode
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 4
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No Sleep, 1 – GPS Sleep, 2 – Deep Sleep, 3 – Online Sleep, 4 - Ultra Sleep
+    optional uint32 sleep_mode = 5;
+  
+    // Parameter ID: 69
+    // Property Name: GNSS Status
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 3
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - GNSS OFF, 1 – GNSS ON with fix, 2 - GNSS ON without fix, 3 - GNSS sleep
+    optional uint32 gnss_status = 6;
+  
+    // Parameter ID: 181
+    // Property Name: GNSS PDOP
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 500
+    // Multiplier: 0.1
+    // Units: 
+    // Values: Coefficient, calculation formula
+    optional uint32 gnss_pdop = 7;
+  
+    // Parameter ID: 182
+    // Property Name: GNSS HDOP
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 500
+    // Multiplier: 0.1
+    // Units: 
+    // Values: Coefficient, calculation formula
+    optional uint32 gnss_hdop = 8;
+  
+    // Parameter ID: 66
+    // Property Name: External Voltage
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.001
+    // Units: V
+    // Values: Voltage
+    optional uint32 external_voltage = 9;
+  
+    // Parameter ID: 24
+    // Property Name: Speed
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 350
+    // Multiplier: -
+    // Units: km/h
+    // Values: GNSS Speed
+    optional uint32 speed = 10;
+  
+    // Parameter ID: 205
+    // Property Name: GSM Cell ID
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: -
+    // Values: GSM base station ID
+    optional uint32 gsm_cell_id = 11;
+  
+    // Parameter ID: 206
+    // Property Name: GSM Area Code
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: -
+    // Values: Location Area code (LAC), it depends on GSM operator. It provides unique number which assigned to a set of base GSM stations.
+    optional uint32 gsm_area_code = 12;
+  
+    // Parameter ID: 67
+    // Property Name: Battery Voltage
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.001
+    // Units: V
+    // Values: Voltage
+    optional uint32 battery_voltage = 13;
+  
+    // Parameter ID: 68
+    // Property Name: Battery Current
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.001
+    // Units: A
+    // Values: Current
+    optional uint32 battery_current = 14;
+  
+    // Parameter ID: 241
+    // Property Name: Active GSM Operator
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: -
+    // Values: Currently used GSM Operator code
+    optional uint64 active_gsm_operator = 15;
+  
+    // Parameter ID: 199
+    // Property Name: Trip Odometer
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 2147483647
+    // Multiplier: -
+    // Units: m
+    // Values: Trip Odometer value
+    optional uint64 trip_odometer = 16;
+  
+    // Parameter ID: 16
+    // Property Name: Total Odometer
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 2147483647
+    // Multiplier: -
+    // Units: -
+    // Values: Total Odometer value in meters
+    optional uint64 total_odometer = 17;
+  
+    // Parameter ID: 1
+    // Property Name: Digital Input 1
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 digital_input_1 = 18;
+  
+    // Parameter ID: 9
+    // Property Name: Analog Input 1
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.001
+    // Units: V
+    // Values: Voltage
+    optional uint32 analog_input_1 = 19;
+  
+    // Parameter ID: 179
+    // Property Name: Digital Output 1
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 digital_output_1 = 20;
+  
+    // Parameter ID: 12
+    // Property Name: Fuel Used GPS
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: 0.001
+    // Units: l
+    // Values: Fuel Used
+    optional uint64 fuel_used_gps = 21;
+  
+    // Parameter ID: 13
+    // Property Name: Fuel Rate GPS
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 32767
+    // Multiplier: 0.01
+    // Units: l/100km
+    // Values: Average Fuel Use
+    optional uint32 fuel_rate_gps = 22;
+  
+    // Parameter ID: 17
+    // Property Name: Axis X
+    // Type: Signed
+    // Bytes: 2
+    // Min: -8000
+    // Max: 8000
+    // Multiplier: -
+    // Units: mG
+    // Values: X axis value
+    optional int32 axis_x = 23;
+  
+    // Parameter ID: 18
+    // Property Name: Axis Y
+    // Type: Signed
+    // Bytes: 2
+    // Min: -8000
+    // Max: 8000
+    // Multiplier: -
+    // Units: mG
+    // Values: Y axis value
+    optional int32 axis_y = 24;
+  
+    // Parameter ID: 19
+    // Property Name: Axis Z
+    // Type: Signed
+    // Bytes: 2
+    // Min: -8000
+    // Max: 8000
+    // Multiplier: -
+    // Units: mG
+    // Values: Z axis value
+    optional int32 axis_z = 25;
+  
+    // Parameter ID: 11
+    // Property Name: ICCID1
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: Value of SIM ICCID, MSB
+    optional uint64 iccid1 = 26;
+  
+    // Parameter ID: 10
+    // Property Name: SD Status
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - not present, 1 - present
+    optional uint32 sd_status = 27;
+  
+    // Parameter ID: 2
+    // Property Name: Digital Input 2
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 digital_input_2 = 28;
+  
+    // Parameter ID: 3
+    // Property Name: Digital Input 3
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 digital_input_3 = 29;
+  
+    // Parameter ID: 6
+    // Property Name: Analog Input 2
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.001
+    // Units: V
+    // Values: Voltage
+    optional uint32 analog_input_2 = 30;
+  
+    // Parameter ID: 180
+    // Property Name: Digital Output 2
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic 0/1
+    optional uint32 digital_output_2 = 31;
+  
+    // Parameter ID: 72
+    // Property Name: Dallas Temperature 1
+    // Type: Signed
+    // Bytes: 4
+    // Min: -550
+    // Max: 1150
+    // Multiplier: 0.1
+    // Units: °C
+    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+    optional int64 dallas_temperature_1 = 32;
+  
+    // Parameter ID: 73
+    // Property Name: Dallas Temperature 2
+    // Type: Signed
+    // Bytes: 4
+    // Min: -550
+    // Max: 1150
+    // Multiplier: 0.1
+    // Units: °C
+    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+    optional int64 dallas_temperature_2 = 33;
+  
+    // Parameter ID: 74
+    // Property Name: Dallas Temperature 3
+    // Type: Signed
+    // Bytes: 4
+    // Min: -550
+    // Max: 1150
+    // Multiplier: 0.1
+    // Units: °C
+    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+    optional int64 dallas_temperature_3 = 34;
+  
+    // Parameter ID: 75
+    // Property Name: Dallas Temperature 4
+    // Type: Signed
+    // Bytes: 4
+    // Min: -550
+    // Max: 1150
+    // Multiplier: 0.1
+    // Units: °C
+    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+    optional int64 dallas_temperature_4 = 35;
+  
+    // Parameter ID: 76
+    // Property Name: Dallas Temperature ID 1
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: Dallas sensor ID
+    optional uint64 dallas_temperature_id_1 = 36;
+  
+    // Parameter ID: 77
+    // Property Name: Dallas Temperature ID 2
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: Dallas sensor ID
+    optional uint64 dallas_temperature_id_2 = 37;
+  
+    // Parameter ID: 79
+    // Property Name: Dallas Temperature ID 3
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: Dallas sensor ID
+    optional uint64 dallas_temperature_id_3 = 38;
+  
+    // Parameter ID: 71
+    // Property Name: Dallas Temperature ID 4
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: Dallas sensor ID
+    optional uint64 dallas_temperature_id_4 = 39;
+  
+    // Parameter ID: 78
+    // Property Name: iButton
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: iButton ID
+    optional uint64 ibutton = 40;
+  
+    // Parameter ID: 207
+    // Property Name: RFID
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: RFID ID
+    optional uint64 rfid = 41;
+  
+    // Parameter ID: 201
+    // Property Name: LLS 1 Fuel Level
+    // Type: Signed
+    // Bytes: 2
+    // Min: -4
+    // Max: 32767
+    // Multiplier: -
+    // Units: kvants or ltr
+    // Values: Fuel level measured by LLS sensor via RS232/RS485
+    optional int32 lls_1_fuel_level = 42;
+  
+    // Parameter ID: 202
+    // Property Name: LLS 1 Temperature
+    // Type: Signed
+    // Bytes: 1
+    // Min: -128
+    // Max: 127
+    // Multiplier: -
+    // Units: °C
+    // Values: Fuel temperature measured by LLS via RS232/RS485
+    optional int32 lls_1_temperature = 43;
+  
+    // Parameter ID: 203
+    // Property Name: LLS 2 Fuel Level
+    // Type: Signed
+    // Bytes: 2
+    // Min: -4
+    // Max: 32767
+    // Multiplier: -
+    // Units: kvants or ltr
+    // Values: Fuel level measured by LLS sensor via RS485
+    optional int32 lls_2_fuel_level = 44;
+  
+    // Parameter ID: 204
+    // Property Name: LLS 2 Temperature
+    // Type: Signed
+    // Bytes: 1
+    // Min: -128
+    // Max: 127
+    // Multiplier: -
+    // Units: °C
+    // Values: Fuel temperature measured by LLS via RS485
+    optional int32 lls_2_temperature = 45;
+  
+    // Parameter ID: 210
+    // Property Name: LLS 3 Fuel Level
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: -4
+    // Max: 32767
+    // Multiplier: -
+    // Units: kvants or ltr
+    // Values: Fuel level measured by LLS sensor via RS485
+    optional uint32 lls_3_fuel_level = 46;
+  
+    // Parameter ID: 211
+    // Property Name: LLS 3 Temperature
+    // Type: Signed
+    // Bytes: 1
+    // Min: -128
+    // Max: 127
+    // Multiplier: -
+    // Units: °C
+    // Values: Fuel temperature measured by LLS via RS485
+    optional int32 lls_3_temperature = 47;
+  
+    // Parameter ID: 212
+    // Property Name: LLS 4 Fuel Level
+    // Type: Signed
+    // Bytes: 2
+    // Min: -4
+    // Max: 32767
+    // Multiplier: -
+    // Units: kvants or ltr
+    // Values: Fuel level measured by LLS sensor via RS485
+    optional int32 lls_4_fuel_level = 48;
+  
+    // Parameter ID: 213
+    // Property Name: LLS 4 Temperature
+    // Type: Signed
+    // Bytes: 1
+    // Min: -128
+    // Max: 127
+    // Multiplier: -
+    // Units: °C
+    // Values: Fuel temperature measured by LLS via RS485
+    optional int32 lls_4_temperature = 49;
+  
+    // Parameter ID: 214
+    // Property Name: LLS 5 Fuel Level
+    // Type: Signed
+    // Bytes: 2
+    // Min: -4
+    // Max: 32767
+    // Multiplier: -
+    // Units: kvants or ltr
+    // Values: Fuel level measured by LLS sensor via RS485
+    optional int32 lls_5_fuel_level = 50;
+  
+    // Parameter ID: 215
+    // Property Name: LLS 5 Temperature
+    // Type: Signed
+    // Bytes: 1
+    // Min: -128
+    // Max: 127
+    // Multiplier: -
+    // Units: °C
+    // Values: Fuel temperature measured by LLS via RS485
+    optional int32 lls_5_temperature = 51;
+  
+    // Parameter ID: 15
+    // Property Name: Eco Score
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 0.01
+    // Units: -
+    // Values: Average amount of events on some distance
+    optional uint32 eco_score = 52;
+  
+    // Parameter ID: 113
+    // Property Name: Battery Level
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 100
+    // Multiplier: -
+    // Units: %
+    // Values: Battery capacity level
+    optional uint32 battery_level = 53;
+  
+    // Parameter ID: 238
+    // Property Name: User ID
+    // Type: Unsigned
+    // Bytes: 8
+    // Min: 0
+    // Max: 0xffffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: MAC address of NMEA receiver device connected via Bluetooth
+    optional uint64 user_id = 54;
+  
+    // Parameter ID: 237
+    // Property Name: Network Type
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - 3G, 1 - GSM, 2 - 4G, 3 - LTE CAT M1, 4 - LTE CAT NB1, 99 - Unknown
+    optional uint32 network_type = 55;
+  
+    // Parameter ID: 4
+    // Property Name: Pulse Counter Din1
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: -
+    // Values: Counts pulses, count is reset when records are saved
+    optional uint64 pulse_counter_din1 = 56;
+  
+    // Parameter ID: 5
+    // Property Name: Pulse Counter Din2
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: -
+    // Values: Counts pulses, count is reset when records are saved
+    optional uint64 pulse_counter_din2 = 57;
+  
+    // Parameter ID: 263
+    // Property Name: BT Status
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 4
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - BT is disabled, 1 - BT Enabled, not device connected, 2 - Device connected, BTv3 Only, 3 - Device connected, BLE only, 4 - Device connected, BLE + BT
+    optional uint32 bt_status = 58;
+  
+    // Parameter ID: 264
+    // Property Name: Barcode ID
+    // Type: ASCII
+    // Bytes: Variable
+    // Min: 0
+    // Max: 32
+    // Multiplier: -
+    // Units: -
+    // Values: Barcode ID
+    optional string barcode_id = 59;
+  
+    // Parameter ID: 303
+    // Property Name: Instant Movement
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1 returns movement value
+    optional uint32 instant_movement = 60;
+  
+    // Parameter ID: 327
+    // Property Name: UL202-02 Sensor Fuel level
+    // Type: Signed
+    // Bytes: 2
+    // Min: -150
+    // Max: 32767
+    // Multiplier: 0.1
+    // Units: mm
+    // Values: UL202-02 Sensor Fuel level
+    optional int32 ul202_02_sensor_fuel_level = 61;
+  
+    // Parameter ID: 483
+    // Property Name: UL202-02 Sensor Status
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 255
+    // Multiplier: -
+    // Units: -
+    // Values: UL202-02 sensor status codes
+    optional uint32 ul202_02_sensor_status = 62;
+  
+    // Parameter ID: 380
+    // Property Name: Digital output 3
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 digital_output_3 = 63;
+  
+    // Parameter ID: 381
+    // Property Name: Ground Sense
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Logic: 0/1
+    optional uint32 ground_sense = 64;
+  
+    // Parameter ID: 387
+    // Property Name: ISO6709 Coordinates
+    // Type: HEX
+    // Bytes: 34
+    // Min: 0
+    // Max: 0x7fffffffffffffff
+    // Multiplier: -
+    // Units: -
+    // Values: ISO6709 Coordinates Latitude, Longitude (in Degrees, Minutes and Seconds) and Altitude: IO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/
+    optional bytes iso6709_coordinates = 65;
+  
+    // Parameter ID: 636
+    // Property Name: UMTS/LTE Cell ID
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 0xFFFFFFFF
+    // Multiplier: -
+    // Units: -
+    // Values: 
+    optional uint64 umts_lte_cell_id = 66;
+  
+    // Parameter ID: 403
+    // Property Name: Driver Name
+    // Type: Unsigned
+    // Bytes: 35
+    // Min: -
+    // Max: -
+    // Multiplier: -
+    // Units: -
+    // Values: Driver name extracted from card, displayed without delimiters ($ signs)
+    optional uint64 driver_name = 67;  // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
+  
+    // Note: Adjusting for bytes 35, perhaps bytes type
+    // But following "Type: Unsigned", using uint64, but may need adjustment
+  
+    // Parameter ID: 404
+    // Property Name: Driver card license type
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 8
+    // Multiplier: -
+    // Units: -
+    // Values: None - 0, B.1 license type - 1, B.2 license type - 2, B.3 license type - 3, B.4 license type - 4, T.1 license type - 5, T.2 license type - 6, T.3 license type - 7, T.4 license type - 8
+    optional uint32 driver_card_license_type = 68;
+  
+    // Parameter ID: 405
+    // Property Name: Driver Gender
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 2
+    // Multiplier: -
+    // Units: -
+    // Values: None - 0, Male - 1, Female - 2
+    optional uint32 driver_gender = 69;
+  
+    // Parameter ID: 406
+    // Property Name: Driver Card ID
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: -
+    // Values: None - 0, Male - 1, Female - 2  // Note: Seems typo in document, values from previous?
+    optional uint64 driver_card_id = 70;
+  
+    // Parameter ID: 407
+    // Property Name: Driver Card expiration date
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 9999
+    // Multiplier: -
+    // Units: -
+    // Values: 
+    optional uint32 driver_card_expiration_date = 71;
+  
+    // Parameter ID: 408
+    // Property Name: Driver Card place of issue
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: -
+    // Values: Extracted from card
+    optional uint64 driver_card_place_of_issue = 72;
+  
+    // Parameter ID: 409
+    // Property Name: Driver Status Event
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 2
+    // Multiplier: -
+    // Units: -
+    // Values: Registered - 0, Deregistered - 1, Swapping - 2
+    optional uint32 driver_status_event = 73;
+  
+    // Parameter ID: 329
+    // Property Name: AIN Speed
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: -
+    // Values: 
+    optional uint32 ain_speed = 74;
+  
+    // Parameter ID: 500
+    // Property Name: MSP500 vendor name
+    // Type: ASCII
+    // Bytes: 40
+    // Min: 0
+    // Max: 40
+    // Multiplier: -
+    // Units: -
+    // Values: Name of the integrator who installed the device
+    optional string msp500_vendor_name = 75;
+  
+    // Parameter ID: 501
+    // Property Name: MSP500 vehicle number
+    // Type: ASCII
+    // Bytes: 40
+    // Min: 0
+    // Max: 40
+    // Multiplier: -
+    // Units: -
+    // Values: Vehicle number on which the device is installed
+    optional string msp500_vehicle_number = 76;
+  
+    // Parameter ID: 502
+    // Property Name: MSP500 speed sensor
+    // Type: unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Status of the speed sensor
+    optional uint32 msp500_speed_sensor = 77;
+  
+    // Parameter ID: 637
+    // Property Name: Wake Reason
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: True if device was woken by RTC alarm
+    optional uint32 wake_reason = 78;
+  
+    // Parameter ID: 10800
+    // Property Name: EYE Temperature 1
+    // Type: Signed
+    // Bytes: 2
+    // Min: -32768
+    // Max: 32767
+    // Multiplier: 0.01
+    // Units: °C
+    // Values: Temperature measured by EYE Sensor 1
+    optional int32 eye_temperature_1 = 79;
+  
+    // Parameter ID: 10801
+    // Property Name: EYE Temperature 2
+    // Type: Signed
+    // Bytes: 2
+    // Min: -32768
+    // Max: 32767
+    // Multiplier: 0.01
+    // Units: °C
+    // Values: Temperature measured by EYE Sensor 2
+    optional int32 eye_temperature_2 = 80;
+  
+    // Parameter ID: 10802
+    // Property Name: EYE Temperature 3
+    // Type: Signed
+    // Bytes: 2
+    // Min: -32768
+    // Max: 32767
+    // Multiplier: 0.01
+    // Units: °C
+    // Values: Temperature measured by EYE Sensor 3
+    optional int32 eye_temperature_3 = 81;
+  
+    // Parameter ID: 10803
+    // Property Name: EYE Temperature 4
+    // Type: Signed
+    // Bytes: 2
+    // Min: -32768
+    // Max: 32767
+    // Multiplier: 0.01
+    // Units: °C
+    // Values: Temperature measured by EYE Sensor 4
+    optional int32 eye_temperature_4 = 82;
+  
+    // Parameter ID: 10804
+    // Property Name: EYE Humidity 1
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 100
+    // Multiplier: -
+    // Units: %
+    // Values: Humidity measured by EYE Sensor 1
+    optional uint32 eye_humidity_1 = 83;
+  
+    // Parameter ID: 10805
+    // Property Name: EYE Humidity 2
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 100
+    // Multiplier: -
+    // Units: %
+    // Values: Humidity measured by EYE Sensor 2
+    optional uint32 eye_humidity_2 = 84;
+  
+    // Parameter ID: 10806
+    // Property Name: EYE Humidity 3
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 100
+    // Multiplier: -
+    // Units: %
+    // Values: Humidity measured by EYE Sensor 3
+    optional uint32 eye_humidity_3 = 85;
+  
+    // Parameter ID: 10807
+    // Property Name: EYE Humidity 4
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 100
+    // Multiplier: -
+    // Units: %
+    // Values: Humidity measured by EYE Sensor 4
+    optional uint32 eye_humidity_4 = 86;
+  
+    // Parameter ID: 10808
+    // Property Name: EYE Magnet 1
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Magnet measured by EYE Sensor by EYE Sensor 1
+    optional uint32 eye_magnet_1 = 87;
+  
+    // Parameter ID: 10809
+    // Property Name: EYE Magnet 2
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Magnet measured by EYE Sensor by EYE Sensor 2
+    optional uint32 eye_magnet_2 = 88;
+  
+    // Parameter ID: 10810
+    // Property Name: EYE Magnet 3
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Magnet measured by EYE Sensor by EYE Sensor 3
+    optional uint32 eye_magnet_3 = 89;
+  
+    // Parameter ID: 10811
+    // Property Name: EYE Magnet 4
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Magnet measured by EYE Sensor by EYE Sensor 4
+    optional uint32 eye_magnet_4 = 90;
+  
+    // Parameter ID: 10812
+    // Property Name: EYE Movement 1
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Movement state measure by EYE Sensor 1
+    optional uint32 eye_movement_1 = 91;
+  
+    // Note: The document is truncated, so continuing with available data up to truncation point.
+  
+    // Parameter ID: 985
+    // Property Name: ISF Clogged Brake System Filter Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_clogged_brake_system_filter_indicator = 92;
+  
+    // Parameter ID: 986
+    // Property Name: ISF Low Washer Fluid Level Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_low_washer_fluid_level_indicator = 93;
+  
+    // Parameter ID: 987
+    // Property Name: ISF Low AdBlue Level Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_low_adblue_level_indicator = 94;
+  
+    // Parameter ID: 988
+    // Property Name: ISF Low Trailer Tyre Pressure Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_low_trailer_tyre_pressure_indicator = 95;
+  
+    // Parameter ID: 989
+    // Property Name: ISF Wear Of Trailer Brake Lining Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_wear_of_trailer_brake_lining_indicator = 96;
+  
+    // Parameter ID: 990
+    // Property Name: ISF High Trailer Brake Temperature Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_high_trailer_brake_temperature_indicator = 97;
+  
+    // Parameter ID: 991
+    // Property Name: ISF Incorrect Trailer Pneumatic Supply Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_incorrect_trailer_pneumatic_supply_indicator = 98;
+  
+    // Parameter ID: 992
+    // Property Name: ISF Low CNG Level Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 isf_low_cng_level_indicator = 99;
+  
+    // Parameter ID: 993
+    // Property Name: ASF Right Joystick Moved Right Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_right_joystick_moved_right_active = 100;
+  
+    // Parameter ID: 994
+    // Property Name: ASF Right Joystick Moved Left Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_right_joystick_moved_left_active = 101;
+  
+    // Parameter ID: 995
+    // Property Name: ASF Right Joystick Moved Forward Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_right_joystick_moved_forward_active = 102;
+  
+    // Parameter ID: 996
+    // Property Name: ASF Right Joystick Moved Back Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_right_joystick_moved_back_active = 103;
+  
+    // Parameter ID: 997
+    // Property Name: ASF Left Joystick Moved Right Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_left_joystick_moved_right_active = 104;
+  
+    // Parameter ID: 998
+    // Property Name: ASF Left Joystick Moved Left Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_left_joystick_moved_left_active = 105;
+  
+    // Parameter ID: 999
+    // Property Name: ASF Left Joystick Moved Forward Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_left_joystick_moved_forward_active = 106;
+  
+    // Parameter ID: 1000
+    // Property Name: ASF Left Joystick Moved Back Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_left_joystick_moved_back_active = 107;
+  
+    // Parameter ID: 1001
+    // Property Name: ASF First Rear hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_first_rear_hydraulic = 108;
+  
+    // Parameter ID: 1002
+    // Property Name: ASF Second Rear hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_second_rear_hydraulic = 109;
+  
+    // Parameter ID: 1003
+    // Property Name: ASF Third Rear hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_third_rear_hydraulic = 110;
+  
+    // Parameter ID: 1004
+    // Property Name: ASF Fourth Rear hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_fourth_rear_hydraulic = 111;
+  
+    // Parameter ID: 1005
+    // Property Name: ASF First Front hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_first_front_hydraulic = 112;
+  
+    // Parameter ID: 1006
+    // Property Name: ASF Second Front hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_second_front_hydraulic = 113;
+  
+    // Parameter ID: 1007
+    // Property Name: ASF Third Front hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_third_front_hydraulic = 114;
+  
+    // Parameter ID: 1008
+    // Property Name: ASF Fourth Front hydraulic
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_fourth_front_hydraulic = 115;
+  
+    // Parameter ID: 1009
+    // Property Name: ASF Front Three-point Hitch
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_front_three_point_hitch = 116;
+  
+    // Parameter ID: 1010
+    // Property Name: ASF Rear Three-point Hitch
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_rear_three_point_hitch = 117;
+  
+    // Parameter ID: 1011
+    // Property Name: ASF Front Power Take-off
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_front_power_take_off = 118;
+  
+    // Parameter ID: 1012
+    // Property Name: ASF Rear Power Take-off
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_rear_power_take_off = 119;
+  
+    // Parameter ID: 1013
+    // Property Name: ASF Mowing Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_mowing_active = 120;
+  
+    // Parameter ID: 1014
+    // Property Name: ASF Threshing Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Inactive, 1 - Active
+    optional uint32 asf_threshing_active = 121;
+  
+    // Parameter ID: 1015
+    // Property Name: ASF Grain Release From Hopper
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_grain_release_from_hopper = 122;
+  
+    // Parameter ID: 1016
+    // Property Name: ASF Grain Tank Is 100% Full
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_grain_tank_is_100_full = 123;
+  
+    // Parameter ID: 1017
+    // Property Name: ASF Grain Tank Is 70% Full
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_grain_tank_is_70_full = 124;
+  
+    // Parameter ID: 1018
+    // Property Name: ASF Grain Tank Is Opened
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Closed, 1 - Opened
+    optional uint32 asf_grain_tank_is_opened = 125;
+  
+    // Parameter ID: 1019
+    // Property Name: ASF Unloader Drive
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_unloader_drive = 126;
+  
+    // Parameter ID: 1020
+    // Property Name: ASF Cleaning Fan Control Turned Off
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_cleaning_fan_control_turned_off = 127;
+  
+    // Parameter ID: 1021
+    // Property Name: ASF Threshing Drum Control Turned Off
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_threshing_drum_control_turned_off = 128;
+  
+    // Parameter ID: 1022
+    // Property Name: ASF Straw Walker Is Clogged
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_straw_walker_is_clogged = 129;
+  
+    // Parameter ID: 1023
+    // Property Name: ASF Excessive Clearance Under The Threshing Drum
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_excessive_clearance_under_the_threshing_drum = 130;
+  
+    // Parameter ID: 1024
+    // Property Name: ASF Low Temperature Of Drive System Hydraulics Less Than 5 Grades
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_low_temperature_of_drive_system_hydraulics_less_than_5_grades = 131;
+  
+    // Parameter ID: 1025
+    // Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades = 132;
+  
+    // Parameter ID: 1026
+    // Property Name: ASF Ear Auger Speed Below The Norm
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_ear_auger_speed_below_the_norm = 133;
+  
+    // Parameter ID: 1027
+    // Property Name: ASF Grain Auger Speed Below The Norm
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_grain_auger_speed_below_the_norm = 134;
+  
+    // Parameter ID: 1028
+    // Property Name: ASF Straw Chooper Speed Below The Norm
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_straw_chooper_speed_below_the_norm = 135;
+  
+    // Parameter ID: 1029
+    // Property Name: ASF Straw Shaker Speed Below The Norm
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_straw_shaker_speed_below_the_norm = 136;
+  
+    // Parameter ID: 1030
+    // Property Name: ASF Feeder Speed Below The Norm
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_feeder_speed_below_the_norm = 137;
+  
+    // Parameter ID: 1031
+    // Property Name: ASF Straw Chopper Switched On
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_straw_chopper_switched_on = 138;
+  
+    // Parameter ID: 1032
+    // Property Name: ASF Corn Header Connected
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_corn_header_connected = 139;
+  
+    // Parameter ID: 1033
+    // Property Name: ASF Grain Header Connected
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_grain_header_connected = 140;
+  
+    // Parameter ID: 1034
+    // Property Name: ASF Feeder Reverse Switched On
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_feeder_reverse_switched_on = 141;
+  
+    // Parameter ID: 1035
+    // Property Name: ASF The Pressure Filter Of The Hydraulic Pump Is Clogged
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged = 142;
+  
+    // Parameter ID: 1087
+    // Property Name: ASF Adapter Pressure Filter Sensor
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_adapter_pressure_filter_sensor = 143;
+  
+    // Parameter ID: 1088
+    // Property Name: ASF Service 2 Required Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_service_2_required_indicator = 144;
+  
+    // Parameter ID: 1089
+    // Property Name: ASF Drain Filter Clogged Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_drain_filter_clogged_indicator = 145;
+  
+    // Parameter ID: 1090
+    // Property Name: ASF Section 1 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_1_spraying = 146;
+  
+    // Parameter ID: 1091
+    // Property Name: ASF Section 2 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_2_spraying = 147;
+  
+    // Parameter ID: 1092
+    // Property Name: ASF Section 3 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_3_spraying = 148;
+  
+    // Parameter ID: 1093
+    // Property Name: ASF Section 4 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_4_spraying = 149;
+  
+    // Parameter ID: 1094
+    // Property Name: ASF Section 5 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_5_spraying = 150;
+  
+    // Parameter ID: 1095
+    // Property Name: ASF Section 6 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_6_spraying = 151;
+  
+    // Parameter ID: 1096
+    // Property Name: ASF Section 7 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_7_spraying = 152;
+  
+    // Parameter ID: 1097
+    // Property Name: ASF Section 8 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_8_spraying = 153;
+  
+    // Parameter ID: 1098
+    // Property Name: ASF Section 9 Spraying
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 asf_section_9_spraying = 154;
+  
+    // Parameter ID: 1036
+    // Property Name: USF Spreading
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_spreading = 155;
+  
+    // Parameter ID: 1037
+    // Property Name: USF Pouring Chemicals
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_pouring_chemicals = 156;
+  
+    // Parameter ID: 1038
+    // Property Name: USF Conveyor Belt
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_conveyor_belt = 157;
+  
+    // Parameter ID: 1039
+    // Property Name: USF Salt Spreader's Drive Wheel
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_salt_spreader_s_drive_wheel = 158;
+  
+    // Parameter ID: 1040
+    // Property Name: USF Brushes
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_brushes = 159;
+  
+    // Parameter ID: 1041
+    // Property Name: USF Vacuum Cleaner
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_vacuum_cleaner = 160;
+  
+    // Parameter ID: 1042
+    // Property Name: USF Water Supply
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_water_supply = 161;
+  
+    // Parameter ID: 1043
+    // Property Name: USF Spreading
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    // optional uint32 usf_spreading = 162;  // Note: Duplicate name, but ID different, proto allows same name but to avoid confusion, keep as is
+  
+    // Parameter ID: 1044
+    // Property Name: USF Liquid pump
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_liquid_pump = 163;
+  
+    // Parameter ID: 1045
+    // Property Name: USF Unloading From The Hopper
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_unloading_from_the_hopper = 164;
+  
+    // Parameter ID: 1046
+    // Property Name: USF Low Salt (Sand) Level In Container Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_low_salt_sand_level_in_container_indicator = 165;
+  
+    // Parameter ID: 1047
+    // Property Name: USF Low Water Level in Container Indicator
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_low_water_level_in_container_indicator = 166;
+  
+    // Parameter ID: 1048
+    // Property Name: USF Chemicals
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_chemicals = 167;
+  
+    // Parameter ID: 1049
+    // Property Name: USF Compressor
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_compressor = 168;
+  
+    // Parameter ID: 1050
+    // Property Name: USF Water Valve Is Opened
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_water_valve_is_opened = 169;
+  
+    // Parameter ID: 1051
+    // Property Name: USF Cabin Moved Up Status Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_cabin_moved_up_status_active = 170;
+  
+    // Parameter ID: 1052
+    // Property Name: USF Cabin Moved Down Status Active
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_cabin_moved_down_status_active = 171;
+  
+    // Parameter ID: 1099
+    // Property Name: USF Hydraulics Work Not Permitted
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - Off, 1 - On
+    optional uint32 usf_hydraulics_work_not_permitted = 172;
+  
+    // Parameter ID: 1053
+    // Property Name: CiSF Section 1 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_1_presence_of_fluid_in_the_downpipe = 173;
+  
+    // Parameter ID: 1054
+    // Property Name: CiSF Section 1 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_1_filled = 174;
+  
+    // Parameter ID: 1055
+    // Property Name: CiSF Section 1 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_1_overfilled = 175;
+  
+    // Parameter ID: 1056
+    // Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_2_presence_of_fluid_in_the_downpipe = 176;
+  
+    // Parameter ID: 1057
+    // Property Name: CiSF Section 2 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_2_filled = 177;
+  
+    // Parameter ID: 1058
+    // Property Name: CiSF Section 2 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_2_overfilled = 178;
+  
+    // Parameter ID: 1059
+    // Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_3_presence_of_fluid_in_the_downpipe = 179;
+  
+    // Parameter ID: 1060
+    // Property Name: CiSF Section 3 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_3_filled = 180;
+  
+    // Parameter ID: 1061
+    // Property Name: CiSF Section 3 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_3_overfilled = 181;
+  
+    // Parameter ID: 1062
+    // Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_4_presence_of_fluid_in_the_downpipe = 182;
+  
+    // Parameter ID: 1063
+    // Property Name: CiSF Section 4 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_4_filled = 183;
+  
+    // Parameter ID: 1064
+    // Property Name: CiSF Section 4 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_4_overfilled = 184;
+  
+    // Parameter ID: 1065
+    // Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_5_presence_of_fluid_in_the_downpipe = 185;
+  
+    // Parameter ID: 1066
+    // Property Name: CiSF Section 5 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_5_filled = 186;
+  
+    // Parameter ID: 1067
+    // Property Name: CiSF Section 5 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_5_overfilled = 187;
+  
+    // Parameter ID: 1068
+    // Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_6_presence_of_fluid_in_the_downpipe = 188;
+  
+    // Parameter ID: 1069
+    // Property Name: CiSF Section 6 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_6_filled = 189;
+  
+    // Parameter ID: 1070
+    // Property Name: CiSF Section 6 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_6_overfilled = 190;
+  
+    // Parameter ID: 1071
+    // Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_7_presence_of_fluid_in_the_downpipe = 191;
+  
+    // Parameter ID: 1072
+    // Property Name: CiSF Section 7 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_7_filled = 192;
+  
+    // Parameter ID: 1073
+    // Property Name: CiSF Section 7 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_7_overfilled = 193;
+  
+    // Parameter ID: 1074
+    // Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No presence, 1 - Present
+    optional uint32 cisf_section_8_presence_of_fluid_in_the_downpipe = 194;
+  
+    // Parameter ID: 1075
+    // Property Name: CiSF Section 8 Filled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_8_filled = 195;
+  
+    // Parameter ID: 1076
+    // Property Name: CiSF Section 8 Overfilled
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: 0 - No, 1 - Yes
+    optional uint32 cisf_section_8_overfilled = 196;
+  
+    // Parameter ID: 400
+    // Property Name: Distance to Next Service
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: -
+    // Values: 
+    optional uint64 distance_to_next_service = 197;
+  
+    // Parameter ID: 450
+    // Property Name: CNG Level Kg
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: 10
+    // Units: Kg
+    // Values: CNG Level Kg (appears only if CNG level percentage is not available)
+    optional uint32 cng_level_kg = 198;
+  
+    // Parameter ID: 859
+    // Property Name: Distance from need of service
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: km
+    // Values: Service - distance elapsed since the occurrence of the need for servicing
+    optional uint64 distance_from_need_of_service = 199;
+  
+    // Parameter ID: 860
+    // Property Name: Distance from last service
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: km
+    // Values: Service - distance from the last service
+    optional uint64 distance_from_last_service = 200;
+  
+    // Parameter ID: 861
+    // Property Name: Time to next service
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: day
+    // Values: Service - time to next service
+    optional uint32 time_to_next_service = 201;
+  
+    // Parameter ID: 862
+    // Property Name: Time from need of service
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: day
+    // Values: Service - time exceeded since the occurrence of the need for servicing
+    optional uint32 time_from_need_of_service = 202;
+  
+    // Parameter ID: 863
+    // Property Name: Time from last serivce
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: day
+    // Values: Service - time elapsed since the last service
+    optional uint32 time_from_last_serivce = 203;
+  
+    // Parameter ID: 864
+    // Property Name: Distance to next oil service
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: km
+    // Values: Service - distance to next oil service
+    optional uint64 distance_to_next_oil_service = 204;
+  
+    // Parameter ID: 865
+    // Property Name: Time to next oil service
+    // Type: Unsigned
+    // Bytes: 2
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: day
+    // Values: Service - time to next oil service
+    optional uint32 time_to_next_oil_service = 205;
+  
+    // Parameter ID: 866
+    // Property Name: LVCAN Vehicle Range
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 4294967295
+    // Multiplier: -
+    // Units: km
+    // Values: Information about vehicle range
+    optional uint64 lvcan_vehicle_range = 206;
+  
+    // Parameter ID: 867
+    // Property Name: LVCAN Total CNG counted
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 65535
+    // Multiplier: -
+    // Units: kg
+    // Values: Information about Total CNG used in counted mode
+    optional uint64 lvcan_total_cng_counted = 207;
+  
+    // Parameter ID: 1079
+    // Property Name: Total Bale Count
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 0xFFFFFFFF
+    // Multiplier: -
+    // Units: -
+    // Values: Total Bale Count
+    optional uint64 total_bale_count = 208;
+  
+    // Parameter ID: 1080
+    // Property Name: Bale Count
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 0xFFFFFFFF
+    // Multiplier: -
+    // Units: -
+    // Values: Bale Count
+    optional uint64 bale_count = 209;
+  
+    // Parameter ID: 1081
+    // Property Name: Cut Bale Count
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 0xFFFFFFFF
+    // Multiplier: -
+    // Units: -
+    // Values: Cut Bale Count
+    optional uint64 cut_bale_count = 210;
+  
+    // Parameter ID: 1082
+    // Property Name: Bale Slices
+    // Type: Unsigned
+    // Bytes: 4
+    // Min: 0
+    // Max: 0xFFFFFFFF
+    // Multiplier: -
+    // Units: -
+    // Values: Bale Slices
+    optional uint64 bale_slices = 211;
+  
+    // Parameter ID: 1116
+    // Property Name: LVCAN MaxRoadSpeed
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 255
+    // Multiplier: -
+    // Units: km/h
+    // Values: Maximum speed from road signs
+    optional uint32 lvcan_maxroadspeed = 212;
+  
+    // Parameter ID: 1117
+    // Property Name: LVCAN ExceededRoadSpeed
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 255
+    // Multiplier: -
+    // Units: km/h
+    // Values: Exceeded speed from road signs
+    optional uint32 lvcan_exceededroadspeed = 213;
+  
+    // Parameter ID: 1205
+    // Property Name: LVCAN RSF SpeedLimitSign
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Information if road sign "Speed limit with value" is recognized/canceled
+    optional uint32 lvcan_rsf_speedlimitsign = 214;
+  
+    // Parameter ID: 1206
+    // Property Name: LVCAN RSF EndOfSpeedLimitSign
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Information if road sign "End of speed limit with value" is recognized/canceled
+    optional uint32 lvcan_rsf_endofspeedlimitsign = 215;
+  
+    // Parameter ID: 1207
+    // Property Name: LVCAN RSF SpeedExceeded
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Information if speed is exceeded indicated by road sign "Speed limit with value"
+    optional uint32 lvcan_rsf_speedexceeded = 216;
+  
+    // Parameter ID: 1208
+    // Property Name: LVCAN RSF TimeSpeedLimitSign
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Information if road sign "Conditional time-specific speed limit with value" is recognized/canceled
+    optional uint32 lvcan_rsf_timespeedlimitsign = 217;
+  
+    // Parameter ID: 1209
+    // Property Name: LVCAN RSF WthrSpeedLimitSign
+    // Type: Unsigned
+    // Bytes: 1
+    // Min: 0
+    // Max: 1
+    // Multiplier: -
+    // Units: -
+    // Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
+    optional uint32 lvcan_rsf_wthrspeedlimitsign = 218;
 }
 
-enum Alert {
-  Normal = 0;
-  IgnitionOn = 2;
-  IgnitionOFF = 3;
-  Movement = 4;
-  Unplug = 5;
-  Plug = 6;
-  Towing = 7;
-  Jamming = 8;
-  OverSpeed = 9;
-  Idling = 10;
-  LowBattery = 11;
-  Crash = 12;
-  Humidity = 13;
-  DoorOpen = 14;
-  DigitalInput1 = 15;
-  DigitalInput2 = 16;
-  DigitalInput3 = 17;
-  DigitalInput4 = 18;
-  DigitalInput5 = 19;
-  DigitalInput6 = 20;
-  DigitalOutput1 = 21;
-  DigitalOutput2 = 22;
-  DigitalOutput3 = 23;
-  DigitalOutput4 = 24;
-  AnalogInput1 = 25;
-  AnalogInput2 = 26;
-  AnalogInput3 = 27;
-  AnalogInput4 = 28;
-  SOS = 29;
-  Shock = 30;
-  BonnetOpen = 31;
-  FootBrake = 32;
-  Temperature = 33;
-  Fuel = 34;
-  Maintenance = 35;
-  CrashTrace = 36;
-  DataMode = 37;
-  GSM = 38;
-  SleepMode = 39;
-  GNSS = 40;
-  GPS = 41;
-  ExternalVoltage = 42;
-  Speed = 43;
-  BatteryVoltage = 44;
-  BatteryCurrent = 45;
-  Trips = 46;
-  Odometer = 47;
-  AxisX = 48;
-  AxisY = 49;
-  AxisZ = 50;
-  SDStatus = 51;
-  BrakeSwitch = 52;
-  WheelBasedSpeed = 53;
-  AccelerationPedalPosition = 54;
-  EngineCurrentLoad = 55;
-  FuelLevel = 56;
-  EngineSpeed = 57;
-  BrakePedalPosition = 58;
-  DTC = 59;
-  Driving = 60;
-  Charging = 61;
-  PowerON = 62;
-  PowerOFF = 63;
-  Airplane = 64;
-  Disassemble = 65;
-  HarshAcceleration = 66;
-  HarshBraking = 67;
-  SharpLeft = 68;
-  SharpRight = 69;
-  Pull = 70;
-  SimChange = 71;
-  OpenCover = 72;
-  InsertCharger = 73;
-  AbruptLane = 74;
-  LowExternalVoltageProtection = 75;
-  PseudoBaseStation = 76;
-  Fall = 77;
-  Rolling = 78;
-  Tilting = 79;
-  Stability = 80;
-  AngleAbnormality = 81;
-  Theft = 82;
-  IllegalStart = 83;
-  ExitDeadGps = 84;
-  EnterDeadGps = 85;
-  TrunkDoorClose = 86;
-  TrunkDoorOpen = 87;
-  EngineDoorClose = 88;
-  EngineDoorOpen = 89;
-  Disconnected = 90;
-  IllegalDoorOpen = 91;
-  DoorClose = 92;
-  PowerBtn = 93;
-  BatteryPercent = 94;
-  SoftwareZoneEnter = 95;
-  SoftwareZoneExit = 96;
-  Brake = 97;
-  Acceleration = 98;
-  AnalogInput1Min = 99;
-  AnalogInput2Min = 100;
-  Vibration = 101;
-  LowExternalVoltage = 102;
-  BatteryShutdown = 103;
-  Sound = 104;
-  Park = 105;
-  SpeedSlopeMinusZ = 106;
-  SpeedSlopeMinusY = 107;
-  SpeedSlopeMinusX = 108;
-  SpeedSlopePlusZ = 109;
-  SpeedSlopePlusY = 110;
-  SpeedSlopePlusX = 111;
-  HarshCorner = 112;
-  FatigueDriving = 113;
-  CameraWarning = 114;
-  OilError = 115;
-  VSSFault = 116;
-  RoadDeparture = 117;
-  RoadDriveNotEnoughTime = 118;
-  RoadIO = 119;
-  AreaIO = 120;
-  TotalDriveTimeout = 121;
-  RightBlindSpot = 123;
-  PreIllegally = 124;
-  PreTirePressure = 125;
-  PreTired = 126;
-  ICCardFault = 127;
-  TTSFault = 128;
-  LCDFault = 129;
-  TermPowerFail = 130;
-  AerialShortCircuit = 131;
-  AerialUnConn = 132;
-  TermFault = 133;
-  Danger = 134;
-  Emergency = 136;
-  StopTimeout = 137;
-  PhoneTalking = 138;
-  Smoking = 139;
-  Distracted = 140;
-  AbnormalDriving = 141;
-  DriverChangeEvent = 142;
-  DeviceAbnormal = 143;
-  CameraAbnormal = 144;
-  MainMemoryError = 145;
-  AuxiliaryMemoryError = 146;
-  AbnormalInfraredFillLight = 147;
-  SpeakerAbnormal = 148;
-  BatteryAbnormal = 149;
-  ForwardCollisionWarning = 150;
-  LaneDepartureWarning = 151;
-  VehicleDistanceTooCloseAlarm = 152;
-  PedestrianCollisionAlarm = 153;
-  FrequentLaneChangeAlarm = 154;
-  RoadSignOverrunAlarm = 156;
-  Obstacle = 157;
-  ActiveCapture = 158;
-  Displacement = 159;
-  ACCFlameout = 160;
-  ACCIgnition = 170;
-  Disarmed = 171;
-  Fortification = 172;
-  OilAndElectricityDisconnected = 173;
-  OilAndElectricityConnected = 174;
-  GpsNotPositioned = 175;
-  GpsHasPositioned = 176;
-  HighTemperature = 177;
-  LowTemperature = 178;
-  LightSensor = 179;
-  ACTurnOff = 180;
-  AcTurnOn = 181;
-  ChargeOn = 182;
-  ChargeOff = 183;
-  InvalidAlert = 404;
-}
-
-enum IoProperty {
-  UNKNOWN = 0;
-  AIN_SPEED = 1;
-  ASF_ADAPTER_PRESSURE_FILTER_SENSOR = 2;
-  ASF_CLEANING_FAN_CONTROL_TURNED_OFF = 3;
-  ASF_CORN_HEADER_CONNECTED = 4;
-  ASF_DRAIN_FILTER_CLOGGED_INDICATOR = 5;
-  ASF_EAR_AUGER_SPEED_BELOW_THE_NORM = 6;
-  ASF_EXCESSIVE_CLEARANCE_UNDER_THE_THRESHING_DRUM = 7;
-  ASF_FEEDER_REVERSE_SWITCHED_ON = 8;
-  ASF_FEEDER_SPEED_BELOW_THE_NORM = 9;
-  ASF_FIRST_FRONT_HYDRAULIC = 10;
-  ASF_FIRST_REAR_HYDRAULIC = 11;
-  ASF_FOURTH_FRONT_HYDRAULIC = 12;
-  ASF_FOURTH_REAR_HYDRAULIC = 13;
-  ASF_FRONT_POWER_TAKE_OFF = 14;
-  ASF_FRONT_THREE_POINT_HITCH = 15;
-  ASF_GRAIN_AUGER_SPEED_BELOW_THE_NORM = 16;
-  ASF_GRAIN_HEADER_CONNECTED = 17;
-  ASF_GRAIN_RELEASE_FROM_HOPPER = 18;
-  ASF_GRAIN_TANK_IS_100_percentage_FULL = 19;
-  ASF_GRAIN_TANK_IS_70_percentage_FULL = 20;
-  ASF_GRAIN_TANK_IS_OPENED = 21;
-  ASF_HIGH_TEMPERATURE_OF_DRIVE_SYSTEM_HYDRAULICS_GREATER_THAN_86_GRADES = 22;
-  ASF_LEFT_JOYSTICK_MOVED_BACK_ACTIVE = 23;
-  ASF_LEFT_JOYSTICK_MOVED_FORWARD_ACTIVE = 24;
-  ASF_LEFT_JOYSTICK_MOVED_LEFT_ACTIVE = 25;
-  ASF_LEFT_JOYSTICK_MOVED_RIGHT_ACTIVE = 26;
-  ASF_LOW_TEMPERATURE_OF_DRIVE_SYSTEM_HYDRAULICS_LESS_THAN_5_GRADES = 27;
-  ASF_MOWING_ACTIVE = 28;
-  ASF_REAR_POWER_TAKE_OFF = 29;
-  ASF_REAR_THREE_POINT_HITCH = 30;
-  ASF_RIGHT_JOYSTICK_MOVED_BACK_ACTIVE = 31;
-  ASF_RIGHT_JOYSTICK_MOVED_FORWARD_ACTIVE = 32;
-  ASF_RIGHT_JOYSTICK_MOVED_LEFT_ACTIVE = 33;
-  ASF_RIGHT_JOYSTICK_MOVED_RIGHT_ACTIVE = 34;
-  ASF_SECOND_FRONT_HYDRAULIC = 35;
-  ASF_SECOND_REAR_HYDRAULIC = 36;
-  ASF_SECTION_1_SPRAYING = 37;
-  ASF_SECTION_2_SPRAYING = 38;
-  ASF_SECTION_3_SPRAYING = 39;
-  ASF_SECTION_4_SPRAYING = 40;
-  ASF_SECTION_5_SPRAYING = 41;
-  ASF_SECTION_6_SPRAYING = 42;
-  ASF_SECTION_7_SPRAYING = 43;
-  ASF_SECTION_8_SPRAYING = 44;
-  ASF_SECTION_9_SPRAYING = 45;
-  ASF_SERVICE_2_REQUIRED_INDICATOR = 46;
-  ASF_STRAW_CHOOPER_SPEED_BELOW_THE_NORM = 47;
-  ASF_STRAW_CHOPPER_SWITCHED_ON = 48;
-  ASF_STRAW_SHAKER_SPEED_BELOW_THE_NORM = 49;
-  ASF_STRAW_WALKER_IS_CLOGGED = 50;
-  ASF_THE_PRESSURE_FILTER_OF_THE_HYDRAULIC_PUMP_IS_CLOGGED = 51;
-  ASF_THIRD_FRONT_HYDRAULIC = 52;
-  ASF_THIRD_REAR_HYDRAULIC = 53;
-  ASF_THRESHING_ACTIVE = 54;
-  ASF_THRESHING_DRUM_CONTROL_TURNED_OFF = 55;
-  ASF_UNLOADER_DRIVE = 56;
-  AXL_CALIBRATION_STATUS = 57;
-  ABSOLUTE_FUEL_RAIL_PRESSURE = 58;
-  ABSOLUTE_LOAD_VALUE = 59;
-  ACCELERATOR_PEDAL_POSITION = 60;
-  ACTIVE_GSM_OPERATOR = 61;
-  ADBLUE_LEVEL = 62;
-  ADVANCED_BLE_BEACON_DATA = 63;
-  AGRICULTURAL_MACHINERY_FLAGS = 64;
-  AGRICULTURAL_STATE_FLAGS_P4 = 65;
-  ALARM = 66;
-  AMBIENT_AIR_TEMPERATURE = 67;
-  AMOUNT_OF_COARSE_GRAINED_SALT = 68;
-  AMOUNT_OF_SPREAD_CALCIUM_CHLORIDE = 69;
-  AMOUNT_OF_SPREAD_COARSE_GRAINED_CALCIUM = 70;
-  AMOUNT_OF_SPREAD_DIMIX = 71;
-  AMOUNT_OF_SPREAD_FINE_GRAINED_SALT = 72;
-  AMOUNT_OF_SPREAD_GRAVEL = 73;
-  AMOUNT_OF_SPREAD_MAGNESIUM_CHLORIDE = 74;
-  AMOUNT_OF_SPREAD_SALT_SQUARE_METER = 75;
-  AMOUNT_OF_SPREAD_SAND = 76;
-  AMOUNT_OF_SPREAD_SODIUM_CHLORIDE = 77;
-  ANALOG_INPUT_1 = 78;
-  ANALOG_INPUT_2 = 79;
-  AREA_OF_HARVEST = 80;
-  AUTO_GEOFENCE = 81;
-  AXIS_X = 82;
-  AXIS_Y = 83;
-  AXIS_Z = 84;
-  AXLE_1_LOAD = 85;
-  AXLE_2_LOAD = 86;
-  AXLE_3_LOAD = 87;
-  AXLE_4_LOAD = 88;
-  AXLE_5_LOAD = 89;
-  BLE_1_CUSTOM_1 = 90;
-  BLE_1_CUSTOM_2 = 91;
-  BLE_1_CUSTOM_3 = 92;
-  BLE_1_CUSTOM_4 = 93;
-  BLE_1_CUSTOM_5 = 94;
-  BLE_2_CUSTOM_1 = 95;
-  BLE_2_CUSTOM_2 = 96;
-  BLE_2_CUSTOM_3 = 97;
-  BLE_2_CUSTOM_4 = 98;
-  BLE_2_CUSTOM_5 = 99;
-  BLE_3_CUSTOM_1 = 100;
-  BLE_3_CUSTOM_2 = 101;
-  BLE_3_CUSTOM_3 = 102;
-  BLE_3_CUSTOM_4 = 103;
-  BLE_3_CUSTOM_5 = 104;
-  BLE_4_CUSTOM_1 = 105;
-  BLE_4_CUSTOM_2 = 106;
-  BLE_4_CUSTOM_3 = 107;
-  BLE_4_CUSTOM_4 = 108;
-  BLE_4_CUSTOM_5 = 109;
-  BLE_BATTERY_1 = 110;
-  BLE_BATTERY_2 = 111;
-  BLE_BATTERY_3 = 112;
-  BLE_BATTERY_4 = 113;
-  BLE_BUTTON_1_STATE_1 = 114;
-  BLE_BUTTON_1_STATE_2 = 115;
-  BLE_BUTTON_1_STATE_3 = 116;
-  BLE_BUTTON_1_STATE_4 = 117;
-  BLE_BUTTON_2_STATE_1 = 118;
-  BLE_BUTTON_2_STATE_2 = 119;
-  BLE_BUTTON_2_STATE_3 = 120;
-  BLE_BUTTON_2_STATE_4 = 121;
-  BLE_FUEL_FREQUENCY_1 = 122;
-  BLE_FUEL_FREQUENCY_2 = 123;
-  BLE_FUEL_FREQUENCY_3 = 124;
-  BLE_FUEL_FREQUENCY_4 = 125;
-  BLE_FUEL_LEVEL_1 = 126;
-  BLE_FUEL_LEVEL_2 = 127;
-  BLE_FUEL_LEVEL_3 = 128;
-  BLE_FUEL_LEVEL_4 = 129;
-  BLE_HUMIDITY_1 = 130;
-  BLE_HUMIDITY_2 = 131;
-  BLE_HUMIDITY_3 = 132;
-  BLE_HUMIDITY_4 = 133;
-  BLE_LUMINOSITY_1 = 134;
-  BLE_LUMINOSITY_2 = 135;
-  BLE_LUMINOSITY_3 = 136;
-  BLE_LUMINOSITY_4 = 137;
-  BLE_RFID_1 = 138;
-  BLE_RFID_2 = 139;
-  BLE_RFID_3 = 140;
-  BLE_RFID_4 = 141;
-  BLE_TEMPERATURE_1 = 142;
-  BLE_TEMPERATURE_2 = 143;
-  BLE_TEMPERATURE_3 = 144;
-  BLE_TEMPERATURE_4 = 145;
-  BT_STATUS = 146;
-  BALE_COUNT = 147;
-  BALE_SLICES = 148;
-  BARCODE_ID = 149;
-  BAROMETIC_PRESSURE = 150;
-  BATTERY_CURRENT = 151;
-  BATTERY_LEVEL = 152;
-  BATTERY_TEMPERATURE = 153;
-  BATTERY_VOLTAGE = 154;
-  BEACON = 155;
-  BLOOD_ALCOHOL_CONTENT = 156;
-  CNG_LEVEL = 157;
-  CNG_LEVEL_KG = 158;
-  CNG_STATUS = 159;
-  CNG_USED = 160;
-  CSF_ADDITIONAL_FRONT_LIGHTS = 161;
-  CSF_ADDITIONAL_REAR_LIGHTS = 162;
-  CSF_AIR_CONDITIONING = 163;
-  CSF_AUTOMATIC_RETARDER = 164;
-  CSF_CENTRAL_DIFFERENTIAL_4HI_LOCKED = 165;
-  CSF_CENTRE_DRIVERS_SEATBELT_FASTENED = 166;
-  CSF_CRUISE_CONTROL = 167;
-  CSF_DIPPED_HEAD_LIGHTS = 168;
-  CSF_DRIVERS_SEATBELT_FASTENED = 169;
-  CSF_FRONT_DIFFERENTIAL_LOCKED = 170;
-  CSF_FRONT_DRIVERS_SEATBELT_FASTENED = 171;
-  CSF_FRONT_FOG_LIGHTS = 172;
-  CSF_FRONT_PASSENGER_PRESENT = 173;
-  CSF_FULL_BEAM_HEADLIGHTS = 174;
-  CSF_LEFT_DRIVERS_SEATBELT_FASTENED = 175;
-  CSF_LIGHT_SIGNAL = 176;
-  CSF_MANUAL_RETARDER = 177;
-  CSF_PTO = 178;
-  CSF_PARKING_LIGHTS = 179;
-  CSF_REAR_DIFFERENTIAL_4LO_LOCKED = 180;
-  CSF_REAR_DIFFERENTIAL_LOCKED = 181;
-  CSF_REAR_FOG_LIGHTS = 182;
-  CSF_RIGHT_DRIVERS_SEATBELT_FASTENED = 183;
-  CSF_START_STOP_SYSTEM_INACTIVE = 184;
-  CSF_TRAILER_AXLE_1_LIFT_ACTIVE = 185;
-  CSF_TRAILER_AXLE_2_LIFT_ACTIVE = 186;
-  CSF_TRAILER_CONNECTED = 187;
-  CISF_SECTION_1_FILLED = 188;
-  CISF_SECTION_1_OVERFILLED = 189;
-  CISF_SECTION_1_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 190;
-  CISF_SECTION_2_FILLED = 191;
-  CISF_SECTION_2_OVERFILLED = 192;
-  CISF_SECTION_2_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 193;
-  CISF_SECTION_3_FILLED = 194;
-  CISF_SECTION_3_OVERFILLED = 195;
-  CISF_SECTION_3_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 196;
-  CISF_SECTION_4_FILLED = 197;
-  CISF_SECTION_4_OVERFILLED = 198;
-  CISF_SECTION_4_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 199;
-  CISF_SECTION_5_FILLED = 200;
-  CISF_SECTION_5_OVERFILLED = 201;
-  CISF_SECTION_5_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 202;
-  CISF_SECTION_6_FILLED = 203;
-  CISF_SECTION_6_OVERFILLED = 204;
-  CISF_SECTION_6_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 205;
-  CISF_SECTION_7_FILLED = 206;
-  CISF_SECTION_7_OVERFILLED = 207;
-  CISF_SECTION_7_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 208;
-  CISF_SECTION_8_FILLED = 209;
-  CISF_SECTION_8_OVERFILLED = 210;
-  CISF_SECTION_8_PRESENCE_OF_FLUID_IN_THE_DOWNPIPE = 211;
-  CISTERN_STATE_FLAGS_P4 = 212;
-  COMMANDED_EGR = 213;
-  COMMANDED_EQUIVALENCE_R = 214;
-  CONNECTIVITY_QUALITY = 215;
-  CONTROL_MODULE_VOLTAGE = 216;
-  CONTROL_STATE_FLAGS = 217;
-  CONTROL_STATE_FLAGS_P4 = 218;
-  COOLANT_TEMPERATURE = 219;
-  CRASH_DETECTION = 220;
-  CRASH_EVENT_COUNTER = 221;
-  CRASH_TRACE_DATA = 222;
-  CRUISE_TIME = 223;
-  CUT_BALE_COUNT = 224;
-  DTC_FAULTS = 225;
-  DALLAS_TEMPERATURE_1 = 226;
-  DALLAS_TEMPERATURE_2 = 227;
-  DALLAS_TEMPERATURE_3 = 228;
-  DALLAS_TEMPERATURE_4 = 229;
-  DALLAS_TEMPERATURE_ID_1 = 230;
-  DALLAS_TEMPERATURE_ID_2 = 231;
-  DALLAS_TEMPERATURE_ID_3 = 232;
-  DALLAS_TEMPERATURE_ID_4 = 233;
-  DATA_MODE = 234;
-  DIGITAL_INPUT_1 = 235;
-  DIGITAL_INPUT_2 = 236;
-  DIGITAL_INPUT_3 = 237;
-  DIGITAL_OUTPUT_1 = 238;
-  DIGITAL_OUTPUT_2 = 239;
-  DIGITAL_OUTPUT_3 = 240;
-  DIRECT_FUEL_RAIL_PRESSURE = 241;
-  DISTANCE_DURING_SALTING = 242;
-  DISTANCE_SINCE_CODES_CLEAR = 243;
-  DISTANCE_TRAVELED_MIL_ON = 244;
-  DISTANCE_FROM_LAST_SERVICE = 245;
-  DISTANCE_FROM_NEED_OF_SERVICE = 246;
-  DISTANCE_TO_NEXT_SERVICE = 247;
-  DISTANCE_TO_NEXT_OIL_SERVICE = 248;
-  DOOR_STATUS = 249;
-  DRILL_RPM = 250;
-  DRIVER_1_CONTINUOUS_DRIVING_TIME = 251;
-  DRIVER_1_CUMULATIVE_BREAK_TIME = 252;
-  DRIVER_1_CUMULATIVE_DRIVING_TIME = 253;
-  DRIVER_1_ID_HIGH = 254;
-  DRIVER_1_ID_LOW = 255;
-  DRIVER_1_SELECTED_ACTIVITY_DURATION = 256;
-  DRIVER_1_STATES = 257;
-  DRIVER_2_CONTINUOUS_DRIVING_TIME = 258;
-  DRIVER_2_CUMULATIVE_BREAK_TIME = 259;
-  DRIVER_2_CUMULATIVE_DRIVING_TIME = 260;
-  DRIVER_2_ID_HIGH = 261;
-  DRIVER_2_ID_LOW = 262;
-  DRIVER_2_SELECTED_ACTIVITY_DURATION = 263;
-  DRIVER_2_STATES = 264;
-  DRIVER_CARD_ID = 265;
-  DRIVER_CARD_PLACE_OF_ISSUE = 266;
-  DRIVER_GENDER = 267;
-  DRIVER_NAME = 268;
-  DRIVER_STATUS_EVENT = 269;
-  DRIVER_CARD_EXPIRATION_DATE = 270;
-  DRIVER_CARD_LICENSE_TYPE = 271;
-  DRIVING_RECORDS = 272;
-  DRIVING_STATE = 273;
-  EGR_ERROR = 274;
-  EYE_BATTERY_VOLTAGE_1 = 275;
-  EYE_BATTERY_VOLTAGE_2 = 276;
-  EYE_BATTERY_VOLTAGE_3 = 277;
-  EYE_BATTERY_VOLTAGE_4 = 278;
-  EYE_HUMIDITY_1 = 279;
-  EYE_HUMIDITY_2 = 280;
-  EYE_HUMIDITY_3 = 281;
-  EYE_HUMIDITY_4 = 282;
-  EYE_LOW_BATTERY_1 = 283;
-  EYE_LOW_BATTERY_2 = 284;
-  EYE_LOW_BATTERY_3 = 285;
-  EYE_LOW_BATTERY_4 = 286;
-  EYE_MAGNET_1 = 287;
-  EYE_MAGNET_2 = 288;
-  EYE_MAGNET_3 = 289;
-  EYE_MAGNET_4 = 290;
-  EYE_MAGNET_COUNT_1 = 291;
-  EYE_MAGNET_COUNT_2 = 292;
-  EYE_MAGNET_COUNT_3 = 293;
-  EYE_MAGNET_COUNT_4 = 294;
-  EYE_MOVEMENT_1 = 295;
-  EYE_MOVEMENT_2 = 296;
-  EYE_MOVEMENT_3 = 297;
-  EYE_MOVEMENT_4 = 298;
-  EYE_MOVEMENT_COUNT_1 = 299;
-  EYE_MOVEMENT_COUNT_2 = 300;
-  EYE_MOVEMENT_COUNT_3 = 301;
-  EYE_MOVEMENT_COUNT_4 = 302;
-  EYE_PITCH_1 = 303;
-  EYE_PITCH_2 = 304;
-  EYE_PITCH_3 = 305;
-  EYE_PITCH_4 = 306;
-  EYE_ROLL_1 = 307;
-  EYE_ROLL_2 = 308;
-  EYE_ROLL_3 = 309;
-  EYE_ROLL_4 = 310;
-  EYE_TEMPERATURE_1 = 311;
-  EYE_TEMPERATURE_2 = 312;
-  EYE_TEMPERATURE_3 = 313;
-  EYE_TEMPERATURE_4 = 314;
-  ECO_SCORE = 315;
-  ECOAVERAGE = 316;
-  ECODURATION = 317;
-  ECOMAXIMUM = 318;
-  EJECT_OF_ARM = 319;
-  ENGINE_LOAD = 320;
-  ENGINE_OIL_TEMPERATURE = 321;
-  ENGINE_RPM = 322;
-  ENGINE_TEMPERATURE = 323;
-  ENGINE_WORKTIME = 324;
-  ENGINE_WORKTIME_COUNTED_ = 325;
-  EXTERNAL_VOLTAGE = 326;
-  FAULT_CODES = 327;
-  FREQUENCY_DIN1 = 328;
-  FREQUENCY_DIN2 = 329;
-  FUEL_CONSUMED = 330;
-  FUEL_CONSUMED_COUNTED_ = 331;
-  FUEL_LEVEL = 332;
-  FUEL_RATE = 333;
-  FUEL_RATE_GPS = 334;
-  FUEL_TYPE = 335;
-  FUEL_USED_GPS = 336;
-  FUEL_INJECTION_TIMING = 337;
-  FUEL_PRESSURE = 339;
-  GNSS_HDOP = 340;
-  GNSS_JAMMING = 341;
-  GNSS_PDOP = 342;
-  GNSS_STATUS = 343;
-  GSM_AREA_CODE = 344;
-  GSM_CELL_ID = 345;
-  GSM_SIGNAL = 346;
-  GAP_UNDER_HARVESTING_DRUM = 347;
-  GEOFENCE_ZONE_01 = 348;
-  GEOFENCE_ZONE_02 = 349;
-  GEOFENCE_ZONE_03 = 350;
-  GEOFENCE_ZONE_04 = 351;
-  GEOFENCE_ZONE_05 = 352;
-  GEOFENCE_ZONE_06 = 353;
-  GEOFENCE_ZONE_07 = 354;
-  GEOFENCE_ZONE_08 = 355;
-  GEOFENCE_ZONE_09 = 356;
-  GEOFENCE_ZONE_10 = 357;
-  GEOFENCE_ZONE_11 = 358;
-  GEOFENCE_ZONE_12 = 359;
-  GEOFENCE_ZONE_13 = 360;
-  GEOFENCE_ZONE_14 = 361;
-  GEOFENCE_ZONE_15 = 362;
-  GEOFENCE_ZONE_16 = 363;
-  GEOFENCE_ZONE_17 = 364;
-  GEOFENCE_ZONE_18 = 365;
-  GEOFENCE_ZONE_19 = 366;
-  GEOFENCE_ZONE_20 = 367;
-  GEOFENCE_ZONE_21 = 368;
-  GEOFENCE_ZONE_22 = 369;
-  GEOFENCE_ZONE_23 = 370;
-  GEOFENCE_ZONE_24 = 371;
-  GEOFENCE_ZONE_25 = 372;
-  GEOFENCE_ZONE_26 = 373;
-  GEOFENCE_ZONE_27 = 374;
-  GEOFENCE_ZONE_28 = 375;
-  GEOFENCE_ZONE_29 = 376;
-  GEOFENCE_ZONE_30 = 377;
-  GEOFENCE_ZONE_31 = 378;
-  GEOFENCE_ZONE_32 = 379;
-  GEOFENCE_ZONE_33 = 380;
-  GEOFENCE_ZONE_34 = 381;
-  GEOFENCE_ZONE_35 = 382;
-  GEOFENCE_ZONE_36 = 383;
-  GEOFENCE_ZONE_37 = 384;
-  GEOFENCE_ZONE_38 = 385;
-  GEOFENCE_ZONE_39 = 386;
-  GEOFENCE_ZONE_40 = 387;
-  GEOFENCE_ZONE_41 = 388;
-  GEOFENCE_ZONE_42 = 389;
-  GEOFENCE_ZONE_43 = 390;
-  GEOFENCE_ZONE_44 = 391;
-  GEOFENCE_ZONE_45 = 392;
-  GEOFENCE_ZONE_46 = 393;
-  GEOFENCE_ZONE_47 = 394;
-  GEOFENCE_ZONE_48 = 395;
-  GEOFENCE_ZONE_49 = 396;
-  GEOFENCE_ZONE_50 = 397;
-  GRAIN_MOISTURE = 398;
-  GRAIN_MOWN_VOLUME = 399;
-  GREEN_DRIVING_VALUE = 400;
-  GREEN_DRIVING_EVENT_DURATION = 401;
-  GREEN_DRIVING_TYPE = 402;
-  GROUND_SENSE = 403;
-  HV_BATTERY_LEVEL = 404;
-  HARVESTING_DRUM_RPM = 405;
-  HARVESTING_TIME = 406;
-  HEIGHT_ARM_ABOVE_GROUND = 407;
-  HORIZONTAL_DISTANCE_ARM_VEHICLE = 408;
-  HYBRID_SYSTEM_CURRENT = 409;
-  HYBRID_SYSTEM_VOLTAGE = 410;
-  HYBRID_BATTERY_PACK_LIFE = 411;
-  ICCID1 = 412;
-  ICCID2 = 413;
-  ISF_ABS_INDICATOR = 414;
-  ISF_AIRBAG_INDICATOR = 415;
-  ISF_BATTERY_NOT_CHARGING_INDICATOR = 416;
-  ISF_CHECK_ENGINE_INDICATOR = 417;
-  ISF_CLOGGED_AIR_FILTER_INDICATOR = 418;
-  ISF_CLOGGED_BRAKE_SYSTEM_FILTER_INDICATOR = 419;
-  ISF_CLOGGED_ENGINE_OIL_FILTER_INDICATOR = 420;
-  ISF_CLOGGED_FUEL_FILTER_INDICATOR = 421;
-  ISF_CLOGGED_HYDRAULIC_SYSTEM_OIL_FILTER_INDICATOR = 422;
-  ISF_COOLANT_LIQUID_LEVEL = 423;
-  ISF_EPC_ELECTRONIC_POWER_CONTROL_INDICATOR = 424;
-  ISF_EPS_INDICATOR = 425;
-  ISF_ESP_INDICATOR = 426;
-  ISF_ESP_TURNED_OFF = 427;
-  ISF_FAP_INDICATOR = 428;
-  ISF_GLOW_PLUG_INDICATOR = 429;
-  ISF_HANDBRAKE_SYSTEM_INDICATOR = 430;
-  ISF_HIGH_TRAILER_BRAKE_TEMPERATURE_INDICATOR = 431;
-  ISF_HYDRAULIC_OIL_LOW_LEVEL_INDICATOR = 432;
-  ISF_HYDRAULIC_SYSTEM_HIGH_TEMPERATURE_INDICATOR = 433;
-  ISF_HYDRAULIC_SYSTEM_LOW_PRESSURE_INDICATOR = 434;
-  ISF_INCORRECT_TRAILER_PNEUMATIC_SUPPLY_INDICATOR = 435;
-  ISF_LIGHTS_FAILURE_INDICATOR = 436;
-  ISF_LOW_ADBLUE_LEVEL_INDICATOR = 437;
-  ISF_LOW_CNG_LEVEL_INDICATOR = 438;
-  ISF_LOW_COOLANT_LEVEL_INDICATOR = 439;
-  ISF_LOW_ENGINE_OIL_PRESSURE_INDICATOR = 440;
-  ISF_LOW_FUEL_LEVEL_INDICATOR = 441;
-  ISF_LOW_TIRE_PRESSURE_INDICATOR = 442;
-  ISF_LOW_TRAILER_TYRE_PRESSURE_INDICATOR = 443;
-  ISF_LOW_WASHER_FLUID_LEVEL_INDICATOR = 444;
-  ISF_MAINTENENCE_REQUIRED_INDICATOR = 445;
-  ISF_OIL_LEVEL_INDICATOR = 446;
-  ISF_OIL_OVERFLOW_IN_HYDRAULIC_CHAMBER_INDICATOR = 447;
-  ISF_STOP_INDICATOR = 448;
-  ISF_TOO_HIGH_ENGINE_OIL_TEMPERATURE_INDICATOR = 449;
-  ISF_WARNING_INDICATOR = 450;
-  ISF_WATER_IN_FUEL_INDICATOR = 451;
-  ISF_WEAR_OF_BRAKE_PADS_INDICATOR = 452;
-  ISF_WEAR_OF_TRAILER_BRAKE_LINING_INDICATOR = 453;
-  ISO6709_COORDINATES = 454;
-  IDLING = 455;
-  IGNITION = 456;
-  IGNITION_ON_COUNTER = 457;
-  IMMOBILIZER = 458;
-  INDICATOR_STATE_FLAGS_P4 = 459;
-  INSTANT_MOVEMENT = 460;
-  INTAKE_AIR_TEMPERATURE = 461;
-  INTAKE_MAP = 462;
-  INTAKE_MAP_2_BYTES = 463;
-  JAMMING = 464;
-  LLS_1_FUEL_LEVEL = 465;
-  LLS_1_TEMPERATURE = 466;
-  LLS_2_FUEL_LEVEL = 467;
-  LLS_2_TEMPERATURE = 468;
-  LLS_3_FUEL_LEVEL = 469;
-  LLS_3_TEMPERATURE = 470;
-  LLS_4_FUEL_LEVEL = 471;
-  LLS_4_TEMPERATURE = 472;
-  LLS_5_FUEL_LEVEL = 473;
-  LLS_5_TEMPERATURE = 474;
-  LNG_LEVEL = 475;
-  LNG_USED = 476;
-  LNG_USED_COUNTED_ = 477;
-  LPG_LEVEL_LITERS = 478;
-  LPG_LEVEL_PROC = 479;
-  LVCAN_EXCEEDEDROADSPEED = 480;
-  LVCAN_MAXROADSPEED = 481;
-  LVCAN_RSF_ENDOFSPEEDLIMITSIGN = 482;
-  LVCAN_RSF_SPEEDEXCEEDED = 483;
-  LVCAN_RSF_SPEEDLIMITSIGN = 484;
-  LVCAN_RSF_TIMESPEEDLIMITSIGN = 485;
-  LVCAN_RSF_WTHRSPEEDLIMITSIGN = 486;
-  LVCAN_TOTAL_CNG_COUNTED = 487;
-  LVCAN_VEHICLE_RANGE = 488;
-  LOAD_WEIGHT = 489;
-  MAF = 490;
-  MSP500_SPEED_SENSOR = 491;
-  MSP500_VEHICLE_NUMBER = 492;
-  MSP500_VENDOR_NAME = 493;
-  MODULE_ID_17B = 494;
-  MODULE_ID_8B = 495;
-  MOTORCYCLE_FALL_DETECTION = 496;
-  MOVEMENT = 497;
-  MOWING_EFFICIENCY = 498;
-  NETWORK_TYPE = 499;
-  NUMBER_OF_DTC = 500;
-  OBD_OEM_FUEL_LEVEL = 501;
-  OBD_OEM_TOTAL_MILEAGE = 502;
-  OEM_BATTERY_STATE_OF_HEALTH = 503;
-  OEM_BATTERY_TEMPERATURE = 504;
-  OEM_BATTERY_CHARGE_LEVEL = 505;
-  OEM_BATTERY_CHARGE_STATE = 506;
-  OEM_DISTANCE_UNTIL_SERVICE = 507;
-  OEM_REMAINING_DISTANCE = 508;
-  OIL_LEVEL = 509;
-  OVER_SPEEDING = 510;
-  PRIVATE_MODE = 511;
-  PROGRAM_NUMBER = 512;
-  PULSE_COUNTER_DIN1 = 513;
-  PULSE_COUNTER_DIN2 = 514;
-  RFID = 515;
-  RELATIVE_FUEL_RAIL_PRESSURE = 516;
-  RETARDER_LOAD = 517;
-  ROTATION_OF_ARM = 518;
-  RUNTIME_SINCE_ENGINE_START = 519;
-  SD_STATUS = 520;
-  SSF_BATTTERY_CHARGING = 521;
-  SSF_CAN_MODULE_IN_SLEEP = 522;
-  SSF_CAR_CLOSED_FACTORY_REMOTE = 523;
-  SSF_CAR_IS_CLOSED = 524;
-  SSF_CHARGING_WIRE_PLUGGED = 525;
-  SSF_CLUTCH_PUSHED = 526;
-  SSF_DRIVE_IS_ACTIVE_AUTOMATIC_GEAR_BOX_ = 527;
-  SSF_ELECTRIC_ENGINE_STATE = 528;
-  SSF_ENGINE_COVER_OPEN = 529;
-  SSF_ENGINE_LOCK_ACTIVE = 530;
-  SSF_ENGINE_WORKING = 531;
-  SSF_ENGINE_WORKING_ON_CNG = 532;
-  SSF_ENGINE_WORKING_ON_DUAL_FUEL = 533;
-  SSF_ENGINE_WORKING_ON_LPG = 534;
-  SSF_FACTORY_ALARM_ACTUATED = 535;
-  SSF_FACTORY_ALARM_EMULATED = 536;
-  SSF_FACTORY_ARMED = 537;
-  SSF_FACTORY_REMOTE_3X = 538;
-  SSF_FOOTBRAKE_IS_ACTIVE = 539;
-  SSF_FRONT_LEFT_DOOR_OPEN = 540;
-  SSF_FRONT_RIGHT_DOOR_OPEN = 541;
-  SSF_HANDBRAKE_IS_ACTIVE = 542;
-  SSF_HAZARD_WARNING_LIGHTS = 543;
-  SSF_IGNITION = 544;
-  SSF_INTERLOCK = 545;
-  SSF_KEYINIGNITIONLOCK = 546;
-  SSF_NEUTRAL_GEAR_ACTIVE_AUTOMATIC_GEAR_BOX_ = 547;
-  SSF_OPERATOR = 548;
-  SSF_PARKING_GEAR_ACTIVE_AUTOMATIC_GEAR_BOX_ = 549;
-  SSF_READY_TO_DRIVE = 550;
-  SSF_REAR_LEFT_DOOR_OPEN = 551;
-  SSF_REAR_RIGHT_DOOR_OPEN = 552;
-  SSF_REARMING_SIGNAL = 553;
-  SSF_REQUEST_TO_LOCK_ENGINE = 554;
-  SSF_REVERSE_GEAR_ACTIVE = 555;
-  SSF_ROOF_OPEN = 556;
-  SSF_SIGNAL_CLOSE_FACTORY_REMOTE = 557;
-  SSF_SIGNAL_OPEN_FACTORY_REMOTE = 558;
-  SSF_STANDALONE_ENGINE = 559;
-  SSF_TRUNK_DOOR_OPEN = 560;
-  SSF_TRUNK_DOOR_OPENED_FACTORY_REMOTE = 561;
-  SSF_WEBASTO = 562;
-  SSF_WORK_MODE = 563;
-  SALT_SPREADER_WORKING_HOURS = 564;
-  SECURITY_STATE_FLAGS = 565;
-  SECURITY_STATE_FLAGS_P4 = 566;
-  SHORT_FUEL_TRIM = 567;
-  SLEEP_MODE = 568;
-  SLOPE_OF_ARM = 569;
-  SPEED = 570;
-  TACHO_DRIVER_CARD_PRESENCE = 571;
-  TACHOGRAPH_TOTAL_VEHICLE_DISTANCE = 572;
-  TACHOGRAPH_VEHICLE_SPEED = 573;
-  THROTTLE_POSITION = 574;
-  THROTTLE_POSITION_GROUP = 575;
-  TIME_RUN_WITH_MIL_ON = 576;
-  TIME_SINCE_CODES_CLEARED = 577;
-  TIME_FROM_LAST_SERIVCE = 578;
-  TIME_FROM_NEED_OF_SERVICE = 579;
-  TIME_TO_NEXT_OIL_SERVICE = 580;
-  TIME_TO_NEXT_SERVICE = 581;
-  TIMING_ADVANCE = 582;
-  TOTAL_BALE_COUNT = 583;
-  TOTAL_LPG_USED = 584;
-  TOTAL_LPG_USED_COUNTED = 585;
-  TOTAL_MILEAGE = 586;
-  TOTAL_MILEAGE_COUNTED_ = 587;
-  TOTAL_ODOMETER = 588;
-  TOWING = 589;
-  TRIP = 590;
-  TRIP_DISTANCE = 591;
-  TRIP_ODOMETER = 592;
-  UL202_02_SENSOR_FUEL_LEVEL = 593;
-  UL202_02_SENSOR_STATUS = 594;
-  UMTS_LTE_CELL_ID = 595;
-  USF_BRUSHES = 596;
-  USF_CABIN_MOVED_DOWN_STATUS_ACTIVE = 597;
-  USF_CABIN_MOVED_UP_STATUS_ACTIVE = 598;
-  USF_CHEMICALS = 599;
-  USF_COMPRESSOR = 600;
-  USF_CONVEYOR_BELT = 601;
-  USF_HYDRAULICS_WORK_NOT_PERMITTED = 602;
-  USF_LIQUID_PUMP = 603;
-  USF_LOW_SALT_SAND_LEVEL_IN_CONTAINER_INDICATOR = 604;
-  USF_LOW_WATER_LEVEL_IN_CONTAINER_INDICATOR = 605;
-  USF_POURING_CHEMICALS = 606;
-  USF_SALT_SPREADERS_DRIVE_WHEEL = 607;
-  USF_SPREADING = 608;
-  USF_UNLOADING_FROM_THE_HOPPER = 609;
-  USF_VACUUM_CLEANER = 610;
-  USF_WATER_SUPPLY = 611;
-  USF_WATER_VALVE_IS_OPENED = 612;
-  UNPLUG = 613;
-  USER_ID = 614;
-  UTILITY_STATE_FLAGS_P4 = 615;
-  VIN = 616;
-  VEHICLE_SPEED = 617;
-  VEHICLES_RANGE_ON_ADDITIONAL_FUEL = 618;
-  VEHICLES_RANGE_ON_BATTERY = 619;
-  WAKE_REASON = 620;
-  WIDTH_POURING_LEFT = 621;
-  WIDTH_POURING_RIGHT = 622;
-  IBUTTON = 623;
-  LNG_LEVEL_PERCENT = 624;
-  DRIVER_1_CUMULATIVE_TIME = 625;
-  DRIVER_2_CUMULATIVE_TIME = 626;
+enum Event {
+  NORMAL = 0;
+  IGNITION_ON = 1;
+  IGNITION_OFF = 2;
+  MOVEMENT = 3;
+  PLUG = 4;
+  UNPLUG = 5;
+  TOWING = 6;
+  JAMMING = 7;
+  OVER_SPEED = 8;
+  IDLING = 9;
+  LOW_BATTERY = 10;
+  CRASH = 11;
+  HUMIDITY = 12;
+  DOOR_OPEN = 13;
+  ENGINE_DOOR_OPEN = 14;
+  TRUNK_DOOR_OPEN = 15;
+  DIGITAL_INPUT_1 = 16;
+  DIGITAL_INPUT_2 = 17;
+  DIGITAL_INPUT_3 = 18;
+  DIGITAL_OUTPUT_1 = 19;
+  DIGITAL_OUTPUT_2 = 20;
+  DIGITAL_OUTPUT_3 = 21;
+  ANALOG_INPUT_1 = 22;
+  ANALOG_INPUT_2 = 23;
+  FOOT_BRAKE = 24;
+  TEMPERATURE = 25;
+  FUEL = 26;
+  CRASH_TRACE = 27;
+  DATA_MODE = 28;
+  GSM = 29;
+  SLEEP_MODE = 30;
+  GNSS = 31;
+  GPS = 32;
+  EXTERNAL_VOLTAGE = 33;
+  SPEED = 34;
+  BATTERY_VOLTAGE = 35;
+  BATTERY_CURRENT = 36;
+  TRIPS = 37;
+  ODOMETER = 38;
+  AXIS_X = 39;
+  AXIS_Y = 40;
+  AXIS_Z = 41;
+  SD_STATUS = 42;
+  ACCELERATION_PEDAL_POSITION = 43;
+  FUEL_LEVEL = 44;
+  DTC = 45;
+  DRIVING = 46;
+  HARSH_ACCELERATION = 47;
+  HARSH_BRAKING = 48;
+  HARSH_CORNER = 49;
+  FALL = 50;
 }
