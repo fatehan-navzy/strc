@@ -557,7 +557,7 @@ type Packet struct {
 	Speed         uint32                 `protobuf:"varint,7,opt,name=speed,proto3" json:"speed,omitempty"`
 	Satellite     *uint32                `protobuf:"varint,8,opt,name=satellite,proto3,oneof" json:"satellite,omitempty"`
 	Ignition      *bool                  `protobuf:"varint,9,opt,name=ignition,proto3,oneof" json:"ignition,omitempty"`
-	Mileage       *uint64                `protobuf:"varint,10,opt,name=mileage,proto3,oneof" json:"mileage,omitempty"`
+	Mileage       *uint32                `protobuf:"varint,10,opt,name=mileage,proto3,oneof" json:"mileage,omitempty"`
 	Compact       *Compact               `protobuf:"bytes,11,opt,name=compact,proto3" json:"compact,omitempty"`
 	Events        []Event                `protobuf:"varint,12,rep,packed,name=events,json=alerts,proto3,enum=com.navzy.packets.Event" json:"events,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -657,7 +657,7 @@ func (x *Packet) GetIgnition() bool {
 	return false
 }
 
-func (x *Packet) GetMileage() uint64 {
+func (x *Packet) GetMileage() uint32 {
 	if x != nil && x.Mileage != nil {
 		return *x.Mileage
 	}
@@ -3285,7 +3285,8 @@ type Compact struct {
 	// Indicator State Flags P4: Indicator state flags protocol 4, HEX
 	IndicatorStateFlagsP4 []byte `protobuf:"bytes,463,opt,name=indicator_state_flags_p4,json=indicatorStateFlagsP4,proto3,oneof" json:"indicator_state_flags_p4,omitempty"`
 	// Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
-	AgriculturalStateFlagsP4 []byte `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
+	AgriculturalStateFlagsP4 []byte  `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
+	DoorStatus               *uint32 `protobuf:"varint,465,opt,name=door_status,json=doorStatus,proto3,oneof" json:"door_status,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -6547,6 +6548,13 @@ func (x *Compact) GetAgriculturalStateFlagsP4() []byte {
 	return nil
 }
 
+func (x *Compact) GetDoorStatus() uint32 {
+	if x != nil && x.DoorStatus != nil {
+		return *x.DoorStatus
+	}
+	return 0
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -6594,14 +6602,14 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\tsatellite\x18\b \x01(\rH\x00R\tsatellite\x88\x01\x01\x12\x1f\n" +
 	"\bignition\x18\t \x01(\bH\x01R\bignition\x88\x01\x01\x12\x1d\n" +
 	"\amileage\x18\n" +
-	" \x01(\x04H\x02R\amileage\x88\x01\x01\x124\n" +
+	" \x01(\rH\x02R\amileage\x88\x01\x01\x124\n" +
 	"\acompact\x18\v \x01(\v2\x1a.com.navzy.packets.CompactR\acompact\x120\n" +
 	"\x06events\x18\f \x03(\x0e2\x18.com.navzy.packets.EventR\x06alertsB\f\n" +
 	"\n" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\x8a\xa1\x02\n" +
+	"\b_mileage\"¡\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -7101,7 +7109,9 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x17security_state_flags_p4\x18\xcd\x03 \x01(\fH\xc8\x03R\x14securityStateFlagsP4\x88\x01\x01\x12:\n" +
 	"\x16control_state_flags_p4\x18\xce\x03 \x01(\fH\xc9\x03R\x13controlStateFlagsP4\x88\x01\x01\x12>\n" +
 	"\x18indicator_state_flags_p4\x18\xcf\x03 \x01(\fH\xca\x03R\x15indicatorStateFlagsP4\x88\x01\x01\x12D\n" +
-	"\x1bagricultural_state_flags_p4\x18\xd0\x03 \x01(\fH\xcb\x03R\x18agriculturalStateFlagsP4\x88\x01\x01\x1a;\n" +
+	"\x1bagricultural_state_flags_p4\x18\xd0\x03 \x01(\fH\xcb\x03R\x18agriculturalStateFlagsP4\x88\x01\x01\x12&\n" +
+	"\vdoor_status\x18\xd1\x03 \x01(\rH\xcc\x03R\n" +
+	"doorStatus\x88\x01\x01\x1a;\n" +
 	"\rGeoFenceEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
@@ -7587,7 +7597,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x18_security_state_flags_p4B\x19\n" +
 	"\x17_control_state_flags_p4B\x1b\n" +
 	"\x19_indicator_state_flags_p4B\x1e\n" +
-	"\x1c_agricultural_state_flags_p4*\xb8\x06\n" +
+	"\x1c_agricultural_state_flags_p4B\x0e\n" +
+	"\f_door_status*\xb8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +

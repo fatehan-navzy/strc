@@ -56,7 +56,7 @@ message Packet {
   uint32 speed = 7 [json_name = "speed"];
   optional uint32 satellite = 8 [json_name = "satellite"];
   optional bool ignition = 9 [json_name = "ignition"];
-  optional uint64 mileage = 10 [json_name = "mileage"];
+  optional uint32 mileage = 10 [json_name = "mileage"];
   Compact compact = 11 [json_name = 'compact'];
   repeated Event events = 12 [json_name = "alerts"];
 }
@@ -3040,6 +3040,7 @@ message Compact {
     optional bytes indicator_state_flags_p4 = 463;
     // Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
     optional bytes agricultural_state_flags_p4 = 464;
+    optional uint32 door_status = 465;
 }
 
 enum Event {

@@ -2669,6 +2669,10 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for AgriculturalStateFlagsP4
 	}
 
+	if m.DoorStatus != nil {
+		// no validation rules for DoorStatus
+	}
+
 	if len(errors) > 0 {
 		return CompactMultiError(errors)
 	}
