@@ -1434,7 +1434,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_tank_is_100_full = 123;
+    optional uint32 asf_grain_tank_is100_full = 123;
   
     // Parameter ID: 1017
     // Property Name: ASF Grain Tank Is 70% Full
@@ -1445,7 +1445,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_tank_is_70_full = 124;
+    optional uint32 asf_grain_tank_is70_full = 124;
   
     // Parameter ID: 1018
     // Property Name: ASF Grain Tank Is Opened
@@ -1522,7 +1522,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_low_temperature_of_drive_system_hydraulics_less_than_5_grades = 131;
+    optional uint32 asf_low_temperature_of_drive_system_hydraulics_less_than5_grades = 131;
   
     // Parameter ID: 1025
     // Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
@@ -1533,7 +1533,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades = 132;
+    optional uint32 asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades = 132;
   
     // Parameter ID: 1026
     // Property Name: ASF Ear Auger Speed Below The Norm
@@ -1665,7 +1665,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_service_2_required_indicator = 144;
+    optional uint32 asf_service2_required_indicator = 144;
   
     // Parameter ID: 1089
     // Property Name: ASF Drain Filter Clogged Indicator
@@ -1687,7 +1687,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_1_spraying = 146;
+    optional uint32 asf_section1_spraying = 146;
   
     // Parameter ID: 1091
     // Property Name: ASF Section 2 Spraying
@@ -1698,7 +1698,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_2_spraying = 147;
+    optional uint32 asf_section2_spraying = 147;
   
     // Parameter ID: 1092
     // Property Name: ASF Section 3 Spraying
@@ -1709,7 +1709,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_3_spraying = 148;
+    optional uint32 asf_section3_spraying = 148;
   
     // Parameter ID: 1093
     // Property Name: ASF Section 4 Spraying
@@ -1720,7 +1720,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_4_spraying = 149;
+    optional uint32 asf_section4_spraying = 149;
   
     // Parameter ID: 1094
     // Property Name: ASF Section 5 Spraying
@@ -1731,7 +1731,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_5_spraying = 150;
+    optional uint32 asf_section5_spraying = 150;
   
     // Parameter ID: 1095
     // Property Name: ASF Section 6 Spraying
@@ -1742,7 +1742,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_6_spraying = 151;
+    optional uint32 asf_section6_spraying = 151;
   
     // Parameter ID: 1096
     // Property Name: ASF Section 7 Spraying
@@ -1753,7 +1753,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_7_spraying = 152;
+    optional uint32 asf_section7_spraying = 152;
   
     // Parameter ID: 1097
     // Property Name: ASF Section 8 Spraying
@@ -1764,7 +1764,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_8_spraying = 153;
+    optional uint32 asf_section8_spraying = 153;
   
     // Parameter ID: 1098
     // Property Name: ASF Section 9 Spraying
@@ -1775,7 +1775,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section_9_spraying = 154;
+    optional uint32 asf_section9_spraying = 154;
   
     // Parameter ID: 1036
     // Property Name: USF Spreading
@@ -1819,7 +1819,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_salt_spreader_s_drive_wheel = 158;
+    optional uint32 usf_salt_spreaders_drive_wheel = 158;
   
     // Parameter ID: 1040
     // Property Name: USF Brushes
@@ -2678,7 +2678,7 @@ message Compact {
     optional uint32 commanded_equivalence_r = 322;
   
     // Intake MAP 2 Bytes: Intake manifold absolute pressure, Range: 0-2048 kPa
-    optional uint32 intake_map_2_bytes = 323;
+    optional uint32 intake_map2_bytes = 323;
   
     // Hybrid System Voltage: Hybrid vehicle system voltage, Range: 0-1024 V
     optional uint32 hybrid_system_voltage = 324;
@@ -2870,10 +2870,10 @@ message Compact {
     optional uint32 program_number = 386;
   
     // Module ID 8B: Module ID, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 module_id_8b = 387;
+    optional uint64 module_id8b = 387;
   
     // Module ID 17B: Module ID, HEX, Range: 0-0x7FFFFFFFFFFFFFFF
-    optional bytes module_id_17b = 388;
+    optional bytes module_id17b = 388;
   
     // Engine Worktime: Engine work time, Range: 0-1677215 min
     optional uint32 engine_worktime = 389;
@@ -3042,6 +3042,122 @@ message Compact {
     optional bytes agricultural_state_flags_p4 = 464;
     optional uint32 door_status = 465;
     optional int32 engine_temperature = 467;
+    optional uint64 utility_state_flags_p4 = 468;
+    optional uint64 cistern_state_flags_p4 = 469;
+    optional uint32 lng_used = 470;
+    optional uint32 lng_used_counted = 471;
+    optional uint32 lng_level_percent = 472;
+    optional uint32 lng_level_kg = 473;
+    optional uint32 total_lpg_used = 474;
+    optional uint32 total_lpg_used_counted = 475;
+    optional uint32 lpg_level_proc = 476;
+    optional uint32 lpg_level_liters = 477;
+    optional bool ssf_ignition = 478;
+    optional bool ssf_key_in_ignition_lock = 479;
+    optional bool ssf_webasto = 480;
+    optional bool ssf_engine_working = 481;
+    optional bool ssf_standalone_engine = 482;
+    optional bool ssf_ready_to_drive = 483;
+    optional bool ssf_engine_working_on_cng = 484;
+    optional bool ssf_work_mode = 485;
+    optional bool ssf_operator = 486;
+    optional bool ssf_interlock = 487;
+    optional bool ssf_engine_lock_active = 488;
+    optional bool ssf_request_to_lock_engine = 489;
+    optional bool ssf_handbrake_is_active = 490;
+    optional bool ssf_footbrake_is_active = 491;
+    optional bool ssf_clutch_pushed = 492;
+    optional bool ssf_hazard_warning_lights = 493;
+    optional bool ssf_front_left_door_open = 494;
+    optional bool ssf_front_right_door_open = 495;
+    optional bool ssf_rear_left_door_open = 496;
+    optional bool ssf_rear_right_door_open = 497;
+    optional bool ssf_trunk_door_open = 498;
+    optional bool ssf_engine_cover_open = 499;
+    optional bool ssf_roof_open = 500;
+    optional bool ssf_charging_wire_plugged = 501;
+    optional bool ssf_battery_charging = 502;
+    optional bool ssf_electric_engine_state = 503;
+    optional bool ssf_car_closed_factory_remote = 504;
+    optional bool ssf_car_is_closed = 505;
+    optional bool ssf_factory_alarm_actuated = 506;
+    optional bool ssf_factory_alarm_emulated = 507;
+    optional bool ssf_signal_close_factory_remote = 508;
+    optional bool ssf_signal_open_factory_remote = 509;
+    optional bool ssf_rearming_signal = 510;
+    optional bool ssf_trunk_door_opened_factory_remote = 511;
+    optional bool ssf_can_module_in_sleep = 512;
+    optional bool ssf_factory_remote3x = 513;
+    optional bool ssf_factory_armed = 514;
+    optional bool ssf_parking_gear_active = 515;
+    optional bool ssf_reverse_gear_active = 516;
+    optional bool ssf_neutral_gear_active = 517;
+    optional bool ssf_drive_is_active = 518;
+    optional bool ssf_engine_working_on_dual_fuel = 519;
+    optional bool ssf_engine_working_on_lpg = 520;
+    optional bool csf_parking_lights = 521;
+    optional bool csf_dipped_head_lights = 522;
+    optional bool csf_full_beam_headlights = 523;
+    optional bool csf_rear_fog_lights = 524;
+    optional bool csf_front_fog_lights = 525;
+    optional bool csf_additional_front_lights = 526;
+    optional bool csf_additional_rear_lights = 527;
+    optional bool csf_light_signal = 528;
+    optional bool csf_air_conditioning = 529;
+    optional bool csf_cruise_control = 530;
+    optional bool csf_automatic_retarder = 531;
+    optional bool csf_manual_retarder = 532;
+    optional bool csf_drivers_seatbelt_fastened = 533;
+    optional bool csf_front_drivers_seatbelt_fastened = 534;
+    optional bool csf_left_drivers_seatbelt_fastened = 535;
+    optional bool csf_right_drivers_seatbelt_fastened = 536;
+    optional bool csf_centre_drivers_seatbelt_fastened = 537;
+    optional bool csf_front_passenger_present = 538;
+    optional bool csf_pto = 539;
+    optional bool csf_front_differential_locked = 540;
+    optional bool csf_rear_differential_locked = 541;
+    optional bool csf_central_differential4hi_locked = 542;
+    optional bool csf_rear_differential4lo_locked = 543;
+    optional bool csf_trailer_axle1_lift_active = 544;
+    optional bool csf_trailer_axle2_lift_active = 545;
+    optional bool csf_trailer_connected = 546;
+    optional bool csf_start_stop_system_inactive = 547;
+    optional bool isf_check_engine_indicator = 548;
+    optional bool isf_abs_indicator = 549;
+    optional bool isf_esp_indicator = 550;
+    optional bool isf_esp_turned_off = 551;
+    optional bool isf_stop_indicator = 552;
+    optional bool isf_oil_level_indicator = 553;
+    optional bool isf_coolant_liquid_level = 554;
+    optional bool isf_battery_not_charging_indicator = 555;
+    optional bool isf_handbrake_system_indicator = 556;
+    optional bool isf_airbag_indicator = 557;
+    optional bool isf_eps_indicator = 558;
+    optional bool isf_warning_indicator = 559;
+    optional bool isf_lights_failure_indicator = 560;
+    optional bool isf_low_tire_pressure_indicator = 561;
+    optional bool isf_wear_of_brake_pads_indicator = 562;
+    optional bool isf_low_fuel_level_indicator = 563;
+    optional bool isf_maintenance_required_indicator = 564;
+    optional bool isf_glow_plug_indicator = 565;
+    optional bool isf_fap_indicator = 566;
+    optional bool isf_epc_indicator = 567;
+    optional bool isf_clogged_engine_oil_filter_indicator = 568;
+    optional bool isf_low_engine_oil_pressure_indicator = 569;
+    optional bool isf_too_high_engine_oil_temperature_indicator = 570;
+    optional bool isf_low_coolant_level_indicator = 571;
+    optional bool isf_clogged_hydraulic_system_oil_filter_indicator = 572;
+    optional bool isf_hydraulic_system_low_pressure_indicator = 573;
+    optional bool isf_hydraulic_oil_low_level_indicator = 574;
+    optional bool isf_hydraulic_system_high_temperature_indicator = 575;
+    optional bool isf_oil_overflow_in_hydraulic_chamber_indicator = 576;
+    optional bool isf_clogged_air_filter_indicator = 577;
+    optional bool isf_clogged_fuel_filter_indicator = 578;
+    optional bool isf_water_in_fuel_indicator = 579;
+    optional bool asf_grain_tank_is100_percent_full = 611;
+    optional bool asf_grain_tank_is70_percent_full = 612;
+    optional bool asf_straw_chopper_speed_below_the_norm = 623;
+    optional bool usf_spreading2 = 650;
 }
 
 enum Event {
@@ -3061,14 +3177,14 @@ enum Event {
   DOOR_OPEN = 13;
   ENGINE_DOOR_OPEN = 14;
   TRUNK_DOOR_OPEN = 15;
-  DIGITAL_INPUT_1 = 16;
-  DIGITAL_INPUT_2 = 17;
-  DIGITAL_INPUT_3 = 18;
-  DIGITAL_OUTPUT_1 = 19;
-  DIGITAL_OUTPUT_2 = 20;
-  DIGITAL_OUTPUT_3 = 21;
-  ANALOG_INPUT_1 = 22;
-  ANALOG_INPUT_2 = 23;
+  DIGITAL_INPUT1 = 16;
+  DIGITAL_INPUT2 = 17;
+  DIGITAL_INPUT3 = 18;
+  DIGITAL_OUTPUT1 = 19;
+  DIGITAL_OUTPUT2 = 20;
+  DIGITAL_OUTPUT3 = 21;
+  ANALOG_INPUT1 = 22;
+  ANALOG_INPUT2 = 23;
   FOOT_BRAKE = 24;
   TEMPERATURE = 25;
   FUEL = 26;

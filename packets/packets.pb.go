@@ -42,14 +42,14 @@ const (
 	Event_DOOR_OPEN                   Event = 13
 	Event_ENGINE_DOOR_OPEN            Event = 14
 	Event_TRUNK_DOOR_OPEN             Event = 15
-	Event_DIGITAL_INPUT_1             Event = 16
-	Event_DIGITAL_INPUT_2             Event = 17
-	Event_DIGITAL_INPUT_3             Event = 18
-	Event_DIGITAL_OUTPUT_1            Event = 19
-	Event_DIGITAL_OUTPUT_2            Event = 20
-	Event_DIGITAL_OUTPUT_3            Event = 21
-	Event_ANALOG_INPUT_1              Event = 22
-	Event_ANALOG_INPUT_2              Event = 23
+	Event_DIGITAL_INPUT1              Event = 16
+	Event_DIGITAL_INPUT2              Event = 17
+	Event_DIGITAL_INPUT3              Event = 18
+	Event_DIGITAL_OUTPUT1             Event = 19
+	Event_DIGITAL_OUTPUT2             Event = 20
+	Event_DIGITAL_OUTPUT3             Event = 21
+	Event_ANALOG_INPUT1               Event = 22
+	Event_ANALOG_INPUT2               Event = 23
 	Event_FOOT_BRAKE                  Event = 24
 	Event_TEMPERATURE                 Event = 25
 	Event_FUEL                        Event = 26
@@ -98,14 +98,14 @@ var (
 		13: "DOOR_OPEN",
 		14: "ENGINE_DOOR_OPEN",
 		15: "TRUNK_DOOR_OPEN",
-		16: "DIGITAL_INPUT_1",
-		17: "DIGITAL_INPUT_2",
-		18: "DIGITAL_INPUT_3",
-		19: "DIGITAL_OUTPUT_1",
-		20: "DIGITAL_OUTPUT_2",
-		21: "DIGITAL_OUTPUT_3",
-		22: "ANALOG_INPUT_1",
-		23: "ANALOG_INPUT_2",
+		16: "DIGITAL_INPUT1",
+		17: "DIGITAL_INPUT2",
+		18: "DIGITAL_INPUT3",
+		19: "DIGITAL_OUTPUT1",
+		20: "DIGITAL_OUTPUT2",
+		21: "DIGITAL_OUTPUT3",
+		22: "ANALOG_INPUT1",
+		23: "ANALOG_INPUT2",
 		24: "FOOT_BRAKE",
 		25: "TEMPERATURE",
 		26: "FUEL",
@@ -151,14 +151,14 @@ var (
 		"DOOR_OPEN":                   13,
 		"ENGINE_DOOR_OPEN":            14,
 		"TRUNK_DOOR_OPEN":             15,
-		"DIGITAL_INPUT_1":             16,
-		"DIGITAL_INPUT_2":             17,
-		"DIGITAL_INPUT_3":             18,
-		"DIGITAL_OUTPUT_1":            19,
-		"DIGITAL_OUTPUT_2":            20,
-		"DIGITAL_OUTPUT_3":            21,
-		"ANALOG_INPUT_1":              22,
-		"ANALOG_INPUT_2":              23,
+		"DIGITAL_INPUT1":              16,
+		"DIGITAL_INPUT2":              17,
+		"DIGITAL_INPUT3":              18,
+		"DIGITAL_OUTPUT1":             19,
+		"DIGITAL_OUTPUT2":             20,
+		"DIGITAL_OUTPUT3":             21,
+		"ANALOG_INPUT1":               22,
+		"ANALOG_INPUT2":               23,
 		"FOOT_BRAKE":                  24,
 		"TEMPERATURE":                 25,
 		"FUEL":                        26,
@@ -1926,7 +1926,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainTankIs_100Full *uint32 `protobuf:"varint,123,opt,name=asf_grain_tank_is_100_full,json=asfGrainTankIs100Full,proto3,oneof" json:"asf_grain_tank_is_100_full,omitempty"`
+	AsfGrainTankIs100Full *uint32 `protobuf:"varint,123,opt,name=asf_grain_tank_is100_full,json=asfGrainTankIs100Full,proto3,oneof" json:"asf_grain_tank_is100_full,omitempty"`
 	// Parameter ID: 1017
 	// Property Name: ASF Grain Tank Is 70% Full
 	// Type: Unsigned
@@ -1936,7 +1936,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainTankIs_70Full *uint32 `protobuf:"varint,124,opt,name=asf_grain_tank_is_70_full,json=asfGrainTankIs70Full,proto3,oneof" json:"asf_grain_tank_is_70_full,omitempty"`
+	AsfGrainTankIs70Full *uint32 `protobuf:"varint,124,opt,name=asf_grain_tank_is70_full,json=asfGrainTankIs70Full,proto3,oneof" json:"asf_grain_tank_is70_full,omitempty"`
 	// Parameter ID: 1018
 	// Property Name: ASF Grain Tank Is Opened
 	// Type: Unsigned
@@ -2006,7 +2006,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades *uint32 `protobuf:"varint,131,opt,name=asf_low_temperature_of_drive_system_hydraulics_less_than_5_grades,json=asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades,proto3,oneof" json:"asf_low_temperature_of_drive_system_hydraulics_less_than_5_grades,omitempty"`
+	AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades *uint32 `protobuf:"varint,131,opt,name=asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,json=asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades,proto3,oneof" json:"asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,omitempty"`
 	// Parameter ID: 1025
 	// Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
 	// Type: Unsigned
@@ -2016,7 +2016,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades *uint32 `protobuf:"varint,132,opt,name=asf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades,json=asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades,proto3,oneof" json:"asf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades,omitempty"`
+	AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades *uint32 `protobuf:"varint,132,opt,name=asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,json=asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades,proto3,oneof" json:"asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,omitempty"`
 	// Parameter ID: 1026
 	// Property Name: ASF Ear Auger Speed Below The Norm
 	// Type: Unsigned
@@ -2136,7 +2136,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfService_2RequiredIndicator *uint32 `protobuf:"varint,144,opt,name=asf_service_2_required_indicator,json=asfService2RequiredIndicator,proto3,oneof" json:"asf_service_2_required_indicator,omitempty"`
+	AsfService2RequiredIndicator *uint32 `protobuf:"varint,144,opt,name=asf_service2_required_indicator,json=asfService2RequiredIndicator,proto3,oneof" json:"asf_service2_required_indicator,omitempty"`
 	// Parameter ID: 1089
 	// Property Name: ASF Drain Filter Clogged Indicator
 	// Type: Unsigned
@@ -2156,7 +2156,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_1Spraying *uint32 `protobuf:"varint,146,opt,name=asf_section_1_spraying,json=asfSection1Spraying,proto3,oneof" json:"asf_section_1_spraying,omitempty"`
+	AsfSection1Spraying *uint32 `protobuf:"varint,146,opt,name=asf_section1_spraying,json=asfSection1Spraying,proto3,oneof" json:"asf_section1_spraying,omitempty"`
 	// Parameter ID: 1091
 	// Property Name: ASF Section 2 Spraying
 	// Type: Unsigned
@@ -2166,7 +2166,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_2Spraying *uint32 `protobuf:"varint,147,opt,name=asf_section_2_spraying,json=asfSection2Spraying,proto3,oneof" json:"asf_section_2_spraying,omitempty"`
+	AsfSection2Spraying *uint32 `protobuf:"varint,147,opt,name=asf_section2_spraying,json=asfSection2Spraying,proto3,oneof" json:"asf_section2_spraying,omitempty"`
 	// Parameter ID: 1092
 	// Property Name: ASF Section 3 Spraying
 	// Type: Unsigned
@@ -2176,7 +2176,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_3Spraying *uint32 `protobuf:"varint,148,opt,name=asf_section_3_spraying,json=asfSection3Spraying,proto3,oneof" json:"asf_section_3_spraying,omitempty"`
+	AsfSection3Spraying *uint32 `protobuf:"varint,148,opt,name=asf_section3_spraying,json=asfSection3Spraying,proto3,oneof" json:"asf_section3_spraying,omitempty"`
 	// Parameter ID: 1093
 	// Property Name: ASF Section 4 Spraying
 	// Type: Unsigned
@@ -2186,7 +2186,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_4Spraying *uint32 `protobuf:"varint,149,opt,name=asf_section_4_spraying,json=asfSection4Spraying,proto3,oneof" json:"asf_section_4_spraying,omitempty"`
+	AsfSection4Spraying *uint32 `protobuf:"varint,149,opt,name=asf_section4_spraying,json=asfSection4Spraying,proto3,oneof" json:"asf_section4_spraying,omitempty"`
 	// Parameter ID: 1094
 	// Property Name: ASF Section 5 Spraying
 	// Type: Unsigned
@@ -2196,7 +2196,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_5Spraying *uint32 `protobuf:"varint,150,opt,name=asf_section_5_spraying,json=asfSection5Spraying,proto3,oneof" json:"asf_section_5_spraying,omitempty"`
+	AsfSection5Spraying *uint32 `protobuf:"varint,150,opt,name=asf_section5_spraying,json=asfSection5Spraying,proto3,oneof" json:"asf_section5_spraying,omitempty"`
 	// Parameter ID: 1095
 	// Property Name: ASF Section 6 Spraying
 	// Type: Unsigned
@@ -2206,7 +2206,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_6Spraying *uint32 `protobuf:"varint,151,opt,name=asf_section_6_spraying,json=asfSection6Spraying,proto3,oneof" json:"asf_section_6_spraying,omitempty"`
+	AsfSection6Spraying *uint32 `protobuf:"varint,151,opt,name=asf_section6_spraying,json=asfSection6Spraying,proto3,oneof" json:"asf_section6_spraying,omitempty"`
 	// Parameter ID: 1096
 	// Property Name: ASF Section 7 Spraying
 	// Type: Unsigned
@@ -2216,7 +2216,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_7Spraying *uint32 `protobuf:"varint,152,opt,name=asf_section_7_spraying,json=asfSection7Spraying,proto3,oneof" json:"asf_section_7_spraying,omitempty"`
+	AsfSection7Spraying *uint32 `protobuf:"varint,152,opt,name=asf_section7_spraying,json=asfSection7Spraying,proto3,oneof" json:"asf_section7_spraying,omitempty"`
 	// Parameter ID: 1097
 	// Property Name: ASF Section 8 Spraying
 	// Type: Unsigned
@@ -2226,7 +2226,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_8Spraying *uint32 `protobuf:"varint,153,opt,name=asf_section_8_spraying,json=asfSection8Spraying,proto3,oneof" json:"asf_section_8_spraying,omitempty"`
+	AsfSection8Spraying *uint32 `protobuf:"varint,153,opt,name=asf_section8_spraying,json=asfSection8Spraying,proto3,oneof" json:"asf_section8_spraying,omitempty"`
 	// Parameter ID: 1098
 	// Property Name: ASF Section 9 Spraying
 	// Type: Unsigned
@@ -2236,7 +2236,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection_9Spraying *uint32 `protobuf:"varint,154,opt,name=asf_section_9_spraying,json=asfSection9Spraying,proto3,oneof" json:"asf_section_9_spraying,omitempty"`
+	AsfSection9Spraying *uint32 `protobuf:"varint,154,opt,name=asf_section9_spraying,json=asfSection9Spraying,proto3,oneof" json:"asf_section9_spraying,omitempty"`
 	// Parameter ID: 1036
 	// Property Name: USF Spreading
 	// Type: Unsigned
@@ -2276,7 +2276,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfSaltSpreaderSDriveWheel *uint32 `protobuf:"varint,158,opt,name=usf_salt_spreader_s_drive_wheel,json=usfSaltSpreaderSDriveWheel,proto3,oneof" json:"usf_salt_spreader_s_drive_wheel,omitempty"`
+	UsfSaltSpreadersDriveWheel *uint32 `protobuf:"varint,158,opt,name=usf_salt_spreaders_drive_wheel,json=usfSaltSpreadersDriveWheel,proto3,oneof" json:"usf_salt_spreaders_drive_wheel,omitempty"`
 	// Parameter ID: 1040
 	// Property Name: USF Brushes
 	// Type: Unsigned
@@ -3005,7 +3005,7 @@ type Compact struct {
 	// Commanded Equivalence R: Fuel-Air Commanded Equivalence Ratio, Range: 0-2 (multiplier: 0.01)
 	CommandedEquivalenceR *uint32 `protobuf:"varint,322,opt,name=commanded_equivalence_r,json=commandedEquivalenceR,proto3,oneof" json:"commanded_equivalence_r,omitempty"`
 	// Intake MAP 2 Bytes: Intake manifold absolute pressure, Range: 0-2048 kPa
-	IntakeMap_2Bytes *uint32 `protobuf:"varint,323,opt,name=intake_map_2_bytes,json=intakeMap2Bytes,proto3,oneof" json:"intake_map_2_bytes,omitempty"`
+	IntakeMap2Bytes *uint32 `protobuf:"varint,323,opt,name=intake_map2_bytes,json=intakeMap2Bytes,proto3,oneof" json:"intake_map2_bytes,omitempty"`
 	// Hybrid System Voltage: Hybrid vehicle system voltage, Range: 0-1024 V
 	HybridSystemVoltage *uint32 `protobuf:"varint,324,opt,name=hybrid_system_voltage,json=hybridSystemVoltage,proto3,oneof" json:"hybrid_system_voltage,omitempty"`
 	// Hybrid System Current: Hybrid vehicle system current, Range: -3277-3277 A
@@ -3133,9 +3133,9 @@ type Compact struct {
 	// Program Number: Range: 0-99999
 	ProgramNumber *uint32 `protobuf:"varint,386,opt,name=program_number,json=programNumber,proto3,oneof" json:"program_number,omitempty"`
 	// Module ID 8B: Module ID, Range: 0-0xFFFFFFFFFFFFFFFF
-	ModuleId_8B *uint64 `protobuf:"varint,387,opt,name=module_id_8b,json=moduleId8b,proto3,oneof" json:"module_id_8b,omitempty"`
+	ModuleId8B *uint64 `protobuf:"varint,387,opt,name=module_id8b,json=moduleId8b,proto3,oneof" json:"module_id8b,omitempty"`
 	// Module ID 17B: Module ID, HEX, Range: 0-0x7FFFFFFFFFFFFFFF
-	ModuleId_17B []byte `protobuf:"bytes,388,opt,name=module_id_17b,json=moduleId17b,proto3,oneof" json:"module_id_17b,omitempty"`
+	ModuleId17B []byte `protobuf:"bytes,388,opt,name=module_id17b,json=moduleId17b,proto3,oneof" json:"module_id17b,omitempty"`
 	// Engine Worktime: Engine work time, Range: 0-1677215 min
 	EngineWorktime *uint32 `protobuf:"varint,389,opt,name=engine_worktime,json=engineWorktime,proto3,oneof" json:"engine_worktime,omitempty"`
 	// Engine Worktime Counted: Total engine work time, Range: 0-1677215 min
@@ -3285,11 +3285,127 @@ type Compact struct {
 	// Indicator State Flags P4: Indicator state flags protocol 4, HEX
 	IndicatorStateFlagsP4 []byte `protobuf:"bytes,463,opt,name=indicator_state_flags_p4,json=indicatorStateFlagsP4,proto3,oneof" json:"indicator_state_flags_p4,omitempty"`
 	// Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
-	AgriculturalStateFlagsP4 []byte  `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
-	DoorStatus               *uint32 `protobuf:"varint,465,opt,name=door_status,json=doorStatus,proto3,oneof" json:"door_status,omitempty"`
-	EngineTemperature        *int32  `protobuf:"varint,467,opt,name=engine_temperature,json=engineTemperature,proto3,oneof" json:"engine_temperature,omitempty"`
-	unknownFields            protoimpl.UnknownFields
-	sizeCache                protoimpl.SizeCache
+	AgriculturalStateFlagsP4                    []byte  `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
+	DoorStatus                                  *uint32 `protobuf:"varint,465,opt,name=door_status,json=doorStatus,proto3,oneof" json:"door_status,omitempty"`
+	EngineTemperature                           *int32  `protobuf:"varint,467,opt,name=engine_temperature,json=engineTemperature,proto3,oneof" json:"engine_temperature,omitempty"`
+	UtilityStateFlagsP4                         *uint64 `protobuf:"varint,468,opt,name=utility_state_flags_p4,json=utilityStateFlagsP4,proto3,oneof" json:"utility_state_flags_p4,omitempty"`
+	CisternStateFlagsP4                         *uint64 `protobuf:"varint,469,opt,name=cistern_state_flags_p4,json=cisternStateFlagsP4,proto3,oneof" json:"cistern_state_flags_p4,omitempty"`
+	LngUsed                                     *uint32 `protobuf:"varint,470,opt,name=lng_used,json=lngUsed,proto3,oneof" json:"lng_used,omitempty"`
+	LngUsedCounted                              *uint32 `protobuf:"varint,471,opt,name=lng_used_counted,json=lngUsedCounted,proto3,oneof" json:"lng_used_counted,omitempty"`
+	LngLevelPercent                             *uint32 `protobuf:"varint,472,opt,name=lng_level_percent,json=lngLevelPercent,proto3,oneof" json:"lng_level_percent,omitempty"`
+	LngLevelKg                                  *uint32 `protobuf:"varint,473,opt,name=lng_level_kg,json=lngLevelKg,proto3,oneof" json:"lng_level_kg,omitempty"`
+	TotalLpgUsed                                *uint32 `protobuf:"varint,474,opt,name=total_lpg_used,json=totalLpgUsed,proto3,oneof" json:"total_lpg_used,omitempty"`
+	TotalLpgUsedCounted                         *uint32 `protobuf:"varint,475,opt,name=total_lpg_used_counted,json=totalLpgUsedCounted,proto3,oneof" json:"total_lpg_used_counted,omitempty"`
+	LpgLevelProc                                *uint32 `protobuf:"varint,476,opt,name=lpg_level_proc,json=lpgLevelProc,proto3,oneof" json:"lpg_level_proc,omitempty"`
+	LpgLevelLiters                              *uint32 `protobuf:"varint,477,opt,name=lpg_level_liters,json=lpgLevelLiters,proto3,oneof" json:"lpg_level_liters,omitempty"`
+	SsfIgnition                                 *bool   `protobuf:"varint,478,opt,name=ssf_ignition,json=ssfIgnition,proto3,oneof" json:"ssf_ignition,omitempty"`
+	SsfKeyInIgnitionLock                        *bool   `protobuf:"varint,479,opt,name=ssf_key_in_ignition_lock,json=ssfKeyInIgnitionLock,proto3,oneof" json:"ssf_key_in_ignition_lock,omitempty"`
+	SsfWebasto                                  *bool   `protobuf:"varint,480,opt,name=ssf_webasto,json=ssfWebasto,proto3,oneof" json:"ssf_webasto,omitempty"`
+	SsfEngineWorking                            *bool   `protobuf:"varint,481,opt,name=ssf_engine_working,json=ssfEngineWorking,proto3,oneof" json:"ssf_engine_working,omitempty"`
+	SsfStandaloneEngine                         *bool   `protobuf:"varint,482,opt,name=ssf_standalone_engine,json=ssfStandaloneEngine,proto3,oneof" json:"ssf_standalone_engine,omitempty"`
+	SsfReadyToDrive                             *bool   `protobuf:"varint,483,opt,name=ssf_ready_to_drive,json=ssfReadyToDrive,proto3,oneof" json:"ssf_ready_to_drive,omitempty"`
+	SsfEngineWorkingOnCng                       *bool   `protobuf:"varint,484,opt,name=ssf_engine_working_on_cng,json=ssfEngineWorkingOnCng,proto3,oneof" json:"ssf_engine_working_on_cng,omitempty"`
+	SsfWorkMode                                 *bool   `protobuf:"varint,485,opt,name=ssf_work_mode,json=ssfWorkMode,proto3,oneof" json:"ssf_work_mode,omitempty"`
+	SsfOperator                                 *bool   `protobuf:"varint,486,opt,name=ssf_operator,json=ssfOperator,proto3,oneof" json:"ssf_operator,omitempty"`
+	SsfInterlock                                *bool   `protobuf:"varint,487,opt,name=ssf_interlock,json=ssfInterlock,proto3,oneof" json:"ssf_interlock,omitempty"`
+	SsfEngineLockActive                         *bool   `protobuf:"varint,488,opt,name=ssf_engine_lock_active,json=ssfEngineLockActive,proto3,oneof" json:"ssf_engine_lock_active,omitempty"`
+	SsfRequestToLockEngine                      *bool   `protobuf:"varint,489,opt,name=ssf_request_to_lock_engine,json=ssfRequestToLockEngine,proto3,oneof" json:"ssf_request_to_lock_engine,omitempty"`
+	SsfHandbrakeIsActive                        *bool   `protobuf:"varint,490,opt,name=ssf_handbrake_is_active,json=ssfHandbrakeIsActive,proto3,oneof" json:"ssf_handbrake_is_active,omitempty"`
+	SsfFootbrakeIsActive                        *bool   `protobuf:"varint,491,opt,name=ssf_footbrake_is_active,json=ssfFootbrakeIsActive,proto3,oneof" json:"ssf_footbrake_is_active,omitempty"`
+	SsfClutchPushed                             *bool   `protobuf:"varint,492,opt,name=ssf_clutch_pushed,json=ssfClutchPushed,proto3,oneof" json:"ssf_clutch_pushed,omitempty"`
+	SsfHazardWarningLights                      *bool   `protobuf:"varint,493,opt,name=ssf_hazard_warning_lights,json=ssfHazardWarningLights,proto3,oneof" json:"ssf_hazard_warning_lights,omitempty"`
+	SsfFrontLeftDoorOpen                        *bool   `protobuf:"varint,494,opt,name=ssf_front_left_door_open,json=ssfFrontLeftDoorOpen,proto3,oneof" json:"ssf_front_left_door_open,omitempty"`
+	SsfFrontRightDoorOpen                       *bool   `protobuf:"varint,495,opt,name=ssf_front_right_door_open,json=ssfFrontRightDoorOpen,proto3,oneof" json:"ssf_front_right_door_open,omitempty"`
+	SsfRearLeftDoorOpen                         *bool   `protobuf:"varint,496,opt,name=ssf_rear_left_door_open,json=ssfRearLeftDoorOpen,proto3,oneof" json:"ssf_rear_left_door_open,omitempty"`
+	SsfRearRightDoorOpen                        *bool   `protobuf:"varint,497,opt,name=ssf_rear_right_door_open,json=ssfRearRightDoorOpen,proto3,oneof" json:"ssf_rear_right_door_open,omitempty"`
+	SsfTrunkDoorOpen                            *bool   `protobuf:"varint,498,opt,name=ssf_trunk_door_open,json=ssfTrunkDoorOpen,proto3,oneof" json:"ssf_trunk_door_open,omitempty"`
+	SsfEngineCoverOpen                          *bool   `protobuf:"varint,499,opt,name=ssf_engine_cover_open,json=ssfEngineCoverOpen,proto3,oneof" json:"ssf_engine_cover_open,omitempty"`
+	SsfRoofOpen                                 *bool   `protobuf:"varint,500,opt,name=ssf_roof_open,json=ssfRoofOpen,proto3,oneof" json:"ssf_roof_open,omitempty"`
+	SsfChargingWirePlugged                      *bool   `protobuf:"varint,501,opt,name=ssf_charging_wire_plugged,json=ssfChargingWirePlugged,proto3,oneof" json:"ssf_charging_wire_plugged,omitempty"`
+	SsfBatteryCharging                          *bool   `protobuf:"varint,502,opt,name=ssf_battery_charging,json=ssfBatteryCharging,proto3,oneof" json:"ssf_battery_charging,omitempty"`
+	SsfElectricEngineState                      *bool   `protobuf:"varint,503,opt,name=ssf_electric_engine_state,json=ssfElectricEngineState,proto3,oneof" json:"ssf_electric_engine_state,omitempty"`
+	SsfCarClosedFactoryRemote                   *bool   `protobuf:"varint,504,opt,name=ssf_car_closed_factory_remote,json=ssfCarClosedFactoryRemote,proto3,oneof" json:"ssf_car_closed_factory_remote,omitempty"`
+	SsfCarIsClosed                              *bool   `protobuf:"varint,505,opt,name=ssf_car_is_closed,json=ssfCarIsClosed,proto3,oneof" json:"ssf_car_is_closed,omitempty"`
+	SsfFactoryAlarmActuated                     *bool   `protobuf:"varint,506,opt,name=ssf_factory_alarm_actuated,json=ssfFactoryAlarmActuated,proto3,oneof" json:"ssf_factory_alarm_actuated,omitempty"`
+	SsfFactoryAlarmEmulated                     *bool   `protobuf:"varint,507,opt,name=ssf_factory_alarm_emulated,json=ssfFactoryAlarmEmulated,proto3,oneof" json:"ssf_factory_alarm_emulated,omitempty"`
+	SsfSignalCloseFactoryRemote                 *bool   `protobuf:"varint,508,opt,name=ssf_signal_close_factory_remote,json=ssfSignalCloseFactoryRemote,proto3,oneof" json:"ssf_signal_close_factory_remote,omitempty"`
+	SsfSignalOpenFactoryRemote                  *bool   `protobuf:"varint,509,opt,name=ssf_signal_open_factory_remote,json=ssfSignalOpenFactoryRemote,proto3,oneof" json:"ssf_signal_open_factory_remote,omitempty"`
+	SsfRearmingSignal                           *bool   `protobuf:"varint,510,opt,name=ssf_rearming_signal,json=ssfRearmingSignal,proto3,oneof" json:"ssf_rearming_signal,omitempty"`
+	SsfTrunkDoorOpenedFactoryRemote             *bool   `protobuf:"varint,511,opt,name=ssf_trunk_door_opened_factory_remote,json=ssfTrunkDoorOpenedFactoryRemote,proto3,oneof" json:"ssf_trunk_door_opened_factory_remote,omitempty"`
+	SsfCanModuleInSleep                         *bool   `protobuf:"varint,512,opt,name=ssf_can_module_in_sleep,json=ssfCanModuleInSleep,proto3,oneof" json:"ssf_can_module_in_sleep,omitempty"`
+	SsfFactoryRemote3X                          *bool   `protobuf:"varint,513,opt,name=ssf_factory_remote3x,json=ssfFactoryRemote3x,proto3,oneof" json:"ssf_factory_remote3x,omitempty"`
+	SsfFactoryArmed                             *bool   `protobuf:"varint,514,opt,name=ssf_factory_armed,json=ssfFactoryArmed,proto3,oneof" json:"ssf_factory_armed,omitempty"`
+	SsfParkingGearActive                        *bool   `protobuf:"varint,515,opt,name=ssf_parking_gear_active,json=ssfParkingGearActive,proto3,oneof" json:"ssf_parking_gear_active,omitempty"`
+	SsfReverseGearActive                        *bool   `protobuf:"varint,516,opt,name=ssf_reverse_gear_active,json=ssfReverseGearActive,proto3,oneof" json:"ssf_reverse_gear_active,omitempty"`
+	SsfNeutralGearActive                        *bool   `protobuf:"varint,517,opt,name=ssf_neutral_gear_active,json=ssfNeutralGearActive,proto3,oneof" json:"ssf_neutral_gear_active,omitempty"`
+	SsfDriveIsActive                            *bool   `protobuf:"varint,518,opt,name=ssf_drive_is_active,json=ssfDriveIsActive,proto3,oneof" json:"ssf_drive_is_active,omitempty"`
+	SsfEngineWorkingOnDualFuel                  *bool   `protobuf:"varint,519,opt,name=ssf_engine_working_on_dual_fuel,json=ssfEngineWorkingOnDualFuel,proto3,oneof" json:"ssf_engine_working_on_dual_fuel,omitempty"`
+	SsfEngineWorkingOnLpg                       *bool   `protobuf:"varint,520,opt,name=ssf_engine_working_on_lpg,json=ssfEngineWorkingOnLpg,proto3,oneof" json:"ssf_engine_working_on_lpg,omitempty"`
+	CsfParkingLights                            *bool   `protobuf:"varint,521,opt,name=csf_parking_lights,json=csfParkingLights,proto3,oneof" json:"csf_parking_lights,omitempty"`
+	CsfDippedHeadLights                         *bool   `protobuf:"varint,522,opt,name=csf_dipped_head_lights,json=csfDippedHeadLights,proto3,oneof" json:"csf_dipped_head_lights,omitempty"`
+	CsfFullBeamHeadlights                       *bool   `protobuf:"varint,523,opt,name=csf_full_beam_headlights,json=csfFullBeamHeadlights,proto3,oneof" json:"csf_full_beam_headlights,omitempty"`
+	CsfRearFogLights                            *bool   `protobuf:"varint,524,opt,name=csf_rear_fog_lights,json=csfRearFogLights,proto3,oneof" json:"csf_rear_fog_lights,omitempty"`
+	CsfFrontFogLights                           *bool   `protobuf:"varint,525,opt,name=csf_front_fog_lights,json=csfFrontFogLights,proto3,oneof" json:"csf_front_fog_lights,omitempty"`
+	CsfAdditionalFrontLights                    *bool   `protobuf:"varint,526,opt,name=csf_additional_front_lights,json=csfAdditionalFrontLights,proto3,oneof" json:"csf_additional_front_lights,omitempty"`
+	CsfAdditionalRearLights                     *bool   `protobuf:"varint,527,opt,name=csf_additional_rear_lights,json=csfAdditionalRearLights,proto3,oneof" json:"csf_additional_rear_lights,omitempty"`
+	CsfLightSignal                              *bool   `protobuf:"varint,528,opt,name=csf_light_signal,json=csfLightSignal,proto3,oneof" json:"csf_light_signal,omitempty"`
+	CsfAirConditioning                          *bool   `protobuf:"varint,529,opt,name=csf_air_conditioning,json=csfAirConditioning,proto3,oneof" json:"csf_air_conditioning,omitempty"`
+	CsfCruiseControl                            *bool   `protobuf:"varint,530,opt,name=csf_cruise_control,json=csfCruiseControl,proto3,oneof" json:"csf_cruise_control,omitempty"`
+	CsfAutomaticRetarder                        *bool   `protobuf:"varint,531,opt,name=csf_automatic_retarder,json=csfAutomaticRetarder,proto3,oneof" json:"csf_automatic_retarder,omitempty"`
+	CsfManualRetarder                           *bool   `protobuf:"varint,532,opt,name=csf_manual_retarder,json=csfManualRetarder,proto3,oneof" json:"csf_manual_retarder,omitempty"`
+	CsfDriversSeatbeltFastened                  *bool   `protobuf:"varint,533,opt,name=csf_drivers_seatbelt_fastened,json=csfDriversSeatbeltFastened,proto3,oneof" json:"csf_drivers_seatbelt_fastened,omitempty"`
+	CsfFrontDriversSeatbeltFastened             *bool   `protobuf:"varint,534,opt,name=csf_front_drivers_seatbelt_fastened,json=csfFrontDriversSeatbeltFastened,proto3,oneof" json:"csf_front_drivers_seatbelt_fastened,omitempty"`
+	CsfLeftDriversSeatbeltFastened              *bool   `protobuf:"varint,535,opt,name=csf_left_drivers_seatbelt_fastened,json=csfLeftDriversSeatbeltFastened,proto3,oneof" json:"csf_left_drivers_seatbelt_fastened,omitempty"`
+	CsfRightDriversSeatbeltFastened             *bool   `protobuf:"varint,536,opt,name=csf_right_drivers_seatbelt_fastened,json=csfRightDriversSeatbeltFastened,proto3,oneof" json:"csf_right_drivers_seatbelt_fastened,omitempty"`
+	CsfCentreDriversSeatbeltFastened            *bool   `protobuf:"varint,537,opt,name=csf_centre_drivers_seatbelt_fastened,json=csfCentreDriversSeatbeltFastened,proto3,oneof" json:"csf_centre_drivers_seatbelt_fastened,omitempty"`
+	CsfFrontPassengerPresent                    *bool   `protobuf:"varint,538,opt,name=csf_front_passenger_present,json=csfFrontPassengerPresent,proto3,oneof" json:"csf_front_passenger_present,omitempty"`
+	CsfPto                                      *bool   `protobuf:"varint,539,opt,name=csf_pto,json=csfPto,proto3,oneof" json:"csf_pto,omitempty"`
+	CsfFrontDifferentialLocked                  *bool   `protobuf:"varint,540,opt,name=csf_front_differential_locked,json=csfFrontDifferentialLocked,proto3,oneof" json:"csf_front_differential_locked,omitempty"`
+	CsfRearDifferentialLocked                   *bool   `protobuf:"varint,541,opt,name=csf_rear_differential_locked,json=csfRearDifferentialLocked,proto3,oneof" json:"csf_rear_differential_locked,omitempty"`
+	CsfCentralDifferential4HiLocked             *bool   `protobuf:"varint,542,opt,name=csf_central_differential4hi_locked,json=csfCentralDifferential4hiLocked,proto3,oneof" json:"csf_central_differential4hi_locked,omitempty"`
+	CsfRearDifferential4LoLocked                *bool   `protobuf:"varint,543,opt,name=csf_rear_differential4lo_locked,json=csfRearDifferential4loLocked,proto3,oneof" json:"csf_rear_differential4lo_locked,omitempty"`
+	CsfTrailerAxle1LiftActive                   *bool   `protobuf:"varint,544,opt,name=csf_trailer_axle1_lift_active,json=csfTrailerAxle1LiftActive,proto3,oneof" json:"csf_trailer_axle1_lift_active,omitempty"`
+	CsfTrailerAxle2LiftActive                   *bool   `protobuf:"varint,545,opt,name=csf_trailer_axle2_lift_active,json=csfTrailerAxle2LiftActive,proto3,oneof" json:"csf_trailer_axle2_lift_active,omitempty"`
+	CsfTrailerConnected                         *bool   `protobuf:"varint,546,opt,name=csf_trailer_connected,json=csfTrailerConnected,proto3,oneof" json:"csf_trailer_connected,omitempty"`
+	CsfStartStopSystemInactive                  *bool   `protobuf:"varint,547,opt,name=csf_start_stop_system_inactive,json=csfStartStopSystemInactive,proto3,oneof" json:"csf_start_stop_system_inactive,omitempty"`
+	IsfCheckEngineIndicator                     *bool   `protobuf:"varint,548,opt,name=isf_check_engine_indicator,json=isfCheckEngineIndicator,proto3,oneof" json:"isf_check_engine_indicator,omitempty"`
+	IsfAbsIndicator                             *bool   `protobuf:"varint,549,opt,name=isf_abs_indicator,json=isfAbsIndicator,proto3,oneof" json:"isf_abs_indicator,omitempty"`
+	IsfEspIndicator                             *bool   `protobuf:"varint,550,opt,name=isf_esp_indicator,json=isfEspIndicator,proto3,oneof" json:"isf_esp_indicator,omitempty"`
+	IsfEspTurnedOff                             *bool   `protobuf:"varint,551,opt,name=isf_esp_turned_off,json=isfEspTurnedOff,proto3,oneof" json:"isf_esp_turned_off,omitempty"`
+	IsfStopIndicator                            *bool   `protobuf:"varint,552,opt,name=isf_stop_indicator,json=isfStopIndicator,proto3,oneof" json:"isf_stop_indicator,omitempty"`
+	IsfOilLevelIndicator                        *bool   `protobuf:"varint,553,opt,name=isf_oil_level_indicator,json=isfOilLevelIndicator,proto3,oneof" json:"isf_oil_level_indicator,omitempty"`
+	IsfCoolantLiquidLevel                       *bool   `protobuf:"varint,554,opt,name=isf_coolant_liquid_level,json=isfCoolantLiquidLevel,proto3,oneof" json:"isf_coolant_liquid_level,omitempty"`
+	IsfBatteryNotChargingIndicator              *bool   `protobuf:"varint,555,opt,name=isf_battery_not_charging_indicator,json=isfBatteryNotChargingIndicator,proto3,oneof" json:"isf_battery_not_charging_indicator,omitempty"`
+	IsfHandbrakeSystemIndicator                 *bool   `protobuf:"varint,556,opt,name=isf_handbrake_system_indicator,json=isfHandbrakeSystemIndicator,proto3,oneof" json:"isf_handbrake_system_indicator,omitempty"`
+	IsfAirbagIndicator                          *bool   `protobuf:"varint,557,opt,name=isf_airbag_indicator,json=isfAirbagIndicator,proto3,oneof" json:"isf_airbag_indicator,omitempty"`
+	IsfEpsIndicator                             *bool   `protobuf:"varint,558,opt,name=isf_eps_indicator,json=isfEpsIndicator,proto3,oneof" json:"isf_eps_indicator,omitempty"`
+	IsfWarningIndicator                         *bool   `protobuf:"varint,559,opt,name=isf_warning_indicator,json=isfWarningIndicator,proto3,oneof" json:"isf_warning_indicator,omitempty"`
+	IsfLightsFailureIndicator                   *bool   `protobuf:"varint,560,opt,name=isf_lights_failure_indicator,json=isfLightsFailureIndicator,proto3,oneof" json:"isf_lights_failure_indicator,omitempty"`
+	IsfLowTirePressureIndicator                 *bool   `protobuf:"varint,561,opt,name=isf_low_tire_pressure_indicator,json=isfLowTirePressureIndicator,proto3,oneof" json:"isf_low_tire_pressure_indicator,omitempty"`
+	IsfWearOfBrakePadsIndicator                 *bool   `protobuf:"varint,562,opt,name=isf_wear_of_brake_pads_indicator,json=isfWearOfBrakePadsIndicator,proto3,oneof" json:"isf_wear_of_brake_pads_indicator,omitempty"`
+	IsfLowFuelLevelIndicator                    *bool   `protobuf:"varint,563,opt,name=isf_low_fuel_level_indicator,json=isfLowFuelLevelIndicator,proto3,oneof" json:"isf_low_fuel_level_indicator,omitempty"`
+	IsfMaintenanceRequiredIndicator             *bool   `protobuf:"varint,564,opt,name=isf_maintenance_required_indicator,json=isfMaintenanceRequiredIndicator,proto3,oneof" json:"isf_maintenance_required_indicator,omitempty"`
+	IsfGlowPlugIndicator                        *bool   `protobuf:"varint,565,opt,name=isf_glow_plug_indicator,json=isfGlowPlugIndicator,proto3,oneof" json:"isf_glow_plug_indicator,omitempty"`
+	IsfFapIndicator                             *bool   `protobuf:"varint,566,opt,name=isf_fap_indicator,json=isfFapIndicator,proto3,oneof" json:"isf_fap_indicator,omitempty"`
+	IsfEpcIndicator                             *bool   `protobuf:"varint,567,opt,name=isf_epc_indicator,json=isfEpcIndicator,proto3,oneof" json:"isf_epc_indicator,omitempty"`
+	IsfCloggedEngineOilFilterIndicator          *bool   `protobuf:"varint,568,opt,name=isf_clogged_engine_oil_filter_indicator,json=isfCloggedEngineOilFilterIndicator,proto3,oneof" json:"isf_clogged_engine_oil_filter_indicator,omitempty"`
+	IsfLowEngineOilPressureIndicator            *bool   `protobuf:"varint,569,opt,name=isf_low_engine_oil_pressure_indicator,json=isfLowEngineOilPressureIndicator,proto3,oneof" json:"isf_low_engine_oil_pressure_indicator,omitempty"`
+	IsfTooHighEngineOilTemperatureIndicator     *bool   `protobuf:"varint,570,opt,name=isf_too_high_engine_oil_temperature_indicator,json=isfTooHighEngineOilTemperatureIndicator,proto3,oneof" json:"isf_too_high_engine_oil_temperature_indicator,omitempty"`
+	IsfLowCoolantLevelIndicator                 *bool   `protobuf:"varint,571,opt,name=isf_low_coolant_level_indicator,json=isfLowCoolantLevelIndicator,proto3,oneof" json:"isf_low_coolant_level_indicator,omitempty"`
+	IsfCloggedHydraulicSystemOilFilterIndicator *bool   `protobuf:"varint,572,opt,name=isf_clogged_hydraulic_system_oil_filter_indicator,json=isfCloggedHydraulicSystemOilFilterIndicator,proto3,oneof" json:"isf_clogged_hydraulic_system_oil_filter_indicator,omitempty"`
+	IsfHydraulicSystemLowPressureIndicator      *bool   `protobuf:"varint,573,opt,name=isf_hydraulic_system_low_pressure_indicator,json=isfHydraulicSystemLowPressureIndicator,proto3,oneof" json:"isf_hydraulic_system_low_pressure_indicator,omitempty"`
+	IsfHydraulicOilLowLevelIndicator            *bool   `protobuf:"varint,574,opt,name=isf_hydraulic_oil_low_level_indicator,json=isfHydraulicOilLowLevelIndicator,proto3,oneof" json:"isf_hydraulic_oil_low_level_indicator,omitempty"`
+	IsfHydraulicSystemHighTemperatureIndicator  *bool   `protobuf:"varint,575,opt,name=isf_hydraulic_system_high_temperature_indicator,json=isfHydraulicSystemHighTemperatureIndicator,proto3,oneof" json:"isf_hydraulic_system_high_temperature_indicator,omitempty"`
+	IsfOilOverflowInHydraulicChamberIndicator   *bool   `protobuf:"varint,576,opt,name=isf_oil_overflow_in_hydraulic_chamber_indicator,json=isfOilOverflowInHydraulicChamberIndicator,proto3,oneof" json:"isf_oil_overflow_in_hydraulic_chamber_indicator,omitempty"`
+	IsfCloggedAirFilterIndicator                *bool   `protobuf:"varint,577,opt,name=isf_clogged_air_filter_indicator,json=isfCloggedAirFilterIndicator,proto3,oneof" json:"isf_clogged_air_filter_indicator,omitempty"`
+	IsfCloggedFuelFilterIndicator               *bool   `protobuf:"varint,578,opt,name=isf_clogged_fuel_filter_indicator,json=isfCloggedFuelFilterIndicator,proto3,oneof" json:"isf_clogged_fuel_filter_indicator,omitempty"`
+	IsfWaterInFuelIndicator                     *bool   `protobuf:"varint,579,opt,name=isf_water_in_fuel_indicator,json=isfWaterInFuelIndicator,proto3,oneof" json:"isf_water_in_fuel_indicator,omitempty"`
+	AsfGrainTankIs100PercentFull                *bool   `protobuf:"varint,611,opt,name=asf_grain_tank_is100_percent_full,json=asfGrainTankIs100PercentFull,proto3,oneof" json:"asf_grain_tank_is100_percent_full,omitempty"`
+	AsfGrainTankIs70PercentFull                 *bool   `protobuf:"varint,612,opt,name=asf_grain_tank_is70_percent_full,json=asfGrainTankIs70PercentFull,proto3,oneof" json:"asf_grain_tank_is70_percent_full,omitempty"`
+	AsfStrawChopperSpeedBelowTheNorm            *bool   `protobuf:"varint,623,opt,name=asf_straw_chopper_speed_below_the_norm,json=asfStrawChopperSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_chopper_speed_below_the_norm,omitempty"`
+	UsfSpreading2                               *bool   `protobuf:"varint,650,opt,name=usf_spreading2,json=usfSpreading2,proto3,oneof" json:"usf_spreading2,omitempty"`
+	unknownFields                               protoimpl.UnknownFields
+	sizeCache                                   protoimpl.SizeCache
 }
 
 func (x *Compact) Reset() {
@@ -4358,16 +4474,16 @@ func (x *Compact) GetAsfGrainReleaseFromHopper() uint32 {
 	return 0
 }
 
-func (x *Compact) GetAsfGrainTankIs_100Full() uint32 {
-	if x != nil && x.AsfGrainTankIs_100Full != nil {
-		return *x.AsfGrainTankIs_100Full
+func (x *Compact) GetAsfGrainTankIs100Full() uint32 {
+	if x != nil && x.AsfGrainTankIs100Full != nil {
+		return *x.AsfGrainTankIs100Full
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfGrainTankIs_70Full() uint32 {
-	if x != nil && x.AsfGrainTankIs_70Full != nil {
-		return *x.AsfGrainTankIs_70Full
+func (x *Compact) GetAsfGrainTankIs70Full() uint32 {
+	if x != nil && x.AsfGrainTankIs70Full != nil {
+		return *x.AsfGrainTankIs70Full
 	}
 	return 0
 }
@@ -4414,16 +4530,16 @@ func (x *Compact) GetAsfExcessiveClearanceUnderTheThreshingDrum() uint32 {
 	return 0
 }
 
-func (x *Compact) GetAsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades() uint32 {
-	if x != nil && x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades != nil {
-		return *x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades
+func (x *Compact) GetAsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades() uint32 {
+	if x != nil && x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades != nil {
+		return *x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades() uint32 {
-	if x != nil && x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades != nil {
-		return *x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades
+func (x *Compact) GetAsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades() uint32 {
+	if x != nil && x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades != nil {
+		return *x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades
 	}
 	return 0
 }
@@ -4505,9 +4621,9 @@ func (x *Compact) GetAsfAdapterPressureFilterSensor() uint32 {
 	return 0
 }
 
-func (x *Compact) GetAsfService_2RequiredIndicator() uint32 {
-	if x != nil && x.AsfService_2RequiredIndicator != nil {
-		return *x.AsfService_2RequiredIndicator
+func (x *Compact) GetAsfService2RequiredIndicator() uint32 {
+	if x != nil && x.AsfService2RequiredIndicator != nil {
+		return *x.AsfService2RequiredIndicator
 	}
 	return 0
 }
@@ -4519,65 +4635,65 @@ func (x *Compact) GetAsfDrainFilterCloggedIndicator() uint32 {
 	return 0
 }
 
-func (x *Compact) GetAsfSection_1Spraying() uint32 {
-	if x != nil && x.AsfSection_1Spraying != nil {
-		return *x.AsfSection_1Spraying
+func (x *Compact) GetAsfSection1Spraying() uint32 {
+	if x != nil && x.AsfSection1Spraying != nil {
+		return *x.AsfSection1Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_2Spraying() uint32 {
-	if x != nil && x.AsfSection_2Spraying != nil {
-		return *x.AsfSection_2Spraying
+func (x *Compact) GetAsfSection2Spraying() uint32 {
+	if x != nil && x.AsfSection2Spraying != nil {
+		return *x.AsfSection2Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_3Spraying() uint32 {
-	if x != nil && x.AsfSection_3Spraying != nil {
-		return *x.AsfSection_3Spraying
+func (x *Compact) GetAsfSection3Spraying() uint32 {
+	if x != nil && x.AsfSection3Spraying != nil {
+		return *x.AsfSection3Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_4Spraying() uint32 {
-	if x != nil && x.AsfSection_4Spraying != nil {
-		return *x.AsfSection_4Spraying
+func (x *Compact) GetAsfSection4Spraying() uint32 {
+	if x != nil && x.AsfSection4Spraying != nil {
+		return *x.AsfSection4Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_5Spraying() uint32 {
-	if x != nil && x.AsfSection_5Spraying != nil {
-		return *x.AsfSection_5Spraying
+func (x *Compact) GetAsfSection5Spraying() uint32 {
+	if x != nil && x.AsfSection5Spraying != nil {
+		return *x.AsfSection5Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_6Spraying() uint32 {
-	if x != nil && x.AsfSection_6Spraying != nil {
-		return *x.AsfSection_6Spraying
+func (x *Compact) GetAsfSection6Spraying() uint32 {
+	if x != nil && x.AsfSection6Spraying != nil {
+		return *x.AsfSection6Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_7Spraying() uint32 {
-	if x != nil && x.AsfSection_7Spraying != nil {
-		return *x.AsfSection_7Spraying
+func (x *Compact) GetAsfSection7Spraying() uint32 {
+	if x != nil && x.AsfSection7Spraying != nil {
+		return *x.AsfSection7Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_8Spraying() uint32 {
-	if x != nil && x.AsfSection_8Spraying != nil {
-		return *x.AsfSection_8Spraying
+func (x *Compact) GetAsfSection8Spraying() uint32 {
+	if x != nil && x.AsfSection8Spraying != nil {
+		return *x.AsfSection8Spraying
 	}
 	return 0
 }
 
-func (x *Compact) GetAsfSection_9Spraying() uint32 {
-	if x != nil && x.AsfSection_9Spraying != nil {
-		return *x.AsfSection_9Spraying
+func (x *Compact) GetAsfSection9Spraying() uint32 {
+	if x != nil && x.AsfSection9Spraying != nil {
+		return *x.AsfSection9Spraying
 	}
 	return 0
 }
@@ -4603,9 +4719,9 @@ func (x *Compact) GetUsfConveyorBelt() uint32 {
 	return 0
 }
 
-func (x *Compact) GetUsfSaltSpreaderSDriveWheel() uint32 {
-	if x != nil && x.UsfSaltSpreaderSDriveWheel != nil {
-		return *x.UsfSaltSpreaderSDriveWheel
+func (x *Compact) GetUsfSaltSpreadersDriveWheel() uint32 {
+	if x != nil && x.UsfSaltSpreadersDriveWheel != nil {
+		return *x.UsfSaltSpreadersDriveWheel
 	}
 	return 0
 }
@@ -5562,9 +5678,9 @@ func (x *Compact) GetCommandedEquivalenceR() uint32 {
 	return 0
 }
 
-func (x *Compact) GetIntakeMap_2Bytes() uint32 {
-	if x != nil && x.IntakeMap_2Bytes != nil {
-		return *x.IntakeMap_2Bytes
+func (x *Compact) GetIntakeMap2Bytes() uint32 {
+	if x != nil && x.IntakeMap2Bytes != nil {
+		return *x.IntakeMap2Bytes
 	}
 	return 0
 }
@@ -6010,16 +6126,16 @@ func (x *Compact) GetProgramNumber() uint32 {
 	return 0
 }
 
-func (x *Compact) GetModuleId_8B() uint64 {
-	if x != nil && x.ModuleId_8B != nil {
-		return *x.ModuleId_8B
+func (x *Compact) GetModuleId8B() uint64 {
+	if x != nil && x.ModuleId8B != nil {
+		return *x.ModuleId8B
 	}
 	return 0
 }
 
-func (x *Compact) GetModuleId_17B() []byte {
+func (x *Compact) GetModuleId17B() []byte {
 	if x != nil {
-		return x.ModuleId_17B
+		return x.ModuleId17B
 	}
 	return nil
 }
@@ -6563,6 +6679,818 @@ func (x *Compact) GetEngineTemperature() int32 {
 	return 0
 }
 
+func (x *Compact) GetUtilityStateFlagsP4() uint64 {
+	if x != nil && x.UtilityStateFlagsP4 != nil {
+		return *x.UtilityStateFlagsP4
+	}
+	return 0
+}
+
+func (x *Compact) GetCisternStateFlagsP4() uint64 {
+	if x != nil && x.CisternStateFlagsP4 != nil {
+		return *x.CisternStateFlagsP4
+	}
+	return 0
+}
+
+func (x *Compact) GetLngUsed() uint32 {
+	if x != nil && x.LngUsed != nil {
+		return *x.LngUsed
+	}
+	return 0
+}
+
+func (x *Compact) GetLngUsedCounted() uint32 {
+	if x != nil && x.LngUsedCounted != nil {
+		return *x.LngUsedCounted
+	}
+	return 0
+}
+
+func (x *Compact) GetLngLevelPercent() uint32 {
+	if x != nil && x.LngLevelPercent != nil {
+		return *x.LngLevelPercent
+	}
+	return 0
+}
+
+func (x *Compact) GetLngLevelKg() uint32 {
+	if x != nil && x.LngLevelKg != nil {
+		return *x.LngLevelKg
+	}
+	return 0
+}
+
+func (x *Compact) GetTotalLpgUsed() uint32 {
+	if x != nil && x.TotalLpgUsed != nil {
+		return *x.TotalLpgUsed
+	}
+	return 0
+}
+
+func (x *Compact) GetTotalLpgUsedCounted() uint32 {
+	if x != nil && x.TotalLpgUsedCounted != nil {
+		return *x.TotalLpgUsedCounted
+	}
+	return 0
+}
+
+func (x *Compact) GetLpgLevelProc() uint32 {
+	if x != nil && x.LpgLevelProc != nil {
+		return *x.LpgLevelProc
+	}
+	return 0
+}
+
+func (x *Compact) GetLpgLevelLiters() uint32 {
+	if x != nil && x.LpgLevelLiters != nil {
+		return *x.LpgLevelLiters
+	}
+	return 0
+}
+
+func (x *Compact) GetSsfIgnition() bool {
+	if x != nil && x.SsfIgnition != nil {
+		return *x.SsfIgnition
+	}
+	return false
+}
+
+func (x *Compact) GetSsfKeyInIgnitionLock() bool {
+	if x != nil && x.SsfKeyInIgnitionLock != nil {
+		return *x.SsfKeyInIgnitionLock
+	}
+	return false
+}
+
+func (x *Compact) GetSsfWebasto() bool {
+	if x != nil && x.SsfWebasto != nil {
+		return *x.SsfWebasto
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineWorking() bool {
+	if x != nil && x.SsfEngineWorking != nil {
+		return *x.SsfEngineWorking
+	}
+	return false
+}
+
+func (x *Compact) GetSsfStandaloneEngine() bool {
+	if x != nil && x.SsfStandaloneEngine != nil {
+		return *x.SsfStandaloneEngine
+	}
+	return false
+}
+
+func (x *Compact) GetSsfReadyToDrive() bool {
+	if x != nil && x.SsfReadyToDrive != nil {
+		return *x.SsfReadyToDrive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineWorkingOnCng() bool {
+	if x != nil && x.SsfEngineWorkingOnCng != nil {
+		return *x.SsfEngineWorkingOnCng
+	}
+	return false
+}
+
+func (x *Compact) GetSsfWorkMode() bool {
+	if x != nil && x.SsfWorkMode != nil {
+		return *x.SsfWorkMode
+	}
+	return false
+}
+
+func (x *Compact) GetSsfOperator() bool {
+	if x != nil && x.SsfOperator != nil {
+		return *x.SsfOperator
+	}
+	return false
+}
+
+func (x *Compact) GetSsfInterlock() bool {
+	if x != nil && x.SsfInterlock != nil {
+		return *x.SsfInterlock
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineLockActive() bool {
+	if x != nil && x.SsfEngineLockActive != nil {
+		return *x.SsfEngineLockActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfRequestToLockEngine() bool {
+	if x != nil && x.SsfRequestToLockEngine != nil {
+		return *x.SsfRequestToLockEngine
+	}
+	return false
+}
+
+func (x *Compact) GetSsfHandbrakeIsActive() bool {
+	if x != nil && x.SsfHandbrakeIsActive != nil {
+		return *x.SsfHandbrakeIsActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFootbrakeIsActive() bool {
+	if x != nil && x.SsfFootbrakeIsActive != nil {
+		return *x.SsfFootbrakeIsActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfClutchPushed() bool {
+	if x != nil && x.SsfClutchPushed != nil {
+		return *x.SsfClutchPushed
+	}
+	return false
+}
+
+func (x *Compact) GetSsfHazardWarningLights() bool {
+	if x != nil && x.SsfHazardWarningLights != nil {
+		return *x.SsfHazardWarningLights
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFrontLeftDoorOpen() bool {
+	if x != nil && x.SsfFrontLeftDoorOpen != nil {
+		return *x.SsfFrontLeftDoorOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFrontRightDoorOpen() bool {
+	if x != nil && x.SsfFrontRightDoorOpen != nil {
+		return *x.SsfFrontRightDoorOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfRearLeftDoorOpen() bool {
+	if x != nil && x.SsfRearLeftDoorOpen != nil {
+		return *x.SsfRearLeftDoorOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfRearRightDoorOpen() bool {
+	if x != nil && x.SsfRearRightDoorOpen != nil {
+		return *x.SsfRearRightDoorOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfTrunkDoorOpen() bool {
+	if x != nil && x.SsfTrunkDoorOpen != nil {
+		return *x.SsfTrunkDoorOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineCoverOpen() bool {
+	if x != nil && x.SsfEngineCoverOpen != nil {
+		return *x.SsfEngineCoverOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfRoofOpen() bool {
+	if x != nil && x.SsfRoofOpen != nil {
+		return *x.SsfRoofOpen
+	}
+	return false
+}
+
+func (x *Compact) GetSsfChargingWirePlugged() bool {
+	if x != nil && x.SsfChargingWirePlugged != nil {
+		return *x.SsfChargingWirePlugged
+	}
+	return false
+}
+
+func (x *Compact) GetSsfBatteryCharging() bool {
+	if x != nil && x.SsfBatteryCharging != nil {
+		return *x.SsfBatteryCharging
+	}
+	return false
+}
+
+func (x *Compact) GetSsfElectricEngineState() bool {
+	if x != nil && x.SsfElectricEngineState != nil {
+		return *x.SsfElectricEngineState
+	}
+	return false
+}
+
+func (x *Compact) GetSsfCarClosedFactoryRemote() bool {
+	if x != nil && x.SsfCarClosedFactoryRemote != nil {
+		return *x.SsfCarClosedFactoryRemote
+	}
+	return false
+}
+
+func (x *Compact) GetSsfCarIsClosed() bool {
+	if x != nil && x.SsfCarIsClosed != nil {
+		return *x.SsfCarIsClosed
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFactoryAlarmActuated() bool {
+	if x != nil && x.SsfFactoryAlarmActuated != nil {
+		return *x.SsfFactoryAlarmActuated
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFactoryAlarmEmulated() bool {
+	if x != nil && x.SsfFactoryAlarmEmulated != nil {
+		return *x.SsfFactoryAlarmEmulated
+	}
+	return false
+}
+
+func (x *Compact) GetSsfSignalCloseFactoryRemote() bool {
+	if x != nil && x.SsfSignalCloseFactoryRemote != nil {
+		return *x.SsfSignalCloseFactoryRemote
+	}
+	return false
+}
+
+func (x *Compact) GetSsfSignalOpenFactoryRemote() bool {
+	if x != nil && x.SsfSignalOpenFactoryRemote != nil {
+		return *x.SsfSignalOpenFactoryRemote
+	}
+	return false
+}
+
+func (x *Compact) GetSsfRearmingSignal() bool {
+	if x != nil && x.SsfRearmingSignal != nil {
+		return *x.SsfRearmingSignal
+	}
+	return false
+}
+
+func (x *Compact) GetSsfTrunkDoorOpenedFactoryRemote() bool {
+	if x != nil && x.SsfTrunkDoorOpenedFactoryRemote != nil {
+		return *x.SsfTrunkDoorOpenedFactoryRemote
+	}
+	return false
+}
+
+func (x *Compact) GetSsfCanModuleInSleep() bool {
+	if x != nil && x.SsfCanModuleInSleep != nil {
+		return *x.SsfCanModuleInSleep
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFactoryRemote3X() bool {
+	if x != nil && x.SsfFactoryRemote3X != nil {
+		return *x.SsfFactoryRemote3X
+	}
+	return false
+}
+
+func (x *Compact) GetSsfFactoryArmed() bool {
+	if x != nil && x.SsfFactoryArmed != nil {
+		return *x.SsfFactoryArmed
+	}
+	return false
+}
+
+func (x *Compact) GetSsfParkingGearActive() bool {
+	if x != nil && x.SsfParkingGearActive != nil {
+		return *x.SsfParkingGearActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfReverseGearActive() bool {
+	if x != nil && x.SsfReverseGearActive != nil {
+		return *x.SsfReverseGearActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfNeutralGearActive() bool {
+	if x != nil && x.SsfNeutralGearActive != nil {
+		return *x.SsfNeutralGearActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfDriveIsActive() bool {
+	if x != nil && x.SsfDriveIsActive != nil {
+		return *x.SsfDriveIsActive
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineWorkingOnDualFuel() bool {
+	if x != nil && x.SsfEngineWorkingOnDualFuel != nil {
+		return *x.SsfEngineWorkingOnDualFuel
+	}
+	return false
+}
+
+func (x *Compact) GetSsfEngineWorkingOnLpg() bool {
+	if x != nil && x.SsfEngineWorkingOnLpg != nil {
+		return *x.SsfEngineWorkingOnLpg
+	}
+	return false
+}
+
+func (x *Compact) GetCsfParkingLights() bool {
+	if x != nil && x.CsfParkingLights != nil {
+		return *x.CsfParkingLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfDippedHeadLights() bool {
+	if x != nil && x.CsfDippedHeadLights != nil {
+		return *x.CsfDippedHeadLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfFullBeamHeadlights() bool {
+	if x != nil && x.CsfFullBeamHeadlights != nil {
+		return *x.CsfFullBeamHeadlights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfRearFogLights() bool {
+	if x != nil && x.CsfRearFogLights != nil {
+		return *x.CsfRearFogLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfFrontFogLights() bool {
+	if x != nil && x.CsfFrontFogLights != nil {
+		return *x.CsfFrontFogLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfAdditionalFrontLights() bool {
+	if x != nil && x.CsfAdditionalFrontLights != nil {
+		return *x.CsfAdditionalFrontLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfAdditionalRearLights() bool {
+	if x != nil && x.CsfAdditionalRearLights != nil {
+		return *x.CsfAdditionalRearLights
+	}
+	return false
+}
+
+func (x *Compact) GetCsfLightSignal() bool {
+	if x != nil && x.CsfLightSignal != nil {
+		return *x.CsfLightSignal
+	}
+	return false
+}
+
+func (x *Compact) GetCsfAirConditioning() bool {
+	if x != nil && x.CsfAirConditioning != nil {
+		return *x.CsfAirConditioning
+	}
+	return false
+}
+
+func (x *Compact) GetCsfCruiseControl() bool {
+	if x != nil && x.CsfCruiseControl != nil {
+		return *x.CsfCruiseControl
+	}
+	return false
+}
+
+func (x *Compact) GetCsfAutomaticRetarder() bool {
+	if x != nil && x.CsfAutomaticRetarder != nil {
+		return *x.CsfAutomaticRetarder
+	}
+	return false
+}
+
+func (x *Compact) GetCsfManualRetarder() bool {
+	if x != nil && x.CsfManualRetarder != nil {
+		return *x.CsfManualRetarder
+	}
+	return false
+}
+
+func (x *Compact) GetCsfDriversSeatbeltFastened() bool {
+	if x != nil && x.CsfDriversSeatbeltFastened != nil {
+		return *x.CsfDriversSeatbeltFastened
+	}
+	return false
+}
+
+func (x *Compact) GetCsfFrontDriversSeatbeltFastened() bool {
+	if x != nil && x.CsfFrontDriversSeatbeltFastened != nil {
+		return *x.CsfFrontDriversSeatbeltFastened
+	}
+	return false
+}
+
+func (x *Compact) GetCsfLeftDriversSeatbeltFastened() bool {
+	if x != nil && x.CsfLeftDriversSeatbeltFastened != nil {
+		return *x.CsfLeftDriversSeatbeltFastened
+	}
+	return false
+}
+
+func (x *Compact) GetCsfRightDriversSeatbeltFastened() bool {
+	if x != nil && x.CsfRightDriversSeatbeltFastened != nil {
+		return *x.CsfRightDriversSeatbeltFastened
+	}
+	return false
+}
+
+func (x *Compact) GetCsfCentreDriversSeatbeltFastened() bool {
+	if x != nil && x.CsfCentreDriversSeatbeltFastened != nil {
+		return *x.CsfCentreDriversSeatbeltFastened
+	}
+	return false
+}
+
+func (x *Compact) GetCsfFrontPassengerPresent() bool {
+	if x != nil && x.CsfFrontPassengerPresent != nil {
+		return *x.CsfFrontPassengerPresent
+	}
+	return false
+}
+
+func (x *Compact) GetCsfPto() bool {
+	if x != nil && x.CsfPto != nil {
+		return *x.CsfPto
+	}
+	return false
+}
+
+func (x *Compact) GetCsfFrontDifferentialLocked() bool {
+	if x != nil && x.CsfFrontDifferentialLocked != nil {
+		return *x.CsfFrontDifferentialLocked
+	}
+	return false
+}
+
+func (x *Compact) GetCsfRearDifferentialLocked() bool {
+	if x != nil && x.CsfRearDifferentialLocked != nil {
+		return *x.CsfRearDifferentialLocked
+	}
+	return false
+}
+
+func (x *Compact) GetCsfCentralDifferential4HiLocked() bool {
+	if x != nil && x.CsfCentralDifferential4HiLocked != nil {
+		return *x.CsfCentralDifferential4HiLocked
+	}
+	return false
+}
+
+func (x *Compact) GetCsfRearDifferential4LoLocked() bool {
+	if x != nil && x.CsfRearDifferential4LoLocked != nil {
+		return *x.CsfRearDifferential4LoLocked
+	}
+	return false
+}
+
+func (x *Compact) GetCsfTrailerAxle1LiftActive() bool {
+	if x != nil && x.CsfTrailerAxle1LiftActive != nil {
+		return *x.CsfTrailerAxle1LiftActive
+	}
+	return false
+}
+
+func (x *Compact) GetCsfTrailerAxle2LiftActive() bool {
+	if x != nil && x.CsfTrailerAxle2LiftActive != nil {
+		return *x.CsfTrailerAxle2LiftActive
+	}
+	return false
+}
+
+func (x *Compact) GetCsfTrailerConnected() bool {
+	if x != nil && x.CsfTrailerConnected != nil {
+		return *x.CsfTrailerConnected
+	}
+	return false
+}
+
+func (x *Compact) GetCsfStartStopSystemInactive() bool {
+	if x != nil && x.CsfStartStopSystemInactive != nil {
+		return *x.CsfStartStopSystemInactive
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCheckEngineIndicator() bool {
+	if x != nil && x.IsfCheckEngineIndicator != nil {
+		return *x.IsfCheckEngineIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfAbsIndicator() bool {
+	if x != nil && x.IsfAbsIndicator != nil {
+		return *x.IsfAbsIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfEspIndicator() bool {
+	if x != nil && x.IsfEspIndicator != nil {
+		return *x.IsfEspIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfEspTurnedOff() bool {
+	if x != nil && x.IsfEspTurnedOff != nil {
+		return *x.IsfEspTurnedOff
+	}
+	return false
+}
+
+func (x *Compact) GetIsfStopIndicator() bool {
+	if x != nil && x.IsfStopIndicator != nil {
+		return *x.IsfStopIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfOilLevelIndicator() bool {
+	if x != nil && x.IsfOilLevelIndicator != nil {
+		return *x.IsfOilLevelIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCoolantLiquidLevel() bool {
+	if x != nil && x.IsfCoolantLiquidLevel != nil {
+		return *x.IsfCoolantLiquidLevel
+	}
+	return false
+}
+
+func (x *Compact) GetIsfBatteryNotChargingIndicator() bool {
+	if x != nil && x.IsfBatteryNotChargingIndicator != nil {
+		return *x.IsfBatteryNotChargingIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfHandbrakeSystemIndicator() bool {
+	if x != nil && x.IsfHandbrakeSystemIndicator != nil {
+		return *x.IsfHandbrakeSystemIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfAirbagIndicator() bool {
+	if x != nil && x.IsfAirbagIndicator != nil {
+		return *x.IsfAirbagIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfEpsIndicator() bool {
+	if x != nil && x.IsfEpsIndicator != nil {
+		return *x.IsfEpsIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfWarningIndicator() bool {
+	if x != nil && x.IsfWarningIndicator != nil {
+		return *x.IsfWarningIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfLightsFailureIndicator() bool {
+	if x != nil && x.IsfLightsFailureIndicator != nil {
+		return *x.IsfLightsFailureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfLowTirePressureIndicator() bool {
+	if x != nil && x.IsfLowTirePressureIndicator != nil {
+		return *x.IsfLowTirePressureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfWearOfBrakePadsIndicator() bool {
+	if x != nil && x.IsfWearOfBrakePadsIndicator != nil {
+		return *x.IsfWearOfBrakePadsIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfLowFuelLevelIndicator() bool {
+	if x != nil && x.IsfLowFuelLevelIndicator != nil {
+		return *x.IsfLowFuelLevelIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfMaintenanceRequiredIndicator() bool {
+	if x != nil && x.IsfMaintenanceRequiredIndicator != nil {
+		return *x.IsfMaintenanceRequiredIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfGlowPlugIndicator() bool {
+	if x != nil && x.IsfGlowPlugIndicator != nil {
+		return *x.IsfGlowPlugIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfFapIndicator() bool {
+	if x != nil && x.IsfFapIndicator != nil {
+		return *x.IsfFapIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfEpcIndicator() bool {
+	if x != nil && x.IsfEpcIndicator != nil {
+		return *x.IsfEpcIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCloggedEngineOilFilterIndicator() bool {
+	if x != nil && x.IsfCloggedEngineOilFilterIndicator != nil {
+		return *x.IsfCloggedEngineOilFilterIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfLowEngineOilPressureIndicator() bool {
+	if x != nil && x.IsfLowEngineOilPressureIndicator != nil {
+		return *x.IsfLowEngineOilPressureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfTooHighEngineOilTemperatureIndicator() bool {
+	if x != nil && x.IsfTooHighEngineOilTemperatureIndicator != nil {
+		return *x.IsfTooHighEngineOilTemperatureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfLowCoolantLevelIndicator() bool {
+	if x != nil && x.IsfLowCoolantLevelIndicator != nil {
+		return *x.IsfLowCoolantLevelIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCloggedHydraulicSystemOilFilterIndicator() bool {
+	if x != nil && x.IsfCloggedHydraulicSystemOilFilterIndicator != nil {
+		return *x.IsfCloggedHydraulicSystemOilFilterIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfHydraulicSystemLowPressureIndicator() bool {
+	if x != nil && x.IsfHydraulicSystemLowPressureIndicator != nil {
+		return *x.IsfHydraulicSystemLowPressureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfHydraulicOilLowLevelIndicator() bool {
+	if x != nil && x.IsfHydraulicOilLowLevelIndicator != nil {
+		return *x.IsfHydraulicOilLowLevelIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfHydraulicSystemHighTemperatureIndicator() bool {
+	if x != nil && x.IsfHydraulicSystemHighTemperatureIndicator != nil {
+		return *x.IsfHydraulicSystemHighTemperatureIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfOilOverflowInHydraulicChamberIndicator() bool {
+	if x != nil && x.IsfOilOverflowInHydraulicChamberIndicator != nil {
+		return *x.IsfOilOverflowInHydraulicChamberIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCloggedAirFilterIndicator() bool {
+	if x != nil && x.IsfCloggedAirFilterIndicator != nil {
+		return *x.IsfCloggedAirFilterIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfCloggedFuelFilterIndicator() bool {
+	if x != nil && x.IsfCloggedFuelFilterIndicator != nil {
+		return *x.IsfCloggedFuelFilterIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetIsfWaterInFuelIndicator() bool {
+	if x != nil && x.IsfWaterInFuelIndicator != nil {
+		return *x.IsfWaterInFuelIndicator
+	}
+	return false
+}
+
+func (x *Compact) GetAsfGrainTankIs100PercentFull() bool {
+	if x != nil && x.AsfGrainTankIs100PercentFull != nil {
+		return *x.AsfGrainTankIs100PercentFull
+	}
+	return false
+}
+
+func (x *Compact) GetAsfGrainTankIs70PercentFull() bool {
+	if x != nil && x.AsfGrainTankIs70PercentFull != nil {
+		return *x.AsfGrainTankIs70PercentFull
+	}
+	return false
+}
+
+func (x *Compact) GetAsfStrawChopperSpeedBelowTheNorm() bool {
+	if x != nil && x.AsfStrawChopperSpeedBelowTheNorm != nil {
+		return *x.AsfStrawChopperSpeedBelowTheNorm
+	}
+	return false
+}
+
+func (x *Compact) GetUsfSpreading2() bool {
+	if x != nil && x.UsfSpreading2 != nil {
+		return *x.UsfSpreading2
+	}
+	return false
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -6617,7 +7545,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\x8f\xa2\x02\n" +
+	"\b_mileage\"\xbe\xf7\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -6782,17 +7710,17 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x17asf_rear_power_take_off\x18w \x01(\rH\x90\x01R\x13asfRearPowerTakeOff\x88\x01\x01\x120\n" +
 	"\x11asf_mowing_active\x18x \x01(\rH\x91\x01R\x0fasfMowingActive\x88\x01\x01\x126\n" +
 	"\x14asf_threshing_active\x18y \x01(\rH\x92\x01R\x12asfThreshingActive\x88\x01\x01\x12F\n" +
-	"\x1dasf_grain_release_from_hopper\x18z \x01(\rH\x93\x01R\x19asfGrainReleaseFromHopper\x88\x01\x01\x12?\n" +
-	"\x1aasf_grain_tank_is_100_full\x18{ \x01(\rH\x94\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12=\n" +
-	"\x19asf_grain_tank_is_70_full\x18| \x01(\rH\x95\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
+	"\x1dasf_grain_release_from_hopper\x18z \x01(\rH\x93\x01R\x19asfGrainReleaseFromHopper\x88\x01\x01\x12>\n" +
+	"\x19asf_grain_tank_is100_full\x18{ \x01(\rH\x94\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12<\n" +
+	"\x18asf_grain_tank_is70_full\x18| \x01(\rH\x95\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
 	"\x18asf_grain_tank_is_opened\x18} \x01(\rH\x96\x01R\x14asfGrainTankIsOpened\x88\x01\x01\x122\n" +
 	"\x12asf_unloader_drive\x18~ \x01(\rH\x97\x01R\x10asfUnloaderDrive\x88\x01\x01\x12Q\n" +
 	"#asf_cleaning_fan_control_turned_off\x18\x7f \x01(\rH\x98\x01R\x1easfCleaningFanControlTurnedOff\x88\x01\x01\x12V\n" +
 	"%asf_threshing_drum_control_turned_off\x18\x80\x01 \x01(\rH\x99\x01R asfThreshingDrumControlTurnedOff\x88\x01\x01\x12C\n" +
 	"\x1basf_straw_walker_is_clogged\x18\x81\x01 \x01(\rH\x9a\x01R\x17asfStrawWalkerIsClogged\x88\x01\x01\x12k\n" +
-	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\rH\x9b\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x89\x01\n" +
-	"Aasf_low_temperature_of_drive_system_hydraulics_less_than_5_grades\x18\x83\x01 \x01(\rH\x9c\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x93\x01\n" +
-	"Fasf_high_temperature_of_drive_system_hydraulics_greater_than_86_grades\x18\x84\x01 \x01(\rH\x9d\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
+	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\rH\x9b\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x88\x01\n" +
+	"@asf_low_temperature_of_drive_system_hydraulics_less_than5_grades\x18\x83\x01 \x01(\rH\x9c\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x92\x01\n" +
+	"Easf_high_temperature_of_drive_system_hydraulics_greater_than86_grades\x18\x84\x01 \x01(\rH\x9d\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
 	"\"asf_ear_auger_speed_below_the_norm\x18\x85\x01 \x01(\rH\x9e\x01R\x1casfEarAugerSpeedBelowTheNorm\x88\x01\x01\x12S\n" +
 	"$asf_grain_auger_speed_below_the_norm\x18\x86\x01 \x01(\rH\x9f\x01R\x1easfGrainAugerSpeedBelowTheNorm\x88\x01\x01\x12W\n" +
 	"&asf_straw_chooper_speed_below_the_norm\x18\x87\x01 \x01(\rH\xa0\x01R asfStrawChooperSpeedBelowTheNorm\x88\x01\x01\x12U\n" +
@@ -6803,22 +7731,22 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1aasf_grain_header_connected\x18\x8c\x01 \x01(\rH\xa5\x01R\x17asfGrainHeaderConnected\x88\x01\x01\x12I\n" +
 	"\x1easf_feeder_reverse_switched_on\x18\x8d\x01 \x01(\rH\xa6\x01R\x1aasfFeederReverseSwitchedOn\x88\x01\x01\x12x\n" +
 	"8asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged\x18\x8e\x01 \x01(\rH\xa7\x01R/asfThePressureFilterOfTheHydraulicPumpIsClogged\x88\x01\x01\x12Q\n" +
-	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\rH\xa8\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12M\n" +
-	" asf_service_2_required_indicator\x18\x90\x01 \x01(\rH\xa9\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
-	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\rH\xaa\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x12:\n" +
-	"\x16asf_section_1_spraying\x18\x92\x01 \x01(\rH\xab\x01R\x13asfSection1Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_2_spraying\x18\x93\x01 \x01(\rH\xac\x01R\x13asfSection2Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_3_spraying\x18\x94\x01 \x01(\rH\xad\x01R\x13asfSection3Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_4_spraying\x18\x95\x01 \x01(\rH\xae\x01R\x13asfSection4Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_5_spraying\x18\x96\x01 \x01(\rH\xaf\x01R\x13asfSection5Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_6_spraying\x18\x97\x01 \x01(\rH\xb0\x01R\x13asfSection6Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_7_spraying\x18\x98\x01 \x01(\rH\xb1\x01R\x13asfSection7Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_8_spraying\x18\x99\x01 \x01(\rH\xb2\x01R\x13asfSection8Spraying\x88\x01\x01\x12:\n" +
-	"\x16asf_section_9_spraying\x18\x9a\x01 \x01(\rH\xb3\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
+	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\rH\xa8\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12L\n" +
+	"\x1fasf_service2_required_indicator\x18\x90\x01 \x01(\rH\xa9\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
+	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\rH\xaa\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x129\n" +
+	"\x15asf_section1_spraying\x18\x92\x01 \x01(\rH\xab\x01R\x13asfSection1Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section2_spraying\x18\x93\x01 \x01(\rH\xac\x01R\x13asfSection2Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section3_spraying\x18\x94\x01 \x01(\rH\xad\x01R\x13asfSection3Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section4_spraying\x18\x95\x01 \x01(\rH\xae\x01R\x13asfSection4Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section5_spraying\x18\x96\x01 \x01(\rH\xaf\x01R\x13asfSection5Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section6_spraying\x18\x97\x01 \x01(\rH\xb0\x01R\x13asfSection6Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section7_spraying\x18\x98\x01 \x01(\rH\xb1\x01R\x13asfSection7Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section8_spraying\x18\x99\x01 \x01(\rH\xb2\x01R\x13asfSection8Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section9_spraying\x18\x9a\x01 \x01(\rH\xb3\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
 	"\rusf_spreading\x18\x9b\x01 \x01(\rH\xb4\x01R\fusfSpreading\x88\x01\x01\x129\n" +
 	"\x15usf_pouring_chemicals\x18\x9c\x01 \x01(\rH\xb5\x01R\x13usfPouringChemicals\x88\x01\x01\x121\n" +
-	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\rH\xb6\x01R\x0fusfConveyorBelt\x88\x01\x01\x12J\n" +
-	"\x1fusf_salt_spreader_s_drive_wheel\x18\x9e\x01 \x01(\rH\xb7\x01R\x1ausfSaltSpreaderSDriveWheel\x88\x01\x01\x12&\n" +
+	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\rH\xb6\x01R\x0fusfConveyorBelt\x88\x01\x01\x12I\n" +
+	"\x1eusf_salt_spreaders_drive_wheel\x18\x9e\x01 \x01(\rH\xb7\x01R\x1ausfSaltSpreadersDriveWheel\x88\x01\x01\x12&\n" +
 	"\vusf_brushes\x18\x9f\x01 \x01(\rH\xb8\x01R\n" +
 	"usfBrushes\x88\x01\x01\x123\n" +
 	"\x12usf_vacuum_cleaner\x18\xa0\x01 \x01(\rH\xb9\x01R\x10usfVacuumCleaner\x88\x01\x01\x12/\n" +
@@ -6963,8 +7891,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x16engine_oil_temperature\x18\xbf\x02 \x01(\rH\xbb\x02R\x14engineOilTemperature\x88\x01\x01\x129\n" +
 	"\x15fuel_injection_timing\x18\xc0\x02 \x01(\x05H\xbc\x02R\x13fuelInjectionTiming\x88\x01\x01\x12=\n" +
 	"\x17throttle_position_group\x18\xc1\x02 \x01(\rH\xbd\x02R\x15throttlePositionGroup\x88\x01\x01\x12=\n" +
-	"\x17commanded_equivalence_r\x18\xc2\x02 \x01(\rH\xbe\x02R\x15commandedEquivalenceR\x88\x01\x01\x122\n" +
-	"\x12intake_map_2_bytes\x18\xc3\x02 \x01(\rH\xbf\x02R\x0fintakeMap2Bytes\x88\x01\x01\x129\n" +
+	"\x17commanded_equivalence_r\x18\xc2\x02 \x01(\rH\xbe\x02R\x15commandedEquivalenceR\x88\x01\x01\x121\n" +
+	"\x11intake_map2_bytes\x18\xc3\x02 \x01(\rH\xbf\x02R\x0fintakeMap2Bytes\x88\x01\x01\x129\n" +
 	"\x15hybrid_system_voltage\x18\xc4\x02 \x01(\rH\xc0\x02R\x13hybridSystemVoltage\x88\x01\x01\x129\n" +
 	"\x15hybrid_system_current\x18\xc5\x02 \x01(\x05H\xc1\x02R\x13hybridSystemCurrent\x88\x01\x01\x12&\n" +
 	"\vfault_codes\x18\xc6\x02 \x01(\tH\xc2\x02R\n" +
@@ -7028,10 +7956,10 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\rfuel_consumed\x18\xff\x02 \x01(\rH\xfb\x02R\ffuelConsumed\x88\x01\x01\x121\n" +
 	"\x11fuel_level_liters\x18\x80\x03 \x01(\rH\xfc\x02R\x0ffuelLevelLiters\x88\x01\x01\x12*\n" +
 	"\rtotal_mileage\x18\x81\x03 \x01(\rH\xfd\x02R\ftotalMileage\x88\x01\x01\x12,\n" +
-	"\x0eprogram_number\x18\x82\x03 \x01(\rH\xfe\x02R\rprogramNumber\x88\x01\x01\x12'\n" +
-	"\fmodule_id_8b\x18\x83\x03 \x01(\x04H\xff\x02R\n" +
-	"moduleId8b\x88\x01\x01\x12)\n" +
-	"\rmodule_id_17b\x18\x84\x03 \x01(\fH\x80\x03R\vmoduleId17b\x88\x01\x01\x12.\n" +
+	"\x0eprogram_number\x18\x82\x03 \x01(\rH\xfe\x02R\rprogramNumber\x88\x01\x01\x12&\n" +
+	"\vmodule_id8b\x18\x83\x03 \x01(\x04H\xff\x02R\n" +
+	"moduleId8b\x88\x01\x01\x12(\n" +
+	"\fmodule_id17b\x18\x84\x03 \x01(\fH\x80\x03R\vmoduleId17b\x88\x01\x01\x12.\n" +
 	"\x0fengine_worktime\x18\x85\x03 \x01(\rH\x81\x03R\x0eengineWorktime\x88\x01\x01\x12=\n" +
 	"\x17engine_worktime_counted\x18\x86\x03 \x01(\rH\x82\x03R\x15engineWorktimeCounted\x88\x01\x01\x129\n" +
 	"\x15total_mileage_counted\x18\x87\x03 \x01(\rH\x83\x03R\x13totalMileageCounted\x88\x01\x01\x129\n" +
@@ -7120,7 +8048,125 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1bagricultural_state_flags_p4\x18\xd0\x03 \x01(\fH\xcb\x03R\x18agriculturalStateFlagsP4\x88\x01\x01\x12&\n" +
 	"\vdoor_status\x18\xd1\x03 \x01(\rH\xcc\x03R\n" +
 	"doorStatus\x88\x01\x01\x124\n" +
-	"\x12engine_temperature\x18\xd3\x03 \x01(\x05H\xcd\x03R\x11engineTemperature\x88\x01\x01\x1a;\n" +
+	"\x12engine_temperature\x18\xd3\x03 \x01(\x05H\xcd\x03R\x11engineTemperature\x88\x01\x01\x12:\n" +
+	"\x16utility_state_flags_p4\x18\xd4\x03 \x01(\x04H\xce\x03R\x13utilityStateFlagsP4\x88\x01\x01\x12:\n" +
+	"\x16cistern_state_flags_p4\x18\xd5\x03 \x01(\x04H\xcf\x03R\x13cisternStateFlagsP4\x88\x01\x01\x12 \n" +
+	"\blng_used\x18\xd6\x03 \x01(\rH\xd0\x03R\alngUsed\x88\x01\x01\x12/\n" +
+	"\x10lng_used_counted\x18\xd7\x03 \x01(\rH\xd1\x03R\x0elngUsedCounted\x88\x01\x01\x121\n" +
+	"\x11lng_level_percent\x18\xd8\x03 \x01(\rH\xd2\x03R\x0flngLevelPercent\x88\x01\x01\x12'\n" +
+	"\flng_level_kg\x18\xd9\x03 \x01(\rH\xd3\x03R\n" +
+	"lngLevelKg\x88\x01\x01\x12+\n" +
+	"\x0etotal_lpg_used\x18\xda\x03 \x01(\rH\xd4\x03R\ftotalLpgUsed\x88\x01\x01\x12:\n" +
+	"\x16total_lpg_used_counted\x18\xdb\x03 \x01(\rH\xd5\x03R\x13totalLpgUsedCounted\x88\x01\x01\x12+\n" +
+	"\x0elpg_level_proc\x18\xdc\x03 \x01(\rH\xd6\x03R\flpgLevelProc\x88\x01\x01\x12/\n" +
+	"\x10lpg_level_liters\x18\xdd\x03 \x01(\rH\xd7\x03R\x0elpgLevelLiters\x88\x01\x01\x12(\n" +
+	"\fssf_ignition\x18\xde\x03 \x01(\bH\xd8\x03R\vssfIgnition\x88\x01\x01\x12=\n" +
+	"\x18ssf_key_in_ignition_lock\x18\xdf\x03 \x01(\bH\xd9\x03R\x14ssfKeyInIgnitionLock\x88\x01\x01\x12&\n" +
+	"\vssf_webasto\x18\xe0\x03 \x01(\bH\xda\x03R\n" +
+	"ssfWebasto\x88\x01\x01\x123\n" +
+	"\x12ssf_engine_working\x18\xe1\x03 \x01(\bH\xdb\x03R\x10ssfEngineWorking\x88\x01\x01\x129\n" +
+	"\x15ssf_standalone_engine\x18\xe2\x03 \x01(\bH\xdc\x03R\x13ssfStandaloneEngine\x88\x01\x01\x122\n" +
+	"\x12ssf_ready_to_drive\x18\xe3\x03 \x01(\bH\xdd\x03R\x0fssfReadyToDrive\x88\x01\x01\x12?\n" +
+	"\x19ssf_engine_working_on_cng\x18\xe4\x03 \x01(\bH\xde\x03R\x15ssfEngineWorkingOnCng\x88\x01\x01\x12)\n" +
+	"\rssf_work_mode\x18\xe5\x03 \x01(\bH\xdf\x03R\vssfWorkMode\x88\x01\x01\x12(\n" +
+	"\fssf_operator\x18\xe6\x03 \x01(\bH\xe0\x03R\vssfOperator\x88\x01\x01\x12*\n" +
+	"\rssf_interlock\x18\xe7\x03 \x01(\bH\xe1\x03R\fssfInterlock\x88\x01\x01\x12:\n" +
+	"\x16ssf_engine_lock_active\x18\xe8\x03 \x01(\bH\xe2\x03R\x13ssfEngineLockActive\x88\x01\x01\x12A\n" +
+	"\x1assf_request_to_lock_engine\x18\xe9\x03 \x01(\bH\xe3\x03R\x16ssfRequestToLockEngine\x88\x01\x01\x12<\n" +
+	"\x17ssf_handbrake_is_active\x18\xea\x03 \x01(\bH\xe4\x03R\x14ssfHandbrakeIsActive\x88\x01\x01\x12<\n" +
+	"\x17ssf_footbrake_is_active\x18\xeb\x03 \x01(\bH\xe5\x03R\x14ssfFootbrakeIsActive\x88\x01\x01\x121\n" +
+	"\x11ssf_clutch_pushed\x18\xec\x03 \x01(\bH\xe6\x03R\x0fssfClutchPushed\x88\x01\x01\x12@\n" +
+	"\x19ssf_hazard_warning_lights\x18\xed\x03 \x01(\bH\xe7\x03R\x16ssfHazardWarningLights\x88\x01\x01\x12=\n" +
+	"\x18ssf_front_left_door_open\x18\xee\x03 \x01(\bH\xe8\x03R\x14ssfFrontLeftDoorOpen\x88\x01\x01\x12?\n" +
+	"\x19ssf_front_right_door_open\x18\xef\x03 \x01(\bH\xe9\x03R\x15ssfFrontRightDoorOpen\x88\x01\x01\x12;\n" +
+	"\x17ssf_rear_left_door_open\x18\xf0\x03 \x01(\bH\xea\x03R\x13ssfRearLeftDoorOpen\x88\x01\x01\x12=\n" +
+	"\x18ssf_rear_right_door_open\x18\xf1\x03 \x01(\bH\xeb\x03R\x14ssfRearRightDoorOpen\x88\x01\x01\x124\n" +
+	"\x13ssf_trunk_door_open\x18\xf2\x03 \x01(\bH\xec\x03R\x10ssfTrunkDoorOpen\x88\x01\x01\x128\n" +
+	"\x15ssf_engine_cover_open\x18\xf3\x03 \x01(\bH\xed\x03R\x12ssfEngineCoverOpen\x88\x01\x01\x12)\n" +
+	"\rssf_roof_open\x18\xf4\x03 \x01(\bH\xee\x03R\vssfRoofOpen\x88\x01\x01\x12@\n" +
+	"\x19ssf_charging_wire_plugged\x18\xf5\x03 \x01(\bH\xef\x03R\x16ssfChargingWirePlugged\x88\x01\x01\x127\n" +
+	"\x14ssf_battery_charging\x18\xf6\x03 \x01(\bH\xf0\x03R\x12ssfBatteryCharging\x88\x01\x01\x12@\n" +
+	"\x19ssf_electric_engine_state\x18\xf7\x03 \x01(\bH\xf1\x03R\x16ssfElectricEngineState\x88\x01\x01\x12G\n" +
+	"\x1dssf_car_closed_factory_remote\x18\xf8\x03 \x01(\bH\xf2\x03R\x19ssfCarClosedFactoryRemote\x88\x01\x01\x120\n" +
+	"\x11ssf_car_is_closed\x18\xf9\x03 \x01(\bH\xf3\x03R\x0essfCarIsClosed\x88\x01\x01\x12B\n" +
+	"\x1assf_factory_alarm_actuated\x18\xfa\x03 \x01(\bH\xf4\x03R\x17ssfFactoryAlarmActuated\x88\x01\x01\x12B\n" +
+	"\x1assf_factory_alarm_emulated\x18\xfb\x03 \x01(\bH\xf5\x03R\x17ssfFactoryAlarmEmulated\x88\x01\x01\x12K\n" +
+	"\x1fssf_signal_close_factory_remote\x18\xfc\x03 \x01(\bH\xf6\x03R\x1bssfSignalCloseFactoryRemote\x88\x01\x01\x12I\n" +
+	"\x1essf_signal_open_factory_remote\x18\xfd\x03 \x01(\bH\xf7\x03R\x1assfSignalOpenFactoryRemote\x88\x01\x01\x125\n" +
+	"\x13ssf_rearming_signal\x18\xfe\x03 \x01(\bH\xf8\x03R\x11ssfRearmingSignal\x88\x01\x01\x12T\n" +
+	"$ssf_trunk_door_opened_factory_remote\x18\xff\x03 \x01(\bH\xf9\x03R\x1fssfTrunkDoorOpenedFactoryRemote\x88\x01\x01\x12;\n" +
+	"\x17ssf_can_module_in_sleep\x18\x80\x04 \x01(\bH\xfa\x03R\x13ssfCanModuleInSleep\x88\x01\x01\x127\n" +
+	"\x14ssf_factory_remote3x\x18\x81\x04 \x01(\bH\xfb\x03R\x12ssfFactoryRemote3x\x88\x01\x01\x121\n" +
+	"\x11ssf_factory_armed\x18\x82\x04 \x01(\bH\xfc\x03R\x0fssfFactoryArmed\x88\x01\x01\x12<\n" +
+	"\x17ssf_parking_gear_active\x18\x83\x04 \x01(\bH\xfd\x03R\x14ssfParkingGearActive\x88\x01\x01\x12<\n" +
+	"\x17ssf_reverse_gear_active\x18\x84\x04 \x01(\bH\xfe\x03R\x14ssfReverseGearActive\x88\x01\x01\x12<\n" +
+	"\x17ssf_neutral_gear_active\x18\x85\x04 \x01(\bH\xff\x03R\x14ssfNeutralGearActive\x88\x01\x01\x124\n" +
+	"\x13ssf_drive_is_active\x18\x86\x04 \x01(\bH\x80\x04R\x10ssfDriveIsActive\x88\x01\x01\x12J\n" +
+	"\x1fssf_engine_working_on_dual_fuel\x18\x87\x04 \x01(\bH\x81\x04R\x1assfEngineWorkingOnDualFuel\x88\x01\x01\x12?\n" +
+	"\x19ssf_engine_working_on_lpg\x18\x88\x04 \x01(\bH\x82\x04R\x15ssfEngineWorkingOnLpg\x88\x01\x01\x123\n" +
+	"\x12csf_parking_lights\x18\x89\x04 \x01(\bH\x83\x04R\x10csfParkingLights\x88\x01\x01\x12:\n" +
+	"\x16csf_dipped_head_lights\x18\x8a\x04 \x01(\bH\x84\x04R\x13csfDippedHeadLights\x88\x01\x01\x12>\n" +
+	"\x18csf_full_beam_headlights\x18\x8b\x04 \x01(\bH\x85\x04R\x15csfFullBeamHeadlights\x88\x01\x01\x124\n" +
+	"\x13csf_rear_fog_lights\x18\x8c\x04 \x01(\bH\x86\x04R\x10csfRearFogLights\x88\x01\x01\x126\n" +
+	"\x14csf_front_fog_lights\x18\x8d\x04 \x01(\bH\x87\x04R\x11csfFrontFogLights\x88\x01\x01\x12D\n" +
+	"\x1bcsf_additional_front_lights\x18\x8e\x04 \x01(\bH\x88\x04R\x18csfAdditionalFrontLights\x88\x01\x01\x12B\n" +
+	"\x1acsf_additional_rear_lights\x18\x8f\x04 \x01(\bH\x89\x04R\x17csfAdditionalRearLights\x88\x01\x01\x12/\n" +
+	"\x10csf_light_signal\x18\x90\x04 \x01(\bH\x8a\x04R\x0ecsfLightSignal\x88\x01\x01\x127\n" +
+	"\x14csf_air_conditioning\x18\x91\x04 \x01(\bH\x8b\x04R\x12csfAirConditioning\x88\x01\x01\x123\n" +
+	"\x12csf_cruise_control\x18\x92\x04 \x01(\bH\x8c\x04R\x10csfCruiseControl\x88\x01\x01\x12;\n" +
+	"\x16csf_automatic_retarder\x18\x93\x04 \x01(\bH\x8d\x04R\x14csfAutomaticRetarder\x88\x01\x01\x125\n" +
+	"\x13csf_manual_retarder\x18\x94\x04 \x01(\bH\x8e\x04R\x11csfManualRetarder\x88\x01\x01\x12H\n" +
+	"\x1dcsf_drivers_seatbelt_fastened\x18\x95\x04 \x01(\bH\x8f\x04R\x1acsfDriversSeatbeltFastened\x88\x01\x01\x12S\n" +
+	"#csf_front_drivers_seatbelt_fastened\x18\x96\x04 \x01(\bH\x90\x04R\x1fcsfFrontDriversSeatbeltFastened\x88\x01\x01\x12Q\n" +
+	"\"csf_left_drivers_seatbelt_fastened\x18\x97\x04 \x01(\bH\x91\x04R\x1ecsfLeftDriversSeatbeltFastened\x88\x01\x01\x12S\n" +
+	"#csf_right_drivers_seatbelt_fastened\x18\x98\x04 \x01(\bH\x92\x04R\x1fcsfRightDriversSeatbeltFastened\x88\x01\x01\x12U\n" +
+	"$csf_centre_drivers_seatbelt_fastened\x18\x99\x04 \x01(\bH\x93\x04R csfCentreDriversSeatbeltFastened\x88\x01\x01\x12D\n" +
+	"\x1bcsf_front_passenger_present\x18\x9a\x04 \x01(\bH\x94\x04R\x18csfFrontPassengerPresent\x88\x01\x01\x12\x1e\n" +
+	"\acsf_pto\x18\x9b\x04 \x01(\bH\x95\x04R\x06csfPto\x88\x01\x01\x12H\n" +
+	"\x1dcsf_front_differential_locked\x18\x9c\x04 \x01(\bH\x96\x04R\x1acsfFrontDifferentialLocked\x88\x01\x01\x12F\n" +
+	"\x1ccsf_rear_differential_locked\x18\x9d\x04 \x01(\bH\x97\x04R\x19csfRearDifferentialLocked\x88\x01\x01\x12R\n" +
+	"\"csf_central_differential4hi_locked\x18\x9e\x04 \x01(\bH\x98\x04R\x1fcsfCentralDifferential4hiLocked\x88\x01\x01\x12L\n" +
+	"\x1fcsf_rear_differential4lo_locked\x18\x9f\x04 \x01(\bH\x99\x04R\x1ccsfRearDifferential4loLocked\x88\x01\x01\x12G\n" +
+	"\x1dcsf_trailer_axle1_lift_active\x18\xa0\x04 \x01(\bH\x9a\x04R\x19csfTrailerAxle1LiftActive\x88\x01\x01\x12G\n" +
+	"\x1dcsf_trailer_axle2_lift_active\x18\xa1\x04 \x01(\bH\x9b\x04R\x19csfTrailerAxle2LiftActive\x88\x01\x01\x129\n" +
+	"\x15csf_trailer_connected\x18\xa2\x04 \x01(\bH\x9c\x04R\x13csfTrailerConnected\x88\x01\x01\x12I\n" +
+	"\x1ecsf_start_stop_system_inactive\x18\xa3\x04 \x01(\bH\x9d\x04R\x1acsfStartStopSystemInactive\x88\x01\x01\x12B\n" +
+	"\x1aisf_check_engine_indicator\x18\xa4\x04 \x01(\bH\x9e\x04R\x17isfCheckEngineIndicator\x88\x01\x01\x121\n" +
+	"\x11isf_abs_indicator\x18\xa5\x04 \x01(\bH\x9f\x04R\x0fisfAbsIndicator\x88\x01\x01\x121\n" +
+	"\x11isf_esp_indicator\x18\xa6\x04 \x01(\bH\xa0\x04R\x0fisfEspIndicator\x88\x01\x01\x122\n" +
+	"\x12isf_esp_turned_off\x18\xa7\x04 \x01(\bH\xa1\x04R\x0fisfEspTurnedOff\x88\x01\x01\x123\n" +
+	"\x12isf_stop_indicator\x18\xa8\x04 \x01(\bH\xa2\x04R\x10isfStopIndicator\x88\x01\x01\x12<\n" +
+	"\x17isf_oil_level_indicator\x18\xa9\x04 \x01(\bH\xa3\x04R\x14isfOilLevelIndicator\x88\x01\x01\x12>\n" +
+	"\x18isf_coolant_liquid_level\x18\xaa\x04 \x01(\bH\xa4\x04R\x15isfCoolantLiquidLevel\x88\x01\x01\x12Q\n" +
+	"\"isf_battery_not_charging_indicator\x18\xab\x04 \x01(\bH\xa5\x04R\x1eisfBatteryNotChargingIndicator\x88\x01\x01\x12J\n" +
+	"\x1eisf_handbrake_system_indicator\x18\xac\x04 \x01(\bH\xa6\x04R\x1bisfHandbrakeSystemIndicator\x88\x01\x01\x127\n" +
+	"\x14isf_airbag_indicator\x18\xad\x04 \x01(\bH\xa7\x04R\x12isfAirbagIndicator\x88\x01\x01\x121\n" +
+	"\x11isf_eps_indicator\x18\xae\x04 \x01(\bH\xa8\x04R\x0fisfEpsIndicator\x88\x01\x01\x129\n" +
+	"\x15isf_warning_indicator\x18\xaf\x04 \x01(\bH\xa9\x04R\x13isfWarningIndicator\x88\x01\x01\x12F\n" +
+	"\x1cisf_lights_failure_indicator\x18\xb0\x04 \x01(\bH\xaa\x04R\x19isfLightsFailureIndicator\x88\x01\x01\x12K\n" +
+	"\x1fisf_low_tire_pressure_indicator\x18\xb1\x04 \x01(\bH\xab\x04R\x1bisfLowTirePressureIndicator\x88\x01\x01\x12L\n" +
+	" isf_wear_of_brake_pads_indicator\x18\xb2\x04 \x01(\bH\xac\x04R\x1bisfWearOfBrakePadsIndicator\x88\x01\x01\x12E\n" +
+	"\x1cisf_low_fuel_level_indicator\x18\xb3\x04 \x01(\bH\xad\x04R\x18isfLowFuelLevelIndicator\x88\x01\x01\x12R\n" +
+	"\"isf_maintenance_required_indicator\x18\xb4\x04 \x01(\bH\xae\x04R\x1fisfMaintenanceRequiredIndicator\x88\x01\x01\x12<\n" +
+	"\x17isf_glow_plug_indicator\x18\xb5\x04 \x01(\bH\xaf\x04R\x14isfGlowPlugIndicator\x88\x01\x01\x121\n" +
+	"\x11isf_fap_indicator\x18\xb6\x04 \x01(\bH\xb0\x04R\x0fisfFapIndicator\x88\x01\x01\x121\n" +
+	"\x11isf_epc_indicator\x18\xb7\x04 \x01(\bH\xb1\x04R\x0fisfEpcIndicator\x88\x01\x01\x12Z\n" +
+	"'isf_clogged_engine_oil_filter_indicator\x18\xb8\x04 \x01(\bH\xb2\x04R\"isfCloggedEngineOilFilterIndicator\x88\x01\x01\x12V\n" +
+	"%isf_low_engine_oil_pressure_indicator\x18\xb9\x04 \x01(\bH\xb3\x04R isfLowEngineOilPressureIndicator\x88\x01\x01\x12e\n" +
+	"-isf_too_high_engine_oil_temperature_indicator\x18\xba\x04 \x01(\bH\xb4\x04R'isfTooHighEngineOilTemperatureIndicator\x88\x01\x01\x12K\n" +
+	"\x1fisf_low_coolant_level_indicator\x18\xbb\x04 \x01(\bH\xb5\x04R\x1bisfLowCoolantLevelIndicator\x88\x01\x01\x12m\n" +
+	"1isf_clogged_hydraulic_system_oil_filter_indicator\x18\xbc\x04 \x01(\bH\xb6\x04R+isfCloggedHydraulicSystemOilFilterIndicator\x88\x01\x01\x12b\n" +
+	"+isf_hydraulic_system_low_pressure_indicator\x18\xbd\x04 \x01(\bH\xb7\x04R&isfHydraulicSystemLowPressureIndicator\x88\x01\x01\x12V\n" +
+	"%isf_hydraulic_oil_low_level_indicator\x18\xbe\x04 \x01(\bH\xb8\x04R isfHydraulicOilLowLevelIndicator\x88\x01\x01\x12j\n" +
+	"/isf_hydraulic_system_high_temperature_indicator\x18\xbf\x04 \x01(\bH\xb9\x04R*isfHydraulicSystemHighTemperatureIndicator\x88\x01\x01\x12i\n" +
+	"/isf_oil_overflow_in_hydraulic_chamber_indicator\x18\xc0\x04 \x01(\bH\xba\x04R)isfOilOverflowInHydraulicChamberIndicator\x88\x01\x01\x12M\n" +
+	" isf_clogged_air_filter_indicator\x18\xc1\x04 \x01(\bH\xbb\x04R\x1cisfCloggedAirFilterIndicator\x88\x01\x01\x12O\n" +
+	"!isf_clogged_fuel_filter_indicator\x18\xc2\x04 \x01(\bH\xbc\x04R\x1disfCloggedFuelFilterIndicator\x88\x01\x01\x12C\n" +
+	"\x1bisf_water_in_fuel_indicator\x18\xc3\x04 \x01(\bH\xbd\x04R\x17isfWaterInFuelIndicator\x88\x01\x01\x12N\n" +
+	"!asf_grain_tank_is100_percent_full\x18\xe3\x04 \x01(\bH\xbe\x04R\x1casfGrainTankIs100PercentFull\x88\x01\x01\x12L\n" +
+	" asf_grain_tank_is70_percent_full\x18\xe4\x04 \x01(\bH\xbf\x04R\x1basfGrainTankIs70PercentFull\x88\x01\x01\x12W\n" +
+	"&asf_straw_chopper_speed_below_the_norm\x18\xef\x04 \x01(\bH\xc0\x04R asfStrawChopperSpeedBelowTheNorm\x88\x01\x01\x12,\n" +
+	"\x0eusf_spreading2\x18\x8a\x05 \x01(\bH\xc1\x04R\rusfSpreading2\x88\x01\x01\x1a;\n" +
 	"\rGeoFenceEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
@@ -7284,17 +8330,17 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x18_asf_rear_power_take_offB\x14\n" +
 	"\x12_asf_mowing_activeB\x17\n" +
 	"\x15_asf_threshing_activeB \n" +
-	"\x1e_asf_grain_release_from_hopperB\x1d\n" +
-	"\x1b_asf_grain_tank_is_100_fullB\x1c\n" +
-	"\x1a_asf_grain_tank_is_70_fullB\x1b\n" +
+	"\x1e_asf_grain_release_from_hopperB\x1c\n" +
+	"\x1a_asf_grain_tank_is100_fullB\x1b\n" +
+	"\x19_asf_grain_tank_is70_fullB\x1b\n" +
 	"\x19_asf_grain_tank_is_openedB\x15\n" +
 	"\x13_asf_unloader_driveB&\n" +
 	"$_asf_cleaning_fan_control_turned_offB(\n" +
 	"&_asf_threshing_drum_control_turned_offB\x1e\n" +
 	"\x1c_asf_straw_walker_is_cloggedB3\n" +
-	"1_asf_excessive_clearance_under_the_threshing_drumBD\n" +
-	"B_asf_low_temperature_of_drive_system_hydraulics_less_than_5_gradesBI\n" +
-	"G_asf_high_temperature_of_drive_system_hydraulics_greater_than_86_gradesB%\n" +
+	"1_asf_excessive_clearance_under_the_threshing_drumBC\n" +
+	"A_asf_low_temperature_of_drive_system_hydraulics_less_than5_gradesBH\n" +
+	"F_asf_high_temperature_of_drive_system_hydraulics_greater_than86_gradesB%\n" +
 	"#_asf_ear_auger_speed_below_the_normB'\n" +
 	"%_asf_grain_auger_speed_below_the_normB)\n" +
 	"'_asf_straw_chooper_speed_below_the_normB(\n" +
@@ -7305,22 +8351,22 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1b_asf_grain_header_connectedB!\n" +
 	"\x1f_asf_feeder_reverse_switched_onB;\n" +
 	"9_asf_the_pressure_filter_of_the_hydraulic_pump_is_cloggedB%\n" +
-	"#_asf_adapter_pressure_filter_sensorB#\n" +
-	"!_asf_service_2_required_indicatorB%\n" +
-	"#_asf_drain_filter_clogged_indicatorB\x19\n" +
-	"\x17_asf_section_1_sprayingB\x19\n" +
-	"\x17_asf_section_2_sprayingB\x19\n" +
-	"\x17_asf_section_3_sprayingB\x19\n" +
-	"\x17_asf_section_4_sprayingB\x19\n" +
-	"\x17_asf_section_5_sprayingB\x19\n" +
-	"\x17_asf_section_6_sprayingB\x19\n" +
-	"\x17_asf_section_7_sprayingB\x19\n" +
-	"\x17_asf_section_8_sprayingB\x19\n" +
-	"\x17_asf_section_9_sprayingB\x10\n" +
+	"#_asf_adapter_pressure_filter_sensorB\"\n" +
+	" _asf_service2_required_indicatorB%\n" +
+	"#_asf_drain_filter_clogged_indicatorB\x18\n" +
+	"\x16_asf_section1_sprayingB\x18\n" +
+	"\x16_asf_section2_sprayingB\x18\n" +
+	"\x16_asf_section3_sprayingB\x18\n" +
+	"\x16_asf_section4_sprayingB\x18\n" +
+	"\x16_asf_section5_sprayingB\x18\n" +
+	"\x16_asf_section6_sprayingB\x18\n" +
+	"\x16_asf_section7_sprayingB\x18\n" +
+	"\x16_asf_section8_sprayingB\x18\n" +
+	"\x16_asf_section9_sprayingB\x10\n" +
 	"\x0e_usf_spreadingB\x18\n" +
 	"\x16_usf_pouring_chemicalsB\x14\n" +
-	"\x12_usf_conveyor_beltB\"\n" +
-	" _usf_salt_spreader_s_drive_wheelB\x0e\n" +
+	"\x12_usf_conveyor_beltB!\n" +
+	"\x1f_usf_salt_spreaders_drive_wheelB\x0e\n" +
 	"\f_usf_brushesB\x15\n" +
 	"\x13_usf_vacuum_cleanerB\x13\n" +
 	"\x11_usf_water_supplyB\x12\n" +
@@ -7462,8 +8508,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x17_engine_oil_temperatureB\x18\n" +
 	"\x16_fuel_injection_timingB\x1a\n" +
 	"\x18_throttle_position_groupB\x1a\n" +
-	"\x18_commanded_equivalence_rB\x15\n" +
-	"\x13_intake_map_2_bytesB\x18\n" +
+	"\x18_commanded_equivalence_rB\x14\n" +
+	"\x12_intake_map2_bytesB\x18\n" +
 	"\x16_hybrid_system_voltageB\x18\n" +
 	"\x16_hybrid_system_currentB\x0e\n" +
 	"\f_fault_codesB\f\n" +
@@ -7527,9 +8573,9 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x0e_fuel_consumedB\x14\n" +
 	"\x12_fuel_level_litersB\x10\n" +
 	"\x0e_total_mileageB\x11\n" +
-	"\x0f_program_numberB\x0f\n" +
-	"\r_module_id_8bB\x10\n" +
-	"\x0e_module_id_17bB\x12\n" +
+	"\x0f_program_numberB\x0e\n" +
+	"\f_module_id8bB\x0f\n" +
+	"\r_module_id17bB\x12\n" +
 	"\x10_engine_worktimeB\x1a\n" +
 	"\x18_engine_worktime_countedB\x18\n" +
 	"\x16_total_mileage_countedB\x18\n" +
@@ -7608,7 +8654,124 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x19_indicator_state_flags_p4B\x1e\n" +
 	"\x1c_agricultural_state_flags_p4B\x0e\n" +
 	"\f_door_statusB\x15\n" +
-	"\x13_engine_temperature*\xb8\x06\n" +
+	"\x13_engine_temperatureB\x19\n" +
+	"\x17_utility_state_flags_p4B\x19\n" +
+	"\x17_cistern_state_flags_p4B\v\n" +
+	"\t_lng_usedB\x13\n" +
+	"\x11_lng_used_countedB\x14\n" +
+	"\x12_lng_level_percentB\x0f\n" +
+	"\r_lng_level_kgB\x11\n" +
+	"\x0f_total_lpg_usedB\x19\n" +
+	"\x17_total_lpg_used_countedB\x11\n" +
+	"\x0f_lpg_level_procB\x13\n" +
+	"\x11_lpg_level_litersB\x0f\n" +
+	"\r_ssf_ignitionB\x1b\n" +
+	"\x19_ssf_key_in_ignition_lockB\x0e\n" +
+	"\f_ssf_webastoB\x15\n" +
+	"\x13_ssf_engine_workingB\x18\n" +
+	"\x16_ssf_standalone_engineB\x15\n" +
+	"\x13_ssf_ready_to_driveB\x1c\n" +
+	"\x1a_ssf_engine_working_on_cngB\x10\n" +
+	"\x0e_ssf_work_modeB\x0f\n" +
+	"\r_ssf_operatorB\x10\n" +
+	"\x0e_ssf_interlockB\x19\n" +
+	"\x17_ssf_engine_lock_activeB\x1d\n" +
+	"\x1b_ssf_request_to_lock_engineB\x1a\n" +
+	"\x18_ssf_handbrake_is_activeB\x1a\n" +
+	"\x18_ssf_footbrake_is_activeB\x14\n" +
+	"\x12_ssf_clutch_pushedB\x1c\n" +
+	"\x1a_ssf_hazard_warning_lightsB\x1b\n" +
+	"\x19_ssf_front_left_door_openB\x1c\n" +
+	"\x1a_ssf_front_right_door_openB\x1a\n" +
+	"\x18_ssf_rear_left_door_openB\x1b\n" +
+	"\x19_ssf_rear_right_door_openB\x16\n" +
+	"\x14_ssf_trunk_door_openB\x18\n" +
+	"\x16_ssf_engine_cover_openB\x10\n" +
+	"\x0e_ssf_roof_openB\x1c\n" +
+	"\x1a_ssf_charging_wire_pluggedB\x17\n" +
+	"\x15_ssf_battery_chargingB\x1c\n" +
+	"\x1a_ssf_electric_engine_stateB \n" +
+	"\x1e_ssf_car_closed_factory_remoteB\x14\n" +
+	"\x12_ssf_car_is_closedB\x1d\n" +
+	"\x1b_ssf_factory_alarm_actuatedB\x1d\n" +
+	"\x1b_ssf_factory_alarm_emulatedB\"\n" +
+	" _ssf_signal_close_factory_remoteB!\n" +
+	"\x1f_ssf_signal_open_factory_remoteB\x16\n" +
+	"\x14_ssf_rearming_signalB'\n" +
+	"%_ssf_trunk_door_opened_factory_remoteB\x1a\n" +
+	"\x18_ssf_can_module_in_sleepB\x17\n" +
+	"\x15_ssf_factory_remote3xB\x14\n" +
+	"\x12_ssf_factory_armedB\x1a\n" +
+	"\x18_ssf_parking_gear_activeB\x1a\n" +
+	"\x18_ssf_reverse_gear_activeB\x1a\n" +
+	"\x18_ssf_neutral_gear_activeB\x16\n" +
+	"\x14_ssf_drive_is_activeB\"\n" +
+	" _ssf_engine_working_on_dual_fuelB\x1c\n" +
+	"\x1a_ssf_engine_working_on_lpgB\x15\n" +
+	"\x13_csf_parking_lightsB\x19\n" +
+	"\x17_csf_dipped_head_lightsB\x1b\n" +
+	"\x19_csf_full_beam_headlightsB\x16\n" +
+	"\x14_csf_rear_fog_lightsB\x17\n" +
+	"\x15_csf_front_fog_lightsB\x1e\n" +
+	"\x1c_csf_additional_front_lightsB\x1d\n" +
+	"\x1b_csf_additional_rear_lightsB\x13\n" +
+	"\x11_csf_light_signalB\x17\n" +
+	"\x15_csf_air_conditioningB\x15\n" +
+	"\x13_csf_cruise_controlB\x19\n" +
+	"\x17_csf_automatic_retarderB\x16\n" +
+	"\x14_csf_manual_retarderB \n" +
+	"\x1e_csf_drivers_seatbelt_fastenedB&\n" +
+	"$_csf_front_drivers_seatbelt_fastenedB%\n" +
+	"#_csf_left_drivers_seatbelt_fastenedB&\n" +
+	"$_csf_right_drivers_seatbelt_fastenedB'\n" +
+	"%_csf_centre_drivers_seatbelt_fastenedB\x1e\n" +
+	"\x1c_csf_front_passenger_presentB\n" +
+	"\n" +
+	"\b_csf_ptoB \n" +
+	"\x1e_csf_front_differential_lockedB\x1f\n" +
+	"\x1d_csf_rear_differential_lockedB%\n" +
+	"#_csf_central_differential4hi_lockedB\"\n" +
+	" _csf_rear_differential4lo_lockedB \n" +
+	"\x1e_csf_trailer_axle1_lift_activeB \n" +
+	"\x1e_csf_trailer_axle2_lift_activeB\x18\n" +
+	"\x16_csf_trailer_connectedB!\n" +
+	"\x1f_csf_start_stop_system_inactiveB\x1d\n" +
+	"\x1b_isf_check_engine_indicatorB\x14\n" +
+	"\x12_isf_abs_indicatorB\x14\n" +
+	"\x12_isf_esp_indicatorB\x15\n" +
+	"\x13_isf_esp_turned_offB\x15\n" +
+	"\x13_isf_stop_indicatorB\x1a\n" +
+	"\x18_isf_oil_level_indicatorB\x1b\n" +
+	"\x19_isf_coolant_liquid_levelB%\n" +
+	"#_isf_battery_not_charging_indicatorB!\n" +
+	"\x1f_isf_handbrake_system_indicatorB\x17\n" +
+	"\x15_isf_airbag_indicatorB\x14\n" +
+	"\x12_isf_eps_indicatorB\x18\n" +
+	"\x16_isf_warning_indicatorB\x1f\n" +
+	"\x1d_isf_lights_failure_indicatorB\"\n" +
+	" _isf_low_tire_pressure_indicatorB#\n" +
+	"!_isf_wear_of_brake_pads_indicatorB\x1f\n" +
+	"\x1d_isf_low_fuel_level_indicatorB%\n" +
+	"#_isf_maintenance_required_indicatorB\x1a\n" +
+	"\x18_isf_glow_plug_indicatorB\x14\n" +
+	"\x12_isf_fap_indicatorB\x14\n" +
+	"\x12_isf_epc_indicatorB*\n" +
+	"(_isf_clogged_engine_oil_filter_indicatorB(\n" +
+	"&_isf_low_engine_oil_pressure_indicatorB0\n" +
+	"._isf_too_high_engine_oil_temperature_indicatorB\"\n" +
+	" _isf_low_coolant_level_indicatorB4\n" +
+	"2_isf_clogged_hydraulic_system_oil_filter_indicatorB.\n" +
+	",_isf_hydraulic_system_low_pressure_indicatorB(\n" +
+	"&_isf_hydraulic_oil_low_level_indicatorB2\n" +
+	"0_isf_hydraulic_system_high_temperature_indicatorB2\n" +
+	"0_isf_oil_overflow_in_hydraulic_chamber_indicatorB#\n" +
+	"!_isf_clogged_air_filter_indicatorB$\n" +
+	"\"_isf_clogged_fuel_filter_indicatorB\x1e\n" +
+	"\x1c_isf_water_in_fuel_indicatorB$\n" +
+	"\"_asf_grain_tank_is100_percent_fullB#\n" +
+	"!_asf_grain_tank_is70_percent_fullB)\n" +
+	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
+	"\x0f_usf_spreading2*\xb0\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -7631,15 +8794,15 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\bHUMIDITY\x10\f\x12\r\n" +
 	"\tDOOR_OPEN\x10\r\x12\x14\n" +
 	"\x10ENGINE_DOOR_OPEN\x10\x0e\x12\x13\n" +
-	"\x0fTRUNK_DOOR_OPEN\x10\x0f\x12\x13\n" +
-	"\x0fDIGITAL_INPUT_1\x10\x10\x12\x13\n" +
-	"\x0fDIGITAL_INPUT_2\x10\x11\x12\x13\n" +
-	"\x0fDIGITAL_INPUT_3\x10\x12\x12\x14\n" +
-	"\x10DIGITAL_OUTPUT_1\x10\x13\x12\x14\n" +
-	"\x10DIGITAL_OUTPUT_2\x10\x14\x12\x14\n" +
-	"\x10DIGITAL_OUTPUT_3\x10\x15\x12\x12\n" +
-	"\x0eANALOG_INPUT_1\x10\x16\x12\x12\n" +
-	"\x0eANALOG_INPUT_2\x10\x17\x12\x0e\n" +
+	"\x0fTRUNK_DOOR_OPEN\x10\x0f\x12\x12\n" +
+	"\x0eDIGITAL_INPUT1\x10\x10\x12\x12\n" +
+	"\x0eDIGITAL_INPUT2\x10\x11\x12\x12\n" +
+	"\x0eDIGITAL_INPUT3\x10\x12\x12\x13\n" +
+	"\x0fDIGITAL_OUTPUT1\x10\x13\x12\x13\n" +
+	"\x0fDIGITAL_OUTPUT2\x10\x14\x12\x13\n" +
+	"\x0fDIGITAL_OUTPUT3\x10\x15\x12\x11\n" +
+	"\rANALOG_INPUT1\x10\x16\x12\x11\n" +
+	"\rANALOG_INPUT2\x10\x17\x12\x0e\n" +
 	"\n" +
 	"FOOT_BRAKE\x10\x18\x12\x0f\n" +
 	"\vTEMPERATURE\x10\x19\x12\b\n" +

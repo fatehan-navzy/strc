@@ -1421,12 +1421,12 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for AsfGrainReleaseFromHopper
 	}
 
-	if m.AsfGrainTankIs_100Full != nil {
-		// no validation rules for AsfGrainTankIs_100Full
+	if m.AsfGrainTankIs100Full != nil {
+		// no validation rules for AsfGrainTankIs100Full
 	}
 
-	if m.AsfGrainTankIs_70Full != nil {
-		// no validation rules for AsfGrainTankIs_70Full
+	if m.AsfGrainTankIs70Full != nil {
+		// no validation rules for AsfGrainTankIs70Full
 	}
 
 	if m.AsfGrainTankIsOpened != nil {
@@ -1453,12 +1453,12 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for AsfExcessiveClearanceUnderTheThreshingDrum
 	}
 
-	if m.AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades != nil {
-		// no validation rules for AsfLowTemperatureOfDriveSystemHydraulicsLessThan_5Grades
+	if m.AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades != nil {
+		// no validation rules for AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades
 	}
 
-	if m.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades != nil {
-		// no validation rules for AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan_86Grades
+	if m.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades != nil {
+		// no validation rules for AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades
 	}
 
 	if m.AsfEarAugerSpeedBelowTheNorm != nil {
@@ -1505,48 +1505,48 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for AsfAdapterPressureFilterSensor
 	}
 
-	if m.AsfService_2RequiredIndicator != nil {
-		// no validation rules for AsfService_2RequiredIndicator
+	if m.AsfService2RequiredIndicator != nil {
+		// no validation rules for AsfService2RequiredIndicator
 	}
 
 	if m.AsfDrainFilterCloggedIndicator != nil {
 		// no validation rules for AsfDrainFilterCloggedIndicator
 	}
 
-	if m.AsfSection_1Spraying != nil {
-		// no validation rules for AsfSection_1Spraying
+	if m.AsfSection1Spraying != nil {
+		// no validation rules for AsfSection1Spraying
 	}
 
-	if m.AsfSection_2Spraying != nil {
-		// no validation rules for AsfSection_2Spraying
+	if m.AsfSection2Spraying != nil {
+		// no validation rules for AsfSection2Spraying
 	}
 
-	if m.AsfSection_3Spraying != nil {
-		// no validation rules for AsfSection_3Spraying
+	if m.AsfSection3Spraying != nil {
+		// no validation rules for AsfSection3Spraying
 	}
 
-	if m.AsfSection_4Spraying != nil {
-		// no validation rules for AsfSection_4Spraying
+	if m.AsfSection4Spraying != nil {
+		// no validation rules for AsfSection4Spraying
 	}
 
-	if m.AsfSection_5Spraying != nil {
-		// no validation rules for AsfSection_5Spraying
+	if m.AsfSection5Spraying != nil {
+		// no validation rules for AsfSection5Spraying
 	}
 
-	if m.AsfSection_6Spraying != nil {
-		// no validation rules for AsfSection_6Spraying
+	if m.AsfSection6Spraying != nil {
+		// no validation rules for AsfSection6Spraying
 	}
 
-	if m.AsfSection_7Spraying != nil {
-		// no validation rules for AsfSection_7Spraying
+	if m.AsfSection7Spraying != nil {
+		// no validation rules for AsfSection7Spraying
 	}
 
-	if m.AsfSection_8Spraying != nil {
-		// no validation rules for AsfSection_8Spraying
+	if m.AsfSection8Spraying != nil {
+		// no validation rules for AsfSection8Spraying
 	}
 
-	if m.AsfSection_9Spraying != nil {
-		// no validation rules for AsfSection_9Spraying
+	if m.AsfSection9Spraying != nil {
+		// no validation rules for AsfSection9Spraying
 	}
 
 	if m.UsfSpreading != nil {
@@ -1561,8 +1561,8 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for UsfConveyorBelt
 	}
 
-	if m.UsfSaltSpreaderSDriveWheel != nil {
-		// no validation rules for UsfSaltSpreaderSDriveWheel
+	if m.UsfSaltSpreadersDriveWheel != nil {
+		// no validation rules for UsfSaltSpreadersDriveWheel
 	}
 
 	if m.UsfBrushes != nil {
@@ -2105,8 +2105,8 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for CommandedEquivalenceR
 	}
 
-	if m.IntakeMap_2Bytes != nil {
-		// no validation rules for IntakeMap_2Bytes
+	if m.IntakeMap2Bytes != nil {
+		// no validation rules for IntakeMap2Bytes
 	}
 
 	if m.HybridSystemVoltage != nil {
@@ -2361,12 +2361,12 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for ProgramNumber
 	}
 
-	if m.ModuleId_8B != nil {
-		// no validation rules for ModuleId_8B
+	if m.ModuleId8B != nil {
+		// no validation rules for ModuleId8B
 	}
 
-	if m.ModuleId_17B != nil {
-		// no validation rules for ModuleId_17B
+	if m.ModuleId17B != nil {
+		// no validation rules for ModuleId17B
 	}
 
 	if m.EngineWorktime != nil {
@@ -2675,6 +2675,470 @@ func (m *Compact) validate(all bool) error {
 
 	if m.EngineTemperature != nil {
 		// no validation rules for EngineTemperature
+	}
+
+	if m.UtilityStateFlagsP4 != nil {
+		// no validation rules for UtilityStateFlagsP4
+	}
+
+	if m.CisternStateFlagsP4 != nil {
+		// no validation rules for CisternStateFlagsP4
+	}
+
+	if m.LngUsed != nil {
+		// no validation rules for LngUsed
+	}
+
+	if m.LngUsedCounted != nil {
+		// no validation rules for LngUsedCounted
+	}
+
+	if m.LngLevelPercent != nil {
+		// no validation rules for LngLevelPercent
+	}
+
+	if m.LngLevelKg != nil {
+		// no validation rules for LngLevelKg
+	}
+
+	if m.TotalLpgUsed != nil {
+		// no validation rules for TotalLpgUsed
+	}
+
+	if m.TotalLpgUsedCounted != nil {
+		// no validation rules for TotalLpgUsedCounted
+	}
+
+	if m.LpgLevelProc != nil {
+		// no validation rules for LpgLevelProc
+	}
+
+	if m.LpgLevelLiters != nil {
+		// no validation rules for LpgLevelLiters
+	}
+
+	if m.SsfIgnition != nil {
+		// no validation rules for SsfIgnition
+	}
+
+	if m.SsfKeyInIgnitionLock != nil {
+		// no validation rules for SsfKeyInIgnitionLock
+	}
+
+	if m.SsfWebasto != nil {
+		// no validation rules for SsfWebasto
+	}
+
+	if m.SsfEngineWorking != nil {
+		// no validation rules for SsfEngineWorking
+	}
+
+	if m.SsfStandaloneEngine != nil {
+		// no validation rules for SsfStandaloneEngine
+	}
+
+	if m.SsfReadyToDrive != nil {
+		// no validation rules for SsfReadyToDrive
+	}
+
+	if m.SsfEngineWorkingOnCng != nil {
+		// no validation rules for SsfEngineWorkingOnCng
+	}
+
+	if m.SsfWorkMode != nil {
+		// no validation rules for SsfWorkMode
+	}
+
+	if m.SsfOperator != nil {
+		// no validation rules for SsfOperator
+	}
+
+	if m.SsfInterlock != nil {
+		// no validation rules for SsfInterlock
+	}
+
+	if m.SsfEngineLockActive != nil {
+		// no validation rules for SsfEngineLockActive
+	}
+
+	if m.SsfRequestToLockEngine != nil {
+		// no validation rules for SsfRequestToLockEngine
+	}
+
+	if m.SsfHandbrakeIsActive != nil {
+		// no validation rules for SsfHandbrakeIsActive
+	}
+
+	if m.SsfFootbrakeIsActive != nil {
+		// no validation rules for SsfFootbrakeIsActive
+	}
+
+	if m.SsfClutchPushed != nil {
+		// no validation rules for SsfClutchPushed
+	}
+
+	if m.SsfHazardWarningLights != nil {
+		// no validation rules for SsfHazardWarningLights
+	}
+
+	if m.SsfFrontLeftDoorOpen != nil {
+		// no validation rules for SsfFrontLeftDoorOpen
+	}
+
+	if m.SsfFrontRightDoorOpen != nil {
+		// no validation rules for SsfFrontRightDoorOpen
+	}
+
+	if m.SsfRearLeftDoorOpen != nil {
+		// no validation rules for SsfRearLeftDoorOpen
+	}
+
+	if m.SsfRearRightDoorOpen != nil {
+		// no validation rules for SsfRearRightDoorOpen
+	}
+
+	if m.SsfTrunkDoorOpen != nil {
+		// no validation rules for SsfTrunkDoorOpen
+	}
+
+	if m.SsfEngineCoverOpen != nil {
+		// no validation rules for SsfEngineCoverOpen
+	}
+
+	if m.SsfRoofOpen != nil {
+		// no validation rules for SsfRoofOpen
+	}
+
+	if m.SsfChargingWirePlugged != nil {
+		// no validation rules for SsfChargingWirePlugged
+	}
+
+	if m.SsfBatteryCharging != nil {
+		// no validation rules for SsfBatteryCharging
+	}
+
+	if m.SsfElectricEngineState != nil {
+		// no validation rules for SsfElectricEngineState
+	}
+
+	if m.SsfCarClosedFactoryRemote != nil {
+		// no validation rules for SsfCarClosedFactoryRemote
+	}
+
+	if m.SsfCarIsClosed != nil {
+		// no validation rules for SsfCarIsClosed
+	}
+
+	if m.SsfFactoryAlarmActuated != nil {
+		// no validation rules for SsfFactoryAlarmActuated
+	}
+
+	if m.SsfFactoryAlarmEmulated != nil {
+		// no validation rules for SsfFactoryAlarmEmulated
+	}
+
+	if m.SsfSignalCloseFactoryRemote != nil {
+		// no validation rules for SsfSignalCloseFactoryRemote
+	}
+
+	if m.SsfSignalOpenFactoryRemote != nil {
+		// no validation rules for SsfSignalOpenFactoryRemote
+	}
+
+	if m.SsfRearmingSignal != nil {
+		// no validation rules for SsfRearmingSignal
+	}
+
+	if m.SsfTrunkDoorOpenedFactoryRemote != nil {
+		// no validation rules for SsfTrunkDoorOpenedFactoryRemote
+	}
+
+	if m.SsfCanModuleInSleep != nil {
+		// no validation rules for SsfCanModuleInSleep
+	}
+
+	if m.SsfFactoryRemote3X != nil {
+		// no validation rules for SsfFactoryRemote3X
+	}
+
+	if m.SsfFactoryArmed != nil {
+		// no validation rules for SsfFactoryArmed
+	}
+
+	if m.SsfParkingGearActive != nil {
+		// no validation rules for SsfParkingGearActive
+	}
+
+	if m.SsfReverseGearActive != nil {
+		// no validation rules for SsfReverseGearActive
+	}
+
+	if m.SsfNeutralGearActive != nil {
+		// no validation rules for SsfNeutralGearActive
+	}
+
+	if m.SsfDriveIsActive != nil {
+		// no validation rules for SsfDriveIsActive
+	}
+
+	if m.SsfEngineWorkingOnDualFuel != nil {
+		// no validation rules for SsfEngineWorkingOnDualFuel
+	}
+
+	if m.SsfEngineWorkingOnLpg != nil {
+		// no validation rules for SsfEngineWorkingOnLpg
+	}
+
+	if m.CsfParkingLights != nil {
+		// no validation rules for CsfParkingLights
+	}
+
+	if m.CsfDippedHeadLights != nil {
+		// no validation rules for CsfDippedHeadLights
+	}
+
+	if m.CsfFullBeamHeadlights != nil {
+		// no validation rules for CsfFullBeamHeadlights
+	}
+
+	if m.CsfRearFogLights != nil {
+		// no validation rules for CsfRearFogLights
+	}
+
+	if m.CsfFrontFogLights != nil {
+		// no validation rules for CsfFrontFogLights
+	}
+
+	if m.CsfAdditionalFrontLights != nil {
+		// no validation rules for CsfAdditionalFrontLights
+	}
+
+	if m.CsfAdditionalRearLights != nil {
+		// no validation rules for CsfAdditionalRearLights
+	}
+
+	if m.CsfLightSignal != nil {
+		// no validation rules for CsfLightSignal
+	}
+
+	if m.CsfAirConditioning != nil {
+		// no validation rules for CsfAirConditioning
+	}
+
+	if m.CsfCruiseControl != nil {
+		// no validation rules for CsfCruiseControl
+	}
+
+	if m.CsfAutomaticRetarder != nil {
+		// no validation rules for CsfAutomaticRetarder
+	}
+
+	if m.CsfManualRetarder != nil {
+		// no validation rules for CsfManualRetarder
+	}
+
+	if m.CsfDriversSeatbeltFastened != nil {
+		// no validation rules for CsfDriversSeatbeltFastened
+	}
+
+	if m.CsfFrontDriversSeatbeltFastened != nil {
+		// no validation rules for CsfFrontDriversSeatbeltFastened
+	}
+
+	if m.CsfLeftDriversSeatbeltFastened != nil {
+		// no validation rules for CsfLeftDriversSeatbeltFastened
+	}
+
+	if m.CsfRightDriversSeatbeltFastened != nil {
+		// no validation rules for CsfRightDriversSeatbeltFastened
+	}
+
+	if m.CsfCentreDriversSeatbeltFastened != nil {
+		// no validation rules for CsfCentreDriversSeatbeltFastened
+	}
+
+	if m.CsfFrontPassengerPresent != nil {
+		// no validation rules for CsfFrontPassengerPresent
+	}
+
+	if m.CsfPto != nil {
+		// no validation rules for CsfPto
+	}
+
+	if m.CsfFrontDifferentialLocked != nil {
+		// no validation rules for CsfFrontDifferentialLocked
+	}
+
+	if m.CsfRearDifferentialLocked != nil {
+		// no validation rules for CsfRearDifferentialLocked
+	}
+
+	if m.CsfCentralDifferential4HiLocked != nil {
+		// no validation rules for CsfCentralDifferential4HiLocked
+	}
+
+	if m.CsfRearDifferential4LoLocked != nil {
+		// no validation rules for CsfRearDifferential4LoLocked
+	}
+
+	if m.CsfTrailerAxle1LiftActive != nil {
+		// no validation rules for CsfTrailerAxle1LiftActive
+	}
+
+	if m.CsfTrailerAxle2LiftActive != nil {
+		// no validation rules for CsfTrailerAxle2LiftActive
+	}
+
+	if m.CsfTrailerConnected != nil {
+		// no validation rules for CsfTrailerConnected
+	}
+
+	if m.CsfStartStopSystemInactive != nil {
+		// no validation rules for CsfStartStopSystemInactive
+	}
+
+	if m.IsfCheckEngineIndicator != nil {
+		// no validation rules for IsfCheckEngineIndicator
+	}
+
+	if m.IsfAbsIndicator != nil {
+		// no validation rules for IsfAbsIndicator
+	}
+
+	if m.IsfEspIndicator != nil {
+		// no validation rules for IsfEspIndicator
+	}
+
+	if m.IsfEspTurnedOff != nil {
+		// no validation rules for IsfEspTurnedOff
+	}
+
+	if m.IsfStopIndicator != nil {
+		// no validation rules for IsfStopIndicator
+	}
+
+	if m.IsfOilLevelIndicator != nil {
+		// no validation rules for IsfOilLevelIndicator
+	}
+
+	if m.IsfCoolantLiquidLevel != nil {
+		// no validation rules for IsfCoolantLiquidLevel
+	}
+
+	if m.IsfBatteryNotChargingIndicator != nil {
+		// no validation rules for IsfBatteryNotChargingIndicator
+	}
+
+	if m.IsfHandbrakeSystemIndicator != nil {
+		// no validation rules for IsfHandbrakeSystemIndicator
+	}
+
+	if m.IsfAirbagIndicator != nil {
+		// no validation rules for IsfAirbagIndicator
+	}
+
+	if m.IsfEpsIndicator != nil {
+		// no validation rules for IsfEpsIndicator
+	}
+
+	if m.IsfWarningIndicator != nil {
+		// no validation rules for IsfWarningIndicator
+	}
+
+	if m.IsfLightsFailureIndicator != nil {
+		// no validation rules for IsfLightsFailureIndicator
+	}
+
+	if m.IsfLowTirePressureIndicator != nil {
+		// no validation rules for IsfLowTirePressureIndicator
+	}
+
+	if m.IsfWearOfBrakePadsIndicator != nil {
+		// no validation rules for IsfWearOfBrakePadsIndicator
+	}
+
+	if m.IsfLowFuelLevelIndicator != nil {
+		// no validation rules for IsfLowFuelLevelIndicator
+	}
+
+	if m.IsfMaintenanceRequiredIndicator != nil {
+		// no validation rules for IsfMaintenanceRequiredIndicator
+	}
+
+	if m.IsfGlowPlugIndicator != nil {
+		// no validation rules for IsfGlowPlugIndicator
+	}
+
+	if m.IsfFapIndicator != nil {
+		// no validation rules for IsfFapIndicator
+	}
+
+	if m.IsfEpcIndicator != nil {
+		// no validation rules for IsfEpcIndicator
+	}
+
+	if m.IsfCloggedEngineOilFilterIndicator != nil {
+		// no validation rules for IsfCloggedEngineOilFilterIndicator
+	}
+
+	if m.IsfLowEngineOilPressureIndicator != nil {
+		// no validation rules for IsfLowEngineOilPressureIndicator
+	}
+
+	if m.IsfTooHighEngineOilTemperatureIndicator != nil {
+		// no validation rules for IsfTooHighEngineOilTemperatureIndicator
+	}
+
+	if m.IsfLowCoolantLevelIndicator != nil {
+		// no validation rules for IsfLowCoolantLevelIndicator
+	}
+
+	if m.IsfCloggedHydraulicSystemOilFilterIndicator != nil {
+		// no validation rules for IsfCloggedHydraulicSystemOilFilterIndicator
+	}
+
+	if m.IsfHydraulicSystemLowPressureIndicator != nil {
+		// no validation rules for IsfHydraulicSystemLowPressureIndicator
+	}
+
+	if m.IsfHydraulicOilLowLevelIndicator != nil {
+		// no validation rules for IsfHydraulicOilLowLevelIndicator
+	}
+
+	if m.IsfHydraulicSystemHighTemperatureIndicator != nil {
+		// no validation rules for IsfHydraulicSystemHighTemperatureIndicator
+	}
+
+	if m.IsfOilOverflowInHydraulicChamberIndicator != nil {
+		// no validation rules for IsfOilOverflowInHydraulicChamberIndicator
+	}
+
+	if m.IsfCloggedAirFilterIndicator != nil {
+		// no validation rules for IsfCloggedAirFilterIndicator
+	}
+
+	if m.IsfCloggedFuelFilterIndicator != nil {
+		// no validation rules for IsfCloggedFuelFilterIndicator
+	}
+
+	if m.IsfWaterInFuelIndicator != nil {
+		// no validation rules for IsfWaterInFuelIndicator
+	}
+
+	if m.AsfGrainTankIs100PercentFull != nil {
+		// no validation rules for AsfGrainTankIs100PercentFull
+	}
+
+	if m.AsfGrainTankIs70PercentFull != nil {
+		// no validation rules for AsfGrainTankIs70PercentFull
+	}
+
+	if m.AsfStrawChopperSpeedBelowTheNorm != nil {
+		// no validation rules for AsfStrawChopperSpeedBelowTheNorm
+	}
+
+	if m.UsfSpreading2 != nil {
+		// no validation rules for UsfSpreading2
 	}
 
 	if len(errors) > 0 {
