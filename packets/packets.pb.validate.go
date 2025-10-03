@@ -1617,100 +1617,100 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for UsfHydraulicsWorkNotPermitted
 	}
 
-	if m.CisfSection_1PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_1PresenceOfFluidInTheDownpipe
+	if m.CisfSection1PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection1PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_1Filled != nil {
-		// no validation rules for CisfSection_1Filled
+	if m.CisfSection1Filled != nil {
+		// no validation rules for CisfSection1Filled
 	}
 
-	if m.CisfSection_1Overfilled != nil {
-		// no validation rules for CisfSection_1Overfilled
+	if m.CisfSection1Overfilled != nil {
+		// no validation rules for CisfSection1Overfilled
 	}
 
-	if m.CisfSection_2PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_2PresenceOfFluidInTheDownpipe
+	if m.CisfSection2PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection2PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_2Filled != nil {
-		// no validation rules for CisfSection_2Filled
+	if m.CisfSection2Filled != nil {
+		// no validation rules for CisfSection2Filled
 	}
 
-	if m.CisfSection_2Overfilled != nil {
-		// no validation rules for CisfSection_2Overfilled
+	if m.CisfSection2Overfilled != nil {
+		// no validation rules for CisfSection2Overfilled
 	}
 
-	if m.CisfSection_3PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_3PresenceOfFluidInTheDownpipe
+	if m.CisfSection3PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection3PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_3Filled != nil {
-		// no validation rules for CisfSection_3Filled
+	if m.CisfSection3Filled != nil {
+		// no validation rules for CisfSection3Filled
 	}
 
-	if m.CisfSection_3Overfilled != nil {
-		// no validation rules for CisfSection_3Overfilled
+	if m.CisfSection3Overfilled != nil {
+		// no validation rules for CisfSection3Overfilled
 	}
 
-	if m.CisfSection_4PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_4PresenceOfFluidInTheDownpipe
+	if m.CisfSection4PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection4PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_4Filled != nil {
-		// no validation rules for CisfSection_4Filled
+	if m.CisfSection4Filled != nil {
+		// no validation rules for CisfSection4Filled
 	}
 
-	if m.CisfSection_4Overfilled != nil {
-		// no validation rules for CisfSection_4Overfilled
+	if m.CisfSection4Overfilled != nil {
+		// no validation rules for CisfSection4Overfilled
 	}
 
-	if m.CisfSection_5PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_5PresenceOfFluidInTheDownpipe
+	if m.CisfSection5PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection5PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_5Filled != nil {
-		// no validation rules for CisfSection_5Filled
+	if m.CisfSection5Filled != nil {
+		// no validation rules for CisfSection5Filled
 	}
 
-	if m.CisfSection_5Overfilled != nil {
-		// no validation rules for CisfSection_5Overfilled
+	if m.CisfSection5Overfilled != nil {
+		// no validation rules for CisfSection5Overfilled
 	}
 
-	if m.CisfSection_6PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_6PresenceOfFluidInTheDownpipe
+	if m.CisfSection6PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection6PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_6Filled != nil {
-		// no validation rules for CisfSection_6Filled
+	if m.CisfSection6Filled != nil {
+		// no validation rules for CisfSection6Filled
 	}
 
-	if m.CisfSection_6Overfilled != nil {
-		// no validation rules for CisfSection_6Overfilled
+	if m.CisfSection6Overfilled != nil {
+		// no validation rules for CisfSection6Overfilled
 	}
 
-	if m.CisfSection_7PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_7PresenceOfFluidInTheDownpipe
+	if m.CisfSection7PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection7PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_7Filled != nil {
-		// no validation rules for CisfSection_7Filled
+	if m.CisfSection7Filled != nil {
+		// no validation rules for CisfSection7Filled
 	}
 
-	if m.CisfSection_7Overfilled != nil {
-		// no validation rules for CisfSection_7Overfilled
+	if m.CisfSection7Overfilled != nil {
+		// no validation rules for CisfSection7Overfilled
 	}
 
-	if m.CisfSection_8PresenceOfFluidInTheDownpipe != nil {
-		// no validation rules for CisfSection_8PresenceOfFluidInTheDownpipe
+	if m.CisfSection8PresenceOfFluidInTheDownpipe != nil {
+		// no validation rules for CisfSection8PresenceOfFluidInTheDownpipe
 	}
 
-	if m.CisfSection_8Filled != nil {
-		// no validation rules for CisfSection_8Filled
+	if m.CisfSection8Filled != nil {
+		// no validation rules for CisfSection8Filled
 	}
 
-	if m.CisfSection_8Overfilled != nil {
-		// no validation rules for CisfSection_8Overfilled
+	if m.CisfSection8Overfilled != nil {
+		// no validation rules for CisfSection8Overfilled
 	}
 
 	if m.DistanceToNextService != nil {
@@ -1863,6 +1863,810 @@ func (m *Compact) validate(all bool) error {
 
 	if m.ConnectivityQuality != nil {
 		// no validation rules for ConnectivityQuality
+	}
+
+	if m.AutoGeofence != nil {
+		// no validation rules for AutoGeofence
+	}
+
+	if m.Trip != nil {
+		// no validation rules for Trip
+	}
+
+	if m.OverSpeeding != nil {
+		// no validation rules for OverSpeeding
+	}
+
+	if m.CrashTraceData != nil {
+		// no validation rules for CrashTraceData
+	}
+
+	if m.BloodAlcoholContent != nil {
+		// no validation rules for BloodAlcoholContent
+	}
+
+	if m.Idling != nil {
+		// no validation rules for Idling
+	}
+
+	if m.GreenDrivingType != nil {
+		// no validation rules for GreenDrivingType
+	}
+
+	if m.Towing != nil {
+		// no validation rules for Towing
+	}
+
+	if m.Unplug != nil {
+		// no validation rules for Unplug
+	}
+
+	if m.CrashDetection != nil {
+		// no validation rules for CrashDetection
+	}
+
+	if m.Immobilizer != nil {
+		// no validation rules for Immobilizer
+	}
+
+	if m.GreenDrivingValue != nil {
+		// no validation rules for GreenDrivingValue
+	}
+
+	if m.Jamming != nil {
+		// no validation rules for Jamming
+	}
+
+	if m.Iccid2 != nil {
+		// no validation rules for Iccid2
+	}
+
+	if m.GreenDrivingEventDuration != nil {
+		// no validation rules for GreenDrivingEventDuration
+	}
+
+	if m.Alarm != nil {
+		// no validation rules for Alarm
+	}
+
+	if m.EcoMaximum != nil {
+		// no validation rules for EcoMaximum
+	}
+
+	if m.EcoAverage != nil {
+		// no validation rules for EcoAverage
+	}
+
+	if m.EcoDuration != nil {
+		// no validation rules for EcoDuration
+	}
+
+	if m.DrivingState != nil {
+		// no validation rules for DrivingState
+	}
+
+	if m.DrivingRecords != nil {
+		// no validation rules for DrivingRecords
+	}
+
+	if m.CrashEventCounter != nil {
+		// no validation rules for CrashEventCounter
+	}
+
+	if m.GnssJamming != nil {
+		// no validation rules for GnssJamming
+	}
+
+	if m.PrivateMode != nil {
+		// no validation rules for PrivateMode
+	}
+
+	if m.IgnitionOnCounter != nil {
+		// no validation rules for IgnitionOnCounter
+	}
+
+	if m.MotorcycleFallDetection != nil {
+		// no validation rules for MotorcycleFallDetection
+	}
+
+	if m.Vin != nil {
+		// no validation rules for Vin
+	}
+
+	if m.NumberOfDtc != nil {
+		// no validation rules for NumberOfDtc
+	}
+
+	if m.EngineLoad != nil {
+		// no validation rules for EngineLoad
+	}
+
+	if m.CoolantTemperature != nil {
+		// no validation rules for CoolantTemperature
+	}
+
+	if m.ShortFuelTrim != nil {
+		// no validation rules for ShortFuelTrim
+	}
+
+	if m.FuelPressure != nil {
+		// no validation rules for FuelPressure
+	}
+
+	if m.IntakeMap != nil {
+		// no validation rules for IntakeMap
+	}
+
+	if m.EngineRpm != nil {
+		// no validation rules for EngineRpm
+	}
+
+	if m.VehicleSpeed != nil {
+		// no validation rules for VehicleSpeed
+	}
+
+	if m.TimingAdvance != nil {
+		// no validation rules for TimingAdvance
+	}
+
+	if m.IntakeAirTemperature != nil {
+		// no validation rules for IntakeAirTemperature
+	}
+
+	if m.Maf != nil {
+		// no validation rules for Maf
+	}
+
+	if m.ThrottlePosition != nil {
+		// no validation rules for ThrottlePosition
+	}
+
+	if m.RuntimeSinceEngineStart != nil {
+		// no validation rules for RuntimeSinceEngineStart
+	}
+
+	if m.DistanceTraveledMilOn != nil {
+		// no validation rules for DistanceTraveledMilOn
+	}
+
+	if m.RelativeFuelRailPressure != nil {
+		// no validation rules for RelativeFuelRailPressure
+	}
+
+	if m.DirectFuelRailPressure != nil {
+		// no validation rules for DirectFuelRailPressure
+	}
+
+	if m.CommandedEgr != nil {
+		// no validation rules for CommandedEgr
+	}
+
+	if m.EgrError != nil {
+		// no validation rules for EgrError
+	}
+
+	if m.FuelLevelPercent != nil {
+		// no validation rules for FuelLevelPercent
+	}
+
+	if m.DistanceSinceCodesClear != nil {
+		// no validation rules for DistanceSinceCodesClear
+	}
+
+	if m.BarometricPressure != nil {
+		// no validation rules for BarometricPressure
+	}
+
+	if m.ControlModuleVoltage != nil {
+		// no validation rules for ControlModuleVoltage
+	}
+
+	if m.AbsoluteLoadValue != nil {
+		// no validation rules for AbsoluteLoadValue
+	}
+
+	if m.FuelType != nil {
+		// no validation rules for FuelType
+	}
+
+	if m.AmbientAirTemperature != nil {
+		// no validation rules for AmbientAirTemperature
+	}
+
+	if m.TimeRunWithMilOn != nil {
+		// no validation rules for TimeRunWithMilOn
+	}
+
+	if m.TimeSinceCodesCleared != nil {
+		// no validation rules for TimeSinceCodesCleared
+	}
+
+	if m.AbsoluteFuelRailPressure != nil {
+		// no validation rules for AbsoluteFuelRailPressure
+	}
+
+	if m.HybridBatteryPackLife != nil {
+		// no validation rules for HybridBatteryPackLife
+	}
+
+	if m.EngineOilTemperature != nil {
+		// no validation rules for EngineOilTemperature
+	}
+
+	if m.FuelInjectionTiming != nil {
+		// no validation rules for FuelInjectionTiming
+	}
+
+	if m.ThrottlePositionGroup != nil {
+		// no validation rules for ThrottlePositionGroup
+	}
+
+	if m.CommandedEquivalenceR != nil {
+		// no validation rules for CommandedEquivalenceR
+	}
+
+	if m.IntakeMap_2Bytes != nil {
+		// no validation rules for IntakeMap_2Bytes
+	}
+
+	if m.HybridSystemVoltage != nil {
+		// no validation rules for HybridSystemVoltage
+	}
+
+	if m.HybridSystemCurrent != nil {
+		// no validation rules for HybridSystemCurrent
+	}
+
+	if m.FaultCodes != nil {
+		// no validation rules for FaultCodes
+	}
+
+	if m.FuelRate != nil {
+		// no validation rules for FuelRate
+	}
+
+	if m.ObdOemTotalMileage != nil {
+		// no validation rules for ObdOemTotalMileage
+	}
+
+	if m.ObdOemFuelLevel != nil {
+		// no validation rules for ObdOemFuelLevel
+	}
+
+	if m.OemDistanceUntilService != nil {
+		// no validation rules for OemDistanceUntilService
+	}
+
+	if m.OemBatteryChargeState != nil {
+		// no validation rules for OemBatteryChargeState
+	}
+
+	if m.OemBatteryChargeLevel != nil {
+		// no validation rules for OemBatteryChargeLevel
+	}
+
+	if m.OemRemainingDistance != nil {
+		// no validation rules for OemRemainingDistance
+	}
+
+	if m.OemBatteryStateOfHealth != nil {
+		// no validation rules for OemBatteryStateOfHealth
+	}
+
+	if m.OemBatteryTemperature != nil {
+		// no validation rules for OemBatteryTemperature
+	}
+
+	if m.Beacon != nil {
+		// no validation rules for Beacon
+	}
+
+	if m.AdvancedBleBeaconData != nil {
+		// no validation rules for AdvancedBleBeaconData
+	}
+
+	if m.BleTemperature1 != nil {
+		// no validation rules for BleTemperature1
+	}
+
+	if m.BleTemperature2 != nil {
+		// no validation rules for BleTemperature2
+	}
+
+	if m.BleTemperature3 != nil {
+		// no validation rules for BleTemperature3
+	}
+
+	if m.BleTemperature4 != nil {
+		// no validation rules for BleTemperature4
+	}
+
+	if m.BleBattery1 != nil {
+		// no validation rules for BleBattery1
+	}
+
+	if m.BleBattery2 != nil {
+		// no validation rules for BleBattery2
+	}
+
+	if m.BleBattery3 != nil {
+		// no validation rules for BleBattery3
+	}
+
+	if m.BleBattery4 != nil {
+		// no validation rules for BleBattery4
+	}
+
+	if m.BleHumidity1 != nil {
+		// no validation rules for BleHumidity1
+	}
+
+	if m.BleHumidity2 != nil {
+		// no validation rules for BleHumidity2
+	}
+
+	if m.BleHumidity3 != nil {
+		// no validation rules for BleHumidity3
+	}
+
+	if m.BleHumidity4 != nil {
+		// no validation rules for BleHumidity4
+	}
+
+	if m.BleFuelLevel1 != nil {
+		// no validation rules for BleFuelLevel1
+	}
+
+	if m.BleFuelLevel2 != nil {
+		// no validation rules for BleFuelLevel2
+	}
+
+	if m.BleFuelLevel3 != nil {
+		// no validation rules for BleFuelLevel3
+	}
+
+	if m.BleFuelLevel4 != nil {
+		// no validation rules for BleFuelLevel4
+	}
+
+	if m.BleFuelFrequency1 != nil {
+		// no validation rules for BleFuelFrequency1
+	}
+
+	if m.BleFuelFrequency2 != nil {
+		// no validation rules for BleFuelFrequency2
+	}
+
+	if m.BleFuelFrequency3 != nil {
+		// no validation rules for BleFuelFrequency3
+	}
+
+	if m.BleFuelFrequency4 != nil {
+		// no validation rules for BleFuelFrequency4
+	}
+
+	if m.BleLuminosity1 != nil {
+		// no validation rules for BleLuminosity1
+	}
+
+	if m.BleLuminosity2 != nil {
+		// no validation rules for BleLuminosity2
+	}
+
+	if m.BleLuminosity3 != nil {
+		// no validation rules for BleLuminosity3
+	}
+
+	if m.BleLuminosity4 != nil {
+		// no validation rules for BleLuminosity4
+	}
+
+	if m.Ble1Custom1 != nil {
+		// no validation rules for Ble1Custom1
+	}
+
+	if m.Ble1Custom2 != nil {
+		// no validation rules for Ble1Custom2
+	}
+
+	if m.Ble1Custom3 != nil {
+		// no validation rules for Ble1Custom3
+	}
+
+	if m.Ble1Custom4 != nil {
+		// no validation rules for Ble1Custom4
+	}
+
+	if m.Ble1Custom5 != nil {
+		// no validation rules for Ble1Custom5
+	}
+
+	if m.Ble2Custom1 != nil {
+		// no validation rules for Ble2Custom1
+	}
+
+	if m.Ble2Custom2 != nil {
+		// no validation rules for Ble2Custom2
+	}
+
+	if m.Ble2Custom3 != nil {
+		// no validation rules for Ble2Custom3
+	}
+
+	if m.Ble2Custom4 != nil {
+		// no validation rules for Ble2Custom4
+	}
+
+	if m.Ble2Custom5 != nil {
+		// no validation rules for Ble2Custom5
+	}
+
+	if m.Ble3Custom1 != nil {
+		// no validation rules for Ble3Custom1
+	}
+
+	if m.Ble3Custom2 != nil {
+		// no validation rules for Ble3Custom2
+	}
+
+	if m.Ble3Custom3 != nil {
+		// no validation rules for Ble3Custom3
+	}
+
+	if m.Ble3Custom4 != nil {
+		// no validation rules for Ble3Custom4
+	}
+
+	if m.Ble3Custom5 != nil {
+		// no validation rules for Ble3Custom5
+	}
+
+	if m.Ble4Custom1 != nil {
+		// no validation rules for Ble4Custom1
+	}
+
+	if m.Ble4Custom2 != nil {
+		// no validation rules for Ble4Custom2
+	}
+
+	if m.Ble4Custom3 != nil {
+		// no validation rules for Ble4Custom3
+	}
+
+	if m.Ble4Custom4 != nil {
+		// no validation rules for Ble4Custom4
+	}
+
+	if m.Ble4Custom5 != nil {
+		// no validation rules for Ble4Custom5
+	}
+
+	if m.AcceleratorPedalPosition != nil {
+		// no validation rules for AcceleratorPedalPosition
+	}
+
+	if m.FuelConsumed != nil {
+		// no validation rules for FuelConsumed
+	}
+
+	if m.FuelLevelLiters != nil {
+		// no validation rules for FuelLevelLiters
+	}
+
+	if m.TotalMileage != nil {
+		// no validation rules for TotalMileage
+	}
+
+	if m.ProgramNumber != nil {
+		// no validation rules for ProgramNumber
+	}
+
+	if m.ModuleId_8B != nil {
+		// no validation rules for ModuleId_8B
+	}
+
+	if m.ModuleId_17B != nil {
+		// no validation rules for ModuleId_17B
+	}
+
+	if m.EngineWorktime != nil {
+		// no validation rules for EngineWorktime
+	}
+
+	if m.EngineWorktimeCounted != nil {
+		// no validation rules for EngineWorktimeCounted
+	}
+
+	if m.TotalMileageCounted != nil {
+		// no validation rules for TotalMileageCounted
+	}
+
+	if m.FuelConsumedCounted != nil {
+		// no validation rules for FuelConsumedCounted
+	}
+
+	if m.AdblueLevelPercent != nil {
+		// no validation rules for AdblueLevelPercent
+	}
+
+	if m.AdblueLevelLiters != nil {
+		// no validation rules for AdblueLevelLiters
+	}
+
+	if m.Axle1Load != nil {
+		// no validation rules for Axle1Load
+	}
+
+	if m.Axle2Load != nil {
+		// no validation rules for Axle2Load
+	}
+
+	if m.Axle3Load != nil {
+		// no validation rules for Axle3Load
+	}
+
+	if m.Axle4Load != nil {
+		// no validation rules for Axle4Load
+	}
+
+	if m.Axle5Load != nil {
+		// no validation rules for Axle5Load
+	}
+
+	if m.ControlStateFlags != nil {
+		// no validation rules for ControlStateFlags
+	}
+
+	if m.AgriculturalMachineryFlags != nil {
+		// no validation rules for AgriculturalMachineryFlags
+	}
+
+	if m.HarvestingTime != nil {
+		// no validation rules for HarvestingTime
+	}
+
+	if m.AreaOfHarvest != nil {
+		// no validation rules for AreaOfHarvest
+	}
+
+	if m.MowingEfficiency != nil {
+		// no validation rules for MowingEfficiency
+	}
+
+	if m.GrainMownVolume != nil {
+		// no validation rules for GrainMownVolume
+	}
+
+	if m.GrainMoisture != nil {
+		// no validation rules for GrainMoisture
+	}
+
+	if m.HarvestingDrumRpm != nil {
+		// no validation rules for HarvestingDrumRpm
+	}
+
+	if m.GapUnderHarvestingDrum != nil {
+		// no validation rules for GapUnderHarvestingDrum
+	}
+
+	if m.SecurityStateFlags != nil {
+		// no validation rules for SecurityStateFlags
+	}
+
+	if m.TachographTotalVehicleDistance != nil {
+		// no validation rules for TachographTotalVehicleDistance
+	}
+
+	if m.TripDistance != nil {
+		// no validation rules for TripDistance
+	}
+
+	if m.TachographVehicleSpeed != nil {
+		// no validation rules for TachographVehicleSpeed
+	}
+
+	if m.TachoDriverCardPresence != nil {
+		// no validation rules for TachoDriverCardPresence
+	}
+
+	if m.Driver1States != nil {
+		// no validation rules for Driver1States
+	}
+
+	if m.Driver2States != nil {
+		// no validation rules for Driver2States
+	}
+
+	if m.Driver1ContinuousDrivingTime != nil {
+		// no validation rules for Driver1ContinuousDrivingTime
+	}
+
+	if m.Driver2ContinuousDrivingTime != nil {
+		// no validation rules for Driver2ContinuousDrivingTime
+	}
+
+	if m.Driver1CumulativeTime != nil {
+		// no validation rules for Driver1CumulativeTime
+	}
+
+	if m.Driver2CumulativeTime != nil {
+		// no validation rules for Driver2CumulativeTime
+	}
+
+	if m.Driver1SelectedActivityDuration != nil {
+		// no validation rules for Driver1SelectedActivityDuration
+	}
+
+	if m.Driver2SelectedActivityDuration != nil {
+		// no validation rules for Driver2SelectedActivityDuration
+	}
+
+	if m.Driver1CumulativeDrivingTime != nil {
+		// no validation rules for Driver1CumulativeDrivingTime
+	}
+
+	if m.Driver2CumulativeDrivingTime != nil {
+		// no validation rules for Driver2CumulativeDrivingTime
+	}
+
+	if m.Driver1IdHigh != nil {
+		// no validation rules for Driver1IdHigh
+	}
+
+	if m.Driver1IdLow != nil {
+		// no validation rules for Driver1IdLow
+	}
+
+	if m.Driver2IdHigh != nil {
+		// no validation rules for Driver2IdHigh
+	}
+
+	if m.Driver2IdLow != nil {
+		// no validation rules for Driver2IdLow
+	}
+
+	if m.BatteryTemperature != nil {
+		// no validation rules for BatteryTemperature
+	}
+
+	if m.HvBatteryLevel != nil {
+		// no validation rules for HvBatteryLevel
+	}
+
+	if m.DtcFaults != nil {
+		// no validation rules for DtcFaults
+	}
+
+	if m.SlopeOfArm != nil {
+		// no validation rules for SlopeOfArm
+	}
+
+	if m.RotationOfArm != nil {
+		// no validation rules for RotationOfArm
+	}
+
+	if m.EjectOfArm != nil {
+		// no validation rules for EjectOfArm
+	}
+
+	if m.HorizontalDistanceArmVehicle != nil {
+		// no validation rules for HorizontalDistanceArmVehicle
+	}
+
+	if m.HeightArmAboveGround != nil {
+		// no validation rules for HeightArmAboveGround
+	}
+
+	if m.DrillRpm != nil {
+		// no validation rules for DrillRpm
+	}
+
+	if m.AmountOfSpreadSaltSquareMeter != nil {
+		// no validation rules for AmountOfSpreadSaltSquareMeter
+	}
+
+	if m.AmountOfSpreadFineGrainedSalt != nil {
+		// no validation rules for AmountOfSpreadFineGrainedSalt
+	}
+
+	if m.AmountOfCoarseGrainedSalt != nil {
+		// no validation rules for AmountOfCoarseGrainedSalt
+	}
+
+	if m.AmountOfSpreadDimix != nil {
+		// no validation rules for AmountOfSpreadDimix
+	}
+
+	if m.AmountOfSpreadCoarseGrainedCalcium != nil {
+		// no validation rules for AmountOfSpreadCoarseGrainedCalcium
+	}
+
+	if m.AmountOfSpreadCalciumChloride != nil {
+		// no validation rules for AmountOfSpreadCalciumChloride
+	}
+
+	if m.AmountOfSpreadSodiumChloride != nil {
+		// no validation rules for AmountOfSpreadSodiumChloride
+	}
+
+	if m.AmountOfSpreadMagnesiumChloride != nil {
+		// no validation rules for AmountOfSpreadMagnesiumChloride
+	}
+
+	if m.AmountOfSpreadGravel != nil {
+		// no validation rules for AmountOfSpreadGravel
+	}
+
+	if m.AmountOfSpreadSand != nil {
+		// no validation rules for AmountOfSpreadSand
+	}
+
+	if m.WidthPouringLeft != nil {
+		// no validation rules for WidthPouringLeft
+	}
+
+	if m.WidthPouringRight != nil {
+		// no validation rules for WidthPouringRight
+	}
+
+	if m.SaltSpreaderWorkingHours != nil {
+		// no validation rules for SaltSpreaderWorkingHours
+	}
+
+	if m.DistanceDuringSalting != nil {
+		// no validation rules for DistanceDuringSalting
+	}
+
+	if m.LoadWeight != nil {
+		// no validation rules for LoadWeight
+	}
+
+	if m.RetarderLoad != nil {
+		// no validation rules for RetarderLoad
+	}
+
+	if m.CruiseTime != nil {
+		// no validation rules for CruiseTime
+	}
+
+	if m.CngStatus != nil {
+		// no validation rules for CngStatus
+	}
+
+	if m.CngUsed != nil {
+		// no validation rules for CngUsed
+	}
+
+	if m.CngLevelPercent != nil {
+		// no validation rules for CngLevelPercent
+	}
+
+	if m.OilLevel != nil {
+		// no validation rules for OilLevel
+	}
+
+	if m.VehiclesRangeOnBattery != nil {
+		// no validation rules for VehiclesRangeOnBattery
+	}
+
+	if m.VehiclesRangeOnAdditionalFuel != nil {
+		// no validation rules for VehiclesRangeOnAdditionalFuel
+	}
+
+	if m.SecurityStateFlagsP4 != nil {
+		// no validation rules for SecurityStateFlagsP4
+	}
+
+	if m.ControlStateFlagsP4 != nil {
+		// no validation rules for ControlStateFlagsP4
+	}
+
+	if m.IndicatorStateFlagsP4 != nil {
+		// no validation rules for IndicatorStateFlagsP4
+	}
+
+	if m.AgriculturalStateFlagsP4 != nil {
+		// no validation rules for AgriculturalStateFlagsP4
 	}
 
 	if len(errors) > 0 {

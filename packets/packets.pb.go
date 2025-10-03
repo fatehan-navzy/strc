@@ -2416,7 +2416,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_1PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,173,opt,name=cisf_section_1_presence_of_fluid_in_the_downpipe,json=cisfSection1PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_1_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection1PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,173,opt,name=cisf_section1_presence_of_fluid_in_the_downpipe,json=cisfSection1PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section1_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1054
 	// Property Name: CiSF Section 1 Filled
 	// Type: Unsigned
@@ -2426,7 +2426,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_1Filled *uint32 `protobuf:"varint,174,opt,name=cisf_section_1_filled,json=cisfSection1Filled,proto3,oneof" json:"cisf_section_1_filled,omitempty"`
+	CisfSection1Filled *uint32 `protobuf:"varint,174,opt,name=cisf_section1_filled,json=cisfSection1Filled,proto3,oneof" json:"cisf_section1_filled,omitempty"`
 	// Parameter ID: 1055
 	// Property Name: CiSF Section 1 Overfilled
 	// Type: Unsigned
@@ -2436,7 +2436,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_1Overfilled *uint32 `protobuf:"varint,175,opt,name=cisf_section_1_overfilled,json=cisfSection1Overfilled,proto3,oneof" json:"cisf_section_1_overfilled,omitempty"`
+	CisfSection1Overfilled *uint32 `protobuf:"varint,175,opt,name=cisf_section1_overfilled,json=cisfSection1Overfilled,proto3,oneof" json:"cisf_section1_overfilled,omitempty"`
 	// Parameter ID: 1056
 	// Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2446,7 +2446,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_2PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,176,opt,name=cisf_section_2_presence_of_fluid_in_the_downpipe,json=cisfSection2PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_2_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection2PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,176,opt,name=cisf_section2_presence_of_fluid_in_the_downpipe,json=cisfSection2PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section2_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1057
 	// Property Name: CiSF Section 2 Filled
 	// Type: Unsigned
@@ -2456,7 +2456,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_2Filled *uint32 `protobuf:"varint,177,opt,name=cisf_section_2_filled,json=cisfSection2Filled,proto3,oneof" json:"cisf_section_2_filled,omitempty"`
+	CisfSection2Filled *uint32 `protobuf:"varint,177,opt,name=cisf_section2_filled,json=cisfSection2Filled,proto3,oneof" json:"cisf_section2_filled,omitempty"`
 	// Parameter ID: 1058
 	// Property Name: CiSF Section 2 Overfilled
 	// Type: Unsigned
@@ -2466,7 +2466,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_2Overfilled *uint32 `protobuf:"varint,178,opt,name=cisf_section_2_overfilled,json=cisfSection2Overfilled,proto3,oneof" json:"cisf_section_2_overfilled,omitempty"`
+	CisfSection2Overfilled *uint32 `protobuf:"varint,178,opt,name=cisf_section2_overfilled,json=cisfSection2Overfilled,proto3,oneof" json:"cisf_section2_overfilled,omitempty"`
 	// Parameter ID: 1059
 	// Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2476,7 +2476,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_3PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,179,opt,name=cisf_section_3_presence_of_fluid_in_the_downpipe,json=cisfSection3PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_3_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection3PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,179,opt,name=cisf_section3_presence_of_fluid_in_the_downpipe,json=cisfSection3PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section3_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1060
 	// Property Name: CiSF Section 3 Filled
 	// Type: Unsigned
@@ -2486,7 +2486,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_3Filled *uint32 `protobuf:"varint,180,opt,name=cisf_section_3_filled,json=cisfSection3Filled,proto3,oneof" json:"cisf_section_3_filled,omitempty"`
+	CisfSection3Filled *uint32 `protobuf:"varint,180,opt,name=cisf_section3_filled,json=cisfSection3Filled,proto3,oneof" json:"cisf_section3_filled,omitempty"`
 	// Parameter ID: 1061
 	// Property Name: CiSF Section 3 Overfilled
 	// Type: Unsigned
@@ -2496,7 +2496,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_3Overfilled *uint32 `protobuf:"varint,181,opt,name=cisf_section_3_overfilled,json=cisfSection3Overfilled,proto3,oneof" json:"cisf_section_3_overfilled,omitempty"`
+	CisfSection3Overfilled *uint32 `protobuf:"varint,181,opt,name=cisf_section3_overfilled,json=cisfSection3Overfilled,proto3,oneof" json:"cisf_section3_overfilled,omitempty"`
 	// Parameter ID: 1062
 	// Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2506,7 +2506,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_4PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,182,opt,name=cisf_section_4_presence_of_fluid_in_the_downpipe,json=cisfSection4PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_4_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection4PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,182,opt,name=cisf_section4_presence_of_fluid_in_the_downpipe,json=cisfSection4PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section4_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1063
 	// Property Name: CiSF Section 4 Filled
 	// Type: Unsigned
@@ -2516,7 +2516,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_4Filled *uint32 `protobuf:"varint,183,opt,name=cisf_section_4_filled,json=cisfSection4Filled,proto3,oneof" json:"cisf_section_4_filled,omitempty"`
+	CisfSection4Filled *uint32 `protobuf:"varint,183,opt,name=cisf_section4_filled,json=cisfSection4Filled,proto3,oneof" json:"cisf_section4_filled,omitempty"`
 	// Parameter ID: 1064
 	// Property Name: CiSF Section 4 Overfilled
 	// Type: Unsigned
@@ -2526,7 +2526,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_4Overfilled *uint32 `protobuf:"varint,184,opt,name=cisf_section_4_overfilled,json=cisfSection4Overfilled,proto3,oneof" json:"cisf_section_4_overfilled,omitempty"`
+	CisfSection4Overfilled *uint32 `protobuf:"varint,184,opt,name=cisf_section4_overfilled,json=cisfSection4Overfilled,proto3,oneof" json:"cisf_section4_overfilled,omitempty"`
 	// Parameter ID: 1065
 	// Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2536,7 +2536,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_5PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,185,opt,name=cisf_section_5_presence_of_fluid_in_the_downpipe,json=cisfSection5PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_5_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection5PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,185,opt,name=cisf_section5_presence_of_fluid_in_the_downpipe,json=cisfSection5PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section5_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1066
 	// Property Name: CiSF Section 5 Filled
 	// Type: Unsigned
@@ -2546,7 +2546,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_5Filled *uint32 `protobuf:"varint,186,opt,name=cisf_section_5_filled,json=cisfSection5Filled,proto3,oneof" json:"cisf_section_5_filled,omitempty"`
+	CisfSection5Filled *uint32 `protobuf:"varint,186,opt,name=cisf_section5_filled,json=cisfSection5Filled,proto3,oneof" json:"cisf_section5_filled,omitempty"`
 	// Parameter ID: 1067
 	// Property Name: CiSF Section 5 Overfilled
 	// Type: Unsigned
@@ -2556,7 +2556,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_5Overfilled *uint32 `protobuf:"varint,187,opt,name=cisf_section_5_overfilled,json=cisfSection5Overfilled,proto3,oneof" json:"cisf_section_5_overfilled,omitempty"`
+	CisfSection5Overfilled *uint32 `protobuf:"varint,187,opt,name=cisf_section5_overfilled,json=cisfSection5Overfilled,proto3,oneof" json:"cisf_section5_overfilled,omitempty"`
 	// Parameter ID: 1068
 	// Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2566,7 +2566,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_6PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,188,opt,name=cisf_section_6_presence_of_fluid_in_the_downpipe,json=cisfSection6PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_6_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection6PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,188,opt,name=cisf_section6_presence_of_fluid_in_the_downpipe,json=cisfSection6PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section6_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1069
 	// Property Name: CiSF Section 6 Filled
 	// Type: Unsigned
@@ -2576,7 +2576,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_6Filled *uint32 `protobuf:"varint,189,opt,name=cisf_section_6_filled,json=cisfSection6Filled,proto3,oneof" json:"cisf_section_6_filled,omitempty"`
+	CisfSection6Filled *uint32 `protobuf:"varint,189,opt,name=cisf_section6_filled,json=cisfSection6Filled,proto3,oneof" json:"cisf_section6_filled,omitempty"`
 	// Parameter ID: 1070
 	// Property Name: CiSF Section 6 Overfilled
 	// Type: Unsigned
@@ -2586,7 +2586,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_6Overfilled *uint32 `protobuf:"varint,190,opt,name=cisf_section_6_overfilled,json=cisfSection6Overfilled,proto3,oneof" json:"cisf_section_6_overfilled,omitempty"`
+	CisfSection6Overfilled *uint32 `protobuf:"varint,190,opt,name=cisf_section6_overfilled,json=cisfSection6Overfilled,proto3,oneof" json:"cisf_section6_overfilled,omitempty"`
 	// Parameter ID: 1071
 	// Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2596,7 +2596,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_7PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,191,opt,name=cisf_section_7_presence_of_fluid_in_the_downpipe,json=cisfSection7PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_7_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection7PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,191,opt,name=cisf_section7_presence_of_fluid_in_the_downpipe,json=cisfSection7PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section7_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1072
 	// Property Name: CiSF Section 7 Filled
 	// Type: Unsigned
@@ -2606,7 +2606,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_7Filled *uint32 `protobuf:"varint,192,opt,name=cisf_section_7_filled,json=cisfSection7Filled,proto3,oneof" json:"cisf_section_7_filled,omitempty"`
+	CisfSection7Filled *uint32 `protobuf:"varint,192,opt,name=cisf_section7_filled,json=cisfSection7Filled,proto3,oneof" json:"cisf_section7_filled,omitempty"`
 	// Parameter ID: 1073
 	// Property Name: CiSF Section 7 Overfilled
 	// Type: Unsigned
@@ -2616,7 +2616,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_7Overfilled *uint32 `protobuf:"varint,193,opt,name=cisf_section_7_overfilled,json=cisfSection7Overfilled,proto3,oneof" json:"cisf_section_7_overfilled,omitempty"`
+	CisfSection7Overfilled *uint32 `protobuf:"varint,193,opt,name=cisf_section7_overfilled,json=cisfSection7Overfilled,proto3,oneof" json:"cisf_section7_overfilled,omitempty"`
 	// Parameter ID: 1074
 	// Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2626,7 +2626,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection_8PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,194,opt,name=cisf_section_8_presence_of_fluid_in_the_downpipe,json=cisfSection8PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section_8_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection8PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,194,opt,name=cisf_section8_presence_of_fluid_in_the_downpipe,json=cisfSection8PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section8_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1075
 	// Property Name: CiSF Section 8 Filled
 	// Type: Unsigned
@@ -2636,7 +2636,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_8Filled *uint32 `protobuf:"varint,195,opt,name=cisf_section_8_filled,json=cisfSection8Filled,proto3,oneof" json:"cisf_section_8_filled,omitempty"`
+	CisfSection8Filled *uint32 `protobuf:"varint,195,opt,name=cisf_section8_filled,json=cisfSection8Filled,proto3,oneof" json:"cisf_section8_filled,omitempty"`
 	// Parameter ID: 1076
 	// Property Name: CiSF Section 8 Overfilled
 	// Type: Unsigned
@@ -2646,7 +2646,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection_8Overfilled *uint32 `protobuf:"varint,196,opt,name=cisf_section_8_overfilled,json=cisfSection8Overfilled,proto3,oneof" json:"cisf_section_8_overfilled,omitempty"`
+	CisfSection8Overfilled *uint32 `protobuf:"varint,196,opt,name=cisf_section8_overfilled,json=cisfSection8Overfilled,proto3,oneof" json:"cisf_section8_overfilled,omitempty"`
 	// Parameter ID: 400
 	// Property Name: Distance to Next Service
 	// Type: Unsigned
@@ -2884,8 +2884,410 @@ type Compact struct {
 	FrequencyDin2              *uint32           `protobuf:"varint,260,opt,name=frequency_din2,json=frequencyDin2,proto3,oneof" json:"frequency_din2,omitempty"`
 	ConnectivityQuality        *uint32           `protobuf:"varint,261,opt,name=connectivity_quality,json=connectivityQuality,proto3,oneof" json:"connectivity_quality,omitempty"`
 	GeoFence                   map[uint32]uint32 `protobuf:"bytes,262,rep,name=geo_fence,json=geoFence,proto3" json:"geo_fence,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"varint,2,opt,name=value"`
-	unknownFields              protoimpl.UnknownFields
-	sizeCache                  protoimpl.SizeCache
+	// Auto Geofence: 0 – target left zone, 1 – target entered zone
+	AutoGeofence *bool `protobuf:"varint,263,opt,name=auto_geofence,json=autoGeofence,proto3,oneof" json:"auto_geofence,omitempty"`
+	// Trip: 0 – trip stop, 1 – trip start, 2 – Business Status, 3 – Private Status, 4-9 – Custom Statuses
+	Trip *uint32 `protobuf:"varint,264,opt,name=trip,proto3,oneof" json:"trip,omitempty"`
+	// Over Speeding: Speed at over speeding start/end, Range: 0-255 km/h
+	OverSpeeding *uint32 `protobuf:"varint,265,opt,name=over_speeding,json=overSpeeding,proto3,oneof" json:"over_speeding,omitempty"`
+	// Crash trace data: HEX, Range: 0-1200 bytes
+	CrashTraceData []byte `protobuf:"bytes,266,opt,name=crash_trace_data,json=crashTraceData,proto3,oneof" json:"crash_trace_data,omitempty"`
+	// Blood Alcohol Content: First 14 bits are perlims * 1000, last 2 bits are mode (0: Passive, 1: Active, 2-3: Reserved)
+	BloodAlcoholContent *uint32 `protobuf:"varint,267,opt,name=blood_alcohol_content,json=bloodAlcoholContent,proto3,oneof" json:"blood_alcohol_content,omitempty"`
+	// Idling: 0 – moving, 1 – idling
+	Idling *bool `protobuf:"varint,268,opt,name=idling,proto3,oneof" json:"idling,omitempty"`
+	// Green Driving Type: 1 – harsh acceleration, 2 – harsh braking, 3 – harsh cornering
+	GreenDrivingType *uint32 `protobuf:"varint,269,opt,name=green_driving_type,json=greenDrivingType,proto3,oneof" json:"green_driving_type,omitempty"`
+	// Towing: 0 – steady, 1 – towing
+	Towing *bool `protobuf:"varint,270,opt,name=towing,proto3,oneof" json:"towing,omitempty"`
+	// Unplug: 0 – battery present, 1 – battery unplugged
+	Unplug *bool `protobuf:"varint,271,opt,name=unplug,proto3,oneof" json:"unplug,omitempty"`
+	// Crash Detection: 1 – real crash (calibrated), 2 – limited trace (not calibrated), 3 – limited trace (calibrated), 4 – full trace (not calibrated), 5 – full trace (calibrated), 6 – real crash (not calibrated)
+	CrashDetection *uint32 `protobuf:"varint,272,opt,name=crash_detection,json=crashDetection,proto3,oneof" json:"crash_detection,omitempty"`
+	// Immobilizer: 0 – iButton not connected, 1 – iButton connected (Immobilizer), 2 – iButton connected (Authorized Driving)
+	Immobilizer *uint32 `protobuf:"varint,273,opt,name=immobilizer,proto3,oneof" json:"immobilizer,omitempty"`
+	// Green Driving Value: For acceleration/braking: g*100 (e.g., 123 -> 1.23g); for cornering: rad/s*100 (GPS) or g*100 (Accelerometer)
+	GreenDrivingValue *uint32 `protobuf:"varint,274,opt,name=green_driving_value,json=greenDrivingValue,proto3,oneof" json:"green_driving_value,omitempty"`
+	// Jamming: 0 – jamming stop, 1 – jamming start
+	Jamming *bool `protobuf:"varint,275,opt,name=jamming,proto3,oneof" json:"jamming,omitempty"`
+	// ICCID2: Value of SIM ICCID, LSB
+	Iccid2 *uint64 `protobuf:"varint,276,opt,name=iccid2,proto3,oneof" json:"iccid2,omitempty"`
+	// Green Driving Event Duration: Duration of event, Range: 0-65535 ms
+	GreenDrivingEventDuration *uint32 `protobuf:"varint,277,opt,name=green_driving_event_duration,json=greenDrivingEventDuration,proto3,oneof" json:"green_driving_event_duration,omitempty"`
+	// Alarm: 0 – Reserved, 1 – Alarm event occurred
+	Alarm *bool `protobuf:"varint,278,opt,name=alarm,proto3,oneof" json:"alarm,omitempty"`
+	// Eco Maximum: Maximum accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
+	EcoMaximum *uint64 `protobuf:"varint,279,opt,name=eco_maximum,json=ecoMaximum,proto3,oneof" json:"eco_maximum,omitempty"`
+	// Eco Average: Average accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
+	EcoAverage *uint64 `protobuf:"varint,280,opt,name=eco_average,json=ecoAverage,proto3,oneof" json:"eco_average,omitempty"`
+	// Eco Duration: Duration of Eco driving event, Range: 0-65535 ms
+	EcoDuration *uint32 `protobuf:"varint,281,opt,name=eco_duration,json=ecoDuration,proto3,oneof" json:"eco_duration,omitempty"`
+	// Driving State: 1 – Ignition ON, 2 – Driving, 3 – Ignition OFF
+	DrivingState *uint32 `protobuf:"varint,282,opt,name=driving_state,json=drivingState,proto3,oneof" json:"driving_state,omitempty"`
+	// Driving Records: Number of records between Ignition ON and OFF, Range: 0-65535
+	DrivingRecords *uint32 `protobuf:"varint,283,opt,name=driving_records,json=drivingRecords,proto3,oneof" json:"driving_records,omitempty"`
+	// Crash Event Counter: Connects trace with specific crash record, Range: 0-255
+	CrashEventCounter *uint32 `protobuf:"varint,284,opt,name=crash_event_counter,json=crashEventCounter,proto3,oneof" json:"crash_event_counter,omitempty"`
+	// GNSS Jamming: 0 – GPS jamming ended/healthy, 1 – GPS jamming warning, 2 – GPS jamming critical
+	GnssJamming *uint32 `protobuf:"varint,285,opt,name=gnss_jamming,json=gnssJamming,proto3,oneof" json:"gnss_jamming,omitempty"`
+	// Private Mode: 0 – Private mode off, 1 – Private mode on
+	PrivateMode *uint32 `protobuf:"varint,286,opt,name=private_mode,json=privateMode,proto3,oneof" json:"private_mode,omitempty"`
+	// Ignition On Counter: Duration while Ignition is On, Range: 0-2147483647 s
+	IgnitionOnCounter *uint32 `protobuf:"varint,287,opt,name=ignition_on_counter,json=ignitionOnCounter,proto3,oneof" json:"ignition_on_counter,omitempty"`
+	// Motorcycle Fall Detection: Fall detection event
+	MotorcycleFallDetection *uint32 `protobuf:"varint,288,opt,name=motorcycle_fall_detection,json=motorcycleFallDetection,proto3,oneof" json:"motorcycle_fall_detection,omitempty"`
+	// VIN: Vehicle Identification Number, ASCII
+	Vin *string `protobuf:"bytes,289,opt,name=vin,proto3,oneof" json:"vin,omitempty"`
+	// Number of DTC: Number of Diagnostic Trouble Codes, Range: 0-255
+	NumberOfDtc *uint32 `protobuf:"varint,290,opt,name=number_of_dtc,json=numberOfDtc,proto3,oneof" json:"number_of_dtc,omitempty"`
+	// Engine Load: Calculated engine load, Range: 0-100 %
+	EngineLoad *uint32 `protobuf:"varint,291,opt,name=engine_load,json=engineLoad,proto3,oneof" json:"engine_load,omitempty"`
+	// Coolant Temperature: Engine coolant temperature, Range: -128-127 °C
+	CoolantTemperature *int32 `protobuf:"varint,292,opt,name=coolant_temperature,json=coolantTemperature,proto3,oneof" json:"coolant_temperature,omitempty"`
+	// Short Fuel Trim: Short term fuel trim 1, Range: -100-99 %
+	ShortFuelTrim *int32 `protobuf:"varint,293,opt,name=short_fuel_trim,json=shortFuelTrim,proto3,oneof" json:"short_fuel_trim,omitempty"`
+	// Fuel Pressure: Fuel pressure, Range: 0-765 kPa
+	FuelPressure *uint32 `protobuf:"varint,294,opt,name=fuel_pressure,json=fuelPressure,proto3,oneof" json:"fuel_pressure,omitempty"`
+	// Intake MAP: Intake manifold absolute pressure, Range: 0-255 kPa
+	IntakeMap *uint32 `protobuf:"varint,295,opt,name=intake_map,json=intakeMap,proto3,oneof" json:"intake_map,omitempty"`
+	// Engine RPM: Engine revolutions per minute, Range: 0-16384 rpm
+	EngineRpm *uint32 `protobuf:"varint,296,opt,name=engine_rpm,json=engineRpm,proto3,oneof" json:"engine_rpm,omitempty"`
+	// Vehicle Speed: Vehicle speed, Range: 0-255 km/h
+	VehicleSpeed *uint32 `protobuf:"varint,297,opt,name=vehicle_speed,json=vehicleSpeed,proto3,oneof" json:"vehicle_speed,omitempty"`
+	// Timing Advance: Timing advance, Range: -64-64 °
+	TimingAdvance *int32 `protobuf:"varint,298,opt,name=timing_advance,json=timingAdvance,proto3,oneof" json:"timing_advance,omitempty"`
+	// Intake Air Temperature: Intake air temperature, Range: -128-127 °C
+	IntakeAirTemperature *int32 `protobuf:"varint,299,opt,name=intake_air_temperature,json=intakeAirTemperature,proto3,oneof" json:"intake_air_temperature,omitempty"`
+	// MAF: Mass air flow rate, Range: 0-655.35 g/sec (multiplier: 0.01)
+	Maf *uint32 `protobuf:"varint,300,opt,name=maf,proto3,oneof" json:"maf,omitempty"`
+	// Throttle Position: Throttle position, Range: 0-100 %
+	ThrottlePosition *uint32 `protobuf:"varint,301,opt,name=throttle_position,json=throttlePosition,proto3,oneof" json:"throttle_position,omitempty"`
+	// Runtime Since Engine Start: Runtime since engine start, Range: 0-65535 s
+	RuntimeSinceEngineStart *uint32 `protobuf:"varint,302,opt,name=runtime_since_engine_start,json=runtimeSinceEngineStart,proto3,oneof" json:"runtime_since_engine_start,omitempty"`
+	// Distance Traveled MIL On: Distance traveled with MIL on, Range: 0-65535 km
+	DistanceTraveledMilOn *uint32 `protobuf:"varint,303,opt,name=distance_traveled_mil_on,json=distanceTraveledMilOn,proto3,oneof" json:"distance_traveled_mil_on,omitempty"`
+	// Relative Fuel Rail Pressure: Relative fuel rail pressure, Range: 0-517.8 kPa (multiplier: 0.1)
+	RelativeFuelRailPressure *uint32 `protobuf:"varint,304,opt,name=relative_fuel_rail_pressure,json=relativeFuelRailPressure,proto3,oneof" json:"relative_fuel_rail_pressure,omitempty"`
+	// Direct Fuel Rail Pressure: Direct fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
+	DirectFuelRailPressure *uint32 `protobuf:"varint,305,opt,name=direct_fuel_rail_pressure,json=directFuelRailPressure,proto3,oneof" json:"direct_fuel_rail_pressure,omitempty"`
+	// Commanded EGR: Commanded EGR, Range: 0-100 %
+	CommandedEgr *uint32 `protobuf:"varint,306,opt,name=commanded_egr,json=commandedEgr,proto3,oneof" json:"commanded_egr,omitempty"`
+	// EGR Error: EGR error, Range: -100-100 %
+	EgrError *int32 `protobuf:"varint,307,opt,name=egr_error,json=egrError,proto3,oneof" json:"egr_error,omitempty"`
+	// Fuel Level Percent: Fuel level, Range: 0-100 %
+	FuelLevelPercent *uint32 `protobuf:"varint,308,opt,name=fuel_level_percent,json=fuelLevelPercent,proto3,oneof" json:"fuel_level_percent,omitempty"`
+	// Distance Since Codes Clear: Distance traveled since codes cleared, Range: 0-65535 km
+	DistanceSinceCodesClear *uint32 `protobuf:"varint,309,opt,name=distance_since_codes_clear,json=distanceSinceCodesClear,proto3,oneof" json:"distance_since_codes_clear,omitempty"`
+	// Barometric Pressure: Barometric pressure, Range: 0-255 kPa
+	BarometricPressure *uint32 `protobuf:"varint,310,opt,name=barometric_pressure,json=barometricPressure,proto3,oneof" json:"barometric_pressure,omitempty"`
+	// Control Module Voltage: Control module voltage, Range: 0-65.535 V (multiplier: 0.001)
+	ControlModuleVoltage *uint32 `protobuf:"varint,311,opt,name=control_module_voltage,json=controlModuleVoltage,proto3,oneof" json:"control_module_voltage,omitempty"`
+	// Absolute Load Value: Absolute load value, Range: 0-25700 %
+	AbsoluteLoadValue *uint32 `protobuf:"varint,312,opt,name=absolute_load_value,json=absoluteLoadValue,proto3,oneof" json:"absolute_load_value,omitempty"`
+	// Fuel Type: 0-Not available, 1-Gasoline, ..., 23-Bifuel running diesel
+	FuelType *uint32 `protobuf:"varint,313,opt,name=fuel_type,json=fuelType,proto3,oneof" json:"fuel_type,omitempty"`
+	// Ambient Air Temperature: Ambient air temperature, Range: -128-127 °C
+	AmbientAirTemperature *int32 `protobuf:"varint,314,opt,name=ambient_air_temperature,json=ambientAirTemperature,proto3,oneof" json:"ambient_air_temperature,omitempty"`
+	// Time Run With MIL On: Time run with MIL on, Range: 0-65535 min
+	TimeRunWithMilOn *uint32 `protobuf:"varint,315,opt,name=time_run_with_mil_on,json=timeRunWithMilOn,proto3,oneof" json:"time_run_with_mil_on,omitempty"`
+	// Time Since Codes Cleared: Time since codes cleared, Range: 0-65535 min
+	TimeSinceCodesCleared *uint32 `protobuf:"varint,316,opt,name=time_since_codes_cleared,json=timeSinceCodesCleared,proto3,oneof" json:"time_since_codes_cleared,omitempty"`
+	// Absolute Fuel Rail Pressure: Absolute fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
+	AbsoluteFuelRailPressure *uint32 `protobuf:"varint,317,opt,name=absolute_fuel_rail_pressure,json=absoluteFuelRailPressure,proto3,oneof" json:"absolute_fuel_rail_pressure,omitempty"`
+	// Hybrid Battery Pack Life: Hybrid battery pack remaining life, Range: 0-100 %
+	HybridBatteryPackLife *uint32 `protobuf:"varint,318,opt,name=hybrid_battery_pack_life,json=hybridBatteryPackLife,proto3,oneof" json:"hybrid_battery_pack_life,omitempty"`
+	// Engine Oil Temperature: Engine oil temperature, Range: 0-215 °C
+	EngineOilTemperature *uint32 `protobuf:"varint,319,opt,name=engine_oil_temperature,json=engineOilTemperature,proto3,oneof" json:"engine_oil_temperature,omitempty"`
+	// Fuel Injection Timing: Fuel injection timing, Range: -210-302 ° (multiplier: 0.01)
+	FuelInjectionTiming *int32 `protobuf:"varint,320,opt,name=fuel_injection_timing,json=fuelInjectionTiming,proto3,oneof" json:"fuel_injection_timing,omitempty"`
+	// Throttle Position Group: Throttle position from PID group, Range: 0-100 %
+	ThrottlePositionGroup *uint32 `protobuf:"varint,321,opt,name=throttle_position_group,json=throttlePositionGroup,proto3,oneof" json:"throttle_position_group,omitempty"`
+	// Commanded Equivalence R: Fuel-Air Commanded Equivalence Ratio, Range: 0-2 (multiplier: 0.01)
+	CommandedEquivalenceR *uint32 `protobuf:"varint,322,opt,name=commanded_equivalence_r,json=commandedEquivalenceR,proto3,oneof" json:"commanded_equivalence_r,omitempty"`
+	// Intake MAP 2 Bytes: Intake manifold absolute pressure, Range: 0-2048 kPa
+	IntakeMap_2Bytes *uint32 `protobuf:"varint,323,opt,name=intake_map_2_bytes,json=intakeMap2Bytes,proto3,oneof" json:"intake_map_2_bytes,omitempty"`
+	// Hybrid System Voltage: Hybrid vehicle system voltage, Range: 0-1024 V
+	HybridSystemVoltage *uint32 `protobuf:"varint,324,opt,name=hybrid_system_voltage,json=hybridSystemVoltage,proto3,oneof" json:"hybrid_system_voltage,omitempty"`
+	// Hybrid System Current: Hybrid vehicle system current, Range: -3277-3277 A
+	HybridSystemCurrent *int32 `protobuf:"varint,325,opt,name=hybrid_system_current,json=hybridSystemCurrent,proto3,oneof" json:"hybrid_system_current,omitempty"`
+	// Fault Codes: DTC Fault codes, ASCII, Range: 0-128 bytes
+	FaultCodes *string `protobuf:"bytes,326,opt,name=fault_codes,json=faultCodes,proto3,oneof" json:"fault_codes,omitempty"`
+	// Fuel Rate: Engine fuel rate, Range: 0-327.67 L/h (multiplier: 0.01)
+	FuelRate *uint32 `protobuf:"varint,327,opt,name=fuel_rate,json=fuelRate,proto3,oneof" json:"fuel_rate,omitempty"`
+	// OBD OEM Total Mileage: Total mileage, Range: 0-4294967295 km
+	ObdOemTotalMileage *uint32 `protobuf:"varint,328,opt,name=obd_oem_total_mileage,json=obdOemTotalMileage,proto3,oneof" json:"obd_oem_total_mileage,omitempty"`
+	// OBD OEM Fuel Level: Fuel level, Range: 0-429496729.5 l (multiplier: 0.1)
+	ObdOemFuelLevel *uint32 `protobuf:"varint,329,opt,name=obd_oem_fuel_level,json=obdOemFuelLevel,proto3,oneof" json:"obd_oem_fuel_level,omitempty"`
+	// OEM Distance Until Service: Distance till next service, Range: 0-4294967295 km
+	OemDistanceUntilService *uint32 `protobuf:"varint,330,opt,name=oem_distance_until_service,json=oemDistanceUntilService,proto3,oneof" json:"oem_distance_until_service,omitempty"`
+	// OEM Battery Charge State: 0 – Not charging, 1 – Charging
+	OemBatteryChargeState *bool `protobuf:"varint,331,opt,name=oem_battery_charge_state,json=oemBatteryChargeState,proto3,oneof" json:"oem_battery_charge_state,omitempty"`
+	// OEM Battery Charge Level: Battery charge level, Range: 0-100 %
+	OemBatteryChargeLevel *uint32 `protobuf:"varint,332,opt,name=oem_battery_charge_level,json=oemBatteryChargeLevel,proto3,oneof" json:"oem_battery_charge_level,omitempty"`
+	// OEM Remaining Distance: Remaining distance until fuel tank empty or battery depleted, Range: 0-65535 km
+	OemRemainingDistance *uint32 `protobuf:"varint,333,opt,name=oem_remaining_distance,json=oemRemainingDistance,proto3,oneof" json:"oem_remaining_distance,omitempty"`
+	// OEM Battery State Of Health: Battery state of health, Range: 0-65535 %
+	OemBatteryStateOfHealth *uint32 `protobuf:"varint,334,opt,name=oem_battery_state_of_health,json=oemBatteryStateOfHealth,proto3,oneof" json:"oem_battery_state_of_health,omitempty"`
+	// OEM Battery Temperature: Battery pack temperature, Range: -32768-32767 °C
+	OemBatteryTemperature *int32 `protobuf:"varint,335,opt,name=oem_battery_temperature,json=oemBatteryTemperature,proto3,oneof" json:"oem_battery_temperature,omitempty"`
+	// Beacon: List of Beacon IDs, HEX, Range: 0-1024 bytes
+	Beacon []byte `protobuf:"bytes,336,opt,name=beacon,proto3,oneof" json:"beacon,omitempty"`
+	// Advanced BLE Beacon Data: List of Beacon IDs and data, HEX, Range: 0-1024 bytes
+	AdvancedBleBeaconData []byte `protobuf:"bytes,337,opt,name=advanced_ble_beacon_data,json=advancedBleBeaconData,proto3,oneof" json:"advanced_ble_beacon_data,omitempty"`
+	// BLE Temperature #1: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+	BleTemperature1 *int32 `protobuf:"varint,338,opt,name=ble_temperature1,json=bleTemperature1,proto3,oneof" json:"ble_temperature1,omitempty"`
+	// BLE Temperature #2: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+	BleTemperature2 *int32 `protobuf:"varint,339,opt,name=ble_temperature2,json=bleTemperature2,proto3,oneof" json:"ble_temperature2,omitempty"`
+	// BLE Temperature #3: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+	BleTemperature3 *int32 `protobuf:"varint,340,opt,name=ble_temperature3,json=bleTemperature3,proto3,oneof" json:"ble_temperature3,omitempty"`
+	// BLE Temperature #4: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+	BleTemperature4 *int32 `protobuf:"varint,341,opt,name=ble_temperature4,json=bleTemperature4,proto3,oneof" json:"ble_temperature4,omitempty"`
+	// BLE Battery #1: Battery level of sensor #1, Range: 0-100 %
+	BleBattery1 *uint32 `protobuf:"varint,342,opt,name=ble_battery1,json=bleBattery1,proto3,oneof" json:"ble_battery1,omitempty"`
+	// BLE Battery #2: Battery level of sensor #2, Range: 0-100 %
+	BleBattery2 *uint32 `protobuf:"varint,343,opt,name=ble_battery2,json=bleBattery2,proto3,oneof" json:"ble_battery2,omitempty"`
+	// BLE Battery #3: Battery level of sensor #3, Range: 0-100 %
+	BleBattery3 *uint32 `protobuf:"varint,344,opt,name=ble_battery3,json=bleBattery3,proto3,oneof" json:"ble_battery3,omitempty"`
+	// BLE Battery #4: Battery level of sensor #4, Range: 0-100 %
+	BleBattery4 *uint32 `protobuf:"varint,345,opt,name=ble_battery4,json=bleBattery4,proto3,oneof" json:"ble_battery4,omitempty"`
+	// BLE Humidity #1: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+	BleHumidity1 *uint32 `protobuf:"varint,346,opt,name=ble_humidity1,json=bleHumidity1,proto3,oneof" json:"ble_humidity1,omitempty"`
+	// BLE Humidity #2: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+	BleHumidity2 *uint32 `protobuf:"varint,347,opt,name=ble_humidity2,json=bleHumidity2,proto3,oneof" json:"ble_humidity2,omitempty"`
+	// BLE Humidity #3: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+	BleHumidity3 *uint32 `protobuf:"varint,348,opt,name=ble_humidity3,json=bleHumidity3,proto3,oneof" json:"ble_humidity3,omitempty"`
+	// BLE Humidity #4: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+	BleHumidity4 *uint32 `protobuf:"varint,349,opt,name=ble_humidity4,json=bleHumidity4,proto3,oneof" json:"ble_humidity4,omitempty"`
+	// BLE Fuel Level #1: Fuel level, Range: 0-65535
+	BleFuelLevel1 *uint32 `protobuf:"varint,350,opt,name=ble_fuel_level1,json=bleFuelLevel1,proto3,oneof" json:"ble_fuel_level1,omitempty"`
+	// BLE Fuel Level #2: Fuel level, Range: 0-65535
+	BleFuelLevel2 *uint32 `protobuf:"varint,351,opt,name=ble_fuel_level2,json=bleFuelLevel2,proto3,oneof" json:"ble_fuel_level2,omitempty"`
+	// BLE Fuel Level #3: Fuel level, Range: 0-65535
+	BleFuelLevel3 *uint32 `protobuf:"varint,352,opt,name=ble_fuel_level3,json=bleFuelLevel3,proto3,oneof" json:"ble_fuel_level3,omitempty"`
+	// BLE Fuel Level #4: Fuel level, Range: 0-65535
+	BleFuelLevel4 *uint32 `protobuf:"varint,353,opt,name=ble_fuel_level4,json=bleFuelLevel4,proto3,oneof" json:"ble_fuel_level4,omitempty"`
+	// BLE Fuel Frequency #1: Frequency value of BLE fuel sensor #1, Range: 0-2147483647
+	BleFuelFrequency1 *uint32 `protobuf:"varint,354,opt,name=ble_fuel_frequency1,json=bleFuelFrequency1,proto3,oneof" json:"ble_fuel_frequency1,omitempty"`
+	// BLE Fuel Frequency #2: Frequency value of BLE fuel sensor #2, Range: 0-2147483647
+	BleFuelFrequency2 *uint32 `protobuf:"varint,355,opt,name=ble_fuel_frequency2,json=bleFuelFrequency2,proto3,oneof" json:"ble_fuel_frequency2,omitempty"`
+	// BLE Fuel Frequency #3: Frequency value of BLE fuel sensor #3, Range: 0-2147483647
+	BleFuelFrequency3 *uint32 `protobuf:"varint,356,opt,name=ble_fuel_frequency3,json=bleFuelFrequency3,proto3,oneof" json:"ble_fuel_frequency3,omitempty"`
+	// BLE Fuel Frequency #4: Frequency value of BLE fuel sensor #4, Range: 0-2147483647
+	BleFuelFrequency4 *uint32 `protobuf:"varint,357,opt,name=ble_fuel_frequency4,json=bleFuelFrequency4,proto3,oneof" json:"ble_fuel_frequency4,omitempty"`
+	// BLE Luminosity #1: Luminosity value, Range: 0-65535 lx
+	BleLuminosity1 *uint32 `protobuf:"varint,358,opt,name=ble_luminosity1,json=bleLuminosity1,proto3,oneof" json:"ble_luminosity1,omitempty"`
+	// BLE Luminosity #2: Luminosity value, Range: 0-65535 lx
+	BleLuminosity2 *uint32 `protobuf:"varint,359,opt,name=ble_luminosity2,json=bleLuminosity2,proto3,oneof" json:"ble_luminosity2,omitempty"`
+	// BLE Luminosity #3: Luminosity value, Range: 0-65535 lx
+	BleLuminosity3 *uint32 `protobuf:"varint,360,opt,name=ble_luminosity3,json=bleLuminosity3,proto3,oneof" json:"ble_luminosity3,omitempty"`
+	// BLE Luminosity #4: Luminosity value, Range: 0-65535 lx
+	BleLuminosity4 *uint32 `protobuf:"varint,361,opt,name=ble_luminosity4,json=bleLuminosity4,proto3,oneof" json:"ble_luminosity4,omitempty"`
+	// BLE 1 Custom #1: Custom IO element for BLE sensor, HEX
+	Ble1Custom1 []byte `protobuf:"bytes,362,opt,name=ble1_custom1,json=ble1Custom1,proto3,oneof" json:"ble1_custom1,omitempty"`
+	// BLE 1 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble1Custom2 *uint32 `protobuf:"varint,363,opt,name=ble1_custom2,json=ble1Custom2,proto3,oneof" json:"ble1_custom2,omitempty"`
+	// BLE 1 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble1Custom3 *uint32 `protobuf:"varint,364,opt,name=ble1_custom3,json=ble1Custom3,proto3,oneof" json:"ble1_custom3,omitempty"`
+	// BLE 1 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble1Custom4 *uint32 `protobuf:"varint,365,opt,name=ble1_custom4,json=ble1Custom4,proto3,oneof" json:"ble1_custom4,omitempty"`
+	// BLE 1 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble1Custom5 *uint32 `protobuf:"varint,366,opt,name=ble1_custom5,json=ble1Custom5,proto3,oneof" json:"ble1_custom5,omitempty"`
+	// BLE 2 Custom #1: Custom IO element for BLE sensor, HEX
+	Ble2Custom1 []byte `protobuf:"bytes,367,opt,name=ble2_custom1,json=ble2Custom1,proto3,oneof" json:"ble2_custom1,omitempty"`
+	// BLE 2 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble2Custom2 *uint32 `protobuf:"varint,368,opt,name=ble2_custom2,json=ble2Custom2,proto3,oneof" json:"ble2_custom2,omitempty"`
+	// BLE 2 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble2Custom3 *uint32 `protobuf:"varint,369,opt,name=ble2_custom3,json=ble2Custom3,proto3,oneof" json:"ble2_custom3,omitempty"`
+	// BLE 2 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble2Custom4 *uint32 `protobuf:"varint,370,opt,name=ble2_custom4,json=ble2Custom4,proto3,oneof" json:"ble2_custom4,omitempty"`
+	// BLE 2 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble2Custom5 *uint32 `protobuf:"varint,371,opt,name=ble2_custom5,json=ble2Custom5,proto3,oneof" json:"ble2_custom5,omitempty"`
+	// BLE 3 Custom #1: Custom IO element for BLE sensor, HEX
+	Ble3Custom1 []byte `protobuf:"bytes,372,opt,name=ble3_custom1,json=ble3Custom1,proto3,oneof" json:"ble3_custom1,omitempty"`
+	// BLE 3 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble3Custom2 *uint32 `protobuf:"varint,373,opt,name=ble3_custom2,json=ble3Custom2,proto3,oneof" json:"ble3_custom2,omitempty"`
+	// BLE 3 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble3Custom3 *uint32 `protobuf:"varint,374,opt,name=ble3_custom3,json=ble3Custom3,proto3,oneof" json:"ble3_custom3,omitempty"`
+	// BLE 3 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble3Custom4 *uint32 `protobuf:"varint,375,opt,name=ble3_custom4,json=ble3Custom4,proto3,oneof" json:"ble3_custom4,omitempty"`
+	// BLE 3 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble3Custom5 *uint32 `protobuf:"varint,376,opt,name=ble3_custom5,json=ble3Custom5,proto3,oneof" json:"ble3_custom5,omitempty"`
+	// BLE 4 Custom #1: Custom IO element for BLE sensor, HEX
+	Ble4Custom1 []byte `protobuf:"bytes,377,opt,name=ble4_custom1,json=ble4Custom1,proto3,oneof" json:"ble4_custom1,omitempty"`
+	// BLE 4 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble4Custom2 *uint32 `protobuf:"varint,378,opt,name=ble4_custom2,json=ble4Custom2,proto3,oneof" json:"ble4_custom2,omitempty"`
+	// BLE 4 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble4Custom3 *uint32 `protobuf:"varint,379,opt,name=ble4_custom3,json=ble4Custom3,proto3,oneof" json:"ble4_custom3,omitempty"`
+	// BLE 4 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble4Custom4 *uint32 `protobuf:"varint,380,opt,name=ble4_custom4,json=ble4Custom4,proto3,oneof" json:"ble4_custom4,omitempty"`
+	// BLE 4 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+	Ble4Custom5 *uint32 `protobuf:"varint,381,opt,name=ble4_custom5,json=ble4Custom5,proto3,oneof" json:"ble4_custom5,omitempty"`
+	// Accelerator Pedal Position: Value in percentages, Range: 0-102 %
+	AcceleratorPedalPosition *uint32 `protobuf:"varint,382,opt,name=accelerator_pedal_position,json=acceleratorPedalPosition,proto3,oneof" json:"accelerator_pedal_position,omitempty"`
+	// Fuel Consumed: Value in liters, Range: 0-214748364.7 l (multiplier: 0.1)
+	FuelConsumed *uint32 `protobuf:"varint,383,opt,name=fuel_consumed,json=fuelConsumed,proto3,oneof" json:"fuel_consumed,omitempty"`
+	// Fuel Level Liters: Value in liters, Range: 0-6553.5 l (multiplier: 0.1)
+	FuelLevelLiters *uint32 `protobuf:"varint,384,opt,name=fuel_level_liters,json=fuelLevelLiters,proto3,oneof" json:"fuel_level_liters,omitempty"`
+	// Total Mileage: Value in meters, Range: 0-4294967295 m
+	TotalMileage *uint32 `protobuf:"varint,385,opt,name=total_mileage,json=totalMileage,proto3,oneof" json:"total_mileage,omitempty"`
+	// Program Number: Range: 0-99999
+	ProgramNumber *uint32 `protobuf:"varint,386,opt,name=program_number,json=programNumber,proto3,oneof" json:"program_number,omitempty"`
+	// Module ID 8B: Module ID, Range: 0-0xFFFFFFFFFFFFFFFF
+	ModuleId_8B *uint64 `protobuf:"varint,387,opt,name=module_id_8b,json=moduleId8b,proto3,oneof" json:"module_id_8b,omitempty"`
+	// Module ID 17B: Module ID, HEX, Range: 0-0x7FFFFFFFFFFFFFFF
+	ModuleId_17B []byte `protobuf:"bytes,388,opt,name=module_id_17b,json=moduleId17b,proto3,oneof" json:"module_id_17b,omitempty"`
+	// Engine Worktime: Engine work time, Range: 0-1677215 min
+	EngineWorktime *uint32 `protobuf:"varint,389,opt,name=engine_worktime,json=engineWorktime,proto3,oneof" json:"engine_worktime,omitempty"`
+	// Engine Worktime Counted: Total engine work time, Range: 0-1677215 min
+	EngineWorktimeCounted *uint32 `protobuf:"varint,390,opt,name=engine_worktime_counted,json=engineWorktimeCounted,proto3,oneof" json:"engine_worktime_counted,omitempty"`
+	// Total Mileage Counted: Total vehicle mileage, Range: 0-4294967295 m
+	TotalMileageCounted *uint32 `protobuf:"varint,391,opt,name=total_mileage_counted,json=totalMileageCounted,proto3,oneof" json:"total_mileage_counted,omitempty"`
+	// Fuel Consumed Counted: Total fuel consumed, Range: 0-214748364.7 l (multiplier: 0.1)
+	FuelConsumedCounted *uint32 `protobuf:"varint,392,opt,name=fuel_consumed_counted,json=fuelConsumedCounted,proto3,oneof" json:"fuel_consumed_counted,omitempty"`
+	// AdBlue Level Percent: AdBlue level, Range: 0-100 %
+	AdblueLevelPercent *uint32 `protobuf:"varint,393,opt,name=adblue_level_percent,json=adblueLevelPercent,proto3,oneof" json:"adblue_level_percent,omitempty"`
+	// AdBlue Level Liters: AdBlue level, Range: 0-6553.5 l (multiplier: 0.1)
+	AdblueLevelLiters *uint32 `protobuf:"varint,394,opt,name=adblue_level_liters,json=adblueLevelLiters,proto3,oneof" json:"adblue_level_liters,omitempty"`
+	// Axle 1 Load: Axle 1 load, Range: 0-32768 kg
+	Axle1Load *uint32 `protobuf:"varint,395,opt,name=axle1_load,json=axle1Load,proto3,oneof" json:"axle1_load,omitempty"`
+	// Axle 2 Load: Axle 2 load, Range: 0-32768 kg
+	Axle2Load *uint32 `protobuf:"varint,396,opt,name=axle2_load,json=axle2Load,proto3,oneof" json:"axle2_load,omitempty"`
+	// Axle 3 Load: Axle 3 load, Range: 0-32768 kg
+	Axle3Load *uint32 `protobuf:"varint,397,opt,name=axle3_load,json=axle3Load,proto3,oneof" json:"axle3_load,omitempty"`
+	// Axle 4 Load: Axle 4 load, Range: 0-32768 kg
+	Axle4Load *uint32 `protobuf:"varint,398,opt,name=axle4_load,json=axle4Load,proto3,oneof" json:"axle4_load,omitempty"`
+	// Axle 5 Load: Axle 5 load, Range: 0-32768 kg
+	Axle5Load *uint32 `protobuf:"varint,399,opt,name=axle5_load,json=axle5Load,proto3,oneof" json:"axle5_load,omitempty"`
+	// Control State Flags: Control state flags, Range: 0-4294967295
+	ControlStateFlags *uint32 `protobuf:"varint,400,opt,name=control_state_flags,json=controlStateFlags,proto3,oneof" json:"control_state_flags,omitempty"`
+	// Agricultural Machinery Flags: Agricultural machinery flags, Range: 0-0xFFFFFFFFFFFFFFFF
+	AgriculturalMachineryFlags *uint64 `protobuf:"varint,401,opt,name=agricultural_machinery_flags,json=agriculturalMachineryFlags,proto3,oneof" json:"agricultural_machinery_flags,omitempty"`
+	// Harvesting Time: Harvesting time, Range: 0-16777215 min
+	HarvestingTime *uint32 `protobuf:"varint,402,opt,name=harvesting_time,json=harvestingTime,proto3,oneof" json:"harvesting_time,omitempty"`
+	// Area of Harvest: Area of harvest, Range: 0-4294967295 m2
+	AreaOfHarvest *uint32 `protobuf:"varint,403,opt,name=area_of_harvest,json=areaOfHarvest,proto3,oneof" json:"area_of_harvest,omitempty"`
+	// Mowing Efficiency: Mowing efficiency, Range: 0-4294967295 m2/h
+	MowingEfficiency *uint32 `protobuf:"varint,404,opt,name=mowing_efficiency,json=mowingEfficiency,proto3,oneof" json:"mowing_efficiency,omitempty"`
+	// Grain Mown Volume: Mown volume, Range: 0-4294967295 kg
+	GrainMownVolume *uint32 `protobuf:"varint,405,opt,name=grain_mown_volume,json=grainMownVolume,proto3,oneof" json:"grain_mown_volume,omitempty"`
+	// Grain Moisture: Grain moisture, Range: 0-100 %
+	GrainMoisture *uint32 `protobuf:"varint,406,opt,name=grain_moisture,json=grainMoisture,proto3,oneof" json:"grain_moisture,omitempty"`
+	// Harvesting Drum RPM: Harvesting drum rpm, Range: 0-65535 rpm
+	HarvestingDrumRpm *uint32 `protobuf:"varint,407,opt,name=harvesting_drum_rpm,json=harvestingDrumRpm,proto3,oneof" json:"harvesting_drum_rpm,omitempty"`
+	// Gap Under Harvesting Drum: Gap under harvesting drum, Range: 0-255 mm
+	GapUnderHarvestingDrum *uint32 `protobuf:"varint,408,opt,name=gap_under_harvesting_drum,json=gapUnderHarvestingDrum,proto3,oneof" json:"gap_under_harvesting_drum,omitempty"`
+	// Security State Flags: Security state flags, Range: 0-0xFFFFFFFFFFFFFFFF
+	SecurityStateFlags *uint64 `protobuf:"varint,409,opt,name=security_state_flags,json=securityStateFlags,proto3,oneof" json:"security_state_flags,omitempty"`
+	// Tachograph Total Vehicle Distance: Tacho total vehicle distance, Range: 0-4294967295 m
+	TachographTotalVehicleDistance *uint32 `protobuf:"varint,410,opt,name=tachograph_total_vehicle_distance,json=tachographTotalVehicleDistance,proto3,oneof" json:"tachograph_total_vehicle_distance,omitempty"`
+	// Trip Distance: Trip distance, Range: 0-4294967295 m
+	TripDistance *uint32 `protobuf:"varint,411,opt,name=trip_distance,json=tripDistance,proto3,oneof" json:"trip_distance,omitempty"`
+	// Tachograph Vehicle Speed: Tacho vehicle speed, Range: 0-255 km/h
+	TachographVehicleSpeed *uint32 `protobuf:"varint,412,opt,name=tachograph_vehicle_speed,json=tachographVehicleSpeed,proto3,oneof" json:"tachograph_vehicle_speed,omitempty"`
+	// Tacho Driver Card Presence: Tacho driver card presence, Range: 0-3
+	TachoDriverCardPresence *uint32 `protobuf:"varint,413,opt,name=tacho_driver_card_presence,json=tachoDriverCardPresence,proto3,oneof" json:"tacho_driver_card_presence,omitempty"`
+	// Driver 1 States: Driver 1 states, Range: 0-255
+	Driver1States *uint32 `protobuf:"varint,414,opt,name=driver1_states,json=driver1States,proto3,oneof" json:"driver1_states,omitempty"`
+	// Driver 2 States: Driver 2 states, Range: 0-255
+	Driver2States *uint32 `protobuf:"varint,415,opt,name=driver2_states,json=driver2States,proto3,oneof" json:"driver2_states,omitempty"`
+	// Driver 1 Continuous Driving Time: Driver 1 continuous driving time, Range: 0-65535 min
+	Driver1ContinuousDrivingTime *uint32 `protobuf:"varint,416,opt,name=driver1_continuous_driving_time,json=driver1ContinuousDrivingTime,proto3,oneof" json:"driver1_continuous_driving_time,omitempty"`
+	// Driver 2 Continuous Driving Time: Driver 2 continuous driving time, Range: 0-65535 min
+	Driver2ContinuousDrivingTime *uint32 `protobuf:"varint,417,opt,name=driver2_continuous_driving_time,json=driver2ContinuousDrivingTime,proto3,oneof" json:"driver2_continuous_driving_time,omitempty"`
+	// Driver 1 Cumulative Time: Driver 1 cumulative time, Range: 0-65535 min
+	Driver1CumulativeTime *uint32 `protobuf:"varint,418,opt,name=driver1_cumulative_time,json=driver1CumulativeTime,proto3,oneof" json:"driver1_cumulative_time,omitempty"`
+	// Driver 2 Cumulative Time: Driver 2 cumulative time, Range: 0-65535 min
+	Driver2CumulativeTime *uint32 `protobuf:"varint,419,opt,name=driver2_cumulative_time,json=driver2CumulativeTime,proto3,oneof" json:"driver2_cumulative_time,omitempty"`
+	// Driver 1 Selected Activity Duration: Driver 1 duration of selected activity, Range: 0-65535 min
+	Driver1SelectedActivityDuration *uint32 `protobuf:"varint,420,opt,name=driver1_selected_activity_duration,json=driver1SelectedActivityDuration,proto3,oneof" json:"driver1_selected_activity_duration,omitempty"`
+	// Driver 2 Selected Activity Duration: Driver 2 duration of selected activity, Range: 0-65535 min
+	Driver2SelectedActivityDuration *uint32 `protobuf:"varint,421,opt,name=driver2_selected_activity_duration,json=driver2SelectedActivityDuration,proto3,oneof" json:"driver2_selected_activity_duration,omitempty"`
+	// Driver 1 Cumulative Driving Time: Driver 1 cumulative driving time, Range: 0-65535 min
+	Driver1CumulativeDrivingTime *uint32 `protobuf:"varint,422,opt,name=driver1_cumulative_driving_time,json=driver1CumulativeDrivingTime,proto3,oneof" json:"driver1_cumulative_driving_time,omitempty"`
+	// Driver 2 Cumulative Driving Time: Driver 2 cumulative driving time, Range: 0-65535 min
+	Driver2CumulativeDrivingTime *uint32 `protobuf:"varint,423,opt,name=driver2_cumulative_driving_time,json=driver2CumulativeDrivingTime,proto3,oneof" json:"driver2_cumulative_driving_time,omitempty"`
+	// Driver 1 ID High: Driver 1 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
+	Driver1IdHigh *uint64 `protobuf:"varint,424,opt,name=driver1_id_high,json=driver1IdHigh,proto3,oneof" json:"driver1_id_high,omitempty"`
+	// Driver 1 ID Low: Driver 1 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
+	Driver1IdLow *uint64 `protobuf:"varint,425,opt,name=driver1_id_low,json=driver1IdLow,proto3,oneof" json:"driver1_id_low,omitempty"`
+	// Driver 2 ID High: Driver 2 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
+	Driver2IdHigh *uint64 `protobuf:"varint,426,opt,name=driver2_id_high,json=driver2IdHigh,proto3,oneof" json:"driver2_id_high,omitempty"`
+	// Driver 2 ID Low: Driver 2 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
+	Driver2IdLow *uint64 `protobuf:"varint,427,opt,name=driver2_id_low,json=driver2IdLow,proto3,oneof" json:"driver2_id_low,omitempty"`
+	// Battery Temperature: Battery temperature, Range: -60-127 °C (multiplier: 0.1)
+	BatteryTemperature *int32 `protobuf:"varint,428,opt,name=battery_temperature,json=batteryTemperature,proto3,oneof" json:"battery_temperature,omitempty"`
+	// HV Battery Level: Battery level, Range: 0-100 %
+	HvBatteryLevel *uint32 `protobuf:"varint,429,opt,name=hv_battery_level,json=hvBatteryLevel,proto3,oneof" json:"hv_battery_level,omitempty"`
+	// DTC Faults: DTC faults count, Range: 0-255
+	DtcFaults *uint32 `protobuf:"varint,430,opt,name=dtc_faults,json=dtcFaults,proto3,oneof" json:"dtc_faults,omitempty"`
+	// Slope of Arm: Slope of arm, Range: -3276-3276 °
+	SlopeOfArm *int32 `protobuf:"varint,431,opt,name=slope_of_arm,json=slopeOfArm,proto3,oneof" json:"slope_of_arm,omitempty"`
+	// Rotation of Arm: Rotation of arm, Range: -180-180 °
+	RotationOfArm *int32 `protobuf:"varint,432,opt,name=rotation_of_arm,json=rotationOfArm,proto3,oneof" json:"rotation_of_arm,omitempty"`
+	// Eject of Arm: Eject of arm, Range: 0-6553 m
+	EjectOfArm *uint32 `protobuf:"varint,433,opt,name=eject_of_arm,json=ejectOfArm,proto3,oneof" json:"eject_of_arm,omitempty"`
+	// Horizontal Distance Arm Vehicle: Horizontal distance arm vehicle, Range: 0-6553 m
+	HorizontalDistanceArmVehicle *uint32 `protobuf:"varint,434,opt,name=horizontal_distance_arm_vehicle,json=horizontalDistanceArmVehicle,proto3,oneof" json:"horizontal_distance_arm_vehicle,omitempty"`
+	// Height Arm Above Ground: Height arm above ground, Range: 0-6553 m
+	HeightArmAboveGround *uint32 `protobuf:"varint,435,opt,name=height_arm_above_ground,json=heightArmAboveGround,proto3,oneof" json:"height_arm_above_ground,omitempty"`
+	// Drill RPM: Drill RPM, Range: 0-65535 rpm
+	DrillRpm *uint32 `protobuf:"varint,436,opt,name=drill_rpm,json=drillRpm,proto3,oneof" json:"drill_rpm,omitempty"`
+	// Amount Of Spread Salt Square Meter: Amount of spread salt, Range: 0-655 g/m2
+	AmountOfSpreadSaltSquareMeter *uint32 `protobuf:"varint,437,opt,name=amount_of_spread_salt_square_meter,json=amountOfSpreadSaltSquareMeter,proto3,oneof" json:"amount_of_spread_salt_square_meter,omitempty"`
+	// Amount Of Spread Fine Grained Salt: Amount of spread fine grained salt, Range: 0-1677722 T
+	AmountOfSpreadFineGrainedSalt *uint32 `protobuf:"varint,439,opt,name=amount_of_spread_fine_grained_salt,json=amountOfSpreadFineGrainedSalt,proto3,oneof" json:"amount_of_spread_fine_grained_salt,omitempty"`
+	// Amount Of Coarse Grained Salt: Amount of coarse grained salt, Range: 0-1677722 T
+	AmountOfCoarseGrainedSalt *uint32 `protobuf:"varint,440,opt,name=amount_of_coarse_grained_salt,json=amountOfCoarseGrainedSalt,proto3,oneof" json:"amount_of_coarse_grained_salt,omitempty"`
+	// Amount Of Spread DiMix: Amount of spread DiMix, Range: 0-1677722 T
+	AmountOfSpreadDimix *uint32 `protobuf:"varint,441,opt,name=amount_of_spread_dimix,json=amountOfSpreadDimix,proto3,oneof" json:"amount_of_spread_dimix,omitempty"`
+	// Amount Of Spread Coarse Grained Calcium: Amount of spread coarse grained calcium, Range: 0-1677722 m3
+	AmountOfSpreadCoarseGrainedCalcium *uint32 `protobuf:"varint,442,opt,name=amount_of_spread_coarse_grained_calcium,json=amountOfSpreadCoarseGrainedCalcium,proto3,oneof" json:"amount_of_spread_coarse_grained_calcium,omitempty"`
+	// Amount Of Spread Calcium Chloride: Amount of spread calcium chloride, Range: 0-1677722 m3
+	AmountOfSpreadCalciumChloride *uint32 `protobuf:"varint,443,opt,name=amount_of_spread_calcium_chloride,json=amountOfSpreadCalciumChloride,proto3,oneof" json:"amount_of_spread_calcium_chloride,omitempty"`
+	// Amount Of Spread Sodium Chloride: Amount of spread sodium chloride, Range: 0-1677722 m3
+	AmountOfSpreadSodiumChloride *uint32 `protobuf:"varint,444,opt,name=amount_of_spread_sodium_chloride,json=amountOfSpreadSodiumChloride,proto3,oneof" json:"amount_of_spread_sodium_chloride,omitempty"`
+	// Amount Of Spread Magnesium Chloride: Amount of spread magnesium chloride, Range: 0-1677722 m3
+	AmountOfSpreadMagnesiumChloride *uint32 `protobuf:"varint,445,opt,name=amount_of_spread_magnesium_chloride,json=amountOfSpreadMagnesiumChloride,proto3,oneof" json:"amount_of_spread_magnesium_chloride,omitempty"`
+	// Amount Of Spread Gravel: Amount of spread gravel, Range: 0-1677722 T
+	AmountOfSpreadGravel *uint32 `protobuf:"varint,446,opt,name=amount_of_spread_gravel,json=amountOfSpreadGravel,proto3,oneof" json:"amount_of_spread_gravel,omitempty"`
+	// Amount Of Spread Sand: Amount of spread sand, Range: 0-1677722 T
+	AmountOfSpreadSand *uint32 `protobuf:"varint,447,opt,name=amount_of_spread_sand,json=amountOfSpreadSand,proto3,oneof" json:"amount_of_spread_sand,omitempty"`
+	// Width Pouring Left: Width pouring left, Range: 0-655 m
+	WidthPouringLeft *uint32 `protobuf:"varint,448,opt,name=width_pouring_left,json=widthPouringLeft,proto3,oneof" json:"width_pouring_left,omitempty"`
+	// Width Pouring Right: Width pouring right, Range: 0-655 m
+	WidthPouringRight *uint32 `protobuf:"varint,449,opt,name=width_pouring_right,json=widthPouringRight,proto3,oneof" json:"width_pouring_right,omitempty"`
+	// Salt Spreader Working Hours: Salt spreader working hours, Range: 0-167722 h
+	SaltSpreaderWorkingHours *uint32 `protobuf:"varint,450,opt,name=salt_spreader_working_hours,json=saltSpreaderWorkingHours,proto3,oneof" json:"salt_spreader_working_hours,omitempty"`
+	// Distance During Salting: Distance during salting, Range: 0-167722 km
+	DistanceDuringSalting *uint32 `protobuf:"varint,451,opt,name=distance_during_salting,json=distanceDuringSalting,proto3,oneof" json:"distance_during_salting,omitempty"`
+	// Load Weight: Load weight, Range: 0-16772215 kg
+	LoadWeight *uint32 `protobuf:"varint,452,opt,name=load_weight,json=loadWeight,proto3,oneof" json:"load_weight,omitempty"`
+	// Retarder Load: Retarder load, Range: 0-130 %
+	RetarderLoad *uint32 `protobuf:"varint,453,opt,name=retarder_load,json=retarderLoad,proto3,oneof" json:"retarder_load,omitempty"`
+	// Cruise Time: Cruise time, Range: 0-16772215 min
+	CruiseTime *uint32 `protobuf:"varint,454,opt,name=cruise_time,json=cruiseTime,proto3,oneof" json:"cruise_time,omitempty"`
+	// CNG Status: CNG status, 0-1
+	CngStatus *bool `protobuf:"varint,455,opt,name=cng_status,json=cngStatus,proto3,oneof" json:"cng_status,omitempty"`
+	// CNG Used: CNG used, Range: 0-16772215 kg
+	CngUsed *uint32 `protobuf:"varint,456,opt,name=cng_used,json=cngUsed,proto3,oneof" json:"cng_used,omitempty"`
+	// CNG Level Percent: CNG level, Range: 0-100 %
+	CngLevelPercent *uint32 `protobuf:"varint,457,opt,name=cng_level_percent,json=cngLevelPercent,proto3,oneof" json:"cng_level_percent,omitempty"`
+	// Oil Level: Engine oil level indicator status, 0-1
+	OilLevel *bool `protobuf:"varint,458,opt,name=oil_level,json=oilLevel,proto3,oneof" json:"oil_level,omitempty"`
+	// Vehicles Range On Battery: Vehicle range on battery, Range: 0-16777215 m
+	VehiclesRangeOnBattery *uint32 `protobuf:"varint,459,opt,name=vehicles_range_on_battery,json=vehiclesRangeOnBattery,proto3,oneof" json:"vehicles_range_on_battery,omitempty"`
+	// Vehicles Range On Additional Fuel: Vehicle range on additional fuel, Range: 0-16777215 m
+	VehiclesRangeOnAdditionalFuel *uint32 `protobuf:"varint,460,opt,name=vehicles_range_on_additional_fuel,json=vehiclesRangeOnAdditionalFuel,proto3,oneof" json:"vehicles_range_on_additional_fuel,omitempty"`
+	// Security State Flags P4: Security state flags protocol 4, HEX
+	SecurityStateFlagsP4 []byte `protobuf:"bytes,461,opt,name=security_state_flags_p4,json=securityStateFlagsP4,proto3,oneof" json:"security_state_flags_p4,omitempty"`
+	// Control State Flags P4: Control state flags protocol 4, HEX
+	ControlStateFlagsP4 []byte `protobuf:"bytes,462,opt,name=control_state_flags_p4,json=controlStateFlagsP4,proto3,oneof" json:"control_state_flags_p4,omitempty"`
+	// Indicator State Flags P4: Indicator state flags protocol 4, HEX
+	IndicatorStateFlagsP4 []byte `protobuf:"bytes,463,opt,name=indicator_state_flags_p4,json=indicatorStateFlagsP4,proto3,oneof" json:"indicator_state_flags_p4,omitempty"`
+	// Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
+	AgriculturalStateFlagsP4 []byte `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
 }
 
 func (x *Compact) Reset() {
@@ -4297,170 +4699,170 @@ func (x *Compact) GetUsfHydraulicsWorkNotPermitted() uint32 {
 	return 0
 }
 
-func (x *Compact) GetCisfSection_1PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_1PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_1PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection1PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection1PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection1PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_1Filled() uint32 {
-	if x != nil && x.CisfSection_1Filled != nil {
-		return *x.CisfSection_1Filled
+func (x *Compact) GetCisfSection1Filled() uint32 {
+	if x != nil && x.CisfSection1Filled != nil {
+		return *x.CisfSection1Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_1Overfilled() uint32 {
-	if x != nil && x.CisfSection_1Overfilled != nil {
-		return *x.CisfSection_1Overfilled
+func (x *Compact) GetCisfSection1Overfilled() uint32 {
+	if x != nil && x.CisfSection1Overfilled != nil {
+		return *x.CisfSection1Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_2PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_2PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_2PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection2PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection2PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection2PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_2Filled() uint32 {
-	if x != nil && x.CisfSection_2Filled != nil {
-		return *x.CisfSection_2Filled
+func (x *Compact) GetCisfSection2Filled() uint32 {
+	if x != nil && x.CisfSection2Filled != nil {
+		return *x.CisfSection2Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_2Overfilled() uint32 {
-	if x != nil && x.CisfSection_2Overfilled != nil {
-		return *x.CisfSection_2Overfilled
+func (x *Compact) GetCisfSection2Overfilled() uint32 {
+	if x != nil && x.CisfSection2Overfilled != nil {
+		return *x.CisfSection2Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_3PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_3PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_3PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection3PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection3PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection3PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_3Filled() uint32 {
-	if x != nil && x.CisfSection_3Filled != nil {
-		return *x.CisfSection_3Filled
+func (x *Compact) GetCisfSection3Filled() uint32 {
+	if x != nil && x.CisfSection3Filled != nil {
+		return *x.CisfSection3Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_3Overfilled() uint32 {
-	if x != nil && x.CisfSection_3Overfilled != nil {
-		return *x.CisfSection_3Overfilled
+func (x *Compact) GetCisfSection3Overfilled() uint32 {
+	if x != nil && x.CisfSection3Overfilled != nil {
+		return *x.CisfSection3Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_4PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_4PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_4PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection4PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection4PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection4PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_4Filled() uint32 {
-	if x != nil && x.CisfSection_4Filled != nil {
-		return *x.CisfSection_4Filled
+func (x *Compact) GetCisfSection4Filled() uint32 {
+	if x != nil && x.CisfSection4Filled != nil {
+		return *x.CisfSection4Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_4Overfilled() uint32 {
-	if x != nil && x.CisfSection_4Overfilled != nil {
-		return *x.CisfSection_4Overfilled
+func (x *Compact) GetCisfSection4Overfilled() uint32 {
+	if x != nil && x.CisfSection4Overfilled != nil {
+		return *x.CisfSection4Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_5PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_5PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_5PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection5PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection5PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection5PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_5Filled() uint32 {
-	if x != nil && x.CisfSection_5Filled != nil {
-		return *x.CisfSection_5Filled
+func (x *Compact) GetCisfSection5Filled() uint32 {
+	if x != nil && x.CisfSection5Filled != nil {
+		return *x.CisfSection5Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_5Overfilled() uint32 {
-	if x != nil && x.CisfSection_5Overfilled != nil {
-		return *x.CisfSection_5Overfilled
+func (x *Compact) GetCisfSection5Overfilled() uint32 {
+	if x != nil && x.CisfSection5Overfilled != nil {
+		return *x.CisfSection5Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_6PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_6PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_6PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection6PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection6PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection6PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_6Filled() uint32 {
-	if x != nil && x.CisfSection_6Filled != nil {
-		return *x.CisfSection_6Filled
+func (x *Compact) GetCisfSection6Filled() uint32 {
+	if x != nil && x.CisfSection6Filled != nil {
+		return *x.CisfSection6Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_6Overfilled() uint32 {
-	if x != nil && x.CisfSection_6Overfilled != nil {
-		return *x.CisfSection_6Overfilled
+func (x *Compact) GetCisfSection6Overfilled() uint32 {
+	if x != nil && x.CisfSection6Overfilled != nil {
+		return *x.CisfSection6Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_7PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_7PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_7PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection7PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection7PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection7PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_7Filled() uint32 {
-	if x != nil && x.CisfSection_7Filled != nil {
-		return *x.CisfSection_7Filled
+func (x *Compact) GetCisfSection7Filled() uint32 {
+	if x != nil && x.CisfSection7Filled != nil {
+		return *x.CisfSection7Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_7Overfilled() uint32 {
-	if x != nil && x.CisfSection_7Overfilled != nil {
-		return *x.CisfSection_7Overfilled
+func (x *Compact) GetCisfSection7Overfilled() uint32 {
+	if x != nil && x.CisfSection7Overfilled != nil {
+		return *x.CisfSection7Overfilled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_8PresenceOfFluidInTheDownpipe() uint32 {
-	if x != nil && x.CisfSection_8PresenceOfFluidInTheDownpipe != nil {
-		return *x.CisfSection_8PresenceOfFluidInTheDownpipe
+func (x *Compact) GetCisfSection8PresenceOfFluidInTheDownpipe() uint32 {
+	if x != nil && x.CisfSection8PresenceOfFluidInTheDownpipe != nil {
+		return *x.CisfSection8PresenceOfFluidInTheDownpipe
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_8Filled() uint32 {
-	if x != nil && x.CisfSection_8Filled != nil {
-		return *x.CisfSection_8Filled
+func (x *Compact) GetCisfSection8Filled() uint32 {
+	if x != nil && x.CisfSection8Filled != nil {
+		return *x.CisfSection8Filled
 	}
 	return 0
 }
 
-func (x *Compact) GetCisfSection_8Overfilled() uint32 {
-	if x != nil && x.CisfSection_8Overfilled != nil {
-		return *x.CisfSection_8Overfilled
+func (x *Compact) GetCisfSection8Overfilled() uint32 {
+	if x != nil && x.CisfSection8Overfilled != nil {
+		return *x.CisfSection8Overfilled
 	}
 	return 0
 }
@@ -4738,6 +5140,1413 @@ func (x *Compact) GetGeoFence() map[uint32]uint32 {
 	return nil
 }
 
+func (x *Compact) GetAutoGeofence() bool {
+	if x != nil && x.AutoGeofence != nil {
+		return *x.AutoGeofence
+	}
+	return false
+}
+
+func (x *Compact) GetTrip() uint32 {
+	if x != nil && x.Trip != nil {
+		return *x.Trip
+	}
+	return 0
+}
+
+func (x *Compact) GetOverSpeeding() uint32 {
+	if x != nil && x.OverSpeeding != nil {
+		return *x.OverSpeeding
+	}
+	return 0
+}
+
+func (x *Compact) GetCrashTraceData() []byte {
+	if x != nil {
+		return x.CrashTraceData
+	}
+	return nil
+}
+
+func (x *Compact) GetBloodAlcoholContent() uint32 {
+	if x != nil && x.BloodAlcoholContent != nil {
+		return *x.BloodAlcoholContent
+	}
+	return 0
+}
+
+func (x *Compact) GetIdling() bool {
+	if x != nil && x.Idling != nil {
+		return *x.Idling
+	}
+	return false
+}
+
+func (x *Compact) GetGreenDrivingType() uint32 {
+	if x != nil && x.GreenDrivingType != nil {
+		return *x.GreenDrivingType
+	}
+	return 0
+}
+
+func (x *Compact) GetTowing() bool {
+	if x != nil && x.Towing != nil {
+		return *x.Towing
+	}
+	return false
+}
+
+func (x *Compact) GetUnplug() bool {
+	if x != nil && x.Unplug != nil {
+		return *x.Unplug
+	}
+	return false
+}
+
+func (x *Compact) GetCrashDetection() uint32 {
+	if x != nil && x.CrashDetection != nil {
+		return *x.CrashDetection
+	}
+	return 0
+}
+
+func (x *Compact) GetImmobilizer() uint32 {
+	if x != nil && x.Immobilizer != nil {
+		return *x.Immobilizer
+	}
+	return 0
+}
+
+func (x *Compact) GetGreenDrivingValue() uint32 {
+	if x != nil && x.GreenDrivingValue != nil {
+		return *x.GreenDrivingValue
+	}
+	return 0
+}
+
+func (x *Compact) GetJamming() bool {
+	if x != nil && x.Jamming != nil {
+		return *x.Jamming
+	}
+	return false
+}
+
+func (x *Compact) GetIccid2() uint64 {
+	if x != nil && x.Iccid2 != nil {
+		return *x.Iccid2
+	}
+	return 0
+}
+
+func (x *Compact) GetGreenDrivingEventDuration() uint32 {
+	if x != nil && x.GreenDrivingEventDuration != nil {
+		return *x.GreenDrivingEventDuration
+	}
+	return 0
+}
+
+func (x *Compact) GetAlarm() bool {
+	if x != nil && x.Alarm != nil {
+		return *x.Alarm
+	}
+	return false
+}
+
+func (x *Compact) GetEcoMaximum() uint64 {
+	if x != nil && x.EcoMaximum != nil {
+		return *x.EcoMaximum
+	}
+	return 0
+}
+
+func (x *Compact) GetEcoAverage() uint64 {
+	if x != nil && x.EcoAverage != nil {
+		return *x.EcoAverage
+	}
+	return 0
+}
+
+func (x *Compact) GetEcoDuration() uint32 {
+	if x != nil && x.EcoDuration != nil {
+		return *x.EcoDuration
+	}
+	return 0
+}
+
+func (x *Compact) GetDrivingState() uint32 {
+	if x != nil && x.DrivingState != nil {
+		return *x.DrivingState
+	}
+	return 0
+}
+
+func (x *Compact) GetDrivingRecords() uint32 {
+	if x != nil && x.DrivingRecords != nil {
+		return *x.DrivingRecords
+	}
+	return 0
+}
+
+func (x *Compact) GetCrashEventCounter() uint32 {
+	if x != nil && x.CrashEventCounter != nil {
+		return *x.CrashEventCounter
+	}
+	return 0
+}
+
+func (x *Compact) GetGnssJamming() uint32 {
+	if x != nil && x.GnssJamming != nil {
+		return *x.GnssJamming
+	}
+	return 0
+}
+
+func (x *Compact) GetPrivateMode() uint32 {
+	if x != nil && x.PrivateMode != nil {
+		return *x.PrivateMode
+	}
+	return 0
+}
+
+func (x *Compact) GetIgnitionOnCounter() uint32 {
+	if x != nil && x.IgnitionOnCounter != nil {
+		return *x.IgnitionOnCounter
+	}
+	return 0
+}
+
+func (x *Compact) GetMotorcycleFallDetection() uint32 {
+	if x != nil && x.MotorcycleFallDetection != nil {
+		return *x.MotorcycleFallDetection
+	}
+	return 0
+}
+
+func (x *Compact) GetVin() string {
+	if x != nil && x.Vin != nil {
+		return *x.Vin
+	}
+	return ""
+}
+
+func (x *Compact) GetNumberOfDtc() uint32 {
+	if x != nil && x.NumberOfDtc != nil {
+		return *x.NumberOfDtc
+	}
+	return 0
+}
+
+func (x *Compact) GetEngineLoad() uint32 {
+	if x != nil && x.EngineLoad != nil {
+		return *x.EngineLoad
+	}
+	return 0
+}
+
+func (x *Compact) GetCoolantTemperature() int32 {
+	if x != nil && x.CoolantTemperature != nil {
+		return *x.CoolantTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetShortFuelTrim() int32 {
+	if x != nil && x.ShortFuelTrim != nil {
+		return *x.ShortFuelTrim
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelPressure() uint32 {
+	if x != nil && x.FuelPressure != nil {
+		return *x.FuelPressure
+	}
+	return 0
+}
+
+func (x *Compact) GetIntakeMap() uint32 {
+	if x != nil && x.IntakeMap != nil {
+		return *x.IntakeMap
+	}
+	return 0
+}
+
+func (x *Compact) GetEngineRpm() uint32 {
+	if x != nil && x.EngineRpm != nil {
+		return *x.EngineRpm
+	}
+	return 0
+}
+
+func (x *Compact) GetVehicleSpeed() uint32 {
+	if x != nil && x.VehicleSpeed != nil {
+		return *x.VehicleSpeed
+	}
+	return 0
+}
+
+func (x *Compact) GetTimingAdvance() int32 {
+	if x != nil && x.TimingAdvance != nil {
+		return *x.TimingAdvance
+	}
+	return 0
+}
+
+func (x *Compact) GetIntakeAirTemperature() int32 {
+	if x != nil && x.IntakeAirTemperature != nil {
+		return *x.IntakeAirTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetMaf() uint32 {
+	if x != nil && x.Maf != nil {
+		return *x.Maf
+	}
+	return 0
+}
+
+func (x *Compact) GetThrottlePosition() uint32 {
+	if x != nil && x.ThrottlePosition != nil {
+		return *x.ThrottlePosition
+	}
+	return 0
+}
+
+func (x *Compact) GetRuntimeSinceEngineStart() uint32 {
+	if x != nil && x.RuntimeSinceEngineStart != nil {
+		return *x.RuntimeSinceEngineStart
+	}
+	return 0
+}
+
+func (x *Compact) GetDistanceTraveledMilOn() uint32 {
+	if x != nil && x.DistanceTraveledMilOn != nil {
+		return *x.DistanceTraveledMilOn
+	}
+	return 0
+}
+
+func (x *Compact) GetRelativeFuelRailPressure() uint32 {
+	if x != nil && x.RelativeFuelRailPressure != nil {
+		return *x.RelativeFuelRailPressure
+	}
+	return 0
+}
+
+func (x *Compact) GetDirectFuelRailPressure() uint32 {
+	if x != nil && x.DirectFuelRailPressure != nil {
+		return *x.DirectFuelRailPressure
+	}
+	return 0
+}
+
+func (x *Compact) GetCommandedEgr() uint32 {
+	if x != nil && x.CommandedEgr != nil {
+		return *x.CommandedEgr
+	}
+	return 0
+}
+
+func (x *Compact) GetEgrError() int32 {
+	if x != nil && x.EgrError != nil {
+		return *x.EgrError
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelLevelPercent() uint32 {
+	if x != nil && x.FuelLevelPercent != nil {
+		return *x.FuelLevelPercent
+	}
+	return 0
+}
+
+func (x *Compact) GetDistanceSinceCodesClear() uint32 {
+	if x != nil && x.DistanceSinceCodesClear != nil {
+		return *x.DistanceSinceCodesClear
+	}
+	return 0
+}
+
+func (x *Compact) GetBarometricPressure() uint32 {
+	if x != nil && x.BarometricPressure != nil {
+		return *x.BarometricPressure
+	}
+	return 0
+}
+
+func (x *Compact) GetControlModuleVoltage() uint32 {
+	if x != nil && x.ControlModuleVoltage != nil {
+		return *x.ControlModuleVoltage
+	}
+	return 0
+}
+
+func (x *Compact) GetAbsoluteLoadValue() uint32 {
+	if x != nil && x.AbsoluteLoadValue != nil {
+		return *x.AbsoluteLoadValue
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelType() uint32 {
+	if x != nil && x.FuelType != nil {
+		return *x.FuelType
+	}
+	return 0
+}
+
+func (x *Compact) GetAmbientAirTemperature() int32 {
+	if x != nil && x.AmbientAirTemperature != nil {
+		return *x.AmbientAirTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetTimeRunWithMilOn() uint32 {
+	if x != nil && x.TimeRunWithMilOn != nil {
+		return *x.TimeRunWithMilOn
+	}
+	return 0
+}
+
+func (x *Compact) GetTimeSinceCodesCleared() uint32 {
+	if x != nil && x.TimeSinceCodesCleared != nil {
+		return *x.TimeSinceCodesCleared
+	}
+	return 0
+}
+
+func (x *Compact) GetAbsoluteFuelRailPressure() uint32 {
+	if x != nil && x.AbsoluteFuelRailPressure != nil {
+		return *x.AbsoluteFuelRailPressure
+	}
+	return 0
+}
+
+func (x *Compact) GetHybridBatteryPackLife() uint32 {
+	if x != nil && x.HybridBatteryPackLife != nil {
+		return *x.HybridBatteryPackLife
+	}
+	return 0
+}
+
+func (x *Compact) GetEngineOilTemperature() uint32 {
+	if x != nil && x.EngineOilTemperature != nil {
+		return *x.EngineOilTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelInjectionTiming() int32 {
+	if x != nil && x.FuelInjectionTiming != nil {
+		return *x.FuelInjectionTiming
+	}
+	return 0
+}
+
+func (x *Compact) GetThrottlePositionGroup() uint32 {
+	if x != nil && x.ThrottlePositionGroup != nil {
+		return *x.ThrottlePositionGroup
+	}
+	return 0
+}
+
+func (x *Compact) GetCommandedEquivalenceR() uint32 {
+	if x != nil && x.CommandedEquivalenceR != nil {
+		return *x.CommandedEquivalenceR
+	}
+	return 0
+}
+
+func (x *Compact) GetIntakeMap_2Bytes() uint32 {
+	if x != nil && x.IntakeMap_2Bytes != nil {
+		return *x.IntakeMap_2Bytes
+	}
+	return 0
+}
+
+func (x *Compact) GetHybridSystemVoltage() uint32 {
+	if x != nil && x.HybridSystemVoltage != nil {
+		return *x.HybridSystemVoltage
+	}
+	return 0
+}
+
+func (x *Compact) GetHybridSystemCurrent() int32 {
+	if x != nil && x.HybridSystemCurrent != nil {
+		return *x.HybridSystemCurrent
+	}
+	return 0
+}
+
+func (x *Compact) GetFaultCodes() string {
+	if x != nil && x.FaultCodes != nil {
+		return *x.FaultCodes
+	}
+	return ""
+}
+
+func (x *Compact) GetFuelRate() uint32 {
+	if x != nil && x.FuelRate != nil {
+		return *x.FuelRate
+	}
+	return 0
+}
+
+func (x *Compact) GetObdOemTotalMileage() uint32 {
+	if x != nil && x.ObdOemTotalMileage != nil {
+		return *x.ObdOemTotalMileage
+	}
+	return 0
+}
+
+func (x *Compact) GetObdOemFuelLevel() uint32 {
+	if x != nil && x.ObdOemFuelLevel != nil {
+		return *x.ObdOemFuelLevel
+	}
+	return 0
+}
+
+func (x *Compact) GetOemDistanceUntilService() uint32 {
+	if x != nil && x.OemDistanceUntilService != nil {
+		return *x.OemDistanceUntilService
+	}
+	return 0
+}
+
+func (x *Compact) GetOemBatteryChargeState() bool {
+	if x != nil && x.OemBatteryChargeState != nil {
+		return *x.OemBatteryChargeState
+	}
+	return false
+}
+
+func (x *Compact) GetOemBatteryChargeLevel() uint32 {
+	if x != nil && x.OemBatteryChargeLevel != nil {
+		return *x.OemBatteryChargeLevel
+	}
+	return 0
+}
+
+func (x *Compact) GetOemRemainingDistance() uint32 {
+	if x != nil && x.OemRemainingDistance != nil {
+		return *x.OemRemainingDistance
+	}
+	return 0
+}
+
+func (x *Compact) GetOemBatteryStateOfHealth() uint32 {
+	if x != nil && x.OemBatteryStateOfHealth != nil {
+		return *x.OemBatteryStateOfHealth
+	}
+	return 0
+}
+
+func (x *Compact) GetOemBatteryTemperature() int32 {
+	if x != nil && x.OemBatteryTemperature != nil {
+		return *x.OemBatteryTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetBeacon() []byte {
+	if x != nil {
+		return x.Beacon
+	}
+	return nil
+}
+
+func (x *Compact) GetAdvancedBleBeaconData() []byte {
+	if x != nil {
+		return x.AdvancedBleBeaconData
+	}
+	return nil
+}
+
+func (x *Compact) GetBleTemperature1() int32 {
+	if x != nil && x.BleTemperature1 != nil {
+		return *x.BleTemperature1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleTemperature2() int32 {
+	if x != nil && x.BleTemperature2 != nil {
+		return *x.BleTemperature2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleTemperature3() int32 {
+	if x != nil && x.BleTemperature3 != nil {
+		return *x.BleTemperature3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleTemperature4() int32 {
+	if x != nil && x.BleTemperature4 != nil {
+		return *x.BleTemperature4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleBattery1() uint32 {
+	if x != nil && x.BleBattery1 != nil {
+		return *x.BleBattery1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleBattery2() uint32 {
+	if x != nil && x.BleBattery2 != nil {
+		return *x.BleBattery2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleBattery3() uint32 {
+	if x != nil && x.BleBattery3 != nil {
+		return *x.BleBattery3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleBattery4() uint32 {
+	if x != nil && x.BleBattery4 != nil {
+		return *x.BleBattery4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleHumidity1() uint32 {
+	if x != nil && x.BleHumidity1 != nil {
+		return *x.BleHumidity1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleHumidity2() uint32 {
+	if x != nil && x.BleHumidity2 != nil {
+		return *x.BleHumidity2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleHumidity3() uint32 {
+	if x != nil && x.BleHumidity3 != nil {
+		return *x.BleHumidity3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleHumidity4() uint32 {
+	if x != nil && x.BleHumidity4 != nil {
+		return *x.BleHumidity4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelLevel1() uint32 {
+	if x != nil && x.BleFuelLevel1 != nil {
+		return *x.BleFuelLevel1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelLevel2() uint32 {
+	if x != nil && x.BleFuelLevel2 != nil {
+		return *x.BleFuelLevel2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelLevel3() uint32 {
+	if x != nil && x.BleFuelLevel3 != nil {
+		return *x.BleFuelLevel3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelLevel4() uint32 {
+	if x != nil && x.BleFuelLevel4 != nil {
+		return *x.BleFuelLevel4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelFrequency1() uint32 {
+	if x != nil && x.BleFuelFrequency1 != nil {
+		return *x.BleFuelFrequency1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelFrequency2() uint32 {
+	if x != nil && x.BleFuelFrequency2 != nil {
+		return *x.BleFuelFrequency2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelFrequency3() uint32 {
+	if x != nil && x.BleFuelFrequency3 != nil {
+		return *x.BleFuelFrequency3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleFuelFrequency4() uint32 {
+	if x != nil && x.BleFuelFrequency4 != nil {
+		return *x.BleFuelFrequency4
+	}
+	return 0
+}
+
+func (x *Compact) GetBleLuminosity1() uint32 {
+	if x != nil && x.BleLuminosity1 != nil {
+		return *x.BleLuminosity1
+	}
+	return 0
+}
+
+func (x *Compact) GetBleLuminosity2() uint32 {
+	if x != nil && x.BleLuminosity2 != nil {
+		return *x.BleLuminosity2
+	}
+	return 0
+}
+
+func (x *Compact) GetBleLuminosity3() uint32 {
+	if x != nil && x.BleLuminosity3 != nil {
+		return *x.BleLuminosity3
+	}
+	return 0
+}
+
+func (x *Compact) GetBleLuminosity4() uint32 {
+	if x != nil && x.BleLuminosity4 != nil {
+		return *x.BleLuminosity4
+	}
+	return 0
+}
+
+func (x *Compact) GetBle1Custom1() []byte {
+	if x != nil {
+		return x.Ble1Custom1
+	}
+	return nil
+}
+
+func (x *Compact) GetBle1Custom2() uint32 {
+	if x != nil && x.Ble1Custom2 != nil {
+		return *x.Ble1Custom2
+	}
+	return 0
+}
+
+func (x *Compact) GetBle1Custom3() uint32 {
+	if x != nil && x.Ble1Custom3 != nil {
+		return *x.Ble1Custom3
+	}
+	return 0
+}
+
+func (x *Compact) GetBle1Custom4() uint32 {
+	if x != nil && x.Ble1Custom4 != nil {
+		return *x.Ble1Custom4
+	}
+	return 0
+}
+
+func (x *Compact) GetBle1Custom5() uint32 {
+	if x != nil && x.Ble1Custom5 != nil {
+		return *x.Ble1Custom5
+	}
+	return 0
+}
+
+func (x *Compact) GetBle2Custom1() []byte {
+	if x != nil {
+		return x.Ble2Custom1
+	}
+	return nil
+}
+
+func (x *Compact) GetBle2Custom2() uint32 {
+	if x != nil && x.Ble2Custom2 != nil {
+		return *x.Ble2Custom2
+	}
+	return 0
+}
+
+func (x *Compact) GetBle2Custom3() uint32 {
+	if x != nil && x.Ble2Custom3 != nil {
+		return *x.Ble2Custom3
+	}
+	return 0
+}
+
+func (x *Compact) GetBle2Custom4() uint32 {
+	if x != nil && x.Ble2Custom4 != nil {
+		return *x.Ble2Custom4
+	}
+	return 0
+}
+
+func (x *Compact) GetBle2Custom5() uint32 {
+	if x != nil && x.Ble2Custom5 != nil {
+		return *x.Ble2Custom5
+	}
+	return 0
+}
+
+func (x *Compact) GetBle3Custom1() []byte {
+	if x != nil {
+		return x.Ble3Custom1
+	}
+	return nil
+}
+
+func (x *Compact) GetBle3Custom2() uint32 {
+	if x != nil && x.Ble3Custom2 != nil {
+		return *x.Ble3Custom2
+	}
+	return 0
+}
+
+func (x *Compact) GetBle3Custom3() uint32 {
+	if x != nil && x.Ble3Custom3 != nil {
+		return *x.Ble3Custom3
+	}
+	return 0
+}
+
+func (x *Compact) GetBle3Custom4() uint32 {
+	if x != nil && x.Ble3Custom4 != nil {
+		return *x.Ble3Custom4
+	}
+	return 0
+}
+
+func (x *Compact) GetBle3Custom5() uint32 {
+	if x != nil && x.Ble3Custom5 != nil {
+		return *x.Ble3Custom5
+	}
+	return 0
+}
+
+func (x *Compact) GetBle4Custom1() []byte {
+	if x != nil {
+		return x.Ble4Custom1
+	}
+	return nil
+}
+
+func (x *Compact) GetBle4Custom2() uint32 {
+	if x != nil && x.Ble4Custom2 != nil {
+		return *x.Ble4Custom2
+	}
+	return 0
+}
+
+func (x *Compact) GetBle4Custom3() uint32 {
+	if x != nil && x.Ble4Custom3 != nil {
+		return *x.Ble4Custom3
+	}
+	return 0
+}
+
+func (x *Compact) GetBle4Custom4() uint32 {
+	if x != nil && x.Ble4Custom4 != nil {
+		return *x.Ble4Custom4
+	}
+	return 0
+}
+
+func (x *Compact) GetBle4Custom5() uint32 {
+	if x != nil && x.Ble4Custom5 != nil {
+		return *x.Ble4Custom5
+	}
+	return 0
+}
+
+func (x *Compact) GetAcceleratorPedalPosition() uint32 {
+	if x != nil && x.AcceleratorPedalPosition != nil {
+		return *x.AcceleratorPedalPosition
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelConsumed() uint32 {
+	if x != nil && x.FuelConsumed != nil {
+		return *x.FuelConsumed
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelLevelLiters() uint32 {
+	if x != nil && x.FuelLevelLiters != nil {
+		return *x.FuelLevelLiters
+	}
+	return 0
+}
+
+func (x *Compact) GetTotalMileage() uint32 {
+	if x != nil && x.TotalMileage != nil {
+		return *x.TotalMileage
+	}
+	return 0
+}
+
+func (x *Compact) GetProgramNumber() uint32 {
+	if x != nil && x.ProgramNumber != nil {
+		return *x.ProgramNumber
+	}
+	return 0
+}
+
+func (x *Compact) GetModuleId_8B() uint64 {
+	if x != nil && x.ModuleId_8B != nil {
+		return *x.ModuleId_8B
+	}
+	return 0
+}
+
+func (x *Compact) GetModuleId_17B() []byte {
+	if x != nil {
+		return x.ModuleId_17B
+	}
+	return nil
+}
+
+func (x *Compact) GetEngineWorktime() uint32 {
+	if x != nil && x.EngineWorktime != nil {
+		return *x.EngineWorktime
+	}
+	return 0
+}
+
+func (x *Compact) GetEngineWorktimeCounted() uint32 {
+	if x != nil && x.EngineWorktimeCounted != nil {
+		return *x.EngineWorktimeCounted
+	}
+	return 0
+}
+
+func (x *Compact) GetTotalMileageCounted() uint32 {
+	if x != nil && x.TotalMileageCounted != nil {
+		return *x.TotalMileageCounted
+	}
+	return 0
+}
+
+func (x *Compact) GetFuelConsumedCounted() uint32 {
+	if x != nil && x.FuelConsumedCounted != nil {
+		return *x.FuelConsumedCounted
+	}
+	return 0
+}
+
+func (x *Compact) GetAdblueLevelPercent() uint32 {
+	if x != nil && x.AdblueLevelPercent != nil {
+		return *x.AdblueLevelPercent
+	}
+	return 0
+}
+
+func (x *Compact) GetAdblueLevelLiters() uint32 {
+	if x != nil && x.AdblueLevelLiters != nil {
+		return *x.AdblueLevelLiters
+	}
+	return 0
+}
+
+func (x *Compact) GetAxle1Load() uint32 {
+	if x != nil && x.Axle1Load != nil {
+		return *x.Axle1Load
+	}
+	return 0
+}
+
+func (x *Compact) GetAxle2Load() uint32 {
+	if x != nil && x.Axle2Load != nil {
+		return *x.Axle2Load
+	}
+	return 0
+}
+
+func (x *Compact) GetAxle3Load() uint32 {
+	if x != nil && x.Axle3Load != nil {
+		return *x.Axle3Load
+	}
+	return 0
+}
+
+func (x *Compact) GetAxle4Load() uint32 {
+	if x != nil && x.Axle4Load != nil {
+		return *x.Axle4Load
+	}
+	return 0
+}
+
+func (x *Compact) GetAxle5Load() uint32 {
+	if x != nil && x.Axle5Load != nil {
+		return *x.Axle5Load
+	}
+	return 0
+}
+
+func (x *Compact) GetControlStateFlags() uint32 {
+	if x != nil && x.ControlStateFlags != nil {
+		return *x.ControlStateFlags
+	}
+	return 0
+}
+
+func (x *Compact) GetAgriculturalMachineryFlags() uint64 {
+	if x != nil && x.AgriculturalMachineryFlags != nil {
+		return *x.AgriculturalMachineryFlags
+	}
+	return 0
+}
+
+func (x *Compact) GetHarvestingTime() uint32 {
+	if x != nil && x.HarvestingTime != nil {
+		return *x.HarvestingTime
+	}
+	return 0
+}
+
+func (x *Compact) GetAreaOfHarvest() uint32 {
+	if x != nil && x.AreaOfHarvest != nil {
+		return *x.AreaOfHarvest
+	}
+	return 0
+}
+
+func (x *Compact) GetMowingEfficiency() uint32 {
+	if x != nil && x.MowingEfficiency != nil {
+		return *x.MowingEfficiency
+	}
+	return 0
+}
+
+func (x *Compact) GetGrainMownVolume() uint32 {
+	if x != nil && x.GrainMownVolume != nil {
+		return *x.GrainMownVolume
+	}
+	return 0
+}
+
+func (x *Compact) GetGrainMoisture() uint32 {
+	if x != nil && x.GrainMoisture != nil {
+		return *x.GrainMoisture
+	}
+	return 0
+}
+
+func (x *Compact) GetHarvestingDrumRpm() uint32 {
+	if x != nil && x.HarvestingDrumRpm != nil {
+		return *x.HarvestingDrumRpm
+	}
+	return 0
+}
+
+func (x *Compact) GetGapUnderHarvestingDrum() uint32 {
+	if x != nil && x.GapUnderHarvestingDrum != nil {
+		return *x.GapUnderHarvestingDrum
+	}
+	return 0
+}
+
+func (x *Compact) GetSecurityStateFlags() uint64 {
+	if x != nil && x.SecurityStateFlags != nil {
+		return *x.SecurityStateFlags
+	}
+	return 0
+}
+
+func (x *Compact) GetTachographTotalVehicleDistance() uint32 {
+	if x != nil && x.TachographTotalVehicleDistance != nil {
+		return *x.TachographTotalVehicleDistance
+	}
+	return 0
+}
+
+func (x *Compact) GetTripDistance() uint32 {
+	if x != nil && x.TripDistance != nil {
+		return *x.TripDistance
+	}
+	return 0
+}
+
+func (x *Compact) GetTachographVehicleSpeed() uint32 {
+	if x != nil && x.TachographVehicleSpeed != nil {
+		return *x.TachographVehicleSpeed
+	}
+	return 0
+}
+
+func (x *Compact) GetTachoDriverCardPresence() uint32 {
+	if x != nil && x.TachoDriverCardPresence != nil {
+		return *x.TachoDriverCardPresence
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1States() uint32 {
+	if x != nil && x.Driver1States != nil {
+		return *x.Driver1States
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2States() uint32 {
+	if x != nil && x.Driver2States != nil {
+		return *x.Driver2States
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1ContinuousDrivingTime() uint32 {
+	if x != nil && x.Driver1ContinuousDrivingTime != nil {
+		return *x.Driver1ContinuousDrivingTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2ContinuousDrivingTime() uint32 {
+	if x != nil && x.Driver2ContinuousDrivingTime != nil {
+		return *x.Driver2ContinuousDrivingTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1CumulativeTime() uint32 {
+	if x != nil && x.Driver1CumulativeTime != nil {
+		return *x.Driver1CumulativeTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2CumulativeTime() uint32 {
+	if x != nil && x.Driver2CumulativeTime != nil {
+		return *x.Driver2CumulativeTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1SelectedActivityDuration() uint32 {
+	if x != nil && x.Driver1SelectedActivityDuration != nil {
+		return *x.Driver1SelectedActivityDuration
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2SelectedActivityDuration() uint32 {
+	if x != nil && x.Driver2SelectedActivityDuration != nil {
+		return *x.Driver2SelectedActivityDuration
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1CumulativeDrivingTime() uint32 {
+	if x != nil && x.Driver1CumulativeDrivingTime != nil {
+		return *x.Driver1CumulativeDrivingTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2CumulativeDrivingTime() uint32 {
+	if x != nil && x.Driver2CumulativeDrivingTime != nil {
+		return *x.Driver2CumulativeDrivingTime
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1IdHigh() uint64 {
+	if x != nil && x.Driver1IdHigh != nil {
+		return *x.Driver1IdHigh
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver1IdLow() uint64 {
+	if x != nil && x.Driver1IdLow != nil {
+		return *x.Driver1IdLow
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2IdHigh() uint64 {
+	if x != nil && x.Driver2IdHigh != nil {
+		return *x.Driver2IdHigh
+	}
+	return 0
+}
+
+func (x *Compact) GetDriver2IdLow() uint64 {
+	if x != nil && x.Driver2IdLow != nil {
+		return *x.Driver2IdLow
+	}
+	return 0
+}
+
+func (x *Compact) GetBatteryTemperature() int32 {
+	if x != nil && x.BatteryTemperature != nil {
+		return *x.BatteryTemperature
+	}
+	return 0
+}
+
+func (x *Compact) GetHvBatteryLevel() uint32 {
+	if x != nil && x.HvBatteryLevel != nil {
+		return *x.HvBatteryLevel
+	}
+	return 0
+}
+
+func (x *Compact) GetDtcFaults() uint32 {
+	if x != nil && x.DtcFaults != nil {
+		return *x.DtcFaults
+	}
+	return 0
+}
+
+func (x *Compact) GetSlopeOfArm() int32 {
+	if x != nil && x.SlopeOfArm != nil {
+		return *x.SlopeOfArm
+	}
+	return 0
+}
+
+func (x *Compact) GetRotationOfArm() int32 {
+	if x != nil && x.RotationOfArm != nil {
+		return *x.RotationOfArm
+	}
+	return 0
+}
+
+func (x *Compact) GetEjectOfArm() uint32 {
+	if x != nil && x.EjectOfArm != nil {
+		return *x.EjectOfArm
+	}
+	return 0
+}
+
+func (x *Compact) GetHorizontalDistanceArmVehicle() uint32 {
+	if x != nil && x.HorizontalDistanceArmVehicle != nil {
+		return *x.HorizontalDistanceArmVehicle
+	}
+	return 0
+}
+
+func (x *Compact) GetHeightArmAboveGround() uint32 {
+	if x != nil && x.HeightArmAboveGround != nil {
+		return *x.HeightArmAboveGround
+	}
+	return 0
+}
+
+func (x *Compact) GetDrillRpm() uint32 {
+	if x != nil && x.DrillRpm != nil {
+		return *x.DrillRpm
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadSaltSquareMeter() uint32 {
+	if x != nil && x.AmountOfSpreadSaltSquareMeter != nil {
+		return *x.AmountOfSpreadSaltSquareMeter
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadFineGrainedSalt() uint32 {
+	if x != nil && x.AmountOfSpreadFineGrainedSalt != nil {
+		return *x.AmountOfSpreadFineGrainedSalt
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfCoarseGrainedSalt() uint32 {
+	if x != nil && x.AmountOfCoarseGrainedSalt != nil {
+		return *x.AmountOfCoarseGrainedSalt
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadDimix() uint32 {
+	if x != nil && x.AmountOfSpreadDimix != nil {
+		return *x.AmountOfSpreadDimix
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadCoarseGrainedCalcium() uint32 {
+	if x != nil && x.AmountOfSpreadCoarseGrainedCalcium != nil {
+		return *x.AmountOfSpreadCoarseGrainedCalcium
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadCalciumChloride() uint32 {
+	if x != nil && x.AmountOfSpreadCalciumChloride != nil {
+		return *x.AmountOfSpreadCalciumChloride
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadSodiumChloride() uint32 {
+	if x != nil && x.AmountOfSpreadSodiumChloride != nil {
+		return *x.AmountOfSpreadSodiumChloride
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadMagnesiumChloride() uint32 {
+	if x != nil && x.AmountOfSpreadMagnesiumChloride != nil {
+		return *x.AmountOfSpreadMagnesiumChloride
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadGravel() uint32 {
+	if x != nil && x.AmountOfSpreadGravel != nil {
+		return *x.AmountOfSpreadGravel
+	}
+	return 0
+}
+
+func (x *Compact) GetAmountOfSpreadSand() uint32 {
+	if x != nil && x.AmountOfSpreadSand != nil {
+		return *x.AmountOfSpreadSand
+	}
+	return 0
+}
+
+func (x *Compact) GetWidthPouringLeft() uint32 {
+	if x != nil && x.WidthPouringLeft != nil {
+		return *x.WidthPouringLeft
+	}
+	return 0
+}
+
+func (x *Compact) GetWidthPouringRight() uint32 {
+	if x != nil && x.WidthPouringRight != nil {
+		return *x.WidthPouringRight
+	}
+	return 0
+}
+
+func (x *Compact) GetSaltSpreaderWorkingHours() uint32 {
+	if x != nil && x.SaltSpreaderWorkingHours != nil {
+		return *x.SaltSpreaderWorkingHours
+	}
+	return 0
+}
+
+func (x *Compact) GetDistanceDuringSalting() uint32 {
+	if x != nil && x.DistanceDuringSalting != nil {
+		return *x.DistanceDuringSalting
+	}
+	return 0
+}
+
+func (x *Compact) GetLoadWeight() uint32 {
+	if x != nil && x.LoadWeight != nil {
+		return *x.LoadWeight
+	}
+	return 0
+}
+
+func (x *Compact) GetRetarderLoad() uint32 {
+	if x != nil && x.RetarderLoad != nil {
+		return *x.RetarderLoad
+	}
+	return 0
+}
+
+func (x *Compact) GetCruiseTime() uint32 {
+	if x != nil && x.CruiseTime != nil {
+		return *x.CruiseTime
+	}
+	return 0
+}
+
+func (x *Compact) GetCngStatus() bool {
+	if x != nil && x.CngStatus != nil {
+		return *x.CngStatus
+	}
+	return false
+}
+
+func (x *Compact) GetCngUsed() uint32 {
+	if x != nil && x.CngUsed != nil {
+		return *x.CngUsed
+	}
+	return 0
+}
+
+func (x *Compact) GetCngLevelPercent() uint32 {
+	if x != nil && x.CngLevelPercent != nil {
+		return *x.CngLevelPercent
+	}
+	return 0
+}
+
+func (x *Compact) GetOilLevel() bool {
+	if x != nil && x.OilLevel != nil {
+		return *x.OilLevel
+	}
+	return false
+}
+
+func (x *Compact) GetVehiclesRangeOnBattery() uint32 {
+	if x != nil && x.VehiclesRangeOnBattery != nil {
+		return *x.VehiclesRangeOnBattery
+	}
+	return 0
+}
+
+func (x *Compact) GetVehiclesRangeOnAdditionalFuel() uint32 {
+	if x != nil && x.VehiclesRangeOnAdditionalFuel != nil {
+		return *x.VehiclesRangeOnAdditionalFuel
+	}
+	return 0
+}
+
+func (x *Compact) GetSecurityStateFlagsP4() []byte {
+	if x != nil {
+		return x.SecurityStateFlagsP4
+	}
+	return nil
+}
+
+func (x *Compact) GetControlStateFlagsP4() []byte {
+	if x != nil {
+		return x.ControlStateFlagsP4
+	}
+	return nil
+}
+
+func (x *Compact) GetIndicatorStateFlagsP4() []byte {
+	if x != nil {
+		return x.IndicatorStateFlagsP4
+	}
+	return nil
+}
+
+func (x *Compact) GetAgriculturalStateFlagsP4() []byte {
+	if x != nil {
+		return x.AgriculturalStateFlagsP4
+	}
+	return nil
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -4792,7 +6601,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xc1\xac\x01\n" +
+	"\b_mileage\"\x8a\xa1\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -5007,31 +6816,31 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x19usf_water_valve_is_opened\x18\xa9\x01 \x01(\rH\xc1\x01R\x15usfWaterValveIsOpened\x88\x01\x01\x12L\n" +
 	" usf_cabin_moved_up_status_active\x18\xaa\x01 \x01(\rH\xc2\x01R\x1busfCabinMovedUpStatusActive\x88\x01\x01\x12P\n" +
 	"\"usf_cabin_moved_down_status_active\x18\xab\x01 \x01(\rH\xc3\x01R\x1dusfCabinMovedDownStatusActive\x88\x01\x01\x12O\n" +
-	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\rH\xc4\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12i\n" +
-	"0cisf_section_1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\rH\xc5\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_1_filled\x18\xae\x01 \x01(\rH\xc6\x01R\x12cisfSection1Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_1_overfilled\x18\xaf\x01 \x01(\rH\xc7\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\rH\xc8\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_2_filled\x18\xb1\x01 \x01(\rH\xc9\x01R\x12cisfSection2Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_2_overfilled\x18\xb2\x01 \x01(\rH\xca\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\rH\xcb\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_3_filled\x18\xb4\x01 \x01(\rH\xcc\x01R\x12cisfSection3Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_3_overfilled\x18\xb5\x01 \x01(\rH\xcd\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\rH\xce\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_4_filled\x18\xb7\x01 \x01(\rH\xcf\x01R\x12cisfSection4Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_4_overfilled\x18\xb8\x01 \x01(\rH\xd0\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\rH\xd1\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_5_filled\x18\xba\x01 \x01(\rH\xd2\x01R\x12cisfSection5Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_5_overfilled\x18\xbb\x01 \x01(\rH\xd3\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\rH\xd4\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_6_filled\x18\xbd\x01 \x01(\rH\xd5\x01R\x12cisfSection6Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_6_overfilled\x18\xbe\x01 \x01(\rH\xd6\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\rH\xd7\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_7_filled\x18\xc0\x01 \x01(\rH\xd8\x01R\x12cisfSection7Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_7_overfilled\x18\xc1\x01 \x01(\rH\xd9\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12i\n" +
-	"0cisf_section_8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\rH\xda\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x128\n" +
-	"\x15cisf_section_8_filled\x18\xc3\x01 \x01(\rH\xdb\x01R\x12cisfSection8Filled\x88\x01\x01\x12@\n" +
-	"\x19cisf_section_8_overfilled\x18\xc4\x01 \x01(\rH\xdc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
+	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\rH\xc4\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12h\n" +
+	"/cisf_section1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\rH\xc5\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section1_filled\x18\xae\x01 \x01(\rH\xc6\x01R\x12cisfSection1Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section1_overfilled\x18\xaf\x01 \x01(\rH\xc7\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\rH\xc8\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section2_filled\x18\xb1\x01 \x01(\rH\xc9\x01R\x12cisfSection2Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section2_overfilled\x18\xb2\x01 \x01(\rH\xca\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\rH\xcb\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section3_filled\x18\xb4\x01 \x01(\rH\xcc\x01R\x12cisfSection3Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section3_overfilled\x18\xb5\x01 \x01(\rH\xcd\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\rH\xce\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section4_filled\x18\xb7\x01 \x01(\rH\xcf\x01R\x12cisfSection4Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section4_overfilled\x18\xb8\x01 \x01(\rH\xd0\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\rH\xd1\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section5_filled\x18\xba\x01 \x01(\rH\xd2\x01R\x12cisfSection5Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section5_overfilled\x18\xbb\x01 \x01(\rH\xd3\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\rH\xd4\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section6_filled\x18\xbd\x01 \x01(\rH\xd5\x01R\x12cisfSection6Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section6_overfilled\x18\xbe\x01 \x01(\rH\xd6\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\rH\xd7\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section7_filled\x18\xc0\x01 \x01(\rH\xd8\x01R\x12cisfSection7Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section7_overfilled\x18\xc1\x01 \x01(\rH\xd9\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\rH\xda\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section8_filled\x18\xc3\x01 \x01(\rH\xdb\x01R\x12cisfSection8Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section8_overfilled\x18\xc4\x01 \x01(\rH\xdc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
 	"\x18distance_to_next_service\x18\xc5\x01 \x01(\x04H\xdd\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
 	"\fcng_level_kg\x18\xc6\x01 \x01(\rH\xde\x01R\n" +
 	"cngLevelKg\x88\x01\x01\x12G\n" +
@@ -5073,7 +6882,226 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x0efrequency_din1\x18\x83\x02 \x01(\rH\x80\x02R\rfrequencyDin1\x88\x01\x01\x12,\n" +
 	"\x0efrequency_din2\x18\x84\x02 \x01(\rH\x81\x02R\rfrequencyDin2\x88\x01\x01\x128\n" +
 	"\x14connectivity_quality\x18\x85\x02 \x01(\rH\x82\x02R\x13connectivityQuality\x88\x01\x01\x12F\n" +
-	"\tgeo_fence\x18\x86\x02 \x03(\v2(.com.navzy.packets.Compact.GeoFenceEntryR\bgeoFence\x1a;\n" +
+	"\tgeo_fence\x18\x86\x02 \x03(\v2(.com.navzy.packets.Compact.GeoFenceEntryR\bgeoFence\x12*\n" +
+	"\rauto_geofence\x18\x87\x02 \x01(\bH\x83\x02R\fautoGeofence\x88\x01\x01\x12\x19\n" +
+	"\x04trip\x18\x88\x02 \x01(\rH\x84\x02R\x04trip\x88\x01\x01\x12*\n" +
+	"\rover_speeding\x18\x89\x02 \x01(\rH\x85\x02R\foverSpeeding\x88\x01\x01\x12/\n" +
+	"\x10crash_trace_data\x18\x8a\x02 \x01(\fH\x86\x02R\x0ecrashTraceData\x88\x01\x01\x129\n" +
+	"\x15blood_alcohol_content\x18\x8b\x02 \x01(\rH\x87\x02R\x13bloodAlcoholContent\x88\x01\x01\x12\x1d\n" +
+	"\x06idling\x18\x8c\x02 \x01(\bH\x88\x02R\x06idling\x88\x01\x01\x123\n" +
+	"\x12green_driving_type\x18\x8d\x02 \x01(\rH\x89\x02R\x10greenDrivingType\x88\x01\x01\x12\x1d\n" +
+	"\x06towing\x18\x8e\x02 \x01(\bH\x8a\x02R\x06towing\x88\x01\x01\x12\x1d\n" +
+	"\x06unplug\x18\x8f\x02 \x01(\bH\x8b\x02R\x06unplug\x88\x01\x01\x12.\n" +
+	"\x0fcrash_detection\x18\x90\x02 \x01(\rH\x8c\x02R\x0ecrashDetection\x88\x01\x01\x12'\n" +
+	"\vimmobilizer\x18\x91\x02 \x01(\rH\x8d\x02R\vimmobilizer\x88\x01\x01\x125\n" +
+	"\x13green_driving_value\x18\x92\x02 \x01(\rH\x8e\x02R\x11greenDrivingValue\x88\x01\x01\x12\x1f\n" +
+	"\ajamming\x18\x93\x02 \x01(\bH\x8f\x02R\ajamming\x88\x01\x01\x12\x1d\n" +
+	"\x06iccid2\x18\x94\x02 \x01(\x04H\x90\x02R\x06iccid2\x88\x01\x01\x12F\n" +
+	"\x1cgreen_driving_event_duration\x18\x95\x02 \x01(\rH\x91\x02R\x19greenDrivingEventDuration\x88\x01\x01\x12\x1b\n" +
+	"\x05alarm\x18\x96\x02 \x01(\bH\x92\x02R\x05alarm\x88\x01\x01\x12&\n" +
+	"\veco_maximum\x18\x97\x02 \x01(\x04H\x93\x02R\n" +
+	"ecoMaximum\x88\x01\x01\x12&\n" +
+	"\veco_average\x18\x98\x02 \x01(\x04H\x94\x02R\n" +
+	"ecoAverage\x88\x01\x01\x12(\n" +
+	"\feco_duration\x18\x99\x02 \x01(\rH\x95\x02R\vecoDuration\x88\x01\x01\x12*\n" +
+	"\rdriving_state\x18\x9a\x02 \x01(\rH\x96\x02R\fdrivingState\x88\x01\x01\x12.\n" +
+	"\x0fdriving_records\x18\x9b\x02 \x01(\rH\x97\x02R\x0edrivingRecords\x88\x01\x01\x125\n" +
+	"\x13crash_event_counter\x18\x9c\x02 \x01(\rH\x98\x02R\x11crashEventCounter\x88\x01\x01\x12(\n" +
+	"\fgnss_jamming\x18\x9d\x02 \x01(\rH\x99\x02R\vgnssJamming\x88\x01\x01\x12(\n" +
+	"\fprivate_mode\x18\x9e\x02 \x01(\rH\x9a\x02R\vprivateMode\x88\x01\x01\x125\n" +
+	"\x13ignition_on_counter\x18\x9f\x02 \x01(\rH\x9b\x02R\x11ignitionOnCounter\x88\x01\x01\x12A\n" +
+	"\x19motorcycle_fall_detection\x18\xa0\x02 \x01(\rH\x9c\x02R\x17motorcycleFallDetection\x88\x01\x01\x12\x17\n" +
+	"\x03vin\x18\xa1\x02 \x01(\tH\x9d\x02R\x03vin\x88\x01\x01\x12)\n" +
+	"\rnumber_of_dtc\x18\xa2\x02 \x01(\rH\x9e\x02R\vnumberOfDtc\x88\x01\x01\x12&\n" +
+	"\vengine_load\x18\xa3\x02 \x01(\rH\x9f\x02R\n" +
+	"engineLoad\x88\x01\x01\x126\n" +
+	"\x13coolant_temperature\x18\xa4\x02 \x01(\x05H\xa0\x02R\x12coolantTemperature\x88\x01\x01\x12-\n" +
+	"\x0fshort_fuel_trim\x18\xa5\x02 \x01(\x05H\xa1\x02R\rshortFuelTrim\x88\x01\x01\x12*\n" +
+	"\rfuel_pressure\x18\xa6\x02 \x01(\rH\xa2\x02R\ffuelPressure\x88\x01\x01\x12$\n" +
+	"\n" +
+	"intake_map\x18\xa7\x02 \x01(\rH\xa3\x02R\tintakeMap\x88\x01\x01\x12$\n" +
+	"\n" +
+	"engine_rpm\x18\xa8\x02 \x01(\rH\xa4\x02R\tengineRpm\x88\x01\x01\x12*\n" +
+	"\rvehicle_speed\x18\xa9\x02 \x01(\rH\xa5\x02R\fvehicleSpeed\x88\x01\x01\x12,\n" +
+	"\x0etiming_advance\x18\xaa\x02 \x01(\x05H\xa6\x02R\rtimingAdvance\x88\x01\x01\x12;\n" +
+	"\x16intake_air_temperature\x18\xab\x02 \x01(\x05H\xa7\x02R\x14intakeAirTemperature\x88\x01\x01\x12\x17\n" +
+	"\x03maf\x18\xac\x02 \x01(\rH\xa8\x02R\x03maf\x88\x01\x01\x122\n" +
+	"\x11throttle_position\x18\xad\x02 \x01(\rH\xa9\x02R\x10throttlePosition\x88\x01\x01\x12B\n" +
+	"\x1aruntime_since_engine_start\x18\xae\x02 \x01(\rH\xaa\x02R\x17runtimeSinceEngineStart\x88\x01\x01\x12>\n" +
+	"\x18distance_traveled_mil_on\x18\xaf\x02 \x01(\rH\xab\x02R\x15distanceTraveledMilOn\x88\x01\x01\x12D\n" +
+	"\x1brelative_fuel_rail_pressure\x18\xb0\x02 \x01(\rH\xac\x02R\x18relativeFuelRailPressure\x88\x01\x01\x12@\n" +
+	"\x19direct_fuel_rail_pressure\x18\xb1\x02 \x01(\rH\xad\x02R\x16directFuelRailPressure\x88\x01\x01\x12*\n" +
+	"\rcommanded_egr\x18\xb2\x02 \x01(\rH\xae\x02R\fcommandedEgr\x88\x01\x01\x12\"\n" +
+	"\tegr_error\x18\xb3\x02 \x01(\x05H\xaf\x02R\begrError\x88\x01\x01\x123\n" +
+	"\x12fuel_level_percent\x18\xb4\x02 \x01(\rH\xb0\x02R\x10fuelLevelPercent\x88\x01\x01\x12B\n" +
+	"\x1adistance_since_codes_clear\x18\xb5\x02 \x01(\rH\xb1\x02R\x17distanceSinceCodesClear\x88\x01\x01\x126\n" +
+	"\x13barometric_pressure\x18\xb6\x02 \x01(\rH\xb2\x02R\x12barometricPressure\x88\x01\x01\x12;\n" +
+	"\x16control_module_voltage\x18\xb7\x02 \x01(\rH\xb3\x02R\x14controlModuleVoltage\x88\x01\x01\x125\n" +
+	"\x13absolute_load_value\x18\xb8\x02 \x01(\rH\xb4\x02R\x11absoluteLoadValue\x88\x01\x01\x12\"\n" +
+	"\tfuel_type\x18\xb9\x02 \x01(\rH\xb5\x02R\bfuelType\x88\x01\x01\x12=\n" +
+	"\x17ambient_air_temperature\x18\xba\x02 \x01(\x05H\xb6\x02R\x15ambientAirTemperature\x88\x01\x01\x125\n" +
+	"\x14time_run_with_mil_on\x18\xbb\x02 \x01(\rH\xb7\x02R\x10timeRunWithMilOn\x88\x01\x01\x12>\n" +
+	"\x18time_since_codes_cleared\x18\xbc\x02 \x01(\rH\xb8\x02R\x15timeSinceCodesCleared\x88\x01\x01\x12D\n" +
+	"\x1babsolute_fuel_rail_pressure\x18\xbd\x02 \x01(\rH\xb9\x02R\x18absoluteFuelRailPressure\x88\x01\x01\x12>\n" +
+	"\x18hybrid_battery_pack_life\x18\xbe\x02 \x01(\rH\xba\x02R\x15hybridBatteryPackLife\x88\x01\x01\x12;\n" +
+	"\x16engine_oil_temperature\x18\xbf\x02 \x01(\rH\xbb\x02R\x14engineOilTemperature\x88\x01\x01\x129\n" +
+	"\x15fuel_injection_timing\x18\xc0\x02 \x01(\x05H\xbc\x02R\x13fuelInjectionTiming\x88\x01\x01\x12=\n" +
+	"\x17throttle_position_group\x18\xc1\x02 \x01(\rH\xbd\x02R\x15throttlePositionGroup\x88\x01\x01\x12=\n" +
+	"\x17commanded_equivalence_r\x18\xc2\x02 \x01(\rH\xbe\x02R\x15commandedEquivalenceR\x88\x01\x01\x122\n" +
+	"\x12intake_map_2_bytes\x18\xc3\x02 \x01(\rH\xbf\x02R\x0fintakeMap2Bytes\x88\x01\x01\x129\n" +
+	"\x15hybrid_system_voltage\x18\xc4\x02 \x01(\rH\xc0\x02R\x13hybridSystemVoltage\x88\x01\x01\x129\n" +
+	"\x15hybrid_system_current\x18\xc5\x02 \x01(\x05H\xc1\x02R\x13hybridSystemCurrent\x88\x01\x01\x12&\n" +
+	"\vfault_codes\x18\xc6\x02 \x01(\tH\xc2\x02R\n" +
+	"faultCodes\x88\x01\x01\x12\"\n" +
+	"\tfuel_rate\x18\xc7\x02 \x01(\rH\xc3\x02R\bfuelRate\x88\x01\x01\x128\n" +
+	"\x15obd_oem_total_mileage\x18\xc8\x02 \x01(\rH\xc4\x02R\x12obdOemTotalMileage\x88\x01\x01\x122\n" +
+	"\x12obd_oem_fuel_level\x18\xc9\x02 \x01(\rH\xc5\x02R\x0fobdOemFuelLevel\x88\x01\x01\x12B\n" +
+	"\x1aoem_distance_until_service\x18\xca\x02 \x01(\rH\xc6\x02R\x17oemDistanceUntilService\x88\x01\x01\x12>\n" +
+	"\x18oem_battery_charge_state\x18\xcb\x02 \x01(\bH\xc7\x02R\x15oemBatteryChargeState\x88\x01\x01\x12>\n" +
+	"\x18oem_battery_charge_level\x18\xcc\x02 \x01(\rH\xc8\x02R\x15oemBatteryChargeLevel\x88\x01\x01\x12;\n" +
+	"\x16oem_remaining_distance\x18\xcd\x02 \x01(\rH\xc9\x02R\x14oemRemainingDistance\x88\x01\x01\x12C\n" +
+	"\x1boem_battery_state_of_health\x18\xce\x02 \x01(\rH\xca\x02R\x17oemBatteryStateOfHealth\x88\x01\x01\x12=\n" +
+	"\x17oem_battery_temperature\x18\xcf\x02 \x01(\x05H\xcb\x02R\x15oemBatteryTemperature\x88\x01\x01\x12\x1d\n" +
+	"\x06beacon\x18\xd0\x02 \x01(\fH\xcc\x02R\x06beacon\x88\x01\x01\x12>\n" +
+	"\x18advanced_ble_beacon_data\x18\xd1\x02 \x01(\fH\xcd\x02R\x15advancedBleBeaconData\x88\x01\x01\x120\n" +
+	"\x10ble_temperature1\x18\xd2\x02 \x01(\x05H\xce\x02R\x0fbleTemperature1\x88\x01\x01\x120\n" +
+	"\x10ble_temperature2\x18\xd3\x02 \x01(\x05H\xcf\x02R\x0fbleTemperature2\x88\x01\x01\x120\n" +
+	"\x10ble_temperature3\x18\xd4\x02 \x01(\x05H\xd0\x02R\x0fbleTemperature3\x88\x01\x01\x120\n" +
+	"\x10ble_temperature4\x18\xd5\x02 \x01(\x05H\xd1\x02R\x0fbleTemperature4\x88\x01\x01\x12(\n" +
+	"\fble_battery1\x18\xd6\x02 \x01(\rH\xd2\x02R\vbleBattery1\x88\x01\x01\x12(\n" +
+	"\fble_battery2\x18\xd7\x02 \x01(\rH\xd3\x02R\vbleBattery2\x88\x01\x01\x12(\n" +
+	"\fble_battery3\x18\xd8\x02 \x01(\rH\xd4\x02R\vbleBattery3\x88\x01\x01\x12(\n" +
+	"\fble_battery4\x18\xd9\x02 \x01(\rH\xd5\x02R\vbleBattery4\x88\x01\x01\x12*\n" +
+	"\rble_humidity1\x18\xda\x02 \x01(\rH\xd6\x02R\fbleHumidity1\x88\x01\x01\x12*\n" +
+	"\rble_humidity2\x18\xdb\x02 \x01(\rH\xd7\x02R\fbleHumidity2\x88\x01\x01\x12*\n" +
+	"\rble_humidity3\x18\xdc\x02 \x01(\rH\xd8\x02R\fbleHumidity3\x88\x01\x01\x12*\n" +
+	"\rble_humidity4\x18\xdd\x02 \x01(\rH\xd9\x02R\fbleHumidity4\x88\x01\x01\x12-\n" +
+	"\x0fble_fuel_level1\x18\xde\x02 \x01(\rH\xda\x02R\rbleFuelLevel1\x88\x01\x01\x12-\n" +
+	"\x0fble_fuel_level2\x18\xdf\x02 \x01(\rH\xdb\x02R\rbleFuelLevel2\x88\x01\x01\x12-\n" +
+	"\x0fble_fuel_level3\x18\xe0\x02 \x01(\rH\xdc\x02R\rbleFuelLevel3\x88\x01\x01\x12-\n" +
+	"\x0fble_fuel_level4\x18\xe1\x02 \x01(\rH\xdd\x02R\rbleFuelLevel4\x88\x01\x01\x125\n" +
+	"\x13ble_fuel_frequency1\x18\xe2\x02 \x01(\rH\xde\x02R\x11bleFuelFrequency1\x88\x01\x01\x125\n" +
+	"\x13ble_fuel_frequency2\x18\xe3\x02 \x01(\rH\xdf\x02R\x11bleFuelFrequency2\x88\x01\x01\x125\n" +
+	"\x13ble_fuel_frequency3\x18\xe4\x02 \x01(\rH\xe0\x02R\x11bleFuelFrequency3\x88\x01\x01\x125\n" +
+	"\x13ble_fuel_frequency4\x18\xe5\x02 \x01(\rH\xe1\x02R\x11bleFuelFrequency4\x88\x01\x01\x12.\n" +
+	"\x0fble_luminosity1\x18\xe6\x02 \x01(\rH\xe2\x02R\x0ebleLuminosity1\x88\x01\x01\x12.\n" +
+	"\x0fble_luminosity2\x18\xe7\x02 \x01(\rH\xe3\x02R\x0ebleLuminosity2\x88\x01\x01\x12.\n" +
+	"\x0fble_luminosity3\x18\xe8\x02 \x01(\rH\xe4\x02R\x0ebleLuminosity3\x88\x01\x01\x12.\n" +
+	"\x0fble_luminosity4\x18\xe9\x02 \x01(\rH\xe5\x02R\x0ebleLuminosity4\x88\x01\x01\x12(\n" +
+	"\fble1_custom1\x18\xea\x02 \x01(\fH\xe6\x02R\vble1Custom1\x88\x01\x01\x12(\n" +
+	"\fble1_custom2\x18\xeb\x02 \x01(\rH\xe7\x02R\vble1Custom2\x88\x01\x01\x12(\n" +
+	"\fble1_custom3\x18\xec\x02 \x01(\rH\xe8\x02R\vble1Custom3\x88\x01\x01\x12(\n" +
+	"\fble1_custom4\x18\xed\x02 \x01(\rH\xe9\x02R\vble1Custom4\x88\x01\x01\x12(\n" +
+	"\fble1_custom5\x18\xee\x02 \x01(\rH\xea\x02R\vble1Custom5\x88\x01\x01\x12(\n" +
+	"\fble2_custom1\x18\xef\x02 \x01(\fH\xeb\x02R\vble2Custom1\x88\x01\x01\x12(\n" +
+	"\fble2_custom2\x18\xf0\x02 \x01(\rH\xec\x02R\vble2Custom2\x88\x01\x01\x12(\n" +
+	"\fble2_custom3\x18\xf1\x02 \x01(\rH\xed\x02R\vble2Custom3\x88\x01\x01\x12(\n" +
+	"\fble2_custom4\x18\xf2\x02 \x01(\rH\xee\x02R\vble2Custom4\x88\x01\x01\x12(\n" +
+	"\fble2_custom5\x18\xf3\x02 \x01(\rH\xef\x02R\vble2Custom5\x88\x01\x01\x12(\n" +
+	"\fble3_custom1\x18\xf4\x02 \x01(\fH\xf0\x02R\vble3Custom1\x88\x01\x01\x12(\n" +
+	"\fble3_custom2\x18\xf5\x02 \x01(\rH\xf1\x02R\vble3Custom2\x88\x01\x01\x12(\n" +
+	"\fble3_custom3\x18\xf6\x02 \x01(\rH\xf2\x02R\vble3Custom3\x88\x01\x01\x12(\n" +
+	"\fble3_custom4\x18\xf7\x02 \x01(\rH\xf3\x02R\vble3Custom4\x88\x01\x01\x12(\n" +
+	"\fble3_custom5\x18\xf8\x02 \x01(\rH\xf4\x02R\vble3Custom5\x88\x01\x01\x12(\n" +
+	"\fble4_custom1\x18\xf9\x02 \x01(\fH\xf5\x02R\vble4Custom1\x88\x01\x01\x12(\n" +
+	"\fble4_custom2\x18\xfa\x02 \x01(\rH\xf6\x02R\vble4Custom2\x88\x01\x01\x12(\n" +
+	"\fble4_custom3\x18\xfb\x02 \x01(\rH\xf7\x02R\vble4Custom3\x88\x01\x01\x12(\n" +
+	"\fble4_custom4\x18\xfc\x02 \x01(\rH\xf8\x02R\vble4Custom4\x88\x01\x01\x12(\n" +
+	"\fble4_custom5\x18\xfd\x02 \x01(\rH\xf9\x02R\vble4Custom5\x88\x01\x01\x12C\n" +
+	"\x1aaccelerator_pedal_position\x18\xfe\x02 \x01(\rH\xfa\x02R\x18acceleratorPedalPosition\x88\x01\x01\x12*\n" +
+	"\rfuel_consumed\x18\xff\x02 \x01(\rH\xfb\x02R\ffuelConsumed\x88\x01\x01\x121\n" +
+	"\x11fuel_level_liters\x18\x80\x03 \x01(\rH\xfc\x02R\x0ffuelLevelLiters\x88\x01\x01\x12*\n" +
+	"\rtotal_mileage\x18\x81\x03 \x01(\rH\xfd\x02R\ftotalMileage\x88\x01\x01\x12,\n" +
+	"\x0eprogram_number\x18\x82\x03 \x01(\rH\xfe\x02R\rprogramNumber\x88\x01\x01\x12'\n" +
+	"\fmodule_id_8b\x18\x83\x03 \x01(\x04H\xff\x02R\n" +
+	"moduleId8b\x88\x01\x01\x12)\n" +
+	"\rmodule_id_17b\x18\x84\x03 \x01(\fH\x80\x03R\vmoduleId17b\x88\x01\x01\x12.\n" +
+	"\x0fengine_worktime\x18\x85\x03 \x01(\rH\x81\x03R\x0eengineWorktime\x88\x01\x01\x12=\n" +
+	"\x17engine_worktime_counted\x18\x86\x03 \x01(\rH\x82\x03R\x15engineWorktimeCounted\x88\x01\x01\x129\n" +
+	"\x15total_mileage_counted\x18\x87\x03 \x01(\rH\x83\x03R\x13totalMileageCounted\x88\x01\x01\x129\n" +
+	"\x15fuel_consumed_counted\x18\x88\x03 \x01(\rH\x84\x03R\x13fuelConsumedCounted\x88\x01\x01\x127\n" +
+	"\x14adblue_level_percent\x18\x89\x03 \x01(\rH\x85\x03R\x12adblueLevelPercent\x88\x01\x01\x125\n" +
+	"\x13adblue_level_liters\x18\x8a\x03 \x01(\rH\x86\x03R\x11adblueLevelLiters\x88\x01\x01\x12$\n" +
+	"\n" +
+	"axle1_load\x18\x8b\x03 \x01(\rH\x87\x03R\taxle1Load\x88\x01\x01\x12$\n" +
+	"\n" +
+	"axle2_load\x18\x8c\x03 \x01(\rH\x88\x03R\taxle2Load\x88\x01\x01\x12$\n" +
+	"\n" +
+	"axle3_load\x18\x8d\x03 \x01(\rH\x89\x03R\taxle3Load\x88\x01\x01\x12$\n" +
+	"\n" +
+	"axle4_load\x18\x8e\x03 \x01(\rH\x8a\x03R\taxle4Load\x88\x01\x01\x12$\n" +
+	"\n" +
+	"axle5_load\x18\x8f\x03 \x01(\rH\x8b\x03R\taxle5Load\x88\x01\x01\x125\n" +
+	"\x13control_state_flags\x18\x90\x03 \x01(\rH\x8c\x03R\x11controlStateFlags\x88\x01\x01\x12G\n" +
+	"\x1cagricultural_machinery_flags\x18\x91\x03 \x01(\x04H\x8d\x03R\x1aagriculturalMachineryFlags\x88\x01\x01\x12.\n" +
+	"\x0fharvesting_time\x18\x92\x03 \x01(\rH\x8e\x03R\x0eharvestingTime\x88\x01\x01\x12-\n" +
+	"\x0farea_of_harvest\x18\x93\x03 \x01(\rH\x8f\x03R\rareaOfHarvest\x88\x01\x01\x122\n" +
+	"\x11mowing_efficiency\x18\x94\x03 \x01(\rH\x90\x03R\x10mowingEfficiency\x88\x01\x01\x121\n" +
+	"\x11grain_mown_volume\x18\x95\x03 \x01(\rH\x91\x03R\x0fgrainMownVolume\x88\x01\x01\x12,\n" +
+	"\x0egrain_moisture\x18\x96\x03 \x01(\rH\x92\x03R\rgrainMoisture\x88\x01\x01\x125\n" +
+	"\x13harvesting_drum_rpm\x18\x97\x03 \x01(\rH\x93\x03R\x11harvestingDrumRpm\x88\x01\x01\x12@\n" +
+	"\x19gap_under_harvesting_drum\x18\x98\x03 \x01(\rH\x94\x03R\x16gapUnderHarvestingDrum\x88\x01\x01\x127\n" +
+	"\x14security_state_flags\x18\x99\x03 \x01(\x04H\x95\x03R\x12securityStateFlags\x88\x01\x01\x12P\n" +
+	"!tachograph_total_vehicle_distance\x18\x9a\x03 \x01(\rH\x96\x03R\x1etachographTotalVehicleDistance\x88\x01\x01\x12*\n" +
+	"\rtrip_distance\x18\x9b\x03 \x01(\rH\x97\x03R\ftripDistance\x88\x01\x01\x12?\n" +
+	"\x18tachograph_vehicle_speed\x18\x9c\x03 \x01(\rH\x98\x03R\x16tachographVehicleSpeed\x88\x01\x01\x12B\n" +
+	"\x1atacho_driver_card_presence\x18\x9d\x03 \x01(\rH\x99\x03R\x17tachoDriverCardPresence\x88\x01\x01\x12,\n" +
+	"\x0edriver1_states\x18\x9e\x03 \x01(\rH\x9a\x03R\rdriver1States\x88\x01\x01\x12,\n" +
+	"\x0edriver2_states\x18\x9f\x03 \x01(\rH\x9b\x03R\rdriver2States\x88\x01\x01\x12L\n" +
+	"\x1fdriver1_continuous_driving_time\x18\xa0\x03 \x01(\rH\x9c\x03R\x1cdriver1ContinuousDrivingTime\x88\x01\x01\x12L\n" +
+	"\x1fdriver2_continuous_driving_time\x18\xa1\x03 \x01(\rH\x9d\x03R\x1cdriver2ContinuousDrivingTime\x88\x01\x01\x12=\n" +
+	"\x17driver1_cumulative_time\x18\xa2\x03 \x01(\rH\x9e\x03R\x15driver1CumulativeTime\x88\x01\x01\x12=\n" +
+	"\x17driver2_cumulative_time\x18\xa3\x03 \x01(\rH\x9f\x03R\x15driver2CumulativeTime\x88\x01\x01\x12R\n" +
+	"\"driver1_selected_activity_duration\x18\xa4\x03 \x01(\rH\xa0\x03R\x1fdriver1SelectedActivityDuration\x88\x01\x01\x12R\n" +
+	"\"driver2_selected_activity_duration\x18\xa5\x03 \x01(\rH\xa1\x03R\x1fdriver2SelectedActivityDuration\x88\x01\x01\x12L\n" +
+	"\x1fdriver1_cumulative_driving_time\x18\xa6\x03 \x01(\rH\xa2\x03R\x1cdriver1CumulativeDrivingTime\x88\x01\x01\x12L\n" +
+	"\x1fdriver2_cumulative_driving_time\x18\xa7\x03 \x01(\rH\xa3\x03R\x1cdriver2CumulativeDrivingTime\x88\x01\x01\x12-\n" +
+	"\x0fdriver1_id_high\x18\xa8\x03 \x01(\x04H\xa4\x03R\rdriver1IdHigh\x88\x01\x01\x12+\n" +
+	"\x0edriver1_id_low\x18\xa9\x03 \x01(\x04H\xa5\x03R\fdriver1IdLow\x88\x01\x01\x12-\n" +
+	"\x0fdriver2_id_high\x18\xaa\x03 \x01(\x04H\xa6\x03R\rdriver2IdHigh\x88\x01\x01\x12+\n" +
+	"\x0edriver2_id_low\x18\xab\x03 \x01(\x04H\xa7\x03R\fdriver2IdLow\x88\x01\x01\x126\n" +
+	"\x13battery_temperature\x18\xac\x03 \x01(\x05H\xa8\x03R\x12batteryTemperature\x88\x01\x01\x12/\n" +
+	"\x10hv_battery_level\x18\xad\x03 \x01(\rH\xa9\x03R\x0ehvBatteryLevel\x88\x01\x01\x12$\n" +
+	"\n" +
+	"dtc_faults\x18\xae\x03 \x01(\rH\xaa\x03R\tdtcFaults\x88\x01\x01\x12'\n" +
+	"\fslope_of_arm\x18\xaf\x03 \x01(\x05H\xab\x03R\n" +
+	"slopeOfArm\x88\x01\x01\x12-\n" +
+	"\x0frotation_of_arm\x18\xb0\x03 \x01(\x05H\xac\x03R\rrotationOfArm\x88\x01\x01\x12'\n" +
+	"\feject_of_arm\x18\xb1\x03 \x01(\rH\xad\x03R\n" +
+	"ejectOfArm\x88\x01\x01\x12L\n" +
+	"\x1fhorizontal_distance_arm_vehicle\x18\xb2\x03 \x01(\rH\xae\x03R\x1chorizontalDistanceArmVehicle\x88\x01\x01\x12<\n" +
+	"\x17height_arm_above_ground\x18\xb3\x03 \x01(\rH\xaf\x03R\x14heightArmAboveGround\x88\x01\x01\x12\"\n" +
+	"\tdrill_rpm\x18\xb4\x03 \x01(\rH\xb0\x03R\bdrillRpm\x88\x01\x01\x12P\n" +
+	"\"amount_of_spread_salt_square_meter\x18\xb5\x03 \x01(\rH\xb1\x03R\x1damountOfSpreadSaltSquareMeter\x88\x01\x01\x12P\n" +
+	"\"amount_of_spread_fine_grained_salt\x18\xb7\x03 \x01(\rH\xb2\x03R\x1damountOfSpreadFineGrainedSalt\x88\x01\x01\x12G\n" +
+	"\x1damount_of_coarse_grained_salt\x18\xb8\x03 \x01(\rH\xb3\x03R\x19amountOfCoarseGrainedSalt\x88\x01\x01\x12:\n" +
+	"\x16amount_of_spread_dimix\x18\xb9\x03 \x01(\rH\xb4\x03R\x13amountOfSpreadDimix\x88\x01\x01\x12Z\n" +
+	"'amount_of_spread_coarse_grained_calcium\x18\xba\x03 \x01(\rH\xb5\x03R\"amountOfSpreadCoarseGrainedCalcium\x88\x01\x01\x12O\n" +
+	"!amount_of_spread_calcium_chloride\x18\xbb\x03 \x01(\rH\xb6\x03R\x1damountOfSpreadCalciumChloride\x88\x01\x01\x12M\n" +
+	" amount_of_spread_sodium_chloride\x18\xbc\x03 \x01(\rH\xb7\x03R\x1camountOfSpreadSodiumChloride\x88\x01\x01\x12S\n" +
+	"#amount_of_spread_magnesium_chloride\x18\xbd\x03 \x01(\rH\xb8\x03R\x1famountOfSpreadMagnesiumChloride\x88\x01\x01\x12<\n" +
+	"\x17amount_of_spread_gravel\x18\xbe\x03 \x01(\rH\xb9\x03R\x14amountOfSpreadGravel\x88\x01\x01\x128\n" +
+	"\x15amount_of_spread_sand\x18\xbf\x03 \x01(\rH\xba\x03R\x12amountOfSpreadSand\x88\x01\x01\x123\n" +
+	"\x12width_pouring_left\x18\xc0\x03 \x01(\rH\xbb\x03R\x10widthPouringLeft\x88\x01\x01\x125\n" +
+	"\x13width_pouring_right\x18\xc1\x03 \x01(\rH\xbc\x03R\x11widthPouringRight\x88\x01\x01\x12D\n" +
+	"\x1bsalt_spreader_working_hours\x18\xc2\x03 \x01(\rH\xbd\x03R\x18saltSpreaderWorkingHours\x88\x01\x01\x12=\n" +
+	"\x17distance_during_salting\x18\xc3\x03 \x01(\rH\xbe\x03R\x15distanceDuringSalting\x88\x01\x01\x12&\n" +
+	"\vload_weight\x18\xc4\x03 \x01(\rH\xbf\x03R\n" +
+	"loadWeight\x88\x01\x01\x12*\n" +
+	"\rretarder_load\x18\xc5\x03 \x01(\rH\xc0\x03R\fretarderLoad\x88\x01\x01\x12&\n" +
+	"\vcruise_time\x18\xc6\x03 \x01(\rH\xc1\x03R\n" +
+	"cruiseTime\x88\x01\x01\x12$\n" +
+	"\n" +
+	"cng_status\x18\xc7\x03 \x01(\bH\xc2\x03R\tcngStatus\x88\x01\x01\x12 \n" +
+	"\bcng_used\x18\xc8\x03 \x01(\rH\xc3\x03R\acngUsed\x88\x01\x01\x121\n" +
+	"\x11cng_level_percent\x18\xc9\x03 \x01(\rH\xc4\x03R\x0fcngLevelPercent\x88\x01\x01\x12\"\n" +
+	"\toil_level\x18\xca\x03 \x01(\bH\xc5\x03R\boilLevel\x88\x01\x01\x12@\n" +
+	"\x19vehicles_range_on_battery\x18\xcb\x03 \x01(\rH\xc6\x03R\x16vehiclesRangeOnBattery\x88\x01\x01\x12O\n" +
+	"!vehicles_range_on_additional_fuel\x18\xcc\x03 \x01(\rH\xc7\x03R\x1dvehiclesRangeOnAdditionalFuel\x88\x01\x01\x12<\n" +
+	"\x17security_state_flags_p4\x18\xcd\x03 \x01(\fH\xc8\x03R\x14securityStateFlagsP4\x88\x01\x01\x12:\n" +
+	"\x16control_state_flags_p4\x18\xce\x03 \x01(\fH\xc9\x03R\x13controlStateFlagsP4\x88\x01\x01\x12>\n" +
+	"\x18indicator_state_flags_p4\x18\xcf\x03 \x01(\fH\xca\x03R\x15indicatorStateFlagsP4\x88\x01\x01\x12D\n" +
+	"\x1bagricultural_state_flags_p4\x18\xd0\x03 \x01(\fH\xcb\x03R\x18agriculturalStateFlagsP4\x88\x01\x01\x1a;\n" +
 	"\rGeoFenceEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
@@ -5286,31 +7314,31 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x1a_usf_water_valve_is_openedB#\n" +
 	"!_usf_cabin_moved_up_status_activeB%\n" +
 	"#_usf_cabin_moved_down_status_activeB$\n" +
-	"\"_usf_hydraulics_work_not_permittedB3\n" +
-	"1_cisf_section_1_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_1_filledB\x1c\n" +
-	"\x1a_cisf_section_1_overfilledB3\n" +
-	"1_cisf_section_2_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_2_filledB\x1c\n" +
-	"\x1a_cisf_section_2_overfilledB3\n" +
-	"1_cisf_section_3_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_3_filledB\x1c\n" +
-	"\x1a_cisf_section_3_overfilledB3\n" +
-	"1_cisf_section_4_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_4_filledB\x1c\n" +
-	"\x1a_cisf_section_4_overfilledB3\n" +
-	"1_cisf_section_5_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_5_filledB\x1c\n" +
-	"\x1a_cisf_section_5_overfilledB3\n" +
-	"1_cisf_section_6_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_6_filledB\x1c\n" +
-	"\x1a_cisf_section_6_overfilledB3\n" +
-	"1_cisf_section_7_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_7_filledB\x1c\n" +
-	"\x1a_cisf_section_7_overfilledB3\n" +
-	"1_cisf_section_8_presence_of_fluid_in_the_downpipeB\x18\n" +
-	"\x16_cisf_section_8_filledB\x1c\n" +
-	"\x1a_cisf_section_8_overfilledB\x1b\n" +
+	"\"_usf_hydraulics_work_not_permittedB2\n" +
+	"0_cisf_section1_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section1_filledB\x1b\n" +
+	"\x19_cisf_section1_overfilledB2\n" +
+	"0_cisf_section2_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section2_filledB\x1b\n" +
+	"\x19_cisf_section2_overfilledB2\n" +
+	"0_cisf_section3_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section3_filledB\x1b\n" +
+	"\x19_cisf_section3_overfilledB2\n" +
+	"0_cisf_section4_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section4_filledB\x1b\n" +
+	"\x19_cisf_section4_overfilledB2\n" +
+	"0_cisf_section5_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section5_filledB\x1b\n" +
+	"\x19_cisf_section5_overfilledB2\n" +
+	"0_cisf_section6_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section6_filledB\x1b\n" +
+	"\x19_cisf_section6_overfilledB2\n" +
+	"0_cisf_section7_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section7_filledB\x1b\n" +
+	"\x19_cisf_section7_overfilledB2\n" +
+	"0_cisf_section8_presence_of_fluid_in_the_downpipeB\x17\n" +
+	"\x15_cisf_section8_filledB\x1b\n" +
+	"\x19_cisf_section8_overfilledB\x1b\n" +
 	"\x19_distance_to_next_serviceB\x0f\n" +
 	"\r_cng_level_kgB \n" +
 	"\x1e_distance_from_need_of_serviceB\x1d\n" +
@@ -5352,7 +7380,214 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x13_ble_button2_state4B\x11\n" +
 	"\x0f_frequency_din1B\x11\n" +
 	"\x0f_frequency_din2B\x17\n" +
-	"\x15_connectivity_quality*\xb8\x06\n" +
+	"\x15_connectivity_qualityB\x10\n" +
+	"\x0e_auto_geofenceB\a\n" +
+	"\x05_tripB\x10\n" +
+	"\x0e_over_speedingB\x13\n" +
+	"\x11_crash_trace_dataB\x18\n" +
+	"\x16_blood_alcohol_contentB\t\n" +
+	"\a_idlingB\x15\n" +
+	"\x13_green_driving_typeB\t\n" +
+	"\a_towingB\t\n" +
+	"\a_unplugB\x12\n" +
+	"\x10_crash_detectionB\x0e\n" +
+	"\f_immobilizerB\x16\n" +
+	"\x14_green_driving_valueB\n" +
+	"\n" +
+	"\b_jammingB\t\n" +
+	"\a_iccid2B\x1f\n" +
+	"\x1d_green_driving_event_durationB\b\n" +
+	"\x06_alarmB\x0e\n" +
+	"\f_eco_maximumB\x0e\n" +
+	"\f_eco_averageB\x0f\n" +
+	"\r_eco_durationB\x10\n" +
+	"\x0e_driving_stateB\x12\n" +
+	"\x10_driving_recordsB\x16\n" +
+	"\x14_crash_event_counterB\x0f\n" +
+	"\r_gnss_jammingB\x0f\n" +
+	"\r_private_modeB\x16\n" +
+	"\x14_ignition_on_counterB\x1c\n" +
+	"\x1a_motorcycle_fall_detectionB\x06\n" +
+	"\x04_vinB\x10\n" +
+	"\x0e_number_of_dtcB\x0e\n" +
+	"\f_engine_loadB\x16\n" +
+	"\x14_coolant_temperatureB\x12\n" +
+	"\x10_short_fuel_trimB\x10\n" +
+	"\x0e_fuel_pressureB\r\n" +
+	"\v_intake_mapB\r\n" +
+	"\v_engine_rpmB\x10\n" +
+	"\x0e_vehicle_speedB\x11\n" +
+	"\x0f_timing_advanceB\x19\n" +
+	"\x17_intake_air_temperatureB\x06\n" +
+	"\x04_mafB\x14\n" +
+	"\x12_throttle_positionB\x1d\n" +
+	"\x1b_runtime_since_engine_startB\x1b\n" +
+	"\x19_distance_traveled_mil_onB\x1e\n" +
+	"\x1c_relative_fuel_rail_pressureB\x1c\n" +
+	"\x1a_direct_fuel_rail_pressureB\x10\n" +
+	"\x0e_commanded_egrB\f\n" +
+	"\n" +
+	"_egr_errorB\x15\n" +
+	"\x13_fuel_level_percentB\x1d\n" +
+	"\x1b_distance_since_codes_clearB\x16\n" +
+	"\x14_barometric_pressureB\x19\n" +
+	"\x17_control_module_voltageB\x16\n" +
+	"\x14_absolute_load_valueB\f\n" +
+	"\n" +
+	"_fuel_typeB\x1a\n" +
+	"\x18_ambient_air_temperatureB\x17\n" +
+	"\x15_time_run_with_mil_onB\x1b\n" +
+	"\x19_time_since_codes_clearedB\x1e\n" +
+	"\x1c_absolute_fuel_rail_pressureB\x1b\n" +
+	"\x19_hybrid_battery_pack_lifeB\x19\n" +
+	"\x17_engine_oil_temperatureB\x18\n" +
+	"\x16_fuel_injection_timingB\x1a\n" +
+	"\x18_throttle_position_groupB\x1a\n" +
+	"\x18_commanded_equivalence_rB\x15\n" +
+	"\x13_intake_map_2_bytesB\x18\n" +
+	"\x16_hybrid_system_voltageB\x18\n" +
+	"\x16_hybrid_system_currentB\x0e\n" +
+	"\f_fault_codesB\f\n" +
+	"\n" +
+	"_fuel_rateB\x18\n" +
+	"\x16_obd_oem_total_mileageB\x15\n" +
+	"\x13_obd_oem_fuel_levelB\x1d\n" +
+	"\x1b_oem_distance_until_serviceB\x1b\n" +
+	"\x19_oem_battery_charge_stateB\x1b\n" +
+	"\x19_oem_battery_charge_levelB\x19\n" +
+	"\x17_oem_remaining_distanceB\x1e\n" +
+	"\x1c_oem_battery_state_of_healthB\x1a\n" +
+	"\x18_oem_battery_temperatureB\t\n" +
+	"\a_beaconB\x1b\n" +
+	"\x19_advanced_ble_beacon_dataB\x13\n" +
+	"\x11_ble_temperature1B\x13\n" +
+	"\x11_ble_temperature2B\x13\n" +
+	"\x11_ble_temperature3B\x13\n" +
+	"\x11_ble_temperature4B\x0f\n" +
+	"\r_ble_battery1B\x0f\n" +
+	"\r_ble_battery2B\x0f\n" +
+	"\r_ble_battery3B\x0f\n" +
+	"\r_ble_battery4B\x10\n" +
+	"\x0e_ble_humidity1B\x10\n" +
+	"\x0e_ble_humidity2B\x10\n" +
+	"\x0e_ble_humidity3B\x10\n" +
+	"\x0e_ble_humidity4B\x12\n" +
+	"\x10_ble_fuel_level1B\x12\n" +
+	"\x10_ble_fuel_level2B\x12\n" +
+	"\x10_ble_fuel_level3B\x12\n" +
+	"\x10_ble_fuel_level4B\x16\n" +
+	"\x14_ble_fuel_frequency1B\x16\n" +
+	"\x14_ble_fuel_frequency2B\x16\n" +
+	"\x14_ble_fuel_frequency3B\x16\n" +
+	"\x14_ble_fuel_frequency4B\x12\n" +
+	"\x10_ble_luminosity1B\x12\n" +
+	"\x10_ble_luminosity2B\x12\n" +
+	"\x10_ble_luminosity3B\x12\n" +
+	"\x10_ble_luminosity4B\x0f\n" +
+	"\r_ble1_custom1B\x0f\n" +
+	"\r_ble1_custom2B\x0f\n" +
+	"\r_ble1_custom3B\x0f\n" +
+	"\r_ble1_custom4B\x0f\n" +
+	"\r_ble1_custom5B\x0f\n" +
+	"\r_ble2_custom1B\x0f\n" +
+	"\r_ble2_custom2B\x0f\n" +
+	"\r_ble2_custom3B\x0f\n" +
+	"\r_ble2_custom4B\x0f\n" +
+	"\r_ble2_custom5B\x0f\n" +
+	"\r_ble3_custom1B\x0f\n" +
+	"\r_ble3_custom2B\x0f\n" +
+	"\r_ble3_custom3B\x0f\n" +
+	"\r_ble3_custom4B\x0f\n" +
+	"\r_ble3_custom5B\x0f\n" +
+	"\r_ble4_custom1B\x0f\n" +
+	"\r_ble4_custom2B\x0f\n" +
+	"\r_ble4_custom3B\x0f\n" +
+	"\r_ble4_custom4B\x0f\n" +
+	"\r_ble4_custom5B\x1d\n" +
+	"\x1b_accelerator_pedal_positionB\x10\n" +
+	"\x0e_fuel_consumedB\x14\n" +
+	"\x12_fuel_level_litersB\x10\n" +
+	"\x0e_total_mileageB\x11\n" +
+	"\x0f_program_numberB\x0f\n" +
+	"\r_module_id_8bB\x10\n" +
+	"\x0e_module_id_17bB\x12\n" +
+	"\x10_engine_worktimeB\x1a\n" +
+	"\x18_engine_worktime_countedB\x18\n" +
+	"\x16_total_mileage_countedB\x18\n" +
+	"\x16_fuel_consumed_countedB\x17\n" +
+	"\x15_adblue_level_percentB\x16\n" +
+	"\x14_adblue_level_litersB\r\n" +
+	"\v_axle1_loadB\r\n" +
+	"\v_axle2_loadB\r\n" +
+	"\v_axle3_loadB\r\n" +
+	"\v_axle4_loadB\r\n" +
+	"\v_axle5_loadB\x16\n" +
+	"\x14_control_state_flagsB\x1f\n" +
+	"\x1d_agricultural_machinery_flagsB\x12\n" +
+	"\x10_harvesting_timeB\x12\n" +
+	"\x10_area_of_harvestB\x14\n" +
+	"\x12_mowing_efficiencyB\x14\n" +
+	"\x12_grain_mown_volumeB\x11\n" +
+	"\x0f_grain_moistureB\x16\n" +
+	"\x14_harvesting_drum_rpmB\x1c\n" +
+	"\x1a_gap_under_harvesting_drumB\x17\n" +
+	"\x15_security_state_flagsB$\n" +
+	"\"_tachograph_total_vehicle_distanceB\x10\n" +
+	"\x0e_trip_distanceB\x1b\n" +
+	"\x19_tachograph_vehicle_speedB\x1d\n" +
+	"\x1b_tacho_driver_card_presenceB\x11\n" +
+	"\x0f_driver1_statesB\x11\n" +
+	"\x0f_driver2_statesB\"\n" +
+	" _driver1_continuous_driving_timeB\"\n" +
+	" _driver2_continuous_driving_timeB\x1a\n" +
+	"\x18_driver1_cumulative_timeB\x1a\n" +
+	"\x18_driver2_cumulative_timeB%\n" +
+	"#_driver1_selected_activity_durationB%\n" +
+	"#_driver2_selected_activity_durationB\"\n" +
+	" _driver1_cumulative_driving_timeB\"\n" +
+	" _driver2_cumulative_driving_timeB\x12\n" +
+	"\x10_driver1_id_highB\x11\n" +
+	"\x0f_driver1_id_lowB\x12\n" +
+	"\x10_driver2_id_highB\x11\n" +
+	"\x0f_driver2_id_lowB\x16\n" +
+	"\x14_battery_temperatureB\x13\n" +
+	"\x11_hv_battery_levelB\r\n" +
+	"\v_dtc_faultsB\x0f\n" +
+	"\r_slope_of_armB\x12\n" +
+	"\x10_rotation_of_armB\x0f\n" +
+	"\r_eject_of_armB\"\n" +
+	" _horizontal_distance_arm_vehicleB\x1a\n" +
+	"\x18_height_arm_above_groundB\f\n" +
+	"\n" +
+	"_drill_rpmB%\n" +
+	"#_amount_of_spread_salt_square_meterB%\n" +
+	"#_amount_of_spread_fine_grained_saltB \n" +
+	"\x1e_amount_of_coarse_grained_saltB\x19\n" +
+	"\x17_amount_of_spread_dimixB*\n" +
+	"(_amount_of_spread_coarse_grained_calciumB$\n" +
+	"\"_amount_of_spread_calcium_chlorideB#\n" +
+	"!_amount_of_spread_sodium_chlorideB&\n" +
+	"$_amount_of_spread_magnesium_chlorideB\x1a\n" +
+	"\x18_amount_of_spread_gravelB\x18\n" +
+	"\x16_amount_of_spread_sandB\x15\n" +
+	"\x13_width_pouring_leftB\x16\n" +
+	"\x14_width_pouring_rightB\x1e\n" +
+	"\x1c_salt_spreader_working_hoursB\x1a\n" +
+	"\x18_distance_during_saltingB\x0e\n" +
+	"\f_load_weightB\x10\n" +
+	"\x0e_retarder_loadB\x0e\n" +
+	"\f_cruise_timeB\r\n" +
+	"\v_cng_statusB\v\n" +
+	"\t_cng_usedB\x14\n" +
+	"\x12_cng_level_percentB\f\n" +
+	"\n" +
+	"_oil_levelB\x1c\n" +
+	"\x1a_vehicles_range_on_batteryB$\n" +
+	"\"_vehicles_range_on_additional_fuelB\x1a\n" +
+	"\x18_security_state_flags_p4B\x19\n" +
+	"\x17_control_state_flags_p4B\x1b\n" +
+	"\x19_indicator_state_flags_p4B\x1e\n" +
+	"\x1c_agricultural_state_flags_p4*\xb8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
