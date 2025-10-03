@@ -2673,6 +2673,10 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for DoorStatus
 	}
 
+	if m.EngineTemperature != nil {
+		// no validation rules for EngineTemperature
+	}
+
 	if len(errors) > 0 {
 		return CompactMultiError(errors)
 	}

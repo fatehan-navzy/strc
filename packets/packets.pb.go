@@ -3287,6 +3287,7 @@ type Compact struct {
 	// Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
 	AgriculturalStateFlagsP4 []byte  `protobuf:"bytes,464,opt,name=agricultural_state_flags_p4,json=agriculturalStateFlagsP4,proto3,oneof" json:"agricultural_state_flags_p4,omitempty"`
 	DoorStatus               *uint32 `protobuf:"varint,465,opt,name=door_status,json=doorStatus,proto3,oneof" json:"door_status,omitempty"`
+	EngineTemperature        *int32  `protobuf:"varint,467,opt,name=engine_temperature,json=engineTemperature,proto3,oneof" json:"engine_temperature,omitempty"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -6555,6 +6556,13 @@ func (x *Compact) GetDoorStatus() uint32 {
 	return 0
 }
 
+func (x *Compact) GetEngineTemperature() int32 {
+	if x != nil && x.EngineTemperature != nil {
+		return *x.EngineTemperature
+	}
+	return 0
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -6609,7 +6617,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"¡\x02\n" +
+	"\b_mileage\"\x8f\xa2\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -7111,7 +7119,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x18indicator_state_flags_p4\x18\xcf\x03 \x01(\fH\xca\x03R\x15indicatorStateFlagsP4\x88\x01\x01\x12D\n" +
 	"\x1bagricultural_state_flags_p4\x18\xd0\x03 \x01(\fH\xcb\x03R\x18agriculturalStateFlagsP4\x88\x01\x01\x12&\n" +
 	"\vdoor_status\x18\xd1\x03 \x01(\rH\xcc\x03R\n" +
-	"doorStatus\x88\x01\x01\x1a;\n" +
+	"doorStatus\x88\x01\x01\x124\n" +
+	"\x12engine_temperature\x18\xd3\x03 \x01(\x05H\xcd\x03R\x11engineTemperature\x88\x01\x01\x1a;\n" +
 	"\rGeoFenceEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
@@ -7598,7 +7607,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x17_control_state_flags_p4B\x1b\n" +
 	"\x19_indicator_state_flags_p4B\x1e\n" +
 	"\x1c_agricultural_state_flags_p4B\x0e\n" +
-	"\f_door_status*\xb8\x06\n" +
+	"\f_door_statusB\x15\n" +
+	"\x13_engine_temperature*\xb8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +

@@ -3041,6 +3041,7 @@ message Compact {
     // Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
     optional bytes agricultural_state_flags_p4 = 464;
     optional uint32 door_status = 465;
+    optional int32 engine_temperature = 467;
 }
 
 enum Event {
