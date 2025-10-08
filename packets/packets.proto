@@ -236,7 +236,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Total Odometer value in meters
-    optional uint64 total_odometer = 17;
+    optional uint32 total_odometer = 17;
   
     // Parameter ID: 1
     // Property Name: Digital Input 1
@@ -2248,7 +2248,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 
-    optional uint64 distance_to_next_service = 197;
+    optional uint32 distance_to_next_service = 197;
   
     // Parameter ID: 450
     // Property Name: CNG Level Kg
@@ -2270,7 +2270,7 @@ message Compact {
     // Multiplier: -
     // Units: km
     // Values: Service - distance elapsed since the occurrence of the need for servicing
-    optional uint64 distance_from_need_of_service = 199;
+    optional uint32 distance_from_need_of_service = 199;
   
     // Parameter ID: 860
     // Property Name: Distance from last service
@@ -2281,7 +2281,7 @@ message Compact {
     // Multiplier: -
     // Units: km
     // Values: Service - distance from the last service
-    optional uint64 distance_from_last_service = 200;
+    optional uint32 distance_from_last_service = 200;
   
     // Parameter ID: 861
     // Property Name: Time to next service
@@ -2325,7 +2325,7 @@ message Compact {
     // Multiplier: -
     // Units: km
     // Values: Service - distance to next oil service
-    optional uint64 distance_to_next_oil_service = 204;
+    optional uint32 distance_to_next_oil_service = 204;
   
     // Parameter ID: 865
     // Property Name: Time to next oil service
@@ -2347,7 +2347,7 @@ message Compact {
     // Multiplier: -
     // Units: km
     // Values: Information about vehicle range
-    optional uint64 lvcan_vehicle_range = 206;
+    optional uint32 lvcan_vehicle_range = 206;
   
     // Parameter ID: 867
     // Property Name: LVCAN Total CNG counted
@@ -2358,7 +2358,7 @@ message Compact {
     // Multiplier: -
     // Units: kg
     // Values: Information about Total CNG used in counted mode
-    optional uint64 lvcan_total_cng_counted = 207;
+    optional uint32 lvcan_total_cng_counted = 207;
   
     // Parameter ID: 1079
     // Property Name: Total Bale Count
@@ -2369,7 +2369,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Total Bale Count
-    optional uint64 total_bale_count = 208;
+    optional uint32 total_bale_count = 208;
   
     // Parameter ID: 1080
     // Property Name: Bale Count
@@ -2380,7 +2380,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Bale Count
-    optional uint64 bale_count = 209;
+    optional uint32 bale_count = 209;
   
     // Parameter ID: 1081
     // Property Name: Cut Bale Count
@@ -2391,7 +2391,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Cut Bale Count
-    optional uint64 cut_bale_count = 210;
+    optional uint32 cut_bale_count = 210;
   
     // Parameter ID: 1082
     // Property Name: Bale Slices
@@ -2402,7 +2402,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Bale Slices
-    optional uint64 bale_slices = 211;
+    optional uint32 bale_slices = 211;
   
     // Parameter ID: 1116
     // Property Name: LVCAN MaxRoadSpeed
@@ -2435,7 +2435,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Information if road sign "Speed limit with value" is recognized/canceled
-    optional uint32 lvcan_rsf_speedlimitsign = 214;
+    optional bool lvcan_rsf_speedlimitsign = 214;
   
     // Parameter ID: 1206
     // Property Name: LVCAN RSF EndOfSpeedLimitSign
@@ -2446,7 +2446,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Information if road sign "End of speed limit with value" is recognized/canceled
-    optional uint32 lvcan_rsf_endofspeedlimitsign = 215;
+    optional bool lvcan_rsf_end_of_speed_limitsign = 215;
   
     // Parameter ID: 1207
     // Property Name: LVCAN RSF SpeedExceeded
@@ -2457,7 +2457,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Information if speed is exceeded indicated by road sign "Speed limit with value"
-    optional uint32 lvcan_rsf_speedexceeded = 216;
+    optional bool lvcan_rsf_speed_exceeded = 216;
   
     // Parameter ID: 1208
     // Property Name: LVCAN RSF TimeSpeedLimitSign
@@ -2468,7 +2468,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Information if road sign "Conditional time-specific speed limit with value" is recognized/canceled
-    optional uint32 lvcan_rsf_timespeedlimitsign = 217;
+    optional bool lvcan_rsf_time_speed_limitsign = 217;
   
     // Parameter ID: 1209
     // Property Name: LVCAN RSF WthrSpeedLimitSign
@@ -2479,7 +2479,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
-    optional uint32 lvcan_rsf_wthrspeedlimitsign = 218;
+    optional bool lvcan_rsf_wthr_speed_limit_sign = 218;
     optional uint32 axl_calibration_status = 246;
     optional uint64 ble_rfid1 = 247;
     optional uint64 ble_rfid2 = 248;

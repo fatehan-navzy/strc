@@ -1785,20 +1785,20 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for LvcanRsfSpeedlimitsign
 	}
 
-	if m.LvcanRsfEndofspeedlimitsign != nil {
-		// no validation rules for LvcanRsfEndofspeedlimitsign
+	if m.LvcanRsfEndOfSpeedLimitsign != nil {
+		// no validation rules for LvcanRsfEndOfSpeedLimitsign
 	}
 
-	if m.LvcanRsfSpeedexceeded != nil {
-		// no validation rules for LvcanRsfSpeedexceeded
+	if m.LvcanRsfSpeedExceeded != nil {
+		// no validation rules for LvcanRsfSpeedExceeded
 	}
 
-	if m.LvcanRsfTimespeedlimitsign != nil {
-		// no validation rules for LvcanRsfTimespeedlimitsign
+	if m.LvcanRsfTimeSpeedLimitsign != nil {
+		// no validation rules for LvcanRsfTimeSpeedLimitsign
 	}
 
-	if m.LvcanRsfWthrspeedlimitsign != nil {
-		// no validation rules for LvcanRsfWthrspeedlimitsign
+	if m.LvcanRsfWthrSpeedLimitSign != nil {
+		// no validation rules for LvcanRsfWthrSpeedLimitSign
 	}
 
 	if m.AxlCalibrationStatus != nil {

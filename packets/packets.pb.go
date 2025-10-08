@@ -839,7 +839,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Total Odometer value in meters
-	TotalOdometer *uint64 `protobuf:"varint,17,opt,name=total_odometer,json=totalOdometer,proto3,oneof" json:"total_odometer,omitempty"`
+	TotalOdometer *uint32 `protobuf:"varint,17,opt,name=total_odometer,json=totalOdometer,proto3,oneof" json:"total_odometer,omitempty"`
 	// Parameter ID: 1
 	// Property Name: Digital Input 1
 	// Type: Unsigned
@@ -2656,7 +2656,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values:
-	DistanceToNextService *uint64 `protobuf:"varint,197,opt,name=distance_to_next_service,json=distanceToNextService,proto3,oneof" json:"distance_to_next_service,omitempty"`
+	DistanceToNextService *uint32 `protobuf:"varint,197,opt,name=distance_to_next_service,json=distanceToNextService,proto3,oneof" json:"distance_to_next_service,omitempty"`
 	// Parameter ID: 450
 	// Property Name: CNG Level Kg
 	// Type: Unsigned
@@ -2676,7 +2676,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: km
 	// Values: Service - distance elapsed since the occurrence of the need for servicing
-	DistanceFromNeedOfService *uint64 `protobuf:"varint,199,opt,name=distance_from_need_of_service,json=distanceFromNeedOfService,proto3,oneof" json:"distance_from_need_of_service,omitempty"`
+	DistanceFromNeedOfService *uint32 `protobuf:"varint,199,opt,name=distance_from_need_of_service,json=distanceFromNeedOfService,proto3,oneof" json:"distance_from_need_of_service,omitempty"`
 	// Parameter ID: 860
 	// Property Name: Distance from last service
 	// Type: Unsigned
@@ -2686,7 +2686,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: km
 	// Values: Service - distance from the last service
-	DistanceFromLastService *uint64 `protobuf:"varint,200,opt,name=distance_from_last_service,json=distanceFromLastService,proto3,oneof" json:"distance_from_last_service,omitempty"`
+	DistanceFromLastService *uint32 `protobuf:"varint,200,opt,name=distance_from_last_service,json=distanceFromLastService,proto3,oneof" json:"distance_from_last_service,omitempty"`
 	// Parameter ID: 861
 	// Property Name: Time to next service
 	// Type: Unsigned
@@ -2726,7 +2726,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: km
 	// Values: Service - distance to next oil service
-	DistanceToNextOilService *uint64 `protobuf:"varint,204,opt,name=distance_to_next_oil_service,json=distanceToNextOilService,proto3,oneof" json:"distance_to_next_oil_service,omitempty"`
+	DistanceToNextOilService *uint32 `protobuf:"varint,204,opt,name=distance_to_next_oil_service,json=distanceToNextOilService,proto3,oneof" json:"distance_to_next_oil_service,omitempty"`
 	// Parameter ID: 865
 	// Property Name: Time to next oil service
 	// Type: Unsigned
@@ -2746,7 +2746,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: km
 	// Values: Information about vehicle range
-	LvcanVehicleRange *uint64 `protobuf:"varint,206,opt,name=lvcan_vehicle_range,json=lvcanVehicleRange,proto3,oneof" json:"lvcan_vehicle_range,omitempty"`
+	LvcanVehicleRange *uint32 `protobuf:"varint,206,opt,name=lvcan_vehicle_range,json=lvcanVehicleRange,proto3,oneof" json:"lvcan_vehicle_range,omitempty"`
 	// Parameter ID: 867
 	// Property Name: LVCAN Total CNG counted
 	// Type: Unsigned
@@ -2756,7 +2756,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: kg
 	// Values: Information about Total CNG used in counted mode
-	LvcanTotalCngCounted *uint64 `protobuf:"varint,207,opt,name=lvcan_total_cng_counted,json=lvcanTotalCngCounted,proto3,oneof" json:"lvcan_total_cng_counted,omitempty"`
+	LvcanTotalCngCounted *uint32 `protobuf:"varint,207,opt,name=lvcan_total_cng_counted,json=lvcanTotalCngCounted,proto3,oneof" json:"lvcan_total_cng_counted,omitempty"`
 	// Parameter ID: 1079
 	// Property Name: Total Bale Count
 	// Type: Unsigned
@@ -2766,7 +2766,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Total Bale Count
-	TotalBaleCount *uint64 `protobuf:"varint,208,opt,name=total_bale_count,json=totalBaleCount,proto3,oneof" json:"total_bale_count,omitempty"`
+	TotalBaleCount *uint32 `protobuf:"varint,208,opt,name=total_bale_count,json=totalBaleCount,proto3,oneof" json:"total_bale_count,omitempty"`
 	// Parameter ID: 1080
 	// Property Name: Bale Count
 	// Type: Unsigned
@@ -2776,7 +2776,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Bale Count
-	BaleCount *uint64 `protobuf:"varint,209,opt,name=bale_count,json=baleCount,proto3,oneof" json:"bale_count,omitempty"`
+	BaleCount *uint32 `protobuf:"varint,209,opt,name=bale_count,json=baleCount,proto3,oneof" json:"bale_count,omitempty"`
 	// Parameter ID: 1081
 	// Property Name: Cut Bale Count
 	// Type: Unsigned
@@ -2786,7 +2786,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Cut Bale Count
-	CutBaleCount *uint64 `protobuf:"varint,210,opt,name=cut_bale_count,json=cutBaleCount,proto3,oneof" json:"cut_bale_count,omitempty"`
+	CutBaleCount *uint32 `protobuf:"varint,210,opt,name=cut_bale_count,json=cutBaleCount,proto3,oneof" json:"cut_bale_count,omitempty"`
 	// Parameter ID: 1082
 	// Property Name: Bale Slices
 	// Type: Unsigned
@@ -2796,7 +2796,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Bale Slices
-	BaleSlices *uint64 `protobuf:"varint,211,opt,name=bale_slices,json=baleSlices,proto3,oneof" json:"bale_slices,omitempty"`
+	BaleSlices *uint32 `protobuf:"varint,211,opt,name=bale_slices,json=baleSlices,proto3,oneof" json:"bale_slices,omitempty"`
 	// Parameter ID: 1116
 	// Property Name: LVCAN MaxRoadSpeed
 	// Type: Unsigned
@@ -2826,7 +2826,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if road sign "Speed limit with value" is recognized/canceled
-	LvcanRsfSpeedlimitsign *uint32 `protobuf:"varint,214,opt,name=lvcan_rsf_speedlimitsign,json=lvcanRsfSpeedlimitsign,proto3,oneof" json:"lvcan_rsf_speedlimitsign,omitempty"`
+	LvcanRsfSpeedlimitsign *bool `protobuf:"varint,214,opt,name=lvcan_rsf_speedlimitsign,json=lvcanRsfSpeedlimitsign,proto3,oneof" json:"lvcan_rsf_speedlimitsign,omitempty"`
 	// Parameter ID: 1206
 	// Property Name: LVCAN RSF EndOfSpeedLimitSign
 	// Type: Unsigned
@@ -2836,7 +2836,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if road sign "End of speed limit with value" is recognized/canceled
-	LvcanRsfEndofspeedlimitsign *uint32 `protobuf:"varint,215,opt,name=lvcan_rsf_endofspeedlimitsign,json=lvcanRsfEndofspeedlimitsign,proto3,oneof" json:"lvcan_rsf_endofspeedlimitsign,omitempty"`
+	LvcanRsfEndOfSpeedLimitsign *bool `protobuf:"varint,215,opt,name=lvcan_rsf_end_of_speed_limitsign,json=lvcanRsfEndOfSpeedLimitsign,proto3,oneof" json:"lvcan_rsf_end_of_speed_limitsign,omitempty"`
 	// Parameter ID: 1207
 	// Property Name: LVCAN RSF SpeedExceeded
 	// Type: Unsigned
@@ -2846,7 +2846,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if speed is exceeded indicated by road sign "Speed limit with value"
-	LvcanRsfSpeedexceeded *uint32 `protobuf:"varint,216,opt,name=lvcan_rsf_speedexceeded,json=lvcanRsfSpeedexceeded,proto3,oneof" json:"lvcan_rsf_speedexceeded,omitempty"`
+	LvcanRsfSpeedExceeded *bool `protobuf:"varint,216,opt,name=lvcan_rsf_speed_exceeded,json=lvcanRsfSpeedExceeded,proto3,oneof" json:"lvcan_rsf_speed_exceeded,omitempty"`
 	// Parameter ID: 1208
 	// Property Name: LVCAN RSF TimeSpeedLimitSign
 	// Type: Unsigned
@@ -2856,7 +2856,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if road sign "Conditional time-specific speed limit with value" is recognized/canceled
-	LvcanRsfTimespeedlimitsign *uint32 `protobuf:"varint,217,opt,name=lvcan_rsf_timespeedlimitsign,json=lvcanRsfTimespeedlimitsign,proto3,oneof" json:"lvcan_rsf_timespeedlimitsign,omitempty"`
+	LvcanRsfTimeSpeedLimitsign *bool `protobuf:"varint,217,opt,name=lvcan_rsf_time_speed_limitsign,json=lvcanRsfTimeSpeedLimitsign,proto3,oneof" json:"lvcan_rsf_time_speed_limitsign,omitempty"`
 	// Parameter ID: 1209
 	// Property Name: LVCAN RSF WthrSpeedLimitSign
 	// Type: Unsigned
@@ -2866,7 +2866,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
-	LvcanRsfWthrspeedlimitsign *uint32           `protobuf:"varint,218,opt,name=lvcan_rsf_wthrspeedlimitsign,json=lvcanRsfWthrspeedlimitsign,proto3,oneof" json:"lvcan_rsf_wthrspeedlimitsign,omitempty"`
+	LvcanRsfWthrSpeedLimitSign *bool             `protobuf:"varint,218,opt,name=lvcan_rsf_wthr_speed_limit_sign,json=lvcanRsfWthrSpeedLimitSign,proto3,oneof" json:"lvcan_rsf_wthr_speed_limit_sign,omitempty"`
 	AxlCalibrationStatus       *uint32           `protobuf:"varint,246,opt,name=axl_calibration_status,json=axlCalibrationStatus,proto3,oneof" json:"axl_calibration_status,omitempty"`
 	BleRfid1                   *uint64           `protobuf:"varint,247,opt,name=ble_rfid1,json=bleRfid1,proto3,oneof" json:"ble_rfid1,omitempty"`
 	BleRfid2                   *uint64           `protobuf:"varint,248,opt,name=ble_rfid2,json=bleRfid2,proto3,oneof" json:"ble_rfid2,omitempty"`
@@ -3543,7 +3543,7 @@ func (x *Compact) GetTripOdometer() uint32 {
 	return 0
 }
 
-func (x *Compact) GetTotalOdometer() uint64 {
+func (x *Compact) GetTotalOdometer() uint32 {
 	if x != nil && x.TotalOdometer != nil {
 		return *x.TotalOdometer
 	}
@@ -4985,7 +4985,7 @@ func (x *Compact) GetCisfSection8Overfilled() bool {
 	return false
 }
 
-func (x *Compact) GetDistanceToNextService() uint64 {
+func (x *Compact) GetDistanceToNextService() uint32 {
 	if x != nil && x.DistanceToNextService != nil {
 		return *x.DistanceToNextService
 	}
@@ -4999,14 +4999,14 @@ func (x *Compact) GetCngLevelKg() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDistanceFromNeedOfService() uint64 {
+func (x *Compact) GetDistanceFromNeedOfService() uint32 {
 	if x != nil && x.DistanceFromNeedOfService != nil {
 		return *x.DistanceFromNeedOfService
 	}
 	return 0
 }
 
-func (x *Compact) GetDistanceFromLastService() uint64 {
+func (x *Compact) GetDistanceFromLastService() uint32 {
 	if x != nil && x.DistanceFromLastService != nil {
 		return *x.DistanceFromLastService
 	}
@@ -5034,7 +5034,7 @@ func (x *Compact) GetTimeFromLastSerivce() uint32 {
 	return 0
 }
 
-func (x *Compact) GetDistanceToNextOilService() uint64 {
+func (x *Compact) GetDistanceToNextOilService() uint32 {
 	if x != nil && x.DistanceToNextOilService != nil {
 		return *x.DistanceToNextOilService
 	}
@@ -5048,42 +5048,42 @@ func (x *Compact) GetTimeToNextOilService() uint32 {
 	return 0
 }
 
-func (x *Compact) GetLvcanVehicleRange() uint64 {
+func (x *Compact) GetLvcanVehicleRange() uint32 {
 	if x != nil && x.LvcanVehicleRange != nil {
 		return *x.LvcanVehicleRange
 	}
 	return 0
 }
 
-func (x *Compact) GetLvcanTotalCngCounted() uint64 {
+func (x *Compact) GetLvcanTotalCngCounted() uint32 {
 	if x != nil && x.LvcanTotalCngCounted != nil {
 		return *x.LvcanTotalCngCounted
 	}
 	return 0
 }
 
-func (x *Compact) GetTotalBaleCount() uint64 {
+func (x *Compact) GetTotalBaleCount() uint32 {
 	if x != nil && x.TotalBaleCount != nil {
 		return *x.TotalBaleCount
 	}
 	return 0
 }
 
-func (x *Compact) GetBaleCount() uint64 {
+func (x *Compact) GetBaleCount() uint32 {
 	if x != nil && x.BaleCount != nil {
 		return *x.BaleCount
 	}
 	return 0
 }
 
-func (x *Compact) GetCutBaleCount() uint64 {
+func (x *Compact) GetCutBaleCount() uint32 {
 	if x != nil && x.CutBaleCount != nil {
 		return *x.CutBaleCount
 	}
 	return 0
 }
 
-func (x *Compact) GetBaleSlices() uint64 {
+func (x *Compact) GetBaleSlices() uint32 {
 	if x != nil && x.BaleSlices != nil {
 		return *x.BaleSlices
 	}
@@ -5104,39 +5104,39 @@ func (x *Compact) GetLvcanExceededroadspeed() uint32 {
 	return 0
 }
 
-func (x *Compact) GetLvcanRsfSpeedlimitsign() uint32 {
+func (x *Compact) GetLvcanRsfSpeedlimitsign() bool {
 	if x != nil && x.LvcanRsfSpeedlimitsign != nil {
 		return *x.LvcanRsfSpeedlimitsign
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetLvcanRsfEndofspeedlimitsign() uint32 {
-	if x != nil && x.LvcanRsfEndofspeedlimitsign != nil {
-		return *x.LvcanRsfEndofspeedlimitsign
+func (x *Compact) GetLvcanRsfEndOfSpeedLimitsign() bool {
+	if x != nil && x.LvcanRsfEndOfSpeedLimitsign != nil {
+		return *x.LvcanRsfEndOfSpeedLimitsign
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetLvcanRsfSpeedexceeded() uint32 {
-	if x != nil && x.LvcanRsfSpeedexceeded != nil {
-		return *x.LvcanRsfSpeedexceeded
+func (x *Compact) GetLvcanRsfSpeedExceeded() bool {
+	if x != nil && x.LvcanRsfSpeedExceeded != nil {
+		return *x.LvcanRsfSpeedExceeded
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetLvcanRsfTimespeedlimitsign() uint32 {
-	if x != nil && x.LvcanRsfTimespeedlimitsign != nil {
-		return *x.LvcanRsfTimespeedlimitsign
+func (x *Compact) GetLvcanRsfTimeSpeedLimitsign() bool {
+	if x != nil && x.LvcanRsfTimeSpeedLimitsign != nil {
+		return *x.LvcanRsfTimeSpeedLimitsign
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetLvcanRsfWthrspeedlimitsign() uint32 {
-	if x != nil && x.LvcanRsfWthrspeedlimitsign != nil {
-		return *x.LvcanRsfWthrspeedlimitsign
+func (x *Compact) GetLvcanRsfWthrSpeedLimitSign() bool {
+	if x != nil && x.LvcanRsfWthrSpeedLimitSign != nil {
+		return *x.LvcanRsfWthrSpeedLimitSign
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetAxlCalibrationStatus() uint32 {
@@ -7545,7 +7545,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\xbe\xf7\x02\n" +
+	"\b_mileage\"\xd0\xf7\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -7567,7 +7567,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x0fbattery_current\x18\x0e \x01(\rH\fR\x0ebatteryCurrent\x88\x01\x01\x123\n" +
 	"\x13active_gsm_operator\x18\x0f \x01(\rH\rR\x11activeGsmOperator\x88\x01\x01\x12(\n" +
 	"\rtrip_odometer\x18\x10 \x01(\rH\x0eR\ftripOdometer\x88\x01\x01\x12*\n" +
-	"\x0etotal_odometer\x18\x11 \x01(\x04H\x0fR\rtotalOdometer\x88\x01\x01\x12*\n" +
+	"\x0etotal_odometer\x18\x11 \x01(\rH\x0fR\rtotalOdometer\x88\x01\x01\x12*\n" +
 	"\x0edigital_input1\x18\x12 \x01(\bH\x10R\rdigitalInput1\x88\x01\x01\x12(\n" +
 	"\ranalog_input1\x18\x13 \x01(\rH\x11R\fanalogInput1\x88\x01\x01\x12,\n" +
 	"\x0fdigital_output1\x18\x14 \x01(\bH\x12R\x0edigitalOutput1\x88\x01\x01\x12'\n" +
@@ -7785,31 +7785,31 @@ const file_packets_packets_proto_rawDesc = "" +
 	"/cisf_section8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\bH\xda\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
 	"\x14cisf_section8_filled\x18\xc3\x01 \x01(\bH\xdb\x01R\x12cisfSection8Filled\x88\x01\x01\x12?\n" +
 	"\x18cisf_section8_overfilled\x18\xc4\x01 \x01(\bH\xdc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
-	"\x18distance_to_next_service\x18\xc5\x01 \x01(\x04H\xdd\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
+	"\x18distance_to_next_service\x18\xc5\x01 \x01(\rH\xdd\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
 	"\fcng_level_kg\x18\xc6\x01 \x01(\rH\xde\x01R\n" +
 	"cngLevelKg\x88\x01\x01\x12G\n" +
-	"\x1ddistance_from_need_of_service\x18\xc7\x01 \x01(\x04H\xdf\x01R\x19distanceFromNeedOfService\x88\x01\x01\x12B\n" +
-	"\x1adistance_from_last_service\x18\xc8\x01 \x01(\x04H\xe0\x01R\x17distanceFromLastService\x88\x01\x01\x126\n" +
+	"\x1ddistance_from_need_of_service\x18\xc7\x01 \x01(\rH\xdf\x01R\x19distanceFromNeedOfService\x88\x01\x01\x12B\n" +
+	"\x1adistance_from_last_service\x18\xc8\x01 \x01(\rH\xe0\x01R\x17distanceFromLastService\x88\x01\x01\x126\n" +
 	"\x14time_to_next_service\x18\xc9\x01 \x01(\rH\xe1\x01R\x11timeToNextService\x88\x01\x01\x12?\n" +
 	"\x19time_from_need_of_service\x18\xca\x01 \x01(\rH\xe2\x01R\x15timeFromNeedOfService\x88\x01\x01\x12:\n" +
 	"\x16time_from_last_serivce\x18\xcb\x01 \x01(\rH\xe3\x01R\x13timeFromLastSerivce\x88\x01\x01\x12E\n" +
-	"\x1cdistance_to_next_oil_service\x18\xcc\x01 \x01(\x04H\xe4\x01R\x18distanceToNextOilService\x88\x01\x01\x12=\n" +
+	"\x1cdistance_to_next_oil_service\x18\xcc\x01 \x01(\rH\xe4\x01R\x18distanceToNextOilService\x88\x01\x01\x12=\n" +
 	"\x18time_to_next_oil_service\x18\xcd\x01 \x01(\rH\xe5\x01R\x14timeToNextOilService\x88\x01\x01\x125\n" +
-	"\x13lvcan_vehicle_range\x18\xce\x01 \x01(\x04H\xe6\x01R\x11lvcanVehicleRange\x88\x01\x01\x12<\n" +
-	"\x17lvcan_total_cng_counted\x18\xcf\x01 \x01(\x04H\xe7\x01R\x14lvcanTotalCngCounted\x88\x01\x01\x12/\n" +
-	"\x10total_bale_count\x18\xd0\x01 \x01(\x04H\xe8\x01R\x0etotalBaleCount\x88\x01\x01\x12$\n" +
+	"\x13lvcan_vehicle_range\x18\xce\x01 \x01(\rH\xe6\x01R\x11lvcanVehicleRange\x88\x01\x01\x12<\n" +
+	"\x17lvcan_total_cng_counted\x18\xcf\x01 \x01(\rH\xe7\x01R\x14lvcanTotalCngCounted\x88\x01\x01\x12/\n" +
+	"\x10total_bale_count\x18\xd0\x01 \x01(\rH\xe8\x01R\x0etotalBaleCount\x88\x01\x01\x12$\n" +
 	"\n" +
-	"bale_count\x18\xd1\x01 \x01(\x04H\xe9\x01R\tbaleCount\x88\x01\x01\x12+\n" +
-	"\x0ecut_bale_count\x18\xd2\x01 \x01(\x04H\xea\x01R\fcutBaleCount\x88\x01\x01\x12&\n" +
-	"\vbale_slices\x18\xd3\x01 \x01(\x04H\xeb\x01R\n" +
+	"bale_count\x18\xd1\x01 \x01(\rH\xe9\x01R\tbaleCount\x88\x01\x01\x12+\n" +
+	"\x0ecut_bale_count\x18\xd2\x01 \x01(\rH\xea\x01R\fcutBaleCount\x88\x01\x01\x12&\n" +
+	"\vbale_slices\x18\xd3\x01 \x01(\rH\xeb\x01R\n" +
 	"baleSlices\x88\x01\x01\x124\n" +
 	"\x12lvcan_maxroadspeed\x18\xd4\x01 \x01(\rH\xec\x01R\x11lvcanMaxroadspeed\x88\x01\x01\x12>\n" +
 	"\x17lvcan_exceededroadspeed\x18\xd5\x01 \x01(\rH\xed\x01R\x16lvcanExceededroadspeed\x88\x01\x01\x12?\n" +
-	"\x18lvcan_rsf_speedlimitsign\x18\xd6\x01 \x01(\rH\xee\x01R\x16lvcanRsfSpeedlimitsign\x88\x01\x01\x12I\n" +
-	"\x1dlvcan_rsf_endofspeedlimitsign\x18\xd7\x01 \x01(\rH\xef\x01R\x1blvcanRsfEndofspeedlimitsign\x88\x01\x01\x12=\n" +
-	"\x17lvcan_rsf_speedexceeded\x18\xd8\x01 \x01(\rH\xf0\x01R\x15lvcanRsfSpeedexceeded\x88\x01\x01\x12G\n" +
-	"\x1clvcan_rsf_timespeedlimitsign\x18\xd9\x01 \x01(\rH\xf1\x01R\x1alvcanRsfTimespeedlimitsign\x88\x01\x01\x12G\n" +
-	"\x1clvcan_rsf_wthrspeedlimitsign\x18\xda\x01 \x01(\rH\xf2\x01R\x1alvcanRsfWthrspeedlimitsign\x88\x01\x01\x12;\n" +
+	"\x18lvcan_rsf_speedlimitsign\x18\xd6\x01 \x01(\bH\xee\x01R\x16lvcanRsfSpeedlimitsign\x88\x01\x01\x12L\n" +
+	" lvcan_rsf_end_of_speed_limitsign\x18\xd7\x01 \x01(\bH\xef\x01R\x1blvcanRsfEndOfSpeedLimitsign\x88\x01\x01\x12>\n" +
+	"\x18lvcan_rsf_speed_exceeded\x18\xd8\x01 \x01(\bH\xf0\x01R\x15lvcanRsfSpeedExceeded\x88\x01\x01\x12I\n" +
+	"\x1elvcan_rsf_time_speed_limitsign\x18\xd9\x01 \x01(\bH\xf1\x01R\x1alvcanRsfTimeSpeedLimitsign\x88\x01\x01\x12J\n" +
+	"\x1flvcan_rsf_wthr_speed_limit_sign\x18\xda\x01 \x01(\bH\xf2\x01R\x1alvcanRsfWthrSpeedLimitSign\x88\x01\x01\x12;\n" +
 	"\x16axl_calibration_status\x18\xf6\x01 \x01(\rH\xf3\x01R\x14axlCalibrationStatus\x88\x01\x01\x12\"\n" +
 	"\tble_rfid1\x18\xf7\x01 \x01(\x04H\xf4\x01R\bbleRfid1\x88\x01\x01\x12\"\n" +
 	"\tble_rfid2\x18\xf8\x01 \x01(\x04H\xf5\x01R\bbleRfid2\x88\x01\x01\x12\"\n" +
@@ -8421,11 +8421,11 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\f_bale_slicesB\x15\n" +
 	"\x13_lvcan_maxroadspeedB\x1a\n" +
 	"\x18_lvcan_exceededroadspeedB\x1b\n" +
-	"\x19_lvcan_rsf_speedlimitsignB \n" +
-	"\x1e_lvcan_rsf_endofspeedlimitsignB\x1a\n" +
-	"\x18_lvcan_rsf_speedexceededB\x1f\n" +
-	"\x1d_lvcan_rsf_timespeedlimitsignB\x1f\n" +
-	"\x1d_lvcan_rsf_wthrspeedlimitsignB\x19\n" +
+	"\x19_lvcan_rsf_speedlimitsignB#\n" +
+	"!_lvcan_rsf_end_of_speed_limitsignB\x1b\n" +
+	"\x19_lvcan_rsf_speed_exceededB!\n" +
+	"\x1f_lvcan_rsf_time_speed_limitsignB\"\n" +
+	" _lvcan_rsf_wthr_speed_limit_signB\x19\n" +
 	"\x17_axl_calibration_statusB\f\n" +
 	"\n" +
 	"_ble_rfid1B\f\n" +
