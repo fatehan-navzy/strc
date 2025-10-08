@@ -1616,7 +1616,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfCloggedBrakeSystemFilterIndicator *uint32 `protobuf:"varint,92,opt,name=isf_clogged_brake_system_filter_indicator,json=isfCloggedBrakeSystemFilterIndicator,proto3,oneof" json:"isf_clogged_brake_system_filter_indicator,omitempty"`
+	IsfCloggedBrakeSystemFilterIndicator *bool `protobuf:"varint,92,opt,name=isf_clogged_brake_system_filter_indicator,json=isfCloggedBrakeSystemFilterIndicator,proto3,oneof" json:"isf_clogged_brake_system_filter_indicator,omitempty"`
 	// Parameter ID: 986
 	// Property Name: ISF Low Washer Fluid Level Indicator
 	// Type: Unsigned
@@ -1626,7 +1626,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfLowWasherFluidLevelIndicator *uint32 `protobuf:"varint,93,opt,name=isf_low_washer_fluid_level_indicator,json=isfLowWasherFluidLevelIndicator,proto3,oneof" json:"isf_low_washer_fluid_level_indicator,omitempty"`
+	IsfLowWasherFluidLevelIndicator *bool `protobuf:"varint,93,opt,name=isf_low_washer_fluid_level_indicator,json=isfLowWasherFluidLevelIndicator,proto3,oneof" json:"isf_low_washer_fluid_level_indicator,omitempty"`
 	// Parameter ID: 987
 	// Property Name: ISF Low AdBlue Level Indicator
 	// Type: Unsigned
@@ -1636,7 +1636,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfLowAdblueLevelIndicator *uint32 `protobuf:"varint,94,opt,name=isf_low_adblue_level_indicator,json=isfLowAdblueLevelIndicator,proto3,oneof" json:"isf_low_adblue_level_indicator,omitempty"`
+	IsfLowAdblueLevelIndicator *bool `protobuf:"varint,94,opt,name=isf_low_adblue_level_indicator,json=isfLowAdblueLevelIndicator,proto3,oneof" json:"isf_low_adblue_level_indicator,omitempty"`
 	// Parameter ID: 988
 	// Property Name: ISF Low Trailer Tyre Pressure Indicator
 	// Type: Unsigned
@@ -1646,7 +1646,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfLowTrailerTyrePressureIndicator *uint32 `protobuf:"varint,95,opt,name=isf_low_trailer_tyre_pressure_indicator,json=isfLowTrailerTyrePressureIndicator,proto3,oneof" json:"isf_low_trailer_tyre_pressure_indicator,omitempty"`
+	IsfLowTrailerTyrePressureIndicator *bool `protobuf:"varint,95,opt,name=isf_low_trailer_tyre_pressure_indicator,json=isfLowTrailerTyrePressureIndicator,proto3,oneof" json:"isf_low_trailer_tyre_pressure_indicator,omitempty"`
 	// Parameter ID: 989
 	// Property Name: ISF Wear Of Trailer Brake Lining Indicator
 	// Type: Unsigned
@@ -1656,7 +1656,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfWearOfTrailerBrakeLiningIndicator *uint32 `protobuf:"varint,96,opt,name=isf_wear_of_trailer_brake_lining_indicator,json=isfWearOfTrailerBrakeLiningIndicator,proto3,oneof" json:"isf_wear_of_trailer_brake_lining_indicator,omitempty"`
+	IsfWearOfTrailerBrakeLiningIndicator *bool `protobuf:"varint,96,opt,name=isf_wear_of_trailer_brake_lining_indicator,json=isfWearOfTrailerBrakeLiningIndicator,proto3,oneof" json:"isf_wear_of_trailer_brake_lining_indicator,omitempty"`
 	// Parameter ID: 990
 	// Property Name: ISF High Trailer Brake Temperature Indicator
 	// Type: Unsigned
@@ -1666,7 +1666,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfHighTrailerBrakeTemperatureIndicator *uint32 `protobuf:"varint,97,opt,name=isf_high_trailer_brake_temperature_indicator,json=isfHighTrailerBrakeTemperatureIndicator,proto3,oneof" json:"isf_high_trailer_brake_temperature_indicator,omitempty"`
+	IsfHighTrailerBrakeTemperatureIndicator *bool `protobuf:"varint,97,opt,name=isf_high_trailer_brake_temperature_indicator,json=isfHighTrailerBrakeTemperatureIndicator,proto3,oneof" json:"isf_high_trailer_brake_temperature_indicator,omitempty"`
 	// Parameter ID: 991
 	// Property Name: ISF Incorrect Trailer Pneumatic Supply Indicator
 	// Type: Unsigned
@@ -1676,7 +1676,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfIncorrectTrailerPneumaticSupplyIndicator *uint32 `protobuf:"varint,98,opt,name=isf_incorrect_trailer_pneumatic_supply_indicator,json=isfIncorrectTrailerPneumaticSupplyIndicator,proto3,oneof" json:"isf_incorrect_trailer_pneumatic_supply_indicator,omitempty"`
+	IsfIncorrectTrailerPneumaticSupplyIndicator *bool `protobuf:"varint,98,opt,name=isf_incorrect_trailer_pneumatic_supply_indicator,json=isfIncorrectTrailerPneumaticSupplyIndicator,proto3,oneof" json:"isf_incorrect_trailer_pneumatic_supply_indicator,omitempty"`
 	// Parameter ID: 992
 	// Property Name: ISF Low CNG Level Indicator
 	// Type: Unsigned
@@ -1686,7 +1686,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	IsfLowCngLevelIndicator *uint32 `protobuf:"varint,99,opt,name=isf_low_cng_level_indicator,json=isfLowCngLevelIndicator,proto3,oneof" json:"isf_low_cng_level_indicator,omitempty"`
+	IsfLowCngLevelIndicator *bool `protobuf:"varint,99,opt,name=isf_low_cng_level_indicator,json=isfLowCngLevelIndicator,proto3,oneof" json:"isf_low_cng_level_indicator,omitempty"`
 	// Parameter ID: 993
 	// Property Name: ASF Right Joystick Moved Right Active
 	// Type: Unsigned
@@ -1696,7 +1696,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfRightJoystickMovedRightActive *uint32 `protobuf:"varint,100,opt,name=asf_right_joystick_moved_right_active,json=asfRightJoystickMovedRightActive,proto3,oneof" json:"asf_right_joystick_moved_right_active,omitempty"`
+	AsfRightJoystickMovedRightActive *bool `protobuf:"varint,100,opt,name=asf_right_joystick_moved_right_active,json=asfRightJoystickMovedRightActive,proto3,oneof" json:"asf_right_joystick_moved_right_active,omitempty"`
 	// Parameter ID: 994
 	// Property Name: ASF Right Joystick Moved Left Active
 	// Type: Unsigned
@@ -1706,7 +1706,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfRightJoystickMovedLeftActive *uint32 `protobuf:"varint,101,opt,name=asf_right_joystick_moved_left_active,json=asfRightJoystickMovedLeftActive,proto3,oneof" json:"asf_right_joystick_moved_left_active,omitempty"`
+	AsfRightJoystickMovedLeftActive *bool `protobuf:"varint,101,opt,name=asf_right_joystick_moved_left_active,json=asfRightJoystickMovedLeftActive,proto3,oneof" json:"asf_right_joystick_moved_left_active,omitempty"`
 	// Parameter ID: 995
 	// Property Name: ASF Right Joystick Moved Forward Active
 	// Type: Unsigned
@@ -1716,7 +1716,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfRightJoystickMovedForwardActive *uint32 `protobuf:"varint,102,opt,name=asf_right_joystick_moved_forward_active,json=asfRightJoystickMovedForwardActive,proto3,oneof" json:"asf_right_joystick_moved_forward_active,omitempty"`
+	AsfRightJoystickMovedForwardActive *bool `protobuf:"varint,102,opt,name=asf_right_joystick_moved_forward_active,json=asfRightJoystickMovedForwardActive,proto3,oneof" json:"asf_right_joystick_moved_forward_active,omitempty"`
 	// Parameter ID: 996
 	// Property Name: ASF Right Joystick Moved Back Active
 	// Type: Unsigned
@@ -1726,7 +1726,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfRightJoystickMovedBackActive *uint32 `protobuf:"varint,103,opt,name=asf_right_joystick_moved_back_active,json=asfRightJoystickMovedBackActive,proto3,oneof" json:"asf_right_joystick_moved_back_active,omitempty"`
+	AsfRightJoystickMovedBackActive *bool `protobuf:"varint,103,opt,name=asf_right_joystick_moved_back_active,json=asfRightJoystickMovedBackActive,proto3,oneof" json:"asf_right_joystick_moved_back_active,omitempty"`
 	// Parameter ID: 997
 	// Property Name: ASF Left Joystick Moved Right Active
 	// Type: Unsigned
@@ -1736,7 +1736,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfLeftJoystickMovedRightActive *uint32 `protobuf:"varint,104,opt,name=asf_left_joystick_moved_right_active,json=asfLeftJoystickMovedRightActive,proto3,oneof" json:"asf_left_joystick_moved_right_active,omitempty"`
+	AsfLeftJoystickMovedRightActive *bool `protobuf:"varint,104,opt,name=asf_left_joystick_moved_right_active,json=asfLeftJoystickMovedRightActive,proto3,oneof" json:"asf_left_joystick_moved_right_active,omitempty"`
 	// Parameter ID: 998
 	// Property Name: ASF Left Joystick Moved Left Active
 	// Type: Unsigned
@@ -1746,7 +1746,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfLeftJoystickMovedLeftActive *uint32 `protobuf:"varint,105,opt,name=asf_left_joystick_moved_left_active,json=asfLeftJoystickMovedLeftActive,proto3,oneof" json:"asf_left_joystick_moved_left_active,omitempty"`
+	AsfLeftJoystickMovedLeftActive *bool `protobuf:"varint,105,opt,name=asf_left_joystick_moved_left_active,json=asfLeftJoystickMovedLeftActive,proto3,oneof" json:"asf_left_joystick_moved_left_active,omitempty"`
 	// Parameter ID: 999
 	// Property Name: ASF Left Joystick Moved Forward Active
 	// Type: Unsigned
@@ -1756,7 +1756,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfLeftJoystickMovedForwardActive *uint32 `protobuf:"varint,106,opt,name=asf_left_joystick_moved_forward_active,json=asfLeftJoystickMovedForwardActive,proto3,oneof" json:"asf_left_joystick_moved_forward_active,omitempty"`
+	AsfLeftJoystickMovedForwardActive *bool `protobuf:"varint,106,opt,name=asf_left_joystick_moved_forward_active,json=asfLeftJoystickMovedForwardActive,proto3,oneof" json:"asf_left_joystick_moved_forward_active,omitempty"`
 	// Parameter ID: 1000
 	// Property Name: ASF Left Joystick Moved Back Active
 	// Type: Unsigned
@@ -1766,7 +1766,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfLeftJoystickMovedBackActive *uint32 `protobuf:"varint,107,opt,name=asf_left_joystick_moved_back_active,json=asfLeftJoystickMovedBackActive,proto3,oneof" json:"asf_left_joystick_moved_back_active,omitempty"`
+	AsfLeftJoystickMovedBackActive *bool `protobuf:"varint,107,opt,name=asf_left_joystick_moved_back_active,json=asfLeftJoystickMovedBackActive,proto3,oneof" json:"asf_left_joystick_moved_back_active,omitempty"`
 	// Parameter ID: 1001
 	// Property Name: ASF First Rear hydraulic
 	// Type: Unsigned
@@ -1776,7 +1776,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFirstRearHydraulic *uint32 `protobuf:"varint,108,opt,name=asf_first_rear_hydraulic,json=asfFirstRearHydraulic,proto3,oneof" json:"asf_first_rear_hydraulic,omitempty"`
+	AsfFirstRearHydraulic *bool `protobuf:"varint,108,opt,name=asf_first_rear_hydraulic,json=asfFirstRearHydraulic,proto3,oneof" json:"asf_first_rear_hydraulic,omitempty"`
 	// Parameter ID: 1002
 	// Property Name: ASF Second Rear hydraulic
 	// Type: Unsigned
@@ -1786,7 +1786,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSecondRearHydraulic *uint32 `protobuf:"varint,109,opt,name=asf_second_rear_hydraulic,json=asfSecondRearHydraulic,proto3,oneof" json:"asf_second_rear_hydraulic,omitempty"`
+	AsfSecondRearHydraulic *bool `protobuf:"varint,109,opt,name=asf_second_rear_hydraulic,json=asfSecondRearHydraulic,proto3,oneof" json:"asf_second_rear_hydraulic,omitempty"`
 	// Parameter ID: 1003
 	// Property Name: ASF Third Rear hydraulic
 	// Type: Unsigned
@@ -1796,7 +1796,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfThirdRearHydraulic *uint32 `protobuf:"varint,110,opt,name=asf_third_rear_hydraulic,json=asfThirdRearHydraulic,proto3,oneof" json:"asf_third_rear_hydraulic,omitempty"`
+	AsfThirdRearHydraulic *bool `protobuf:"varint,110,opt,name=asf_third_rear_hydraulic,json=asfThirdRearHydraulic,proto3,oneof" json:"asf_third_rear_hydraulic,omitempty"`
 	// Parameter ID: 1004
 	// Property Name: ASF Fourth Rear hydraulic
 	// Type: Unsigned
@@ -1806,7 +1806,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFourthRearHydraulic *uint32 `protobuf:"varint,111,opt,name=asf_fourth_rear_hydraulic,json=asfFourthRearHydraulic,proto3,oneof" json:"asf_fourth_rear_hydraulic,omitempty"`
+	AsfFourthRearHydraulic *bool `protobuf:"varint,111,opt,name=asf_fourth_rear_hydraulic,json=asfFourthRearHydraulic,proto3,oneof" json:"asf_fourth_rear_hydraulic,omitempty"`
 	// Parameter ID: 1005
 	// Property Name: ASF First Front hydraulic
 	// Type: Unsigned
@@ -1816,7 +1816,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFirstFrontHydraulic *uint32 `protobuf:"varint,112,opt,name=asf_first_front_hydraulic,json=asfFirstFrontHydraulic,proto3,oneof" json:"asf_first_front_hydraulic,omitempty"`
+	AsfFirstFrontHydraulic *bool `protobuf:"varint,112,opt,name=asf_first_front_hydraulic,json=asfFirstFrontHydraulic,proto3,oneof" json:"asf_first_front_hydraulic,omitempty"`
 	// Parameter ID: 1006
 	// Property Name: ASF Second Front hydraulic
 	// Type: Unsigned
@@ -1826,7 +1826,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSecondFrontHydraulic *uint32 `protobuf:"varint,113,opt,name=asf_second_front_hydraulic,json=asfSecondFrontHydraulic,proto3,oneof" json:"asf_second_front_hydraulic,omitempty"`
+	AsfSecondFrontHydraulic *bool `protobuf:"varint,113,opt,name=asf_second_front_hydraulic,json=asfSecondFrontHydraulic,proto3,oneof" json:"asf_second_front_hydraulic,omitempty"`
 	// Parameter ID: 1007
 	// Property Name: ASF Third Front hydraulic
 	// Type: Unsigned
@@ -1836,7 +1836,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfThirdFrontHydraulic *uint32 `protobuf:"varint,114,opt,name=asf_third_front_hydraulic,json=asfThirdFrontHydraulic,proto3,oneof" json:"asf_third_front_hydraulic,omitempty"`
+	AsfThirdFrontHydraulic *bool `protobuf:"varint,114,opt,name=asf_third_front_hydraulic,json=asfThirdFrontHydraulic,proto3,oneof" json:"asf_third_front_hydraulic,omitempty"`
 	// Parameter ID: 1008
 	// Property Name: ASF Fourth Front hydraulic
 	// Type: Unsigned
@@ -1846,7 +1846,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFourthFrontHydraulic *uint32 `protobuf:"varint,115,opt,name=asf_fourth_front_hydraulic,json=asfFourthFrontHydraulic,proto3,oneof" json:"asf_fourth_front_hydraulic,omitempty"`
+	AsfFourthFrontHydraulic *bool `protobuf:"varint,115,opt,name=asf_fourth_front_hydraulic,json=asfFourthFrontHydraulic,proto3,oneof" json:"asf_fourth_front_hydraulic,omitempty"`
 	// Parameter ID: 1009
 	// Property Name: ASF Front Three-point Hitch
 	// Type: Unsigned
@@ -1856,7 +1856,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFrontThreePointHitch *uint32 `protobuf:"varint,116,opt,name=asf_front_three_point_hitch,json=asfFrontThreePointHitch,proto3,oneof" json:"asf_front_three_point_hitch,omitempty"`
+	AsfFrontThreePointHitch *bool `protobuf:"varint,116,opt,name=asf_front_three_point_hitch,json=asfFrontThreePointHitch,proto3,oneof" json:"asf_front_three_point_hitch,omitempty"`
 	// Parameter ID: 1010
 	// Property Name: ASF Rear Three-point Hitch
 	// Type: Unsigned
@@ -1866,7 +1866,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfRearThreePointHitch *uint32 `protobuf:"varint,117,opt,name=asf_rear_three_point_hitch,json=asfRearThreePointHitch,proto3,oneof" json:"asf_rear_three_point_hitch,omitempty"`
+	AsfRearThreePointHitch *bool `protobuf:"varint,117,opt,name=asf_rear_three_point_hitch,json=asfRearThreePointHitch,proto3,oneof" json:"asf_rear_three_point_hitch,omitempty"`
 	// Parameter ID: 1011
 	// Property Name: ASF Front Power Take-off
 	// Type: Unsigned
@@ -1876,7 +1876,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFrontPowerTakeOff *uint32 `protobuf:"varint,118,opt,name=asf_front_power_take_off,json=asfFrontPowerTakeOff,proto3,oneof" json:"asf_front_power_take_off,omitempty"`
+	AsfFrontPowerTakeOff *bool `protobuf:"varint,118,opt,name=asf_front_power_take_off,json=asfFrontPowerTakeOff,proto3,oneof" json:"asf_front_power_take_off,omitempty"`
 	// Parameter ID: 1012
 	// Property Name: ASF Rear Power Take-off
 	// Type: Unsigned
@@ -1886,7 +1886,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfRearPowerTakeOff *uint32 `protobuf:"varint,119,opt,name=asf_rear_power_take_off,json=asfRearPowerTakeOff,proto3,oneof" json:"asf_rear_power_take_off,omitempty"`
+	AsfRearPowerTakeOff *bool `protobuf:"varint,119,opt,name=asf_rear_power_take_off,json=asfRearPowerTakeOff,proto3,oneof" json:"asf_rear_power_take_off,omitempty"`
 	// Parameter ID: 1013
 	// Property Name: ASF Mowing Active
 	// Type: Unsigned
@@ -1896,7 +1896,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfMowingActive *uint32 `protobuf:"varint,120,opt,name=asf_mowing_active,json=asfMowingActive,proto3,oneof" json:"asf_mowing_active,omitempty"`
+	AsfMowingActive *bool `protobuf:"varint,120,opt,name=asf_mowing_active,json=asfMowingActive,proto3,oneof" json:"asf_mowing_active,omitempty"`
 	// Parameter ID: 1014
 	// Property Name: ASF Threshing Active
 	// Type: Unsigned
@@ -1906,7 +1906,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Inactive, 1 - Active
-	AsfThreshingActive *uint32 `protobuf:"varint,121,opt,name=asf_threshing_active,json=asfThreshingActive,proto3,oneof" json:"asf_threshing_active,omitempty"`
+	AsfThreshingActive *bool `protobuf:"varint,121,opt,name=asf_threshing_active,json=asfThreshingActive,proto3,oneof" json:"asf_threshing_active,omitempty"`
 	// Parameter ID: 1015
 	// Property Name: ASF Grain Release From Hopper
 	// Type: Unsigned
@@ -1916,7 +1916,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfGrainReleaseFromHopper *uint32 `protobuf:"varint,122,opt,name=asf_grain_release_from_hopper,json=asfGrainReleaseFromHopper,proto3,oneof" json:"asf_grain_release_from_hopper,omitempty"`
+	AsfGrainReleaseFromHopper *bool `protobuf:"varint,122,opt,name=asf_grain_release_from_hopper,json=asfGrainReleaseFromHopper,proto3,oneof" json:"asf_grain_release_from_hopper,omitempty"`
 	// Parameter ID: 1016
 	// Property Name: ASF Grain Tank Is 100% Full
 	// Type: Unsigned
@@ -1926,7 +1926,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainTankIs100Full *uint32 `protobuf:"varint,123,opt,name=asf_grain_tank_is100_full,json=asfGrainTankIs100Full,proto3,oneof" json:"asf_grain_tank_is100_full,omitempty"`
+	AsfGrainTankIs100Full *bool `protobuf:"varint,123,opt,name=asf_grain_tank_is100_full,json=asfGrainTankIs100Full,proto3,oneof" json:"asf_grain_tank_is100_full,omitempty"`
 	// Parameter ID: 1017
 	// Property Name: ASF Grain Tank Is 70% Full
 	// Type: Unsigned
@@ -1936,7 +1936,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainTankIs70Full *uint32 `protobuf:"varint,124,opt,name=asf_grain_tank_is70_full,json=asfGrainTankIs70Full,proto3,oneof" json:"asf_grain_tank_is70_full,omitempty"`
+	AsfGrainTankIs70Full *bool `protobuf:"varint,124,opt,name=asf_grain_tank_is70_full,json=asfGrainTankIs70Full,proto3,oneof" json:"asf_grain_tank_is70_full,omitempty"`
 	// Parameter ID: 1018
 	// Property Name: ASF Grain Tank Is Opened
 	// Type: Unsigned
@@ -1946,7 +1946,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Closed, 1 - Opened
-	AsfGrainTankIsOpened *uint32 `protobuf:"varint,125,opt,name=asf_grain_tank_is_opened,json=asfGrainTankIsOpened,proto3,oneof" json:"asf_grain_tank_is_opened,omitempty"`
+	AsfGrainTankIsOpened *bool `protobuf:"varint,125,opt,name=asf_grain_tank_is_opened,json=asfGrainTankIsOpened,proto3,oneof" json:"asf_grain_tank_is_opened,omitempty"`
 	// Parameter ID: 1019
 	// Property Name: ASF Unloader Drive
 	// Type: Unsigned
@@ -1956,7 +1956,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfUnloaderDrive *uint32 `protobuf:"varint,126,opt,name=asf_unloader_drive,json=asfUnloaderDrive,proto3,oneof" json:"asf_unloader_drive,omitempty"`
+	AsfUnloaderDrive *bool `protobuf:"varint,126,opt,name=asf_unloader_drive,json=asfUnloaderDrive,proto3,oneof" json:"asf_unloader_drive,omitempty"`
 	// Parameter ID: 1020
 	// Property Name: ASF Cleaning Fan Control Turned Off
 	// Type: Unsigned
@@ -1966,7 +1966,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfCleaningFanControlTurnedOff *uint32 `protobuf:"varint,127,opt,name=asf_cleaning_fan_control_turned_off,json=asfCleaningFanControlTurnedOff,proto3,oneof" json:"asf_cleaning_fan_control_turned_off,omitempty"`
+	AsfCleaningFanControlTurnedOff *bool `protobuf:"varint,127,opt,name=asf_cleaning_fan_control_turned_off,json=asfCleaningFanControlTurnedOff,proto3,oneof" json:"asf_cleaning_fan_control_turned_off,omitempty"`
 	// Parameter ID: 1021
 	// Property Name: ASF Threshing Drum Control Turned Off
 	// Type: Unsigned
@@ -1976,7 +1976,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfThreshingDrumControlTurnedOff *uint32 `protobuf:"varint,128,opt,name=asf_threshing_drum_control_turned_off,json=asfThreshingDrumControlTurnedOff,proto3,oneof" json:"asf_threshing_drum_control_turned_off,omitempty"`
+	AsfThreshingDrumControlTurnedOff *bool `protobuf:"varint,128,opt,name=asf_threshing_drum_control_turned_off,json=asfThreshingDrumControlTurnedOff,proto3,oneof" json:"asf_threshing_drum_control_turned_off,omitempty"`
 	// Parameter ID: 1022
 	// Property Name: ASF Straw Walker Is Clogged
 	// Type: Unsigned
@@ -1986,7 +1986,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfStrawWalkerIsClogged *uint32 `protobuf:"varint,129,opt,name=asf_straw_walker_is_clogged,json=asfStrawWalkerIsClogged,proto3,oneof" json:"asf_straw_walker_is_clogged,omitempty"`
+	AsfStrawWalkerIsClogged *bool `protobuf:"varint,129,opt,name=asf_straw_walker_is_clogged,json=asfStrawWalkerIsClogged,proto3,oneof" json:"asf_straw_walker_is_clogged,omitempty"`
 	// Parameter ID: 1023
 	// Property Name: ASF Excessive Clearance Under The Threshing Drum
 	// Type: Unsigned
@@ -1996,7 +1996,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfExcessiveClearanceUnderTheThreshingDrum *uint32 `protobuf:"varint,130,opt,name=asf_excessive_clearance_under_the_threshing_drum,json=asfExcessiveClearanceUnderTheThreshingDrum,proto3,oneof" json:"asf_excessive_clearance_under_the_threshing_drum,omitempty"`
+	AsfExcessiveClearanceUnderTheThreshingDrum *bool `protobuf:"varint,130,opt,name=asf_excessive_clearance_under_the_threshing_drum,json=asfExcessiveClearanceUnderTheThreshingDrum,proto3,oneof" json:"asf_excessive_clearance_under_the_threshing_drum,omitempty"`
 	// Parameter ID: 1024
 	// Property Name: ASF Low Temperature Of Drive System Hydraulics Less Than 5 Grades
 	// Type: Unsigned
@@ -2006,7 +2006,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades *uint32 `protobuf:"varint,131,opt,name=asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,json=asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades,proto3,oneof" json:"asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,omitempty"`
+	AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades *bool `protobuf:"varint,131,opt,name=asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,json=asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades,proto3,oneof" json:"asf_low_temperature_of_drive_system_hydraulics_less_than5_grades,omitempty"`
 	// Parameter ID: 1025
 	// Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
 	// Type: Unsigned
@@ -2016,7 +2016,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades *uint32 `protobuf:"varint,132,opt,name=asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,json=asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades,proto3,oneof" json:"asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,omitempty"`
+	AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades *bool `protobuf:"varint,132,opt,name=asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,json=asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades,proto3,oneof" json:"asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades,omitempty"`
 	// Parameter ID: 1026
 	// Property Name: ASF Ear Auger Speed Below The Norm
 	// Type: Unsigned
@@ -2026,7 +2026,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfEarAugerSpeedBelowTheNorm *uint32 `protobuf:"varint,133,opt,name=asf_ear_auger_speed_below_the_norm,json=asfEarAugerSpeedBelowTheNorm,proto3,oneof" json:"asf_ear_auger_speed_below_the_norm,omitempty"`
+	AsfEarAugerSpeedBelowTheNorm *bool `protobuf:"varint,133,opt,name=asf_ear_auger_speed_below_the_norm,json=asfEarAugerSpeedBelowTheNorm,proto3,oneof" json:"asf_ear_auger_speed_below_the_norm,omitempty"`
 	// Parameter ID: 1027
 	// Property Name: ASF Grain Auger Speed Below The Norm
 	// Type: Unsigned
@@ -2036,7 +2036,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainAugerSpeedBelowTheNorm *uint32 `protobuf:"varint,134,opt,name=asf_grain_auger_speed_below_the_norm,json=asfGrainAugerSpeedBelowTheNorm,proto3,oneof" json:"asf_grain_auger_speed_below_the_norm,omitempty"`
+	AsfGrainAugerSpeedBelowTheNorm *bool `protobuf:"varint,134,opt,name=asf_grain_auger_speed_below_the_norm,json=asfGrainAugerSpeedBelowTheNorm,proto3,oneof" json:"asf_grain_auger_speed_below_the_norm,omitempty"`
 	// Parameter ID: 1028
 	// Property Name: ASF Straw Chooper Speed Below The Norm
 	// Type: Unsigned
@@ -2046,7 +2046,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfStrawChooperSpeedBelowTheNorm *uint32 `protobuf:"varint,135,opt,name=asf_straw_chooper_speed_below_the_norm,json=asfStrawChooperSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_chooper_speed_below_the_norm,omitempty"`
+	AsfStrawChooperSpeedBelowTheNorm *bool `protobuf:"varint,135,opt,name=asf_straw_chooper_speed_below_the_norm,json=asfStrawChooperSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_chooper_speed_below_the_norm,omitempty"`
 	// Parameter ID: 1029
 	// Property Name: ASF Straw Shaker Speed Below The Norm
 	// Type: Unsigned
@@ -2056,7 +2056,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfStrawShakerSpeedBelowTheNorm *uint32 `protobuf:"varint,136,opt,name=asf_straw_shaker_speed_below_the_norm,json=asfStrawShakerSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_shaker_speed_below_the_norm,omitempty"`
+	AsfStrawShakerSpeedBelowTheNorm *bool `protobuf:"varint,136,opt,name=asf_straw_shaker_speed_below_the_norm,json=asfStrawShakerSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_shaker_speed_below_the_norm,omitempty"`
 	// Parameter ID: 1030
 	// Property Name: ASF Feeder Speed Below The Norm
 	// Type: Unsigned
@@ -2066,7 +2066,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfFeederSpeedBelowTheNorm *uint32 `protobuf:"varint,137,opt,name=asf_feeder_speed_below_the_norm,json=asfFeederSpeedBelowTheNorm,proto3,oneof" json:"asf_feeder_speed_below_the_norm,omitempty"`
+	AsfFeederSpeedBelowTheNorm *bool `protobuf:"varint,137,opt,name=asf_feeder_speed_below_the_norm,json=asfFeederSpeedBelowTheNorm,proto3,oneof" json:"asf_feeder_speed_below_the_norm,omitempty"`
 	// Parameter ID: 1031
 	// Property Name: ASF Straw Chopper Switched On
 	// Type: Unsigned
@@ -2076,7 +2076,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfStrawChopperSwitchedOn *uint32 `protobuf:"varint,138,opt,name=asf_straw_chopper_switched_on,json=asfStrawChopperSwitchedOn,proto3,oneof" json:"asf_straw_chopper_switched_on,omitempty"`
+	AsfStrawChopperSwitchedOn *bool `protobuf:"varint,138,opt,name=asf_straw_chopper_switched_on,json=asfStrawChopperSwitchedOn,proto3,oneof" json:"asf_straw_chopper_switched_on,omitempty"`
 	// Parameter ID: 1032
 	// Property Name: ASF Corn Header Connected
 	// Type: Unsigned
@@ -2086,7 +2086,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfCornHeaderConnected *uint32 `protobuf:"varint,139,opt,name=asf_corn_header_connected,json=asfCornHeaderConnected,proto3,oneof" json:"asf_corn_header_connected,omitempty"`
+	AsfCornHeaderConnected *bool `protobuf:"varint,139,opt,name=asf_corn_header_connected,json=asfCornHeaderConnected,proto3,oneof" json:"asf_corn_header_connected,omitempty"`
 	// Parameter ID: 1033
 	// Property Name: ASF Grain Header Connected
 	// Type: Unsigned
@@ -2096,7 +2096,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfGrainHeaderConnected *uint32 `protobuf:"varint,140,opt,name=asf_grain_header_connected,json=asfGrainHeaderConnected,proto3,oneof" json:"asf_grain_header_connected,omitempty"`
+	AsfGrainHeaderConnected *bool `protobuf:"varint,140,opt,name=asf_grain_header_connected,json=asfGrainHeaderConnected,proto3,oneof" json:"asf_grain_header_connected,omitempty"`
 	// Parameter ID: 1034
 	// Property Name: ASF Feeder Reverse Switched On
 	// Type: Unsigned
@@ -2106,7 +2106,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfFeederReverseSwitchedOn *uint32 `protobuf:"varint,141,opt,name=asf_feeder_reverse_switched_on,json=asfFeederReverseSwitchedOn,proto3,oneof" json:"asf_feeder_reverse_switched_on,omitempty"`
+	AsfFeederReverseSwitchedOn *bool `protobuf:"varint,141,opt,name=asf_feeder_reverse_switched_on,json=asfFeederReverseSwitchedOn,proto3,oneof" json:"asf_feeder_reverse_switched_on,omitempty"`
 	// Parameter ID: 1035
 	// Property Name: ASF The Pressure Filter Of The Hydraulic Pump Is Clogged
 	// Type: Unsigned
@@ -2116,7 +2116,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	AsfThePressureFilterOfTheHydraulicPumpIsClogged *uint32 `protobuf:"varint,142,opt,name=asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged,json=asfThePressureFilterOfTheHydraulicPumpIsClogged,proto3,oneof" json:"asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged,omitempty"`
+	AsfThePressureFilterOfTheHydraulicPumpIsClogged *bool `protobuf:"varint,142,opt,name=asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged,json=asfThePressureFilterOfTheHydraulicPumpIsClogged,proto3,oneof" json:"asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged,omitempty"`
 	// Parameter ID: 1087
 	// Property Name: ASF Adapter Pressure Filter Sensor
 	// Type: Unsigned
@@ -2126,7 +2126,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfAdapterPressureFilterSensor *uint32 `protobuf:"varint,143,opt,name=asf_adapter_pressure_filter_sensor,json=asfAdapterPressureFilterSensor,proto3,oneof" json:"asf_adapter_pressure_filter_sensor,omitempty"`
+	AsfAdapterPressureFilterSensor *bool `protobuf:"varint,143,opt,name=asf_adapter_pressure_filter_sensor,json=asfAdapterPressureFilterSensor,proto3,oneof" json:"asf_adapter_pressure_filter_sensor,omitempty"`
 	// Parameter ID: 1088
 	// Property Name: ASF Service 2 Required Indicator
 	// Type: Unsigned
@@ -2136,7 +2136,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfService2RequiredIndicator *uint32 `protobuf:"varint,144,opt,name=asf_service2_required_indicator,json=asfService2RequiredIndicator,proto3,oneof" json:"asf_service2_required_indicator,omitempty"`
+	AsfService2RequiredIndicator *bool `protobuf:"varint,144,opt,name=asf_service2_required_indicator,json=asfService2RequiredIndicator,proto3,oneof" json:"asf_service2_required_indicator,omitempty"`
 	// Parameter ID: 1089
 	// Property Name: ASF Drain Filter Clogged Indicator
 	// Type: Unsigned
@@ -2146,7 +2146,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfDrainFilterCloggedIndicator *uint32 `protobuf:"varint,145,opt,name=asf_drain_filter_clogged_indicator,json=asfDrainFilterCloggedIndicator,proto3,oneof" json:"asf_drain_filter_clogged_indicator,omitempty"`
+	AsfDrainFilterCloggedIndicator *bool `protobuf:"varint,145,opt,name=asf_drain_filter_clogged_indicator,json=asfDrainFilterCloggedIndicator,proto3,oneof" json:"asf_drain_filter_clogged_indicator,omitempty"`
 	// Parameter ID: 1090
 	// Property Name: ASF Section 1 Spraying
 	// Type: Unsigned
@@ -2156,7 +2156,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection1Spraying *uint32 `protobuf:"varint,146,opt,name=asf_section1_spraying,json=asfSection1Spraying,proto3,oneof" json:"asf_section1_spraying,omitempty"`
+	AsfSection1Spraying *bool `protobuf:"varint,146,opt,name=asf_section1_spraying,json=asfSection1Spraying,proto3,oneof" json:"asf_section1_spraying,omitempty"`
 	// Parameter ID: 1091
 	// Property Name: ASF Section 2 Spraying
 	// Type: Unsigned
@@ -2166,7 +2166,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection2Spraying *uint32 `protobuf:"varint,147,opt,name=asf_section2_spraying,json=asfSection2Spraying,proto3,oneof" json:"asf_section2_spraying,omitempty"`
+	AsfSection2Spraying *bool `protobuf:"varint,147,opt,name=asf_section2_spraying,json=asfSection2Spraying,proto3,oneof" json:"asf_section2_spraying,omitempty"`
 	// Parameter ID: 1092
 	// Property Name: ASF Section 3 Spraying
 	// Type: Unsigned
@@ -2176,7 +2176,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection3Spraying *uint32 `protobuf:"varint,148,opt,name=asf_section3_spraying,json=asfSection3Spraying,proto3,oneof" json:"asf_section3_spraying,omitempty"`
+	AsfSection3Spraying *bool `protobuf:"varint,148,opt,name=asf_section3_spraying,json=asfSection3Spraying,proto3,oneof" json:"asf_section3_spraying,omitempty"`
 	// Parameter ID: 1093
 	// Property Name: ASF Section 4 Spraying
 	// Type: Unsigned
@@ -2186,7 +2186,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection4Spraying *uint32 `protobuf:"varint,149,opt,name=asf_section4_spraying,json=asfSection4Spraying,proto3,oneof" json:"asf_section4_spraying,omitempty"`
+	AsfSection4Spraying *bool `protobuf:"varint,149,opt,name=asf_section4_spraying,json=asfSection4Spraying,proto3,oneof" json:"asf_section4_spraying,omitempty"`
 	// Parameter ID: 1094
 	// Property Name: ASF Section 5 Spraying
 	// Type: Unsigned
@@ -2196,7 +2196,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection5Spraying *uint32 `protobuf:"varint,150,opt,name=asf_section5_spraying,json=asfSection5Spraying,proto3,oneof" json:"asf_section5_spraying,omitempty"`
+	AsfSection5Spraying *bool `protobuf:"varint,150,opt,name=asf_section5_spraying,json=asfSection5Spraying,proto3,oneof" json:"asf_section5_spraying,omitempty"`
 	// Parameter ID: 1095
 	// Property Name: ASF Section 6 Spraying
 	// Type: Unsigned
@@ -2206,7 +2206,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection6Spraying *uint32 `protobuf:"varint,151,opt,name=asf_section6_spraying,json=asfSection6Spraying,proto3,oneof" json:"asf_section6_spraying,omitempty"`
+	AsfSection6Spraying *bool `protobuf:"varint,151,opt,name=asf_section6_spraying,json=asfSection6Spraying,proto3,oneof" json:"asf_section6_spraying,omitempty"`
 	// Parameter ID: 1096
 	// Property Name: ASF Section 7 Spraying
 	// Type: Unsigned
@@ -2216,7 +2216,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection7Spraying *uint32 `protobuf:"varint,152,opt,name=asf_section7_spraying,json=asfSection7Spraying,proto3,oneof" json:"asf_section7_spraying,omitempty"`
+	AsfSection7Spraying *bool `protobuf:"varint,152,opt,name=asf_section7_spraying,json=asfSection7Spraying,proto3,oneof" json:"asf_section7_spraying,omitempty"`
 	// Parameter ID: 1097
 	// Property Name: ASF Section 8 Spraying
 	// Type: Unsigned
@@ -2226,7 +2226,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection8Spraying *uint32 `protobuf:"varint,153,opt,name=asf_section8_spraying,json=asfSection8Spraying,proto3,oneof" json:"asf_section8_spraying,omitempty"`
+	AsfSection8Spraying *bool `protobuf:"varint,153,opt,name=asf_section8_spraying,json=asfSection8Spraying,proto3,oneof" json:"asf_section8_spraying,omitempty"`
 	// Parameter ID: 1098
 	// Property Name: ASF Section 9 Spraying
 	// Type: Unsigned
@@ -2236,7 +2236,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	AsfSection9Spraying *uint32 `protobuf:"varint,154,opt,name=asf_section9_spraying,json=asfSection9Spraying,proto3,oneof" json:"asf_section9_spraying,omitempty"`
+	AsfSection9Spraying *bool `protobuf:"varint,154,opt,name=asf_section9_spraying,json=asfSection9Spraying,proto3,oneof" json:"asf_section9_spraying,omitempty"`
 	// Parameter ID: 1036
 	// Property Name: USF Spreading
 	// Type: Unsigned
@@ -2246,7 +2246,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfSpreading *uint32 `protobuf:"varint,155,opt,name=usf_spreading,json=usfSpreading,proto3,oneof" json:"usf_spreading,omitempty"`
+	UsfSpreading *bool `protobuf:"varint,155,opt,name=usf_spreading,json=usfSpreading,proto3,oneof" json:"usf_spreading,omitempty"`
 	// Parameter ID: 1037
 	// Property Name: USF Pouring Chemicals
 	// Type: Unsigned
@@ -2256,7 +2256,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfPouringChemicals *uint32 `protobuf:"varint,156,opt,name=usf_pouring_chemicals,json=usfPouringChemicals,proto3,oneof" json:"usf_pouring_chemicals,omitempty"`
+	UsfPouringChemicals *bool `protobuf:"varint,156,opt,name=usf_pouring_chemicals,json=usfPouringChemicals,proto3,oneof" json:"usf_pouring_chemicals,omitempty"`
 	// Parameter ID: 1038
 	// Property Name: USF Conveyor Belt
 	// Type: Unsigned
@@ -2266,7 +2266,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfConveyorBelt *uint32 `protobuf:"varint,157,opt,name=usf_conveyor_belt,json=usfConveyorBelt,proto3,oneof" json:"usf_conveyor_belt,omitempty"`
+	UsfConveyorBelt *bool `protobuf:"varint,157,opt,name=usf_conveyor_belt,json=usfConveyorBelt,proto3,oneof" json:"usf_conveyor_belt,omitempty"`
 	// Parameter ID: 1039
 	// Property Name: USF Salt Spreader's Drive Wheel
 	// Type: Unsigned
@@ -2276,7 +2276,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfSaltSpreadersDriveWheel *uint32 `protobuf:"varint,158,opt,name=usf_salt_spreaders_drive_wheel,json=usfSaltSpreadersDriveWheel,proto3,oneof" json:"usf_salt_spreaders_drive_wheel,omitempty"`
+	UsfSaltSpreadersDriveWheel *bool `protobuf:"varint,158,opt,name=usf_salt_spreaders_drive_wheel,json=usfSaltSpreadersDriveWheel,proto3,oneof" json:"usf_salt_spreaders_drive_wheel,omitempty"`
 	// Parameter ID: 1040
 	// Property Name: USF Brushes
 	// Type: Unsigned
@@ -2286,7 +2286,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfBrushes *uint32 `protobuf:"varint,159,opt,name=usf_brushes,json=usfBrushes,proto3,oneof" json:"usf_brushes,omitempty"`
+	UsfBrushes *bool `protobuf:"varint,159,opt,name=usf_brushes,json=usfBrushes,proto3,oneof" json:"usf_brushes,omitempty"`
 	// Parameter ID: 1041
 	// Property Name: USF Vacuum Cleaner
 	// Type: Unsigned
@@ -2296,7 +2296,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfVacuumCleaner *uint32 `protobuf:"varint,160,opt,name=usf_vacuum_cleaner,json=usfVacuumCleaner,proto3,oneof" json:"usf_vacuum_cleaner,omitempty"`
+	UsfVacuumCleaner *bool `protobuf:"varint,160,opt,name=usf_vacuum_cleaner,json=usfVacuumCleaner,proto3,oneof" json:"usf_vacuum_cleaner,omitempty"`
 	// Parameter ID: 1042
 	// Property Name: USF Water Supply
 	// Type: Unsigned
@@ -2306,7 +2306,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfWaterSupply *uint32 `protobuf:"varint,161,opt,name=usf_water_supply,json=usfWaterSupply,proto3,oneof" json:"usf_water_supply,omitempty"`
+	UsfWaterSupply *bool `protobuf:"varint,161,opt,name=usf_water_supply,json=usfWaterSupply,proto3,oneof" json:"usf_water_supply,omitempty"`
 	// Parameter ID: 1044
 	// Property Name: USF Liquid pump
 	// Type: Unsigned
@@ -2316,7 +2316,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfLiquidPump *uint32 `protobuf:"varint,163,opt,name=usf_liquid_pump,json=usfLiquidPump,proto3,oneof" json:"usf_liquid_pump,omitempty"`
+	UsfLiquidPump *bool `protobuf:"varint,163,opt,name=usf_liquid_pump,json=usfLiquidPump,proto3,oneof" json:"usf_liquid_pump,omitempty"`
 	// Parameter ID: 1045
 	// Property Name: USF Unloading From The Hopper
 	// Type: Unsigned
@@ -2326,7 +2326,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfUnloadingFromTheHopper *uint32 `protobuf:"varint,164,opt,name=usf_unloading_from_the_hopper,json=usfUnloadingFromTheHopper,proto3,oneof" json:"usf_unloading_from_the_hopper,omitempty"`
+	UsfUnloadingFromTheHopper *bool `protobuf:"varint,164,opt,name=usf_unloading_from_the_hopper,json=usfUnloadingFromTheHopper,proto3,oneof" json:"usf_unloading_from_the_hopper,omitempty"`
 	// Parameter ID: 1046
 	// Property Name: USF Low Salt (Sand) Level In Container Indicator
 	// Type: Unsigned
@@ -2336,7 +2336,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfLowSaltSandLevelInContainerIndicator *uint32 `protobuf:"varint,165,opt,name=usf_low_salt_sand_level_in_container_indicator,json=usfLowSaltSandLevelInContainerIndicator,proto3,oneof" json:"usf_low_salt_sand_level_in_container_indicator,omitempty"`
+	UsfLowSaltSandLevelInContainerIndicator *bool `protobuf:"varint,165,opt,name=usf_low_salt_sand_level_in_container_indicator,json=usfLowSaltSandLevelInContainerIndicator,proto3,oneof" json:"usf_low_salt_sand_level_in_container_indicator,omitempty"`
 	// Parameter ID: 1047
 	// Property Name: USF Low Water Level in Container Indicator
 	// Type: Unsigned
@@ -2346,7 +2346,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfLowWaterLevelInContainerIndicator *uint32 `protobuf:"varint,166,opt,name=usf_low_water_level_in_container_indicator,json=usfLowWaterLevelInContainerIndicator,proto3,oneof" json:"usf_low_water_level_in_container_indicator,omitempty"`
+	UsfLowWaterLevelInContainerIndicator *bool `protobuf:"varint,166,opt,name=usf_low_water_level_in_container_indicator,json=usfLowWaterLevelInContainerIndicator,proto3,oneof" json:"usf_low_water_level_in_container_indicator,omitempty"`
 	// Parameter ID: 1048
 	// Property Name: USF Chemicals
 	// Type: Unsigned
@@ -2356,7 +2356,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfChemicals *uint32 `protobuf:"varint,167,opt,name=usf_chemicals,json=usfChemicals,proto3,oneof" json:"usf_chemicals,omitempty"`
+	UsfChemicals *bool `protobuf:"varint,167,opt,name=usf_chemicals,json=usfChemicals,proto3,oneof" json:"usf_chemicals,omitempty"`
 	// Parameter ID: 1049
 	// Property Name: USF Compressor
 	// Type: Unsigned
@@ -2366,7 +2366,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfCompressor *uint32 `protobuf:"varint,168,opt,name=usf_compressor,json=usfCompressor,proto3,oneof" json:"usf_compressor,omitempty"`
+	UsfCompressor *bool `protobuf:"varint,168,opt,name=usf_compressor,json=usfCompressor,proto3,oneof" json:"usf_compressor,omitempty"`
 	// Parameter ID: 1050
 	// Property Name: USF Water Valve Is Opened
 	// Type: Unsigned
@@ -2376,7 +2376,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfWaterValveIsOpened *uint32 `protobuf:"varint,169,opt,name=usf_water_valve_is_opened,json=usfWaterValveIsOpened,proto3,oneof" json:"usf_water_valve_is_opened,omitempty"`
+	UsfWaterValveIsOpened *bool `protobuf:"varint,169,opt,name=usf_water_valve_is_opened,json=usfWaterValveIsOpened,proto3,oneof" json:"usf_water_valve_is_opened,omitempty"`
 	// Parameter ID: 1051
 	// Property Name: USF Cabin Moved Up Status Active
 	// Type: Unsigned
@@ -2386,7 +2386,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfCabinMovedUpStatusActive *uint32 `protobuf:"varint,170,opt,name=usf_cabin_moved_up_status_active,json=usfCabinMovedUpStatusActive,proto3,oneof" json:"usf_cabin_moved_up_status_active,omitempty"`
+	UsfCabinMovedUpStatusActive *bool `protobuf:"varint,170,opt,name=usf_cabin_moved_up_status_active,json=usfCabinMovedUpStatusActive,proto3,oneof" json:"usf_cabin_moved_up_status_active,omitempty"`
 	// Parameter ID: 1052
 	// Property Name: USF Cabin Moved Down Status Active
 	// Type: Unsigned
@@ -2396,7 +2396,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfCabinMovedDownStatusActive *uint32 `protobuf:"varint,171,opt,name=usf_cabin_moved_down_status_active,json=usfCabinMovedDownStatusActive,proto3,oneof" json:"usf_cabin_moved_down_status_active,omitempty"`
+	UsfCabinMovedDownStatusActive *bool `protobuf:"varint,171,opt,name=usf_cabin_moved_down_status_active,json=usfCabinMovedDownStatusActive,proto3,oneof" json:"usf_cabin_moved_down_status_active,omitempty"`
 	// Parameter ID: 1099
 	// Property Name: USF Hydraulics Work Not Permitted
 	// Type: Unsigned
@@ -2406,7 +2406,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - Off, 1 - On
-	UsfHydraulicsWorkNotPermitted *uint32 `protobuf:"varint,172,opt,name=usf_hydraulics_work_not_permitted,json=usfHydraulicsWorkNotPermitted,proto3,oneof" json:"usf_hydraulics_work_not_permitted,omitempty"`
+	UsfHydraulicsWorkNotPermitted *bool `protobuf:"varint,172,opt,name=usf_hydraulics_work_not_permitted,json=usfHydraulicsWorkNotPermitted,proto3,oneof" json:"usf_hydraulics_work_not_permitted,omitempty"`
 	// Parameter ID: 1053
 	// Property Name: CiSF Section 1 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2416,7 +2416,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection1PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,173,opt,name=cisf_section1_presence_of_fluid_in_the_downpipe,json=cisfSection1PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section1_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection1PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,173,opt,name=cisf_section1_presence_of_fluid_in_the_downpipe,json=cisfSection1PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section1_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1054
 	// Property Name: CiSF Section 1 Filled
 	// Type: Unsigned
@@ -2426,7 +2426,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection1Filled *uint32 `protobuf:"varint,174,opt,name=cisf_section1_filled,json=cisfSection1Filled,proto3,oneof" json:"cisf_section1_filled,omitempty"`
+	CisfSection1Filled *bool `protobuf:"varint,174,opt,name=cisf_section1_filled,json=cisfSection1Filled,proto3,oneof" json:"cisf_section1_filled,omitempty"`
 	// Parameter ID: 1055
 	// Property Name: CiSF Section 1 Overfilled
 	// Type: Unsigned
@@ -2436,7 +2436,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection1Overfilled *uint32 `protobuf:"varint,175,opt,name=cisf_section1_overfilled,json=cisfSection1Overfilled,proto3,oneof" json:"cisf_section1_overfilled,omitempty"`
+	CisfSection1Overfilled *bool `protobuf:"varint,175,opt,name=cisf_section1_overfilled,json=cisfSection1Overfilled,proto3,oneof" json:"cisf_section1_overfilled,omitempty"`
 	// Parameter ID: 1056
 	// Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2446,7 +2446,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection2PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,176,opt,name=cisf_section2_presence_of_fluid_in_the_downpipe,json=cisfSection2PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section2_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection2PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,176,opt,name=cisf_section2_presence_of_fluid_in_the_downpipe,json=cisfSection2PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section2_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1057
 	// Property Name: CiSF Section 2 Filled
 	// Type: Unsigned
@@ -2456,7 +2456,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection2Filled *uint32 `protobuf:"varint,177,opt,name=cisf_section2_filled,json=cisfSection2Filled,proto3,oneof" json:"cisf_section2_filled,omitempty"`
+	CisfSection2Filled *bool `protobuf:"varint,177,opt,name=cisf_section2_filled,json=cisfSection2Filled,proto3,oneof" json:"cisf_section2_filled,omitempty"`
 	// Parameter ID: 1058
 	// Property Name: CiSF Section 2 Overfilled
 	// Type: Unsigned
@@ -2466,7 +2466,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection2Overfilled *uint32 `protobuf:"varint,178,opt,name=cisf_section2_overfilled,json=cisfSection2Overfilled,proto3,oneof" json:"cisf_section2_overfilled,omitempty"`
+	CisfSection2Overfilled *bool `protobuf:"varint,178,opt,name=cisf_section2_overfilled,json=cisfSection2Overfilled,proto3,oneof" json:"cisf_section2_overfilled,omitempty"`
 	// Parameter ID: 1059
 	// Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2476,7 +2476,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection3PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,179,opt,name=cisf_section3_presence_of_fluid_in_the_downpipe,json=cisfSection3PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section3_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection3PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,179,opt,name=cisf_section3_presence_of_fluid_in_the_downpipe,json=cisfSection3PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section3_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1060
 	// Property Name: CiSF Section 3 Filled
 	// Type: Unsigned
@@ -2486,7 +2486,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection3Filled *uint32 `protobuf:"varint,180,opt,name=cisf_section3_filled,json=cisfSection3Filled,proto3,oneof" json:"cisf_section3_filled,omitempty"`
+	CisfSection3Filled *bool `protobuf:"varint,180,opt,name=cisf_section3_filled,json=cisfSection3Filled,proto3,oneof" json:"cisf_section3_filled,omitempty"`
 	// Parameter ID: 1061
 	// Property Name: CiSF Section 3 Overfilled
 	// Type: Unsigned
@@ -2496,7 +2496,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection3Overfilled *uint32 `protobuf:"varint,181,opt,name=cisf_section3_overfilled,json=cisfSection3Overfilled,proto3,oneof" json:"cisf_section3_overfilled,omitempty"`
+	CisfSection3Overfilled *bool `protobuf:"varint,181,opt,name=cisf_section3_overfilled,json=cisfSection3Overfilled,proto3,oneof" json:"cisf_section3_overfilled,omitempty"`
 	// Parameter ID: 1062
 	// Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2506,7 +2506,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection4PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,182,opt,name=cisf_section4_presence_of_fluid_in_the_downpipe,json=cisfSection4PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section4_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection4PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,182,opt,name=cisf_section4_presence_of_fluid_in_the_downpipe,json=cisfSection4PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section4_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1063
 	// Property Name: CiSF Section 4 Filled
 	// Type: Unsigned
@@ -2516,7 +2516,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection4Filled *uint32 `protobuf:"varint,183,opt,name=cisf_section4_filled,json=cisfSection4Filled,proto3,oneof" json:"cisf_section4_filled,omitempty"`
+	CisfSection4Filled *bool `protobuf:"varint,183,opt,name=cisf_section4_filled,json=cisfSection4Filled,proto3,oneof" json:"cisf_section4_filled,omitempty"`
 	// Parameter ID: 1064
 	// Property Name: CiSF Section 4 Overfilled
 	// Type: Unsigned
@@ -2526,7 +2526,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection4Overfilled *uint32 `protobuf:"varint,184,opt,name=cisf_section4_overfilled,json=cisfSection4Overfilled,proto3,oneof" json:"cisf_section4_overfilled,omitempty"`
+	CisfSection4Overfilled *bool `protobuf:"varint,184,opt,name=cisf_section4_overfilled,json=cisfSection4Overfilled,proto3,oneof" json:"cisf_section4_overfilled,omitempty"`
 	// Parameter ID: 1065
 	// Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2536,7 +2536,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection5PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,185,opt,name=cisf_section5_presence_of_fluid_in_the_downpipe,json=cisfSection5PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section5_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection5PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,185,opt,name=cisf_section5_presence_of_fluid_in_the_downpipe,json=cisfSection5PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section5_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1066
 	// Property Name: CiSF Section 5 Filled
 	// Type: Unsigned
@@ -2546,7 +2546,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection5Filled *uint32 `protobuf:"varint,186,opt,name=cisf_section5_filled,json=cisfSection5Filled,proto3,oneof" json:"cisf_section5_filled,omitempty"`
+	CisfSection5Filled *bool `protobuf:"varint,186,opt,name=cisf_section5_filled,json=cisfSection5Filled,proto3,oneof" json:"cisf_section5_filled,omitempty"`
 	// Parameter ID: 1067
 	// Property Name: CiSF Section 5 Overfilled
 	// Type: Unsigned
@@ -2556,7 +2556,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection5Overfilled *uint32 `protobuf:"varint,187,opt,name=cisf_section5_overfilled,json=cisfSection5Overfilled,proto3,oneof" json:"cisf_section5_overfilled,omitempty"`
+	CisfSection5Overfilled *bool `protobuf:"varint,187,opt,name=cisf_section5_overfilled,json=cisfSection5Overfilled,proto3,oneof" json:"cisf_section5_overfilled,omitempty"`
 	// Parameter ID: 1068
 	// Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2566,7 +2566,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection6PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,188,opt,name=cisf_section6_presence_of_fluid_in_the_downpipe,json=cisfSection6PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section6_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection6PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,188,opt,name=cisf_section6_presence_of_fluid_in_the_downpipe,json=cisfSection6PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section6_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1069
 	// Property Name: CiSF Section 6 Filled
 	// Type: Unsigned
@@ -2576,7 +2576,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection6Filled *uint32 `protobuf:"varint,189,opt,name=cisf_section6_filled,json=cisfSection6Filled,proto3,oneof" json:"cisf_section6_filled,omitempty"`
+	CisfSection6Filled *bool `protobuf:"varint,189,opt,name=cisf_section6_filled,json=cisfSection6Filled,proto3,oneof" json:"cisf_section6_filled,omitempty"`
 	// Parameter ID: 1070
 	// Property Name: CiSF Section 6 Overfilled
 	// Type: Unsigned
@@ -2586,7 +2586,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection6Overfilled *uint32 `protobuf:"varint,190,opt,name=cisf_section6_overfilled,json=cisfSection6Overfilled,proto3,oneof" json:"cisf_section6_overfilled,omitempty"`
+	CisfSection6Overfilled *bool `protobuf:"varint,190,opt,name=cisf_section6_overfilled,json=cisfSection6Overfilled,proto3,oneof" json:"cisf_section6_overfilled,omitempty"`
 	// Parameter ID: 1071
 	// Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2596,7 +2596,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection7PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,191,opt,name=cisf_section7_presence_of_fluid_in_the_downpipe,json=cisfSection7PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section7_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection7PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,191,opt,name=cisf_section7_presence_of_fluid_in_the_downpipe,json=cisfSection7PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section7_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1072
 	// Property Name: CiSF Section 7 Filled
 	// Type: Unsigned
@@ -2606,7 +2606,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection7Filled *uint32 `protobuf:"varint,192,opt,name=cisf_section7_filled,json=cisfSection7Filled,proto3,oneof" json:"cisf_section7_filled,omitempty"`
+	CisfSection7Filled *bool `protobuf:"varint,192,opt,name=cisf_section7_filled,json=cisfSection7Filled,proto3,oneof" json:"cisf_section7_filled,omitempty"`
 	// Parameter ID: 1073
 	// Property Name: CiSF Section 7 Overfilled
 	// Type: Unsigned
@@ -2616,7 +2616,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection7Overfilled *uint32 `protobuf:"varint,193,opt,name=cisf_section7_overfilled,json=cisfSection7Overfilled,proto3,oneof" json:"cisf_section7_overfilled,omitempty"`
+	CisfSection7Overfilled *bool `protobuf:"varint,193,opt,name=cisf_section7_overfilled,json=cisfSection7Overfilled,proto3,oneof" json:"cisf_section7_overfilled,omitempty"`
 	// Parameter ID: 1074
 	// Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
 	// Type: Unsigned
@@ -2626,7 +2626,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No presence, 1 - Present
-	CisfSection8PresenceOfFluidInTheDownpipe *uint32 `protobuf:"varint,194,opt,name=cisf_section8_presence_of_fluid_in_the_downpipe,json=cisfSection8PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section8_presence_of_fluid_in_the_downpipe,omitempty"`
+	CisfSection8PresenceOfFluidInTheDownpipe *bool `protobuf:"varint,194,opt,name=cisf_section8_presence_of_fluid_in_the_downpipe,json=cisfSection8PresenceOfFluidInTheDownpipe,proto3,oneof" json:"cisf_section8_presence_of_fluid_in_the_downpipe,omitempty"`
 	// Parameter ID: 1075
 	// Property Name: CiSF Section 8 Filled
 	// Type: Unsigned
@@ -2636,7 +2636,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection8Filled *uint32 `protobuf:"varint,195,opt,name=cisf_section8_filled,json=cisfSection8Filled,proto3,oneof" json:"cisf_section8_filled,omitempty"`
+	CisfSection8Filled *bool `protobuf:"varint,195,opt,name=cisf_section8_filled,json=cisfSection8Filled,proto3,oneof" json:"cisf_section8_filled,omitempty"`
 	// Parameter ID: 1076
 	// Property Name: CiSF Section 8 Overfilled
 	// Type: Unsigned
@@ -2646,7 +2646,7 @@ type Compact struct {
 	// Multiplier: -
 	// Units: -
 	// Values: 0 - No, 1 - Yes
-	CisfSection8Overfilled *uint32 `protobuf:"varint,196,opt,name=cisf_section8_overfilled,json=cisfSection8Overfilled,proto3,oneof" json:"cisf_section8_overfilled,omitempty"`
+	CisfSection8Overfilled *bool `protobuf:"varint,196,opt,name=cisf_section8_overfilled,json=cisfSection8Overfilled,proto3,oneof" json:"cisf_section8_overfilled,omitempty"`
 	// Parameter ID: 400
 	// Property Name: Distance to Next Service
 	// Type: Unsigned
@@ -4257,732 +4257,732 @@ func (x *Compact) GetEyeMagnetCount4() uint32 {
 	return 0
 }
 
-func (x *Compact) GetIsfCloggedBrakeSystemFilterIndicator() uint32 {
+func (x *Compact) GetIsfCloggedBrakeSystemFilterIndicator() bool {
 	if x != nil && x.IsfCloggedBrakeSystemFilterIndicator != nil {
 		return *x.IsfCloggedBrakeSystemFilterIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfLowWasherFluidLevelIndicator() uint32 {
+func (x *Compact) GetIsfLowWasherFluidLevelIndicator() bool {
 	if x != nil && x.IsfLowWasherFluidLevelIndicator != nil {
 		return *x.IsfLowWasherFluidLevelIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfLowAdblueLevelIndicator() uint32 {
+func (x *Compact) GetIsfLowAdblueLevelIndicator() bool {
 	if x != nil && x.IsfLowAdblueLevelIndicator != nil {
 		return *x.IsfLowAdblueLevelIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfLowTrailerTyrePressureIndicator() uint32 {
+func (x *Compact) GetIsfLowTrailerTyrePressureIndicator() bool {
 	if x != nil && x.IsfLowTrailerTyrePressureIndicator != nil {
 		return *x.IsfLowTrailerTyrePressureIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfWearOfTrailerBrakeLiningIndicator() uint32 {
+func (x *Compact) GetIsfWearOfTrailerBrakeLiningIndicator() bool {
 	if x != nil && x.IsfWearOfTrailerBrakeLiningIndicator != nil {
 		return *x.IsfWearOfTrailerBrakeLiningIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfHighTrailerBrakeTemperatureIndicator() uint32 {
+func (x *Compact) GetIsfHighTrailerBrakeTemperatureIndicator() bool {
 	if x != nil && x.IsfHighTrailerBrakeTemperatureIndicator != nil {
 		return *x.IsfHighTrailerBrakeTemperatureIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfIncorrectTrailerPneumaticSupplyIndicator() uint32 {
+func (x *Compact) GetIsfIncorrectTrailerPneumaticSupplyIndicator() bool {
 	if x != nil && x.IsfIncorrectTrailerPneumaticSupplyIndicator != nil {
 		return *x.IsfIncorrectTrailerPneumaticSupplyIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetIsfLowCngLevelIndicator() uint32 {
+func (x *Compact) GetIsfLowCngLevelIndicator() bool {
 	if x != nil && x.IsfLowCngLevelIndicator != nil {
 		return *x.IsfLowCngLevelIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRightJoystickMovedRightActive() uint32 {
+func (x *Compact) GetAsfRightJoystickMovedRightActive() bool {
 	if x != nil && x.AsfRightJoystickMovedRightActive != nil {
 		return *x.AsfRightJoystickMovedRightActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRightJoystickMovedLeftActive() uint32 {
+func (x *Compact) GetAsfRightJoystickMovedLeftActive() bool {
 	if x != nil && x.AsfRightJoystickMovedLeftActive != nil {
 		return *x.AsfRightJoystickMovedLeftActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRightJoystickMovedForwardActive() uint32 {
+func (x *Compact) GetAsfRightJoystickMovedForwardActive() bool {
 	if x != nil && x.AsfRightJoystickMovedForwardActive != nil {
 		return *x.AsfRightJoystickMovedForwardActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRightJoystickMovedBackActive() uint32 {
+func (x *Compact) GetAsfRightJoystickMovedBackActive() bool {
 	if x != nil && x.AsfRightJoystickMovedBackActive != nil {
 		return *x.AsfRightJoystickMovedBackActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfLeftJoystickMovedRightActive() uint32 {
+func (x *Compact) GetAsfLeftJoystickMovedRightActive() bool {
 	if x != nil && x.AsfLeftJoystickMovedRightActive != nil {
 		return *x.AsfLeftJoystickMovedRightActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfLeftJoystickMovedLeftActive() uint32 {
+func (x *Compact) GetAsfLeftJoystickMovedLeftActive() bool {
 	if x != nil && x.AsfLeftJoystickMovedLeftActive != nil {
 		return *x.AsfLeftJoystickMovedLeftActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfLeftJoystickMovedForwardActive() uint32 {
+func (x *Compact) GetAsfLeftJoystickMovedForwardActive() bool {
 	if x != nil && x.AsfLeftJoystickMovedForwardActive != nil {
 		return *x.AsfLeftJoystickMovedForwardActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfLeftJoystickMovedBackActive() uint32 {
+func (x *Compact) GetAsfLeftJoystickMovedBackActive() bool {
 	if x != nil && x.AsfLeftJoystickMovedBackActive != nil {
 		return *x.AsfLeftJoystickMovedBackActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFirstRearHydraulic() uint32 {
+func (x *Compact) GetAsfFirstRearHydraulic() bool {
 	if x != nil && x.AsfFirstRearHydraulic != nil {
 		return *x.AsfFirstRearHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSecondRearHydraulic() uint32 {
+func (x *Compact) GetAsfSecondRearHydraulic() bool {
 	if x != nil && x.AsfSecondRearHydraulic != nil {
 		return *x.AsfSecondRearHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfThirdRearHydraulic() uint32 {
+func (x *Compact) GetAsfThirdRearHydraulic() bool {
 	if x != nil && x.AsfThirdRearHydraulic != nil {
 		return *x.AsfThirdRearHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFourthRearHydraulic() uint32 {
+func (x *Compact) GetAsfFourthRearHydraulic() bool {
 	if x != nil && x.AsfFourthRearHydraulic != nil {
 		return *x.AsfFourthRearHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFirstFrontHydraulic() uint32 {
+func (x *Compact) GetAsfFirstFrontHydraulic() bool {
 	if x != nil && x.AsfFirstFrontHydraulic != nil {
 		return *x.AsfFirstFrontHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSecondFrontHydraulic() uint32 {
+func (x *Compact) GetAsfSecondFrontHydraulic() bool {
 	if x != nil && x.AsfSecondFrontHydraulic != nil {
 		return *x.AsfSecondFrontHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfThirdFrontHydraulic() uint32 {
+func (x *Compact) GetAsfThirdFrontHydraulic() bool {
 	if x != nil && x.AsfThirdFrontHydraulic != nil {
 		return *x.AsfThirdFrontHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFourthFrontHydraulic() uint32 {
+func (x *Compact) GetAsfFourthFrontHydraulic() bool {
 	if x != nil && x.AsfFourthFrontHydraulic != nil {
 		return *x.AsfFourthFrontHydraulic
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFrontThreePointHitch() uint32 {
+func (x *Compact) GetAsfFrontThreePointHitch() bool {
 	if x != nil && x.AsfFrontThreePointHitch != nil {
 		return *x.AsfFrontThreePointHitch
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRearThreePointHitch() uint32 {
+func (x *Compact) GetAsfRearThreePointHitch() bool {
 	if x != nil && x.AsfRearThreePointHitch != nil {
 		return *x.AsfRearThreePointHitch
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFrontPowerTakeOff() uint32 {
+func (x *Compact) GetAsfFrontPowerTakeOff() bool {
 	if x != nil && x.AsfFrontPowerTakeOff != nil {
 		return *x.AsfFrontPowerTakeOff
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfRearPowerTakeOff() uint32 {
+func (x *Compact) GetAsfRearPowerTakeOff() bool {
 	if x != nil && x.AsfRearPowerTakeOff != nil {
 		return *x.AsfRearPowerTakeOff
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfMowingActive() uint32 {
+func (x *Compact) GetAsfMowingActive() bool {
 	if x != nil && x.AsfMowingActive != nil {
 		return *x.AsfMowingActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfThreshingActive() uint32 {
+func (x *Compact) GetAsfThreshingActive() bool {
 	if x != nil && x.AsfThreshingActive != nil {
 		return *x.AsfThreshingActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainReleaseFromHopper() uint32 {
+func (x *Compact) GetAsfGrainReleaseFromHopper() bool {
 	if x != nil && x.AsfGrainReleaseFromHopper != nil {
 		return *x.AsfGrainReleaseFromHopper
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainTankIs100Full() uint32 {
+func (x *Compact) GetAsfGrainTankIs100Full() bool {
 	if x != nil && x.AsfGrainTankIs100Full != nil {
 		return *x.AsfGrainTankIs100Full
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainTankIs70Full() uint32 {
+func (x *Compact) GetAsfGrainTankIs70Full() bool {
 	if x != nil && x.AsfGrainTankIs70Full != nil {
 		return *x.AsfGrainTankIs70Full
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainTankIsOpened() uint32 {
+func (x *Compact) GetAsfGrainTankIsOpened() bool {
 	if x != nil && x.AsfGrainTankIsOpened != nil {
 		return *x.AsfGrainTankIsOpened
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfUnloaderDrive() uint32 {
+func (x *Compact) GetAsfUnloaderDrive() bool {
 	if x != nil && x.AsfUnloaderDrive != nil {
 		return *x.AsfUnloaderDrive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfCleaningFanControlTurnedOff() uint32 {
+func (x *Compact) GetAsfCleaningFanControlTurnedOff() bool {
 	if x != nil && x.AsfCleaningFanControlTurnedOff != nil {
 		return *x.AsfCleaningFanControlTurnedOff
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfThreshingDrumControlTurnedOff() uint32 {
+func (x *Compact) GetAsfThreshingDrumControlTurnedOff() bool {
 	if x != nil && x.AsfThreshingDrumControlTurnedOff != nil {
 		return *x.AsfThreshingDrumControlTurnedOff
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfStrawWalkerIsClogged() uint32 {
+func (x *Compact) GetAsfStrawWalkerIsClogged() bool {
 	if x != nil && x.AsfStrawWalkerIsClogged != nil {
 		return *x.AsfStrawWalkerIsClogged
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfExcessiveClearanceUnderTheThreshingDrum() uint32 {
+func (x *Compact) GetAsfExcessiveClearanceUnderTheThreshingDrum() bool {
 	if x != nil && x.AsfExcessiveClearanceUnderTheThreshingDrum != nil {
 		return *x.AsfExcessiveClearanceUnderTheThreshingDrum
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades() uint32 {
+func (x *Compact) GetAsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades() bool {
 	if x != nil && x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades != nil {
 		return *x.AsfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades() uint32 {
+func (x *Compact) GetAsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades() bool {
 	if x != nil && x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades != nil {
 		return *x.AsfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfEarAugerSpeedBelowTheNorm() uint32 {
+func (x *Compact) GetAsfEarAugerSpeedBelowTheNorm() bool {
 	if x != nil && x.AsfEarAugerSpeedBelowTheNorm != nil {
 		return *x.AsfEarAugerSpeedBelowTheNorm
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainAugerSpeedBelowTheNorm() uint32 {
+func (x *Compact) GetAsfGrainAugerSpeedBelowTheNorm() bool {
 	if x != nil && x.AsfGrainAugerSpeedBelowTheNorm != nil {
 		return *x.AsfGrainAugerSpeedBelowTheNorm
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfStrawChooperSpeedBelowTheNorm() uint32 {
+func (x *Compact) GetAsfStrawChooperSpeedBelowTheNorm() bool {
 	if x != nil && x.AsfStrawChooperSpeedBelowTheNorm != nil {
 		return *x.AsfStrawChooperSpeedBelowTheNorm
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfStrawShakerSpeedBelowTheNorm() uint32 {
+func (x *Compact) GetAsfStrawShakerSpeedBelowTheNorm() bool {
 	if x != nil && x.AsfStrawShakerSpeedBelowTheNorm != nil {
 		return *x.AsfStrawShakerSpeedBelowTheNorm
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFeederSpeedBelowTheNorm() uint32 {
+func (x *Compact) GetAsfFeederSpeedBelowTheNorm() bool {
 	if x != nil && x.AsfFeederSpeedBelowTheNorm != nil {
 		return *x.AsfFeederSpeedBelowTheNorm
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfStrawChopperSwitchedOn() uint32 {
+func (x *Compact) GetAsfStrawChopperSwitchedOn() bool {
 	if x != nil && x.AsfStrawChopperSwitchedOn != nil {
 		return *x.AsfStrawChopperSwitchedOn
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfCornHeaderConnected() uint32 {
+func (x *Compact) GetAsfCornHeaderConnected() bool {
 	if x != nil && x.AsfCornHeaderConnected != nil {
 		return *x.AsfCornHeaderConnected
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfGrainHeaderConnected() uint32 {
+func (x *Compact) GetAsfGrainHeaderConnected() bool {
 	if x != nil && x.AsfGrainHeaderConnected != nil {
 		return *x.AsfGrainHeaderConnected
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfFeederReverseSwitchedOn() uint32 {
+func (x *Compact) GetAsfFeederReverseSwitchedOn() bool {
 	if x != nil && x.AsfFeederReverseSwitchedOn != nil {
 		return *x.AsfFeederReverseSwitchedOn
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfThePressureFilterOfTheHydraulicPumpIsClogged() uint32 {
+func (x *Compact) GetAsfThePressureFilterOfTheHydraulicPumpIsClogged() bool {
 	if x != nil && x.AsfThePressureFilterOfTheHydraulicPumpIsClogged != nil {
 		return *x.AsfThePressureFilterOfTheHydraulicPumpIsClogged
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfAdapterPressureFilterSensor() uint32 {
+func (x *Compact) GetAsfAdapterPressureFilterSensor() bool {
 	if x != nil && x.AsfAdapterPressureFilterSensor != nil {
 		return *x.AsfAdapterPressureFilterSensor
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfService2RequiredIndicator() uint32 {
+func (x *Compact) GetAsfService2RequiredIndicator() bool {
 	if x != nil && x.AsfService2RequiredIndicator != nil {
 		return *x.AsfService2RequiredIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfDrainFilterCloggedIndicator() uint32 {
+func (x *Compact) GetAsfDrainFilterCloggedIndicator() bool {
 	if x != nil && x.AsfDrainFilterCloggedIndicator != nil {
 		return *x.AsfDrainFilterCloggedIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection1Spraying() uint32 {
+func (x *Compact) GetAsfSection1Spraying() bool {
 	if x != nil && x.AsfSection1Spraying != nil {
 		return *x.AsfSection1Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection2Spraying() uint32 {
+func (x *Compact) GetAsfSection2Spraying() bool {
 	if x != nil && x.AsfSection2Spraying != nil {
 		return *x.AsfSection2Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection3Spraying() uint32 {
+func (x *Compact) GetAsfSection3Spraying() bool {
 	if x != nil && x.AsfSection3Spraying != nil {
 		return *x.AsfSection3Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection4Spraying() uint32 {
+func (x *Compact) GetAsfSection4Spraying() bool {
 	if x != nil && x.AsfSection4Spraying != nil {
 		return *x.AsfSection4Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection5Spraying() uint32 {
+func (x *Compact) GetAsfSection5Spraying() bool {
 	if x != nil && x.AsfSection5Spraying != nil {
 		return *x.AsfSection5Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection6Spraying() uint32 {
+func (x *Compact) GetAsfSection6Spraying() bool {
 	if x != nil && x.AsfSection6Spraying != nil {
 		return *x.AsfSection6Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection7Spraying() uint32 {
+func (x *Compact) GetAsfSection7Spraying() bool {
 	if x != nil && x.AsfSection7Spraying != nil {
 		return *x.AsfSection7Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection8Spraying() uint32 {
+func (x *Compact) GetAsfSection8Spraying() bool {
 	if x != nil && x.AsfSection8Spraying != nil {
 		return *x.AsfSection8Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetAsfSection9Spraying() uint32 {
+func (x *Compact) GetAsfSection9Spraying() bool {
 	if x != nil && x.AsfSection9Spraying != nil {
 		return *x.AsfSection9Spraying
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfSpreading() uint32 {
+func (x *Compact) GetUsfSpreading() bool {
 	if x != nil && x.UsfSpreading != nil {
 		return *x.UsfSpreading
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfPouringChemicals() uint32 {
+func (x *Compact) GetUsfPouringChemicals() bool {
 	if x != nil && x.UsfPouringChemicals != nil {
 		return *x.UsfPouringChemicals
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfConveyorBelt() uint32 {
+func (x *Compact) GetUsfConveyorBelt() bool {
 	if x != nil && x.UsfConveyorBelt != nil {
 		return *x.UsfConveyorBelt
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfSaltSpreadersDriveWheel() uint32 {
+func (x *Compact) GetUsfSaltSpreadersDriveWheel() bool {
 	if x != nil && x.UsfSaltSpreadersDriveWheel != nil {
 		return *x.UsfSaltSpreadersDriveWheel
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfBrushes() uint32 {
+func (x *Compact) GetUsfBrushes() bool {
 	if x != nil && x.UsfBrushes != nil {
 		return *x.UsfBrushes
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfVacuumCleaner() uint32 {
+func (x *Compact) GetUsfVacuumCleaner() bool {
 	if x != nil && x.UsfVacuumCleaner != nil {
 		return *x.UsfVacuumCleaner
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfWaterSupply() uint32 {
+func (x *Compact) GetUsfWaterSupply() bool {
 	if x != nil && x.UsfWaterSupply != nil {
 		return *x.UsfWaterSupply
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfLiquidPump() uint32 {
+func (x *Compact) GetUsfLiquidPump() bool {
 	if x != nil && x.UsfLiquidPump != nil {
 		return *x.UsfLiquidPump
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfUnloadingFromTheHopper() uint32 {
+func (x *Compact) GetUsfUnloadingFromTheHopper() bool {
 	if x != nil && x.UsfUnloadingFromTheHopper != nil {
 		return *x.UsfUnloadingFromTheHopper
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfLowSaltSandLevelInContainerIndicator() uint32 {
+func (x *Compact) GetUsfLowSaltSandLevelInContainerIndicator() bool {
 	if x != nil && x.UsfLowSaltSandLevelInContainerIndicator != nil {
 		return *x.UsfLowSaltSandLevelInContainerIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfLowWaterLevelInContainerIndicator() uint32 {
+func (x *Compact) GetUsfLowWaterLevelInContainerIndicator() bool {
 	if x != nil && x.UsfLowWaterLevelInContainerIndicator != nil {
 		return *x.UsfLowWaterLevelInContainerIndicator
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfChemicals() uint32 {
+func (x *Compact) GetUsfChemicals() bool {
 	if x != nil && x.UsfChemicals != nil {
 		return *x.UsfChemicals
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfCompressor() uint32 {
+func (x *Compact) GetUsfCompressor() bool {
 	if x != nil && x.UsfCompressor != nil {
 		return *x.UsfCompressor
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfWaterValveIsOpened() uint32 {
+func (x *Compact) GetUsfWaterValveIsOpened() bool {
 	if x != nil && x.UsfWaterValveIsOpened != nil {
 		return *x.UsfWaterValveIsOpened
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfCabinMovedUpStatusActive() uint32 {
+func (x *Compact) GetUsfCabinMovedUpStatusActive() bool {
 	if x != nil && x.UsfCabinMovedUpStatusActive != nil {
 		return *x.UsfCabinMovedUpStatusActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfCabinMovedDownStatusActive() uint32 {
+func (x *Compact) GetUsfCabinMovedDownStatusActive() bool {
 	if x != nil && x.UsfCabinMovedDownStatusActive != nil {
 		return *x.UsfCabinMovedDownStatusActive
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetUsfHydraulicsWorkNotPermitted() uint32 {
+func (x *Compact) GetUsfHydraulicsWorkNotPermitted() bool {
 	if x != nil && x.UsfHydraulicsWorkNotPermitted != nil {
 		return *x.UsfHydraulicsWorkNotPermitted
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection1PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection1PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection1PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection1PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection1Filled() uint32 {
+func (x *Compact) GetCisfSection1Filled() bool {
 	if x != nil && x.CisfSection1Filled != nil {
 		return *x.CisfSection1Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection1Overfilled() uint32 {
+func (x *Compact) GetCisfSection1Overfilled() bool {
 	if x != nil && x.CisfSection1Overfilled != nil {
 		return *x.CisfSection1Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection2PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection2PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection2PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection2PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection2Filled() uint32 {
+func (x *Compact) GetCisfSection2Filled() bool {
 	if x != nil && x.CisfSection2Filled != nil {
 		return *x.CisfSection2Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection2Overfilled() uint32 {
+func (x *Compact) GetCisfSection2Overfilled() bool {
 	if x != nil && x.CisfSection2Overfilled != nil {
 		return *x.CisfSection2Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection3PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection3PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection3PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection3PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection3Filled() uint32 {
+func (x *Compact) GetCisfSection3Filled() bool {
 	if x != nil && x.CisfSection3Filled != nil {
 		return *x.CisfSection3Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection3Overfilled() uint32 {
+func (x *Compact) GetCisfSection3Overfilled() bool {
 	if x != nil && x.CisfSection3Overfilled != nil {
 		return *x.CisfSection3Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection4PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection4PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection4PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection4PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection4Filled() uint32 {
+func (x *Compact) GetCisfSection4Filled() bool {
 	if x != nil && x.CisfSection4Filled != nil {
 		return *x.CisfSection4Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection4Overfilled() uint32 {
+func (x *Compact) GetCisfSection4Overfilled() bool {
 	if x != nil && x.CisfSection4Overfilled != nil {
 		return *x.CisfSection4Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection5PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection5PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection5PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection5PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection5Filled() uint32 {
+func (x *Compact) GetCisfSection5Filled() bool {
 	if x != nil && x.CisfSection5Filled != nil {
 		return *x.CisfSection5Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection5Overfilled() uint32 {
+func (x *Compact) GetCisfSection5Overfilled() bool {
 	if x != nil && x.CisfSection5Overfilled != nil {
 		return *x.CisfSection5Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection6PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection6PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection6PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection6PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection6Filled() uint32 {
+func (x *Compact) GetCisfSection6Filled() bool {
 	if x != nil && x.CisfSection6Filled != nil {
 		return *x.CisfSection6Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection6Overfilled() uint32 {
+func (x *Compact) GetCisfSection6Overfilled() bool {
 	if x != nil && x.CisfSection6Overfilled != nil {
 		return *x.CisfSection6Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection7PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection7PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection7PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection7PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection7Filled() uint32 {
+func (x *Compact) GetCisfSection7Filled() bool {
 	if x != nil && x.CisfSection7Filled != nil {
 		return *x.CisfSection7Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection7Overfilled() uint32 {
+func (x *Compact) GetCisfSection7Overfilled() bool {
 	if x != nil && x.CisfSection7Overfilled != nil {
 		return *x.CisfSection7Overfilled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection8PresenceOfFluidInTheDownpipe() uint32 {
+func (x *Compact) GetCisfSection8PresenceOfFluidInTheDownpipe() bool {
 	if x != nil && x.CisfSection8PresenceOfFluidInTheDownpipe != nil {
 		return *x.CisfSection8PresenceOfFluidInTheDownpipe
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection8Filled() uint32 {
+func (x *Compact) GetCisfSection8Filled() bool {
 	if x != nil && x.CisfSection8Filled != nil {
 		return *x.CisfSection8Filled
 	}
-	return 0
+	return false
 }
 
-func (x *Compact) GetCisfSection8Overfilled() uint32 {
+func (x *Compact) GetCisfSection8Overfilled() bool {
 	if x != nil && x.CisfSection8Overfilled != nil {
 		return *x.CisfSection8Overfilled
 	}
-	return 0
+	return false
 }
 
 func (x *Compact) GetDistanceToNextService() uint64 {
@@ -7680,111 +7680,111 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x11eye_magnet_count2\x18\xf2\x01 \x01(\rHrR\x0feyeMagnetCount2\x88\x01\x01\x120\n" +
 	"\x11eye_magnet_count3\x18\xf3\x01 \x01(\rHsR\x0feyeMagnetCount3\x88\x01\x01\x120\n" +
 	"\x11eye_magnet_count4\x18\xf4\x01 \x01(\rHtR\x0feyeMagnetCount4\x88\x01\x01\x12\\\n" +
-	")isf_clogged_brake_system_filter_indicator\x18\\ \x01(\rHuR$isfCloggedBrakeSystemFilterIndicator\x88\x01\x01\x12R\n" +
-	"$isf_low_washer_fluid_level_indicator\x18] \x01(\rHvR\x1fisfLowWasherFluidLevelIndicator\x88\x01\x01\x12G\n" +
-	"\x1eisf_low_adblue_level_indicator\x18^ \x01(\rHwR\x1aisfLowAdblueLevelIndicator\x88\x01\x01\x12X\n" +
-	"'isf_low_trailer_tyre_pressure_indicator\x18_ \x01(\rHxR\"isfLowTrailerTyrePressureIndicator\x88\x01\x01\x12]\n" +
-	"*isf_wear_of_trailer_brake_lining_indicator\x18` \x01(\rHyR$isfWearOfTrailerBrakeLiningIndicator\x88\x01\x01\x12b\n" +
-	",isf_high_trailer_brake_temperature_indicator\x18a \x01(\rHzR'isfHighTrailerBrakeTemperatureIndicator\x88\x01\x01\x12j\n" +
-	"0isf_incorrect_trailer_pneumatic_supply_indicator\x18b \x01(\rH{R+isfIncorrectTrailerPneumaticSupplyIndicator\x88\x01\x01\x12A\n" +
-	"\x1bisf_low_cng_level_indicator\x18c \x01(\rH|R\x17isfLowCngLevelIndicator\x88\x01\x01\x12T\n" +
-	"%asf_right_joystick_moved_right_active\x18d \x01(\rH}R asfRightJoystickMovedRightActive\x88\x01\x01\x12R\n" +
-	"$asf_right_joystick_moved_left_active\x18e \x01(\rH~R\x1fasfRightJoystickMovedLeftActive\x88\x01\x01\x12X\n" +
-	"'asf_right_joystick_moved_forward_active\x18f \x01(\rH\x7fR\"asfRightJoystickMovedForwardActive\x88\x01\x01\x12S\n" +
-	"$asf_right_joystick_moved_back_active\x18g \x01(\rH\x80\x01R\x1fasfRightJoystickMovedBackActive\x88\x01\x01\x12S\n" +
-	"$asf_left_joystick_moved_right_active\x18h \x01(\rH\x81\x01R\x1fasfLeftJoystickMovedRightActive\x88\x01\x01\x12Q\n" +
-	"#asf_left_joystick_moved_left_active\x18i \x01(\rH\x82\x01R\x1easfLeftJoystickMovedLeftActive\x88\x01\x01\x12W\n" +
-	"&asf_left_joystick_moved_forward_active\x18j \x01(\rH\x83\x01R!asfLeftJoystickMovedForwardActive\x88\x01\x01\x12Q\n" +
-	"#asf_left_joystick_moved_back_active\x18k \x01(\rH\x84\x01R\x1easfLeftJoystickMovedBackActive\x88\x01\x01\x12=\n" +
-	"\x18asf_first_rear_hydraulic\x18l \x01(\rH\x85\x01R\x15asfFirstRearHydraulic\x88\x01\x01\x12?\n" +
-	"\x19asf_second_rear_hydraulic\x18m \x01(\rH\x86\x01R\x16asfSecondRearHydraulic\x88\x01\x01\x12=\n" +
-	"\x18asf_third_rear_hydraulic\x18n \x01(\rH\x87\x01R\x15asfThirdRearHydraulic\x88\x01\x01\x12?\n" +
-	"\x19asf_fourth_rear_hydraulic\x18o \x01(\rH\x88\x01R\x16asfFourthRearHydraulic\x88\x01\x01\x12?\n" +
-	"\x19asf_first_front_hydraulic\x18p \x01(\rH\x89\x01R\x16asfFirstFrontHydraulic\x88\x01\x01\x12A\n" +
-	"\x1aasf_second_front_hydraulic\x18q \x01(\rH\x8a\x01R\x17asfSecondFrontHydraulic\x88\x01\x01\x12?\n" +
-	"\x19asf_third_front_hydraulic\x18r \x01(\rH\x8b\x01R\x16asfThirdFrontHydraulic\x88\x01\x01\x12A\n" +
-	"\x1aasf_fourth_front_hydraulic\x18s \x01(\rH\x8c\x01R\x17asfFourthFrontHydraulic\x88\x01\x01\x12B\n" +
-	"\x1basf_front_three_point_hitch\x18t \x01(\rH\x8d\x01R\x17asfFrontThreePointHitch\x88\x01\x01\x12@\n" +
-	"\x1aasf_rear_three_point_hitch\x18u \x01(\rH\x8e\x01R\x16asfRearThreePointHitch\x88\x01\x01\x12<\n" +
-	"\x18asf_front_power_take_off\x18v \x01(\rH\x8f\x01R\x14asfFrontPowerTakeOff\x88\x01\x01\x12:\n" +
-	"\x17asf_rear_power_take_off\x18w \x01(\rH\x90\x01R\x13asfRearPowerTakeOff\x88\x01\x01\x120\n" +
-	"\x11asf_mowing_active\x18x \x01(\rH\x91\x01R\x0fasfMowingActive\x88\x01\x01\x126\n" +
-	"\x14asf_threshing_active\x18y \x01(\rH\x92\x01R\x12asfThreshingActive\x88\x01\x01\x12F\n" +
-	"\x1dasf_grain_release_from_hopper\x18z \x01(\rH\x93\x01R\x19asfGrainReleaseFromHopper\x88\x01\x01\x12>\n" +
-	"\x19asf_grain_tank_is100_full\x18{ \x01(\rH\x94\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12<\n" +
-	"\x18asf_grain_tank_is70_full\x18| \x01(\rH\x95\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
-	"\x18asf_grain_tank_is_opened\x18} \x01(\rH\x96\x01R\x14asfGrainTankIsOpened\x88\x01\x01\x122\n" +
-	"\x12asf_unloader_drive\x18~ \x01(\rH\x97\x01R\x10asfUnloaderDrive\x88\x01\x01\x12Q\n" +
-	"#asf_cleaning_fan_control_turned_off\x18\x7f \x01(\rH\x98\x01R\x1easfCleaningFanControlTurnedOff\x88\x01\x01\x12V\n" +
-	"%asf_threshing_drum_control_turned_off\x18\x80\x01 \x01(\rH\x99\x01R asfThreshingDrumControlTurnedOff\x88\x01\x01\x12C\n" +
-	"\x1basf_straw_walker_is_clogged\x18\x81\x01 \x01(\rH\x9a\x01R\x17asfStrawWalkerIsClogged\x88\x01\x01\x12k\n" +
-	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\rH\x9b\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x88\x01\n" +
-	"@asf_low_temperature_of_drive_system_hydraulics_less_than5_grades\x18\x83\x01 \x01(\rH\x9c\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x92\x01\n" +
-	"Easf_high_temperature_of_drive_system_hydraulics_greater_than86_grades\x18\x84\x01 \x01(\rH\x9d\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
-	"\"asf_ear_auger_speed_below_the_norm\x18\x85\x01 \x01(\rH\x9e\x01R\x1casfEarAugerSpeedBelowTheNorm\x88\x01\x01\x12S\n" +
-	"$asf_grain_auger_speed_below_the_norm\x18\x86\x01 \x01(\rH\x9f\x01R\x1easfGrainAugerSpeedBelowTheNorm\x88\x01\x01\x12W\n" +
-	"&asf_straw_chooper_speed_below_the_norm\x18\x87\x01 \x01(\rH\xa0\x01R asfStrawChooperSpeedBelowTheNorm\x88\x01\x01\x12U\n" +
-	"%asf_straw_shaker_speed_below_the_norm\x18\x88\x01 \x01(\rH\xa1\x01R\x1fasfStrawShakerSpeedBelowTheNorm\x88\x01\x01\x12J\n" +
-	"\x1fasf_feeder_speed_below_the_norm\x18\x89\x01 \x01(\rH\xa2\x01R\x1aasfFeederSpeedBelowTheNorm\x88\x01\x01\x12G\n" +
-	"\x1dasf_straw_chopper_switched_on\x18\x8a\x01 \x01(\rH\xa3\x01R\x19asfStrawChopperSwitchedOn\x88\x01\x01\x12@\n" +
-	"\x19asf_corn_header_connected\x18\x8b\x01 \x01(\rH\xa4\x01R\x16asfCornHeaderConnected\x88\x01\x01\x12B\n" +
-	"\x1aasf_grain_header_connected\x18\x8c\x01 \x01(\rH\xa5\x01R\x17asfGrainHeaderConnected\x88\x01\x01\x12I\n" +
-	"\x1easf_feeder_reverse_switched_on\x18\x8d\x01 \x01(\rH\xa6\x01R\x1aasfFeederReverseSwitchedOn\x88\x01\x01\x12x\n" +
-	"8asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged\x18\x8e\x01 \x01(\rH\xa7\x01R/asfThePressureFilterOfTheHydraulicPumpIsClogged\x88\x01\x01\x12Q\n" +
-	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\rH\xa8\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12L\n" +
-	"\x1fasf_service2_required_indicator\x18\x90\x01 \x01(\rH\xa9\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
-	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\rH\xaa\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x129\n" +
-	"\x15asf_section1_spraying\x18\x92\x01 \x01(\rH\xab\x01R\x13asfSection1Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section2_spraying\x18\x93\x01 \x01(\rH\xac\x01R\x13asfSection2Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section3_spraying\x18\x94\x01 \x01(\rH\xad\x01R\x13asfSection3Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section4_spraying\x18\x95\x01 \x01(\rH\xae\x01R\x13asfSection4Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section5_spraying\x18\x96\x01 \x01(\rH\xaf\x01R\x13asfSection5Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section6_spraying\x18\x97\x01 \x01(\rH\xb0\x01R\x13asfSection6Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section7_spraying\x18\x98\x01 \x01(\rH\xb1\x01R\x13asfSection7Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section8_spraying\x18\x99\x01 \x01(\rH\xb2\x01R\x13asfSection8Spraying\x88\x01\x01\x129\n" +
-	"\x15asf_section9_spraying\x18\x9a\x01 \x01(\rH\xb3\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
-	"\rusf_spreading\x18\x9b\x01 \x01(\rH\xb4\x01R\fusfSpreading\x88\x01\x01\x129\n" +
-	"\x15usf_pouring_chemicals\x18\x9c\x01 \x01(\rH\xb5\x01R\x13usfPouringChemicals\x88\x01\x01\x121\n" +
-	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\rH\xb6\x01R\x0fusfConveyorBelt\x88\x01\x01\x12I\n" +
-	"\x1eusf_salt_spreaders_drive_wheel\x18\x9e\x01 \x01(\rH\xb7\x01R\x1ausfSaltSpreadersDriveWheel\x88\x01\x01\x12&\n" +
-	"\vusf_brushes\x18\x9f\x01 \x01(\rH\xb8\x01R\n" +
+	")isf_clogged_brake_system_filter_indicator\x18\\ \x01(\bHuR$isfCloggedBrakeSystemFilterIndicator\x88\x01\x01\x12R\n" +
+	"$isf_low_washer_fluid_level_indicator\x18] \x01(\bHvR\x1fisfLowWasherFluidLevelIndicator\x88\x01\x01\x12G\n" +
+	"\x1eisf_low_adblue_level_indicator\x18^ \x01(\bHwR\x1aisfLowAdblueLevelIndicator\x88\x01\x01\x12X\n" +
+	"'isf_low_trailer_tyre_pressure_indicator\x18_ \x01(\bHxR\"isfLowTrailerTyrePressureIndicator\x88\x01\x01\x12]\n" +
+	"*isf_wear_of_trailer_brake_lining_indicator\x18` \x01(\bHyR$isfWearOfTrailerBrakeLiningIndicator\x88\x01\x01\x12b\n" +
+	",isf_high_trailer_brake_temperature_indicator\x18a \x01(\bHzR'isfHighTrailerBrakeTemperatureIndicator\x88\x01\x01\x12j\n" +
+	"0isf_incorrect_trailer_pneumatic_supply_indicator\x18b \x01(\bH{R+isfIncorrectTrailerPneumaticSupplyIndicator\x88\x01\x01\x12A\n" +
+	"\x1bisf_low_cng_level_indicator\x18c \x01(\bH|R\x17isfLowCngLevelIndicator\x88\x01\x01\x12T\n" +
+	"%asf_right_joystick_moved_right_active\x18d \x01(\bH}R asfRightJoystickMovedRightActive\x88\x01\x01\x12R\n" +
+	"$asf_right_joystick_moved_left_active\x18e \x01(\bH~R\x1fasfRightJoystickMovedLeftActive\x88\x01\x01\x12X\n" +
+	"'asf_right_joystick_moved_forward_active\x18f \x01(\bH\x7fR\"asfRightJoystickMovedForwardActive\x88\x01\x01\x12S\n" +
+	"$asf_right_joystick_moved_back_active\x18g \x01(\bH\x80\x01R\x1fasfRightJoystickMovedBackActive\x88\x01\x01\x12S\n" +
+	"$asf_left_joystick_moved_right_active\x18h \x01(\bH\x81\x01R\x1fasfLeftJoystickMovedRightActive\x88\x01\x01\x12Q\n" +
+	"#asf_left_joystick_moved_left_active\x18i \x01(\bH\x82\x01R\x1easfLeftJoystickMovedLeftActive\x88\x01\x01\x12W\n" +
+	"&asf_left_joystick_moved_forward_active\x18j \x01(\bH\x83\x01R!asfLeftJoystickMovedForwardActive\x88\x01\x01\x12Q\n" +
+	"#asf_left_joystick_moved_back_active\x18k \x01(\bH\x84\x01R\x1easfLeftJoystickMovedBackActive\x88\x01\x01\x12=\n" +
+	"\x18asf_first_rear_hydraulic\x18l \x01(\bH\x85\x01R\x15asfFirstRearHydraulic\x88\x01\x01\x12?\n" +
+	"\x19asf_second_rear_hydraulic\x18m \x01(\bH\x86\x01R\x16asfSecondRearHydraulic\x88\x01\x01\x12=\n" +
+	"\x18asf_third_rear_hydraulic\x18n \x01(\bH\x87\x01R\x15asfThirdRearHydraulic\x88\x01\x01\x12?\n" +
+	"\x19asf_fourth_rear_hydraulic\x18o \x01(\bH\x88\x01R\x16asfFourthRearHydraulic\x88\x01\x01\x12?\n" +
+	"\x19asf_first_front_hydraulic\x18p \x01(\bH\x89\x01R\x16asfFirstFrontHydraulic\x88\x01\x01\x12A\n" +
+	"\x1aasf_second_front_hydraulic\x18q \x01(\bH\x8a\x01R\x17asfSecondFrontHydraulic\x88\x01\x01\x12?\n" +
+	"\x19asf_third_front_hydraulic\x18r \x01(\bH\x8b\x01R\x16asfThirdFrontHydraulic\x88\x01\x01\x12A\n" +
+	"\x1aasf_fourth_front_hydraulic\x18s \x01(\bH\x8c\x01R\x17asfFourthFrontHydraulic\x88\x01\x01\x12B\n" +
+	"\x1basf_front_three_point_hitch\x18t \x01(\bH\x8d\x01R\x17asfFrontThreePointHitch\x88\x01\x01\x12@\n" +
+	"\x1aasf_rear_three_point_hitch\x18u \x01(\bH\x8e\x01R\x16asfRearThreePointHitch\x88\x01\x01\x12<\n" +
+	"\x18asf_front_power_take_off\x18v \x01(\bH\x8f\x01R\x14asfFrontPowerTakeOff\x88\x01\x01\x12:\n" +
+	"\x17asf_rear_power_take_off\x18w \x01(\bH\x90\x01R\x13asfRearPowerTakeOff\x88\x01\x01\x120\n" +
+	"\x11asf_mowing_active\x18x \x01(\bH\x91\x01R\x0fasfMowingActive\x88\x01\x01\x126\n" +
+	"\x14asf_threshing_active\x18y \x01(\bH\x92\x01R\x12asfThreshingActive\x88\x01\x01\x12F\n" +
+	"\x1dasf_grain_release_from_hopper\x18z \x01(\bH\x93\x01R\x19asfGrainReleaseFromHopper\x88\x01\x01\x12>\n" +
+	"\x19asf_grain_tank_is100_full\x18{ \x01(\bH\x94\x01R\x15asfGrainTankIs100Full\x88\x01\x01\x12<\n" +
+	"\x18asf_grain_tank_is70_full\x18| \x01(\bH\x95\x01R\x14asfGrainTankIs70Full\x88\x01\x01\x12<\n" +
+	"\x18asf_grain_tank_is_opened\x18} \x01(\bH\x96\x01R\x14asfGrainTankIsOpened\x88\x01\x01\x122\n" +
+	"\x12asf_unloader_drive\x18~ \x01(\bH\x97\x01R\x10asfUnloaderDrive\x88\x01\x01\x12Q\n" +
+	"#asf_cleaning_fan_control_turned_off\x18\x7f \x01(\bH\x98\x01R\x1easfCleaningFanControlTurnedOff\x88\x01\x01\x12V\n" +
+	"%asf_threshing_drum_control_turned_off\x18\x80\x01 \x01(\bH\x99\x01R asfThreshingDrumControlTurnedOff\x88\x01\x01\x12C\n" +
+	"\x1basf_straw_walker_is_clogged\x18\x81\x01 \x01(\bH\x9a\x01R\x17asfStrawWalkerIsClogged\x88\x01\x01\x12k\n" +
+	"0asf_excessive_clearance_under_the_threshing_drum\x18\x82\x01 \x01(\bH\x9b\x01R*asfExcessiveClearanceUnderTheThreshingDrum\x88\x01\x01\x12\x88\x01\n" +
+	"@asf_low_temperature_of_drive_system_hydraulics_less_than5_grades\x18\x83\x01 \x01(\bH\x9c\x01R7asfLowTemperatureOfDriveSystemHydraulicsLessThan5Grades\x88\x01\x01\x12\x92\x01\n" +
+	"Easf_high_temperature_of_drive_system_hydraulics_greater_than86_grades\x18\x84\x01 \x01(\bH\x9d\x01R<asfHighTemperatureOfDriveSystemHydraulicsGreaterThan86Grades\x88\x01\x01\x12O\n" +
+	"\"asf_ear_auger_speed_below_the_norm\x18\x85\x01 \x01(\bH\x9e\x01R\x1casfEarAugerSpeedBelowTheNorm\x88\x01\x01\x12S\n" +
+	"$asf_grain_auger_speed_below_the_norm\x18\x86\x01 \x01(\bH\x9f\x01R\x1easfGrainAugerSpeedBelowTheNorm\x88\x01\x01\x12W\n" +
+	"&asf_straw_chooper_speed_below_the_norm\x18\x87\x01 \x01(\bH\xa0\x01R asfStrawChooperSpeedBelowTheNorm\x88\x01\x01\x12U\n" +
+	"%asf_straw_shaker_speed_below_the_norm\x18\x88\x01 \x01(\bH\xa1\x01R\x1fasfStrawShakerSpeedBelowTheNorm\x88\x01\x01\x12J\n" +
+	"\x1fasf_feeder_speed_below_the_norm\x18\x89\x01 \x01(\bH\xa2\x01R\x1aasfFeederSpeedBelowTheNorm\x88\x01\x01\x12G\n" +
+	"\x1dasf_straw_chopper_switched_on\x18\x8a\x01 \x01(\bH\xa3\x01R\x19asfStrawChopperSwitchedOn\x88\x01\x01\x12@\n" +
+	"\x19asf_corn_header_connected\x18\x8b\x01 \x01(\bH\xa4\x01R\x16asfCornHeaderConnected\x88\x01\x01\x12B\n" +
+	"\x1aasf_grain_header_connected\x18\x8c\x01 \x01(\bH\xa5\x01R\x17asfGrainHeaderConnected\x88\x01\x01\x12I\n" +
+	"\x1easf_feeder_reverse_switched_on\x18\x8d\x01 \x01(\bH\xa6\x01R\x1aasfFeederReverseSwitchedOn\x88\x01\x01\x12x\n" +
+	"8asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged\x18\x8e\x01 \x01(\bH\xa7\x01R/asfThePressureFilterOfTheHydraulicPumpIsClogged\x88\x01\x01\x12Q\n" +
+	"\"asf_adapter_pressure_filter_sensor\x18\x8f\x01 \x01(\bH\xa8\x01R\x1easfAdapterPressureFilterSensor\x88\x01\x01\x12L\n" +
+	"\x1fasf_service2_required_indicator\x18\x90\x01 \x01(\bH\xa9\x01R\x1casfService2RequiredIndicator\x88\x01\x01\x12Q\n" +
+	"\"asf_drain_filter_clogged_indicator\x18\x91\x01 \x01(\bH\xaa\x01R\x1easfDrainFilterCloggedIndicator\x88\x01\x01\x129\n" +
+	"\x15asf_section1_spraying\x18\x92\x01 \x01(\bH\xab\x01R\x13asfSection1Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section2_spraying\x18\x93\x01 \x01(\bH\xac\x01R\x13asfSection2Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section3_spraying\x18\x94\x01 \x01(\bH\xad\x01R\x13asfSection3Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section4_spraying\x18\x95\x01 \x01(\bH\xae\x01R\x13asfSection4Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section5_spraying\x18\x96\x01 \x01(\bH\xaf\x01R\x13asfSection5Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section6_spraying\x18\x97\x01 \x01(\bH\xb0\x01R\x13asfSection6Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section7_spraying\x18\x98\x01 \x01(\bH\xb1\x01R\x13asfSection7Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section8_spraying\x18\x99\x01 \x01(\bH\xb2\x01R\x13asfSection8Spraying\x88\x01\x01\x129\n" +
+	"\x15asf_section9_spraying\x18\x9a\x01 \x01(\bH\xb3\x01R\x13asfSection9Spraying\x88\x01\x01\x12*\n" +
+	"\rusf_spreading\x18\x9b\x01 \x01(\bH\xb4\x01R\fusfSpreading\x88\x01\x01\x129\n" +
+	"\x15usf_pouring_chemicals\x18\x9c\x01 \x01(\bH\xb5\x01R\x13usfPouringChemicals\x88\x01\x01\x121\n" +
+	"\x11usf_conveyor_belt\x18\x9d\x01 \x01(\bH\xb6\x01R\x0fusfConveyorBelt\x88\x01\x01\x12I\n" +
+	"\x1eusf_salt_spreaders_drive_wheel\x18\x9e\x01 \x01(\bH\xb7\x01R\x1ausfSaltSpreadersDriveWheel\x88\x01\x01\x12&\n" +
+	"\vusf_brushes\x18\x9f\x01 \x01(\bH\xb8\x01R\n" +
 	"usfBrushes\x88\x01\x01\x123\n" +
-	"\x12usf_vacuum_cleaner\x18\xa0\x01 \x01(\rH\xb9\x01R\x10usfVacuumCleaner\x88\x01\x01\x12/\n" +
-	"\x10usf_water_supply\x18\xa1\x01 \x01(\rH\xba\x01R\x0eusfWaterSupply\x88\x01\x01\x12-\n" +
-	"\x0fusf_liquid_pump\x18\xa3\x01 \x01(\rH\xbb\x01R\rusfLiquidPump\x88\x01\x01\x12G\n" +
-	"\x1dusf_unloading_from_the_hopper\x18\xa4\x01 \x01(\rH\xbc\x01R\x19usfUnloadingFromTheHopper\x88\x01\x01\x12f\n" +
-	".usf_low_salt_sand_level_in_container_indicator\x18\xa5\x01 \x01(\rH\xbd\x01R'usfLowSaltSandLevelInContainerIndicator\x88\x01\x01\x12_\n" +
-	"*usf_low_water_level_in_container_indicator\x18\xa6\x01 \x01(\rH\xbe\x01R$usfLowWaterLevelInContainerIndicator\x88\x01\x01\x12*\n" +
-	"\rusf_chemicals\x18\xa7\x01 \x01(\rH\xbf\x01R\fusfChemicals\x88\x01\x01\x12,\n" +
-	"\x0eusf_compressor\x18\xa8\x01 \x01(\rH\xc0\x01R\rusfCompressor\x88\x01\x01\x12?\n" +
-	"\x19usf_water_valve_is_opened\x18\xa9\x01 \x01(\rH\xc1\x01R\x15usfWaterValveIsOpened\x88\x01\x01\x12L\n" +
-	" usf_cabin_moved_up_status_active\x18\xaa\x01 \x01(\rH\xc2\x01R\x1busfCabinMovedUpStatusActive\x88\x01\x01\x12P\n" +
-	"\"usf_cabin_moved_down_status_active\x18\xab\x01 \x01(\rH\xc3\x01R\x1dusfCabinMovedDownStatusActive\x88\x01\x01\x12O\n" +
-	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\rH\xc4\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12h\n" +
-	"/cisf_section1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\rH\xc5\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section1_filled\x18\xae\x01 \x01(\rH\xc6\x01R\x12cisfSection1Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section1_overfilled\x18\xaf\x01 \x01(\rH\xc7\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\rH\xc8\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section2_filled\x18\xb1\x01 \x01(\rH\xc9\x01R\x12cisfSection2Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section2_overfilled\x18\xb2\x01 \x01(\rH\xca\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\rH\xcb\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section3_filled\x18\xb4\x01 \x01(\rH\xcc\x01R\x12cisfSection3Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section3_overfilled\x18\xb5\x01 \x01(\rH\xcd\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\rH\xce\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section4_filled\x18\xb7\x01 \x01(\rH\xcf\x01R\x12cisfSection4Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section4_overfilled\x18\xb8\x01 \x01(\rH\xd0\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\rH\xd1\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section5_filled\x18\xba\x01 \x01(\rH\xd2\x01R\x12cisfSection5Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section5_overfilled\x18\xbb\x01 \x01(\rH\xd3\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\rH\xd4\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section6_filled\x18\xbd\x01 \x01(\rH\xd5\x01R\x12cisfSection6Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section6_overfilled\x18\xbe\x01 \x01(\rH\xd6\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\rH\xd7\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section7_filled\x18\xc0\x01 \x01(\rH\xd8\x01R\x12cisfSection7Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section7_overfilled\x18\xc1\x01 \x01(\rH\xd9\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12h\n" +
-	"/cisf_section8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\rH\xda\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
-	"\x14cisf_section8_filled\x18\xc3\x01 \x01(\rH\xdb\x01R\x12cisfSection8Filled\x88\x01\x01\x12?\n" +
-	"\x18cisf_section8_overfilled\x18\xc4\x01 \x01(\rH\xdc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
+	"\x12usf_vacuum_cleaner\x18\xa0\x01 \x01(\bH\xb9\x01R\x10usfVacuumCleaner\x88\x01\x01\x12/\n" +
+	"\x10usf_water_supply\x18\xa1\x01 \x01(\bH\xba\x01R\x0eusfWaterSupply\x88\x01\x01\x12-\n" +
+	"\x0fusf_liquid_pump\x18\xa3\x01 \x01(\bH\xbb\x01R\rusfLiquidPump\x88\x01\x01\x12G\n" +
+	"\x1dusf_unloading_from_the_hopper\x18\xa4\x01 \x01(\bH\xbc\x01R\x19usfUnloadingFromTheHopper\x88\x01\x01\x12f\n" +
+	".usf_low_salt_sand_level_in_container_indicator\x18\xa5\x01 \x01(\bH\xbd\x01R'usfLowSaltSandLevelInContainerIndicator\x88\x01\x01\x12_\n" +
+	"*usf_low_water_level_in_container_indicator\x18\xa6\x01 \x01(\bH\xbe\x01R$usfLowWaterLevelInContainerIndicator\x88\x01\x01\x12*\n" +
+	"\rusf_chemicals\x18\xa7\x01 \x01(\bH\xbf\x01R\fusfChemicals\x88\x01\x01\x12,\n" +
+	"\x0eusf_compressor\x18\xa8\x01 \x01(\bH\xc0\x01R\rusfCompressor\x88\x01\x01\x12?\n" +
+	"\x19usf_water_valve_is_opened\x18\xa9\x01 \x01(\bH\xc1\x01R\x15usfWaterValveIsOpened\x88\x01\x01\x12L\n" +
+	" usf_cabin_moved_up_status_active\x18\xaa\x01 \x01(\bH\xc2\x01R\x1busfCabinMovedUpStatusActive\x88\x01\x01\x12P\n" +
+	"\"usf_cabin_moved_down_status_active\x18\xab\x01 \x01(\bH\xc3\x01R\x1dusfCabinMovedDownStatusActive\x88\x01\x01\x12O\n" +
+	"!usf_hydraulics_work_not_permitted\x18\xac\x01 \x01(\bH\xc4\x01R\x1dusfHydraulicsWorkNotPermitted\x88\x01\x01\x12h\n" +
+	"/cisf_section1_presence_of_fluid_in_the_downpipe\x18\xad\x01 \x01(\bH\xc5\x01R(cisfSection1PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section1_filled\x18\xae\x01 \x01(\bH\xc6\x01R\x12cisfSection1Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section1_overfilled\x18\xaf\x01 \x01(\bH\xc7\x01R\x16cisfSection1Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section2_presence_of_fluid_in_the_downpipe\x18\xb0\x01 \x01(\bH\xc8\x01R(cisfSection2PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section2_filled\x18\xb1\x01 \x01(\bH\xc9\x01R\x12cisfSection2Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section2_overfilled\x18\xb2\x01 \x01(\bH\xca\x01R\x16cisfSection2Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section3_presence_of_fluid_in_the_downpipe\x18\xb3\x01 \x01(\bH\xcb\x01R(cisfSection3PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section3_filled\x18\xb4\x01 \x01(\bH\xcc\x01R\x12cisfSection3Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section3_overfilled\x18\xb5\x01 \x01(\bH\xcd\x01R\x16cisfSection3Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section4_presence_of_fluid_in_the_downpipe\x18\xb6\x01 \x01(\bH\xce\x01R(cisfSection4PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section4_filled\x18\xb7\x01 \x01(\bH\xcf\x01R\x12cisfSection4Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section4_overfilled\x18\xb8\x01 \x01(\bH\xd0\x01R\x16cisfSection4Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section5_presence_of_fluid_in_the_downpipe\x18\xb9\x01 \x01(\bH\xd1\x01R(cisfSection5PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section5_filled\x18\xba\x01 \x01(\bH\xd2\x01R\x12cisfSection5Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section5_overfilled\x18\xbb\x01 \x01(\bH\xd3\x01R\x16cisfSection5Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section6_presence_of_fluid_in_the_downpipe\x18\xbc\x01 \x01(\bH\xd4\x01R(cisfSection6PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section6_filled\x18\xbd\x01 \x01(\bH\xd5\x01R\x12cisfSection6Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section6_overfilled\x18\xbe\x01 \x01(\bH\xd6\x01R\x16cisfSection6Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section7_presence_of_fluid_in_the_downpipe\x18\xbf\x01 \x01(\bH\xd7\x01R(cisfSection7PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section7_filled\x18\xc0\x01 \x01(\bH\xd8\x01R\x12cisfSection7Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section7_overfilled\x18\xc1\x01 \x01(\bH\xd9\x01R\x16cisfSection7Overfilled\x88\x01\x01\x12h\n" +
+	"/cisf_section8_presence_of_fluid_in_the_downpipe\x18\xc2\x01 \x01(\bH\xda\x01R(cisfSection8PresenceOfFluidInTheDownpipe\x88\x01\x01\x127\n" +
+	"\x14cisf_section8_filled\x18\xc3\x01 \x01(\bH\xdb\x01R\x12cisfSection8Filled\x88\x01\x01\x12?\n" +
+	"\x18cisf_section8_overfilled\x18\xc4\x01 \x01(\bH\xdc\x01R\x16cisfSection8Overfilled\x88\x01\x01\x12>\n" +
 	"\x18distance_to_next_service\x18\xc5\x01 \x01(\x04H\xdd\x01R\x15distanceToNextService\x88\x01\x01\x12'\n" +
 	"\fcng_level_kg\x18\xc6\x01 \x01(\rH\xde\x01R\n" +
 	"cngLevelKg\x88\x01\x01\x12G\n" +

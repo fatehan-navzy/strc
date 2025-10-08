@@ -1093,7 +1093,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_clogged_brake_system_filter_indicator = 92;
+    optional bool isf_clogged_brake_system_filter_indicator = 92;
   
     // Parameter ID: 986
     // Property Name: ISF Low Washer Fluid Level Indicator
@@ -1104,7 +1104,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_low_washer_fluid_level_indicator = 93;
+    optional bool isf_low_washer_fluid_level_indicator = 93;
   
     // Parameter ID: 987
     // Property Name: ISF Low AdBlue Level Indicator
@@ -1115,7 +1115,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_low_adblue_level_indicator = 94;
+    optional bool isf_low_adblue_level_indicator = 94;
   
     // Parameter ID: 988
     // Property Name: ISF Low Trailer Tyre Pressure Indicator
@@ -1126,7 +1126,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_low_trailer_tyre_pressure_indicator = 95;
+    optional bool isf_low_trailer_tyre_pressure_indicator = 95;
   
     // Parameter ID: 989
     // Property Name: ISF Wear Of Trailer Brake Lining Indicator
@@ -1137,7 +1137,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_wear_of_trailer_brake_lining_indicator = 96;
+    optional bool isf_wear_of_trailer_brake_lining_indicator = 96;
   
     // Parameter ID: 990
     // Property Name: ISF High Trailer Brake Temperature Indicator
@@ -1148,7 +1148,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_high_trailer_brake_temperature_indicator = 97;
+    optional bool isf_high_trailer_brake_temperature_indicator = 97;
   
     // Parameter ID: 991
     // Property Name: ISF Incorrect Trailer Pneumatic Supply Indicator
@@ -1159,7 +1159,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_incorrect_trailer_pneumatic_supply_indicator = 98;
+    optional bool isf_incorrect_trailer_pneumatic_supply_indicator = 98;
   
     // Parameter ID: 992
     // Property Name: ISF Low CNG Level Indicator
@@ -1170,7 +1170,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 isf_low_cng_level_indicator = 99;
+    optional bool isf_low_cng_level_indicator = 99;
   
     // Parameter ID: 993
     // Property Name: ASF Right Joystick Moved Right Active
@@ -1181,7 +1181,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_right_joystick_moved_right_active = 100;
+    optional bool asf_right_joystick_moved_right_active = 100;
   
     // Parameter ID: 994
     // Property Name: ASF Right Joystick Moved Left Active
@@ -1192,7 +1192,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_right_joystick_moved_left_active = 101;
+    optional bool asf_right_joystick_moved_left_active = 101;
   
     // Parameter ID: 995
     // Property Name: ASF Right Joystick Moved Forward Active
@@ -1203,7 +1203,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_right_joystick_moved_forward_active = 102;
+    optional bool asf_right_joystick_moved_forward_active = 102;
   
     // Parameter ID: 996
     // Property Name: ASF Right Joystick Moved Back Active
@@ -1214,7 +1214,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_right_joystick_moved_back_active = 103;
+    optional bool asf_right_joystick_moved_back_active = 103;
   
     // Parameter ID: 997
     // Property Name: ASF Left Joystick Moved Right Active
@@ -1225,7 +1225,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_left_joystick_moved_right_active = 104;
+    optional bool asf_left_joystick_moved_right_active = 104;
   
     // Parameter ID: 998
     // Property Name: ASF Left Joystick Moved Left Active
@@ -1236,7 +1236,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_left_joystick_moved_left_active = 105;
+    optional bool asf_left_joystick_moved_left_active = 105;
   
     // Parameter ID: 999
     // Property Name: ASF Left Joystick Moved Forward Active
@@ -1247,7 +1247,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_left_joystick_moved_forward_active = 106;
+    optional bool asf_left_joystick_moved_forward_active = 106;
   
     // Parameter ID: 1000
     // Property Name: ASF Left Joystick Moved Back Active
@@ -1258,7 +1258,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_left_joystick_moved_back_active = 107;
+    optional bool asf_left_joystick_moved_back_active = 107;
   
     // Parameter ID: 1001
     // Property Name: ASF First Rear hydraulic
@@ -1269,7 +1269,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_first_rear_hydraulic = 108;
+    optional bool asf_first_rear_hydraulic = 108;
   
     // Parameter ID: 1002
     // Property Name: ASF Second Rear hydraulic
@@ -1280,7 +1280,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_second_rear_hydraulic = 109;
+    optional bool asf_second_rear_hydraulic = 109;
   
     // Parameter ID: 1003
     // Property Name: ASF Third Rear hydraulic
@@ -1291,7 +1291,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_third_rear_hydraulic = 110;
+    optional bool asf_third_rear_hydraulic = 110;
   
     // Parameter ID: 1004
     // Property Name: ASF Fourth Rear hydraulic
@@ -1302,7 +1302,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_fourth_rear_hydraulic = 111;
+    optional bool asf_fourth_rear_hydraulic = 111;
   
     // Parameter ID: 1005
     // Property Name: ASF First Front hydraulic
@@ -1313,7 +1313,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_first_front_hydraulic = 112;
+    optional bool asf_first_front_hydraulic = 112;
   
     // Parameter ID: 1006
     // Property Name: ASF Second Front hydraulic
@@ -1324,7 +1324,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_second_front_hydraulic = 113;
+    optional bool asf_second_front_hydraulic = 113;
   
     // Parameter ID: 1007
     // Property Name: ASF Third Front hydraulic
@@ -1335,7 +1335,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_third_front_hydraulic = 114;
+    optional bool asf_third_front_hydraulic = 114;
   
     // Parameter ID: 1008
     // Property Name: ASF Fourth Front hydraulic
@@ -1346,7 +1346,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_fourth_front_hydraulic = 115;
+    optional bool asf_fourth_front_hydraulic = 115;
   
     // Parameter ID: 1009
     // Property Name: ASF Front Three-point Hitch
@@ -1357,7 +1357,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_front_three_point_hitch = 116;
+    optional bool asf_front_three_point_hitch = 116;
   
     // Parameter ID: 1010
     // Property Name: ASF Rear Three-point Hitch
@@ -1368,7 +1368,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_rear_three_point_hitch = 117;
+    optional bool asf_rear_three_point_hitch = 117;
   
     // Parameter ID: 1011
     // Property Name: ASF Front Power Take-off
@@ -1379,7 +1379,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_front_power_take_off = 118;
+    optional bool asf_front_power_take_off = 118;
   
     // Parameter ID: 1012
     // Property Name: ASF Rear Power Take-off
@@ -1390,7 +1390,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_rear_power_take_off = 119;
+    optional bool asf_rear_power_take_off = 119;
   
     // Parameter ID: 1013
     // Property Name: ASF Mowing Active
@@ -1401,7 +1401,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_mowing_active = 120;
+    optional bool asf_mowing_active = 120;
   
     // Parameter ID: 1014
     // Property Name: ASF Threshing Active
@@ -1412,7 +1412,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Inactive, 1 - Active
-    optional uint32 asf_threshing_active = 121;
+    optional bool asf_threshing_active = 121;
   
     // Parameter ID: 1015
     // Property Name: ASF Grain Release From Hopper
@@ -1423,7 +1423,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_grain_release_from_hopper = 122;
+    optional bool asf_grain_release_from_hopper = 122;
   
     // Parameter ID: 1016
     // Property Name: ASF Grain Tank Is 100% Full
@@ -1434,7 +1434,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_tank_is100_full = 123;
+    optional bool asf_grain_tank_is100_full = 123;
   
     // Parameter ID: 1017
     // Property Name: ASF Grain Tank Is 70% Full
@@ -1445,7 +1445,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_tank_is70_full = 124;
+    optional bool asf_grain_tank_is70_full = 124;
   
     // Parameter ID: 1018
     // Property Name: ASF Grain Tank Is Opened
@@ -1456,7 +1456,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Closed, 1 - Opened
-    optional uint32 asf_grain_tank_is_opened = 125;
+    optional bool asf_grain_tank_is_opened = 125;
   
     // Parameter ID: 1019
     // Property Name: ASF Unloader Drive
@@ -1467,7 +1467,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_unloader_drive = 126;
+    optional bool asf_unloader_drive = 126;
   
     // Parameter ID: 1020
     // Property Name: ASF Cleaning Fan Control Turned Off
@@ -1478,7 +1478,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_cleaning_fan_control_turned_off = 127;
+    optional bool asf_cleaning_fan_control_turned_off = 127;
   
     // Parameter ID: 1021
     // Property Name: ASF Threshing Drum Control Turned Off
@@ -1489,7 +1489,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_threshing_drum_control_turned_off = 128;
+    optional bool asf_threshing_drum_control_turned_off = 128;
   
     // Parameter ID: 1022
     // Property Name: ASF Straw Walker Is Clogged
@@ -1500,7 +1500,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_straw_walker_is_clogged = 129;
+    optional bool asf_straw_walker_is_clogged = 129;
   
     // Parameter ID: 1023
     // Property Name: ASF Excessive Clearance Under The Threshing Drum
@@ -1511,7 +1511,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_excessive_clearance_under_the_threshing_drum = 130;
+    optional bool asf_excessive_clearance_under_the_threshing_drum = 130;
   
     // Parameter ID: 1024
     // Property Name: ASF Low Temperature Of Drive System Hydraulics Less Than 5 Grades
@@ -1522,7 +1522,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_low_temperature_of_drive_system_hydraulics_less_than5_grades = 131;
+    optional bool asf_low_temperature_of_drive_system_hydraulics_less_than5_grades = 131;
   
     // Parameter ID: 1025
     // Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
@@ -1533,7 +1533,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades = 132;
+    optional bool asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades = 132;
   
     // Parameter ID: 1026
     // Property Name: ASF Ear Auger Speed Below The Norm
@@ -1544,7 +1544,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_ear_auger_speed_below_the_norm = 133;
+    optional bool asf_ear_auger_speed_below_the_norm = 133;
   
     // Parameter ID: 1027
     // Property Name: ASF Grain Auger Speed Below The Norm
@@ -1555,7 +1555,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_auger_speed_below_the_norm = 134;
+    optional bool asf_grain_auger_speed_below_the_norm = 134;
   
     // Parameter ID: 1028
     // Property Name: ASF Straw Chooper Speed Below The Norm
@@ -1566,7 +1566,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_straw_chooper_speed_below_the_norm = 135;
+    optional bool asf_straw_chooper_speed_below_the_norm = 135;
   
     // Parameter ID: 1029
     // Property Name: ASF Straw Shaker Speed Below The Norm
@@ -1577,7 +1577,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_straw_shaker_speed_below_the_norm = 136;
+    optional bool asf_straw_shaker_speed_below_the_norm = 136;
   
     // Parameter ID: 1030
     // Property Name: ASF Feeder Speed Below The Norm
@@ -1588,7 +1588,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_feeder_speed_below_the_norm = 137;
+    optional bool asf_feeder_speed_below_the_norm = 137;
   
     // Parameter ID: 1031
     // Property Name: ASF Straw Chopper Switched On
@@ -1599,7 +1599,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_straw_chopper_switched_on = 138;
+    optional bool asf_straw_chopper_switched_on = 138;
   
     // Parameter ID: 1032
     // Property Name: ASF Corn Header Connected
@@ -1610,7 +1610,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_corn_header_connected = 139;
+    optional bool asf_corn_header_connected = 139;
   
     // Parameter ID: 1033
     // Property Name: ASF Grain Header Connected
@@ -1621,7 +1621,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_grain_header_connected = 140;
+    optional bool asf_grain_header_connected = 140;
   
     // Parameter ID: 1034
     // Property Name: ASF Feeder Reverse Switched On
@@ -1632,7 +1632,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_feeder_reverse_switched_on = 141;
+    optional bool asf_feeder_reverse_switched_on = 141;
   
     // Parameter ID: 1035
     // Property Name: ASF The Pressure Filter Of The Hydraulic Pump Is Clogged
@@ -1643,7 +1643,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged = 142;
+    optional bool asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged = 142;
   
     // Parameter ID: 1087
     // Property Name: ASF Adapter Pressure Filter Sensor
@@ -1654,7 +1654,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_adapter_pressure_filter_sensor = 143;
+    optional bool asf_adapter_pressure_filter_sensor = 143;
   
     // Parameter ID: 1088
     // Property Name: ASF Service 2 Required Indicator
@@ -1665,7 +1665,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_service2_required_indicator = 144;
+    optional bool asf_service2_required_indicator = 144;
   
     // Parameter ID: 1089
     // Property Name: ASF Drain Filter Clogged Indicator
@@ -1676,7 +1676,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_drain_filter_clogged_indicator = 145;
+    optional bool asf_drain_filter_clogged_indicator = 145;
   
     // Parameter ID: 1090
     // Property Name: ASF Section 1 Spraying
@@ -1687,7 +1687,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section1_spraying = 146;
+    optional bool asf_section1_spraying = 146;
   
     // Parameter ID: 1091
     // Property Name: ASF Section 2 Spraying
@@ -1698,7 +1698,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section2_spraying = 147;
+    optional bool asf_section2_spraying = 147;
   
     // Parameter ID: 1092
     // Property Name: ASF Section 3 Spraying
@@ -1709,7 +1709,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section3_spraying = 148;
+    optional bool asf_section3_spraying = 148;
   
     // Parameter ID: 1093
     // Property Name: ASF Section 4 Spraying
@@ -1720,7 +1720,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section4_spraying = 149;
+    optional bool asf_section4_spraying = 149;
   
     // Parameter ID: 1094
     // Property Name: ASF Section 5 Spraying
@@ -1731,7 +1731,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section5_spraying = 150;
+    optional bool asf_section5_spraying = 150;
   
     // Parameter ID: 1095
     // Property Name: ASF Section 6 Spraying
@@ -1742,7 +1742,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section6_spraying = 151;
+    optional bool asf_section6_spraying = 151;
   
     // Parameter ID: 1096
     // Property Name: ASF Section 7 Spraying
@@ -1753,7 +1753,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section7_spraying = 152;
+    optional bool asf_section7_spraying = 152;
   
     // Parameter ID: 1097
     // Property Name: ASF Section 8 Spraying
@@ -1764,7 +1764,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section8_spraying = 153;
+    optional bool asf_section8_spraying = 153;
   
     // Parameter ID: 1098
     // Property Name: ASF Section 9 Spraying
@@ -1775,7 +1775,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 asf_section9_spraying = 154;
+    optional bool asf_section9_spraying = 154;
   
     // Parameter ID: 1036
     // Property Name: USF Spreading
@@ -1786,7 +1786,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_spreading = 155;
+    optional bool usf_spreading = 155;
   
     // Parameter ID: 1037
     // Property Name: USF Pouring Chemicals
@@ -1797,7 +1797,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_pouring_chemicals = 156;
+    optional bool usf_pouring_chemicals = 156;
   
     // Parameter ID: 1038
     // Property Name: USF Conveyor Belt
@@ -1808,7 +1808,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_conveyor_belt = 157;
+    optional bool usf_conveyor_belt = 157;
   
     // Parameter ID: 1039
     // Property Name: USF Salt Spreader's Drive Wheel
@@ -1819,7 +1819,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_salt_spreaders_drive_wheel = 158;
+    optional bool usf_salt_spreaders_drive_wheel = 158;
   
     // Parameter ID: 1040
     // Property Name: USF Brushes
@@ -1830,7 +1830,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_brushes = 159;
+    optional bool usf_brushes = 159;
   
     // Parameter ID: 1041
     // Property Name: USF Vacuum Cleaner
@@ -1841,7 +1841,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_vacuum_cleaner = 160;
+    optional bool usf_vacuum_cleaner = 160;
   
     // Parameter ID: 1042
     // Property Name: USF Water Supply
@@ -1852,7 +1852,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_water_supply = 161;
+    optional bool usf_water_supply = 161;
   
     // Parameter ID: 1043
     // Property Name: USF Spreading
@@ -1874,7 +1874,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_liquid_pump = 163;
+    optional bool usf_liquid_pump = 163;
   
     // Parameter ID: 1045
     // Property Name: USF Unloading From The Hopper
@@ -1885,7 +1885,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_unloading_from_the_hopper = 164;
+    optional bool usf_unloading_from_the_hopper = 164;
   
     // Parameter ID: 1046
     // Property Name: USF Low Salt (Sand) Level In Container Indicator
@@ -1896,7 +1896,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_low_salt_sand_level_in_container_indicator = 165;
+    optional bool usf_low_salt_sand_level_in_container_indicator = 165;
   
     // Parameter ID: 1047
     // Property Name: USF Low Water Level in Container Indicator
@@ -1907,7 +1907,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_low_water_level_in_container_indicator = 166;
+    optional bool usf_low_water_level_in_container_indicator = 166;
   
     // Parameter ID: 1048
     // Property Name: USF Chemicals
@@ -1918,7 +1918,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_chemicals = 167;
+    optional bool usf_chemicals = 167;
   
     // Parameter ID: 1049
     // Property Name: USF Compressor
@@ -1929,7 +1929,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_compressor = 168;
+    optional bool usf_compressor = 168;
   
     // Parameter ID: 1050
     // Property Name: USF Water Valve Is Opened
@@ -1940,7 +1940,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_water_valve_is_opened = 169;
+    optional bool usf_water_valve_is_opened = 169;
   
     // Parameter ID: 1051
     // Property Name: USF Cabin Moved Up Status Active
@@ -1951,7 +1951,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_cabin_moved_up_status_active = 170;
+    optional bool usf_cabin_moved_up_status_active = 170;
   
     // Parameter ID: 1052
     // Property Name: USF Cabin Moved Down Status Active
@@ -1962,7 +1962,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_cabin_moved_down_status_active = 171;
+    optional bool usf_cabin_moved_down_status_active = 171;
   
     // Parameter ID: 1099
     // Property Name: USF Hydraulics Work Not Permitted
@@ -1973,7 +1973,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - Off, 1 - On
-    optional uint32 usf_hydraulics_work_not_permitted = 172;
+    optional bool usf_hydraulics_work_not_permitted = 172;
   
     // Parameter ID: 1053
     // Property Name: CiSF Section 1 Presence Of Fluid In The Downpipe
@@ -1984,7 +1984,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section1_presence_of_fluid_in_the_downpipe = 173;
+    optional bool cisf_section1_presence_of_fluid_in_the_downpipe = 173;
   
     // Parameter ID: 1054
     // Property Name: CiSF Section 1 Filled
@@ -1995,7 +1995,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section1_filled = 174;
+    optional bool cisf_section1_filled = 174;
   
     // Parameter ID: 1055
     // Property Name: CiSF Section 1 Overfilled
@@ -2006,7 +2006,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section1_overfilled = 175;
+    optional bool cisf_section1_overfilled = 175;
   
     // Parameter ID: 1056
     // Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
@@ -2017,7 +2017,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section2_presence_of_fluid_in_the_downpipe = 176;
+    optional bool cisf_section2_presence_of_fluid_in_the_downpipe = 176;
   
     // Parameter ID: 1057
     // Property Name: CiSF Section 2 Filled
@@ -2028,7 +2028,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section2_filled = 177;
+    optional bool cisf_section2_filled = 177;
   
     // Parameter ID: 1058
     // Property Name: CiSF Section 2 Overfilled
@@ -2039,7 +2039,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section2_overfilled = 178;
+    optional bool cisf_section2_overfilled = 178;
   
     // Parameter ID: 1059
     // Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
@@ -2050,7 +2050,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section3_presence_of_fluid_in_the_downpipe = 179;
+    optional bool cisf_section3_presence_of_fluid_in_the_downpipe = 179;
   
     // Parameter ID: 1060
     // Property Name: CiSF Section 3 Filled
@@ -2061,7 +2061,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section3_filled = 180;
+    optional bool cisf_section3_filled = 180;
   
     // Parameter ID: 1061
     // Property Name: CiSF Section 3 Overfilled
@@ -2072,7 +2072,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section3_overfilled = 181;
+    optional bool cisf_section3_overfilled = 181;
   
     // Parameter ID: 1062
     // Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
@@ -2083,7 +2083,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section4_presence_of_fluid_in_the_downpipe = 182;
+    optional bool cisf_section4_presence_of_fluid_in_the_downpipe = 182;
   
     // Parameter ID: 1063
     // Property Name: CiSF Section 4 Filled
@@ -2094,7 +2094,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section4_filled = 183;
+    optional bool cisf_section4_filled = 183;
   
     // Parameter ID: 1064
     // Property Name: CiSF Section 4 Overfilled
@@ -2105,7 +2105,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section4_overfilled = 184;
+    optional bool cisf_section4_overfilled = 184;
   
     // Parameter ID: 1065
     // Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
@@ -2116,7 +2116,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section5_presence_of_fluid_in_the_downpipe = 185;
+    optional bool cisf_section5_presence_of_fluid_in_the_downpipe = 185;
   
     // Parameter ID: 1066
     // Property Name: CiSF Section 5 Filled
@@ -2127,7 +2127,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section5_filled = 186;
+    optional bool cisf_section5_filled = 186;
   
     // Parameter ID: 1067
     // Property Name: CiSF Section 5 Overfilled
@@ -2138,7 +2138,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section5_overfilled = 187;
+    optional bool cisf_section5_overfilled = 187;
   
     // Parameter ID: 1068
     // Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
@@ -2149,7 +2149,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section6_presence_of_fluid_in_the_downpipe = 188;
+    optional bool cisf_section6_presence_of_fluid_in_the_downpipe = 188;
   
     // Parameter ID: 1069
     // Property Name: CiSF Section 6 Filled
@@ -2160,7 +2160,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section6_filled = 189;
+    optional bool cisf_section6_filled = 189;
   
     // Parameter ID: 1070
     // Property Name: CiSF Section 6 Overfilled
@@ -2171,7 +2171,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section6_overfilled = 190;
+    optional bool cisf_section6_overfilled = 190;
   
     // Parameter ID: 1071
     // Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
@@ -2182,7 +2182,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section7_presence_of_fluid_in_the_downpipe = 191;
+    optional bool cisf_section7_presence_of_fluid_in_the_downpipe = 191;
   
     // Parameter ID: 1072
     // Property Name: CiSF Section 7 Filled
@@ -2193,7 +2193,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section7_filled = 192;
+    optional bool cisf_section7_filled = 192;
   
     // Parameter ID: 1073
     // Property Name: CiSF Section 7 Overfilled
@@ -2204,7 +2204,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section7_overfilled = 193;
+    optional bool cisf_section7_overfilled = 193;
   
     // Parameter ID: 1074
     // Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
@@ -2215,7 +2215,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No presence, 1 - Present
-    optional uint32 cisf_section8_presence_of_fluid_in_the_downpipe = 194;
+    optional bool cisf_section8_presence_of_fluid_in_the_downpipe = 194;
   
     // Parameter ID: 1075
     // Property Name: CiSF Section 8 Filled
@@ -2226,7 +2226,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section8_filled = 195;
+    optional bool cisf_section8_filled = 195;
   
     // Parameter ID: 1076
     // Property Name: CiSF Section 8 Overfilled
@@ -2237,7 +2237,7 @@ message Compact {
     // Multiplier: -
     // Units: -
     // Values: 0 - No, 1 - Yes
-    optional uint32 cisf_section8_overfilled = 196;
+    optional bool cisf_section8_overfilled = 196;
   
     // Parameter ID: 400
     // Property Name: Distance to Next Service
