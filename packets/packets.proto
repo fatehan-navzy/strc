@@ -3158,6 +3158,7 @@ message Compact {
     optional bool asf_grain_tank_is70_percent_full = 612;
     optional bool asf_straw_chopper_speed_below_the_norm = 623;
     optional bool usf_spreading2 = 650;
+    optional uint32 operator_code = 651;
 }
 
 enum Event {

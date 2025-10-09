@@ -3141,6 +3141,10 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for UsfSpreading2
 	}
 
+	if m.OperatorCode != nil {
+		// no validation rules for OperatorCode
+	}
+
 	if len(errors) > 0 {
 		return CompactMultiError(errors)
 	}
