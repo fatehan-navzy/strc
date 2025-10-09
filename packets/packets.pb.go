@@ -79,6 +79,9 @@ const (
 	Event_FALL                        Event = 50
 	Event_CHARGE_ON                   Event = 51
 	Event_CHARGE_OFF                  Event = 52
+	Event_FATIGUE_DRIVING             Event = 53
+	Event_SOS                         Event = 54
+	Event_SHOCK                       Event = 55
 )
 
 // Enum value maps for Event.
@@ -137,6 +140,9 @@ var (
 		50: "FALL",
 		51: "CHARGE_ON",
 		52: "CHARGE_OFF",
+		53: "FATIGUE_DRIVING",
+		54: "SOS",
+		55: "SHOCK",
 	}
 	Event_value = map[string]int32{
 		"NORMAL":                      0,
@@ -192,6 +198,9 @@ var (
 		"FALL":                        50,
 		"CHARGE_ON":                   51,
 		"CHARGE_OFF":                  52,
+		"FATIGUE_DRIVING":             53,
+		"SOS":                         54,
+		"SHOCK":                       55,
 	}
 )
 
@@ -8777,7 +8786,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\"_asf_grain_tank_is100_percent_fullB#\n" +
 	"!_asf_grain_tank_is70_percent_fullB)\n" +
 	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
-	"\x0f_usf_spreading2*\xcf\x06\n" +
+	"\x0f_usf_spreading2*\xf8\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -8844,7 +8853,10 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x04FALL\x102\x12\r\n" +
 	"\tCHARGE_ON\x103\x12\x0e\n" +
 	"\n" +
-	"CHARGE_OFF\x104BD\n" +
+	"CHARGE_OFF\x104\x12\x13\n" +
+	"\x0fFATIGUE_DRIVING\x105\x12\a\n" +
+	"\x03SOS\x106\x12\t\n" +
+	"\x05SHOCK\x107BD\n" +
 	"\x19com.fatehan.navzy.packetsP\x01Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
