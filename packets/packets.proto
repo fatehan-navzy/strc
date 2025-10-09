@@ -3212,4 +3212,6 @@ enum Event {
   HARSH_BRAKING = 48;
   HARSH_CORNER = 49;
   FALL = 50;
+  CHARGE_ON = 51;
+  CHARGE_OFF = 52;
 }

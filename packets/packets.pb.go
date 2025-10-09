@@ -77,6 +77,8 @@ const (
 	Event_HARSH_BRAKING               Event = 48
 	Event_HARSH_CORNER                Event = 49
 	Event_FALL                        Event = 50
+	Event_CHARGE_ON                   Event = 51
+	Event_CHARGE_OFF                  Event = 52
 )
 
 // Enum value maps for Event.
@@ -133,6 +135,8 @@ var (
 		48: "HARSH_BRAKING",
 		49: "HARSH_CORNER",
 		50: "FALL",
+		51: "CHARGE_ON",
+		52: "CHARGE_OFF",
 	}
 	Event_value = map[string]int32{
 		"NORMAL":                      0,
@@ -186,6 +190,8 @@ var (
 		"HARSH_BRAKING":               48,
 		"HARSH_CORNER":                49,
 		"FALL":                        50,
+		"CHARGE_ON":                   51,
+		"CHARGE_OFF":                  52,
 	}
 )
 
@@ -8771,7 +8777,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\"_asf_grain_tank_is100_percent_fullB#\n" +
 	"!_asf_grain_tank_is70_percent_fullB)\n" +
 	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
-	"\x0f_usf_spreading2*\xb0\x06\n" +
+	"\x0f_usf_spreading2*\xcf\x06\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -8835,7 +8841,10 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x12HARSH_ACCELERATION\x10/\x12\x11\n" +
 	"\rHARSH_BRAKING\x100\x12\x10\n" +
 	"\fHARSH_CORNER\x101\x12\b\n" +
-	"\x04FALL\x102BD\n" +
+	"\x04FALL\x102\x12\r\n" +
+	"\tCHARGE_ON\x103\x12\x0e\n" +
+	"\n" +
+	"CHARGE_OFF\x104BD\n" +
 	"\x19com.fatehan.navzy.packetsP\x01Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
