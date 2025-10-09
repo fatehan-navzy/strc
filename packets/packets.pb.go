@@ -82,6 +82,7 @@ const (
 	Event_FATIGUE_DRIVING             Event = 53
 	Event_SOS                         Event = 54
 	Event_SHOCK                       Event = 55
+	Event_LIGHT_SENSOR                Event = 56
 )
 
 // Enum value maps for Event.
@@ -143,6 +144,7 @@ var (
 		53: "FATIGUE_DRIVING",
 		54: "SOS",
 		55: "SHOCK",
+		56: "LIGHT_SENSOR",
 	}
 	Event_value = map[string]int32{
 		"NORMAL":                      0,
@@ -201,6 +203,7 @@ var (
 		"FATIGUE_DRIVING":             53,
 		"SOS":                         54,
 		"SHOCK":                       55,
+		"LIGHT_SENSOR":                56,
 	}
 )
 
@@ -8786,7 +8789,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\"_asf_grain_tank_is100_percent_fullB#\n" +
 	"!_asf_grain_tank_is70_percent_fullB)\n" +
 	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
-	"\x0f_usf_spreading2*\xf8\x06\n" +
+	"\x0f_usf_spreading2*\x8a\a\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -8856,7 +8859,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"CHARGE_OFF\x104\x12\x13\n" +
 	"\x0fFATIGUE_DRIVING\x105\x12\a\n" +
 	"\x03SOS\x106\x12\t\n" +
-	"\x05SHOCK\x107BD\n" +
+	"\x05SHOCK\x107\x12\x10\n" +
+	"\fLIGHT_SENSOR\x108BD\n" +
 	"\x19com.fatehan.navzy.packetsP\x01Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
