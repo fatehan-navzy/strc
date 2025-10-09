@@ -3145,6 +3145,10 @@ func (m *Compact) validate(all bool) error {
 		// no validation rules for OperatorCode
 	}
 
+	if m.Temperature != nil {
+		// no validation rules for Temperature
+	}
+
 	if len(errors) > 0 {
 		return CompactMultiError(errors)
 	}

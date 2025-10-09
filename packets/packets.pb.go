@@ -3423,6 +3423,7 @@ type Compact struct {
 	AsfStrawChopperSpeedBelowTheNorm            *bool   `protobuf:"varint,623,opt,name=asf_straw_chopper_speed_below_the_norm,json=asfStrawChopperSpeedBelowTheNorm,proto3,oneof" json:"asf_straw_chopper_speed_below_the_norm,omitempty"`
 	UsfSpreading2                               *bool   `protobuf:"varint,650,opt,name=usf_spreading2,json=usfSpreading2,proto3,oneof" json:"usf_spreading2,omitempty"`
 	OperatorCode                                *uint32 `protobuf:"varint,651,opt,name=operator_code,json=operatorCode,proto3,oneof" json:"operator_code,omitempty"`
+	Temperature                                 *int32  `protobuf:"varint,652,opt,name=temperature,proto3,oneof" json:"temperature,omitempty"`
 	unknownFields                               protoimpl.UnknownFields
 	sizeCache                                   protoimpl.SizeCache
 }
@@ -7517,6 +7518,13 @@ func (x *Compact) GetOperatorCode() uint32 {
 	return 0
 }
 
+func (x *Compact) GetTemperature() int32 {
+	if x != nil && x.Temperature != nil {
+		return *x.Temperature
+	}
+	return 0
+}
+
 var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
@@ -7571,7 +7579,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"_satelliteB\v\n" +
 	"\t_ignitionB\n" +
 	"\n" +
-	"\b_mileage\"\x8e\xf8\x02\n" +
+	"\b_mileage\"\xc7\xf8\x02\n" +
 	"\aCompact\x12\x1f\n" +
 	"\bmovement\x18\x02 \x01(\bH\x00R\bmovement\x88\x01\x01\x12 \n" +
 	"\tdata_mode\x18\x03 \x01(\rH\x01R\bdataMode\x88\x01\x01\x12\"\n" +
@@ -8193,7 +8201,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	" asf_grain_tank_is70_percent_full\x18\xe4\x04 \x01(\bH\xbf\x04R\x1basfGrainTankIs70PercentFull\x88\x01\x01\x12W\n" +
 	"&asf_straw_chopper_speed_below_the_norm\x18\xef\x04 \x01(\bH\xc0\x04R asfStrawChopperSpeedBelowTheNorm\x88\x01\x01\x12,\n" +
 	"\x0eusf_spreading2\x18\x8a\x05 \x01(\bH\xc1\x04R\rusfSpreading2\x88\x01\x01\x12*\n" +
-	"\roperator_code\x18\x8b\x05 \x01(\rH\xc2\x04R\foperatorCode\x88\x01\x01\x1a;\n" +
+	"\roperator_code\x18\x8b\x05 \x01(\rH\xc2\x04R\foperatorCode\x88\x01\x01\x12'\n" +
+	"\vtemperature\x18\x8c\x05 \x01(\x05H\xc3\x04R\vtemperature\x88\x01\x01\x1a;\n" +
 	"\rGeoFenceEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\rR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\rR\x05value:\x028\x01B\v\n" +
@@ -8799,7 +8808,8 @@ const file_packets_packets_proto_rawDesc = "" +
 	"!_asf_grain_tank_is70_percent_fullB)\n" +
 	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
 	"\x0f_usf_spreading2B\x10\n" +
-	"\x0e_operator_code*\x8a\a\n" +
+	"\x0e_operator_codeB\x0e\n" +
+	"\f_temperature*\x8a\a\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
