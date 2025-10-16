@@ -244,7 +244,7 @@ const (
 	Result_AUTHORIZE Result_PacketType = 1
 	Result_DATA      Result_PacketType = 2
 	Result_HEARTBEAT Result_PacketType = 3
-	Result_ANSWER    Result_PacketType = 4
+	Result_REPLY     Result_PacketType = 4
 	Result_CUSTOM    Result_PacketType = 5
 )
 
@@ -255,7 +255,7 @@ var (
 		1: "AUTHORIZE",
 		2: "DATA",
 		3: "HEARTBEAT",
-		4: "ANSWER",
+		4: "REPLY",
 		5: "CUSTOM",
 	}
 	Result_PacketType_value = map[string]int32{
@@ -263,7 +263,7 @@ var (
 		"AUTHORIZE": 1,
 		"DATA":      2,
 		"HEARTBEAT": 3,
-		"ANSWER":    4,
+		"REPLY":     4,
 		"CUSTOM":    5,
 	}
 )
@@ -296,13 +296,17 @@ func (Result_PacketType) EnumDescriptor() ([]byte, []int) {
 }
 
 type Result struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Imei          uint64                 `protobuf:"varint,1,opt,name=imei,proto3" json:"imei,omitempty"`
-	Type          Result_PacketType      `protobuf:"varint,2,opt,name=Type,json=packet_type,proto3,enum=com.navzy.packets.Result_PacketType" json:"Type,omitempty"`
-	Data          []*Packet              `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
-	Response      []byte                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
-	Answer        []byte                 `protobuf:"bytes,5,opt,name=answer,proto3" json:"answer,omitempty"`
-	Payload       []byte                 `protobuf:"bytes,6,opt,name=payload,proto3" json:"payload,omitempty"`
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Imei     uint64                 `protobuf:"varint,1,opt,name=imei,proto3" json:"imei,omitempty"`
+	Type     Result_PacketType      `protobuf:"varint,2,opt,name=Type,json=packet_type,proto3,enum=com.navzy.packets.Result_PacketType" json:"Type,omitempty"`
+	Data     []*Packet              `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty"`
+	Response []byte                 `protobuf:"bytes,4,opt,name=response,proto3" json:"response,omitempty"`
+	Payload  []byte                 `protobuf:"bytes,5,opt,name=payload,proto3" json:"payload,omitempty"`
+	// Types that are valid to be assigned to Reply:
+	//
+	//	*Result_Sky
+	//	*Result_Teltonika
+	Reply         isResult_Reply `protobuf_oneof:"reply"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -365,16 +369,162 @@ func (x *Result) GetResponse() []byte {
 	return nil
 }
 
-func (x *Result) GetAnswer() []byte {
+func (x *Result) GetPayload() []byte {
 	if x != nil {
-		return x.Answer
+		return x.Payload
 	}
 	return nil
 }
 
-func (x *Result) GetPayload() []byte {
+func (x *Result) GetReply() isResult_Reply {
 	if x != nil {
-		return x.Payload
+		return x.Reply
+	}
+	return nil
+}
+
+func (x *Result) GetSky() *SkyReply {
+	if x != nil {
+		if x, ok := x.Reply.(*Result_Sky); ok {
+			return x.Sky
+		}
+	}
+	return nil
+}
+
+func (x *Result) GetTeltonika() *TeltonikaReply {
+	if x != nil {
+		if x, ok := x.Reply.(*Result_Teltonika); ok {
+			return x.Teltonika
+		}
+	}
+	return nil
+}
+
+type isResult_Reply interface {
+	isResult_Reply()
+}
+
+type Result_Sky struct {
+	Sky *SkyReply `protobuf:"bytes,31,opt,name=sky,proto3,oneof"`
+}
+
+type Result_Teltonika struct {
+	Teltonika *TeltonikaReply `protobuf:"bytes,32,opt,name=teltonika,proto3,oneof"`
+}
+
+func (*Result_Sky) isResult_Reply() {}
+
+func (*Result_Teltonika) isResult_Reply() {}
+
+type SkyReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ServerFlagBit uint32                 `protobuf:"varint,1,opt,name=server_flag_bit,json=serverFlagBit,proto3" json:"server_flag_bit,omitempty"`
+	Content       string                 `protobuf:"bytes,2,opt,name=content,proto3" json:"content,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SkyReply) Reset() {
+	*x = SkyReply{}
+	mi := &file_packets_packets_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SkyReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SkyReply) ProtoMessage() {}
+
+func (x *SkyReply) ProtoReflect() protoreflect.Message {
+	mi := &file_packets_packets_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SkyReply.ProtoReflect.Descriptor instead.
+func (*SkyReply) Descriptor() ([]byte, []int) {
+	return file_packets_packets_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *SkyReply) GetServerFlagBit() uint32 {
+	if x != nil {
+		return x.ServerFlagBit
+	}
+	return 0
+}
+
+func (x *SkyReply) GetContent() string {
+	if x != nil {
+		return x.Content
+	}
+	return ""
+}
+
+type TeltonikaReply struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Quantity      uint32                 `protobuf:"varint,1,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	DataType      uint32                 `protobuf:"varint,2,opt,name=data_type,json=dataType,proto3" json:"data_type,omitempty"`
+	Response      []byte                 `protobuf:"bytes,3,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TeltonikaReply) Reset() {
+	*x = TeltonikaReply{}
+	mi := &file_packets_packets_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TeltonikaReply) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TeltonikaReply) ProtoMessage() {}
+
+func (x *TeltonikaReply) ProtoReflect() protoreflect.Message {
+	mi := &file_packets_packets_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TeltonikaReply.ProtoReflect.Descriptor instead.
+func (*TeltonikaReply) Descriptor() ([]byte, []int) {
+	return file_packets_packets_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *TeltonikaReply) GetQuantity() uint32 {
+	if x != nil {
+		return x.Quantity
+	}
+	return 0
+}
+
+func (x *TeltonikaReply) GetDataType() uint32 {
+	if x != nil {
+		return x.DataType
+	}
+	return 0
+}
+
+func (x *TeltonikaReply) GetResponse() []byte {
+	if x != nil {
+		return x.Response
 	}
 	return nil
 }
@@ -390,7 +540,7 @@ type Task struct {
 
 func (x *Task) Reset() {
 	*x = Task{}
-	mi := &file_packets_packets_proto_msgTypes[1]
+	mi := &file_packets_packets_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +552,7 @@ func (x *Task) String() string {
 func (*Task) ProtoMessage() {}
 
 func (x *Task) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[1]
+	mi := &file_packets_packets_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +565,7 @@ func (x *Task) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Task.ProtoReflect.Descriptor instead.
 func (*Task) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{1}
+	return file_packets_packets_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Task) GetDevice() *devices.Device {
@@ -451,7 +601,7 @@ type Client struct {
 
 func (x *Client) Reset() {
 	*x = Client{}
-	mi := &file_packets_packets_proto_msgTypes[2]
+	mi := &file_packets_packets_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -463,7 +613,7 @@ func (x *Client) String() string {
 func (*Client) ProtoMessage() {}
 
 func (x *Client) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[2]
+	mi := &file_packets_packets_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -476,7 +626,7 @@ func (x *Client) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Client.ProtoReflect.Descriptor instead.
 func (*Client) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{2}
+	return file_packets_packets_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Client) GetIp() string {
@@ -518,7 +668,7 @@ type Data struct {
 
 func (x *Data) Reset() {
 	*x = Data{}
-	mi := &file_packets_packets_proto_msgTypes[3]
+	mi := &file_packets_packets_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -530,7 +680,7 @@ func (x *Data) String() string {
 func (*Data) ProtoMessage() {}
 
 func (x *Data) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[3]
+	mi := &file_packets_packets_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -543,7 +693,7 @@ func (x *Data) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Data.ProtoReflect.Descriptor instead.
 func (*Data) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{3}
+	return file_packets_packets_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Data) GetDeviceId() string {
@@ -587,7 +737,7 @@ type Packet struct {
 
 func (x *Packet) Reset() {
 	*x = Packet{}
-	mi := &file_packets_packets_proto_msgTypes[4]
+	mi := &file_packets_packets_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -599,7 +749,7 @@ func (x *Packet) String() string {
 func (*Packet) ProtoMessage() {}
 
 func (x *Packet) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[4]
+	mi := &file_packets_packets_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,7 +762,7 @@ func (x *Packet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Packet.ProtoReflect.Descriptor instead.
 func (*Packet) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{4}
+	return file_packets_packets_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *Packet) GetImei() uint64 {
@@ -3433,7 +3583,7 @@ type Compact struct {
 
 func (x *Compact) Reset() {
 	*x = Compact{}
-	mi := &file_packets_packets_proto_msgTypes[5]
+	mi := &file_packets_packets_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3445,7 +3595,7 @@ func (x *Compact) String() string {
 func (*Compact) ProtoMessage() {}
 
 func (x *Compact) ProtoReflect() protoreflect.Message {
-	mi := &file_packets_packets_proto_msgTypes[5]
+	mi := &file_packets_packets_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3458,7 +3608,7 @@ func (x *Compact) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Compact.ProtoReflect.Descriptor instead.
 func (*Compact) Descriptor() ([]byte, []int) {
-	return file_packets_packets_proto_rawDescGZIP(), []int{5}
+	return file_packets_packets_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Compact) GetMovement() bool {
@@ -7532,25 +7682,33 @@ var File_packets_packets_proto protoreflect.FileDescriptor
 
 const file_packets_packets_proto_rawDesc = "" +
 	"\n" +
-	"\x15packets/packets.proto\x12\x11com.navzy.packets\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15devices/devices.proto\"\xb4\x02\n" +
+	"\x15packets/packets.proto\x12\x11com.navzy.packets\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x15devices/devices.proto\"\x9e\x03\n" +
 	"\x06Result\x12\x12\n" +
 	"\x04imei\x18\x01 \x01(\x04R\x04imei\x12?\n" +
 	"\x04Type\x18\x02 \x01(\x0e2$.com.navzy.packets.Result.PacketTypeR\vpacket_type\x12-\n" +
 	"\x04data\x18\x03 \x03(\v2\x19.com.navzy.packets.PacketR\x04data\x12\x1a\n" +
-	"\bresponse\x18\x04 \x01(\fR\bresponse\x12\x16\n" +
-	"\x06answer\x18\x05 \x01(\fR\x06answer\x12\x18\n" +
-	"\apayload\x18\x06 \x01(\fR\apayload\"X\n" +
+	"\bresponse\x18\x04 \x01(\fR\bresponse\x12\x18\n" +
+	"\apayload\x18\x05 \x01(\fR\apayload\x12/\n" +
+	"\x03sky\x18\x1f \x01(\v2\x1b.com.navzy.packets.SkyReplyH\x00R\x03sky\x12A\n" +
+	"\tteltonika\x18  \x01(\v2!.com.navzy.packets.TeltonikaReplyH\x00R\tteltonika\"W\n" +
 	"\n" +
 	"PacketType\x12\n" +
 	"\n" +
 	"\x06FAILED\x10\x00\x12\r\n" +
 	"\tAUTHORIZE\x10\x01\x12\b\n" +
 	"\x04DATA\x10\x02\x12\r\n" +
-	"\tHEARTBEAT\x10\x03\x12\n" +
+	"\tHEARTBEAT\x10\x03\x12\t\n" +
+	"\x05REPLY\x10\x04\x12\n" +
 	"\n" +
-	"\x06ANSWER\x10\x04\x12\n" +
-	"\n" +
-	"\x06CUSTOM\x10\x05\"\xa0\x01\n" +
+	"\x06CUSTOM\x10\x05B\a\n" +
+	"\x05replyJ\x04\b\x06\x10\x1f\"L\n" +
+	"\bSkyReply\x12&\n" +
+	"\x0fserver_flag_bit\x18\x01 \x01(\rR\rserverFlagBit\x12\x18\n" +
+	"\acontent\x18\x02 \x01(\tR\acontent\"e\n" +
+	"\x0eTeltonikaReply\x12\x1a\n" +
+	"\bquantity\x18\x01 \x01(\rR\bquantity\x12\x1b\n" +
+	"\tdata_type\x18\x02 \x01(\rR\bdataType\x12\x1a\n" +
+	"\bresponse\x18\x03 \x01(\fR\bresponse\"\xa0\x01\n" +
 	"\x04Task\x122\n" +
 	"\x06device\x18\x01 \x01(\v2\x19.com.navzy.devices.DeviceR\adevices\x121\n" +
 	"\x06packet\x18\x02 \x01(\v2\x19.com.navzy.packets.PacketR\x06packet\x121\n" +
@@ -8901,37 +9059,41 @@ func file_packets_packets_proto_rawDescGZIP() []byte {
 }
 
 var file_packets_packets_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_packets_packets_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_packets_packets_proto_goTypes = []any{
 	(Event)(0),                    // 0: com.navzy.packets.Event
 	(Result_PacketType)(0),        // 1: com.navzy.packets.Result.PacketType
 	(*Result)(nil),                // 2: com.navzy.packets.Result
-	(*Task)(nil),                  // 3: com.navzy.packets.Task
-	(*Client)(nil),                // 4: com.navzy.packets.Client
-	(*Data)(nil),                  // 5: com.navzy.packets.Data
-	(*Packet)(nil),                // 6: com.navzy.packets.Packet
-	(*Compact)(nil),               // 7: com.navzy.packets.Compact
-	nil,                           // 8: com.navzy.packets.Compact.GeoFenceEntry
-	(*devices.Device)(nil),        // 9: com.navzy.devices.Device
-	(*timestamppb.Timestamp)(nil), // 10: google.protobuf.Timestamp
+	(*SkyReply)(nil),              // 3: com.navzy.packets.SkyReply
+	(*TeltonikaReply)(nil),        // 4: com.navzy.packets.TeltonikaReply
+	(*Task)(nil),                  // 5: com.navzy.packets.Task
+	(*Client)(nil),                // 6: com.navzy.packets.Client
+	(*Data)(nil),                  // 7: com.navzy.packets.Data
+	(*Packet)(nil),                // 8: com.navzy.packets.Packet
+	(*Compact)(nil),               // 9: com.navzy.packets.Compact
+	nil,                           // 10: com.navzy.packets.Compact.GeoFenceEntry
+	(*devices.Device)(nil),        // 11: com.navzy.devices.Device
+	(*timestamppb.Timestamp)(nil), // 12: google.protobuf.Timestamp
 }
 var file_packets_packets_proto_depIdxs = []int32{
 	1,  // 0: com.navzy.packets.Result.Type:type_name -> com.navzy.packets.Result.PacketType
-	6,  // 1: com.navzy.packets.Result.data:type_name -> com.navzy.packets.Packet
-	9,  // 2: com.navzy.packets.Task.device:type_name -> com.navzy.devices.Device
-	6,  // 3: com.navzy.packets.Task.packet:type_name -> com.navzy.packets.Packet
-	4,  // 4: com.navzy.packets.Task.client:type_name -> com.navzy.packets.Client
-	10, // 5: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
-	6,  // 6: com.navzy.packets.Data.packet:type_name -> com.navzy.packets.Packet
-	10, // 7: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
-	7,  // 8: com.navzy.packets.Packet.compact:type_name -> com.navzy.packets.Compact
-	0,  // 9: com.navzy.packets.Packet.events:type_name -> com.navzy.packets.Event
-	8,  // 10: com.navzy.packets.Compact.geo_fence:type_name -> com.navzy.packets.Compact.GeoFenceEntry
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	8,  // 1: com.navzy.packets.Result.data:type_name -> com.navzy.packets.Packet
+	3,  // 2: com.navzy.packets.Result.sky:type_name -> com.navzy.packets.SkyReply
+	4,  // 3: com.navzy.packets.Result.teltonika:type_name -> com.navzy.packets.TeltonikaReply
+	11, // 4: com.navzy.packets.Task.device:type_name -> com.navzy.devices.Device
+	8,  // 5: com.navzy.packets.Task.packet:type_name -> com.navzy.packets.Packet
+	6,  // 6: com.navzy.packets.Task.client:type_name -> com.navzy.packets.Client
+	12, // 7: com.navzy.packets.Data.received:type_name -> google.protobuf.Timestamp
+	8,  // 8: com.navzy.packets.Data.packet:type_name -> com.navzy.packets.Packet
+	12, // 9: com.navzy.packets.Packet.datetime:type_name -> google.protobuf.Timestamp
+	9,  // 10: com.navzy.packets.Packet.compact:type_name -> com.navzy.packets.Compact
+	0,  // 11: com.navzy.packets.Packet.events:type_name -> com.navzy.packets.Event
+	10, // 12: com.navzy.packets.Compact.geo_fence:type_name -> com.navzy.packets.Compact.GeoFenceEntry
+	13, // [13:13] is the sub-list for method output_type
+	13, // [13:13] is the sub-list for method input_type
+	13, // [13:13] is the sub-list for extension type_name
+	13, // [13:13] is the sub-list for extension extendee
+	0,  // [0:13] is the sub-list for field type_name
 }
 
 func init() { file_packets_packets_proto_init() }
@@ -8939,15 +9101,19 @@ func file_packets_packets_proto_init() {
 	if File_packets_packets_proto != nil {
 		return
 	}
-	file_packets_packets_proto_msgTypes[4].OneofWrappers = []any{}
-	file_packets_packets_proto_msgTypes[5].OneofWrappers = []any{}
+	file_packets_packets_proto_msgTypes[0].OneofWrappers = []any{
+		(*Result_Sky)(nil),
+		(*Result_Teltonika)(nil),
+	}
+	file_packets_packets_proto_msgTypes[6].OneofWrappers = []any{}
+	file_packets_packets_proto_msgTypes[7].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_packets_packets_proto_rawDesc), len(file_packets_packets_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

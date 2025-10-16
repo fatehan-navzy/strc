@@ -96,9 +96,94 @@ func (m *Result) validate(all bool) error {
 
 	// no validation rules for Response
 
-	// no validation rules for Answer
-
 	// no validation rules for Payload
+
+	switch v := m.Reply.(type) {
+	case *Result_Sky:
+		if v == nil {
+			err := ResultValidationError{
+				field:  "Reply",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+
+		if all {
+			switch v := interface{}(m.GetSky()).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, ResultValidationError{
+						field:  "Sky",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, ResultValidationError{
+						field:  "Sky",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			}
+		} else if v, ok := interface{}(m.GetSky()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ResultValidationError{
+					field:  "Sky",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	case *Result_Teltonika:
+		if v == nil {
+			err := ResultValidationError{
+				field:  "Reply",
+				reason: "oneof value cannot be a typed-nil",
+			}
+			if !all {
+				return err
+			}
+			errors = append(errors, err)
+		}
+
+		if all {
+			switch v := interface{}(m.GetTeltonika()).(type) {
+			case interface{ ValidateAll() error }:
+				if err := v.ValidateAll(); err != nil {
+					errors = append(errors, ResultValidationError{
+						field:  "Teltonika",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			case interface{ Validate() error }:
+				if err := v.Validate(); err != nil {
+					errors = append(errors, ResultValidationError{
+						field:  "Teltonika",
+						reason: "embedded message failed validation",
+						cause:  err,
+					})
+				}
+			}
+		} else if v, ok := interface{}(m.GetTeltonika()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ResultValidationError{
+					field:  "Teltonika",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	default:
+		_ = v // ensures v is used
+	}
 
 	if len(errors) > 0 {
 		return ResultMultiError(errors)
@@ -176,6 +261,215 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = ResultValidationError{}
+
+// Validate checks the field values on SkyReply with the rules defined in the
+// proto definition for this message. If any rules are violated, the first
+// error encountered is returned, or nil if there are no violations.
+func (m *SkyReply) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on SkyReply with the rules defined in
+// the proto definition for this message. If any rules are violated, the
+// result is a list of violation errors wrapped in SkyReplyMultiError, or nil
+// if none found.
+func (m *SkyReply) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *SkyReply) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for ServerFlagBit
+
+	// no validation rules for Content
+
+	if len(errors) > 0 {
+		return SkyReplyMultiError(errors)
+	}
+
+	return nil
+}
+
+// SkyReplyMultiError is an error wrapping multiple validation errors returned
+// by SkyReply.ValidateAll() if the designated constraints aren't met.
+type SkyReplyMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m SkyReplyMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m SkyReplyMultiError) AllErrors() []error { return m }
+
+// SkyReplyValidationError is the validation error returned by
+// SkyReply.Validate if the designated constraints aren't met.
+type SkyReplyValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SkyReplyValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SkyReplyValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SkyReplyValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SkyReplyValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SkyReplyValidationError) ErrorName() string { return "SkyReplyValidationError" }
+
+// Error satisfies the builtin error interface
+func (e SkyReplyValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSkyReply.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SkyReplyValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SkyReplyValidationError{}
+
+// Validate checks the field values on TeltonikaReply with the rules defined in
+// the proto definition for this message. If any rules are violated, the first
+// error encountered is returned, or nil if there are no violations.
+func (m *TeltonikaReply) Validate() error {
+	return m.validate(false)
+}
+
+// ValidateAll checks the field values on TeltonikaReply with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// result is a list of violation errors wrapped in TeltonikaReplyMultiError,
+// or nil if none found.
+func (m *TeltonikaReply) ValidateAll() error {
+	return m.validate(true)
+}
+
+func (m *TeltonikaReply) validate(all bool) error {
+	if m == nil {
+		return nil
+	}
+
+	var errors []error
+
+	// no validation rules for Quantity
+
+	// no validation rules for DataType
+
+	// no validation rules for Response
+
+	if len(errors) > 0 {
+		return TeltonikaReplyMultiError(errors)
+	}
+
+	return nil
+}
+
+// TeltonikaReplyMultiError is an error wrapping multiple validation errors
+// returned by TeltonikaReply.ValidateAll() if the designated constraints
+// aren't met.
+type TeltonikaReplyMultiError []error
+
+// Error returns a concatenation of all the error messages it wraps.
+func (m TeltonikaReplyMultiError) Error() string {
+	msgs := make([]string, 0, len(m))
+	for _, err := range m {
+		msgs = append(msgs, err.Error())
+	}
+	return strings.Join(msgs, "; ")
+}
+
+// AllErrors returns a list of validation violation errors.
+func (m TeltonikaReplyMultiError) AllErrors() []error { return m }
+
+// TeltonikaReplyValidationError is the validation error returned by
+// TeltonikaReply.Validate if the designated constraints aren't met.
+type TeltonikaReplyValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TeltonikaReplyValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TeltonikaReplyValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TeltonikaReplyValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TeltonikaReplyValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TeltonikaReplyValidationError) ErrorName() string { return "TeltonikaReplyValidationError" }
+
+// Error satisfies the builtin error interface
+func (e TeltonikaReplyValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTeltonikaReply.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TeltonikaReplyValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TeltonikaReplyValidationError{}
 
 // Validate checks the field values on Task with the rules defined in the proto
 // definition for this message. If any rules are violated, the first error

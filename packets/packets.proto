@@ -16,15 +16,30 @@ message Result {
     AUTHORIZE = 1;
     DATA = 2;
     HEARTBEAT = 3;
-    ANSWER = 4;
+    REPLY = 4;
     CUSTOM = 5;
   }
   uint64 imei = 1 [json_name = "imei"];
   PacketType Type = 2 [json_name = "packet_type"];
   repeated Packet data = 3 [json_name = "data"];
   bytes response = 4 [json_name = "response"];
-  bytes answer = 5 [json_name = "answer"];
-  bytes payload = 6 [json_name = "payload"];
+  bytes payload = 5 [json_name = "payload"];
+  reserved 6 to 30;
+  oneof reply {
+    SkyReply sky = 31;
+    TeltonikaReply teltonika = 32;
+  }
+}
+
+message SkyReply {
+  uint32 server_flag_bit = 1;
+  string content = 2;
+}
+
+message TeltonikaReply {
+  uint32 quantity = 1;
+  uint32 data_type = 2;
+  bytes response = 3;
 }
 
 message Task {
@@ -46,7 +61,7 @@ message Data {
   Packet packet = 3 [json_name = "packet"];
 }
 
-message Packet { 
+message Packet {
   uint64 imei = 1 [json_name = "device_id"];
   google.protobuf.Timestamp datetime = 2 [json_name = "datetime"];
   float latitude = 3 [json_name = "latitude"];
@@ -62,3104 +77,3104 @@ message Packet {
 }
 
 message Compact {
-    // Parameter ID: 240
-    // Property Name: Movement
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 – Movement Off, 1 – Movement On
-    optional bool movement = 2;
-  
-    // Parameter ID: 80
-    // Property Name: Data Mode
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 5
-    // Multiplier: -
-    // Units: -
-    // Values: 0 – Home On Stop, 1 – Home On Moving, 2 – Roaming On Stop, 3 – Roaming On Moving, 4 – Unknown On Stop, 5 – Unknown On Moving
-    optional uint32 data_mode = 3;
-  
-    // Parameter ID: 21
-    // Property Name: GSM Signal
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 5
-    // Multiplier: -
-    // Units: -
-    // Values: Value in range 1-5 Explanation
-    optional uint32 gsm_signal = 4;
-  
-    // Parameter ID: 200
-    // Property Name: Sleep Mode
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 4
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No Sleep, 1 – GPS Sleep, 2 – Deep Sleep, 3 – Online Sleep, 4 - Ultra Sleep
-    optional uint32 sleep_mode = 5;
-  
-    // Parameter ID: 69
-    // Property Name: GNSS Status
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 3
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - GNSS OFF, 1 – GNSS ON with fix, 2 - GNSS ON without fix, 3 - GNSS sleep
-    optional uint32 gnss_status = 6;
-  
-    // Parameter ID: 181
-    // Property Name: GNSS PDOP
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 500
-    // Multiplier: 0.1
-    // Units: 
-    // Values: Coefficient, calculation formula
-    optional uint32 gnss_pdop = 7;
-  
-    // Parameter ID: 182
-    // Property Name: GNSS HDOP
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 500
-    // Multiplier: 0.1
-    // Units: 
-    // Values: Coefficient, calculation formula
-    optional uint32 gnss_hdop = 8;
-  
-    // Parameter ID: 66
-    // Property Name: External Voltage
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.001
-    // Units: V
-    // Values: Voltage
-    optional uint32 external_voltage = 9;
-  
-    // Parameter ID: 24
-    // Property Name: Speed
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 350
-    // Multiplier: -
-    // Units: km/h
-    // Values: GNSS Speed
-    optional uint32 speed = 10;
-  
-    // Parameter ID: 205
-    // Property Name: GSM Cell ID
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: -
-    // Values: GSM base station ID
-    optional uint32 gsm_cell_id = 11;
-  
-    // Parameter ID: 206
-    // Property Name: GSM Area Code
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: -
-    // Values: Location Area code (LAC), it depends on GSM operator. It provides unique number which assigned to a set of base GSM stations.
-    optional uint32 gsm_area_code = 12;
-  
-    // Parameter ID: 67
-    // Property Name: Battery Voltage
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.001
-    // Units: V
-    // Values: Voltage
-    optional uint32 battery_voltage = 13;
-  
-    // Parameter ID: 68
-    // Property Name: Battery Current
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.001
-    // Units: A
-    // Values: Current
-    optional uint32 battery_current = 14;
-  
-    // Parameter ID: 241
-    // Property Name: Active GSM Operator
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: -
-    // Values: Currently used GSM Operator code
-    optional uint32 active_gsm_operator = 15;
+  // Parameter ID: 240
+  // Property Name: Movement
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 – Movement Off, 1 – Movement On
+  optional bool movement = 2;
 
-    // Parameter ID: 199
-    // Property Name: Trip Odometer
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 2147483647
-    // Multiplier: -
-    // Units: m
-    // Values: Trip Odometer value
-    optional uint32 trip_odometer = 16;
-  
-    // Parameter ID: 16
-    // Property Name: Total Odometer
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 2147483647
-    // Multiplier: -
-    // Units: -
-    // Values: Total Odometer value in meters
-    optional uint32 total_odometer = 17;
-  
-    // Parameter ID: 1
-    // Property Name: Digital Input 1
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool digital_input1 = 18;
-  
-    // Parameter ID: 9
-    // Property Name: Analog Input 1
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.001
-    // Units: V
-    // Values: Voltage
-    optional uint32 analog_input1 = 19;
-  
-    // Parameter ID: 179
-    // Property Name: Digital Output 1
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool digital_output1 = 20;
-  
-    // Parameter ID: 12
-    // Property Name: Fuel Used GPS
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: 0.001
-    // Units: l
-    // Values: Fuel Used
-    optional uint32 fuel_used_gps = 21;
-  
-    // Parameter ID: 13
-    // Property Name: Fuel Rate GPS
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 32767
-    // Multiplier: 0.01
-    // Units: l/100km
-    // Values: Average Fuel Use
-    optional uint32 fuel_rate_gps = 22;
-  
-    // Parameter ID: 17
-    // Property Name: Axis X
-    // Type: Signed
-    // Bytes: 2
-    // Min: -8000
-    // Max: 8000
-    // Multiplier: -
-    // Units: mG
-    // Values: X axis value
-    optional int32 axis_x = 23;
-  
-    // Parameter ID: 18
-    // Property Name: Axis Y
-    // Type: Signed
-    // Bytes: 2
-    // Min: -8000
-    // Max: 8000
-    // Multiplier: -
-    // Units: mG
-    // Values: Y axis value
-    optional int32 axis_y = 24;
-  
-    // Parameter ID: 19
-    // Property Name: Axis Z
-    // Type: Signed
-    // Bytes: 2
-    // Min: -8000
-    // Max: 8000
-    // Multiplier: -
-    // Units: mG
-    // Values: Z axis value
-    optional int32 axis_z = 25;
-  
-    // Parameter ID: 11
-    // Property Name: ICCID1
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: Value of SIM ICCID, MSB
-    optional uint64 iccid1 = 26;
-  
-    // Parameter ID: 10
-    // Property Name: SD Status
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - not present, 1 - present
-    optional bool sd_status = 27;
-  
-    // Parameter ID: 2
-    // Property Name: Digital Input 2
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool digital_input2 = 28;
-  
-    // Parameter ID: 3
-    // Property Name: Digital Input 3
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool digital_input3 = 29;
-  
-    // Parameter ID: 6
-    // Property Name: Analog Input 2
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.001
-    // Units: V
-    // Values: Voltage
-    optional uint32 analog_input2 = 30;
-  
-    // Parameter ID: 180
-    // Property Name: Digital Output 2
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic 0/1
-    optional bool digital_output2 = 31;
-  
-    // Parameter ID: 72
-    // Property Name: Dallas Temperature 1
-    // Type: Signed
-    // Bytes: 4
-    // Min: -550
-    // Max: 1150
-    // Multiplier: 0.1
-    // Units: °C
-    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int32 dallas_temperature1 = 32;
-  
-    // Parameter ID: 73
-    // Property Name: Dallas Temperature 2
-    // Type: Signed
-    // Bytes: 4
-    // Min: -550
-    // Max: 1150
-    // Multiplier: 0.1
-    // Units: °C
-    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int32 dallas_temperature2 = 33;
-  
-    // Parameter ID: 74
-    // Property Name: Dallas Temperature 3
-    // Type: Signed
-    // Bytes: 4
-    // Min: -550
-    // Max: 1150
-    // Multiplier: 0.1
-    // Units: °C
-    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int32 dallas_temperature3 = 34;
-  
-    // Parameter ID: 75
-    // Property Name: Dallas Temperature 4
-    // Type: Signed
-    // Bytes: 4
-    // Min: -550
-    // Max: 1150
-    // Multiplier: 0.1
-    // Units: °C
-    // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
-    optional int32 dallas_temperature4 = 35;
-  
-    // Parameter ID: 76
-    // Property Name: Dallas Temperature ID 1
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id1 = 36;
-  
-    // Parameter ID: 77
-    // Property Name: Dallas Temperature ID 2
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id2 = 37;
-  
-    // Parameter ID: 79
-    // Property Name: Dallas Temperature ID 3
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id3 = 38;
-  
-    // Parameter ID: 71
-    // Property Name: Dallas Temperature ID 4
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: Dallas sensor ID
-    optional uint64 dallas_temperature_id4 = 39;
-  
-    // Parameter ID: 78
-    // Property Name: iButton
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: iButton ID
-    optional uint64 ibutton = 40;
-  
-    // Parameter ID: 207
-    // Property Name: RFID
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: RFID ID
-    optional uint64 rfid = 41;
-  
-    // Parameter ID: 201
-    // Property Name: LLS 1 Fuel Level
-    // Type: Signed
-    // Bytes: 2
-    // Min: -4
-    // Max: 32767
-    // Multiplier: -
-    // Units: kvants or ltr
-    // Values: Fuel level measured by LLS sensor via RS232/RS485
-    optional int32 lls1_fuel_level = 42;
-  
-    // Parameter ID: 202
-    // Property Name: LLS 1 Temperature
-    // Type: Signed
-    // Bytes: 1
-    // Min: -128
-    // Max: 127
-    // Multiplier: -
-    // Units: °C
-    // Values: Fuel temperature measured by LLS via RS232/RS485
-    optional int32 lls1_temperature = 43;
-  
-    // Parameter ID: 203
-    // Property Name: LLS 2 Fuel Level
-    // Type: Signed
-    // Bytes: 2
-    // Min: -4
-    // Max: 32767
-    // Multiplier: -
-    // Units: kvants or ltr
-    // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls2_fuel_level = 44;
-  
-    // Parameter ID: 204
-    // Property Name: LLS 2 Temperature
-    // Type: Signed
-    // Bytes: 1
-    // Min: -128
-    // Max: 127
-    // Multiplier: -
-    // Units: °C
-    // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls2_temperature = 45;
-  
-    // Parameter ID: 210
-    // Property Name: LLS 3 Fuel Level
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: -4
-    // Max: 32767
-    // Multiplier: -
-    // Units: kvants or ltr
-    // Values: Fuel level measured by LLS sensor via RS485
-    optional uint32 lls3_fuel_level = 46;
-  
-    // Parameter ID: 211
-    // Property Name: LLS 3 Temperature
-    // Type: Signed
-    // Bytes: 1
-    // Min: -128
-    // Max: 127
-    // Multiplier: -
-    // Units: °C
-    // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls3_temperature = 47;
-  
-    // Parameter ID: 212
-    // Property Name: LLS 4 Fuel Level
-    // Type: Signed
-    // Bytes: 2
-    // Min: -4
-    // Max: 32767
-    // Multiplier: -
-    // Units: kvants or ltr
-    // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls4_fuel_level = 48;
-  
-    // Parameter ID: 213
-    // Property Name: LLS 4 Temperature
-    // Type: Signed
-    // Bytes: 1
-    // Min: -128
-    // Max: 127
-    // Multiplier: -
-    // Units: °C
-    // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls4_temperature = 49;
-  
-    // Parameter ID: 214
-    // Property Name: LLS 5 Fuel Level
-    // Type: Signed
-    // Bytes: 2
-    // Min: -4
-    // Max: 32767
-    // Multiplier: -
-    // Units: kvants or ltr
-    // Values: Fuel level measured by LLS sensor via RS485
-    optional int32 lls5_fuel_level = 50;
-  
-    // Parameter ID: 215
-    // Property Name: LLS 5 Temperature
-    // Type: Signed
-    // Bytes: 1
-    // Min: -128
-    // Max: 127
-    // Multiplier: -
-    // Units: °C
-    // Values: Fuel temperature measured by LLS via RS485
-    optional int32 lls5_temperature = 51;
-  
-    // Parameter ID: 15
-    // Property Name: Eco Score
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 0.01
-    // Units: -
-    // Values: Average amount of events on some distance
-    optional uint32 eco_score = 52;
-  
-    // Parameter ID: 113
-    // Property Name: Battery Level
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 100
-    // Multiplier: -
-    // Units: %
-    // Values: Battery capacity level
-    optional uint32 battery_level = 53;
-  
-    // Parameter ID: 238
-    // Property Name: User ID
-    // Type: Unsigned
-    // Bytes: 8
-    // Min: 0
-    // Max: 0xffffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: MAC address of NMEA receiver device connected via Bluetooth
-    optional uint64 user_id = 54;
-  
-    // Parameter ID: 237
-    // Property Name: Network Type
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - 3G, 1 - GSM, 2 - 4G, 3 - LTE CAT M1, 4 - LTE CAT NB1, 99 - Unknown
-    optional uint32 network_type = 55;
-  
-    // Parameter ID: 4
-    // Property Name: Pulse Counter Din1
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: -
-    // Values: Counts pulses, count is reset when records are saved
-    optional uint32 pulse_counter_din1 = 56;
-  
-    // Parameter ID: 5
-    // Property Name: Pulse Counter Din2
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: -
-    // Values: Counts pulses, count is reset when records are saved
-    optional uint32 pulse_counter_din2 = 57;
-  
-    // Parameter ID: 263
-    // Property Name: BT Status
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 4
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - BT is disabled, 1 - BT Enabled, not device connected, 2 - Device connected, BTv3 Only, 3 - Device connected, BLE only, 4 - Device connected, BLE + BT
-    optional uint32 bt_status = 58;
-  
-    // Parameter ID: 264
-    // Property Name: Barcode ID
-    // Type: ASCII
-    // Bytes: Variable
-    // Min: 0
-    // Max: 32
-    // Multiplier: -
-    // Units: -
-    // Values: Barcode ID
-    optional string barcode_id = 59;
-  
-    // Parameter ID: 303
-    // Property Name: Instant Movement
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1 returns movement value
-    optional bool instant_movement = 60;
-  
-    // Parameter ID: 327
-    // Property Name: UL202-02 Sensor Fuel level
-    // Type: Signed
-    // Bytes: 2
-    // Min: -150
-    // Max: 32767
-    // Multiplier: 0.1
-    // Units: mm
-    // Values: UL202-02 Sensor Fuel level
-    optional int32 ul202_02_sensor_fuel_level = 61;
-  
-    // Parameter ID: 483
-    // Property Name: UL202-02 Sensor Status
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 255
-    // Multiplier: -
-    // Units: -
-    // Values: UL202-02 sensor status codes
-    optional uint32 ul202_02_sensor_status = 62;
-  
-    // Parameter ID: 380
-    // Property Name: Digital output 3
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool digital_output3 = 63;
-  
-    // Parameter ID: 381
-    // Property Name: Ground Sense
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Logic: 0/1
-    optional bool ground_sense = 64;
-  
-    // Parameter ID: 387
-    // Property Name: ISO6709 Coordinates
-    // Type: HEX
-    // Bytes: 34
-    // Min: 0
-    // Max: 0x7fffffffffffffff
-    // Multiplier: -
-    // Units: -
-    // Values: ISO6709 Coordinates Latitude, Longitude (in Degrees, Minutes and Seconds) and Altitude: IO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/
-    optional string iso6709_coordinates = 65;
-  
-    // Parameter ID: 636
-    // Property Name: UMTS/LTE Cell ID
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 0xFFFFFFFF
-    // Multiplier: -
-    // Units: -
-    // Values: 
-    optional uint32 umts_lte_cell_id = 66;
-  
-    // Parameter ID: 403
-    // Property Name: Driver Name
-    // Type: Unsigned
-    // Bytes: 35
-    // Min: -
-    // Max: -
-    // Multiplier: -
-    // Units: -
-    // Values: Driver name extracted from card, displayed without delimiters ($ signs)
-    optional string driver_name = 67;  // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
-  
-    // Note: Adjusting for bytes 35, perhaps bytes type
-    // But following "Type: Unsigned", using uint64, but may need adjustment
-  
-    // Parameter ID: 404
-    // Property Name: Driver card license type
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 8
-    // Multiplier: -
-    // Units: -
-    // Values: None - 0, B.1 license type - 1, B.2 license type - 2, B.3 license type - 3, B.4 license type - 4, T.1 license type - 5, T.2 license type - 6, T.3 license type - 7, T.4 license type - 8
-    optional uint32 driver_card_license_type = 68;
-  
-    // Parameter ID: 405
-    // Property Name: Driver Gender
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 2
-    // Multiplier: -
-    // Units: -
-    // Values: None - 0, Male - 1, Female - 2
-    optional uint32 driver_gender = 69;
-  
-    // Parameter ID: 406
-    // Property Name: Driver Card ID
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: -
-    // Values: None - 0, Male - 1, Female - 2  // Note: Seems typo in document, values from previous?
-    optional uint32 driver_card_id = 70;
-  
-    // Parameter ID: 407
-    // Property Name: Driver Card expiration date
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 9999
-    // Multiplier: -
-    // Units: -
-    // Values: 
-    optional uint32 driver_card_expiration_date = 71;
-  
-    // Parameter ID: 408
-    // Property Name: Driver Card place of issue
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: -
-    // Values: Extracted from card
-    optional uint32 driver_card_place_of_issue = 72;
-  
-    // Parameter ID: 409
-    // Property Name: Driver Status Event
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 2
-    // Multiplier: -
-    // Units: -
-    // Values: Registered - 0, Deregistered - 1, Swapping - 2
-    optional uint32 driver_status_event = 73;
-  
-    // Parameter ID: 329
-    // Property Name: AIN Speed
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: -
-    // Values: 
-    optional uint32 ain_speed = 74;
-  
-    // Parameter ID: 500
-    // Property Name: MSP500 vendor name
-    // Type: ASCII
-    // Bytes: 40
-    // Min: 0
-    // Max: 40
-    // Multiplier: -
-    // Units: -
-    // Values: Name of the integrator who installed the device
-    optional string msp500_vendor_name = 75;
-  
-    // Parameter ID: 501
-    // Property Name: MSP500 vehicle number
-    // Type: ASCII
-    // Bytes: 40
-    // Min: 0
-    // Max: 40
-    // Multiplier: -
-    // Units: -
-    // Values: Vehicle number on which the device is installed
-    optional string msp500_vehicle_number = 76;
-  
-    // Parameter ID: 502
-    // Property Name: MSP500 speed sensor
-    // Type: unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Status of the speed sensor
-    optional bool msp500_speed_sensor = 77;
-  
-    // Parameter ID: 637
-    // Property Name: Wake Reason
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: True if device was woken by RTC alarm
-    optional bool wake_reason = 78;
-  
-    // Parameter ID: 10800
-    // Property Name: EYE Temperature 1
-    // Type: Signed
-    // Bytes: 2
-    // Min: -32768
-    // Max: 32767
-    // Multiplier: 0.01
-    // Units: °C
-    // Values: Temperature measured by EYE Sensor 1
-    optional int32 eye_temperature1 = 79;
-  
-    // Parameter ID: 10801
-    // Property Name: EYE Temperature 2
-    // Type: Signed
-    // Bytes: 2
-    // Min: -32768
-    // Max: 32767
-    // Multiplier: 0.01
-    // Units: °C
-    // Values: Temperature measured by EYE Sensor 2
-    optional int32 eye_temperature2 = 80;
-  
-    // Parameter ID: 10802
-    // Property Name: EYE Temperature 3
-    // Type: Signed
-    // Bytes: 2
-    // Min: -32768
-    // Max: 32767
-    // Multiplier: 0.01
-    // Units: °C
-    // Values: Temperature measured by EYE Sensor 3
-    optional int32 eye_temperature3 = 81;
-  
-    // Parameter ID: 10803
-    // Property Name: EYE Temperature 4
-    // Type: Signed
-    // Bytes: 2
-    // Min: -32768
-    // Max: 32767
-    // Multiplier: 0.01
-    // Units: °C
-    // Values: Temperature measured by EYE Sensor 4
-    optional int32 eye_temperature4 = 82;
-  
-    // Parameter ID: 10804
-    // Property Name: EYE Humidity 1
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 100
-    // Multiplier: -
-    // Units: %
-    // Values: Humidity measured by EYE Sensor 1
-    optional uint32 eye_humidity1 = 83;
-  
-    // Parameter ID: 10805
-    // Property Name: EYE Humidity 2
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 100
-    // Multiplier: -
-    // Units: %
-    // Values: Humidity measured by EYE Sensor 2
-    optional uint32 eye_humidity2 = 84;
-  
-    // Parameter ID: 10806
-    // Property Name: EYE Humidity 3
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 100
-    // Multiplier: -
-    // Units: %
-    // Values: Humidity measured by EYE Sensor 3
-    optional uint32 eye_humidity3 = 85;
-  
-    // Parameter ID: 10807
-    // Property Name: EYE Humidity 4
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 100
-    // Multiplier: -
-    // Units: %
-    // Values: Humidity measured by EYE Sensor 4
-    optional uint32 eye_humidity4 = 86;
-  
-    // Parameter ID: 10808
-    // Property Name: EYE Magnet 1
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Magnet measured by EYE Sensor by EYE Sensor 1
-    optional bool eye_magnet1 = 87;
-  
-    // Parameter ID: 10809
-    // Property Name: EYE Magnet 2
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Magnet measured by EYE Sensor by EYE Sensor 2
-    optional bool eye_magnet2 = 88;
-  
-    // Parameter ID: 10810
-    // Property Name: EYE Magnet 3
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Magnet measured by EYE Sensor by EYE Sensor 3
-    optional bool eye_magnet3 = 89;
-  
-    // Parameter ID: 10811
-    // Property Name: EYE Magnet 4
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Magnet measured by EYE Sensor by EYE Sensor 4
-    optional bool eye_magnet4 = 90;
-  
-    // Parameter ID: 10812
-    // Property Name: EYE Movement 1
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Movement state measure by EYE Sensor 1
-    optional bool eye_movement1 = 91;
-    optional bool eye_movement2 = 219;
-    optional bool eye_movement3 = 220;
-    optional bool eye_movement4 = 221;
-    optional int32 eye_pitch1 = 222;
-    optional int32 eye_pitch2 = 223;
-    optional int32 eye_pitch3 = 224;
-    optional int32 eye_pitch4 = 225;
-    optional bool eye_low_battery1 = 229;
-    optional bool eye_low_battery2 = 226;
-    optional bool eye_low_battery3 = 227;
-    optional bool eye_low_battery4 = 228;
-    optional uint32 eye_battery_voltage1 = 233;
-    optional uint32 eye_battery_voltage2 = 230;
-    optional uint32 eye_battery_voltage3 = 231;
-    optional uint32 eye_battery_voltage4 = 232;
-    optional int32 eye_roll1 = 234;
-    optional int32 eye_roll2 = 235;
-    optional int32 eye_roll3 = 236;
-    optional int32 eye_roll4 = 237;
-    optional uint32 eye_movement_count1 = 238;
-    optional uint32 eye_movement_count2 = 239;
-    optional uint32 eye_movement_count3 = 240;
-    optional uint32 eye_movement_count4 = 241;
-    optional uint32 eye_magnet_count1 = 245;
-    optional uint32 eye_magnet_count2 = 242;
-    optional uint32 eye_magnet_count3 = 243;
-    optional uint32 eye_magnet_count4 = 244;
-  
-    // Note: The document is truncated, so continuing with available data up to truncation point.
-  
-    // Parameter ID: 985
-    // Property Name: ISF Clogged Brake System Filter Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_clogged_brake_system_filter_indicator = 92;
-  
-    // Parameter ID: 986
-    // Property Name: ISF Low Washer Fluid Level Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_low_washer_fluid_level_indicator = 93;
-  
-    // Parameter ID: 987
-    // Property Name: ISF Low AdBlue Level Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_low_adblue_level_indicator = 94;
-  
-    // Parameter ID: 988
-    // Property Name: ISF Low Trailer Tyre Pressure Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_low_trailer_tyre_pressure_indicator = 95;
-  
-    // Parameter ID: 989
-    // Property Name: ISF Wear Of Trailer Brake Lining Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_wear_of_trailer_brake_lining_indicator = 96;
-  
-    // Parameter ID: 990
-    // Property Name: ISF High Trailer Brake Temperature Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_high_trailer_brake_temperature_indicator = 97;
-  
-    // Parameter ID: 991
-    // Property Name: ISF Incorrect Trailer Pneumatic Supply Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_incorrect_trailer_pneumatic_supply_indicator = 98;
-  
-    // Parameter ID: 992
-    // Property Name: ISF Low CNG Level Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool isf_low_cng_level_indicator = 99;
-  
-    // Parameter ID: 993
-    // Property Name: ASF Right Joystick Moved Right Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_right_joystick_moved_right_active = 100;
-  
-    // Parameter ID: 994
-    // Property Name: ASF Right Joystick Moved Left Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_right_joystick_moved_left_active = 101;
-  
-    // Parameter ID: 995
-    // Property Name: ASF Right Joystick Moved Forward Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_right_joystick_moved_forward_active = 102;
-  
-    // Parameter ID: 996
-    // Property Name: ASF Right Joystick Moved Back Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_right_joystick_moved_back_active = 103;
-  
-    // Parameter ID: 997
-    // Property Name: ASF Left Joystick Moved Right Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_left_joystick_moved_right_active = 104;
-  
-    // Parameter ID: 998
-    // Property Name: ASF Left Joystick Moved Left Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_left_joystick_moved_left_active = 105;
-  
-    // Parameter ID: 999
-    // Property Name: ASF Left Joystick Moved Forward Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_left_joystick_moved_forward_active = 106;
-  
-    // Parameter ID: 1000
-    // Property Name: ASF Left Joystick Moved Back Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_left_joystick_moved_back_active = 107;
-  
-    // Parameter ID: 1001
-    // Property Name: ASF First Rear hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_first_rear_hydraulic = 108;
-  
-    // Parameter ID: 1002
-    // Property Name: ASF Second Rear hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_second_rear_hydraulic = 109;
-  
-    // Parameter ID: 1003
-    // Property Name: ASF Third Rear hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_third_rear_hydraulic = 110;
-  
-    // Parameter ID: 1004
-    // Property Name: ASF Fourth Rear hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_fourth_rear_hydraulic = 111;
-  
-    // Parameter ID: 1005
-    // Property Name: ASF First Front hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_first_front_hydraulic = 112;
-  
-    // Parameter ID: 1006
-    // Property Name: ASF Second Front hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_second_front_hydraulic = 113;
-  
-    // Parameter ID: 1007
-    // Property Name: ASF Third Front hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_third_front_hydraulic = 114;
-  
-    // Parameter ID: 1008
-    // Property Name: ASF Fourth Front hydraulic
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_fourth_front_hydraulic = 115;
-  
-    // Parameter ID: 1009
-    // Property Name: ASF Front Three-point Hitch
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_front_three_point_hitch = 116;
-  
-    // Parameter ID: 1010
-    // Property Name: ASF Rear Three-point Hitch
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_rear_three_point_hitch = 117;
-  
-    // Parameter ID: 1011
-    // Property Name: ASF Front Power Take-off
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_front_power_take_off = 118;
-  
-    // Parameter ID: 1012
-    // Property Name: ASF Rear Power Take-off
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_rear_power_take_off = 119;
-  
-    // Parameter ID: 1013
-    // Property Name: ASF Mowing Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_mowing_active = 120;
-  
-    // Parameter ID: 1014
-    // Property Name: ASF Threshing Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Inactive, 1 - Active
-    optional bool asf_threshing_active = 121;
-  
-    // Parameter ID: 1015
-    // Property Name: ASF Grain Release From Hopper
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_grain_release_from_hopper = 122;
-  
-    // Parameter ID: 1016
-    // Property Name: ASF Grain Tank Is 100% Full
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_grain_tank_is100_full = 123;
-  
-    // Parameter ID: 1017
-    // Property Name: ASF Grain Tank Is 70% Full
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_grain_tank_is70_full = 124;
-  
-    // Parameter ID: 1018
-    // Property Name: ASF Grain Tank Is Opened
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Closed, 1 - Opened
-    optional bool asf_grain_tank_is_opened = 125;
-  
-    // Parameter ID: 1019
-    // Property Name: ASF Unloader Drive
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_unloader_drive = 126;
-  
-    // Parameter ID: 1020
-    // Property Name: ASF Cleaning Fan Control Turned Off
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_cleaning_fan_control_turned_off = 127;
-  
-    // Parameter ID: 1021
-    // Property Name: ASF Threshing Drum Control Turned Off
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_threshing_drum_control_turned_off = 128;
-  
-    // Parameter ID: 1022
-    // Property Name: ASF Straw Walker Is Clogged
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_straw_walker_is_clogged = 129;
-  
-    // Parameter ID: 1023
-    // Property Name: ASF Excessive Clearance Under The Threshing Drum
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_excessive_clearance_under_the_threshing_drum = 130;
-  
-    // Parameter ID: 1024
-    // Property Name: ASF Low Temperature Of Drive System Hydraulics Less Than 5 Grades
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_low_temperature_of_drive_system_hydraulics_less_than5_grades = 131;
-  
-    // Parameter ID: 1025
-    // Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades = 132;
-  
-    // Parameter ID: 1026
-    // Property Name: ASF Ear Auger Speed Below The Norm
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_ear_auger_speed_below_the_norm = 133;
-  
-    // Parameter ID: 1027
-    // Property Name: ASF Grain Auger Speed Below The Norm
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_grain_auger_speed_below_the_norm = 134;
-  
-    // Parameter ID: 1028
-    // Property Name: ASF Straw Chooper Speed Below The Norm
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_straw_chooper_speed_below_the_norm = 135;
-  
-    // Parameter ID: 1029
-    // Property Name: ASF Straw Shaker Speed Below The Norm
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_straw_shaker_speed_below_the_norm = 136;
-  
-    // Parameter ID: 1030
-    // Property Name: ASF Feeder Speed Below The Norm
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_feeder_speed_below_the_norm = 137;
-  
-    // Parameter ID: 1031
-    // Property Name: ASF Straw Chopper Switched On
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_straw_chopper_switched_on = 138;
-  
-    // Parameter ID: 1032
-    // Property Name: ASF Corn Header Connected
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_corn_header_connected = 139;
-  
-    // Parameter ID: 1033
-    // Property Name: ASF Grain Header Connected
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_grain_header_connected = 140;
-  
-    // Parameter ID: 1034
-    // Property Name: ASF Feeder Reverse Switched On
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_feeder_reverse_switched_on = 141;
-  
-    // Parameter ID: 1035
-    // Property Name: ASF The Pressure Filter Of The Hydraulic Pump Is Clogged
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged = 142;
-  
-    // Parameter ID: 1087
-    // Property Name: ASF Adapter Pressure Filter Sensor
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_adapter_pressure_filter_sensor = 143;
-  
-    // Parameter ID: 1088
-    // Property Name: ASF Service 2 Required Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_service2_required_indicator = 144;
-  
-    // Parameter ID: 1089
-    // Property Name: ASF Drain Filter Clogged Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_drain_filter_clogged_indicator = 145;
-  
-    // Parameter ID: 1090
-    // Property Name: ASF Section 1 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section1_spraying = 146;
-  
-    // Parameter ID: 1091
-    // Property Name: ASF Section 2 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section2_spraying = 147;
-  
-    // Parameter ID: 1092
-    // Property Name: ASF Section 3 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section3_spraying = 148;
-  
-    // Parameter ID: 1093
-    // Property Name: ASF Section 4 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section4_spraying = 149;
-  
-    // Parameter ID: 1094
-    // Property Name: ASF Section 5 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section5_spraying = 150;
-  
-    // Parameter ID: 1095
-    // Property Name: ASF Section 6 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section6_spraying = 151;
-  
-    // Parameter ID: 1096
-    // Property Name: ASF Section 7 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section7_spraying = 152;
-  
-    // Parameter ID: 1097
-    // Property Name: ASF Section 8 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section8_spraying = 153;
-  
-    // Parameter ID: 1098
-    // Property Name: ASF Section 9 Spraying
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool asf_section9_spraying = 154;
-  
-    // Parameter ID: 1036
-    // Property Name: USF Spreading
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_spreading = 155;
-  
-    // Parameter ID: 1037
-    // Property Name: USF Pouring Chemicals
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_pouring_chemicals = 156;
-  
-    // Parameter ID: 1038
-    // Property Name: USF Conveyor Belt
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_conveyor_belt = 157;
-  
-    // Parameter ID: 1039
-    // Property Name: USF Salt Spreader's Drive Wheel
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_salt_spreaders_drive_wheel = 158;
-  
-    // Parameter ID: 1040
-    // Property Name: USF Brushes
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_brushes = 159;
-  
-    // Parameter ID: 1041
-    // Property Name: USF Vacuum Cleaner
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_vacuum_cleaner = 160;
-  
-    // Parameter ID: 1042
-    // Property Name: USF Water Supply
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_water_supply = 161;
-  
-    // Parameter ID: 1043
-    // Property Name: USF Spreading
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    // optional uint32 usf_spreading = 162;  // Note: Duplicate name, but ID different, proto allows same name but to avoid confusion, keep as is
-  
-    // Parameter ID: 1044
-    // Property Name: USF Liquid pump
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_liquid_pump = 163;
-  
-    // Parameter ID: 1045
-    // Property Name: USF Unloading From The Hopper
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_unloading_from_the_hopper = 164;
-  
-    // Parameter ID: 1046
-    // Property Name: USF Low Salt (Sand) Level In Container Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_low_salt_sand_level_in_container_indicator = 165;
-  
-    // Parameter ID: 1047
-    // Property Name: USF Low Water Level in Container Indicator
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_low_water_level_in_container_indicator = 166;
-  
-    // Parameter ID: 1048
-    // Property Name: USF Chemicals
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_chemicals = 167;
-  
-    // Parameter ID: 1049
-    // Property Name: USF Compressor
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_compressor = 168;
-  
-    // Parameter ID: 1050
-    // Property Name: USF Water Valve Is Opened
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_water_valve_is_opened = 169;
-  
-    // Parameter ID: 1051
-    // Property Name: USF Cabin Moved Up Status Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_cabin_moved_up_status_active = 170;
-  
-    // Parameter ID: 1052
-    // Property Name: USF Cabin Moved Down Status Active
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_cabin_moved_down_status_active = 171;
-  
-    // Parameter ID: 1099
-    // Property Name: USF Hydraulics Work Not Permitted
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - Off, 1 - On
-    optional bool usf_hydraulics_work_not_permitted = 172;
-  
-    // Parameter ID: 1053
-    // Property Name: CiSF Section 1 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section1_presence_of_fluid_in_the_downpipe = 173;
-  
-    // Parameter ID: 1054
-    // Property Name: CiSF Section 1 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section1_filled = 174;
-  
-    // Parameter ID: 1055
-    // Property Name: CiSF Section 1 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section1_overfilled = 175;
-  
-    // Parameter ID: 1056
-    // Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section2_presence_of_fluid_in_the_downpipe = 176;
-  
-    // Parameter ID: 1057
-    // Property Name: CiSF Section 2 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section2_filled = 177;
-  
-    // Parameter ID: 1058
-    // Property Name: CiSF Section 2 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section2_overfilled = 178;
-  
-    // Parameter ID: 1059
-    // Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section3_presence_of_fluid_in_the_downpipe = 179;
-  
-    // Parameter ID: 1060
-    // Property Name: CiSF Section 3 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section3_filled = 180;
-  
-    // Parameter ID: 1061
-    // Property Name: CiSF Section 3 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section3_overfilled = 181;
-  
-    // Parameter ID: 1062
-    // Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section4_presence_of_fluid_in_the_downpipe = 182;
-  
-    // Parameter ID: 1063
-    // Property Name: CiSF Section 4 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section4_filled = 183;
-  
-    // Parameter ID: 1064
-    // Property Name: CiSF Section 4 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section4_overfilled = 184;
-  
-    // Parameter ID: 1065
-    // Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section5_presence_of_fluid_in_the_downpipe = 185;
-  
-    // Parameter ID: 1066
-    // Property Name: CiSF Section 5 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section5_filled = 186;
-  
-    // Parameter ID: 1067
-    // Property Name: CiSF Section 5 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section5_overfilled = 187;
-  
-    // Parameter ID: 1068
-    // Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section6_presence_of_fluid_in_the_downpipe = 188;
-  
-    // Parameter ID: 1069
-    // Property Name: CiSF Section 6 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section6_filled = 189;
-  
-    // Parameter ID: 1070
-    // Property Name: CiSF Section 6 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section6_overfilled = 190;
-  
-    // Parameter ID: 1071
-    // Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section7_presence_of_fluid_in_the_downpipe = 191;
-  
-    // Parameter ID: 1072
-    // Property Name: CiSF Section 7 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section7_filled = 192;
-  
-    // Parameter ID: 1073
-    // Property Name: CiSF Section 7 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section7_overfilled = 193;
-  
-    // Parameter ID: 1074
-    // Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No presence, 1 - Present
-    optional bool cisf_section8_presence_of_fluid_in_the_downpipe = 194;
-  
-    // Parameter ID: 1075
-    // Property Name: CiSF Section 8 Filled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section8_filled = 195;
-  
-    // Parameter ID: 1076
-    // Property Name: CiSF Section 8 Overfilled
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: 0 - No, 1 - Yes
-    optional bool cisf_section8_overfilled = 196;
-  
-    // Parameter ID: 400
-    // Property Name: Distance to Next Service
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: -
-    // Values: 
-    optional uint32 distance_to_next_service = 197;
-  
-    // Parameter ID: 450
-    // Property Name: CNG Level Kg
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: 10
-    // Units: Kg
-    // Values: CNG Level Kg (appears only if CNG level percentage is not available)
-    optional uint32 cng_level_kg = 198;
-  
-    // Parameter ID: 859
-    // Property Name: Distance from need of service
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: km
-    // Values: Service - distance elapsed since the occurrence of the need for servicing
-    optional uint32 distance_from_need_of_service = 199;
-  
-    // Parameter ID: 860
-    // Property Name: Distance from last service
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: km
-    // Values: Service - distance from the last service
-    optional uint32 distance_from_last_service = 200;
-  
-    // Parameter ID: 861
-    // Property Name: Time to next service
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: day
-    // Values: Service - time to next service
-    optional uint32 time_to_next_service = 201;
-  
-    // Parameter ID: 862
-    // Property Name: Time from need of service
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: day
-    // Values: Service - time exceeded since the occurrence of the need for servicing
-    optional uint32 time_from_need_of_service = 202;
-  
-    // Parameter ID: 863
-    // Property Name: Time from last serivce
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: day
-    // Values: Service - time elapsed since the last service
-    optional uint32 time_from_last_serivce = 203;
-  
-    // Parameter ID: 864
-    // Property Name: Distance to next oil service
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: km
-    // Values: Service - distance to next oil service
-    optional uint32 distance_to_next_oil_service = 204;
-  
-    // Parameter ID: 865
-    // Property Name: Time to next oil service
-    // Type: Unsigned
-    // Bytes: 2
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: day
-    // Values: Service - time to next oil service
-    optional uint32 time_to_next_oil_service = 205;
-  
-    // Parameter ID: 866
-    // Property Name: LVCAN Vehicle Range
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 4294967295
-    // Multiplier: -
-    // Units: km
-    // Values: Information about vehicle range
-    optional uint32 lvcan_vehicle_range = 206;
-  
-    // Parameter ID: 867
-    // Property Name: LVCAN Total CNG counted
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 65535
-    // Multiplier: -
-    // Units: kg
-    // Values: Information about Total CNG used in counted mode
-    optional uint32 lvcan_total_cng_counted = 207;
-  
-    // Parameter ID: 1079
-    // Property Name: Total Bale Count
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 0xFFFFFFFF
-    // Multiplier: -
-    // Units: -
-    // Values: Total Bale Count
-    optional uint32 total_bale_count = 208;
-  
-    // Parameter ID: 1080
-    // Property Name: Bale Count
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 0xFFFFFFFF
-    // Multiplier: -
-    // Units: -
-    // Values: Bale Count
-    optional uint32 bale_count = 209;
-  
-    // Parameter ID: 1081
-    // Property Name: Cut Bale Count
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 0xFFFFFFFF
-    // Multiplier: -
-    // Units: -
-    // Values: Cut Bale Count
-    optional uint32 cut_bale_count = 210;
-  
-    // Parameter ID: 1082
-    // Property Name: Bale Slices
-    // Type: Unsigned
-    // Bytes: 4
-    // Min: 0
-    // Max: 0xFFFFFFFF
-    // Multiplier: -
-    // Units: -
-    // Values: Bale Slices
-    optional uint32 bale_slices = 211;
-  
-    // Parameter ID: 1116
-    // Property Name: LVCAN MaxRoadSpeed
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 255
-    // Multiplier: -
-    // Units: km/h
-    // Values: Maximum speed from road signs
-    optional uint32 lvcan_maxroadspeed = 212;
-  
-    // Parameter ID: 1117
-    // Property Name: LVCAN ExceededRoadSpeed
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 255
-    // Multiplier: -
-    // Units: km/h
-    // Values: Exceeded speed from road signs
-    optional uint32 lvcan_exceededroadspeed = 213;
-  
-    // Parameter ID: 1205
-    // Property Name: LVCAN RSF SpeedLimitSign
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Information if road sign "Speed limit with value" is recognized/canceled
-    optional bool lvcan_rsf_speedlimitsign = 214;
-  
-    // Parameter ID: 1206
-    // Property Name: LVCAN RSF EndOfSpeedLimitSign
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Information if road sign "End of speed limit with value" is recognized/canceled
-    optional bool lvcan_rsf_end_of_speed_limitsign = 215;
-  
-    // Parameter ID: 1207
-    // Property Name: LVCAN RSF SpeedExceeded
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Information if speed is exceeded indicated by road sign "Speed limit with value"
-    optional bool lvcan_rsf_speed_exceeded = 216;
-  
-    // Parameter ID: 1208
-    // Property Name: LVCAN RSF TimeSpeedLimitSign
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Information if road sign "Conditional time-specific speed limit with value" is recognized/canceled
-    optional bool lvcan_rsf_time_speed_limitsign = 217;
-  
-    // Parameter ID: 1209
-    // Property Name: LVCAN RSF WthrSpeedLimitSign
-    // Type: Unsigned
-    // Bytes: 1
-    // Min: 0
-    // Max: 1
-    // Multiplier: -
-    // Units: -
-    // Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
-    optional bool lvcan_rsf_wthr_speed_limit_sign = 218;
-    optional uint32 axl_calibration_status = 246;
-    optional uint64 ble_rfid1 = 247;
-    optional uint64 ble_rfid2 = 248;
-    optional uint64 ble_rfid3 = 249;
-    optional uint64 ble_rfid4 = 250;
-    optional bool ble_button1_state1 = 251;
-    optional bool ble_button1_state2 = 252;
-    optional bool ble_button1_state3 = 253;
-    optional bool ble_button1_state4 = 254;
-    optional bool ble_button2_state1 = 255;
-    optional bool ble_button2_state2 = 256;
-    optional bool ble_button2_state3 = 257;
-    optional bool ble_button2_state4 = 258;
-    optional uint32 frequency_din1 = 259;
-    optional uint32 frequency_din2 = 260;
-    optional uint32 connectivity_quality = 261;
-    map<uint32, uint32> geo_fence = 262;
-    // Auto Geofence: 0 – target left zone, 1 – target entered zone
-    optional bool auto_geofence = 263;
-  
-    // Trip: 0 – trip stop, 1 – trip start, 2 – Business Status, 3 – Private Status, 4-9 – Custom Statuses
-    optional uint32 trip = 264;
-  
-    // Over Speeding: Speed at over speeding start/end, Range: 0-255 km/h
-    optional uint32 over_speeding = 265;
-  
-    // Crash trace data: HEX, Range: 0-1200 bytes
-    optional bytes crash_trace_data = 266;
-  
-    // Blood Alcohol Content: First 14 bits are perlims * 1000, last 2 bits are mode (0: Passive, 1: Active, 2-3: Reserved)
-    optional uint32 blood_alcohol_content = 267;
-  
-    // Idling: 0 – moving, 1 – idling
-    optional bool idling = 268;
-  
-    // Green Driving Type: 1 – harsh acceleration, 2 – harsh braking, 3 – harsh cornering
-    optional uint32 green_driving_type = 269;
-  
-    // Towing: 0 – steady, 1 – towing
-    optional bool towing = 270;
-  
-    // Unplug: 0 – battery present, 1 – battery unplugged
-    optional bool unplug = 271;
-  
-    // Crash Detection: 1 – real crash (calibrated), 2 – limited trace (not calibrated), 3 – limited trace (calibrated), 4 – full trace (not calibrated), 5 – full trace (calibrated), 6 – real crash (not calibrated)
-    optional uint32 crash_detection = 272;
-  
-    // Immobilizer: 0 – iButton not connected, 1 – iButton connected (Immobilizer), 2 – iButton connected (Authorized Driving)
-    optional uint32 immobilizer = 273;
-  
-    // Green Driving Value: For acceleration/braking: g*100 (e.g., 123 -> 1.23g); for cornering: rad/s*100 (GPS) or g*100 (Accelerometer)
-    optional uint32 green_driving_value = 274;
-  
-    // Jamming: 0 – jamming stop, 1 – jamming start
-    optional bool jamming = 275;
-  
-    // ICCID2: Value of SIM ICCID, LSB
-    optional uint64 iccid2 = 276;
-  
-    // Green Driving Event Duration: Duration of event, Range: 0-65535 ms
-    optional uint32 green_driving_event_duration = 277;
-  
-    // Alarm: 0 – Reserved, 1 – Alarm event occurred
-    optional bool alarm = 278;
-  
-    // Eco Maximum: Maximum accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
-    optional uint64 eco_maximum = 279;
-  
-    // Eco Average: Average accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
-    optional uint64 eco_average = 280;
-  
-    // Eco Duration: Duration of Eco driving event, Range: 0-65535 ms
-    optional uint32 eco_duration = 281;
-  
-    // Driving State: 1 – Ignition ON, 2 – Driving, 3 – Ignition OFF
-    optional uint32 driving_state = 282;
-  
-    // Driving Records: Number of records between Ignition ON and OFF, Range: 0-65535
-    optional uint32 driving_records = 283;
-  
-    // Crash Event Counter: Connects trace with specific crash record, Range: 0-255
-    optional uint32 crash_event_counter = 284;
-  
-    // GNSS Jamming: 0 – GPS jamming ended/healthy, 1 – GPS jamming warning, 2 – GPS jamming critical
-    optional uint32 gnss_jamming = 285;
-  
-    // Private Mode: 0 – Private mode off, 1 – Private mode on
-    optional uint32 private_mode = 286;
-  
-    // Ignition On Counter: Duration while Ignition is On, Range: 0-2147483647 s
-    optional uint32 ignition_on_counter = 287;
-  
-    // Motorcycle Fall Detection: Fall detection event
-    optional uint32 motorcycle_fall_detection = 288;
-  
-    // VIN: Vehicle Identification Number, ASCII
-    optional string vin = 289;
-  
-    // Number of DTC: Number of Diagnostic Trouble Codes, Range: 0-255
-    optional uint32 number_of_dtc = 290;
-  
-    // Engine Load: Calculated engine load, Range: 0-100 %
-    optional uint32 engine_load = 291;
-  
-    // Coolant Temperature: Engine coolant temperature, Range: -128-127 °C
-    optional int32 coolant_temperature = 292;
-  
-    // Short Fuel Trim: Short term fuel trim 1, Range: -100-99 %
-    optional int32 short_fuel_trim = 293;
-  
-    // Fuel Pressure: Fuel pressure, Range: 0-765 kPa
-    optional uint32 fuel_pressure = 294;
-  
-    // Intake MAP: Intake manifold absolute pressure, Range: 0-255 kPa
-    optional uint32 intake_map = 295;
-  
-    // Engine RPM: Engine revolutions per minute, Range: 0-16384 rpm
-    optional uint32 engine_rpm = 296;
-  
-    // Vehicle Speed: Vehicle speed, Range: 0-255 km/h
-    optional uint32 vehicle_speed = 297;
-  
-    // Timing Advance: Timing advance, Range: -64-64 °
-    optional int32 timing_advance = 298;
-  
-    // Intake Air Temperature: Intake air temperature, Range: -128-127 °C
-    optional int32 intake_air_temperature = 299;
-  
-    // MAF: Mass air flow rate, Range: 0-655.35 g/sec (multiplier: 0.01)
-    optional uint32 maf = 300;
-  
-    // Throttle Position: Throttle position, Range: 0-100 %
-    optional uint32 throttle_position = 301;
-  
-    // Runtime Since Engine Start: Runtime since engine start, Range: 0-65535 s
-    optional uint32 runtime_since_engine_start = 302;
-  
-    // Distance Traveled MIL On: Distance traveled with MIL on, Range: 0-65535 km
-    optional uint32 distance_traveled_mil_on = 303;
-  
-    // Relative Fuel Rail Pressure: Relative fuel rail pressure, Range: 0-517.8 kPa (multiplier: 0.1)
-    optional uint32 relative_fuel_rail_pressure = 304;
-  
-    // Direct Fuel Rail Pressure: Direct fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
-    optional uint32 direct_fuel_rail_pressure = 305;
-  
-    // Commanded EGR: Commanded EGR, Range: 0-100 %
-    optional uint32 commanded_egr = 306;
-  
-    // EGR Error: EGR error, Range: -100-100 %
-    optional int32 egr_error = 307;
-  
-    // Fuel Level Percent: Fuel level, Range: 0-100 %
-    optional uint32 fuel_level_percent = 308;
-  
-    // Distance Since Codes Clear: Distance traveled since codes cleared, Range: 0-65535 km
-    optional uint32 distance_since_codes_clear = 309;
-  
-    // Barometric Pressure: Barometric pressure, Range: 0-255 kPa
-    optional uint32 barometric_pressure = 310;
-  
-    // Control Module Voltage: Control module voltage, Range: 0-65.535 V (multiplier: 0.001)
-    optional uint32 control_module_voltage = 311;
-  
-    // Absolute Load Value: Absolute load value, Range: 0-25700 %
-    optional uint32 absolute_load_value = 312;
-  
-    // Fuel Type: 0-Not available, 1-Gasoline, ..., 23-Bifuel running diesel
-    optional uint32 fuel_type = 313;
-  
-    // Ambient Air Temperature: Ambient air temperature, Range: -128-127 °C
-    optional int32 ambient_air_temperature = 314;
-  
-    // Time Run With MIL On: Time run with MIL on, Range: 0-65535 min
-    optional uint32 time_run_with_mil_on = 315;
-  
-    // Time Since Codes Cleared: Time since codes cleared, Range: 0-65535 min
-    optional uint32 time_since_codes_cleared = 316;
-  
-    // Absolute Fuel Rail Pressure: Absolute fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
-    optional uint32 absolute_fuel_rail_pressure = 317;
-  
-    // Hybrid Battery Pack Life: Hybrid battery pack remaining life, Range: 0-100 %
-    optional uint32 hybrid_battery_pack_life = 318;
-  
-    // Engine Oil Temperature: Engine oil temperature, Range: 0-215 °C
-    optional uint32 engine_oil_temperature = 319;
-  
-    // Fuel Injection Timing: Fuel injection timing, Range: -210-302 ° (multiplier: 0.01)
-    optional int32 fuel_injection_timing = 320;
-  
-    // Throttle Position Group: Throttle position from PID group, Range: 0-100 %
-    optional uint32 throttle_position_group = 321;
-  
-    // Commanded Equivalence R: Fuel-Air Commanded Equivalence Ratio, Range: 0-2 (multiplier: 0.01)
-    optional uint32 commanded_equivalence_r = 322;
-  
-    // Intake MAP 2 Bytes: Intake manifold absolute pressure, Range: 0-2048 kPa
-    optional uint32 intake_map2_bytes = 323;
-  
-    // Hybrid System Voltage: Hybrid vehicle system voltage, Range: 0-1024 V
-    optional uint32 hybrid_system_voltage = 324;
-  
-    // Hybrid System Current: Hybrid vehicle system current, Range: -3277-3277 A
-    optional int32 hybrid_system_current = 325;
-  
-    // Fault Codes: DTC Fault codes, ASCII, Range: 0-128 bytes
-    optional string fault_codes = 326;
-  
-    // Fuel Rate: Engine fuel rate, Range: 0-327.67 L/h (multiplier: 0.01)
-    optional uint32 fuel_rate = 327;
-  
-    // OBD OEM Total Mileage: Total mileage, Range: 0-4294967295 km
-    optional uint32 obd_oem_total_mileage = 328;
-  
-    // OBD OEM Fuel Level: Fuel level, Range: 0-429496729.5 l (multiplier: 0.1)
-    optional uint32 obd_oem_fuel_level = 329;
-  
-    // OEM Distance Until Service: Distance till next service, Range: 0-4294967295 km
-    optional uint32 oem_distance_until_service = 330;
-  
-    // OEM Battery Charge State: 0 – Not charging, 1 – Charging
-    optional bool oem_battery_charge_state = 331;
-  
-    // OEM Battery Charge Level: Battery charge level, Range: 0-100 %
-    optional uint32 oem_battery_charge_level = 332;
-  
-    // OEM Remaining Distance: Remaining distance until fuel tank empty or battery depleted, Range: 0-65535 km
-    optional uint32 oem_remaining_distance = 333;
-  
-    // OEM Battery State Of Health: Battery state of health, Range: 0-65535 %
-    optional uint32 oem_battery_state_of_health = 334;
-  
-    // OEM Battery Temperature: Battery pack temperature, Range: -32768-32767 °C
-    optional int32 oem_battery_temperature = 335;
-  
-    // Beacon: List of Beacon IDs, HEX, Range: 0-1024 bytes
-    optional bytes beacon = 336;
-  
-    // Advanced BLE Beacon Data: List of Beacon IDs and data, HEX, Range: 0-1024 bytes
-    optional bytes advanced_ble_beacon_data = 337;
-  
-    // BLE Temperature #1: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
-    optional int32 ble_temperature1 = 338;
-  
-    // BLE Temperature #2: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
-    optional int32 ble_temperature2 = 339;
-  
-    // BLE Temperature #3: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
-    optional int32 ble_temperature3 = 340;
-  
-    // BLE Temperature #4: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
-    optional int32 ble_temperature4 = 341;
-  
-    // BLE Battery #1: Battery level of sensor #1, Range: 0-100 %
-    optional uint32 ble_battery1 = 342;
-  
-    // BLE Battery #2: Battery level of sensor #2, Range: 0-100 %
-    optional uint32 ble_battery2 = 343;
-  
-    // BLE Battery #3: Battery level of sensor #3, Range: 0-100 %
-    optional uint32 ble_battery3 = 344;
-  
-    // BLE Battery #4: Battery level of sensor #4, Range: 0-100 %
-    optional uint32 ble_battery4 = 345;
-  
-    // BLE Humidity #1: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
-    optional uint32 ble_humidity1 = 346;
-  
-    // BLE Humidity #2: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
-    optional uint32 ble_humidity2 = 347;
-  
-    // BLE Humidity #3: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
-    optional uint32 ble_humidity3 = 348;
-  
-    // BLE Humidity #4: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
-    optional uint32 ble_humidity4 = 349;
-  
-    // BLE Fuel Level #1: Fuel level, Range: 0-65535
-    optional uint32 ble_fuel_level1 = 350;
-  
-    // BLE Fuel Level #2: Fuel level, Range: 0-65535
-    optional uint32 ble_fuel_level2 = 351;
-  
-    // BLE Fuel Level #3: Fuel level, Range: 0-65535
-    optional uint32 ble_fuel_level3 = 352;
-  
-    // BLE Fuel Level #4: Fuel level, Range: 0-65535
-    optional uint32 ble_fuel_level4 = 353;
-  
-    // BLE Fuel Frequency #1: Frequency value of BLE fuel sensor #1, Range: 0-2147483647
-    optional uint32 ble_fuel_frequency1 = 354;
-  
-    // BLE Fuel Frequency #2: Frequency value of BLE fuel sensor #2, Range: 0-2147483647
-    optional uint32 ble_fuel_frequency2 = 355;
-  
-    // BLE Fuel Frequency #3: Frequency value of BLE fuel sensor #3, Range: 0-2147483647
-    optional uint32 ble_fuel_frequency3 = 356;
-  
-    // BLE Fuel Frequency #4: Frequency value of BLE fuel sensor #4, Range: 0-2147483647
-    optional uint32 ble_fuel_frequency4 = 357;
-  
-    // BLE Luminosity #1: Luminosity value, Range: 0-65535 lx
-    optional uint32 ble_luminosity1 = 358;
-  
-    // BLE Luminosity #2: Luminosity value, Range: 0-65535 lx
-    optional uint32 ble_luminosity2 = 359;
-  
-    // BLE Luminosity #3: Luminosity value, Range: 0-65535 lx
-    optional uint32 ble_luminosity3 = 360;
-  
-    // BLE Luminosity #4: Luminosity value, Range: 0-65535 lx
-    optional uint32 ble_luminosity4 = 361;
-  
-    // BLE 1 Custom #1: Custom IO element for BLE sensor, HEX
-    optional bytes ble1_custom1 = 362;
-  
-    // BLE 1 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble1_custom2 = 363;
-  
-    // BLE 1 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble1_custom3 = 364;
-  
-    // BLE 1 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble1_custom4 = 365;
-  
-    // BLE 1 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble1_custom5 = 366;
-  
-    // BLE 2 Custom #1: Custom IO element for BLE sensor, HEX
-    optional bytes ble2_custom1 = 367;
-  
-    // BLE 2 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble2_custom2 = 368;
-  
-    // BLE 2 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble2_custom3 = 369;
-  
-    // BLE 2 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble2_custom4 = 370;
-  
-    // BLE 2 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble2_custom5 = 371;
-  
-    // BLE 3 Custom #1: Custom IO element for BLE sensor, HEX
-    optional bytes ble3_custom1 = 372;
-  
-    // BLE 3 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble3_custom2 = 373;
-  
-    // BLE 3 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble3_custom3 = 374;
-  
-    // BLE 3 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble3_custom4 = 375;
-  
-    // BLE 3 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble3_custom5 = 376;
-  
-    // BLE 4 Custom #1: Custom IO element for BLE sensor, HEX
-    optional bytes ble4_custom1 = 377;
-  
-    // BLE 4 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble4_custom2 = 378;
-  
-    // BLE 4 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble4_custom3 = 379;
-  
-    // BLE 4 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble4_custom4 = 380;
-  
-    // BLE 4 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
-    optional uint32 ble4_custom5 = 381;
-  
-    // Accelerator Pedal Position: Value in percentages, Range: 0-102 %
-    optional uint32 accelerator_pedal_position = 382;
-  
-    // Fuel Consumed: Value in liters, Range: 0-214748364.7 l (multiplier: 0.1)
-    optional uint32 fuel_consumed = 383;
-  
-    // Fuel Level Liters: Value in liters, Range: 0-6553.5 l (multiplier: 0.1)
-    optional uint32 fuel_level_liters = 384;
-  
-    // Total Mileage: Value in meters, Range: 0-4294967295 m
-    optional uint32 total_mileage = 385;
-  
-    // Program Number: Range: 0-99999
-    optional uint32 program_number = 386;
-  
-    // Module ID 8B: Module ID, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 module_id8b = 387;
-  
-    // Module ID 17B: Module ID, HEX, Range: 0-0x7FFFFFFFFFFFFFFF
-    optional bytes module_id17b = 388;
-  
-    // Engine Worktime: Engine work time, Range: 0-1677215 min
-    optional uint32 engine_worktime = 389;
-  
-    // Engine Worktime Counted: Total engine work time, Range: 0-1677215 min
-    optional uint32 engine_worktime_counted = 390;
-  
-    // Total Mileage Counted: Total vehicle mileage, Range: 0-4294967295 m
-    optional uint32 total_mileage_counted = 391;
-  
-    // Fuel Consumed Counted: Total fuel consumed, Range: 0-214748364.7 l (multiplier: 0.1)
-    optional uint32 fuel_consumed_counted = 392;
-  
-    // AdBlue Level Percent: AdBlue level, Range: 0-100 %
-    optional uint32 adblue_level_percent = 393;
-  
-    // AdBlue Level Liters: AdBlue level, Range: 0-6553.5 l (multiplier: 0.1)
-    optional uint32 adblue_level_liters = 394;
-  
-    // Axle 1 Load: Axle 1 load, Range: 0-32768 kg
-    optional uint32 axle1_load = 395;
-  
-    // Axle 2 Load: Axle 2 load, Range: 0-32768 kg
-    optional uint32 axle2_load = 396;
-  
-    // Axle 3 Load: Axle 3 load, Range: 0-32768 kg
-    optional uint32 axle3_load = 397;
-  
-    // Axle 4 Load: Axle 4 load, Range: 0-32768 kg
-    optional uint32 axle4_load = 398;
-  
-    // Axle 5 Load: Axle 5 load, Range: 0-32768 kg
-    optional uint32 axle5_load = 399;
-  
-    // Control State Flags: Control state flags, Range: 0-4294967295
-    optional uint32 control_state_flags = 400;
-  
-    // Agricultural Machinery Flags: Agricultural machinery flags, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 agricultural_machinery_flags = 401;
-  
-    // Harvesting Time: Harvesting time, Range: 0-16777215 min
-    optional uint32 harvesting_time = 402;
-  
-    // Area of Harvest: Area of harvest, Range: 0-4294967295 m2
-    optional uint32 area_of_harvest = 403;
-  
-    // Mowing Efficiency: Mowing efficiency, Range: 0-4294967295 m2/h
-    optional uint32 mowing_efficiency = 404;
-    // Grain Mown Volume: Mown volume, Range: 0-4294967295 kg
-    optional uint32 grain_mown_volume = 405;
-    // Grain Moisture: Grain moisture, Range: 0-100 %
-    optional uint32 grain_moisture = 406;
-    // Harvesting Drum RPM: Harvesting drum rpm, Range: 0-65535 rpm
-    optional uint32 harvesting_drum_rpm = 407;
-    // Gap Under Harvesting Drum: Gap under harvesting drum, Range: 0-255 mm
-    optional uint32 gap_under_harvesting_drum = 408;
-    // Security State Flags: Security state flags, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 security_state_flags = 409;
-    // Tachograph Total Vehicle Distance: Tacho total vehicle distance, Range: 0-4294967295 m
-    optional uint32 tachograph_total_vehicle_distance = 410;
-    // Trip Distance: Trip distance, Range: 0-4294967295 m
-    optional uint32 trip_distance = 411;
-    // Tachograph Vehicle Speed: Tacho vehicle speed, Range: 0-255 km/h
-    optional uint32 tachograph_vehicle_speed = 412;
-    // Tacho Driver Card Presence: Tacho driver card presence, Range: 0-3
-    optional uint32 tacho_driver_card_presence = 413;
-    // Driver 1 States: Driver 1 states, Range: 0-255
-    optional uint32 driver1_states = 414;
-    // Driver 2 States: Driver 2 states, Range: 0-255
-    optional uint32 driver2_states = 415;
-    // Driver 1 Continuous Driving Time: Driver 1 continuous driving time, Range: 0-65535 min
-    optional uint32 driver1_continuous_driving_time = 416;
-    // Driver 2 Continuous Driving Time: Driver 2 continuous driving time, Range: 0-65535 min
-    optional uint32 driver2_continuous_driving_time = 417;
-    // Driver 1 Cumulative Time: Driver 1 cumulative time, Range: 0-65535 min
-    optional uint32 driver1_cumulative_time = 418;
-    // Driver 2 Cumulative Time: Driver 2 cumulative time, Range: 0-65535 min
-    optional uint32 driver2_cumulative_time = 419;
-    // Driver 1 Selected Activity Duration: Driver 1 duration of selected activity, Range: 0-65535 min
-    optional uint32 driver1_selected_activity_duration = 420;
-    // Driver 2 Selected Activity Duration: Driver 2 duration of selected activity, Range: 0-65535 min
-    optional uint32 driver2_selected_activity_duration = 421;
-    // Driver 1 Cumulative Driving Time: Driver 1 cumulative driving time, Range: 0-65535 min
-    optional uint32 driver1_cumulative_driving_time = 422;
-    // Driver 2 Cumulative Driving Time: Driver 2 cumulative driving time, Range: 0-65535 min
-    optional uint32 driver2_cumulative_driving_time = 423;
-    // Driver 1 ID High: Driver 1 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 driver1_id_high = 424;
-    // Driver 1 ID Low: Driver 1 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 driver1_id_low = 425;
-    // Driver 2 ID High: Driver 2 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 driver2_id_high = 426;
-    // Driver 2 ID Low: Driver 2 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
-    optional uint64 driver2_id_low = 427;
-    // Battery Temperature: Battery temperature, Range: -60-127 °C (multiplier: 0.1)
-    optional int32 battery_temperature = 428;
-    // HV Battery Level: Battery level, Range: 0-100 %
-    optional uint32 hv_battery_level = 429;
-    // DTC Faults: DTC faults count, Range: 0-255
-    optional uint32 dtc_faults = 430;
-    // Slope of Arm: Slope of arm, Range: -3276-3276 °
-    optional int32 slope_of_arm = 431;
-    // Rotation of Arm: Rotation of arm, Range: -180-180 °
-    optional int32 rotation_of_arm = 432;
-    // Eject of Arm: Eject of arm, Range: 0-6553 m
-    optional uint32 eject_of_arm = 433;
-    // Horizontal Distance Arm Vehicle: Horizontal distance arm vehicle, Range: 0-6553 m
-    optional uint32 horizontal_distance_arm_vehicle = 434;
-    // Height Arm Above Ground: Height arm above ground, Range: 0-6553 m
-    optional uint32 height_arm_above_ground = 435;
-    // Drill RPM: Drill RPM, Range: 0-65535 rpm
-    optional uint32 drill_rpm = 436;
-    // Amount Of Spread Salt Square Meter: Amount of spread salt, Range: 0-655 g/m2
-    optional uint32 amount_of_spread_salt_square_meter = 437;  
-    // Amount Of Spread Fine Grained Salt: Amount of spread fine grained salt, Range: 0-1677722 T
-    optional uint32 amount_of_spread_fine_grained_salt = 439;
-    // Amount Of Coarse Grained Salt: Amount of coarse grained salt, Range: 0-1677722 T
-    optional uint32 amount_of_coarse_grained_salt = 440;
-    // Amount Of Spread DiMix: Amount of spread DiMix, Range: 0-1677722 T
-    optional uint32 amount_of_spread_dimix = 441;
-    // Amount Of Spread Coarse Grained Calcium: Amount of spread coarse grained calcium, Range: 0-1677722 m3
-    optional uint32 amount_of_spread_coarse_grained_calcium = 442;
-    // Amount Of Spread Calcium Chloride: Amount of spread calcium chloride, Range: 0-1677722 m3
-    optional uint32 amount_of_spread_calcium_chloride = 443;
-    // Amount Of Spread Sodium Chloride: Amount of spread sodium chloride, Range: 0-1677722 m3
-    optional uint32 amount_of_spread_sodium_chloride = 444;
-    // Amount Of Spread Magnesium Chloride: Amount of spread magnesium chloride, Range: 0-1677722 m3
-    optional uint32 amount_of_spread_magnesium_chloride = 445;
-    // Amount Of Spread Gravel: Amount of spread gravel, Range: 0-1677722 T
-    optional uint32 amount_of_spread_gravel = 446;
-    // Amount Of Spread Sand: Amount of spread sand, Range: 0-1677722 T
-    optional uint32 amount_of_spread_sand = 447;
-    // Width Pouring Left: Width pouring left, Range: 0-655 m
-    optional uint32 width_pouring_left = 448;
-    // Width Pouring Right: Width pouring right, Range: 0-655 m
-    optional uint32 width_pouring_right = 449;
-    // Salt Spreader Working Hours: Salt spreader working hours, Range: 0-167722 h
-    optional uint32 salt_spreader_working_hours = 450;
-    // Distance During Salting: Distance during salting, Range: 0-167722 km
-    optional uint32 distance_during_salting = 451;
-    // Load Weight: Load weight, Range: 0-16772215 kg
-    optional uint32 load_weight = 452;
-    // Retarder Load: Retarder load, Range: 0-130 %
-    optional uint32 retarder_load = 453;
-    // Cruise Time: Cruise time, Range: 0-16772215 min
-    optional uint32 cruise_time = 454;
-    // CNG Status: CNG status, 0-1
-    optional bool cng_status = 455;
-    // CNG Used: CNG used, Range: 0-16772215 kg
-    optional uint32 cng_used = 456;
-    // CNG Level Percent: CNG level, Range: 0-100 %
-    optional uint32 cng_level_percent = 457;
-    // Oil Level: Engine oil level indicator status, 0-1
-    optional bool oil_level = 458;
-    // Vehicles Range On Battery: Vehicle range on battery, Range: 0-16777215 m
-    optional uint32 vehicles_range_on_battery = 459;
-    // Vehicles Range On Additional Fuel: Vehicle range on additional fuel, Range: 0-16777215 m
-    optional uint32 vehicles_range_on_additional_fuel = 460;
-    // Security State Flags P4: Security state flags protocol 4, HEX
-    optional bytes security_state_flags_p4 = 461;
-    // Control State Flags P4: Control state flags protocol 4, HEX
-    optional bytes control_state_flags_p4 = 462;
-    // Indicator State Flags P4: Indicator state flags protocol 4, HEX
-    optional bytes indicator_state_flags_p4 = 463;
-    // Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
-    optional bytes agricultural_state_flags_p4 = 464;
-    optional uint32 door_status = 465;
-    optional int32 engine_temperature = 467;
-    optional uint64 utility_state_flags_p4 = 468;
-    optional uint64 cistern_state_flags_p4 = 469;
-    optional uint32 lng_used = 470;
-    optional uint32 lng_used_counted = 471;
-    optional uint32 lng_level_percent = 472;
-    optional uint32 lng_level_kg = 473;
-    optional uint32 total_lpg_used = 474;
-    optional uint32 total_lpg_used_counted = 475;
-    optional uint32 lpg_level_proc = 476;
-    optional uint32 lpg_level_liters = 477;
-    optional bool ssf_ignition = 478;
-    optional bool ssf_key_in_ignition_lock = 479;
-    optional bool ssf_webasto = 480;
-    optional bool ssf_engine_working = 481;
-    optional bool ssf_standalone_engine = 482;
-    optional bool ssf_ready_to_drive = 483;
-    optional bool ssf_engine_working_on_cng = 484;
-    optional bool ssf_work_mode = 485;
-    optional bool ssf_operator = 486;
-    optional bool ssf_interlock = 487;
-    optional bool ssf_engine_lock_active = 488;
-    optional bool ssf_request_to_lock_engine = 489;
-    optional bool ssf_handbrake_is_active = 490;
-    optional bool ssf_footbrake_is_active = 491;
-    optional bool ssf_clutch_pushed = 492;
-    optional bool ssf_hazard_warning_lights = 493;
-    optional bool ssf_front_left_door_open = 494;
-    optional bool ssf_front_right_door_open = 495;
-    optional bool ssf_rear_left_door_open = 496;
-    optional bool ssf_rear_right_door_open = 497;
-    optional bool ssf_trunk_door_open = 498;
-    optional bool ssf_engine_cover_open = 499;
-    optional bool ssf_roof_open = 500;
-    optional bool ssf_charging_wire_plugged = 501;
-    optional bool ssf_battery_charging = 502;
-    optional bool ssf_electric_engine_state = 503;
-    optional bool ssf_car_closed_factory_remote = 504;
-    optional bool ssf_car_is_closed = 505;
-    optional bool ssf_factory_alarm_actuated = 506;
-    optional bool ssf_factory_alarm_emulated = 507;
-    optional bool ssf_signal_close_factory_remote = 508;
-    optional bool ssf_signal_open_factory_remote = 509;
-    optional bool ssf_rearming_signal = 510;
-    optional bool ssf_trunk_door_opened_factory_remote = 511;
-    optional bool ssf_can_module_in_sleep = 512;
-    optional bool ssf_factory_remote3x = 513;
-    optional bool ssf_factory_armed = 514;
-    optional bool ssf_parking_gear_active = 515;
-    optional bool ssf_reverse_gear_active = 516;
-    optional bool ssf_neutral_gear_active = 517;
-    optional bool ssf_drive_is_active = 518;
-    optional bool ssf_engine_working_on_dual_fuel = 519;
-    optional bool ssf_engine_working_on_lpg = 520;
-    optional bool csf_parking_lights = 521;
-    optional bool csf_dipped_head_lights = 522;
-    optional bool csf_full_beam_headlights = 523;
-    optional bool csf_rear_fog_lights = 524;
-    optional bool csf_front_fog_lights = 525;
-    optional bool csf_additional_front_lights = 526;
-    optional bool csf_additional_rear_lights = 527;
-    optional bool csf_light_signal = 528;
-    optional bool csf_air_conditioning = 529;
-    optional bool csf_cruise_control = 530;
-    optional bool csf_automatic_retarder = 531;
-    optional bool csf_manual_retarder = 532;
-    optional bool csf_drivers_seatbelt_fastened = 533;
-    optional bool csf_front_drivers_seatbelt_fastened = 534;
-    optional bool csf_left_drivers_seatbelt_fastened = 535;
-    optional bool csf_right_drivers_seatbelt_fastened = 536;
-    optional bool csf_centre_drivers_seatbelt_fastened = 537;
-    optional bool csf_front_passenger_present = 538;
-    optional bool csf_pto = 539;
-    optional bool csf_front_differential_locked = 540;
-    optional bool csf_rear_differential_locked = 541;
-    optional bool csf_central_differential4hi_locked = 542;
-    optional bool csf_rear_differential4lo_locked = 543;
-    optional bool csf_trailer_axle1_lift_active = 544;
-    optional bool csf_trailer_axle2_lift_active = 545;
-    optional bool csf_trailer_connected = 546;
-    optional bool csf_start_stop_system_inactive = 547;
-    optional bool isf_check_engine_indicator = 548;
-    optional bool isf_abs_indicator = 549;
-    optional bool isf_esp_indicator = 550;
-    optional bool isf_esp_turned_off = 551;
-    optional bool isf_stop_indicator = 552;
-    optional bool isf_oil_level_indicator = 553;
-    optional bool isf_coolant_liquid_level = 554;
-    optional bool isf_battery_not_charging_indicator = 555;
-    optional bool isf_handbrake_system_indicator = 556;
-    optional bool isf_airbag_indicator = 557;
-    optional bool isf_eps_indicator = 558;
-    optional bool isf_warning_indicator = 559;
-    optional bool isf_lights_failure_indicator = 560;
-    optional bool isf_low_tire_pressure_indicator = 561;
-    optional bool isf_wear_of_brake_pads_indicator = 562;
-    optional bool isf_low_fuel_level_indicator = 563;
-    optional bool isf_maintenance_required_indicator = 564;
-    optional bool isf_glow_plug_indicator = 565;
-    optional bool isf_fap_indicator = 566;
-    optional bool isf_epc_indicator = 567;
-    optional bool isf_clogged_engine_oil_filter_indicator = 568;
-    optional bool isf_low_engine_oil_pressure_indicator = 569;
-    optional bool isf_too_high_engine_oil_temperature_indicator = 570;
-    optional bool isf_low_coolant_level_indicator = 571;
-    optional bool isf_clogged_hydraulic_system_oil_filter_indicator = 572;
-    optional bool isf_hydraulic_system_low_pressure_indicator = 573;
-    optional bool isf_hydraulic_oil_low_level_indicator = 574;
-    optional bool isf_hydraulic_system_high_temperature_indicator = 575;
-    optional bool isf_oil_overflow_in_hydraulic_chamber_indicator = 576;
-    optional bool isf_clogged_air_filter_indicator = 577;
-    optional bool isf_clogged_fuel_filter_indicator = 578;
-    optional bool isf_water_in_fuel_indicator = 579;
-    optional bool asf_grain_tank_is100_percent_full = 611;
-    optional bool asf_grain_tank_is70_percent_full = 612;
-    optional bool asf_straw_chopper_speed_below_the_norm = 623;
-    optional bool usf_spreading2 = 650;
-    optional uint32 operator_code = 651;
-    optional float temperature = 652;
+  // Parameter ID: 80
+  // Property Name: Data Mode
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 5
+  // Multiplier: -
+  // Units: -
+  // Values: 0 – Home On Stop, 1 – Home On Moving, 2 – Roaming On Stop, 3 – Roaming On Moving, 4 – Unknown On Stop, 5 – Unknown On Moving
+  optional uint32 data_mode = 3;
+
+  // Parameter ID: 21
+  // Property Name: GSM Signal
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 5
+  // Multiplier: -
+  // Units: -
+  // Values: Value in range 1-5 Explanation
+  optional uint32 gsm_signal = 4;
+
+  // Parameter ID: 200
+  // Property Name: Sleep Mode
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 4
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No Sleep, 1 – GPS Sleep, 2 – Deep Sleep, 3 – Online Sleep, 4 - Ultra Sleep
+  optional uint32 sleep_mode = 5;
+
+  // Parameter ID: 69
+  // Property Name: GNSS Status
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 3
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - GNSS OFF, 1 – GNSS ON with fix, 2 - GNSS ON without fix, 3 - GNSS sleep
+  optional uint32 gnss_status = 6;
+
+  // Parameter ID: 181
+  // Property Name: GNSS PDOP
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 500
+  // Multiplier: 0.1
+  // Units:
+  // Values: Coefficient, calculation formula
+  optional uint32 gnss_pdop = 7;
+
+  // Parameter ID: 182
+  // Property Name: GNSS HDOP
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 500
+  // Multiplier: 0.1
+  // Units:
+  // Values: Coefficient, calculation formula
+  optional uint32 gnss_hdop = 8;
+
+  // Parameter ID: 66
+  // Property Name: External Voltage
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.001
+  // Units: V
+  // Values: Voltage
+  optional uint32 external_voltage = 9;
+
+  // Parameter ID: 24
+  // Property Name: Speed
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 350
+  // Multiplier: -
+  // Units: km/h
+  // Values: GNSS Speed
+  optional uint32 speed = 10;
+
+  // Parameter ID: 205
+  // Property Name: GSM Cell ID
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: -
+  // Values: GSM base station ID
+  optional uint32 gsm_cell_id = 11;
+
+  // Parameter ID: 206
+  // Property Name: GSM Area Code
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: -
+  // Values: Location Area code (LAC), it depends on GSM operator. It provides unique number which assigned to a set of base GSM stations.
+  optional uint32 gsm_area_code = 12;
+
+  // Parameter ID: 67
+  // Property Name: Battery Voltage
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.001
+  // Units: V
+  // Values: Voltage
+  optional uint32 battery_voltage = 13;
+
+  // Parameter ID: 68
+  // Property Name: Battery Current
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.001
+  // Units: A
+  // Values: Current
+  optional uint32 battery_current = 14;
+
+  // Parameter ID: 241
+  // Property Name: Active GSM Operator
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: -
+  // Values: Currently used GSM Operator code
+  optional uint32 active_gsm_operator = 15;
+
+  // Parameter ID: 199
+  // Property Name: Trip Odometer
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 2147483647
+  // Multiplier: -
+  // Units: m
+  // Values: Trip Odometer value
+  optional uint32 trip_odometer = 16;
+
+  // Parameter ID: 16
+  // Property Name: Total Odometer
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 2147483647
+  // Multiplier: -
+  // Units: -
+  // Values: Total Odometer value in meters
+  optional uint32 total_odometer = 17;
+
+  // Parameter ID: 1
+  // Property Name: Digital Input 1
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool digital_input1 = 18;
+
+  // Parameter ID: 9
+  // Property Name: Analog Input 1
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.001
+  // Units: V
+  // Values: Voltage
+  optional uint32 analog_input1 = 19;
+
+  // Parameter ID: 179
+  // Property Name: Digital Output 1
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool digital_output1 = 20;
+
+  // Parameter ID: 12
+  // Property Name: Fuel Used GPS
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: 0.001
+  // Units: l
+  // Values: Fuel Used
+  optional uint32 fuel_used_gps = 21;
+
+  // Parameter ID: 13
+  // Property Name: Fuel Rate GPS
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 32767
+  // Multiplier: 0.01
+  // Units: l/100km
+  // Values: Average Fuel Use
+  optional uint32 fuel_rate_gps = 22;
+
+  // Parameter ID: 17
+  // Property Name: Axis X
+  // Type: Signed
+  // Bytes: 2
+  // Min: -8000
+  // Max: 8000
+  // Multiplier: -
+  // Units: mG
+  // Values: X axis value
+  optional int32 axis_x = 23;
+
+  // Parameter ID: 18
+  // Property Name: Axis Y
+  // Type: Signed
+  // Bytes: 2
+  // Min: -8000
+  // Max: 8000
+  // Multiplier: -
+  // Units: mG
+  // Values: Y axis value
+  optional int32 axis_y = 24;
+
+  // Parameter ID: 19
+  // Property Name: Axis Z
+  // Type: Signed
+  // Bytes: 2
+  // Min: -8000
+  // Max: 8000
+  // Multiplier: -
+  // Units: mG
+  // Values: Z axis value
+  optional int32 axis_z = 25;
+
+  // Parameter ID: 11
+  // Property Name: ICCID1
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: Value of SIM ICCID, MSB
+  optional uint64 iccid1 = 26;
+
+  // Parameter ID: 10
+  // Property Name: SD Status
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - not present, 1 - present
+  optional bool sd_status = 27;
+
+  // Parameter ID: 2
+  // Property Name: Digital Input 2
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool digital_input2 = 28;
+
+  // Parameter ID: 3
+  // Property Name: Digital Input 3
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool digital_input3 = 29;
+
+  // Parameter ID: 6
+  // Property Name: Analog Input 2
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.001
+  // Units: V
+  // Values: Voltage
+  optional uint32 analog_input2 = 30;
+
+  // Parameter ID: 180
+  // Property Name: Digital Output 2
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic 0/1
+  optional bool digital_output2 = 31;
+
+  // Parameter ID: 72
+  // Property Name: Dallas Temperature 1
+  // Type: Signed
+  // Bytes: 4
+  // Min: -550
+  // Max: 1150
+  // Multiplier: 0.1
+  // Units: °C
+  // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+  optional int32 dallas_temperature1 = 32;
+
+  // Parameter ID: 73
+  // Property Name: Dallas Temperature 2
+  // Type: Signed
+  // Bytes: 4
+  // Min: -550
+  // Max: 1150
+  // Multiplier: 0.1
+  // Units: °C
+  // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+  optional int32 dallas_temperature2 = 33;
+
+  // Parameter ID: 74
+  // Property Name: Dallas Temperature 3
+  // Type: Signed
+  // Bytes: 4
+  // Min: -550
+  // Max: 1150
+  // Multiplier: 0.1
+  // Units: °C
+  // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+  optional int32 dallas_temperature3 = 34;
+
+  // Parameter ID: 75
+  // Property Name: Dallas Temperature 4
+  // Type: Signed
+  // Bytes: 4
+  // Min: -550
+  // Max: 1150
+  // Multiplier: 0.1
+  // Units: °C
+  // Values: Degrees ( °C ), -55 - +115, if 850 – Sensor not ready, if 2000 – Value read error, if 3000 – Not connected, if 4000 – ID failed, if 5000 – same as 850
+  optional int32 dallas_temperature4 = 35;
+
+  // Parameter ID: 76
+  // Property Name: Dallas Temperature ID 1
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: Dallas sensor ID
+  optional uint64 dallas_temperature_id1 = 36;
+
+  // Parameter ID: 77
+  // Property Name: Dallas Temperature ID 2
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: Dallas sensor ID
+  optional uint64 dallas_temperature_id2 = 37;
+
+  // Parameter ID: 79
+  // Property Name: Dallas Temperature ID 3
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: Dallas sensor ID
+  optional uint64 dallas_temperature_id3 = 38;
+
+  // Parameter ID: 71
+  // Property Name: Dallas Temperature ID 4
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: Dallas sensor ID
+  optional uint64 dallas_temperature_id4 = 39;
+
+  // Parameter ID: 78
+  // Property Name: iButton
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: iButton ID
+  optional uint64 ibutton = 40;
+
+  // Parameter ID: 207
+  // Property Name: RFID
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: RFID ID
+  optional uint64 rfid = 41;
+
+  // Parameter ID: 201
+  // Property Name: LLS 1 Fuel Level
+  // Type: Signed
+  // Bytes: 2
+  // Min: -4
+  // Max: 32767
+  // Multiplier: -
+  // Units: kvants or ltr
+  // Values: Fuel level measured by LLS sensor via RS232/RS485
+  optional int32 lls1_fuel_level = 42;
+
+  // Parameter ID: 202
+  // Property Name: LLS 1 Temperature
+  // Type: Signed
+  // Bytes: 1
+  // Min: -128
+  // Max: 127
+  // Multiplier: -
+  // Units: °C
+  // Values: Fuel temperature measured by LLS via RS232/RS485
+  optional int32 lls1_temperature = 43;
+
+  // Parameter ID: 203
+  // Property Name: LLS 2 Fuel Level
+  // Type: Signed
+  // Bytes: 2
+  // Min: -4
+  // Max: 32767
+  // Multiplier: -
+  // Units: kvants or ltr
+  // Values: Fuel level measured by LLS sensor via RS485
+  optional int32 lls2_fuel_level = 44;
+
+  // Parameter ID: 204
+  // Property Name: LLS 2 Temperature
+  // Type: Signed
+  // Bytes: 1
+  // Min: -128
+  // Max: 127
+  // Multiplier: -
+  // Units: °C
+  // Values: Fuel temperature measured by LLS via RS485
+  optional int32 lls2_temperature = 45;
+
+  // Parameter ID: 210
+  // Property Name: LLS 3 Fuel Level
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: -4
+  // Max: 32767
+  // Multiplier: -
+  // Units: kvants or ltr
+  // Values: Fuel level measured by LLS sensor via RS485
+  optional uint32 lls3_fuel_level = 46;
+
+  // Parameter ID: 211
+  // Property Name: LLS 3 Temperature
+  // Type: Signed
+  // Bytes: 1
+  // Min: -128
+  // Max: 127
+  // Multiplier: -
+  // Units: °C
+  // Values: Fuel temperature measured by LLS via RS485
+  optional int32 lls3_temperature = 47;
+
+  // Parameter ID: 212
+  // Property Name: LLS 4 Fuel Level
+  // Type: Signed
+  // Bytes: 2
+  // Min: -4
+  // Max: 32767
+  // Multiplier: -
+  // Units: kvants or ltr
+  // Values: Fuel level measured by LLS sensor via RS485
+  optional int32 lls4_fuel_level = 48;
+
+  // Parameter ID: 213
+  // Property Name: LLS 4 Temperature
+  // Type: Signed
+  // Bytes: 1
+  // Min: -128
+  // Max: 127
+  // Multiplier: -
+  // Units: °C
+  // Values: Fuel temperature measured by LLS via RS485
+  optional int32 lls4_temperature = 49;
+
+  // Parameter ID: 214
+  // Property Name: LLS 5 Fuel Level
+  // Type: Signed
+  // Bytes: 2
+  // Min: -4
+  // Max: 32767
+  // Multiplier: -
+  // Units: kvants or ltr
+  // Values: Fuel level measured by LLS sensor via RS485
+  optional int32 lls5_fuel_level = 50;
+
+  // Parameter ID: 215
+  // Property Name: LLS 5 Temperature
+  // Type: Signed
+  // Bytes: 1
+  // Min: -128
+  // Max: 127
+  // Multiplier: -
+  // Units: °C
+  // Values: Fuel temperature measured by LLS via RS485
+  optional int32 lls5_temperature = 51;
+
+  // Parameter ID: 15
+  // Property Name: Eco Score
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 0.01
+  // Units: -
+  // Values: Average amount of events on some distance
+  optional uint32 eco_score = 52;
+
+  // Parameter ID: 113
+  // Property Name: Battery Level
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 100
+  // Multiplier: -
+  // Units: %
+  // Values: Battery capacity level
+  optional uint32 battery_level = 53;
+
+  // Parameter ID: 238
+  // Property Name: User ID
+  // Type: Unsigned
+  // Bytes: 8
+  // Min: 0
+  // Max: 0xffffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: MAC address of NMEA receiver device connected via Bluetooth
+  optional uint64 user_id = 54;
+
+  // Parameter ID: 237
+  // Property Name: Network Type
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - 3G, 1 - GSM, 2 - 4G, 3 - LTE CAT M1, 4 - LTE CAT NB1, 99 - Unknown
+  optional uint32 network_type = 55;
+
+  // Parameter ID: 4
+  // Property Name: Pulse Counter Din1
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: -
+  // Values: Counts pulses, count is reset when records are saved
+  optional uint32 pulse_counter_din1 = 56;
+
+  // Parameter ID: 5
+  // Property Name: Pulse Counter Din2
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: -
+  // Values: Counts pulses, count is reset when records are saved
+  optional uint32 pulse_counter_din2 = 57;
+
+  // Parameter ID: 263
+  // Property Name: BT Status
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 4
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - BT is disabled, 1 - BT Enabled, not device connected, 2 - Device connected, BTv3 Only, 3 - Device connected, BLE only, 4 - Device connected, BLE + BT
+  optional uint32 bt_status = 58;
+
+  // Parameter ID: 264
+  // Property Name: Barcode ID
+  // Type: ASCII
+  // Bytes: Variable
+  // Min: 0
+  // Max: 32
+  // Multiplier: -
+  // Units: -
+  // Values: Barcode ID
+  optional string barcode_id = 59;
+
+  // Parameter ID: 303
+  // Property Name: Instant Movement
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1 returns movement value
+  optional bool instant_movement = 60;
+
+  // Parameter ID: 327
+  // Property Name: UL202-02 Sensor Fuel level
+  // Type: Signed
+  // Bytes: 2
+  // Min: -150
+  // Max: 32767
+  // Multiplier: 0.1
+  // Units: mm
+  // Values: UL202-02 Sensor Fuel level
+  optional int32 ul202_02_sensor_fuel_level = 61;
+
+  // Parameter ID: 483
+  // Property Name: UL202-02 Sensor Status
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 255
+  // Multiplier: -
+  // Units: -
+  // Values: UL202-02 sensor status codes
+  optional uint32 ul202_02_sensor_status = 62;
+
+  // Parameter ID: 380
+  // Property Name: Digital output 3
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool digital_output3 = 63;
+
+  // Parameter ID: 381
+  // Property Name: Ground Sense
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Logic: 0/1
+  optional bool ground_sense = 64;
+
+  // Parameter ID: 387
+  // Property Name: ISO6709 Coordinates
+  // Type: HEX
+  // Bytes: 34
+  // Min: 0
+  // Max: 0x7fffffffffffffff
+  // Multiplier: -
+  // Units: -
+  // Values: ISO6709 Coordinates Latitude, Longitude (in Degrees, Minutes and Seconds) and Altitude: IO value format: ±DDMMSS.SSSS±DDDMMSS.SSSS±AAA.AAA/
+  optional string iso6709_coordinates = 65;
+
+  // Parameter ID: 636
+  // Property Name: UMTS/LTE Cell ID
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 0xFFFFFFFF
+  // Multiplier: -
+  // Units: -
+  // Values:
+  optional uint32 umts_lte_cell_id = 66;
+
+  // Parameter ID: 403
+  // Property Name: Driver Name
+  // Type: Unsigned
+  // Bytes: 35
+  // Min: -
+  // Max: -
+  // Multiplier: -
+  // Units: -
+  // Values: Driver name extracted from card, displayed without delimiters ($ signs)
+  optional string driver_name = 67;  // Note: Unsigned but seems like string, but per type Unsigned, perhaps treat as uint64 for simplicity, but bytes 35 suggest bytes
+
+  // Note: Adjusting for bytes 35, perhaps bytes type
+  // But following "Type: Unsigned", using uint64, but may need adjustment
+
+  // Parameter ID: 404
+  // Property Name: Driver card license type
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 8
+  // Multiplier: -
+  // Units: -
+  // Values: None - 0, B.1 license type - 1, B.2 license type - 2, B.3 license type - 3, B.4 license type - 4, T.1 license type - 5, T.2 license type - 6, T.3 license type - 7, T.4 license type - 8
+  optional uint32 driver_card_license_type = 68;
+
+  // Parameter ID: 405
+  // Property Name: Driver Gender
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 2
+  // Multiplier: -
+  // Units: -
+  // Values: None - 0, Male - 1, Female - 2
+  optional uint32 driver_gender = 69;
+
+  // Parameter ID: 406
+  // Property Name: Driver Card ID
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: -
+  // Values: None - 0, Male - 1, Female - 2  // Note: Seems typo in document, values from previous?
+  optional uint32 driver_card_id = 70;
+
+  // Parameter ID: 407
+  // Property Name: Driver Card expiration date
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 9999
+  // Multiplier: -
+  // Units: -
+  // Values:
+  optional uint32 driver_card_expiration_date = 71;
+
+  // Parameter ID: 408
+  // Property Name: Driver Card place of issue
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: -
+  // Values: Extracted from card
+  optional uint32 driver_card_place_of_issue = 72;
+
+  // Parameter ID: 409
+  // Property Name: Driver Status Event
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 2
+  // Multiplier: -
+  // Units: -
+  // Values: Registered - 0, Deregistered - 1, Swapping - 2
+  optional uint32 driver_status_event = 73;
+
+  // Parameter ID: 329
+  // Property Name: AIN Speed
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: -
+  // Values:
+  optional uint32 ain_speed = 74;
+
+  // Parameter ID: 500
+  // Property Name: MSP500 vendor name
+  // Type: ASCII
+  // Bytes: 40
+  // Min: 0
+  // Max: 40
+  // Multiplier: -
+  // Units: -
+  // Values: Name of the integrator who installed the device
+  optional string msp500_vendor_name = 75;
+
+  // Parameter ID: 501
+  // Property Name: MSP500 vehicle number
+  // Type: ASCII
+  // Bytes: 40
+  // Min: 0
+  // Max: 40
+  // Multiplier: -
+  // Units: -
+  // Values: Vehicle number on which the device is installed
+  optional string msp500_vehicle_number = 76;
+
+  // Parameter ID: 502
+  // Property Name: MSP500 speed sensor
+  // Type: unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Status of the speed sensor
+  optional bool msp500_speed_sensor = 77;
+
+  // Parameter ID: 637
+  // Property Name: Wake Reason
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: True if device was woken by RTC alarm
+  optional bool wake_reason = 78;
+
+  // Parameter ID: 10800
+  // Property Name: EYE Temperature 1
+  // Type: Signed
+  // Bytes: 2
+  // Min: -32768
+  // Max: 32767
+  // Multiplier: 0.01
+  // Units: °C
+  // Values: Temperature measured by EYE Sensor 1
+  optional int32 eye_temperature1 = 79;
+
+  // Parameter ID: 10801
+  // Property Name: EYE Temperature 2
+  // Type: Signed
+  // Bytes: 2
+  // Min: -32768
+  // Max: 32767
+  // Multiplier: 0.01
+  // Units: °C
+  // Values: Temperature measured by EYE Sensor 2
+  optional int32 eye_temperature2 = 80;
+
+  // Parameter ID: 10802
+  // Property Name: EYE Temperature 3
+  // Type: Signed
+  // Bytes: 2
+  // Min: -32768
+  // Max: 32767
+  // Multiplier: 0.01
+  // Units: °C
+  // Values: Temperature measured by EYE Sensor 3
+  optional int32 eye_temperature3 = 81;
+
+  // Parameter ID: 10803
+  // Property Name: EYE Temperature 4
+  // Type: Signed
+  // Bytes: 2
+  // Min: -32768
+  // Max: 32767
+  // Multiplier: 0.01
+  // Units: °C
+  // Values: Temperature measured by EYE Sensor 4
+  optional int32 eye_temperature4 = 82;
+
+  // Parameter ID: 10804
+  // Property Name: EYE Humidity 1
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 100
+  // Multiplier: -
+  // Units: %
+  // Values: Humidity measured by EYE Sensor 1
+  optional uint32 eye_humidity1 = 83;
+
+  // Parameter ID: 10805
+  // Property Name: EYE Humidity 2
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 100
+  // Multiplier: -
+  // Units: %
+  // Values: Humidity measured by EYE Sensor 2
+  optional uint32 eye_humidity2 = 84;
+
+  // Parameter ID: 10806
+  // Property Name: EYE Humidity 3
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 100
+  // Multiplier: -
+  // Units: %
+  // Values: Humidity measured by EYE Sensor 3
+  optional uint32 eye_humidity3 = 85;
+
+  // Parameter ID: 10807
+  // Property Name: EYE Humidity 4
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 100
+  // Multiplier: -
+  // Units: %
+  // Values: Humidity measured by EYE Sensor 4
+  optional uint32 eye_humidity4 = 86;
+
+  // Parameter ID: 10808
+  // Property Name: EYE Magnet 1
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Magnet measured by EYE Sensor by EYE Sensor 1
+  optional bool eye_magnet1 = 87;
+
+  // Parameter ID: 10809
+  // Property Name: EYE Magnet 2
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Magnet measured by EYE Sensor by EYE Sensor 2
+  optional bool eye_magnet2 = 88;
+
+  // Parameter ID: 10810
+  // Property Name: EYE Magnet 3
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Magnet measured by EYE Sensor by EYE Sensor 3
+  optional bool eye_magnet3 = 89;
+
+  // Parameter ID: 10811
+  // Property Name: EYE Magnet 4
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Magnet measured by EYE Sensor by EYE Sensor 4
+  optional bool eye_magnet4 = 90;
+
+  // Parameter ID: 10812
+  // Property Name: EYE Movement 1
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Movement state measure by EYE Sensor 1
+  optional bool eye_movement1 = 91;
+  optional bool eye_movement2 = 219;
+  optional bool eye_movement3 = 220;
+  optional bool eye_movement4 = 221;
+  optional int32 eye_pitch1 = 222;
+  optional int32 eye_pitch2 = 223;
+  optional int32 eye_pitch3 = 224;
+  optional int32 eye_pitch4 = 225;
+  optional bool eye_low_battery1 = 229;
+  optional bool eye_low_battery2 = 226;
+  optional bool eye_low_battery3 = 227;
+  optional bool eye_low_battery4 = 228;
+  optional uint32 eye_battery_voltage1 = 233;
+  optional uint32 eye_battery_voltage2 = 230;
+  optional uint32 eye_battery_voltage3 = 231;
+  optional uint32 eye_battery_voltage4 = 232;
+  optional int32 eye_roll1 = 234;
+  optional int32 eye_roll2 = 235;
+  optional int32 eye_roll3 = 236;
+  optional int32 eye_roll4 = 237;
+  optional uint32 eye_movement_count1 = 238;
+  optional uint32 eye_movement_count2 = 239;
+  optional uint32 eye_movement_count3 = 240;
+  optional uint32 eye_movement_count4 = 241;
+  optional uint32 eye_magnet_count1 = 245;
+  optional uint32 eye_magnet_count2 = 242;
+  optional uint32 eye_magnet_count3 = 243;
+  optional uint32 eye_magnet_count4 = 244;
+
+  // Note: The document is truncated, so continuing with available data up to truncation point.
+
+  // Parameter ID: 985
+  // Property Name: ISF Clogged Brake System Filter Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_clogged_brake_system_filter_indicator = 92;
+
+  // Parameter ID: 986
+  // Property Name: ISF Low Washer Fluid Level Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_low_washer_fluid_level_indicator = 93;
+
+  // Parameter ID: 987
+  // Property Name: ISF Low AdBlue Level Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_low_adblue_level_indicator = 94;
+
+  // Parameter ID: 988
+  // Property Name: ISF Low Trailer Tyre Pressure Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_low_trailer_tyre_pressure_indicator = 95;
+
+  // Parameter ID: 989
+  // Property Name: ISF Wear Of Trailer Brake Lining Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_wear_of_trailer_brake_lining_indicator = 96;
+
+  // Parameter ID: 990
+  // Property Name: ISF High Trailer Brake Temperature Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_high_trailer_brake_temperature_indicator = 97;
+
+  // Parameter ID: 991
+  // Property Name: ISF Incorrect Trailer Pneumatic Supply Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_incorrect_trailer_pneumatic_supply_indicator = 98;
+
+  // Parameter ID: 992
+  // Property Name: ISF Low CNG Level Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool isf_low_cng_level_indicator = 99;
+
+  // Parameter ID: 993
+  // Property Name: ASF Right Joystick Moved Right Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_right_joystick_moved_right_active = 100;
+
+  // Parameter ID: 994
+  // Property Name: ASF Right Joystick Moved Left Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_right_joystick_moved_left_active = 101;
+
+  // Parameter ID: 995
+  // Property Name: ASF Right Joystick Moved Forward Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_right_joystick_moved_forward_active = 102;
+
+  // Parameter ID: 996
+  // Property Name: ASF Right Joystick Moved Back Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_right_joystick_moved_back_active = 103;
+
+  // Parameter ID: 997
+  // Property Name: ASF Left Joystick Moved Right Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_left_joystick_moved_right_active = 104;
+
+  // Parameter ID: 998
+  // Property Name: ASF Left Joystick Moved Left Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_left_joystick_moved_left_active = 105;
+
+  // Parameter ID: 999
+  // Property Name: ASF Left Joystick Moved Forward Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_left_joystick_moved_forward_active = 106;
+
+  // Parameter ID: 1000
+  // Property Name: ASF Left Joystick Moved Back Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_left_joystick_moved_back_active = 107;
+
+  // Parameter ID: 1001
+  // Property Name: ASF First Rear hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_first_rear_hydraulic = 108;
+
+  // Parameter ID: 1002
+  // Property Name: ASF Second Rear hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_second_rear_hydraulic = 109;
+
+  // Parameter ID: 1003
+  // Property Name: ASF Third Rear hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_third_rear_hydraulic = 110;
+
+  // Parameter ID: 1004
+  // Property Name: ASF Fourth Rear hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_fourth_rear_hydraulic = 111;
+
+  // Parameter ID: 1005
+  // Property Name: ASF First Front hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_first_front_hydraulic = 112;
+
+  // Parameter ID: 1006
+  // Property Name: ASF Second Front hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_second_front_hydraulic = 113;
+
+  // Parameter ID: 1007
+  // Property Name: ASF Third Front hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_third_front_hydraulic = 114;
+
+  // Parameter ID: 1008
+  // Property Name: ASF Fourth Front hydraulic
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_fourth_front_hydraulic = 115;
+
+  // Parameter ID: 1009
+  // Property Name: ASF Front Three-point Hitch
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_front_three_point_hitch = 116;
+
+  // Parameter ID: 1010
+  // Property Name: ASF Rear Three-point Hitch
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_rear_three_point_hitch = 117;
+
+  // Parameter ID: 1011
+  // Property Name: ASF Front Power Take-off
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_front_power_take_off = 118;
+
+  // Parameter ID: 1012
+  // Property Name: ASF Rear Power Take-off
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_rear_power_take_off = 119;
+
+  // Parameter ID: 1013
+  // Property Name: ASF Mowing Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_mowing_active = 120;
+
+  // Parameter ID: 1014
+  // Property Name: ASF Threshing Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Inactive, 1 - Active
+  optional bool asf_threshing_active = 121;
+
+  // Parameter ID: 1015
+  // Property Name: ASF Grain Release From Hopper
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_grain_release_from_hopper = 122;
+
+  // Parameter ID: 1016
+  // Property Name: ASF Grain Tank Is 100% Full
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_grain_tank_is100_full = 123;
+
+  // Parameter ID: 1017
+  // Property Name: ASF Grain Tank Is 70% Full
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_grain_tank_is70_full = 124;
+
+  // Parameter ID: 1018
+  // Property Name: ASF Grain Tank Is Opened
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Closed, 1 - Opened
+  optional bool asf_grain_tank_is_opened = 125;
+
+  // Parameter ID: 1019
+  // Property Name: ASF Unloader Drive
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_unloader_drive = 126;
+
+  // Parameter ID: 1020
+  // Property Name: ASF Cleaning Fan Control Turned Off
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_cleaning_fan_control_turned_off = 127;
+
+  // Parameter ID: 1021
+  // Property Name: ASF Threshing Drum Control Turned Off
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_threshing_drum_control_turned_off = 128;
+
+  // Parameter ID: 1022
+  // Property Name: ASF Straw Walker Is Clogged
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_straw_walker_is_clogged = 129;
+
+  // Parameter ID: 1023
+  // Property Name: ASF Excessive Clearance Under The Threshing Drum
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_excessive_clearance_under_the_threshing_drum = 130;
+
+  // Parameter ID: 1024
+  // Property Name: ASF Low Temperature Of Drive System Hydraulics Less Than 5 Grades
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_low_temperature_of_drive_system_hydraulics_less_than5_grades = 131;
+
+  // Parameter ID: 1025
+  // Property Name: ASF High Temperature Of Drive System Hydraulics Greater Than 86 Grades
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_high_temperature_of_drive_system_hydraulics_greater_than86_grades = 132;
+
+  // Parameter ID: 1026
+  // Property Name: ASF Ear Auger Speed Below The Norm
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_ear_auger_speed_below_the_norm = 133;
+
+  // Parameter ID: 1027
+  // Property Name: ASF Grain Auger Speed Below The Norm
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_grain_auger_speed_below_the_norm = 134;
+
+  // Parameter ID: 1028
+  // Property Name: ASF Straw Chooper Speed Below The Norm
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_straw_chooper_speed_below_the_norm = 135;
+
+  // Parameter ID: 1029
+  // Property Name: ASF Straw Shaker Speed Below The Norm
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_straw_shaker_speed_below_the_norm = 136;
+
+  // Parameter ID: 1030
+  // Property Name: ASF Feeder Speed Below The Norm
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_feeder_speed_below_the_norm = 137;
+
+  // Parameter ID: 1031
+  // Property Name: ASF Straw Chopper Switched On
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_straw_chopper_switched_on = 138;
+
+  // Parameter ID: 1032
+  // Property Name: ASF Corn Header Connected
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_corn_header_connected = 139;
+
+  // Parameter ID: 1033
+  // Property Name: ASF Grain Header Connected
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_grain_header_connected = 140;
+
+  // Parameter ID: 1034
+  // Property Name: ASF Feeder Reverse Switched On
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_feeder_reverse_switched_on = 141;
+
+  // Parameter ID: 1035
+  // Property Name: ASF The Pressure Filter Of The Hydraulic Pump Is Clogged
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool asf_the_pressure_filter_of_the_hydraulic_pump_is_clogged = 142;
+
+  // Parameter ID: 1087
+  // Property Name: ASF Adapter Pressure Filter Sensor
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_adapter_pressure_filter_sensor = 143;
+
+  // Parameter ID: 1088
+  // Property Name: ASF Service 2 Required Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_service2_required_indicator = 144;
+
+  // Parameter ID: 1089
+  // Property Name: ASF Drain Filter Clogged Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_drain_filter_clogged_indicator = 145;
+
+  // Parameter ID: 1090
+  // Property Name: ASF Section 1 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section1_spraying = 146;
+
+  // Parameter ID: 1091
+  // Property Name: ASF Section 2 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section2_spraying = 147;
+
+  // Parameter ID: 1092
+  // Property Name: ASF Section 3 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section3_spraying = 148;
+
+  // Parameter ID: 1093
+  // Property Name: ASF Section 4 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section4_spraying = 149;
+
+  // Parameter ID: 1094
+  // Property Name: ASF Section 5 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section5_spraying = 150;
+
+  // Parameter ID: 1095
+  // Property Name: ASF Section 6 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section6_spraying = 151;
+
+  // Parameter ID: 1096
+  // Property Name: ASF Section 7 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section7_spraying = 152;
+
+  // Parameter ID: 1097
+  // Property Name: ASF Section 8 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section8_spraying = 153;
+
+  // Parameter ID: 1098
+  // Property Name: ASF Section 9 Spraying
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool asf_section9_spraying = 154;
+
+  // Parameter ID: 1036
+  // Property Name: USF Spreading
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_spreading = 155;
+
+  // Parameter ID: 1037
+  // Property Name: USF Pouring Chemicals
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_pouring_chemicals = 156;
+
+  // Parameter ID: 1038
+  // Property Name: USF Conveyor Belt
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_conveyor_belt = 157;
+
+  // Parameter ID: 1039
+  // Property Name: USF Salt Spreader's Drive Wheel
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_salt_spreaders_drive_wheel = 158;
+
+  // Parameter ID: 1040
+  // Property Name: USF Brushes
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_brushes = 159;
+
+  // Parameter ID: 1041
+  // Property Name: USF Vacuum Cleaner
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_vacuum_cleaner = 160;
+
+  // Parameter ID: 1042
+  // Property Name: USF Water Supply
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_water_supply = 161;
+
+  // Parameter ID: 1043
+  // Property Name: USF Spreading
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  // optional uint32 usf_spreading = 162;  // Note: Duplicate name, but ID different, proto allows same name but to avoid confusion, keep as is
+
+  // Parameter ID: 1044
+  // Property Name: USF Liquid pump
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_liquid_pump = 163;
+
+  // Parameter ID: 1045
+  // Property Name: USF Unloading From The Hopper
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_unloading_from_the_hopper = 164;
+
+  // Parameter ID: 1046
+  // Property Name: USF Low Salt (Sand) Level In Container Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_low_salt_sand_level_in_container_indicator = 165;
+
+  // Parameter ID: 1047
+  // Property Name: USF Low Water Level in Container Indicator
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_low_water_level_in_container_indicator = 166;
+
+  // Parameter ID: 1048
+  // Property Name: USF Chemicals
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_chemicals = 167;
+
+  // Parameter ID: 1049
+  // Property Name: USF Compressor
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_compressor = 168;
+
+  // Parameter ID: 1050
+  // Property Name: USF Water Valve Is Opened
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_water_valve_is_opened = 169;
+
+  // Parameter ID: 1051
+  // Property Name: USF Cabin Moved Up Status Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_cabin_moved_up_status_active = 170;
+
+  // Parameter ID: 1052
+  // Property Name: USF Cabin Moved Down Status Active
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_cabin_moved_down_status_active = 171;
+
+  // Parameter ID: 1099
+  // Property Name: USF Hydraulics Work Not Permitted
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - Off, 1 - On
+  optional bool usf_hydraulics_work_not_permitted = 172;
+
+  // Parameter ID: 1053
+  // Property Name: CiSF Section 1 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section1_presence_of_fluid_in_the_downpipe = 173;
+
+  // Parameter ID: 1054
+  // Property Name: CiSF Section 1 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section1_filled = 174;
+
+  // Parameter ID: 1055
+  // Property Name: CiSF Section 1 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section1_overfilled = 175;
+
+  // Parameter ID: 1056
+  // Property Name: CiSF Section 2 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section2_presence_of_fluid_in_the_downpipe = 176;
+
+  // Parameter ID: 1057
+  // Property Name: CiSF Section 2 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section2_filled = 177;
+
+  // Parameter ID: 1058
+  // Property Name: CiSF Section 2 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section2_overfilled = 178;
+
+  // Parameter ID: 1059
+  // Property Name: CiSF Section 3 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section3_presence_of_fluid_in_the_downpipe = 179;
+
+  // Parameter ID: 1060
+  // Property Name: CiSF Section 3 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section3_filled = 180;
+
+  // Parameter ID: 1061
+  // Property Name: CiSF Section 3 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section3_overfilled = 181;
+
+  // Parameter ID: 1062
+  // Property Name: CiSF Section 4 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section4_presence_of_fluid_in_the_downpipe = 182;
+
+  // Parameter ID: 1063
+  // Property Name: CiSF Section 4 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section4_filled = 183;
+
+  // Parameter ID: 1064
+  // Property Name: CiSF Section 4 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section4_overfilled = 184;
+
+  // Parameter ID: 1065
+  // Property Name: CiSF Section 5 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section5_presence_of_fluid_in_the_downpipe = 185;
+
+  // Parameter ID: 1066
+  // Property Name: CiSF Section 5 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section5_filled = 186;
+
+  // Parameter ID: 1067
+  // Property Name: CiSF Section 5 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section5_overfilled = 187;
+
+  // Parameter ID: 1068
+  // Property Name: CiSF Section 6 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section6_presence_of_fluid_in_the_downpipe = 188;
+
+  // Parameter ID: 1069
+  // Property Name: CiSF Section 6 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section6_filled = 189;
+
+  // Parameter ID: 1070
+  // Property Name: CiSF Section 6 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section6_overfilled = 190;
+
+  // Parameter ID: 1071
+  // Property Name: CiSF Section 7 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section7_presence_of_fluid_in_the_downpipe = 191;
+
+  // Parameter ID: 1072
+  // Property Name: CiSF Section 7 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section7_filled = 192;
+
+  // Parameter ID: 1073
+  // Property Name: CiSF Section 7 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section7_overfilled = 193;
+
+  // Parameter ID: 1074
+  // Property Name: CiSF Section 8 Presence Of Fluid In The Downpipe
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No presence, 1 - Present
+  optional bool cisf_section8_presence_of_fluid_in_the_downpipe = 194;
+
+  // Parameter ID: 1075
+  // Property Name: CiSF Section 8 Filled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section8_filled = 195;
+
+  // Parameter ID: 1076
+  // Property Name: CiSF Section 8 Overfilled
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: 0 - No, 1 - Yes
+  optional bool cisf_section8_overfilled = 196;
+
+  // Parameter ID: 400
+  // Property Name: Distance to Next Service
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: -
+  // Values:
+  optional uint32 distance_to_next_service = 197;
+
+  // Parameter ID: 450
+  // Property Name: CNG Level Kg
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: 10
+  // Units: Kg
+  // Values: CNG Level Kg (appears only if CNG level percentage is not available)
+  optional uint32 cng_level_kg = 198;
+
+  // Parameter ID: 859
+  // Property Name: Distance from need of service
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: km
+  // Values: Service - distance elapsed since the occurrence of the need for servicing
+  optional uint32 distance_from_need_of_service = 199;
+
+  // Parameter ID: 860
+  // Property Name: Distance from last service
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: km
+  // Values: Service - distance from the last service
+  optional uint32 distance_from_last_service = 200;
+
+  // Parameter ID: 861
+  // Property Name: Time to next service
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: day
+  // Values: Service - time to next service
+  optional uint32 time_to_next_service = 201;
+
+  // Parameter ID: 862
+  // Property Name: Time from need of service
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: day
+  // Values: Service - time exceeded since the occurrence of the need for servicing
+  optional uint32 time_from_need_of_service = 202;
+
+  // Parameter ID: 863
+  // Property Name: Time from last serivce
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: day
+  // Values: Service - time elapsed since the last service
+  optional uint32 time_from_last_serivce = 203;
+
+  // Parameter ID: 864
+  // Property Name: Distance to next oil service
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: km
+  // Values: Service - distance to next oil service
+  optional uint32 distance_to_next_oil_service = 204;
+
+  // Parameter ID: 865
+  // Property Name: Time to next oil service
+  // Type: Unsigned
+  // Bytes: 2
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: day
+  // Values: Service - time to next oil service
+  optional uint32 time_to_next_oil_service = 205;
+
+  // Parameter ID: 866
+  // Property Name: LVCAN Vehicle Range
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 4294967295
+  // Multiplier: -
+  // Units: km
+  // Values: Information about vehicle range
+  optional uint32 lvcan_vehicle_range = 206;
+
+  // Parameter ID: 867
+  // Property Name: LVCAN Total CNG counted
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 65535
+  // Multiplier: -
+  // Units: kg
+  // Values: Information about Total CNG used in counted mode
+  optional uint32 lvcan_total_cng_counted = 207;
+
+  // Parameter ID: 1079
+  // Property Name: Total Bale Count
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 0xFFFFFFFF
+  // Multiplier: -
+  // Units: -
+  // Values: Total Bale Count
+  optional uint32 total_bale_count = 208;
+
+  // Parameter ID: 1080
+  // Property Name: Bale Count
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 0xFFFFFFFF
+  // Multiplier: -
+  // Units: -
+  // Values: Bale Count
+  optional uint32 bale_count = 209;
+
+  // Parameter ID: 1081
+  // Property Name: Cut Bale Count
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 0xFFFFFFFF
+  // Multiplier: -
+  // Units: -
+  // Values: Cut Bale Count
+  optional uint32 cut_bale_count = 210;
+
+  // Parameter ID: 1082
+  // Property Name: Bale Slices
+  // Type: Unsigned
+  // Bytes: 4
+  // Min: 0
+  // Max: 0xFFFFFFFF
+  // Multiplier: -
+  // Units: -
+  // Values: Bale Slices
+  optional uint32 bale_slices = 211;
+
+  // Parameter ID: 1116
+  // Property Name: LVCAN MaxRoadSpeed
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 255
+  // Multiplier: -
+  // Units: km/h
+  // Values: Maximum speed from road signs
+  optional uint32 lvcan_maxroadspeed = 212;
+
+  // Parameter ID: 1117
+  // Property Name: LVCAN ExceededRoadSpeed
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 255
+  // Multiplier: -
+  // Units: km/h
+  // Values: Exceeded speed from road signs
+  optional uint32 lvcan_exceededroadspeed = 213;
+
+  // Parameter ID: 1205
+  // Property Name: LVCAN RSF SpeedLimitSign
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Information if road sign "Speed limit with value" is recognized/canceled
+  optional bool lvcan_rsf_speedlimitsign = 214;
+
+  // Parameter ID: 1206
+  // Property Name: LVCAN RSF EndOfSpeedLimitSign
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Information if road sign "End of speed limit with value" is recognized/canceled
+  optional bool lvcan_rsf_end_of_speed_limitsign = 215;
+
+  // Parameter ID: 1207
+  // Property Name: LVCAN RSF SpeedExceeded
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Information if speed is exceeded indicated by road sign "Speed limit with value"
+  optional bool lvcan_rsf_speed_exceeded = 216;
+
+  // Parameter ID: 1208
+  // Property Name: LVCAN RSF TimeSpeedLimitSign
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Information if road sign "Conditional time-specific speed limit with value" is recognized/canceled
+  optional bool lvcan_rsf_time_speed_limitsign = 217;
+
+  // Parameter ID: 1209
+  // Property Name: LVCAN RSF WthrSpeedLimitSign
+  // Type: Unsigned
+  // Bytes: 1
+  // Min: 0
+  // Max: 1
+  // Multiplier: -
+  // Units: -
+  // Values: Information if road sign "Speed limit with value due to weather conditions" is recognized/cancelled
+  optional bool lvcan_rsf_wthr_speed_limit_sign = 218;
+  optional uint32 axl_calibration_status = 246;
+  optional uint64 ble_rfid1 = 247;
+  optional uint64 ble_rfid2 = 248;
+  optional uint64 ble_rfid3 = 249;
+  optional uint64 ble_rfid4 = 250;
+  optional bool ble_button1_state1 = 251;
+  optional bool ble_button1_state2 = 252;
+  optional bool ble_button1_state3 = 253;
+  optional bool ble_button1_state4 = 254;
+  optional bool ble_button2_state1 = 255;
+  optional bool ble_button2_state2 = 256;
+  optional bool ble_button2_state3 = 257;
+  optional bool ble_button2_state4 = 258;
+  optional uint32 frequency_din1 = 259;
+  optional uint32 frequency_din2 = 260;
+  optional uint32 connectivity_quality = 261;
+  map<uint32, uint32> geo_fence = 262;
+  // Auto Geofence: 0 – target left zone, 1 – target entered zone
+  optional bool auto_geofence = 263;
+
+  // Trip: 0 – trip stop, 1 – trip start, 2 – Business Status, 3 – Private Status, 4-9 – Custom Statuses
+  optional uint32 trip = 264;
+
+  // Over Speeding: Speed at over speeding start/end, Range: 0-255 km/h
+  optional uint32 over_speeding = 265;
+
+  // Crash trace data: HEX, Range: 0-1200 bytes
+  optional bytes crash_trace_data = 266;
+
+  // Blood Alcohol Content: First 14 bits are perlims * 1000, last 2 bits are mode (0: Passive, 1: Active, 2-3: Reserved)
+  optional uint32 blood_alcohol_content = 267;
+
+  // Idling: 0 – moving, 1 – idling
+  optional bool idling = 268;
+
+  // Green Driving Type: 1 – harsh acceleration, 2 – harsh braking, 3 – harsh cornering
+  optional uint32 green_driving_type = 269;
+
+  // Towing: 0 – steady, 1 – towing
+  optional bool towing = 270;
+
+  // Unplug: 0 – battery present, 1 – battery unplugged
+  optional bool unplug = 271;
+
+  // Crash Detection: 1 – real crash (calibrated), 2 – limited trace (not calibrated), 3 – limited trace (calibrated), 4 – full trace (not calibrated), 5 – full trace (calibrated), 6 – real crash (not calibrated)
+  optional uint32 crash_detection = 272;
+
+  // Immobilizer: 0 – iButton not connected, 1 – iButton connected (Immobilizer), 2 – iButton connected (Authorized Driving)
+  optional uint32 immobilizer = 273;
+
+  // Green Driving Value: For acceleration/braking: g*100 (e.g., 123 -> 1.23g); for cornering: rad/s*100 (GPS) or g*100 (Accelerometer)
+  optional uint32 green_driving_value = 274;
+
+  // Jamming: 0 – jamming stop, 1 – jamming start
+  optional bool jamming = 275;
+
+  // ICCID2: Value of SIM ICCID, LSB
+  optional uint64 iccid2 = 276;
+
+  // Green Driving Event Duration: Duration of event, Range: 0-65535 ms
+  optional uint32 green_driving_event_duration = 277;
+
+  // Alarm: 0 – Reserved, 1 – Alarm event occurred
+  optional bool alarm = 278;
+
+  // Eco Maximum: Maximum accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
+  optional uint64 eco_maximum = 279;
+
+  // Eco Average: Average accelerometer values in mg, 8 Bytes: 2B Zeros, 2B X, 2B Y, 2B Z
+  optional uint64 eco_average = 280;
+
+  // Eco Duration: Duration of Eco driving event, Range: 0-65535 ms
+  optional uint32 eco_duration = 281;
+
+  // Driving State: 1 – Ignition ON, 2 – Driving, 3 – Ignition OFF
+  optional uint32 driving_state = 282;
+
+  // Driving Records: Number of records between Ignition ON and OFF, Range: 0-65535
+  optional uint32 driving_records = 283;
+
+  // Crash Event Counter: Connects trace with specific crash record, Range: 0-255
+  optional uint32 crash_event_counter = 284;
+
+  // GNSS Jamming: 0 – GPS jamming ended/healthy, 1 – GPS jamming warning, 2 – GPS jamming critical
+  optional uint32 gnss_jamming = 285;
+
+  // Private Mode: 0 – Private mode off, 1 – Private mode on
+  optional uint32 private_mode = 286;
+
+  // Ignition On Counter: Duration while Ignition is On, Range: 0-2147483647 s
+  optional uint32 ignition_on_counter = 287;
+
+  // Motorcycle Fall Detection: Fall detection event
+  optional uint32 motorcycle_fall_detection = 288;
+
+  // VIN: Vehicle Identification Number, ASCII
+  optional string vin = 289;
+
+  // Number of DTC: Number of Diagnostic Trouble Codes, Range: 0-255
+  optional uint32 number_of_dtc = 290;
+
+  // Engine Load: Calculated engine load, Range: 0-100 %
+  optional uint32 engine_load = 291;
+
+  // Coolant Temperature: Engine coolant temperature, Range: -128-127 °C
+  optional int32 coolant_temperature = 292;
+
+  // Short Fuel Trim: Short term fuel trim 1, Range: -100-99 %
+  optional int32 short_fuel_trim = 293;
+
+  // Fuel Pressure: Fuel pressure, Range: 0-765 kPa
+  optional uint32 fuel_pressure = 294;
+
+  // Intake MAP: Intake manifold absolute pressure, Range: 0-255 kPa
+  optional uint32 intake_map = 295;
+
+  // Engine RPM: Engine revolutions per minute, Range: 0-16384 rpm
+  optional uint32 engine_rpm = 296;
+
+  // Vehicle Speed: Vehicle speed, Range: 0-255 km/h
+  optional uint32 vehicle_speed = 297;
+
+  // Timing Advance: Timing advance, Range: -64-64 °
+  optional int32 timing_advance = 298;
+
+  // Intake Air Temperature: Intake air temperature, Range: -128-127 °C
+  optional int32 intake_air_temperature = 299;
+
+  // MAF: Mass air flow rate, Range: 0-655.35 g/sec (multiplier: 0.01)
+  optional uint32 maf = 300;
+
+  // Throttle Position: Throttle position, Range: 0-100 %
+  optional uint32 throttle_position = 301;
+
+  // Runtime Since Engine Start: Runtime since engine start, Range: 0-65535 s
+  optional uint32 runtime_since_engine_start = 302;
+
+  // Distance Traveled MIL On: Distance traveled with MIL on, Range: 0-65535 km
+  optional uint32 distance_traveled_mil_on = 303;
+
+  // Relative Fuel Rail Pressure: Relative fuel rail pressure, Range: 0-517.8 kPa (multiplier: 0.1)
+  optional uint32 relative_fuel_rail_pressure = 304;
+
+  // Direct Fuel Rail Pressure: Direct fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
+  optional uint32 direct_fuel_rail_pressure = 305;
+
+  // Commanded EGR: Commanded EGR, Range: 0-100 %
+  optional uint32 commanded_egr = 306;
+
+  // EGR Error: EGR error, Range: -100-100 %
+  optional int32 egr_error = 307;
+
+  // Fuel Level Percent: Fuel level, Range: 0-100 %
+  optional uint32 fuel_level_percent = 308;
+
+  // Distance Since Codes Clear: Distance traveled since codes cleared, Range: 0-65535 km
+  optional uint32 distance_since_codes_clear = 309;
+
+  // Barometric Pressure: Barometric pressure, Range: 0-255 kPa
+  optional uint32 barometric_pressure = 310;
+
+  // Control Module Voltage: Control module voltage, Range: 0-65.535 V (multiplier: 0.001)
+  optional uint32 control_module_voltage = 311;
+
+  // Absolute Load Value: Absolute load value, Range: 0-25700 %
+  optional uint32 absolute_load_value = 312;
+
+  // Fuel Type: 0-Not available, 1-Gasoline, ..., 23-Bifuel running diesel
+  optional uint32 fuel_type = 313;
+
+  // Ambient Air Temperature: Ambient air temperature, Range: -128-127 °C
+  optional int32 ambient_air_temperature = 314;
+
+  // Time Run With MIL On: Time run with MIL on, Range: 0-65535 min
+  optional uint32 time_run_with_mil_on = 315;
+
+  // Time Since Codes Cleared: Time since codes cleared, Range: 0-65535 min
+  optional uint32 time_since_codes_cleared = 316;
+
+  // Absolute Fuel Rail Pressure: Absolute fuel rail pressure, Range: 0-655350 kPa (multiplier: 10)
+  optional uint32 absolute_fuel_rail_pressure = 317;
+
+  // Hybrid Battery Pack Life: Hybrid battery pack remaining life, Range: 0-100 %
+  optional uint32 hybrid_battery_pack_life = 318;
+
+  // Engine Oil Temperature: Engine oil temperature, Range: 0-215 °C
+  optional uint32 engine_oil_temperature = 319;
+
+  // Fuel Injection Timing: Fuel injection timing, Range: -210-302 ° (multiplier: 0.01)
+  optional int32 fuel_injection_timing = 320;
+
+  // Throttle Position Group: Throttle position from PID group, Range: 0-100 %
+  optional uint32 throttle_position_group = 321;
+
+  // Commanded Equivalence R: Fuel-Air Commanded Equivalence Ratio, Range: 0-2 (multiplier: 0.01)
+  optional uint32 commanded_equivalence_r = 322;
+
+  // Intake MAP 2 Bytes: Intake manifold absolute pressure, Range: 0-2048 kPa
+  optional uint32 intake_map2_bytes = 323;
+
+  // Hybrid System Voltage: Hybrid vehicle system voltage, Range: 0-1024 V
+  optional uint32 hybrid_system_voltage = 324;
+
+  // Hybrid System Current: Hybrid vehicle system current, Range: -3277-3277 A
+  optional int32 hybrid_system_current = 325;
+
+  // Fault Codes: DTC Fault codes, ASCII, Range: 0-128 bytes
+  optional string fault_codes = 326;
+
+  // Fuel Rate: Engine fuel rate, Range: 0-327.67 L/h (multiplier: 0.01)
+  optional uint32 fuel_rate = 327;
+
+  // OBD OEM Total Mileage: Total mileage, Range: 0-4294967295 km
+  optional uint32 obd_oem_total_mileage = 328;
+
+  // OBD OEM Fuel Level: Fuel level, Range: 0-429496729.5 l (multiplier: 0.1)
+  optional uint32 obd_oem_fuel_level = 329;
+
+  // OEM Distance Until Service: Distance till next service, Range: 0-4294967295 km
+  optional uint32 oem_distance_until_service = 330;
+
+  // OEM Battery Charge State: 0 – Not charging, 1 – Charging
+  optional bool oem_battery_charge_state = 331;
+
+  // OEM Battery Charge Level: Battery charge level, Range: 0-100 %
+  optional uint32 oem_battery_charge_level = 332;
+
+  // OEM Remaining Distance: Remaining distance until fuel tank empty or battery depleted, Range: 0-65535 km
+  optional uint32 oem_remaining_distance = 333;
+
+  // OEM Battery State Of Health: Battery state of health, Range: 0-65535 %
+  optional uint32 oem_battery_state_of_health = 334;
+
+  // OEM Battery Temperature: Battery pack temperature, Range: -32768-32767 °C
+  optional int32 oem_battery_temperature = 335;
+
+  // Beacon: List of Beacon IDs, HEX, Range: 0-1024 bytes
+  optional bytes beacon = 336;
+
+  // Advanced BLE Beacon Data: List of Beacon IDs and data, HEX, Range: 0-1024 bytes
+  optional bytes advanced_ble_beacon_data = 337;
+
+  // BLE Temperature #1: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+  optional int32 ble_temperature1 = 338;
+
+  // BLE Temperature #2: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+  optional int32 ble_temperature2 = 339;
+
+  // BLE Temperature #3: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+  optional int32 ble_temperature3 = 340;
+
+  // BLE Temperature #4: Degrees °C, Range: -40-125, Error codes: 32767 (not found), 32766 (failed parsing), 32765 (abnormal state)
+  optional int32 ble_temperature4 = 341;
+
+  // BLE Battery #1: Battery level of sensor #1, Range: 0-100 %
+  optional uint32 ble_battery1 = 342;
+
+  // BLE Battery #2: Battery level of sensor #2, Range: 0-100 %
+  optional uint32 ble_battery2 = 343;
+
+  // BLE Battery #3: Battery level of sensor #3, Range: 0-100 %
+  optional uint32 ble_battery3 = 344;
+
+  // BLE Battery #4: Battery level of sensor #4, Range: 0-100 %
+  optional uint32 ble_battery4 = 345;
+
+  // BLE Humidity #1: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+  optional uint32 ble_humidity1 = 346;
+
+  // BLE Humidity #2: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+  optional uint32 ble_humidity2 = 347;
+
+  // BLE Humidity #3: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+  optional uint32 ble_humidity3 = 348;
+
+  // BLE Humidity #4: Humidity, Range: 0-100 %RH, Error codes: 65535 (not found), 65534 (failed parsing), 65533 (abnormal state)
+  optional uint32 ble_humidity4 = 349;
+
+  // BLE Fuel Level #1: Fuel level, Range: 0-65535
+  optional uint32 ble_fuel_level1 = 350;
+
+  // BLE Fuel Level #2: Fuel level, Range: 0-65535
+  optional uint32 ble_fuel_level2 = 351;
+
+  // BLE Fuel Level #3: Fuel level, Range: 0-65535
+  optional uint32 ble_fuel_level3 = 352;
+
+  // BLE Fuel Level #4: Fuel level, Range: 0-65535
+  optional uint32 ble_fuel_level4 = 353;
+
+  // BLE Fuel Frequency #1: Frequency value of BLE fuel sensor #1, Range: 0-2147483647
+  optional uint32 ble_fuel_frequency1 = 354;
+
+  // BLE Fuel Frequency #2: Frequency value of BLE fuel sensor #2, Range: 0-2147483647
+  optional uint32 ble_fuel_frequency2 = 355;
+
+  // BLE Fuel Frequency #3: Frequency value of BLE fuel sensor #3, Range: 0-2147483647
+  optional uint32 ble_fuel_frequency3 = 356;
+
+  // BLE Fuel Frequency #4: Frequency value of BLE fuel sensor #4, Range: 0-2147483647
+  optional uint32 ble_fuel_frequency4 = 357;
+
+  // BLE Luminosity #1: Luminosity value, Range: 0-65535 lx
+  optional uint32 ble_luminosity1 = 358;
+
+  // BLE Luminosity #2: Luminosity value, Range: 0-65535 lx
+  optional uint32 ble_luminosity2 = 359;
+
+  // BLE Luminosity #3: Luminosity value, Range: 0-65535 lx
+  optional uint32 ble_luminosity3 = 360;
+
+  // BLE Luminosity #4: Luminosity value, Range: 0-65535 lx
+  optional uint32 ble_luminosity4 = 361;
+
+  // BLE 1 Custom #1: Custom IO element for BLE sensor, HEX
+  optional bytes ble1_custom1 = 362;
+
+  // BLE 1 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble1_custom2 = 363;
+
+  // BLE 1 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble1_custom3 = 364;
+
+  // BLE 1 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble1_custom4 = 365;
+
+  // BLE 1 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble1_custom5 = 366;
+
+  // BLE 2 Custom #1: Custom IO element for BLE sensor, HEX
+  optional bytes ble2_custom1 = 367;
+
+  // BLE 2 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble2_custom2 = 368;
+
+  // BLE 2 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble2_custom3 = 369;
+
+  // BLE 2 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble2_custom4 = 370;
+
+  // BLE 2 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble2_custom5 = 371;
+
+  // BLE 3 Custom #1: Custom IO element for BLE sensor, HEX
+  optional bytes ble3_custom1 = 372;
+
+  // BLE 3 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble3_custom2 = 373;
+
+  // BLE 3 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble3_custom3 = 374;
+
+  // BLE 3 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble3_custom4 = 375;
+
+  // BLE 3 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble3_custom5 = 376;
+
+  // BLE 4 Custom #1: Custom IO element for BLE sensor, HEX
+  optional bytes ble4_custom1 = 377;
+
+  // BLE 4 Custom #2: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble4_custom2 = 378;
+
+  // BLE 4 Custom #3: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble4_custom3 = 379;
+
+  // BLE 4 Custom #4: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble4_custom4 = 380;
+
+  // BLE 4 Custom #5: Custom IO element for BLE sensor, Range: 0-4294967295
+  optional uint32 ble4_custom5 = 381;
+
+  // Accelerator Pedal Position: Value in percentages, Range: 0-102 %
+  optional uint32 accelerator_pedal_position = 382;
+
+  // Fuel Consumed: Value in liters, Range: 0-214748364.7 l (multiplier: 0.1)
+  optional uint32 fuel_consumed = 383;
+
+  // Fuel Level Liters: Value in liters, Range: 0-6553.5 l (multiplier: 0.1)
+  optional uint32 fuel_level_liters = 384;
+
+  // Total Mileage: Value in meters, Range: 0-4294967295 m
+  optional uint32 total_mileage = 385;
+
+  // Program Number: Range: 0-99999
+  optional uint32 program_number = 386;
+
+  // Module ID 8B: Module ID, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 module_id8b = 387;
+
+  // Module ID 17B: Module ID, HEX, Range: 0-0x7FFFFFFFFFFFFFFF
+  optional bytes module_id17b = 388;
+
+  // Engine Worktime: Engine work time, Range: 0-1677215 min
+  optional uint32 engine_worktime = 389;
+
+  // Engine Worktime Counted: Total engine work time, Range: 0-1677215 min
+  optional uint32 engine_worktime_counted = 390;
+
+  // Total Mileage Counted: Total vehicle mileage, Range: 0-4294967295 m
+  optional uint32 total_mileage_counted = 391;
+
+  // Fuel Consumed Counted: Total fuel consumed, Range: 0-214748364.7 l (multiplier: 0.1)
+  optional uint32 fuel_consumed_counted = 392;
+
+  // AdBlue Level Percent: AdBlue level, Range: 0-100 %
+  optional uint32 adblue_level_percent = 393;
+
+  // AdBlue Level Liters: AdBlue level, Range: 0-6553.5 l (multiplier: 0.1)
+  optional uint32 adblue_level_liters = 394;
+
+  // Axle 1 Load: Axle 1 load, Range: 0-32768 kg
+  optional uint32 axle1_load = 395;
+
+  // Axle 2 Load: Axle 2 load, Range: 0-32768 kg
+  optional uint32 axle2_load = 396;
+
+  // Axle 3 Load: Axle 3 load, Range: 0-32768 kg
+  optional uint32 axle3_load = 397;
+
+  // Axle 4 Load: Axle 4 load, Range: 0-32768 kg
+  optional uint32 axle4_load = 398;
+
+  // Axle 5 Load: Axle 5 load, Range: 0-32768 kg
+  optional uint32 axle5_load = 399;
+
+  // Control State Flags: Control state flags, Range: 0-4294967295
+  optional uint32 control_state_flags = 400;
+
+  // Agricultural Machinery Flags: Agricultural machinery flags, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 agricultural_machinery_flags = 401;
+
+  // Harvesting Time: Harvesting time, Range: 0-16777215 min
+  optional uint32 harvesting_time = 402;
+
+  // Area of Harvest: Area of harvest, Range: 0-4294967295 m2
+  optional uint32 area_of_harvest = 403;
+
+  // Mowing Efficiency: Mowing efficiency, Range: 0-4294967295 m2/h
+  optional uint32 mowing_efficiency = 404;
+  // Grain Mown Volume: Mown volume, Range: 0-4294967295 kg
+  optional uint32 grain_mown_volume = 405;
+  // Grain Moisture: Grain moisture, Range: 0-100 %
+  optional uint32 grain_moisture = 406;
+  // Harvesting Drum RPM: Harvesting drum rpm, Range: 0-65535 rpm
+  optional uint32 harvesting_drum_rpm = 407;
+  // Gap Under Harvesting Drum: Gap under harvesting drum, Range: 0-255 mm
+  optional uint32 gap_under_harvesting_drum = 408;
+  // Security State Flags: Security state flags, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 security_state_flags = 409;
+  // Tachograph Total Vehicle Distance: Tacho total vehicle distance, Range: 0-4294967295 m
+  optional uint32 tachograph_total_vehicle_distance = 410;
+  // Trip Distance: Trip distance, Range: 0-4294967295 m
+  optional uint32 trip_distance = 411;
+  // Tachograph Vehicle Speed: Tacho vehicle speed, Range: 0-255 km/h
+  optional uint32 tachograph_vehicle_speed = 412;
+  // Tacho Driver Card Presence: Tacho driver card presence, Range: 0-3
+  optional uint32 tacho_driver_card_presence = 413;
+  // Driver 1 States: Driver 1 states, Range: 0-255
+  optional uint32 driver1_states = 414;
+  // Driver 2 States: Driver 2 states, Range: 0-255
+  optional uint32 driver2_states = 415;
+  // Driver 1 Continuous Driving Time: Driver 1 continuous driving time, Range: 0-65535 min
+  optional uint32 driver1_continuous_driving_time = 416;
+  // Driver 2 Continuous Driving Time: Driver 2 continuous driving time, Range: 0-65535 min
+  optional uint32 driver2_continuous_driving_time = 417;
+  // Driver 1 Cumulative Time: Driver 1 cumulative time, Range: 0-65535 min
+  optional uint32 driver1_cumulative_time = 418;
+  // Driver 2 Cumulative Time: Driver 2 cumulative time, Range: 0-65535 min
+  optional uint32 driver2_cumulative_time = 419;
+  // Driver 1 Selected Activity Duration: Driver 1 duration of selected activity, Range: 0-65535 min
+  optional uint32 driver1_selected_activity_duration = 420;
+  // Driver 2 Selected Activity Duration: Driver 2 duration of selected activity, Range: 0-65535 min
+  optional uint32 driver2_selected_activity_duration = 421;
+  // Driver 1 Cumulative Driving Time: Driver 1 cumulative driving time, Range: 0-65535 min
+  optional uint32 driver1_cumulative_driving_time = 422;
+  // Driver 2 Cumulative Driving Time: Driver 2 cumulative driving time, Range: 0-65535 min
+  optional uint32 driver2_cumulative_driving_time = 423;
+  // Driver 1 ID High: Driver 1 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 driver1_id_high = 424;
+  // Driver 1 ID Low: Driver 1 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 driver1_id_low = 425;
+  // Driver 2 ID High: Driver 2 ID high, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 driver2_id_high = 426;
+  // Driver 2 ID Low: Driver 2 ID low, Range: 0-0xFFFFFFFFFFFFFFFF
+  optional uint64 driver2_id_low = 427;
+  // Battery Temperature: Battery temperature, Range: -60-127 °C (multiplier: 0.1)
+  optional int32 battery_temperature = 428;
+  // HV Battery Level: Battery level, Range: 0-100 %
+  optional uint32 hv_battery_level = 429;
+  // DTC Faults: DTC faults count, Range: 0-255
+  optional uint32 dtc_faults = 430;
+  // Slope of Arm: Slope of arm, Range: -3276-3276 °
+  optional int32 slope_of_arm = 431;
+  // Rotation of Arm: Rotation of arm, Range: -180-180 °
+  optional int32 rotation_of_arm = 432;
+  // Eject of Arm: Eject of arm, Range: 0-6553 m
+  optional uint32 eject_of_arm = 433;
+  // Horizontal Distance Arm Vehicle: Horizontal distance arm vehicle, Range: 0-6553 m
+  optional uint32 horizontal_distance_arm_vehicle = 434;
+  // Height Arm Above Ground: Height arm above ground, Range: 0-6553 m
+  optional uint32 height_arm_above_ground = 435;
+  // Drill RPM: Drill RPM, Range: 0-65535 rpm
+  optional uint32 drill_rpm = 436;
+  // Amount Of Spread Salt Square Meter: Amount of spread salt, Range: 0-655 g/m2
+  optional uint32 amount_of_spread_salt_square_meter = 437;
+  // Amount Of Spread Fine Grained Salt: Amount of spread fine grained salt, Range: 0-1677722 T
+  optional uint32 amount_of_spread_fine_grained_salt = 439;
+  // Amount Of Coarse Grained Salt: Amount of coarse grained salt, Range: 0-1677722 T
+  optional uint32 amount_of_coarse_grained_salt = 440;
+  // Amount Of Spread DiMix: Amount of spread DiMix, Range: 0-1677722 T
+  optional uint32 amount_of_spread_dimix = 441;
+  // Amount Of Spread Coarse Grained Calcium: Amount of spread coarse grained calcium, Range: 0-1677722 m3
+  optional uint32 amount_of_spread_coarse_grained_calcium = 442;
+  // Amount Of Spread Calcium Chloride: Amount of spread calcium chloride, Range: 0-1677722 m3
+  optional uint32 amount_of_spread_calcium_chloride = 443;
+  // Amount Of Spread Sodium Chloride: Amount of spread sodium chloride, Range: 0-1677722 m3
+  optional uint32 amount_of_spread_sodium_chloride = 444;
+  // Amount Of Spread Magnesium Chloride: Amount of spread magnesium chloride, Range: 0-1677722 m3
+  optional uint32 amount_of_spread_magnesium_chloride = 445;
+  // Amount Of Spread Gravel: Amount of spread gravel, Range: 0-1677722 T
+  optional uint32 amount_of_spread_gravel = 446;
+  // Amount Of Spread Sand: Amount of spread sand, Range: 0-1677722 T
+  optional uint32 amount_of_spread_sand = 447;
+  // Width Pouring Left: Width pouring left, Range: 0-655 m
+  optional uint32 width_pouring_left = 448;
+  // Width Pouring Right: Width pouring right, Range: 0-655 m
+  optional uint32 width_pouring_right = 449;
+  // Salt Spreader Working Hours: Salt spreader working hours, Range: 0-167722 h
+  optional uint32 salt_spreader_working_hours = 450;
+  // Distance During Salting: Distance during salting, Range: 0-167722 km
+  optional uint32 distance_during_salting = 451;
+  // Load Weight: Load weight, Range: 0-16772215 kg
+  optional uint32 load_weight = 452;
+  // Retarder Load: Retarder load, Range: 0-130 %
+  optional uint32 retarder_load = 453;
+  // Cruise Time: Cruise time, Range: 0-16772215 min
+  optional uint32 cruise_time = 454;
+  // CNG Status: CNG status, 0-1
+  optional bool cng_status = 455;
+  // CNG Used: CNG used, Range: 0-16772215 kg
+  optional uint32 cng_used = 456;
+  // CNG Level Percent: CNG level, Range: 0-100 %
+  optional uint32 cng_level_percent = 457;
+  // Oil Level: Engine oil level indicator status, 0-1
+  optional bool oil_level = 458;
+  // Vehicles Range On Battery: Vehicle range on battery, Range: 0-16777215 m
+  optional uint32 vehicles_range_on_battery = 459;
+  // Vehicles Range On Additional Fuel: Vehicle range on additional fuel, Range: 0-16777215 m
+  optional uint32 vehicles_range_on_additional_fuel = 460;
+  // Security State Flags P4: Security state flags protocol 4, HEX
+  optional bytes security_state_flags_p4 = 461;
+  // Control State Flags P4: Control state flags protocol 4, HEX
+  optional bytes control_state_flags_p4 = 462;
+  // Indicator State Flags P4: Indicator state flags protocol 4, HEX
+  optional bytes indicator_state_flags_p4 = 463;
+  // Agricultural State Flags P4: Agricultural state flags protocol 4, HEX
+  optional bytes agricultural_state_flags_p4 = 464;
+  optional uint32 door_status = 465;
+  optional int32 engine_temperature = 467;
+  optional uint64 utility_state_flags_p4 = 468;
+  optional uint64 cistern_state_flags_p4 = 469;
+  optional uint32 lng_used = 470;
+  optional uint32 lng_used_counted = 471;
+  optional uint32 lng_level_percent = 472;
+  optional uint32 lng_level_kg = 473;
+  optional uint32 total_lpg_used = 474;
+  optional uint32 total_lpg_used_counted = 475;
+  optional uint32 lpg_level_proc = 476;
+  optional uint32 lpg_level_liters = 477;
+  optional bool ssf_ignition = 478;
+  optional bool ssf_key_in_ignition_lock = 479;
+  optional bool ssf_webasto = 480;
+  optional bool ssf_engine_working = 481;
+  optional bool ssf_standalone_engine = 482;
+  optional bool ssf_ready_to_drive = 483;
+  optional bool ssf_engine_working_on_cng = 484;
+  optional bool ssf_work_mode = 485;
+  optional bool ssf_operator = 486;
+  optional bool ssf_interlock = 487;
+  optional bool ssf_engine_lock_active = 488;
+  optional bool ssf_request_to_lock_engine = 489;
+  optional bool ssf_handbrake_is_active = 490;
+  optional bool ssf_footbrake_is_active = 491;
+  optional bool ssf_clutch_pushed = 492;
+  optional bool ssf_hazard_warning_lights = 493;
+  optional bool ssf_front_left_door_open = 494;
+  optional bool ssf_front_right_door_open = 495;
+  optional bool ssf_rear_left_door_open = 496;
+  optional bool ssf_rear_right_door_open = 497;
+  optional bool ssf_trunk_door_open = 498;
+  optional bool ssf_engine_cover_open = 499;
+  optional bool ssf_roof_open = 500;
+  optional bool ssf_charging_wire_plugged = 501;
+  optional bool ssf_battery_charging = 502;
+  optional bool ssf_electric_engine_state = 503;
+  optional bool ssf_car_closed_factory_remote = 504;
+  optional bool ssf_car_is_closed = 505;
+  optional bool ssf_factory_alarm_actuated = 506;
+  optional bool ssf_factory_alarm_emulated = 507;
+  optional bool ssf_signal_close_factory_remote = 508;
+  optional bool ssf_signal_open_factory_remote = 509;
+  optional bool ssf_rearming_signal = 510;
+  optional bool ssf_trunk_door_opened_factory_remote = 511;
+  optional bool ssf_can_module_in_sleep = 512;
+  optional bool ssf_factory_remote3x = 513;
+  optional bool ssf_factory_armed = 514;
+  optional bool ssf_parking_gear_active = 515;
+  optional bool ssf_reverse_gear_active = 516;
+  optional bool ssf_neutral_gear_active = 517;
+  optional bool ssf_drive_is_active = 518;
+  optional bool ssf_engine_working_on_dual_fuel = 519;
+  optional bool ssf_engine_working_on_lpg = 520;
+  optional bool csf_parking_lights = 521;
+  optional bool csf_dipped_head_lights = 522;
+  optional bool csf_full_beam_headlights = 523;
+  optional bool csf_rear_fog_lights = 524;
+  optional bool csf_front_fog_lights = 525;
+  optional bool csf_additional_front_lights = 526;
+  optional bool csf_additional_rear_lights = 527;
+  optional bool csf_light_signal = 528;
+  optional bool csf_air_conditioning = 529;
+  optional bool csf_cruise_control = 530;
+  optional bool csf_automatic_retarder = 531;
+  optional bool csf_manual_retarder = 532;
+  optional bool csf_drivers_seatbelt_fastened = 533;
+  optional bool csf_front_drivers_seatbelt_fastened = 534;
+  optional bool csf_left_drivers_seatbelt_fastened = 535;
+  optional bool csf_right_drivers_seatbelt_fastened = 536;
+  optional bool csf_centre_drivers_seatbelt_fastened = 537;
+  optional bool csf_front_passenger_present = 538;
+  optional bool csf_pto = 539;
+  optional bool csf_front_differential_locked = 540;
+  optional bool csf_rear_differential_locked = 541;
+  optional bool csf_central_differential4hi_locked = 542;
+  optional bool csf_rear_differential4lo_locked = 543;
+  optional bool csf_trailer_axle1_lift_active = 544;
+  optional bool csf_trailer_axle2_lift_active = 545;
+  optional bool csf_trailer_connected = 546;
+  optional bool csf_start_stop_system_inactive = 547;
+  optional bool isf_check_engine_indicator = 548;
+  optional bool isf_abs_indicator = 549;
+  optional bool isf_esp_indicator = 550;
+  optional bool isf_esp_turned_off = 551;
+  optional bool isf_stop_indicator = 552;
+  optional bool isf_oil_level_indicator = 553;
+  optional bool isf_coolant_liquid_level = 554;
+  optional bool isf_battery_not_charging_indicator = 555;
+  optional bool isf_handbrake_system_indicator = 556;
+  optional bool isf_airbag_indicator = 557;
+  optional bool isf_eps_indicator = 558;
+  optional bool isf_warning_indicator = 559;
+  optional bool isf_lights_failure_indicator = 560;
+  optional bool isf_low_tire_pressure_indicator = 561;
+  optional bool isf_wear_of_brake_pads_indicator = 562;
+  optional bool isf_low_fuel_level_indicator = 563;
+  optional bool isf_maintenance_required_indicator = 564;
+  optional bool isf_glow_plug_indicator = 565;
+  optional bool isf_fap_indicator = 566;
+  optional bool isf_epc_indicator = 567;
+  optional bool isf_clogged_engine_oil_filter_indicator = 568;
+  optional bool isf_low_engine_oil_pressure_indicator = 569;
+  optional bool isf_too_high_engine_oil_temperature_indicator = 570;
+  optional bool isf_low_coolant_level_indicator = 571;
+  optional bool isf_clogged_hydraulic_system_oil_filter_indicator = 572;
+  optional bool isf_hydraulic_system_low_pressure_indicator = 573;
+  optional bool isf_hydraulic_oil_low_level_indicator = 574;
+  optional bool isf_hydraulic_system_high_temperature_indicator = 575;
+  optional bool isf_oil_overflow_in_hydraulic_chamber_indicator = 576;
+  optional bool isf_clogged_air_filter_indicator = 577;
+  optional bool isf_clogged_fuel_filter_indicator = 578;
+  optional bool isf_water_in_fuel_indicator = 579;
+  optional bool asf_grain_tank_is100_percent_full = 611;
+  optional bool asf_grain_tank_is70_percent_full = 612;
+  optional bool asf_straw_chopper_speed_below_the_norm = 623;
+  optional bool usf_spreading2 = 650;
+  optional uint32 operator_code = 651;
+  optional float temperature = 652;
 }
 
 enum Event {
