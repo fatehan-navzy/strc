@@ -3220,4 +3220,5 @@ enum Event {
   SOS = 54;
   SHOCK = 55;
   LIGHT_SENSOR = 56;
+  DOOR_CLOSE = 57;
 }

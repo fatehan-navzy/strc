@@ -83,6 +83,7 @@ const (
 	Event_SOS                         Event = 54
 	Event_SHOCK                       Event = 55
 	Event_LIGHT_SENSOR                Event = 56
+	Event_DOOR_CLOSE                  Event = 57
 )
 
 // Enum value maps for Event.
@@ -145,6 +146,7 @@ var (
 		54: "SOS",
 		55: "SHOCK",
 		56: "LIGHT_SENSOR",
+		57: "DOOR_CLOSE",
 	}
 	Event_value = map[string]int32{
 		"NORMAL":                      0,
@@ -204,6 +206,7 @@ var (
 		"SOS":                         54,
 		"SHOCK":                       55,
 		"LIGHT_SENSOR":                56,
+		"DOOR_CLOSE":                  57,
 	}
 )
 
@@ -8809,7 +8812,7 @@ const file_packets_packets_proto_rawDesc = "" +
 	"'_asf_straw_chopper_speed_below_the_normB\x11\n" +
 	"\x0f_usf_spreading2B\x10\n" +
 	"\x0e_operator_codeB\x0e\n" +
-	"\f_temperature*\x8a\a\n" +
+	"\f_temperature*\x9a\a\n" +
 	"\x05Event\x12\n" +
 	"\n" +
 	"\x06NORMAL\x10\x00\x12\x0f\n" +
@@ -8880,7 +8883,9 @@ const file_packets_packets_proto_rawDesc = "" +
 	"\x0fFATIGUE_DRIVING\x105\x12\a\n" +
 	"\x03SOS\x106\x12\t\n" +
 	"\x05SHOCK\x107\x12\x10\n" +
-	"\fLIGHT_SENSOR\x108BD\n" +
+	"\fLIGHT_SENSOR\x108\x12\x0e\n" +
+	"\n" +
+	"DOOR_CLOSE\x109BD\n" +
 	"\x19com.fatehan.navzy.packetsP\x01Z%github.com/fatehan-navzy/strc/packetsb\x06proto3"
 
 var (
